@@ -11,6 +11,11 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Added
 
+- Home page (`feature/home`) in English, Spanish and German: Hero, SystemDiagram (the one
+  animated moment, static with reduced motion or without JavaScript), Doors, Proof,
+  FitList, Process, Founders, FAQ and FinalCTA blocks.
+- Page copy files in `src/i18n/home/`, FAQ entries in `src/content/faq/`, and the first case
+  (Terapias El Templo) with figures marked `[PENDIENTE]`.
 - Foundation (Phase 0): Astro 7 static site with Tailwind 4 reading design tokens
   extracted from the live landing page (`src/styles/tokens.css`).
 - `DESIGN.md` with the two-pass design plan; `DECISIONS.md`; `README.md`.

@@ -1,0 +1,45 @@
+---
+/**
+ * Process: how working with the agency goes, as gates the client passes one
+ * after another. It is a real sequence, so it is a numbered <ol>.
+ *
+ * Props: locale.
+ * Content source: i18n/home/<locale>.json -> process.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+import { pageCopy } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('home', locale).process;
+---
+
+<Section surface="oat" labelledby="process-title">
+  <Fragment slot="heading">
+    <Heading id="process-title">{copy.title}</Heading>
+    <p class="mt-4">{copy.lead}</p>
+  </Fragment>
+
+  <ol class="border-rule border-t">
+    {copy.steps.map((step, index) => (
+      <li class="border-rule grid grid-cols-[auto_1fr] gap-x-6 border-b py-7 md:gap-x-10">
+        <span
+          aria-hidden="true"
+          class="font-display font-book text-accent leading-heading w-8 text-2xl"
+        >
+          {index + 1}
+        </span>
+        <div>
+          <Heading level={3} size="sub">
+            {step.title}
+          </Heading>
+          <p class="max-w-measure mt-2">{step.text}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</Section>

@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "title": "Stop chasing clients. Let them come to you.",
+    "lead": "You're good at what you do. Getting people to book you shouldn't take everything you've got. We build the system that does it for you.",
+    "painsTitle": "Sound familiar?",
+    "pains": [
+      "They ask what I charge… and then just vanish.",
+      "Loads of likes. Nobody actually books.",
+      "I always mean to follow up. Then the week's just gone.",
+      "I never know where the next one's coming from."
+    ],
+    "facts": ["Ten years in marketing", "Two people, on purpose", "Built and launched in days"]
+  },
+  "system": {
+    "title": "One path. From “never heard of you” to “booked.”",
+    "lead": "Built, connected and launched for you. You never touch the tech.",
+    "start": "Never heard of you",
+    "end": "Booked",
+    "steps": [
+      {
+        "title": "They see you",
+        "text": "The right people notice you. Not everyone, the ones already looking."
+      },
+      {
+        "title": "They reach out",
+        "text": "Instead of a like that disappears, they leave their details."
+      },
+      {
+        "title": "It follows up",
+        "text": "Warm replies and reminders go out on their own, even while you're mid-session."
+      },
+      {
+        "title": "They book you",
+        "text": "A couple of taps and they're on your calendar. No chasing from you."
+      }
+    ],
+    "chatIn": "Hi! What does working together look like?",
+    "chatOut": "Good question. Here's a time that works for both of us.",
+    "bookedTitle": "New client",
+    "bookedNote": "On your calendar, not in your DMs.",
+    "funnelNote": "Fewer people at every step is normal. The system's job is that nobody drops out just because you were busy."
+  },
+  "doors": {
+    "title": "Pick how much you want off your plate.",
+    "lead": "Same building blocks, three ways to get them.",
+    "more": "See how it works",
+    "items": {
+      "sistema": {
+        "title": "The System",
+        "kicker": "We build and run the whole thing",
+        "text": "Landing page, booking, Meta Ads, follow-up and WhatsApp, connected into one path and handed over working. One fixed scope, one fixed price, live in days."
+      },
+      "servicios": {
+        "title": "Done for you, piece by piece",
+        "kicker": "We do one part for you",
+        "text": "Need just the landing page, the ads or the booking setup? Each module has a fixed scope and a fixed price, and fits into the System later."
+      },
+      "productos": {
+        "title": "Products",
+        "kicker": "You do it yourself",
+        "text": "Templates and kits for people who'd rather build it themselves, made from what we use with clients."
+      }
+    }
+  },
+  "proof": {
+    "title": "What it looks like for a real business.",
+    "pendingNote": "Figures marked [PENDIENTE] are waiting for the client's sign-off.",
+    "more": "Read the full case"
+  },
+  "fit": {
+    "title": "For coaches, entrepreneurs and business owners.",
+    "lead": "More exactly: any business where clients book you directly. We'd rather say no now than take your money for something that won't work.",
+    "forTitle": "This is for you if…",
+    "for": [
+      "You coach, consult, treat or run a business where clients book you directly.",
+      "People have already paid for what you do. You just want more of them.",
+      "You're tired of your income depending on posting and luck.",
+      "You'd rather have it built for you than learn another tool."
+    ],
+    "notTitle": "Probably not for you if…",
+    "not": [
+      "You don't have an offer people have paid for yet. A system can't fix that, and we'll say so.",
+      "You want someone to run your social media or make content. That's not what we build."
+    ]
+  },
+  "process": {
+    "title": "How working with us goes.",
+    "lead": "Four steps. You can stop after any of them.",
+    "steps": [
+      {
+        "title": "The free call",
+        "text": "Thirty minutes looking at your actual business. You leave knowing where clients slip away, with us or without us."
+      },
+      {
+        "title": "A fixed scope and a fixed price",
+        "text": "If you want it built, we write down exactly what you get and what it costs. No hourly surprises."
+      },
+      {
+        "title": "You tell us how you work",
+        "text": "Your offer, your calendar, how you like to talk to clients. About an hour of your time."
+      },
+      {
+        "title": "We build, connect and launch",
+        "text": "You never touch the tech, and you always know what's happening, in plain words. Then we stay on to improve it, if you want."
+      }
+    ]
+  },
+  "founders": {
+    "title": "We're a small agency, and that's on purpose.",
+    "body": [
+      "Hi, we're Miguel and Christiane. Ten years in marketing taught us one thing: single pieces rarely change a business. A nice landing page here, one clever campaign there. It helps, then it fades, because everything around it is still held together by hand.",
+      "So we build the whole thing, connected, and hand it over working. And we use it ourselves."
+    ],
+    "values": [
+      { "title": "Done for you", "text": "You never touch the tech." },
+      { "title": "Plain words", "text": "If we can't say it simply, we don't say it." },
+      { "title": "Honest fit", "text": "If it's not right for you, we'll tell you." }
+    ]
+  },
+  "faq": {
+    "title": "Things you might be wondering."
+  },
+  "final": {
+    "title": "Find out where clients are slipping away.",
+    "text": "One call. We look at how people find you now, where they drop out, and what it would take to keep them. More on your calendar, fewer hours in your DMs."
+  }
+}

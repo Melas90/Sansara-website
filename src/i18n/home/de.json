@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "title": "Lauf Kunden nicht mehr hinterher. Lass sie zu dir kommen.",
+    "lead": "Du bist gut in dem, was du tust. Gebucht zu werden sollte dich nicht deine ganze Kraft kosten. Wir bauen das System, das dir das abnimmt.",
+    "painsTitle": "Kommt dir das bekannt vor?",
+    "pains": [
+      "Sie fragen nach dem Preis … und sind dann einfach weg.",
+      "Jede Menge Likes. Niemand bucht.",
+      "Ich will immer nachfassen. Und dann ist die Woche vorbei.",
+      "Ich weiß nie, woher der nächste Kunde kommt."
+    ],
+    "facts": ["Zehn Jahre Marketing", "Zu zweit, mit Absicht", "In wenigen Tagen gebaut und live"]
+  },
+  "system": {
+    "title": "Ein Weg. Von „nie von dir gehört“ zu „gebucht“.",
+    "lead": "Wir bauen, verbinden und starten alles für dich. Mit der Technik hast du nichts zu tun.",
+    "start": "Nie von dir gehört",
+    "end": "Gebucht",
+    "steps": [
+      {
+        "title": "Sie sehen dich",
+        "text": "Die richtigen Menschen werden auf dich aufmerksam. Nicht alle, sondern die, die schon suchen."
+      },
+      {
+        "title": "Sie melden sich",
+        "text": "Statt eines Likes, der verpufft, hinterlassen sie ihre Kontaktdaten."
+      },
+      {
+        "title": "Das System fasst nach",
+        "text": "Freundliche Antworten und Erinnerungen gehen von allein raus, auch wenn du gerade im Termin bist."
+      },
+      {
+        "title": "Sie buchen dich",
+        "text": "Ein paar Klicks und sie stehen in deinem Kalender. Ohne dass du jemandem hinterherläufst."
+      }
+    ],
+    "chatIn": "Hallo! Wie sieht die Zusammenarbeit mit dir aus?",
+    "chatOut": "Gute Frage. Hier ist ein Termin, der für uns beide passt.",
+    "bookedTitle": "Neuer Kunde",
+    "bookedNote": "In deinem Kalender, nicht in deinen Nachrichten.",
+    "funnelNote": "Dass es mit jedem Schritt weniger Menschen werden, ist normal. Das System sorgt dafür, dass niemand abspringt, nur weil du gerade beschäftigt warst."
+  },
+  "doors": {
+    "title": "Entscheide, wie viel du abgeben willst.",
+    "lead": "Dieselben Bausteine, drei Wege dorthin.",
+    "more": "So funktioniert es",
+    "items": {
+      "sistema": {
+        "title": "Das System",
+        "kicker": "Wir bauen und betreuen alles",
+        "text": "Landingpage, Buchung, Meta Ads, Nachfassen und WhatsApp, zu einem Weg verbunden und funktionierend übergeben. Fester Umfang, fester Preis, in wenigen Tagen live."
+      },
+      "servicios": {
+        "title": "Wir machen das, Stück für Stück",
+        "kicker": "Wir übernehmen einen Teil",
+        "text": "Du brauchst nur die Landingpage, die Anzeigen oder das Buchungssystem? Jedes Modul hat einen festen Umfang und einen festen Preis und passt später ins System."
+      },
+      "productos": {
+        "title": "Produkte",
+        "kicker": "Du machst es selbst",
+        "text": "Vorlagen und Kits für alle, die es lieber selbst bauen. Entstanden aus dem, was wir bei Kunden einsetzen."
+      }
+    }
+  },
+  "proof": {
+    "title": "So sieht das in einem echten Betrieb aus.",
+    "pendingNote": "Zahlen mit [PENDIENTE] warten noch auf die Freigabe des Kunden.",
+    "more": "Den ganzen Fall lesen"
+  },
+  "fit": {
+    "title": "Für Coaches, Selbstständige und Unternehmer.",
+    "lead": "Genauer: jedes Geschäft, in dem Kunden dich direkt buchen. Wir sagen lieber jetzt Nein, als Geld für etwas zu nehmen, das nicht funktionieren wird.",
+    "forTitle": "Das ist etwas für dich, wenn …",
+    "for": [
+      "du coachst, berätst, behandelst oder ein Geschäft führst, in dem Kunden dich direkt buchen.",
+      "Menschen schon für dein Angebot bezahlt haben. Du willst einfach mehr davon.",
+      "du es leid bist, dass dein Einkommen von Posts und Glück abhängt.",
+      "du es lieber gebaut bekommst, als noch ein Tool zu lernen."
+    ],
+    "notTitle": "Wahrscheinlich nichts für dich, wenn …",
+    "not": [
+      "du noch kein Angebot hast, für das jemand bezahlt hat. Das kann kein System lösen, und das sagen wir dir auch.",
+      "du jemanden suchst, der deine Social-Media-Kanäle betreut oder Content erstellt. Das bauen wir nicht."
+    ]
+  },
+  "process": {
+    "title": "So läuft die Zusammenarbeit.",
+    "lead": "Vier Schritte. Nach jedem kannst du aufhören.",
+    "steps": [
+      {
+        "title": "Das kostenlose Gespräch",
+        "text": "Dreißig Minuten, in denen wir uns dein Geschäft ansehen. Danach weißt du, wo dir Kunden verloren gehen, mit uns oder ohne uns."
+      },
+      {
+        "title": "Fester Umfang, fester Preis",
+        "text": "Wenn wir es bauen sollen, halten wir schriftlich fest, was du bekommst und was es kostet. Keine Überraschungen nach Stunden."
+      },
+      {
+        "title": "Du erzählst uns, wie du arbeitest",
+        "text": "Dein Angebot, dein Kalender, wie du mit Kunden sprichst. Etwa eine Stunde deiner Zeit."
+      },
+      {
+        "title": "Wir bauen, verbinden und starten",
+        "text": "Mit der Technik hast du nichts zu tun, und du weißt immer, was gerade passiert, klar erklärt. Danach verbessern wir weiter, wenn du möchtest."
+      }
+    ]
+  },
+  "founders": {
+    "title": "Wir sind eine kleine Agentur, und das mit Absicht.",
+    "body": [
+      "Hallo, wir sind Miguel und Christiane. Zehn Jahre Marketing haben uns eines gezeigt: Einzelteile verändern selten ein Geschäft. Hier eine schöne Landingpage, dort eine clevere Kampagne. Das hilft, und dann verpufft es, weil alles drumherum weiter von Hand zusammengehalten wird.",
+      "Deshalb bauen wir das Ganze, verbunden, und übergeben es funktionierend. Und wir nutzen es selbst."
+    ],
+    "values": [
+      { "title": "Fertig für dich", "text": "Mit der Technik hast du nichts zu tun." },
+      { "title": "Klare Worte", "text": "Was wir nicht einfach sagen können, sagen wir nicht." },
+      { "title": "Ehrliche Passung", "text": "Wenn es nicht zu dir passt, sagen wir es dir." }
+    ]
+  },
+  "faq": {
+    "title": "Was du dich vielleicht fragst."
+  },
+  "final": {
+    "title": "Finde heraus, wo dir Kunden verloren gehen.",
+    "text": "Ein Gespräch. Wir schauen uns an, wie Menschen dich heute finden, wo sie abspringen und was nötig wäre, damit sie bleiben. Mehr Termine im Kalender, weniger Stunden in deinen Nachrichten."
+  }
+}

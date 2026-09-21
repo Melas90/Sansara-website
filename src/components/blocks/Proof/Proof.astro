@@ -1,0 +1,69 @@
+---
+/**
+ * Proof: one named case with its numbers. Shows the first case in the locale
+ * (lowest `order`). Renders nothing if there is no case, so the home page never
+ * shows an empty proof section. Figures still marked [PENDIENTE] are shown as
+ * such, with a note, so staging is honest about what is missing.
+ *
+ * Props: locale.
+ * Content source: content/cases/<locale>/*.md; i18n/home/<locale>.json -> proof.
+ */
+import { getCollection } from 'astro:content';
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import TextLink from '../../ui/TextLink.astro';
+import type { Locale } from '../../../config/site';
+import { mainNav } from '../../../config/nav';
+import { localePath, pageCopy } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('home', locale).proof;
+
+const cases = await getCollection('cases', ({ data }) => data.locale === locale && !data.draft);
+const entry = cases.sort((a, b) => a.data.order - b.data.order)[0];
+const pending = entry?.data.results.some((result) => result.value.includes('[PENDIENTE]'));
+const casesRoute = mainNav.find((item) => item.key === 'casos');
+---
+
+{entry && (
+  <Section surface="oat" labelledby="proof-title">
+    <Fragment slot="heading">
+      <Heading id="proof-title">{copy.title}</Heading>
+    </Fragment>
+
+    <Heading level={3} size="title">
+      {entry.data.client}
+    </Heading>
+    <p class="text-fg-muted mt-2 text-sm">
+      {entry.data.sector}
+      {entry.data.location && `, ${entry.data.location}`}
+    </p>
+    <p class="max-w-measure mt-6 text-lg">{entry.data.summary}</p>
+
+    <dl class="border-rule mt-10 grid border-t sm:grid-cols-3">
+      {entry.data.results.map((result) => (
+        <div class="border-rule flex min-w-0 flex-col-reverse border-b py-5 sm:border-b-0 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0">
+          <dt class="text-sm">{result.label}</dt>
+          <dd class="font-display font-book text-fg leading-heading text-xl wrap-break-word">
+            {result.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    {pending && <p class="text-fg-muted mt-4 text-sm">{copy.pendingNote}</p>}
+
+    {casesRoute?.live && (
+      <TextLink
+        href={localePath(locale, `${casesRoute.path}${entry.data.slug}/`)}
+        standalone
+        class="mt-6"
+      >
+        {copy.more}
+      </TextLink>
+    )}
+  </Section>
+)}

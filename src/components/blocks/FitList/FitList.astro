@@ -1,0 +1,51 @@
+---
+/**
+ * FitList: who this is for, and who it is not for. The "not for you" list is
+ * part of the brand's honesty, so it gets the same weight as the first list.
+ *
+ * Props: locale.
+ * Content source: i18n/home/<locale>.json -> fit.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+import { pageCopy } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('home', locale).fit;
+
+const lists = [
+  { title: copy.forTitle, items: copy.for, mark: '✓', markClass: 'text-accent' },
+  { title: copy.notTitle, items: copy.not, mark: '×', markClass: 'text-fg-muted' },
+];
+---
+
+<Section labelledby="fit-title">
+  <Fragment slot="heading">
+    <Heading id="fit-title">{copy.title}</Heading>
+    <p class="mt-4">{copy.lead}</p>
+  </Fragment>
+
+  <div class="grid gap-y-12 md:grid-cols-2 md:gap-x-12">
+    {lists.map((list) => (
+      <div>
+        <Heading level={3} size="sub">
+          {list.title}
+        </Heading>
+        <ul class="border-rule mt-5 border-t">
+          {list.items.map((item) => (
+            <li class="border-rule flex gap-x-4 border-b py-4">
+              <span aria-hidden="true" class:list={['font-strong shrink-0', list.markClass]}>
+                {list.mark}
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Section>

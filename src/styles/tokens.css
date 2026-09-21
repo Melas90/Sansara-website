@@ -25,6 +25,7 @@
   --sm-clay-deep: #a44f26; /* clay for text-size use: 5.0:1 on oat, 5.4:1 on linen */
   --sm-slate: #1f2e35; /* the second material. New: not on the live page */
   --sm-slate-text: #d5ccbe; /* body text on slate, 8.9:1 */
+  --sm-slate-raised: #2b3d46; /* the funnel shape inside the system diagram */
   --sm-hairline: rgb(42 30 20 / 0.14); /* [--line] */
   --sm-hairline-on-slate: rgb(252 250 244 / 0.2);
 
@@ -65,6 +66,10 @@
   /* ---- Radii. Two values, each with one job. Surfaces stay square. ---- */
   --sm-radius-control: 0.25rem; /* buttons, inputs */
   --sm-radius-bubble: 1.125rem; /* chat bubbles in the system diagram only */
+
+  /* ---- System diagram ---- */
+  --sm-diagram-band: 4.5rem; /* thickness of the funnel at its wide end */
+  --sm-diagram-node: 0.875rem;
 
   /* ---- Motion. Only for responses to user action and the system diagram. ---- */
   --sm-duration-quick: 140ms;

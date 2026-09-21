@@ -108,3 +108,26 @@ not let the author of a pull request approve it, and Claude's pull requests are
 opened under the owner's account. Protect `main` with "require a pull request"
 and "require the `build` check", but set required approvals to 0. The owner's
 approval is the act of merging.
+
+## 2026-09-22 — Home
+
+**Structured page copy lives in `src/i18n/<page>/<locale>.json`**, read with
+`pageCopy(page, locale)`. The flat interface files stay small, and lists and steps
+keep their shape. English defines the type; a locale missing a key fails
+`astro check`.
+
+**The four pains sit in the hero, beside the headline.** BRIEF §3 has no separate
+pains section on the home page, but they are the strongest lines the brand owns, so
+they take the place a stock photo would have had.
+
+**The hero facts are the agency’s own claims, not third-party proof.** BRIEF §3 asks
+for a real, third-party proof strip. None exists yet (no reviews, no client logos), so
+the strip states three plain facts instead. Replace it when real proof arrives.
+
+**Proof shows `[PENDIENTE]` on purpose.** The case exists with its three result labels
+so the layout can be judged on staging; `npm run check:launch` blocks a release
+while any figure is still pending.
+
+**The diagram hides itself only after its script has run**, and only if it is below
+the fold and motion is allowed. Every other state (no JavaScript, reduced motion,
+already on screen) shows the finished drawing.

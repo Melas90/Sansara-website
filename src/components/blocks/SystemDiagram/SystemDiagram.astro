@@ -1,0 +1,251 @@
+---
+/**
+ * SystemDiagram: the site's one expressive moment. A single ember line runs
+ * from "never heard of you" to "booked" through four stations, inside a funnel
+ * that narrows along the way. Horizontal from 1024px, vertical below.
+ *
+ * Motion: the line draws once when the block scrolls into view
+ * (scripts/diagram.ts). Without JavaScript, or with prefers-reduced-motion,
+ * the diagram is simply already drawn: the hidden state only exists after the
+ * script has armed it.
+ *
+ * Props: locale, id (heading id, default "system-title"), level (heading level).
+ * Content source: i18n/home/<locale>.json -> system.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+import { pageCopy } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  id?: string;
+  level?: 1 | 2;
+}
+const { locale, id = 'system-title', level = 2 } = Astro.props;
+const copy = pageCopy('home', locale).system;
+---
+
+<Section surface="slate" labelledby={id}>
+  <div class="max-w-headline">
+    <Heading level={level} size="title" id={id}>
+      {copy.title}
+    </Heading>
+    <p class="max-w-measure mt-6 text-lg">{copy.lead}</p>
+  </div>
+
+  <div class="diagram mt-16" data-diagram>
+    <p class="diagram-start text-fg-muted text-sm">{copy.start}</p>
+
+    <div class="diagram-body">
+      <div class="track" aria-hidden="true">
+        <svg class="funnel funnel-wide" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0,0 100,36 100,64 0,100"></polygon>
+        </svg>
+        <svg class="funnel funnel-tall" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0,0 100,0 64,100 36,100"></polygon>
+        </svg>
+        <span class="line"></span>
+      </div>
+
+      <ol class="stations">
+        {copy.steps.map((step, index) => (
+          <li class="station" style={`--i:${index}`}>
+            <span class="node" aria-hidden="true" />
+            <p class="text-accent font-strong text-sm">{index + 1}</p>
+            <h3 class="font-display font-book text-fg leading-heading tracking-heading mt-1 text-xl">
+              {step.title}
+            </h3>
+            <p class="mt-3 text-base">{step.text}</p>
+
+            {index === 2 && (
+              <div class="mt-5 flex flex-col gap-2 text-sm" aria-hidden="true">
+                <p class="border-rule rounded-bubble max-w-11/12 self-start rounded-bl-none border px-4 py-2">
+                  {copy.chatIn}
+                </p>
+                <p class="bg-ember text-espresso rounded-bubble max-w-11/12 self-end rounded-br-none px-4 py-2">
+                  {copy.chatOut}
+                </p>
+              </div>
+            )}
+
+            {index === 3 && (
+              <div class="border-accent mt-5 border-l-2 pl-4 text-sm">
+                <p class="text-fg font-strong">{copy.bookedTitle}</p>
+                <p>{copy.bookedNote}</p>
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <p class="diagram-end text-accent font-strong text-sm">{copy.end}</p>
+  </div>
+
+  <p class="border-rule max-w-measure mt-14 border-t pt-6 text-sm">{copy.funnelNote}</p>
+</Section>
+
+<script src="../../../scripts/diagram.ts"></script>
+
+<style>
+  .diagram {
+    --band: var(--sm-diagram-band);
+    --node: var(--sm-diagram-node);
+    --gap: calc(var(--sm-space-unit) * 6);
+    --step: calc(var(--sm-duration-diagram) / 5);
+    display: grid;
+    grid-template-areas: 'start' 'body' 'end';
+    row-gap: calc(var(--sm-space-unit) * 4);
+  }
+
+  .diagram-start {
+    grid-area: start;
+  }
+
+  .diagram-end {
+    grid-area: end;
+  }
+
+  .diagram-body {
+    grid-area: body;
+    position: relative;
+  }
+
+  /* Vertical by default: the funnel is a column on the left. */
+  .track {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: var(--band);
+  }
+
+  .funnel {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    fill: var(--sm-slate-raised);
+  }
+
+  .funnel-wide {
+    display: none;
+  }
+
+  .line {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: calc(50% - 1px);
+    inline-size: 2px;
+    background-color: var(--sm-ember);
+    transform-origin: top left;
+  }
+
+  .stations {
+    display: grid;
+    row-gap: calc(var(--sm-space-unit) * 12);
+    padding-inline-start: calc(var(--band) + var(--gap));
+  }
+
+  .station {
+    position: relative;
+  }
+
+  .node {
+    position: absolute;
+    inset-block-start: calc(var(--sm-space-unit) * 1);
+    inset-inline-start: calc(-1 * (var(--gap) + var(--band) / 2 + var(--node) / 2));
+    inline-size: var(--node);
+    block-size: var(--node);
+    border-radius: 50%;
+    background-color: var(--sm-ember);
+    box-shadow: 0 0 0 calc(var(--sm-space-unit) * 1) var(--sm-slate);
+  }
+
+  @media (min-width: 64rem) {
+    .diagram {
+      grid-template-areas: 'start end' 'body body';
+      grid-template-columns: 1fr auto;
+    }
+
+    .track {
+      inset-block: 0 auto;
+      inset-inline: 0;
+      inline-size: auto;
+      block-size: var(--band);
+    }
+
+    .funnel-wide {
+      display: block;
+    }
+
+    .funnel-tall {
+      display: none;
+    }
+
+    .line {
+      inset-block: calc(50% - 1px) auto;
+      inset-inline: 0;
+      inline-size: auto;
+      block-size: 2px;
+    }
+
+    .stations {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: calc(var(--sm-space-unit) * 10);
+      padding-inline-start: 0;
+      padding-block-start: calc(var(--band) + var(--gap));
+    }
+
+    .node {
+      inset-block-start: calc(-1 * (var(--gap) + var(--band) / 2 + var(--node) / 2));
+      inset-inline-start: var(--sm-space-unit);
+    }
+  }
+
+  /* Armed by the script only when motion is welcome. Drawn again on [data-live]. */
+  [data-armed] .line {
+    transform: scaleY(0);
+  }
+
+  [data-armed] .funnel,
+  [data-armed] .station,
+  [data-armed] .diagram-end {
+    opacity: 0;
+  }
+
+  [data-armed] .node {
+    transform: scale(0);
+  }
+
+  @media (min-width: 64rem) {
+    [data-armed] .line {
+      transform: scaleX(0);
+    }
+  }
+
+  [data-live] .line {
+    transform: none;
+    transition: transform var(--sm-duration-diagram) var(--sm-ease);
+  }
+
+  [data-live] .funnel {
+    opacity: 1;
+    transition: opacity var(--sm-duration-diagram) linear;
+  }
+
+  [data-live] .station {
+    opacity: 1;
+    transition: opacity calc(var(--step) * 2) linear calc(var(--i) * var(--step));
+  }
+
+  [data-live] .node {
+    transform: none;
+    transition: transform var(--step) var(--sm-ease) calc(var(--i) * var(--step));
+  }
+
+  [data-live] .diagram-end {
+    opacity: 1;
+    transition: opacity var(--step) linear calc(var(--step) * 4);
+  }
+</style>

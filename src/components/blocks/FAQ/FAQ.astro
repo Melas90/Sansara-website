@@ -1,0 +1,56 @@
+---
+/**
+ * FAQ: questions for one page, as native <details> so they work without
+ * JavaScript and are keyboard-accessible by default. Renders nothing if no
+ * entry targets this page.
+ *
+ * Props: locale, page ('home', 'sistema', or a service slug), title.
+ * Content source: content/faq/<locale>/*.md, filtered by frontmatter `pages`.
+ */
+import { getCollection, render } from 'astro:content';
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+
+interface Props {
+  locale: Locale;
+  page: string;
+  title: string;
+}
+const { locale, page, title } = Astro.props;
+
+const entries = (
+  await getCollection('faq', ({ data }) => data.locale === locale && data.pages.includes(page))
+).sort((a, b) => a.data.order - b.data.order);
+
+const items = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
+);
+---
+
+{items.length > 0 && (
+  <Section surface="oat" labelledby="faq-title">
+    <Fragment slot="heading">
+      <Heading id="faq-title">{title}</Heading>
+    </Fragment>
+
+    <div class="border-rule border-t">
+      {items.map(({ entry, Content }) => (
+        <details class="border-rule group border-b">
+          <summary class="text-fg font-strong min-h-target flex cursor-pointer list-none items-center justify-between gap-x-6 py-5 text-lg [&::-webkit-details-marker]:hidden">
+            {entry.data.question}
+            <span
+              aria-hidden="true"
+              class="text-accent ease-brand shrink-0 text-2xl transition-transform duration-150 group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+          <div class="max-w-measure pb-6">
+            <Content />
+          </div>
+        </details>
+      ))}
+    </div>
+  </Section>
+)}

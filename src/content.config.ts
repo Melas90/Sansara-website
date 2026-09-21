@@ -20,7 +20,7 @@ const page = {
   slug: z.string(),
   title: z.string(),
   /** One or two plain sentences. Used on index pages and as meta description. */
-  summary: z.string().max(200),
+  summary: z.string().max(240),
   order: z.number().default(100),
   draft: z.boolean().default(false),
 };

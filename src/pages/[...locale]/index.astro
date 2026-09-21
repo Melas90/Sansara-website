@@ -1,14 +1,20 @@
 ---
 /**
- * Home. Phase 0 shell: the promise and the three ways to start.
- * feature/home replaces the body with the blocks listed in BRIEF.md §3.
+ * Home. The order of blocks follows BRIEF.md §3. Each block owns its copy and
+ * its surface; this file only decides the sequence.
  */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Section from '../../components/ui/Section.astro';
-import Heading from '../../components/ui/Heading.astro';
-import Actions from '../../components/ui/Actions.astro';
+import Hero from '../../components/blocks/Hero/Hero.astro';
+import SystemDiagram from '../../components/blocks/SystemDiagram/SystemDiagram.astro';
+import Doors from '../../components/blocks/Doors/Doors.astro';
+import Proof from '../../components/blocks/Proof/Proof.astro';
+import FitList from '../../components/blocks/FitList/FitList.astro';
+import Process from '../../components/blocks/Process/Process.astro';
+import Founders from '../../components/blocks/Founders/Founders.astro';
+import FAQ from '../../components/blocks/FAQ/FAQ.astro';
+import FinalCTA from '../../components/blocks/FinalCTA/FinalCTA.astro';
 import type { Locale } from '../../config/site';
-import { localeStaticPaths, useTranslations } from '../../i18n/utils';
+import { localeStaticPaths, pageCopy, useTranslations } from '../../i18n/utils';
 
 export const getStaticPaths = localeStaticPaths;
 
@@ -17,16 +23,17 @@ interface Props {
 }
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const copy = pageCopy('home', locale);
 ---
 
 <BaseLayout locale={locale} title={t('meta.homeTitle')} description={t('meta.homeDescription')}>
-  <Section labelledby="home-title">
-    <div class="max-w-headline">
-      <Heading level={1} size="display" id="home-title">
-        {t('home.title')}
-      </Heading>
-      <p class="max-w-measure mt-8 text-lg">{t('home.lead')}</p>
-      <Actions locale={locale} long class="mt-10" />
-    </div>
-  </Section>
+  <Hero locale={locale} />
+  <SystemDiagram locale={locale} />
+  <Doors locale={locale} />
+  <Proof locale={locale} />
+  <FitList locale={locale} />
+  <Process locale={locale} />
+  <Founders locale={locale} />
+  <FAQ locale={locale} page="home" title={copy.faq.title} />
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
 </BaseLayout>

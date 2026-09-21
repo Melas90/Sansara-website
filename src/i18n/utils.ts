@@ -20,6 +20,23 @@ export type TranslationKey = Leaves<Dictionary>;
 
 const dictionaries: Record<Locale, unknown> = { en, es, de };
 
+/**
+ * Page copy: longer, structured text (lists, steps) lives in
+ * src/i18n/<page>/<locale>.json. English defines the shape; a locale whose
+ * file is missing a key fails `astro check`.
+ */
+import homeEn from './home/en.json';
+import homeEs from './home/es.json';
+import homeDe from './home/de.json';
+
+const pages = {
+  home: { en: homeEn, es: homeEs, de: homeDe } satisfies Record<Locale, typeof homeEn>,
+};
+
+export function pageCopy<P extends keyof typeof pages>(page: P, locale: Locale) {
+  return pages[page][locale] as (typeof pages)[P]['en'];
+}
+
 function lookup(dictionary: unknown, key: string): string | undefined {
   const value = key
     .split('.')

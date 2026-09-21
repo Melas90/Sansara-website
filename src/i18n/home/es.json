@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "title": "Deja de perseguir clientes. Que vengan ellos.",
+    "lead": "Lo tuyo lo haces bien. Conseguir que te reserven no debería costarte la vida. Nosotros montamos el sistema que lo hace por ti.",
+    "painsTitle": "¿Te suena?",
+    "pains": [
+      "Me preguntan el precio… y desaparecen.",
+      "Muchos likes. Nadie reserva.",
+      "Siempre pienso en hacer seguimiento. Y se me va la semana.",
+      "Nunca sé de dónde va a salir el próximo cliente."
+    ],
+    "facts": ["Diez años en marketing", "Dos personas, a propósito", "Montado y en marcha en días"]
+  },
+  "system": {
+    "title": "Un solo camino. De «no te conozco» a «reservado».",
+    "lead": "Lo montamos, lo conectamos y lo lanzamos por ti. Tú no tocas la parte técnica.",
+    "start": "No te conocen",
+    "end": "Reservado",
+    "steps": [
+      {
+        "title": "Te ven",
+        "text": "Se fija en ti la gente adecuada. No todo el mundo: quienes ya están buscando."
+      },
+      {
+        "title": "Te escriben",
+        "text": "En lugar de un like que se pierde, te dejan sus datos."
+      },
+      {
+        "title": "El sistema hace el seguimiento",
+        "text": "Las respuestas y los recordatorios salen solos, con cercanía, aunque estés en plena sesión."
+      },
+      {
+        "title": "Te reservan",
+        "text": "Un par de toques y ya están en tu agenda. Sin que tengas que ir detrás de nadie."
+      }
+    ],
+    "chatIn": "¡Hola! ¿Cómo sería trabajar contigo?",
+    "chatOut": "Buena pregunta. Aquí tienes un hueco que nos viene bien a los dos.",
+    "bookedTitle": "Cliente nuevo",
+    "bookedNote": "En tu agenda, no en tus mensajes.",
+    "funnelNote": "Que en cada paso quede menos gente es normal. El sistema está para que nadie se pierda solo porque tú estabas ocupado."
+  },
+  "doors": {
+    "title": "Elige cuánto quieres quitarte de encima.",
+    "lead": "Las mismas piezas, tres formas de tenerlas.",
+    "more": "Ver cómo funciona",
+    "items": {
+      "sistema": {
+        "title": "El Sistema",
+        "kicker": "Lo montamos y lo llevamos todo",
+        "text": "Landing, reservas, Meta Ads, seguimiento y WhatsApp, conectados en un solo camino y entregados funcionando. Alcance cerrado, precio cerrado, en marcha en días."
+      },
+      "servicios": {
+        "title": "Te lo hacemos, pieza a pieza",
+        "kicker": "Te hacemos una parte",
+        "text": "¿Solo necesitas la landing, los anuncios o el sistema de reservas? Cada módulo tiene alcance y precio cerrados, y encaja después en el Sistema."
+      },
+      "productos": {
+        "title": "Productos",
+        "kicker": "Lo haces tú",
+        "text": "Plantillas y kits para quien prefiere montarlo por su cuenta, hechos con lo que usamos con clientes."
+      }
+    }
+  },
+  "proof": {
+    "title": "Cómo se ve en un negocio de verdad.",
+    "pendingNote": "Las cifras marcadas con [PENDIENTE] esperan el visto bueno del cliente.",
+    "more": "Leer el caso completo"
+  },
+  "fit": {
+    "title": "Para coaches, emprendedores y dueños de negocio.",
+    "lead": "Más exacto: cualquier negocio donde el cliente te reserva a ti directamente. Preferimos decirte que no ahora a cobrarte por algo que no va a funcionar.",
+    "forTitle": "Esto es para ti si…",
+    "for": [
+      "Eres coach, consultor, terapeuta o llevas un negocio donde te reservan directamente.",
+      "Ya hay gente que ha pagado por lo que haces. Solo quieres que sean más.",
+      "Estás cansado de que tus ingresos dependan de publicar y de la suerte.",
+      "Prefieres que te lo monten a aprender otra herramienta."
+    ],
+    "notTitle": "Seguramente no es para ti si…",
+    "not": [
+      "Todavía no tienes una oferta por la que alguien haya pagado. Un sistema no arregla eso, y te lo diremos.",
+      "Buscas a alguien que te lleve las redes o te haga contenido. Eso no es lo que montamos."
+    ]
+  },
+  "process": {
+    "title": "Cómo es trabajar con nosotros.",
+    "lead": "Cuatro pasos. Puedes parar después de cualquiera.",
+    "steps": [
+      {
+        "title": "La llamada gratis",
+        "text": "Treinta minutos mirando tu negocio real. Sales sabiendo por dónde se te escapan clientes, sigas con nosotros o no."
+      },
+      {
+        "title": "Alcance cerrado y precio cerrado",
+        "text": "Si quieres que lo montemos, dejamos por escrito qué recibes y cuánto cuesta. Sin sorpresas por horas."
+      },
+      {
+        "title": "Nos cuentas cómo trabajas",
+        "text": "Tu oferta, tu agenda, cómo te gusta hablar con tus clientes. Más o menos una hora de tu tiempo."
+      },
+      {
+        "title": "Montamos, conectamos y lanzamos",
+        "text": "Tú no tocas la parte técnica y siempre sabes qué está pasando, explicado claro. Después seguimos mejorándolo, si quieres."
+      }
+    ]
+  },
+  "founders": {
+    "title": "Somos una agencia pequeña, y es a propósito.",
+    "body": [
+      "Hola, somos Miguel y Christiane. Diez años en marketing nos enseñaron una cosa: las piezas sueltas casi nunca cambian un negocio. Una landing bonita por aquí, una campaña ingeniosa por allá. Ayuda, y luego se apaga, porque todo lo de alrededor sigue sosteniéndose a mano.",
+      "Por eso lo montamos entero, conectado, y lo entregamos funcionando. Y lo usamos nosotros mismos."
+    ],
+    "values": [
+      { "title": "Te lo hacemos", "text": "Tú no tocas la parte técnica." },
+      { "title": "Hablamos claro", "text": "Si no sabemos decirlo fácil, no lo decimos." },
+      { "title": "Encaje honesto", "text": "Si no es para ti, te lo diremos." }
+    ]
+  },
+  "faq": {
+    "title": "Cosas que quizá te estés preguntando."
+  },
+  "final": {
+    "title": "Descubre por dónde se te escapan los clientes.",
+    "text": "Una llamada. Miramos cómo te encuentra la gente hoy, dónde se pierde y qué haría falta para que se quede. Más reservas en tu agenda, menos horas en tus mensajes."
+  }
+}
