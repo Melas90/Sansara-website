@@ -7,6 +7,17 @@ Markdown files, three languages (English, Spanish, German). Deployed on Netlify.
 - How it should look, and why: [DESIGN.md](DESIGN.md)
 - Why things are the way they are: [DECISIONS.md](DECISIONS.md)
 
+## Where it lives
+
+| What                               | Branch    | Link                                                  |
+| ---------------------------------- | --------- | ----------------------------------------------------- |
+| Staging (newest work, for testing) | `develop` | https://develop--bespoke-frangollo-3044fc.netlify.app |
+| Production                         | `main`    | https://bespoke-frangollo-3044fc.netlify.app          |
+| Code                               |           | https://github.com/Melas90/Sansara-website            |
+
+Everything is pushed to `develop` first and tested on staging. `main` only changes
+through a release pull request from `develop`. Pull requests get their own preview link.
+
 ## Run it
 
 Needs Node 22.12 or newer.
