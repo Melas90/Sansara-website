@@ -1,6 +1,7 @@
 ## Project
 
 Read BRIEF.md (spec and roadmap), DESIGN.md (design plan) and DECISIONS.md before changing anything.
+The GitHub repo is PUBLIC: never commit secrets, tokens, unpublished client figures or private contact details.
 One feature per branch from `develop`; never start the next feature without the owner's go.
 Run `npm run verify` before every commit. All copy in `src/i18n/*.json` or `src/content/`, in en, es and de.
 Tokens only (`src/styles/tokens.css`). Re-read the "tells" list in BRIEF section 1 before every PR.

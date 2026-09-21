@@ -4,6 +4,11 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ## [Unreleased]
 
+### Changed
+
+- The repository is public (`Melas90/Sansara-website`). BRIEF §6 amended, rules for a
+  public repo recorded in `DECISIONS.md`.
+
 ### Added
 
 - Foundation (Phase 0): Astro 7 static site with Tailwind 4 reading design tokens

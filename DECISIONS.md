@@ -85,3 +85,26 @@ plugin catches up.
 
 **`npm run check:launch` is separate from CI.** Staging may carry placeholders;
 production may not. Run it before every release PR to `main`.
+
+## 2026-09-22 — Public repository
+
+**The repo is public** (`Melas90/Sansara-website`), by the owner's decision; BRIEF
+§6 is amended. What that buys: branch protection on `main` is free for public
+repos, and deploy previews and CI logs can be shared by link. What it costs: the
+brief, the strategy and all copy are readable by anyone, including competitors.
+
+Rules that follow from it:
+
+- Nothing secret is committed. The Meta Pixel ID, the Cal.com link and the
+  WhatsApp number are public by nature (they ship in the page source anyway). A
+  Conversions API token, form webhook or any other credential goes in Netlify
+  environment variables, never in `site.ts`.
+- Case-study figures are only committed once the client has agreed to them being
+  published, because committing is publishing.
+- No private contact details of clients in content files or commit messages.
+
+**One approving review cannot work with a single GitHub account.** GitHub does
+not let the author of a pull request approve it, and Claude's pull requests are
+opened under the owner's account. Protect `main` with "require a pull request"
+and "require the `build` check", but set required approvals to 0. The owner's
+approval is the act of merging.

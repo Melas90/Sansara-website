@@ -257,8 +257,15 @@ public/          fonts/, images/, favicons, robots.txt
 
 ## 6. Repository and Git workflow (Phase 0)
 
-Prerequisite: GitHub CLI authenticated (`gh auth status`). If it is not, stop and
-tell the owner the single command to run (`gh auth login`), then continue.
+> **Amendment, 2026-09-22 (owner):** the repository is **public**:
+> `https://github.com/Melas90/Sansara-website`. It was created by hand and pushed
+> with plain `git`; steps 1–3 below are done. Because everything in the repo can
+> be read by anyone, **no secret, token, client figure or private contact detail
+> is ever committed** — those go in Netlify environment variables or stay out.
+
+Prerequisite for pull requests from the command line: GitHub CLI authenticated
+(`gh auth status`). If it is not, stop and tell the owner the single command to
+run (`gh auth login`), then continue.
 
 ```bash
 # 1. Initialise and first commit
@@ -266,14 +273,14 @@ git init -b main
 # scaffold Astro project here (see Phase 0 tasks), then:
 git add -A && git commit -m "chore: scaffold astro site with tailwind and tokens"
 
-# 2. Create the private GitHub repo and push main
-gh repo create sansara-media-web --private --source=. --push
+# 2. Create the public GitHub repo and push main
+gh repo create Sansara-website --public --source=. --push
 
 # 3. Integration branch
 git checkout -b develop && git push -u origin develop
 
 # 4. Protect main: PRs only, no direct pushes, 1 review, CI must pass
-gh api -X PUT repos/{owner}/sansara-media-web/branches/main/protection \
+gh api -X PUT repos/Melas90/Sansara-website/branches/main/protection \
   -f required_status_checks.strict=true \
   -f "required_status_checks.contexts[]=build" \
   -f enforce_admins=false \
