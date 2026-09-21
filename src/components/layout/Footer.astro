@@ -6,6 +6,8 @@
  * Props: locale.
  * Content source: config/site.ts, config/nav.ts, i18n `footer.*`, `nav.*`.
  */
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo-sansara-media.png';
 import Container from '../ui/Container.astro';
 import TextLink from '../ui/TextLink.astro';
 import LanguageSwitch from './LanguageSwitch.astro';
@@ -23,8 +25,15 @@ const socials = site.socials.filter((social) => social.url);
 const year = new Date().getFullYear();
 ---
 
-<footer class="surface-linen border-rule border-t">
-  <Container class="py-14">
+<footer class="surface-slate border-rule border-t">
+  <Container class="py-16 lg:py-24">
+    <Image
+      src={logo}
+      alt=""
+      widths={[320, 640, 898]}
+      sizes="(min-width: 64rem) 36rem, 80vw"
+      class="mb-14 h-auto w-4/5 max-w-xl lg:mb-20"
+    />
     <div class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-12">
       <p class="font-display font-book text-fg leading-heading tracking-heading text-xl text-balance lg:col-span-5">
         {t('footer.promise')}
@@ -71,7 +80,7 @@ const year = new Date().getFullYear();
           <ul class="flex flex-wrap gap-x-6">
             {legal.map((item) => (
               <li>
-                <TextLink href={localePath(locale, item.path)} standalone class="text-fg-muted">
+                <TextLink href={localePath(locale, item.path)} standalone class="text-fg-body">
                   {t(`nav.${item.key}` as TranslationKey)}
                 </TextLink>
               </li>

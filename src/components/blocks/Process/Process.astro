@@ -26,10 +26,10 @@ const copy = pageCopy('home', locale).process;
 
   <ol class="border-rule border-t">
     {copy.steps.map((step, index) => (
-      <li class="border-rule grid grid-cols-[auto_1fr] gap-x-6 border-b py-7 md:gap-x-10">
+      <li class="border-rule grid grid-cols-[auto_1fr] gap-x-6 border-b py-9 md:gap-x-10">
         <span
           aria-hidden="true"
-          class="font-display font-book text-accent leading-heading w-8 text-2xl"
+          class="font-display font-book text-accent leading-display w-12 text-3xl md:w-20"
         >
           {index + 1}
         </span>

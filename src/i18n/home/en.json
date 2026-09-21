@@ -38,7 +38,7 @@
     "chatOut": "Good question. Here's a time that works for both of us.",
     "bookedTitle": "New client",
     "bookedNote": "On your calendar, not in your DMs.",
-    "funnelNote": "Fewer people at every step is normal. The system's job is that nobody drops out just because you were busy."
+    "loopNote": "Why a loop? Because it doesn’t stop at the booking. The same follow-up stays in touch afterwards, so good clients come back instead of drifting off."
   },
   "doors": {
     "title": "Pick how much you want off your plate.",
@@ -66,6 +66,10 @@
     "title": "What it looks like for a real business.",
     "pendingNote": "Figures marked [PENDIENTE] are waiting for the client's sign-off.",
     "more": "Read the full case"
+  },
+  "statement": {
+    "text": "Being noticed is the easy part. What happens in the next ten minutes is where a client is won or lost.",
+    "note": "That gap between “interested” and “booked” is the only thing we build."
   },
   "fit": {
     "title": "For coaches, entrepreneurs and business owners.",
@@ -112,9 +116,18 @@
       "So we build the whole thing, connected, and hand it over working. And we use it ourselves."
     ],
     "values": [
-      { "title": "Done for you", "text": "You never touch the tech." },
-      { "title": "Plain words", "text": "If we can't say it simply, we don't say it." },
-      { "title": "Honest fit", "text": "If it's not right for you, we'll tell you." }
+      {
+        "title": "Done for you",
+        "text": "You never touch the tech."
+      },
+      {
+        "title": "Plain words",
+        "text": "If we can't say it simply, we don't say it."
+      },
+      {
+        "title": "Honest fit",
+        "text": "If it's not right for you, we'll tell you."
+      }
     ]
   },
   "faq": {

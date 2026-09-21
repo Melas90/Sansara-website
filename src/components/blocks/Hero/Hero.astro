@@ -1,13 +1,17 @@
 ---
 /**
- * Hero: the promise, the three ways to start, and the four things clients say
- * about their own week. Left-aligned; from 1024px the quotes sit beside the
- * headline instead of under it. No image until real photography exists.
+ * Hero: the promise at poster size, the three ways to start, and the four
+ * things clients say about their own week. The ember disc is the brand's sun
+ * (the same one as the favicon) rising out of the top right corner; it is the
+ * hero's only graphic, so there is no stock photo and no gradient.
+ *
+ * Only the headline may overlap the disc: espresso on ember passes AA, body
+ * text on ember would not.
  *
  * Props: locale.
  * Content source: i18n/home/<locale>.json -> hero.
  */
-import Section from '../../ui/Section.astro';
+import Container from '../../ui/Container.astro';
 import Heading from '../../ui/Heading.astro';
 import Actions from '../../ui/Actions.astro';
 import type { Locale } from '../../../config/site';
@@ -20,31 +24,54 @@ const { locale } = Astro.props;
 const copy = pageCopy('home', locale).hero;
 ---
 
-<Section labelledby="hero-title">
-  <div class="grid gap-y-14 lg:grid-cols-12 lg:gap-x-12">
-    <div class="lg:col-span-7">
-      <Heading level={1} size="display" id="hero-title">
-        {copy.title}
-      </Heading>
-      <p class="max-w-measure mt-8 text-lg">{copy.lead}</p>
-      <Actions locale={locale} long class="mt-10" />
+<section aria-labelledby="hero-title" class="surface-linen relative overflow-hidden">
+  <div class="sun" aria-hidden="true"></div>
+
+  <Container class="pt-section relative pb-20">
+    <Heading level={1} size="display" id="hero-title" class="max-w-headline">
+      {copy.title}
+    </Heading>
+
+    <div class="mt-14 grid gap-y-16 lg:mt-20 lg:grid-cols-12 lg:gap-x-12">
+      <div class="lg:col-span-5">
+        <p class="text-fg max-w-measure text-lg">{copy.lead}</p>
+        <Actions locale={locale} long class="mt-10" />
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7">
+        <h2 class="text-fg-muted text-sm">{copy.painsTitle}</h2>
+        <ul class="mt-4">
+          {copy.pains.map((pain, index) => (
+            <li
+              class:list={[
+                'border-rule font-display font-book text-fg leading-heading tracking-heading border-t py-5 text-xl italic',
+                index % 2 === 1 && 'sm:pl-16',
+              ]}
+            >
+              <q>{pain}</q>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
 
-    <div class="lg:col-span-5 lg:pt-4">
-      <h2 class="text-fg-muted text-sm">{copy.painsTitle}</h2>
-      <ul class="border-rule mt-3 border-t">
-        {copy.pains.map((pain) => (
-          <li class="border-rule font-display font-book text-fg leading-heading border-b py-4 text-xl">
-            <q>{pain}</q>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
+    <ul class="border-rule text-fg mt-20 grid border-t pt-6 text-sm sm:grid-cols-3 sm:gap-x-12">
+      {copy.facts.map((fact) => (
+        <li class="py-1">{fact}</li>
+      ))}
+    </ul>
+  </Container>
+</section>
 
-  <ul class="text-fg-muted mt-16 flex flex-col gap-y-2 text-sm sm:flex-row sm:gap-x-0">
-    {copy.facts.map((fact) => (
-      <li class="border-rule sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0">{fact}</li>
-    ))}
-  </ul>
-</Section>
+<style>
+  .sun {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inline-size: var(--sm-sun);
+    block-size: var(--sm-sun);
+    border-radius: 50%;
+    background-color: var(--sm-ember);
+    transform: translate(32%, -42%);
+  }
+</style>

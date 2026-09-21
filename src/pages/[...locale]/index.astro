@@ -8,6 +8,7 @@ import Hero from '../../components/blocks/Hero/Hero.astro';
 import SystemDiagram from '../../components/blocks/SystemDiagram/SystemDiagram.astro';
 import Doors from '../../components/blocks/Doors/Doors.astro';
 import Proof from '../../components/blocks/Proof/Proof.astro';
+import Statement from '../../components/blocks/Statement/Statement.astro';
 import FitList from '../../components/blocks/FitList/FitList.astro';
 import Process from '../../components/blocks/Process/Process.astro';
 import Founders from '../../components/blocks/Founders/Founders.astro';
@@ -31,6 +32,7 @@ const copy = pageCopy('home', locale);
   <SystemDiagram locale={locale} />
   <Doors locale={locale} />
   <Proof locale={locale} />
+  <Statement text={copy.statement.text} note={copy.statement.note} />
   <FitList locale={locale} />
   <Process locale={locale} />
   <Founders locale={locale} />

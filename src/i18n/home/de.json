@@ -38,7 +38,7 @@
     "chatOut": "Gute Frage. Hier ist ein Termin, der für uns beide passt.",
     "bookedTitle": "Neuer Kunde",
     "bookedNote": "In deinem Kalender, nicht in deinen Nachrichten.",
-    "funnelNote": "Dass es mit jedem Schritt weniger Menschen werden, ist normal. Das System sorgt dafür, dass niemand abspringt, nur weil du gerade beschäftigt warst."
+    "loopNote": "Warum ein Kreislauf? Weil er nicht bei der Buchung endet. Dasselbe Nachfassen hält danach den Kontakt, damit gute Kunden wiederkommen, statt zu verschwinden."
   },
   "doors": {
     "title": "Entscheide, wie viel du abgeben willst.",
@@ -66,6 +66,10 @@
     "title": "So sieht das in einem echten Betrieb aus.",
     "pendingNote": "Zahlen mit [PENDIENTE] warten noch auf die Freigabe des Kunden.",
     "more": "Den ganzen Fall lesen"
+  },
+  "statement": {
+    "text": "Gesehen zu werden ist der leichte Teil. Ob ein Kunde bleibt oder geht, entscheidet sich in den zehn Minuten danach.",
+    "note": "Genau diese Lücke zwischen „interessiert“ und „gebucht“ ist das Einzige, was wir bauen."
   },
   "fit": {
     "title": "Für Coaches, Selbstständige und Unternehmer.",
@@ -112,9 +116,18 @@
       "Deshalb bauen wir das Ganze, verbunden, und übergeben es funktionierend. Und wir nutzen es selbst."
     ],
     "values": [
-      { "title": "Fertig für dich", "text": "Mit der Technik hast du nichts zu tun." },
-      { "title": "Klare Worte", "text": "Was wir nicht einfach sagen können, sagen wir nicht." },
-      { "title": "Ehrliche Passung", "text": "Wenn es nicht zu dir passt, sagen wir es dir." }
+      {
+        "title": "Fertig für dich",
+        "text": "Mit der Technik hast du nichts zu tun."
+      },
+      {
+        "title": "Klare Worte",
+        "text": "Was wir nicht einfach sagen können, sagen wir nicht."
+      },
+      {
+        "title": "Ehrliche Passung",
+        "text": "Wenn es nicht zu dir passt, sagen wir es dir."
+      }
     ]
   },
   "faq": {

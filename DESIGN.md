@@ -140,3 +140,27 @@ monospace labels, no stock photography.
   exists, espresso is the fallback and nothing else changes.
 - **Photography.** Founders and client work only. Until real photos exist, the
   blocks that need them render without an image rather than with a placeholder.
+
+---
+
+## Revision 2 (2026-09-22) — the owner's verdict: "not premium"
+
+The first build followed "quiet and disciplined" so literally that it read as a
+well-set document, not a brand. What was wrong, and what changed:
+
+| Problem                                                              | Change                                                                                                                                                |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The page ignored the logo, which is warm, 70s and expressive         | **The sun.** A flat ember disc (the favicon's) rises out of the hero's top right corner. One shape, no gradient, only the headline may overlap it.    |
+| Type too timid for a site with no photography                        | Display scale raised to 7.5rem, weight lowered to 340, leading 0.98, tracking −0.035em. Headlines are now the imagery.                                |
+| The signature diagram was a horizontal stepper, the commonest of all | **The loop.** "Sansara" means cycle; the offer is a loop. From 1024px the path is a ring drawn clockwise, stations around it, "Booked" at its centre. |
+| Colour only ever appeared as an accent                               | **One ember band per page** (`Statement`) carrying a single sentence at poster size.                                                                  |
+| Every section used the same rail layout                              | Rhythm: linen hero, slate loop, linen, oat, ember, linen, oat, linen, oat, slate close, slate footer with the wordmark large.                         |
+| Hero quotes looked like a list                                       | Set in Newsreader italic, staggered, as overheard speech.                                                                                             |
+
+Still true from pass 2: no eyebrows, no arrows, no shadows, no gradients, no
+uniform cards, numbers only on sequences, one animated moment.
+
+Boldness is now spent in three places that share one idea (the circle: sun,
+loop, and the round favicon), rather than in one place. That is a deliberate
+departure from BRIEF §1's "one place", made because restraint alone did not
+give the brand a face.

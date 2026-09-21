@@ -38,7 +38,7 @@
     "chatOut": "Buena pregunta. Aquí tienes un hueco que nos viene bien a los dos.",
     "bookedTitle": "Cliente nuevo",
     "bookedNote": "En tu agenda, no en tus mensajes.",
-    "funnelNote": "Que en cada paso quede menos gente es normal. El sistema está para que nadie se pierda solo porque tú estabas ocupado."
+    "loopNote": "¿Por qué un ciclo? Porque no se acaba en la reserva. El mismo seguimiento mantiene el contacto después, para que los buenos clientes vuelvan en lugar de perderse."
   },
   "doors": {
     "title": "Elige cuánto quieres quitarte de encima.",
@@ -66,6 +66,10 @@
     "title": "Cómo se ve en un negocio de verdad.",
     "pendingNote": "Las cifras marcadas con [PENDIENTE] esperan el visto bueno del cliente.",
     "more": "Leer el caso completo"
+  },
+  "statement": {
+    "text": "Que te vean es la parte fácil. Un cliente se gana o se pierde en los diez minutos siguientes.",
+    "note": "Ese hueco entre «me interesa» y «reservado» es lo único que montamos."
   },
   "fit": {
     "title": "Para coaches, emprendedores y dueños de negocio.",
@@ -112,9 +116,18 @@
       "Por eso lo montamos entero, conectado, y lo entregamos funcionando. Y lo usamos nosotros mismos."
     ],
     "values": [
-      { "title": "Te lo hacemos", "text": "Tú no tocas la parte técnica." },
-      { "title": "Hablamos claro", "text": "Si no sabemos decirlo fácil, no lo decimos." },
-      { "title": "Encaje honesto", "text": "Si no es para ti, te lo diremos." }
+      {
+        "title": "Te lo hacemos",
+        "text": "Tú no tocas la parte técnica."
+      },
+      {
+        "title": "Hablamos claro",
+        "text": "Si no sabemos decirlo fácil, no lo decimos."
+      },
+      {
+        "title": "Encaje honesto",
+        "text": "Si no es para ti, te lo diremos."
+      }
     ]
   },
   "faq": {

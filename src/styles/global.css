@@ -71,6 +71,7 @@
   --container-page: var(--sm-width-page);
   --container-measure: var(--sm-measure);
   --container-headline: var(--sm-width-headline);
+  --container-xl: 36rem;
 
   --ease-*: initial;
   --ease-brand: var(--sm-ease);

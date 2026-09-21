@@ -12,6 +12,7 @@ Short records of choices that are not obvious from the code. Newest last.
 | `@fontsource-variable/hanken-grotesk`                                   | Same, for Hanken Grotesk.                                                                              |
 | dev: `@astrojs/check`, `typescript`                                     | `astro check` in CI.                                                                                   |
 | dev: `eslint`, `@eslint/js`, `typescript-eslint`, `eslint-plugin-astro` | Linting for `.ts` and `.astro`.                                                                        |
+| dev: `subset-font`                                                      | Used only by `scripts/subset-fonts.mjs` to cut the display font to the characters and weights we use.  |
 | dev: `prettier`, `prettier-plugin-astro`                                | Formatting check in CI.                                                                                |
 
 Not dependencies on purpose: Lighthouse CI runs through `npx` in the workflow only.

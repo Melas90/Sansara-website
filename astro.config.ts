@@ -16,7 +16,8 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
 
-  // Self-hosted, latin-subset variable fonts read from the fontsource packages.
+  // Self-hosted variable fonts. The upright Newsreader is our own subset
+  // (scripts/subset-fonts.mjs); the rest come straight from the fontsource packages.
   // Astro generates metric-matched fallbacks, so swapping fonts does not shift layout.
   fonts: [
     {
@@ -27,13 +28,13 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ['@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2'],
-            weight: '200 800',
+            src: ['./src/assets/fonts/newsreader-display.woff2'],
+            weight: '300 500',
             style: 'normal',
             display: 'swap',
           },
           {
-            src: ['@fontsource-variable/newsreader/files/newsreader-latin-opsz-italic.woff2'],
+            src: ['@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2'],
             weight: '200 800',
             style: 'italic',
             display: 'swap',

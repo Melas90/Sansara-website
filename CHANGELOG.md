@@ -6,6 +6,11 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Changed
 
+- Redesign after owner feedback (`feature/redesign`): poster-size display type, the ember sun in
+  the hero, the system diagram redrawn as a loop, an ember `Statement` band, slate footer with
+  the wordmark. See DESIGN.md, Revision 2.
+- Display font is now our own subset of Newsreader (94 kB instead of 132 kB); italic uses the
+  lighter weight-only file. LCP back under 2.3 s on throttled mobile.
 - The repository is public (`Melas90/Sansara-website`). BRIEF §6 amended, rules for a
   public repo recorded in `DECISIONS.md`.
 

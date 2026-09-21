@@ -1,0 +1,24 @@
+---
+/**
+ * Statement: one sentence at poster size on the brand's ember. A page gets at
+ * most one; it is the loudest surface on the site after the system diagram, so
+ * it carries the single idea the reader should leave with.
+ *
+ * Props: text (the sentence), note (one quieter line under it, optional).
+ * Content source: the calling page's copy.
+ */
+import Section from '../../ui/Section.astro';
+
+interface Props {
+  text: string;
+  note?: string;
+}
+const { text, note } = Astro.props;
+---
+
+<Section surface="ember">
+  <p class="font-display font-book text-fg leading-display tracking-display max-w-headline text-3xl text-balance">
+    {text}
+  </p>
+  {note && <p class="border-rule text-fg max-w-measure mt-10 border-t pt-6 text-lg">{note}</p>}
+</Section>
