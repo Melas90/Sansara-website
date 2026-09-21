@@ -4,6 +4,8 @@
  * most one; it is the loudest surface on the site after the system diagram, so
  * it carries the single idea the reader should leave with.
  *
+ * Motion: words light up as the band scrolls through the viewport (CSS only).
+ *
  * Props: text (the sentence), note (one quieter line under it, optional).
  * Content source: the calling page's copy.
  */
@@ -14,11 +16,40 @@ interface Props {
   note?: string;
 }
 const { text, note } = Astro.props;
+const words = text.split(' ');
 ---
 
 <Section surface="ember">
   <p class="font-display font-book text-fg leading-display tracking-display max-w-headline text-3xl text-balance">
-    {text}
+    {words.map((word, index) => (
+      <>
+        <span class="word" style={`--p:${(index / words.length).toFixed(3)}`}>
+          {word}
+        </span>{' '}
+      </>
+    ))}
   </p>
   {note && <p class="border-rule text-fg max-w-measure mt-10 border-t pt-6 text-lg">{note}</p>}
 </Section>
+
+<style>
+  /* The sentence lights up word by word as it scrolls through the viewport.
+     Pure CSS; browsers without scroll-driven animation show it fully lit. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .word {
+        animation-name: light;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: view();
+        animation-range: cover calc(12% + var(--p) * 30%) cover calc(22% + var(--p) * 30%);
+      }
+    }
+  }
+
+  @keyframes light {
+    from {
+      opacity: var(--sm-dim);
+    }
+  }
+</style>

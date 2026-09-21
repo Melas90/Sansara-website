@@ -16,8 +16,12 @@ const locale = z.enum(locales);
 /** Shared by everything that gets its own page. */
 const page = {
   locale,
-  /** Same value across locales, so translations of one entry can find each other. */
-  slug: z.string(),
+  /**
+   * Same value across locales, so translations of one entry can find each other;
+   * also the last part of the URL. Not called `slug`: Astro would use that as the
+   * entry id and the three locales would overwrite each other.
+   */
+  key: z.string(),
   title: z.string(),
   /** One or two plain sentences. Used on index pages and as meta description. */
   summary: z.string().max(240),

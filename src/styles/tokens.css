@@ -76,6 +76,10 @@
   /* ---- Motion. Only for responses to user action and the system diagram. ---- */
   --sm-duration-quick: 140ms;
   --sm-duration-diagram: 2400ms;
+  --sm-duration-reveal: 700ms;
+  --sm-duration-rise: 1400ms; /* the sun, once, on load */
+  --sm-stagger: 140ms;
+  --sm-dim: 0.6; /* unlit words in the statement: still 3:1 on ember for large type */
   --sm-ease: cubic-bezier(0.2, 0, 0, 1);
 
   /* ---- Surface tokens: default surface is linen ---- */

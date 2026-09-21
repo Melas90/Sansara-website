@@ -3,7 +3,9 @@
  * Founders: who is behind the agency and the three values. Takes an optional
  * real photograph; without one it renders text only. Never a placeholder image.
  *
- * Props: locale, photo (ImageMetadata, optional), photoAlt (required with photo).
+ * Drop `founders.jpg` into src/assets/photos/ and it appears here.
+ *
+ * Props: locale, photo (overrides the dropped file), photoAlt.
  * Content source: i18n/home/<locale>.json -> founders.
  */
 import type { ImageMetadata } from 'astro';
@@ -18,8 +20,19 @@ interface Props {
   photo?: ImageMetadata;
   photoAlt?: string;
 }
-const { locale, photo, photoAlt = '' } = Astro.props;
-const copy = pageCopy('home', locale).founders;
+const copy = pageCopy('home', Astro.props.locale).founders;
+
+/* A file named founders.* in src/assets/photos/ is picked up by itself. */
+const found = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>(
+    '../../../assets/photos/founders.{jpg,jpeg,png,webp}',
+    {
+      eager: true,
+    },
+  ),
+)[0]?.default;
+const photo = Astro.props.photo ?? found;
+const photoAlt = Astro.props.photoAlt ?? copy.photoAlt;
 ---
 
 <Section labelledby="founders-title">

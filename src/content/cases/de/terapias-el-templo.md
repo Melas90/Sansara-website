@@ -1,6 +1,6 @@
 ---
 locale: de
-slug: terapias-el-templo
+key: terapias-el-templo
 title: 'Terapias El Templo'
 summary: 'Ein Zentrum für ganzheitliche Therapien auf Teneriffa. Wir haben den Weg von der ersten Anzeige bis zur gebuchten Sitzung gebaut: Anzeigen, Landingpage, Buchung und Nachfassen, verbunden.'
 order: 10

@@ -58,6 +58,7 @@
   --radius-*: initial;
   --radius-control: var(--sm-radius-control);
   --radius-bubble: var(--sm-radius-bubble);
+  --radius-full: 9999px; /* portraits only */
 
   --shadow-*: initial;
 
@@ -110,6 +111,15 @@
   ::selection {
     background-color: var(--sm-ember);
     color: var(--sm-espresso);
+  }
+
+  /* Sequences revealed by scripts/reveal.ts. Hidden only after the script arms them. */
+  [data-reveal][data-armed] [data-reveal-item] {
+    opacity: 0;
+  }
+
+  [data-reveal][data-live] [data-reveal-item] {
+    transition: opacity var(--sm-duration-reveal) linear calc(var(--i, 0) * var(--sm-stagger));
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -34,8 +34,8 @@ export default defineConfig({
             display: 'swap',
           },
           {
-            src: ['@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2'],
-            weight: '200 800',
+            src: ['./src/assets/fonts/newsreader-italic.woff2'],
+            weight: '300 500',
             style: 'italic',
             display: 'swap',
           },

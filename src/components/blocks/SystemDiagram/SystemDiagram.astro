@@ -113,9 +113,6 @@ const nodes = [
     {copy.loopNote}
   </p>
 </Section>
-
-<script src="../../../scripts/diagram.ts"></script>
-
 <style>
   .diagram {
     --band: calc(var(--sm-space-unit) * 8);
@@ -258,6 +255,20 @@ const nodes = [
     .station:nth-child(4) {
       grid-area: 1 / 1;
       justify-self: end;
+    }
+  }
+
+  /* Pointing at a station lights its place on the loop. */
+  @media (min-width: 64rem) {
+    .loop-node {
+      transition: transform var(--sm-duration-quick) var(--sm-ease);
+    }
+
+    .diagram-body:has(.station:nth-child(1):hover) .loop-node:nth-of-type(3),
+    .diagram-body:has(.station:nth-child(2):hover) .loop-node:nth-of-type(4),
+    .diagram-body:has(.station:nth-child(3):hover) .loop-node:nth-of-type(5),
+    .diagram-body:has(.station:nth-child(4):hover) .loop-node:nth-of-type(6) {
+      transform: scale(2);
     }
   }
 

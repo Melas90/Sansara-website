@@ -3,6 +3,8 @@
  * Process: how working with the agency goes, as gates the client passes one
  * after another. It is a real sequence, so it is a numbered <ol>.
  *
+ * Motion: the steps appear one after another when scrolled into view (scripts/reveal.ts).
+ *
  * Props: locale.
  * Content source: i18n/home/<locale>.json -> process.
  */
@@ -24,9 +26,13 @@ const copy = pageCopy('home', locale).process;
     <p class="mt-4">{copy.lead}</p>
   </Fragment>
 
-  <ol class="border-rule border-t">
+  <ol class="border-rule border-t" data-reveal>
     {copy.steps.map((step, index) => (
-      <li class="border-rule grid grid-cols-[auto_1fr] gap-x-6 border-b py-9 md:gap-x-10">
+      <li
+        data-reveal-item
+        style={`--i:${index}`}
+        class="border-rule grid grid-cols-[auto_1fr] gap-x-6 border-b py-9 md:gap-x-10"
+      >
         <span
           aria-hidden="true"
           class="font-display font-book text-accent leading-display w-12 text-3xl md:w-20"

@@ -10,6 +10,7 @@
  * Props: locale, title, translatedNote (shown when the words are a translation).
  * Content source: content/testimonials/<locale>/*.md (body = the quote).
  */
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Section from '../../ui/Section.astro';
 import Heading from '../../ui/Heading.astro';
@@ -47,14 +48,25 @@ const [lead, ...rest] = items;
       <blockquote class="font-display font-book text-fg leading-heading tracking-heading text-2xl text-pretty italic">
         <lead.Content />
       </blockquote>
-      <figcaption class="border-rule mt-10 border-t pt-5">
-        <p class="text-fg font-strong">{lead.data.name}</p>
-        <p class="text-sm">{lead.data.role}</p>
-        <p class="text-fg-muted mt-1 text-sm">
-          {lead.data.source}
-          {lead.data.source && lead.data.translatedFrom && '. '}
-          {lead.data.translatedFrom && translatedNote}
-        </p>
+      <figcaption class="border-rule mt-10 flex items-center gap-x-5 border-t pt-5">
+        {lead.data.photo && (
+          <Image
+            src={lead.data.photo}
+            alt=""
+            width={144}
+            height={144}
+            class="size-18 shrink-0 rounded-full object-cover"
+          />
+        )}
+        <div>
+          <p class="text-fg font-strong">{lead.data.name}</p>
+          <p class="text-sm">{lead.data.role}</p>
+          <p class="text-fg-muted mt-1 text-sm">
+            {lead.data.source}
+            {lead.data.source && lead.data.translatedFrom && '. '}
+            {lead.data.translatedFrom && translatedNote}
+          </p>
+        </div>
       </figcaption>
     </figure>
 

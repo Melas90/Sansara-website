@@ -43,7 +43,9 @@ const copy = pageCopy('home', locale).hero;
         <ul class="mt-4">
           {copy.pains.map((pain, index) => (
             <li
+              style={`--i:${index}`}
               class:list={[
+                'pain',
                 'border-rule font-display font-book text-fg leading-heading tracking-heading border-t py-5 text-xl italic',
                 index % 2 === 1 && 'sm:pl-16',
               ]}
@@ -73,5 +75,29 @@ const copy = pageCopy('home', locale).hero;
     border-radius: 50%;
     background-color: var(--sm-ember);
     transform: translate(32%, -42%);
+  }
+
+  /* On load, once: the sun rises and the quotes arrive like messages. */
+  @media (prefers-reduced-motion: no-preference) {
+    .sun {
+      animation: rise var(--sm-duration-rise) var(--sm-ease) both;
+    }
+
+    .pain {
+      animation: arrive var(--sm-duration-reveal) linear both;
+      animation-delay: calc(var(--sm-duration-reveal) + var(--i) * var(--sm-stagger) * 3);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      transform: translate(32%, 8%) scale(0.86);
+    }
+  }
+
+  @keyframes arrive {
+    from {
+      opacity: 0;
+    }
   }
 </style>

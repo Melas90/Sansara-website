@@ -132,3 +132,21 @@ while any figure is still pending.
 **The diagram hides itself only after its script has run**, and only if it is below
 the fold and motion is allowed. Every other state (no JavaScript, reduced motion,
 already on screen) shows the finished drawing.
+
+## 2026-09-22 — Motion and photos
+
+**More motion than BRIEF §1 allows, by the owner’s decision.** The brief limited animation to
+the system diagram. The owner asked for more after seeing it. The rule that replaces it: motion
+only where it says something (a sequence arriving in order, a figure counting, a sentence being
+read, the sun rising once). No blanket fade-up on sections, no hover lift on cards. Everything is
+complete in the HTML and is only hidden after a script has armed it, so no JavaScript and
+`prefers-reduced-motion` both show the finished page.
+
+**Scroll-driven CSS must use longhand properties.** The CSS minifier folds `animation-timeline`
+into the `animation` shorthand, which Chromium rejects, silently disabling the animation.
+
+**Content entries use `key`, never `slug`.** Astro’s glob loader takes a `slug` frontmatter field
+as the entry id, so the same slug in en, es and de collapses into one entry.
+
+**One script bundle.** `src/scripts/site.ts` imports every module and is loaded from BaseLayout.
+Five tiny per-block requests were costing about 0.3 s of LCP on throttled mobile.

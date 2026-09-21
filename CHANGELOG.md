@@ -6,6 +6,17 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Changed
 
+- Motion (owner request): the sun rises and the hero quotes arrive on load, the statement lights
+  up word by word on scroll (CSS only), process steps and proof figures reveal in sequence and
+  figures count up, hovering a station lights its node on the loop. All off with reduced motion.
+- Photo slots: `src/assets/photos/founders.*` is picked up automatically; testimonials show a
+  round portrait when `photo:` is set.
+- One client script bundle instead of one per block; italic serif subset to 44 kB.
+
+### Fixed
+
+- Case entries in the three languages overwrote each other because Astro uses a `slug` field as
+  the entry id. The field is now `key`.
 - Warm palette (owner feedback): the cool slate surface is replaced by the espresso brown of the
   original landing, so every surface stays in the cream, brown and orange family.
 - New `Testimonials` block on the home page, fed by `src/content/testimonials/`. Entries carry a

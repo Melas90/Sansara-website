@@ -29,3 +29,5 @@ if (motionOk && 'IntersectionObserver' in window) {
     observer.observe(diagram);
   });
 }
+
+export {};

@@ -5,6 +5,8 @@
  * shows an empty proof section. Figures still marked [PENDIENTE] are shown as
  * such, with a note, so staging is honest about what is missing.
  *
+ * Motion: figures appear in turn and count up from zero (scripts/reveal.ts).
+ *
  * Props: locale.
  * Content source: content/cases/<locale>/*.md; i18n/home/<locale>.json -> proof.
  */
@@ -43,11 +45,18 @@ const casesRoute = mainNav.find((item) => item.key === 'casos');
     </p>
     <p class="max-w-measure mt-6 text-lg">{entry.data.summary}</p>
 
-    <dl class="border-rule mt-10 grid border-t sm:grid-cols-3">
-      {entry.data.results.map((result) => (
-        <div class="border-rule flex min-w-0 flex-col-reverse border-b py-5 sm:border-b-0 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0">
+    <dl class="border-rule mt-10 grid border-t sm:grid-cols-3" data-reveal>
+      {entry.data.results.map((result, index) => (
+        <div
+          data-reveal-item
+          style={`--i:${index}`}
+          class="border-rule flex min-w-0 flex-col-reverse border-b py-5 sm:border-b-0 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0"
+        >
           <dt class="text-sm">{result.label}</dt>
-          <dd class="font-display font-book text-fg leading-heading text-xl wrap-break-word">
+          <dd
+            data-count
+            class="font-display font-book text-fg leading-heading text-2xl wrap-break-word tabular-nums"
+          >
             {result.value}
           </dd>
         </div>
@@ -58,7 +67,7 @@ const casesRoute = mainNav.find((item) => item.key === 'casos');
 
     {casesRoute?.live && (
       <TextLink
-        href={localePath(locale, `${casesRoute.path}${entry.data.slug}/`)}
+        href={localePath(locale, `${casesRoute.path}${entry.data.key}/`)}
         standalone
         class="mt-6"
       >

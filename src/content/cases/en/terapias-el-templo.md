@@ -1,6 +1,6 @@
 ---
 locale: en
-slug: terapias-el-templo
+key: terapias-el-templo
 title: 'Terapias El Templo'
 summary: 'A holistic therapy centre in Tenerife. We built its path from first ad to booked session: ads, landing page, booking and follow-up, connected.'
 order: 10
