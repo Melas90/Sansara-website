@@ -1,0 +1,29 @@
+# Production = main. Branch deploy = develop (staging). Deploy previews on every PR.
+# Branch deploys and previews are switched on in the Netlify UI:
+# Site configuration > Build & deploy > Branches and deploy contexts.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Hashed build assets never change.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # Only self, Cal.com (booking embed) and Meta Pixel hosts.
+    # script-src has no 'unsafe-inline': astro.config.ts keeps every script in a file.
+    # style-src needs it for Astro's inlined @font-face block and the Cal.com embed.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://app.cal.com https://cal.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com https://app.cal.com https://cal.com; font-src 'self' https://app.cal.com https://cal.com; connect-src 'self' https://app.cal.com https://cal.com https://www.facebook.com https://connect.facebook.net; frame-src https://app.cal.com https://cal.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'"

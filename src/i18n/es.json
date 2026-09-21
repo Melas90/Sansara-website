@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "homeTitle": "Deja de perseguir clientes. Que vengan ellos.",
+    "homeDescription": "Montamos el sistema que lleva a la gente de no conocerte a reservar contigo. Te lo hacemos nosotros, te lo explicamos claro y a precio cerrado."
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "mainNav": "Principal",
+    "footerNav": "Pie de página",
+    "legalNav": "Legal",
+    "languageNav": "Idioma",
+    "menu": "Menú",
+    "home": "Sansara Media, inicio"
+  },
+  "nav": {
+    "sistema": "El Sistema",
+    "servicios": "Te lo hacemos",
+    "productos": "Productos",
+    "casos": "Casos",
+    "sobre": "Quiénes somos",
+    "empezar": "Empezar",
+    "avisoLegal": "Aviso legal",
+    "privacidad": "Privacidad",
+    "cookies": "Cookies"
+  },
+  "actions": {
+    "call": "Reserva la llamada gratis",
+    "callLong": "Enséñame dónde pierdo clientes",
+    "callNote": "Gratis, 30 minutos, sin preparar nada.",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "whatsappMessage": "¡Hola! Quiero saber dónde estoy perdiendo clientes.",
+    "form": "O escríbenos aquí"
+  },
+  "home": {
+    "title": "Deja de perseguir clientes. Que vengan ellos.",
+    "lead": "Lo tuyo lo haces bien. Conseguir que te reserven no debería costarte la vida."
+  },
+  "footer": {
+    "promise": "Montamos lo que te trae clientes, para que no tengas que ir detrás de ellos.",
+    "contact": "Contacto",
+    "cookieSettings": "Ajustes de cookies",
+    "rights": "Todos los derechos reservados."
+  },
+  "consent": {
+    "title": "Las cookies, en claro",
+    "body": "Nos gustaría usar el píxel de Meta para saber qué anuncios traen gente hasta aquí. No medimos nada si no aceptas.",
+    "accept": "Aceptar",
+    "decline": "No, gracias",
+    "more": "Leer la política de cookies"
+  }
+}

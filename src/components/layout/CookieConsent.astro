@@ -1,0 +1,52 @@
+---
+/**
+ * CookieConsent: asks once, stores the answer locally, and only then lets
+ * scripts/consent.ts load the Meta Pixel. Hidden until the script decides it
+ * is needed, and fixed to the viewport, so it never shifts layout.
+ *
+ * Props: locale.
+ * Content source: i18n `consent.*`; pixel id from config/site.ts.
+ */
+import Button from '../ui/Button.astro';
+import TextLink from '../ui/TextLink.astro';
+import { site, type Locale } from '../../config/site';
+import { legalNav } from '../../config/nav';
+import { localePath, useTranslations } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const cookiesPage = legalNav.find((item) => item.key === 'cookies');
+---
+
+<section
+  id="cookie-consent"
+  aria-labelledby="cookie-consent-title"
+  data-pixel-id={site.metaPixelId}
+  hidden
+  class="surface-slate px-gutter fixed inset-x-0 bottom-0 z-50 py-5"
+>
+  <div class="max-w-page mx-auto flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+    <div class="max-w-measure">
+      <h2 id="cookie-consent-title" class="text-fg font-strong text-base">
+        {t('consent.title')}
+      </h2>
+      <p class="text-sm">
+        {t('consent.body')}
+        {cookiesPage?.live && (
+          <TextLink href={localePath(locale, cookiesPage.path)}>{t('consent.more')}</TextLink>
+        )}
+      </p>
+    </div>
+    <div class="flex shrink-0 flex-wrap gap-3">
+      <Button data-consent="granted">{t('consent.accept')}</Button>
+      <Button data-consent="denied" variant="secondary">
+        {t('consent.decline')}
+      </Button>
+    </div>
+  </div>
+</section>
+
+<script src="../../scripts/consent.ts"></script>

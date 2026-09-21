@@ -1,0 +1,35 @@
+---
+/**
+ * Heading: the display serif at one of four sizes. Level and size are separate
+ * so heading order stays logical whatever the visual weight.
+ *
+ * Props: level (1-4), size ('display' | 'title' | 'section' | 'sub'), id, class.
+ * Content source: slot. Pass plain text; no accent words inside headlines.
+ */
+interface Props {
+  level?: 1 | 2 | 3 | 4;
+  size?: 'display' | 'title' | 'section' | 'sub';
+  id?: string;
+  class?: string;
+}
+const { level = 2, size = 'section', id, class: className } = Astro.props;
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4';
+
+const sizes = {
+  display: 'text-4xl leading-display tracking-display',
+  title: 'text-3xl leading-display tracking-display',
+  section: 'text-2xl leading-heading tracking-heading',
+  sub: 'text-xl leading-heading tracking-heading',
+};
+---
+
+<Tag
+  id={id}
+  class:list={[
+    'font-display font-book text-fg text-balance hyphens-auto wrap-break-word',
+    sizes[size],
+    className,
+  ]}
+>
+  <slot />
+</Tag>

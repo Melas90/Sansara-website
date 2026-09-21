@@ -1,0 +1,44 @@
+---
+/**
+ * Actions: the three ways to start, in fixed priority. Every page offers all
+ * three; the call is always the visually primary one.
+ *   1. Book the free call   (primary button, fires Lead)
+ *   2. WhatsApp             (secondary button, fires Lead)
+ *   3. Contact form         (text link, shown once /empezar exists)
+ *
+ * Props: locale, long (use the long call label, for hero and final CTA), class.
+ * Content source: i18n `actions.*`; targets from config/site.ts and config/nav.ts.
+ */
+import Button from './Button.astro';
+import TextLink from './TextLink.astro';
+import { site, type Locale } from '../../config/site';
+import { startRoute } from '../../config/nav';
+import { localePath, useTranslations, whatsappUrl } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  long?: boolean;
+  class?: string;
+}
+const { locale, long = false, class: className } = Astro.props;
+const t = useTranslations(locale);
+const startPath = localePath(locale, startRoute.path);
+const callHref = startRoute.live ? startPath : site.bookingUrl;
+---
+
+<div class:list={['flex flex-col gap-4', className]}>
+  <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+    <Button href={callHref} track="Lead">
+      {long ? t('actions.callLong') : t('actions.call')}
+    </Button>
+    <Button href={whatsappUrl(locale)} variant="secondary" track="Lead" rel="noopener">
+      {t('actions.whatsapp')}
+    </Button>
+    {startRoute.live && (
+      <TextLink href={`${startPath}#form`} standalone>
+        {t('actions.form')}
+      </TextLink>
+    )}
+  </div>
+  <p class="text-fg-muted text-sm">{t('actions.callNote')}</p>
+</div>

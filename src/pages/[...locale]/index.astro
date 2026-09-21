@@ -1,0 +1,32 @@
+---
+/**
+ * Home. Phase 0 shell: the promise and the three ways to start.
+ * feature/home replaces the body with the blocks listed in BRIEF.md §3.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Heading from '../../components/ui/Heading.astro';
+import Actions from '../../components/ui/Actions.astro';
+import type { Locale } from '../../config/site';
+import { localeStaticPaths, useTranslations } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={t('meta.homeTitle')} description={t('meta.homeDescription')}>
+  <Section labelledby="home-title">
+    <div class="max-w-headline">
+      <Heading level={1} size="display" id="home-title">
+        {t('home.title')}
+      </Heading>
+      <p class="max-w-measure mt-8 text-lg">{t('home.lead')}</p>
+      <Actions locale={locale} long class="mt-10" />
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The branch protection rule on main references this job name. Do not rename.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type and template check
+        run: npm run check
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Prettier
+        run: npm run format:check
+
+      - name: Build
+        run: npm run build
+
+      # Default Lighthouse CI profile: mobile emulation with simulated throttling.
+      # Budgets live in lighthouserc.json (all four categories >= 90, CLS < 0.1).
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@0.15.x autorun

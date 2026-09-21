@@ -1,0 +1,91 @@
+---
+/**
+ * Footer: one-line promise, contact, legal links, socials, language switch and
+ * the button that reopens the cookie choice.
+ *
+ * Props: locale.
+ * Content source: config/site.ts, config/nav.ts, i18n `footer.*`, `nav.*`.
+ */
+import Container from '../ui/Container.astro';
+import TextLink from '../ui/TextLink.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+import { site, type Locale } from '../../config/site';
+import { legalNav, visible } from '../../config/nav';
+import { localePath, useTranslations, whatsappUrl, type TranslationKey } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const legal = visible(legalNav);
+const socials = site.socials.filter((social) => social.url);
+const year = new Date().getFullYear();
+---
+
+<footer class="surface-linen border-rule border-t">
+  <Container class="py-14">
+    <div class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-12">
+      <p class="font-display font-book text-fg leading-heading tracking-heading text-xl text-balance lg:col-span-5">
+        {t('footer.promise')}
+      </p>
+
+      <div class="lg:col-span-3 lg:col-start-7">
+        <h2 class="text-fg font-strong text-base">{t('footer.contact')}</h2>
+        <ul class="mt-1">
+          <li>
+            <TextLink href={`mailto:${site.email}`} standalone>
+              {site.email}
+            </TextLink>
+          </li>
+          <li>
+            <TextLink href={whatsappUrl(locale)} standalone track="Lead">
+              WhatsApp
+            </TextLink>
+          </li>
+          {socials.map((social) => (
+            <li>
+              <TextLink href={social.url} standalone>
+                {social.name}
+              </TextLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <LanguageSwitch
+          locale={locale}
+          label={`${t('a11y.languageNav')} (${t('a11y.footerNav')})`}
+          format="name"
+        />
+      </div>
+    </div>
+
+    <div class="border-rule text-fg-muted mt-12 flex flex-col gap-y-2 border-t pt-6 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
+      <p>
+        © {year} {site.name}. {t('footer.rights')}
+      </p>
+      {legal.length > 0 && (
+        <nav aria-label={t('a11y.legalNav')}>
+          <ul class="flex flex-wrap gap-x-6">
+            {legal.map((item) => (
+              <li>
+                <TextLink href={localePath(locale, item.path)} standalone class="text-fg-muted">
+                  {t(`nav.${item.key}` as TranslationKey)}
+                </TextLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+      <button
+        type="button"
+        data-consent-open
+        class="text-fg-muted hover:text-accent decoration-accent min-h-target ease-brand inline-flex cursor-pointer items-center text-left underline decoration-1 underline-offset-4 transition-colors duration-150"
+      >
+        {t('footer.cookieSettings')}
+      </button>
+    </div>
+  </Container>
+</footer>

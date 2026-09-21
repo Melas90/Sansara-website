@@ -1,0 +1,21 @@
+---
+/**
+ * SkipLink: first focusable element on every page, jumps to <main id="main">.
+ * Props: locale.
+ * Content source: i18n `a11y.skipToContent`.
+ */
+import type { Locale } from '../../config/site';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const t = useTranslations(Astro.props.locale);
+---
+
+<a
+  href="#main"
+  class="bg-action-bg text-action-fg rounded-control font-strong min-h-target sr-only z-50 items-center px-4 focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:inline-flex"
+>
+  {t('a11y.skipToContent')}
+</a>

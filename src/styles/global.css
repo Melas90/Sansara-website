@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/*
+ * Tailwind reads the tokens. Default palettes, radii and shadows are cleared so
+ * a utility such as bg-blue-500 or rounded-xl does not exist in this project.
+ */
+@theme inline {
+  --color-*: initial;
+  --color-linen: var(--sm-linen);
+  --color-oat: var(--sm-oat);
+  --color-paper: var(--sm-paper);
+  --color-espresso: var(--sm-espresso);
+  --color-ember: var(--sm-ember);
+  --color-clay: var(--sm-clay);
+  --color-slate: var(--sm-slate);
+  --color-surface: var(--sm-surface);
+  --color-fg: var(--sm-fg);
+  --color-fg-body: var(--sm-fg-body);
+  --color-fg-muted: var(--sm-fg-muted);
+  --color-accent: var(--sm-accent);
+  --color-rule: var(--sm-rule);
+  --color-action-bg: var(--sm-action-bg);
+  --color-action-bg-hover: var(--sm-action-bg-hover);
+  --color-action-fg: var(--sm-action-fg);
+  --color-focus: var(--sm-focus);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-*: initial;
+  --font-display: var(--sm-font-display);
+  --font-body: var(--sm-font-body);
+
+  --text-*: initial;
+  --text-xs: var(--sm-text-xs);
+  --text-sm: var(--sm-text-sm);
+  --text-base: var(--sm-text-base);
+  --text-lg: var(--sm-text-lg);
+  --text-xl: var(--sm-text-xl);
+  --text-2xl: var(--sm-text-2xl);
+  --text-3xl: var(--sm-text-3xl);
+  --text-4xl: var(--sm-text-4xl);
+
+  --leading-*: initial;
+  --leading-display: var(--sm-leading-display);
+  --leading-heading: var(--sm-leading-heading);
+  --leading-body: var(--sm-leading-body);
+
+  --tracking-*: initial;
+  --tracking-display: var(--sm-tracking-display);
+  --tracking-heading: var(--sm-tracking-heading);
+
+  --font-weight-*: initial;
+  --font-weight-book: var(--sm-weight-book);
+  --font-weight-regular: var(--sm-weight-regular);
+  --font-weight-strong: var(--sm-weight-strong);
+
+  --radius-*: initial;
+  --radius-control: var(--sm-radius-control);
+  --radius-bubble: var(--sm-radius-bubble);
+
+  --shadow-*: initial;
+
+  --spacing: var(--sm-space-unit);
+  --spacing-gutter: var(--sm-gutter);
+  --spacing-section: var(--sm-section-y);
+  --spacing-target: var(--sm-target);
+  --spacing-control: var(--sm-control-height);
+
+  --container-*: initial;
+  --container-page: var(--sm-width-page);
+  --container-measure: var(--sm-measure);
+  --container-headline: var(--sm-width-headline);
+
+  --ease-*: initial;
+  --ease-brand: var(--sm-ease);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: var(--sm-section-y);
+  }
+
+  body {
+    background-color: var(--sm-surface);
+    color: var(--sm-fg-body);
+    font-family: var(--sm-font-body);
+    font-size: var(--sm-text-base);
+    line-height: var(--sm-leading-body);
+    font-weight: var(--sm-weight-regular);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* A surface paints itself and resets inherited text colour for its content. */
+  [class*='surface-'] {
+    background-color: var(--sm-surface);
+    color: var(--sm-fg-body);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sm-focus);
+    outline-offset: 3px;
+    border-radius: var(--sm-radius-control);
+  }
+
+  ::selection {
+    background-color: var(--sm-ember);
+    color: var(--sm-espresso);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

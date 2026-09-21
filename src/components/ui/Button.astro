@@ -1,0 +1,42 @@
+---
+/**
+ * Button: the one control style. Renders <a> with href, otherwise <button>.
+ * Colours come from the surface tokens, so it inverts on slate by itself.
+ *
+ * Props:
+ *   href     link target; omit for a real <button>
+ *   variant  'primary' (filled) | 'secondary' (outlined)
+ *   track    analytics event fired on click, after consent ('Lead', 'Schedule')
+ *   type, class, plus any native attribute
+ * Content source: slot. The label says what happens; no arrow glyphs.
+ */
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = {
+  href?: string;
+  variant?: 'primary' | 'secondary';
+  track?: 'Lead' | 'Schedule' | 'ViewContent';
+} & Omit<HTMLAttributes<'a'> & HTMLAttributes<'button'>, 'href'>;
+
+const { href, variant = 'primary', track, class: className, ...rest } = Astro.props;
+const Tag = href ? 'a' : 'button';
+
+const variants = {
+  primary:
+    'bg-action-bg text-action-fg border-action-bg hover:bg-action-bg-hover hover:border-action-bg-hover',
+  secondary: 'bg-transparent text-fg border-fg hover:bg-fg hover:text-surface',
+};
+---
+
+<Tag
+  href={href}
+  data-track={track}
+  class:list={[
+    'min-h-control rounded-control font-strong ease-brand inline-flex items-center justify-center border px-6 py-2 text-center text-base no-underline transition-colors duration-150',
+    variants[variant],
+    className,
+  ]}
+  {...rest}
+>
+  <slot />
+</Tag>

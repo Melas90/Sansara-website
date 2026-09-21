@@ -1,0 +1,70 @@
+---
+/**
+ * BaseLayout: the document shell every page uses. Head metadata, fonts,
+ * skip link, header, <main id="main">, footer and cookie consent.
+ *
+ * Props:
+ *   locale       page language
+ *   title        page title, without the site name
+ *   description  meta description
+ *   noindex      keep the page out of search engines
+ * Content source: props from the page; chrome from config/ and i18n/.
+ */
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import SkipLink from '../components/layout/SkipLink.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import CookieConsent from '../components/layout/CookieConsent.astro';
+import { defaultLocale, ogLocales, site, type Locale } from '../config/site';
+import { alternates } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+const { locale, title, description, noindex = false } = Astro.props;
+const pages = alternates(Astro.url.pathname);
+const canonical = pages.find((page) => page.locale === locale)?.url;
+const fallback = pages.find((page) => page.locale === defaultLocale)?.url;
+const fullTitle = `${title} | ${site.name}`;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    {pages.map((page) => (
+      <link rel="alternate" hreflang={page.locale} href={page.url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={fallback} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocales[locale]} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content={site.themeColor} />
+    <Font cssVariable="--font-newsreader" preload={[{ style: 'normal' }]} />
+    <Font cssVariable="--font-hanken" preload={[{ style: 'normal' }]} />
+  </head>
+  <body>
+    <SkipLink locale={locale} />
+    <Header locale={locale} />
+    <main id="main" tabindex="-1" class="outline-none">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <CookieConsent locale={locale} />
+  </body>
+</html>

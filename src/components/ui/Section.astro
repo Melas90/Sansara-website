@@ -1,0 +1,46 @@
+---
+/**
+ * Section: a full-bleed band on one surface with the site's editorial layout.
+ * From 1024px the heading hangs in a left rail (4 of 12 columns) and the
+ * content takes the remaining 8, so pages read down one left-aligned edge.
+ *
+ * Props:
+ *   surface     'linen' | 'oat' | 'paper' | 'slate'. Slate is reserved for the
+ *               system diagram and the final call to action (DESIGN.md).
+ *   id          anchor id
+ *   labelledby  id of the heading that names this section for screen readers
+ * Slots: heading (optional, goes in the rail), default.
+ * Content source: none, layout only.
+ */
+import Container from './Container.astro';
+
+interface Props {
+  surface?: 'linen' | 'oat' | 'paper' | 'slate';
+  id?: string;
+  labelledby?: string;
+  class?: string;
+}
+const { surface = 'linen', id, labelledby, class: className } = Astro.props;
+const hasHeading = Astro.slots.has('heading');
+---
+
+<section
+  id={id}
+  aria-labelledby={labelledby}
+  class:list={[`surface-${surface}`, 'py-section', className]}
+>
+  <Container>
+    {hasHeading ? (
+      <div class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-12">
+        <div class="lg:col-span-4">
+          <slot name="heading" />
+        </div>
+        <div class="lg:col-span-8">
+          <slot />
+        </div>
+      </div>
+    ) : (
+      <slot />
+    )}
+  </Container>
+</section>

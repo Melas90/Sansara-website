@@ -1,0 +1,44 @@
+---
+/**
+ * LanguageSwitch: links to the current page in every locale (en, es, de).
+ * Plain links, so it works without JavaScript and search engines can follow it.
+ *
+ * Props: locale, label (aria-label, unique per page), format ('code' | 'name').
+ * Content source: config/site.ts `locales` and `localeNames`.
+ */
+import { localeNames, type Locale } from '../../config/site';
+import { alternates } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  label: string;
+  format?: 'code' | 'name';
+}
+const { locale, label, format = 'code' } = Astro.props;
+const links = alternates(Astro.url.pathname);
+---
+
+<nav aria-label={label}>
+  <ul class="flex items-center gap-x-1">
+    {links.map((link) => (
+      <li>
+        <a
+          href={link.path}
+          hreflang={link.locale}
+          lang={link.locale}
+          aria-current={link.locale === locale ? 'true' : undefined}
+          class="text-fg-muted hover:text-accent aria-[current=true]:text-fg decoration-accent min-h-target min-w-target ease-brand inline-flex items-center justify-center px-2 text-sm no-underline underline-offset-8 transition-colors duration-150 aria-[current=true]:underline"
+        >
+          {format === 'code' ? (
+            <>
+              <span aria-hidden="true">{link.locale.toUpperCase()}</span>
+              <span class="sr-only">{localeNames[link.locale]}</span>
+            </>
+          ) : (
+            localeNames[link.locale]
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

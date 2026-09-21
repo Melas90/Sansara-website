@@ -1,0 +1,77 @@
+---
+/**
+ * Header: logo, main nav, language switch and the primary call to action.
+ * Below 1024px the nav, language switch and CTA fold into a <details> menu,
+ * which opens without JavaScript; scripts/menu.ts adds Escape and click-away.
+ *
+ * Props: locale.
+ * Content source: config/nav.ts, config/site.ts, i18n `nav.*`, `actions.*`, `a11y.*`.
+ */
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo-sansara-media.png';
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import Nav from './Nav.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+import { site, type Locale } from '../../config/site';
+import { startRoute } from '../../config/nav';
+import { localePath, useTranslations } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const callHref = startRoute.live ? localePath(locale, startRoute.path) : site.bookingUrl;
+---
+
+<header class="surface-linen border-rule relative border-b">
+  <Container class="flex items-center justify-between gap-x-6 py-3">
+    <a
+      href={localePath(locale)}
+      aria-label={t('a11y.home')}
+      class="min-h-target inline-flex shrink-0 items-center"
+    >
+      <Image
+        src={logo}
+        alt=""
+        width={352}
+        widths={[176, 352, 528]}
+        sizes="176px"
+        loading="eager"
+        class="h-auto w-44"
+      />
+    </a>
+
+    <div class="hidden items-center gap-x-7 lg:flex">
+      <Nav locale={locale} label={t('a11y.mainNav')} />
+      <LanguageSwitch locale={locale} label={t('a11y.languageNav')} />
+      <Button href={callHref} track="Lead">
+        {t('actions.call')}
+      </Button>
+    </div>
+
+    <details data-menu class="lg:hidden">
+      <summary class="text-fg border-fg rounded-control font-strong min-h-target inline-flex cursor-pointer list-none items-center border px-4 text-sm [&::-webkit-details-marker]:hidden">
+        {t('a11y.menu')}
+      </summary>
+      <div class="surface-linen border-rule px-gutter absolute inset-x-0 top-full z-40 flex flex-col gap-y-4 border-b pt-4 pb-6">
+        <Nav
+          locale={locale}
+          label={`${t('a11y.mainNav')} (${t('a11y.menu')})`}
+          direction="column"
+        />
+        <LanguageSwitch
+          locale={locale}
+          label={`${t('a11y.languageNav')} (${t('a11y.menu')})`}
+          format="name"
+        />
+        <Button href={callHref} track="Lead">
+          {t('actions.call')}
+        </Button>
+      </div>
+    </details>
+  </Container>
+</header>
+
+<script src="../../scripts/menu.ts"></script>

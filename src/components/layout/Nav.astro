@@ -1,0 +1,40 @@
+---
+/**
+ * Nav: the main navigation list. Items come from config/nav.ts, filtered by
+ * `live` and feature flags, so a new route appears here without touching layout.
+ *
+ * Props: locale, label (aria-label, must be unique per page), direction.
+ * Content source: config/nav.ts + i18n `nav.*`.
+ */
+import type { Locale } from '../../config/site';
+import { mainNav, visible } from '../../config/nav';
+import { barePath, localePath, useTranslations, type TranslationKey } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  label: string;
+  direction?: 'row' | 'column';
+}
+const { locale, label, direction = 'row' } = Astro.props;
+const t = useTranslations(locale);
+const items = visible(mainNav);
+const current = barePath(Astro.url.pathname);
+---
+
+{items.length > 0 && (
+  <nav aria-label={label}>
+    <ul class:list={['flex', direction === 'row' ? 'flex-row items-center gap-x-7' : 'flex-col']}>
+      {items.map((item) => (
+        <li>
+          <a
+            href={localePath(locale, item.path)}
+            aria-current={current.startsWith(item.path) ? 'page' : undefined}
+            class="text-fg hover:text-accent decoration-accent min-h-target ease-brand inline-flex items-center text-base no-underline underline-offset-8 transition-colors duration-150 aria-[current=page]:underline"
+          >
+            {t(`nav.${item.key}` as TranslationKey)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

@@ -1,0 +1,16 @@
+---
+/**
+ * Container: centres content at the page width with the fluid gutter.
+ * Props: as (tag, default div), class.
+ * Content source: none, layout only.
+ */
+interface Props {
+  as?: 'div' | 'header' | 'footer' | 'nav';
+  class?: string;
+}
+const { as: Tag = 'div', class: className } = Astro.props;
+---
+
+<Tag class:list={['max-w-page px-gutter mx-auto w-full', className]}>
+  <slot />
+</Tag>

@@ -1,0 +1,111 @@
+/*
+ * Design tokens. The single source for colour, type, spacing and radii.
+ *
+ * Extracted from the stylesheet of https://business.sansara-media.com
+ * (2026-09-21), then evolved as recorded in DESIGN.md. Components never use a
+ * raw value: Tailwind reads these through the @theme block in global.css.
+ *
+ * Two layers:
+ *   1. Raw tokens      what the brand owns           (--sm-linen, --sm-ember ...)
+ *   2. Surface tokens  what a component asks for     (--sm-fg, --sm-accent ...)
+ * A surface class re-points layer 2, so a Button or Heading placed on the
+ * slate surface adapts without knowing where it is.
+ */
+
+:root {
+  /* ---- Colour, raw. Live-page name in brackets. ---- */
+  --sm-linen: #fcfaf4; /* ground            [--bg] */
+  --sm-oat: #f7f2e8; /* quiet second ground [--card] */
+  --sm-paper: #ffffff; /*                   [--white] */
+  --sm-espresso: #2a1e14; /* headline ink, a real warm brown-black [--ink] */
+  --sm-bark: #5b4a3b; /* body text          [--brown] */
+  --sm-driftwood: #7a5b3b; /* muted text. Live --brown-2 #8c6a47 darkened to pass AA on oat */
+  --sm-ember: #ee8b5e; /* the logo orange. Fills and the diagram only, never text on light [--orange] */
+  --sm-clay: #b65a2e; /* rust accent for rules, marks and large type [--orange-dk] */
+  --sm-clay-deep: #a44f26; /* clay for text-size use: 5.0:1 on oat, 5.4:1 on linen */
+  --sm-slate: #1f2e35; /* the second material. New: not on the live page */
+  --sm-slate-text: #d5ccbe; /* body text on slate, 8.9:1 */
+  --sm-hairline: rgb(42 30 20 / 0.14); /* [--line] */
+  --sm-hairline-on-slate: rgb(252 250 244 / 0.2);
+
+  /* ---- Type ---- */
+  --sm-font-display: var(--font-newsreader);
+  --sm-font-body: var(--font-hanken);
+
+  /* Fluid scale, ratio about 1.25 on phones opening to 1.333 on desktop. */
+  --sm-text-xs: 0.8125rem;
+  --sm-text-sm: 0.9375rem;
+  --sm-text-base: 1.0625rem;
+  --sm-text-lg: 1.25rem;
+  --sm-text-xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --sm-text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --sm-text-3xl: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+  --sm-text-4xl: clamp(2.625rem, 1.6rem + 5vw, 5.25rem);
+
+  --sm-leading-display: 1.04;
+  --sm-leading-heading: 1.14;
+  --sm-leading-body: 1.6;
+  --sm-tracking-display: -0.022em;
+  --sm-tracking-heading: -0.012em;
+
+  --sm-weight-book: 380; /* display serif, a touch lighter than regular */
+  --sm-weight-regular: 400;
+  --sm-weight-strong: 600;
+
+  /* ---- Space. Tailwind's spacing utilities are multiples of the unit. ---- */
+  --sm-space-unit: 0.25rem;
+  --sm-gutter: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+  --sm-section-y: clamp(4rem, 2.75rem + 5vw, 8rem);
+  --sm-width-page: 78rem;
+  --sm-measure: 38rem; /* about 68 characters of body text */
+  --sm-width-headline: 52rem; /* keeps display type to two or three lines */
+  --sm-target: 2.75rem; /* 44px minimum touch target */
+  --sm-control-height: 3rem;
+
+  /* ---- Radii. Two values, each with one job. Surfaces stay square. ---- */
+  --sm-radius-control: 0.25rem; /* buttons, inputs */
+  --sm-radius-bubble: 1.125rem; /* chat bubbles in the system diagram only */
+
+  /* ---- Motion. Only for responses to user action and the system diagram. ---- */
+  --sm-duration-quick: 140ms;
+  --sm-duration-diagram: 2400ms;
+  --sm-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Surface tokens: default surface is linen ---- */
+  --sm-surface: var(--sm-linen);
+  --sm-fg: var(--sm-espresso);
+  --sm-fg-body: var(--sm-bark);
+  --sm-fg-muted: var(--sm-driftwood);
+  --sm-accent: var(--sm-clay-deep);
+  --sm-rule: var(--sm-hairline);
+  --sm-action-bg: var(--sm-espresso);
+  --sm-action-fg: var(--sm-linen);
+  --sm-action-bg-hover: var(--sm-clay-deep);
+  --sm-focus: var(--sm-clay-deep);
+}
+
+.surface-linen {
+  --sm-surface: var(--sm-linen);
+}
+
+.surface-oat {
+  --sm-surface: var(--sm-oat);
+}
+
+.surface-paper {
+  --sm-surface: var(--sm-paper);
+}
+
+/* The second material: system diagram and final call to action only. */
+.surface-slate {
+  --sm-surface: var(--sm-slate);
+  --sm-fg: var(--sm-linen);
+  --sm-fg-body: var(--sm-slate-text);
+  --sm-fg-muted: var(--sm-slate-text);
+  --sm-accent: var(--sm-ember);
+  --sm-rule: var(--sm-hairline-on-slate);
+  --sm-action-bg: var(--sm-ember);
+  --sm-action-fg: var(--sm-espresso);
+  --sm-action-bg-hover: var(--sm-linen);
+  --sm-focus: var(--sm-ember);
+}

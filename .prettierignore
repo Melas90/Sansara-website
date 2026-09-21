@@ -1,0 +1,8 @@
+dist/
+.astro/
+.netlify/
+.lighthouseci/
+node_modules/
+package-lock.json
+docs/live-page-copy.txt
+BRIEF.md

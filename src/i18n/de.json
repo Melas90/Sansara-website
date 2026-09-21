@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "homeTitle": "Lauf Kunden nicht mehr hinterher. Lass sie zu dir kommen.",
+    "homeDescription": "Wir bauen das System, das Menschen von „nie von dir gehört“ zu „gebucht“ bringt. Fertig für dich gemacht, klar erklärt, zum Festpreis."
+  },
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen",
+    "mainNav": "Hauptmenü",
+    "footerNav": "Fußzeile",
+    "legalNav": "Rechtliches",
+    "languageNav": "Sprache",
+    "menu": "Menü",
+    "home": "Sansara Media, Startseite"
+  },
+  "nav": {
+    "sistema": "Das System",
+    "servicios": "Wir machen das",
+    "productos": "Produkte",
+    "casos": "Kundenprojekte",
+    "sobre": "Über uns",
+    "empezar": "Loslegen",
+    "avisoLegal": "Impressum",
+    "privacidad": "Datenschutz",
+    "cookies": "Cookies"
+  },
+  "actions": {
+    "call": "Kostenloses Gespräch buchen",
+    "callLong": "Zeig mir, wo ich Kunden verliere",
+    "callNote": "Kostenlos, 30 Minuten, nichts vorzubereiten.",
+    "whatsapp": "Schreib uns auf WhatsApp",
+    "whatsappMessage": "Hallo! Ich möchte herausfinden, wo ich Kunden verliere.",
+    "form": "Oder schreib uns hier"
+  },
+  "home": {
+    "title": "Lauf Kunden nicht mehr hinterher. Lass sie zu dir kommen.",
+    "lead": "Du bist gut in dem, was du tust. Gebucht zu werden sollte dich nicht deine ganze Kraft kosten."
+  },
+  "footer": {
+    "promise": "Wir bauen das, was dir Kunden bringt, damit du ihnen nicht hinterherlaufen musst.",
+    "contact": "Kontakt",
+    "cookieSettings": "Cookie-Einstellungen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "consent": {
+    "title": "Cookies, kurz und klar",
+    "body": "Wir würden gern das Meta-Pixel nutzen, um zu sehen, welche Anzeigen Menschen hierher bringen. Ohne deine Zustimmung wird nichts erfasst.",
+    "accept": "Akzeptieren",
+    "decline": "Nein danke",
+    "more": "Cookie-Richtlinie lesen"
+  }
+}

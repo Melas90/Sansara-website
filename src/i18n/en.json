@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "homeTitle": "Stop chasing clients. Let them come to you.",
+    "homeDescription": "We build the system that takes people from never having heard of you to booked. Done for you, in plain words, for one fixed price."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "legalNav": "Legal",
+    "languageNav": "Language",
+    "menu": "Menu",
+    "home": "Sansara Media, home"
+  },
+  "nav": {
+    "sistema": "The System",
+    "servicios": "Done for you",
+    "productos": "Products",
+    "casos": "Client work",
+    "sobre": "About",
+    "empezar": "Start",
+    "avisoLegal": "Legal notice",
+    "privacidad": "Privacy",
+    "cookies": "Cookies"
+  },
+  "actions": {
+    "call": "Book the free call",
+    "callLong": "Show me where I'm losing clients",
+    "callNote": "Free, 30 minutes, nothing to prepare.",
+    "whatsapp": "Message us on WhatsApp",
+    "whatsappMessage": "Hi! I'd like to find out where I'm losing clients.",
+    "form": "Or write to us"
+  },
+  "home": {
+    "title": "Stop chasing clients. Let them come to you.",
+    "lead": "You're good at what you do. Getting people to book you shouldn't take everything you've got."
+  },
+  "footer": {
+    "promise": "We build the thing that brings clients in, so you don't have to chase them.",
+    "contact": "Contact",
+    "cookieSettings": "Cookie settings",
+    "rights": "All rights reserved."
+  },
+  "consent": {
+    "title": "Cookies, in plain words",
+    "body": "We'd like to use the Meta Pixel to see which ads bring people here. Nothing is tracked unless you accept.",
+    "accept": "Accept",
+    "decline": "No thanks",
+    "more": "Read the cookie policy"
+  }
+}
