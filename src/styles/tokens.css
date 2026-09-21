@@ -9,7 +9,7 @@
  *   1. Raw tokens      what the brand owns           (--sm-linen, --sm-ember ...)
  *   2. Surface tokens  what a component asks for     (--sm-fg, --sm-accent ...)
  * A surface class re-points layer 2, so a Button or Heading placed on the
- * slate surface adapts without knowing where it is.
+ * dark surface adapts without knowing where it is.
  */
 
 :root {
@@ -23,11 +23,11 @@
   --sm-ember: #ee8b5e; /* the logo orange. Fills and the diagram only, never text on light [--orange] */
   --sm-clay: #b65a2e; /* rust accent for rules, marks and large type [--orange-dk] */
   --sm-clay-deep: #a44f26; /* clay for text-size use: 5.0:1 on oat, 5.4:1 on linen */
-  --sm-slate: #1f2e35; /* the second material. New: not on the live page */
-  --sm-slate-text: #d5ccbe; /* body text on slate, 8.9:1 */
-  --sm-slate-raised: #2b3d46; /* the funnel shape inside the system diagram */
+  --sm-deep: #2a1e14; /* the dark surface: the espresso of the original landing, so the page stays warm */
+  --sm-deep-text: #ddd2c2; /* body text on the dark surface, 10.6:1 */
+  --sm-deep-raised: #3e2a19; /* the band of the loop. Live page --ink-2 */
   --sm-hairline: rgb(42 30 20 / 0.14); /* [--line] */
-  --sm-hairline-on-slate: rgb(252 250 244 / 0.2);
+  --sm-hairline-on-deep: rgb(252 250 244 / 0.2);
 
   /* ---- Type ---- */
   --sm-font-display: var(--font-newsreader);
@@ -103,14 +103,14 @@
   --sm-surface: var(--sm-paper);
 }
 
-/* The second material: system diagram and final call to action only. */
-.surface-slate {
-  --sm-surface: var(--sm-slate);
+/* The dark surface: the loop, the final call to action and the footer. */
+.surface-deep {
+  --sm-surface: var(--sm-deep);
   --sm-fg: var(--sm-linen);
-  --sm-fg-body: var(--sm-slate-text);
-  --sm-fg-muted: var(--sm-slate-text);
+  --sm-fg-body: var(--sm-deep-text);
+  --sm-fg-muted: var(--sm-deep-text);
   --sm-accent: var(--sm-ember);
-  --sm-rule: var(--sm-hairline-on-slate);
+  --sm-rule: var(--sm-hairline-on-deep);
   --sm-action-bg: var(--sm-ember);
   --sm-action-fg: var(--sm-espresso);
   --sm-action-bg-hover: var(--sm-linen);
@@ -127,6 +127,6 @@
   --sm-rule: rgb(42 30 20 / 0.3);
   --sm-action-bg: var(--sm-espresso);
   --sm-action-fg: var(--sm-linen);
-  --sm-action-bg-hover: var(--sm-slate);
+  --sm-action-bg-hover: var(--sm-deep-raised);
   --sm-focus: var(--sm-espresso);
 }

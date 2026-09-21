@@ -6,6 +6,10 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Changed
 
+- Warm palette (owner feedback): the cool slate surface is replaced by the espresso brown of the
+  original landing, so every surface stays in the cream, brown and orange family.
+- New `Testimonials` block on the home page, fed by `src/content/testimonials/`. Entries carry a
+  `consent` field; `pending` blocks a release through `npm run check:launch`.
 - Redesign after owner feedback (`feature/redesign`): poster-size display type, the ember sun in
   the hero, the system diagram redrawn as a loop, an ember `Statement` band, slate footer with
   the wordmark. See DESIGN.md, Revision 2.

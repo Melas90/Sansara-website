@@ -67,6 +67,10 @@
     "pendingNote": "Las cifras marcadas con [PENDIENTE] esperan el visto bueno del cliente.",
     "more": "Leer el caso completo"
   },
+  "testimonials": {
+    "title": "Con sus palabras.",
+    "translated": "Traducido del español."
+  },
   "statement": {
     "text": "Que te vean es la parte fácil. Un cliente se gana o se pierde en los diez minutos siguientes.",
     "note": "Ese hueco entre «me interesa» y «reservado» es lo único que montamos."

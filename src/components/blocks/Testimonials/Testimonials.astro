@@ -1,0 +1,78 @@
+---
+/**
+ * Testimonials: what clients say, in their own words. The first one is set at
+ * poster size with a hanging ember quote mark; any others follow as a quieter
+ * two-column list. Renders nothing while the collection is empty for the locale.
+ *
+ * A testimonial whose `consent` is 'pending' still shows (so staging can be
+ * reviewed) but blocks a release through `npm run check:launch`.
+ *
+ * Props: locale, title, translatedNote (shown when the words are a translation).
+ * Content source: content/testimonials/<locale>/*.md (body = the quote).
+ */
+import { getCollection, render } from 'astro:content';
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  translatedNote: string;
+}
+const { locale, title, translatedNote } = Astro.props;
+
+const entries = (await getCollection('testimonials', ({ data }) => data.locale === locale)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const items = await Promise.all(
+  entries.map(async (entry) => ({ data: entry.data, Content: (await render(entry)).Content })),
+);
+const [lead, ...rest] = items;
+---
+
+{lead && (
+  <Section labelledby="testimonials-title">
+    <Fragment slot="heading">
+      <Heading id="testimonials-title">{title}</Heading>
+    </Fragment>
+
+    <figure class="relative">
+      <span
+        aria-hidden="true"
+        class="font-display text-ember leading-display block text-4xl select-none lg:absolute lg:top-0 lg:-left-16"
+      >
+        “
+      </span>
+      <blockquote class="font-display font-book text-fg leading-heading tracking-heading text-2xl text-pretty italic">
+        <lead.Content />
+      </blockquote>
+      <figcaption class="border-rule mt-10 border-t pt-5">
+        <p class="text-fg font-strong">{lead.data.name}</p>
+        <p class="text-sm">{lead.data.role}</p>
+        <p class="text-fg-muted mt-1 text-sm">
+          {lead.data.source}
+          {lead.data.source && lead.data.translatedFrom && '. '}
+          {lead.data.translatedFrom && translatedNote}
+        </p>
+      </figcaption>
+    </figure>
+
+    {rest.length > 0 && (
+      <ul class="mt-16 grid gap-x-12 gap-y-12 md:grid-cols-2">
+        {rest.map(({ data, Content }) => (
+          <li>
+            <figure>
+              <blockquote class="font-display font-book text-fg leading-heading text-xl italic">
+                <Content />
+              </blockquote>
+              <figcaption class="border-rule mt-5 border-t pt-4 text-sm">
+                <span class="text-fg font-strong">{data.name}</span>, {data.role}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    )}
+  </Section>
+)}

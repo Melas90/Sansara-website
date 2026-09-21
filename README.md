@@ -41,6 +41,7 @@ These are placeholders today. `npm run check:launch` lists whatever is left.
 | Meta Pixel ID        | `src/config/site.ts` → `metaPixelId`    | empty (pixel never loads)          |
 | Instagram, LinkedIn  | `src/config/site.ts` → `socials`        | empty (hidden)                     |
 | Case-study figures   | `src/content/cases/`                    | `[PENDIENTE]` once the case exists |
+| Testimonial consent  | `src/content/testimonials/`             | Vero & Rafa: `consent: pending`    |
 | Logo as SVG          | `src/assets/`                           | PNG taken from the live page       |
 | Founders photo       | `src/assets/`                           | none yet                           |
 

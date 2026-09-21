@@ -164,3 +164,11 @@ Boldness is now spent in three places that share one idea (the circle: sun,
 loop, and the round favicon), rather than in one place. That is a deliberate
 departure from BRIEF §1's "one place", made because restraint alone did not
 give the brand a face.
+
+## Revision 3 (2026-09-22) — slate retired
+
+The owner found the slate read as green and pulled away from the brand’s red and
+orange. The dark surface is now **espresso `#2A1E14`**, the same brown the original
+landing used for its dark band, with `#3E2A19` for the band of the loop. The token
+is named `--sm-deep` so its role, not its colour, is what components refer to.
+Everything on the site is now cream, brown or ember.

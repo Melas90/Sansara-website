@@ -5,7 +5,7 @@
  * content takes the remaining 8, so pages read down one left-aligned edge.
  *
  * Props:
- *   surface     'linen' | 'oat' | 'paper' | 'slate'. Slate is reserved for the
+ *   surface     'linen' | 'oat' | 'paper' | 'deep'. Slate is reserved for the
  *               system diagram and the final call to action (DESIGN.md).
  *   id          anchor id
  *   labelledby  id of the heading that names this section for screen readers
@@ -15,7 +15,7 @@
 import Container from './Container.astro';
 
 interface Props {
-  surface?: 'linen' | 'oat' | 'paper' | 'slate' | 'ember';
+  surface?: 'linen' | 'oat' | 'paper' | 'deep' | 'ember';
   id?: string;
   labelledby?: string;
   class?: string;

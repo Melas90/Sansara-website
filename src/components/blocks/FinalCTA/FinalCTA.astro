@@ -1,6 +1,6 @@
 ---
 /**
- * FinalCTA: the closing band on slate with the three ways to start. One of the
+ * FinalCTA: the closing band on the dark surface with the three ways to start. One of the
  * two places the second material appears (the other is the system diagram).
  *
  * Props: locale, title, text. Copy is passed in so any page can reuse the block.
@@ -19,7 +19,7 @@ interface Props {
 const { locale, title, text } = Astro.props;
 ---
 
-<Section surface="slate" labelledby="final-title">
+<Section surface="deep" labelledby="final-title">
   <div class="max-w-headline">
     <Heading id="final-title" size="title">
       {title}

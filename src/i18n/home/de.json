@@ -67,6 +67,10 @@
     "pendingNote": "Zahlen mit [PENDIENTE] warten noch auf die Freigabe des Kunden.",
     "more": "Den ganzen Fall lesen"
   },
+  "testimonials": {
+    "title": "In ihren Worten.",
+    "translated": "Aus dem Spanischen übersetzt."
+  },
   "statement": {
     "text": "Gesehen zu werden ist der leichte Teil. Ob ein Kunde bleibt oder geht, entscheidet sich in den zehn Minuten danach.",
     "note": "Genau diese Lücke zwischen „interessiert“ und „gebucht“ ist das Einzige, was wir bauen."

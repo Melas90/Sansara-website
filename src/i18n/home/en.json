@@ -67,6 +67,10 @@
     "pendingNote": "Figures marked [PENDIENTE] are waiting for the client's sign-off.",
     "more": "Read the full case"
   },
+  "testimonials": {
+    "title": "In their words.",
+    "translated": "Translated from Spanish."
+  },
   "statement": {
     "text": "Being noticed is the easy part. What happens in the next ten minutes is where a client is won or lost.",
     "note": "That gap between “interested” and “booked” is the only thing we build."

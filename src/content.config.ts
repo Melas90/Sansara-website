@@ -96,6 +96,15 @@ const testimonials = defineCollection({
       sourceUrl: z.url().optional(),
       photo: image().optional(),
       caseSlug: z.string().optional(),
+      /** Where the words come from, shown under the name: "from a WhatsApp message after launch". */
+      source: z.string().optional(),
+      /** Set when the body is a translation, e.g. 'es'. The page then says so. */
+      translatedFrom: locale.optional(),
+      /**
+       * Written permission from the person to publish name, business and words.
+       * 'pending' shows on staging but makes `npm run check:launch` fail.
+       */
+      consent: z.enum(['confirmed', 'pending']),
       order: z.number().default(100),
     }),
 });

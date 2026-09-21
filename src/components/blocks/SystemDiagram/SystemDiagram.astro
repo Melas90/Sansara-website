@@ -35,7 +35,7 @@ const nodes = [
 ];
 ---
 
-<Section surface="slate" labelledby={id}>
+<Section surface="deep" labelledby={id}>
   <div class="max-w-headline">
     <Heading level={level} size="title" id={id}>
       {copy.title}
@@ -169,7 +169,7 @@ const nodes = [
     block-size: var(--node);
     border-radius: 50%;
     background-color: var(--sm-ember);
-    box-shadow: 0 0 0 calc(var(--sm-space-unit) * 1.5) var(--sm-slate);
+    box-shadow: 0 0 0 calc(var(--sm-space-unit) * 1.5) var(--sm-deep);
   }
 
   /* From 1024px: the path becomes the loop, stations sit around it clockwise. */
@@ -199,7 +199,7 @@ const nodes = [
 
     .loop-band {
       fill: none;
-      stroke: var(--sm-slate-raised);
+      stroke: var(--sm-deep-raised);
       stroke-width: 9;
     }
 
@@ -213,7 +213,7 @@ const nodes = [
 
     .loop-node {
       fill: var(--sm-ember);
-      stroke: var(--sm-slate);
+      stroke: var(--sm-deep);
       stroke-width: 1.4;
       transform-box: fill-box;
       transform-origin: center;
