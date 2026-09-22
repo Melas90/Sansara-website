@@ -84,6 +84,12 @@ function decide(value: Consent) {
 if (consent === 'granted') loadPixel();
 if (consent === null && banner) banner.hidden = false;
 
+document.addEventListener('submit', (event) => {
+  const form = event.target instanceof HTMLFormElement ? event.target : null;
+  const tracked = form?.dataset.trackSubmit;
+  if (tracked) window.smTrack(tracked as TrackEvent);
+});
+
 document.addEventListener('click', (event) => {
   const target = event.target instanceof Element ? event.target : null;
   if (!target) return;

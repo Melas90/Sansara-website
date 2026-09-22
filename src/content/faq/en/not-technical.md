@@ -1,7 +1,7 @@
 ---
 locale: en
 question: "I'm not technical at all. Is that a problem?"
-pages: [home, sistema]
+pages: [home]
 order: 20
 ---
 

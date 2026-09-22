@@ -1,18 +1,30 @@
 {
   "hero": {
     "title": "Stop chasing clients. Let them come to you.",
-    "lead": "You're good at what you do. Getting people to book you shouldn't take everything you've got. We build the system that does it for you.",
-    "painsTitle": "Sound familiar?",
-    "pains": [
-      "They ask what I charge… and then just vanish.",
-      "Loads of likes. Nobody actually books.",
-      "I always mean to follow up. Then the week's just gone.",
-      "I never know where the next one's coming from."
-    ],
-    "facts": ["Ten years in marketing", "Two people, on purpose", "Built and launched in days"]
+    "lead": "Sansara Media is a two-person marketing agency. We build the systems that bring clients to coaches, consultants, therapists and local businesses, the kind where people book you directly.",
+    "facts": ["Ten years in marketing", "Two people, on purpose", "Built and launched in days"],
+    "glanceTitle": "What we build",
+    "glance": [
+      "Ads that reach the people already looking.",
+      "Pages where booking you is the obvious next step.",
+      "Follow-up that answers while you’re with a client.",
+      "Bookings that land in your calendar, not your DMs."
+    ]
+  },
+  "services": {
+    "title": "What we do, at a glance.",
+    "lead": "One product that does the whole job, and every piece of it on its own. Fixed scope, fixed price, done for you.",
+    "productLabel": "Our product",
+    "product": {
+      "title": "The Sansara Client Loop",
+      "text": "The complete client acquisition system: ad, page, follow-up and booking, connected into one path and handed over working. One offer, one fixed price, live in days.",
+      "more": "See how the Loop works"
+    },
+    "servicesLabel": "Done-for-you services",
+    "all": "See all services"
   },
   "system": {
-    "title": "One path. From “never heard of you” to “booked.”",
+    "title": "How the Client Loop works: one path, from “never heard of you” to “booked.”",
     "lead": "Built, connected and launched for you. You never touch the tech.",
     "start": "Never heard of you",
     "end": "Booked",
@@ -40,28 +52,6 @@
     "bookedNote": "On your calendar, not in your DMs.",
     "loopNote": "Why a loop? Because it doesn’t stop at the booking. The same follow-up stays in touch afterwards, so good clients come back instead of drifting off."
   },
-  "doors": {
-    "title": "Pick how much you want off your plate.",
-    "lead": "Same building blocks, three ways to get them.",
-    "more": "See how it works",
-    "items": {
-      "sistema": {
-        "title": "The System",
-        "kicker": "We build and run the whole thing",
-        "text": "Landing page, booking, Meta Ads, follow-up and WhatsApp, connected into one path and handed over working. One fixed scope, one fixed price, live in days."
-      },
-      "servicios": {
-        "title": "Done for you, piece by piece",
-        "kicker": "We do one part for you",
-        "text": "Need just the landing page, the ads or the booking setup? Each module has a fixed scope and a fixed price, and fits into the System later."
-      },
-      "productos": {
-        "title": "Products",
-        "kicker": "You do it yourself",
-        "text": "Templates and kits for people who'd rather build it themselves, made from what we use with clients."
-      }
-    }
-  },
   "proof": {
     "title": "What it looks like for a real business.",
     "pendingNote": "Figures marked [PENDIENTE] are waiting for the client's sign-off.",
@@ -74,22 +64,6 @@
   "statement": {
     "text": "Being noticed is the easy part. What happens in the next ten minutes is where a client is won or lost.",
     "note": "That gap between “interested” and “booked” is the only thing we build."
-  },
-  "fit": {
-    "title": "For coaches, entrepreneurs and business owners.",
-    "lead": "More exactly: any business where clients book you directly. We'd rather say no now than take your money for something that won't work.",
-    "forTitle": "This is for you if…",
-    "for": [
-      "You coach, consult, treat or run a business where clients book you directly.",
-      "People have already paid for what you do. You just want more of them.",
-      "You're tired of your income depending on posting and luck.",
-      "You'd rather have it built for you than learn another tool."
-    ],
-    "notTitle": "Probably not for you if…",
-    "not": [
-      "You don't have an offer people have paid for yet. A system can't fix that, and we'll say so.",
-      "You want someone to run your social media or make content. That's not what we build."
-    ]
   },
   "process": {
     "title": "How working with us goes.",

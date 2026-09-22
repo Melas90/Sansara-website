@@ -44,6 +44,10 @@ const services = defineCollection({
     ...page,
     whatYouGet: z.array(z.string()).min(1),
     whoItsFor: z.string(),
+    /** Who should not buy this. Part of the brand’s honesty, so it is required. */
+    notFor: z.string(),
+    /** What we need from the client, in one or two sentences. */
+    yourPart: z.string(),
     price: priceModel,
     /** True for the modules the System is made of. */
     partOfSystem: z.boolean().default(true),

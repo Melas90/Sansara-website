@@ -1,0 +1,38 @@
+---
+/**
+ * Pains: what clients say about their own week, set as overheard speech in
+ * italic serif and staggered left and right like a conversation.
+ *
+ * Props: title, items (the quotes).
+ * Content source: the calling page's copy (i18n/sistema -> pains).
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  title: string;
+  items: string[];
+}
+const { title, items } = Astro.props;
+---
+
+<Section labelledby="pains-title">
+  <Fragment slot="heading">
+    <Heading id="pains-title">{title}</Heading>
+  </Fragment>
+
+  <ul data-reveal>
+    {items.map((item, index) => (
+      <li
+        data-reveal-item
+        style={`--i:${index}`}
+        class:list={[
+          'border-rule font-display font-book text-fg leading-heading tracking-heading border-t py-6 text-2xl italic last:border-b',
+          index % 2 === 1 && 'sm:pl-20',
+        ]}
+      >
+        <q>{item}</q>
+      </li>
+    ))}
+  </ul>
+</Section>

@@ -3,19 +3,23 @@
  * FitList: who this is for, and who it is not for. The "not for you" list is
  * part of the brand's honesty, so it gets the same weight as the first list.
  *
- * Props: locale.
- * Content source: i18n/home/<locale>.json -> fit.
+ * Props: copy ({ title, lead, forTitle, for[], notTitle, not[] }).
+ * Content source: the calling page's copy (i18n/sistema -> fit).
  */
 import Section from '../../ui/Section.astro';
 import Heading from '../../ui/Heading.astro';
-import type { Locale } from '../../../config/site';
-import { pageCopy } from '../../../i18n/utils';
 
 interface Props {
-  locale: Locale;
+  copy: {
+    title: string;
+    lead: string;
+    forTitle: string;
+    for: string[];
+    notTitle: string;
+    not: string[];
+  };
 }
-const { locale } = Astro.props;
-const copy = pageCopy('home', locale).fit;
+const { copy } = Astro.props;
 
 const lists = [
   { title: copy.forTitle, items: copy.for, mark: '✓', markClass: 'text-accent' },

@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Quiénes somos: una agencia pequeña, a propósito",
+    "description": "Sansara Media somos Miguel y Christiane. Dos personas, diez años en marketing, montando sistemas para captar clientes en negocios donde te reservan directamente."
+  },
+  "hero": {
+    "title": "Dos personas. Pequeños a propósito.",
+    "lead": "Sansara Media somos Miguel y Christiane. Montamos los sistemas que traen clientes a negocios donde la gente te reserva directamente, y el trabajo lo hacemos nosotros mismos."
+  },
+  "sections": [
+    {
+      "title": "Lo que nos enseñaron diez años",
+      "body": [
+        "Las piezas sueltas casi nunca cambian un negocio. Una landing bonita por aquí, una campaña ingeniosa por allá. Ayuda, y luego se apaga, porque todo lo de alrededor sigue sosteniéndose a mano.",
+        "Lo vimos una y otra vez: dueños de negocio que hacían todo lo que les decían, publicar, contestar rápido, hacer seguimiento, y aun así seguían persiguiendo clientes. No porque trabajaran poco. Porque todo pasaba por ellos.",
+        "Así que dejamos de vender piezas como si fueran la solución y empezamos a montar el camino entero, conectado, y a entregarlo funcionando."
+      ]
+    },
+    {
+      "title": "Por qué seguimos siendo pequeños",
+      "body": [
+        "Cuando trabajas con nosotros, trabajas con nosotros. No hay un gestor de cuentas entre tú y quienes hacen el trabajo, ni nadie aprendiendo con tu presupuesto.",
+        "Ser pequeños también significa que cogemos pocos negocios a la vez, y solo cuando creemos que va a funcionar. Si no, te lo diremos en la primera llamada."
+      ]
+    },
+    {
+      "title": "De dónde viene el nombre",
+      "body": [
+        "Sansara es el ciclo: lo que vuelve una y otra vez. Es lo que montamos. No un pico de atención que pasa y ya está, sino un ciclo que sigue trayendo a la gente adecuada, mantiene el contacto con ella y hace que los buenos clientes vuelvan."
+      ]
+    }
+  ],
+  "valuesTitle": "Cómo trabajamos",
+  "values": [
+    {
+      "title": "Te lo hacemos",
+      "text": "Lo montamos, lo conectamos y lo lanzamos. Tú no tocas la parte técnica."
+    },
+    { "title": "Hablamos claro", "text": "Si no sabemos decirlo fácil, no lo decimos." },
+    { "title": "Encaje honesto", "text": "Si no es para ti, te lo diremos." },
+    {
+      "title": "Es tuyo",
+      "text": "La cuenta publicitaria, la página, la lista y los datos están a tu nombre desde el primer día. Si algún día te vas, te lo llevas todo."
+    }
+  ],
+  "final": {
+    "title": "Habla con las dos personas que harían el trabajo.",
+    "text": "Treinta minutos, gratis. Miramos tu negocio juntos y te decimos con honestidad qué haríamos, y si nos necesitas para hacerlo."
+  }
+}

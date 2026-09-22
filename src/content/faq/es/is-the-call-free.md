@@ -1,7 +1,7 @@
 ---
 locale: es
 question: '¿De verdad la llamada es gratis?'
-pages: [home, sistema]
+pages: [home]
 order: 10
 ---
 

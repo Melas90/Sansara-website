@@ -1,7 +1,7 @@
 ---
 locale: de
 question: 'Wie lange dauert es, bis alles live ist?'
-pages: [home, sistema]
+pages: [home]
 order: 40
 ---
 

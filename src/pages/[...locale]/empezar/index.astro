@@ -1,0 +1,23 @@
+---
+/**
+ * Start: the three ways to begin. The call (Cal.com), WhatsApp, and a form.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import ContactOptions from '../../../components/blocks/ContactOptions/ContactOptions.astro';
+import type { Locale } from '../../../config/site';
+import { localeStaticPaths, pageCopy } from '../../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('empezar', locale);
+---
+
+<BaseLayout locale={locale} title={copy.meta.title} description={copy.meta.description}>
+  <PageHero locale={locale} title={copy.hero.title} lead={copy.hero.lead} />
+  <ContactOptions locale={locale} />
+</BaseLayout>

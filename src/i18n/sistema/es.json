@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "Sansara Client Loop: entra un anuncio, sale una reserva",
+    "description": "Anuncio, página, seguimiento y reserva. Un sistema para captar clientes que montamos, conectamos y lanzamos por ti, a un precio cerrado y en marcha en días."
+  },
+  "hero": {
+    "title": "El Sansara Client Loop: entra un anuncio, sale una reserva.",
+    "lead": "Anuncio, página, seguimiento y reserva. Cuatro piezas que montamos y conectamos por ti, a un precio cerrado y en marcha en días, para que la gente adecuada encuentre lo que haces y reserve sin que tengas que ir detrás de nadie."
+  },
+  "pains": {
+    "title": "¿Te suena?",
+    "items": [
+      "Me preguntan el precio… y desaparecen.",
+      "Muchos likes. Nadie reserva.",
+      "Siempre pienso en hacer seguimiento. Y se me va la semana.",
+      "Nunca sé de dónde va a salir el próximo cliente."
+    ]
+  },
+  "leaks": {
+    "title": "No te hace falta más atención. Te hace falta que funcione lo que viene después.",
+    "lead": "Tu oferta funciona. Te lo dicen tus clientes. El hueco está en todo lo que pasa entre que alguien se fija en ti y que de verdad reserva. Por ahí se te escapan clientes, sin hacer ruido, todas las semanas.",
+    "items": [
+      "La gente te encuentra, pero nada le da ganas de reservar.",
+      "Alguien muestra interés y se queda esperando, porque nadie le contesta a tiempo.",
+      "Ya quieren reservar, pero no hay un siguiente paso claro.",
+      "Los que solo tenían curiosidad se van, y no vuelven."
+    ],
+    "punch": "Nada de esto quiere decir que hagas mal tu trabajo. Quiere decir que el tramo entre «me interesa» y «reservado» nunca llegó a montarse."
+  },
+  "stages": {
+    "title": "Cuatro pasos, un solo sistema conectado, montado alrededor de tu oferta.",
+    "lead": "Cogemos la oferta que ya tienes y montamos los cuatro pasos a su alrededor. Cada uno tapa una de las fugas de arriba.",
+    "items": [
+      {
+        "title": "Anuncio",
+        "text": "Tu oferta delante de quienes ya están buscando lo que haces.",
+        "deliverables": [
+          "Una campaña de anuncios, montada por nosotros",
+          "Hasta 3 diseños de anuncio",
+          "Textos que le hablan a tu cliente ideal"
+        ]
+      },
+      {
+        "title": "Página",
+        "text": "Una página clara donde reservar contigo es el paso lógico.",
+        "deliverables": [
+          "Tu propia página, hecha a medida",
+          "Tu oferta, posicionada y redactada",
+          "Reserva, inscripción o venta ya conectadas"
+        ]
+      },
+      {
+        "title": "Seguimiento",
+        "text": "Cada consulta recibe una respuesta cercana y al momento, aunque estés con un cliente. Nadie espera, nadie se queda olvidado.",
+        "deliverables": [
+          "Respuestas y recordatorios automáticos",
+          "Una lista de personas interesadas que es tuya"
+        ]
+      },
+      {
+        "title": "Reserva",
+        "text": "El interés se convierte en una sesión reservada, una plaza o una venta, directa a tu agenda.",
+        "deliverables": [
+          "Reservar en un par de toques",
+          "Una medición sencilla: qué anuncio funciona y cuánto cuesta cada reserva"
+        ]
+      }
+    ]
+  },
+  "why": {
+    "title": "Ni una agencia con cuota mensual. Ni un software. Un estudio pequeño que lo monta todo y te entrega las llaves.",
+    "lead": "Sin presentaciones de propuesta, sin tres meses de espera, sin un panel que tengas que aprender a usar. Montamos, conectamos y lanzamos el sistema, y luego te enseñamos qué está funcionando. Tú sigues con el trabajo que te gusta.",
+    "values": [
+      {
+        "title": "Te lo hacemos",
+        "text": "Lo montamos, lo conectamos y lo lanzamos. Tú no tocas la parte técnica."
+      },
+      { "title": "Cerrado y rápido", "text": "Un solo precio, en marcha en días. Sin sorpresas." },
+      {
+        "title": "Es tuyo",
+        "text": "La cuenta publicitaria, la página, la lista y los datos se crean a tu nombre desde el primer día."
+      }
+    ]
+  },
+  "fit": {
+    "title": "Solo lo cogemos cuando encaja.",
+    "lead": "Preferimos decirte que no ahora a cobrarte por algo que no va a funcionar.",
+    "forTitle": "Encaja contigo si…",
+    "for": [
+      "Eres coach, consultor, terapeuta o llevas un negocio donde los clientes te reservan directamente.",
+      "Tienes una oferta que ya funciona. Tus clientes repiten y te recomiendan.",
+      "Sabes más o menos lo que vale un cliente para ti, así que tiene sentido poner presupuesto en anuncios.",
+      "Prefieres que te lo monten a aprender a montarlo."
+    ],
+    "notTitle": "No es para ti si…",
+    "not": [
+      "Todavía estás decidiendo qué ofreces o a quién.",
+      "Quieres mover cinco ofertas a la vez. Nosotros montamos alrededor de una.",
+      "Esperas que un sistema funcione sin nada de presupuesto para anuncios.",
+      "Buscas a alguien que te lleve las redes o te haga contenido. Eso no es lo que montamos."
+    ]
+  },
+  "process": {
+    "title": "En marcha en cuatro pasos.",
+    "lead": "Tu parte es una llamada, una ronda de comentarios y una entrega breve. El resto es cosa nuestra.",
+    "steps": [
+      {
+        "title": "Llamada: aclaramos tu oferta",
+        "text": "Acordamos cuál es esa única cosa que ofreces y cuál es el único paso que quieres que dé la gente."
+      },
+      {
+        "title": "Montaje: página, textos y anuncios",
+        "text": "Creamos tu página, tus textos y tus anuncios, todo alrededor de esa oferta."
+      },
+      {
+        "title": "Conexión: seguimiento y reservas",
+        "text": "Respuestas, recordatorios y tu sistema de reservas o de pago, conectados entre sí y probados."
+      },
+      {
+        "title": "Lanzamiento: sale y se va mejorando",
+        "text": "Se publica. Miramos qué funciona y te enseñamos a leerlo por tu cuenta."
+      }
+    ]
+  },
+  "price": {
+    "title": "Una oferta. Un sistema. Un precio cerrado.",
+    "lead": "La cifra exacta te la damos en la llamada gratis, por escrito, antes de que decidas nada. Después no cambia.",
+    "points": [
+      "Un solo pago por el montaje. Sin cuota mensual de la que no puedas salir.",
+      "Todo lo que ves arriba está incluido. Nada se factura por horas.",
+      "¿Necesitas una segunda oferta, anunciarte en más sitios o una configuración más a fondo? Se añade sobre el mismo sistema, también a precio cerrado."
+    ],
+    "adBudgetTitle": "Sobre el presupuesto para anuncios",
+    "adBudget": "El presupuesto para anuncios va aparte. Se lo pagas directamente a la plataforma, desde tu propia cuenta. En la llamada te diremos qué presupuesto inicial es razonable para tu oferta. Si ahora mismo no tienes margen para eso, no es el momento, y te lo diremos."
+  },
+  "faqTitle": "Las dudas que oímos en casi todas las llamadas.",
+  "final": {
+    "title": "Descubre si el Loop encaja con tu negocio.",
+    "text": "Una llamada gratis. Miramos cómo te encuentra la gente hoy, dónde se pierde y si esto es lo que lo arregla. Si no lo es, te diremos qué lo arreglaría."
+  }
+}

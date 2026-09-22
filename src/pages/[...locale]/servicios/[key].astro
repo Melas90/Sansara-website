@@ -1,0 +1,110 @@
+---
+/**
+ * One service. The same template for every file in src/content/services/: what
+ * it is, what you get, who it is for and not for, what we need from you, how
+ * the price works, how it connects to the Client Loop, other services, and the
+ * call to action.
+ */
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import Section from '../../../components/ui/Section.astro';
+import Heading from '../../../components/ui/Heading.astro';
+import TextLink from '../../../components/ui/TextLink.astro';
+import ServiceList from '../../../components/blocks/ServiceList/ServiceList.astro';
+import FinalCTA from '../../../components/blocks/FinalCTA/FinalCTA.astro';
+import { defaultLocale } from '../../../config/site';
+import { localePath, pageCopy } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return services.map((entry) => ({
+    params: {
+      locale: entry.data.locale === defaultLocale ? undefined : entry.data.locale,
+      key: entry.data.key,
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const locale = data.locale;
+const copy = pageCopy('servicios', locale);
+const { Content } = await render(entry);
+
+const facts = [
+  { title: copy.detail.whoItsFor, text: data.whoItsFor, rule: 'border-accent' },
+  { title: copy.detail.notFor, text: data.notFor, rule: 'border-rule' },
+  { title: copy.detail.yourPart, text: data.yourPart, rule: 'border-rule' },
+];
+---
+
+<BaseLayout locale={locale} title={data.title} description={data.summary}>
+  <PageHero
+    locale={locale}
+    title={data.title}
+    lead={data.summary}
+    back={{ href: localePath(locale, '/servicios/'), label: copy.detail.back }}
+    actions
+  />
+
+  <Section surface="oat" labelledby="get-title">
+    <Fragment slot="heading">
+      <Heading id="get-title">{copy.detail.whatYouGet}</Heading>
+    </Fragment>
+    <ul class="border-rule border-t" data-reveal>
+      {data.whatYouGet.map((item, index) => (
+        <li
+          data-reveal-item
+          style={`--i:${index}`}
+          class="border-rule text-fg flex gap-x-4 border-b py-4 text-lg"
+        >
+          <span aria-hidden="true" class="text-accent font-strong shrink-0">
+            ✓
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="text-fg max-w-measure mt-10 flex flex-col gap-y-5 text-lg">
+      <Content />
+    </div>
+  </Section>
+
+  <Section>
+    <div class="grid gap-x-12 gap-y-12 md:grid-cols-3">
+      {facts.map((fact) => (
+        <div>
+          <Heading level={2} size="sub">
+            {fact.title}
+          </Heading>
+          <p class:list={['mt-4 border-t-2 pt-4', fact.rule]}>{fact.text}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section surface="oat" labelledby="price-title">
+    <Fragment slot="heading">
+      <Heading id="price-title">{copy.detail.price}</Heading>
+    </Fragment>
+    <p class="text-fg max-w-measure text-lg">
+      {data.price.amount && <strong class="font-strong">{data.price.amount}. </strong>}
+      {copy.detail.priceKinds[data.price.kind]}
+    </p>
+    {data.price.note && <p class="max-w-measure mt-4">{data.price.note}</p>}
+    {data.partOfSystem && (
+      <p class="border-accent max-w-measure mt-10 border-l-2 pl-5">
+        {copy.detail.partOfSystem}{' '}
+        <TextLink href={localePath(locale, '/sistema/')}>{copy.detail.partOfSystemLink}</TextLink>
+      </p>
+    )}
+  </Section>
+
+  <Section>
+    <ServiceList locale={locale} label={copy.detail.others} exclude={data.key} compact level={2} />
+  </Section>
+
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
+</BaseLayout>

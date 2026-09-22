@@ -1,0 +1,114 @@
+{
+  "notice": "Entwurf. Die mit [PENDIENTE] markierten Unternehmensangaben müssen ergänzt und der Text rechtlich geprüft werden, bevor diese Website live geht.",
+  "updatedLabel": "Zuletzt aktualisiert",
+  "updated": "22. September 2026",
+  "pages": {
+    "avisoLegal": {
+      "title": "Impressum",
+      "description": "Wer hinter dieser Website steht und welche Bedingungen für ihre Nutzung gelten.",
+      "sections": [
+        {
+          "title": "Wer diese Website betreibt",
+          "body": [
+            "Inhaber: [PENDIENTE: full legal name or company name].",
+            "Steuernummer (NIF/CIF): [PENDIENTE].",
+            "Anschrift: [PENDIENTE].",
+            "E-Mail: info@sansara-media.com.",
+            "Handelsname: Sansara Media."
+          ]
+        },
+        {
+          "title": "Wozu diese Website dient",
+          "body": [
+            "Diese Website stellt die Leistungen von Sansara Media vor. Du kannst darüber Kontakt aufnehmen oder ein Gespräch buchen. Die Nutzung ist kostenlos und ohne Registrierung möglich."
+          ]
+        },
+        {
+          "title": "Urheberrecht",
+          "body": [
+            "Texte, Gestaltung, Logo und Code dieser Website gehören Sansara Media oder werden mit Erlaubnis verwendet. Links darauf darfst du frei teilen. Wer wesentliche Teile für gewerbliche Zwecke kopieren möchte, braucht unsere schriftliche Zustimmung."
+          ]
+        },
+        {
+          "title": "Haftung",
+          "body": [
+            "Wir halten die Informationen hier richtig und aktuell. Es handelt sich aber um allgemeine Informationen, nicht um ein verbindliches Angebot. Was wir liefern und zu welchem Preis, halten wir für jeden Kunden schriftlich fest, bevor die Arbeit beginnt.",
+            "Für die Inhalte externer Seiten, auf die wir verlinken, sind wir nicht verantwortlich."
+          ]
+        },
+        {
+          "title": "Anwendbares Recht",
+          "body": [
+            "Für diese Website gilt spanisches Recht. Zuständig sind die Gerichte, die das Gesetz für den Wohnsitz des Verbrauchers vorsieht, bei Unternehmen die Gerichte von [PENDIENTE: city]."
+          ]
+        }
+      ]
+    },
+    "privacidad": {
+      "title": "Datenschutzerklärung",
+      "description": "Welche personenbezogenen Daten wir erheben, warum, und welche Rechte du daran hast.",
+      "sections": [
+        {
+          "title": "Verantwortlicher für deine Daten",
+          "body": [
+            "[PENDIENTE: full legal name or company name], tätig unter dem Namen Sansara Media. Steuernummer: [PENDIENTE]. Anschrift: [PENDIENTE]. Kontakt: info@sansara-media.com."
+          ]
+        },
+        {
+          "title": "Was wir erheben und warum",
+          "body": [
+            "Kontaktformular: dein Name, deine E-Mail-Adresse und das, was du schreibst. Wir nutzen es nur, um dir zu antworten. Rechtsgrundlage: deine Anfrage.",
+            "Gesprächsbuchung: Die Buchung läuft über Cal.com. Du gibst deinen Namen, deine E-Mail-Adresse und den gewählten Termin an. Wir nutzen das, um das Gespräch zu führen und Erinnerungen zu senden. Rechtsgrundlage: deine Anfrage.",
+            "WhatsApp: Wenn du uns schreibst, verarbeitet WhatsApp (Meta) deine Telefonnummer und deine Nachrichten nach den eigenen Bedingungen. Wir nutzen die Unterhaltung nur, um dir zu antworten.",
+            "Analyse und Werbung: Nur wenn du Cookies akzeptierst, erfasst das Meta-Pixel Besuche und Aktionen wie den Klick auf einen Buchungsbutton. So erkennen wir, welche Anzeigen Menschen hierher bringen. Rechtsgrundlage: deine Einwilligung. Du kannst sie jederzeit über „Cookie-Einstellungen“ in der Fußzeile widerrufen."
+          ]
+        },
+        {
+          "title": "Wer sonst damit arbeitet",
+          "body": [
+            "Netlify (Hosting und Kontaktformular), Cal.com (Buchungen), Meta Platforms (WhatsApp und, mit deiner Einwilligung, das Pixel). Einige dieser Anbieter sitzen außerhalb des Europäischen Wirtschaftsraums und stützen sich auf Standardvertragsklauseln oder einen gleichwertigen Mechanismus. Wir verkaufen deine Daten an niemanden."
+          ]
+        },
+        {
+          "title": "Wie lange wir sie aufbewahren",
+          "body": [
+            "Nachrichten und Buchungsdaten: solange die Unterhaltung läuft und bis zu 12 Monate danach. Wenn du Kunde wirst: so lange, wie das Gesetz es für Rechnungen und Verträge vorschreibt."
+          ]
+        },
+        {
+          "title": "Deine Rechte",
+          "body": [
+            "Du kannst Auskunft über deine Daten verlangen, sie berichtigen oder löschen lassen, ihre Verarbeitung einschränken, ihr widersprechen und deine Daten mitnehmen. Schreib an info@sansara-media.com, wir antworten innerhalb eines Monats.",
+            "Wenn du meinst, dass wir mit deinen Daten nicht richtig umgegangen sind, kannst du dich bei der spanischen Datenschutzbehörde beschweren, der Agencia Española de Protección de Datos (AEPD, www.aepd.es)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "description": "Was diese Website auf deinem Gerät speichert und wie du deine Entscheidung änderst.",
+      "sections": [
+        {
+          "title": "Die Kurzfassung",
+          "body": [
+            "Diese Website funktioniert ganz ohne Cookies. Es wird nichts erfasst, solange du im Cookie-Hinweis nicht auf „Akzeptieren“ klickst."
+          ]
+        },
+        {
+          "title": "Was wir speichern",
+          "body": [
+            "Deine Entscheidung: ein Eintrag im lokalen Speicher deines Browsers mit dem Namen „sm-consent“ und dem Wert „granted“ oder „denied“, damit wir dich nicht noch einmal fragen. Er bleibt auf deinem Gerät und wird nicht an uns gesendet.",
+            "Wenn du akzeptierst: Das Meta-Pixel (Meta Platforms Ireland Ltd.) setzt Cookies wie „_fbp“. Damit messen wir, welche Anzeigen Besucher hierher bringen und ob sie ein Gespräch buchen. Diese Cookies bleiben bis zu 90 Tage gespeichert.",
+            "Der Buchungskalender kommt von Cal.com. Wenn du ihn nutzt, kann er Cookies setzen, die für die Buchung unbedingt erforderlich sind."
+          ]
+        },
+        {
+          "title": "Wenn du es dir anders überlegst",
+          "body": [
+            "Klick in der Fußzeile jeder Seite auf „Cookie-Einstellungen“. Dann siehst du den Hinweis erneut und kannst deine Antwort ändern. Außerdem kannst du Cookies und Websitedaten in den Einstellungen deines Browsers löschen."
+          ]
+        }
+      ]
+    }
+  }
+}

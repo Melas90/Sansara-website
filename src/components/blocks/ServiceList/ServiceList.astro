@@ -1,0 +1,60 @@
+---
+/**
+ * ServiceList: the done-for-you services as rows, one per content file. Adding
+ * a file to src/content/services/<locale>/ adds a row here and a page.
+ *
+ * Props: locale, label (small heading above the list), lead, compact (titles
+ * and one line, for the home page), exclude (a service key to leave out, used
+ * for "other services" on a detail page), level.
+ * Content source: content/services/<locale>/*.md.
+ */
+import { getCollection } from 'astro:content';
+import Heading from '../../ui/Heading.astro';
+import type { Locale } from '../../../config/site';
+import { localePath } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  label?: string;
+  lead?: string;
+  compact?: boolean;
+  exclude?: string;
+  level?: 2 | 3;
+}
+const { locale, label, lead, compact = false, exclude, level = 3 } = Astro.props;
+
+const services = (
+  await getCollection(
+    'services',
+    ({ data }) => data.locale === locale && !data.draft && data.key !== exclude,
+  )
+).sort((a, b) => a.data.order - b.data.order);
+const ItemTag = `h${level + 1}` as 'h3' | 'h4';
+---
+
+{services.length > 0 && (
+  <div>
+    {label && (
+      <Heading level={level} size="sub">
+        {label}
+      </Heading>
+    )}
+    {lead && <p class="max-w-measure mt-3">{lead}</p>}
+
+    <ul class:list={['border-rule border-t', (label || lead) && 'mt-8']}>
+      {services.map((service) => (
+        <li class="border-rule border-b">
+          <a
+            href={localePath(locale, `/servicios/${service.data.key}/`)}
+            class="group hover:bg-oat ease-brand grid gap-y-1 py-5 no-underline transition-colors duration-150 md:grid-cols-12 md:gap-x-8"
+          >
+            <ItemTag class="font-display font-book text-fg leading-heading tracking-heading group-hover:text-accent text-xl md:col-span-5">
+              {service.data.title}
+            </ItemTag>
+            <p class:list={['md:col-span-7', compact && 'text-sm']}>{service.data.summary}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

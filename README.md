@@ -33,17 +33,18 @@ npm run check:launch # fails while any placeholder is left
 
 These are placeholders today. `npm run check:launch` lists whatever is left.
 
-| What                 | Where                                   | Now                                |
-| -------------------- | --------------------------------------- | ---------------------------------- |
-| Production domain    | `src/config/site.ts` → `url`            | `PLACEHOLDER.sansara-media.com`    |
-| Cal.com booking link | `src/config/site.ts` → `bookingUrl`     | `cal.com/PLACEHOLDER/...`          |
-| WhatsApp number      | `src/config/site.ts` → `whatsappNumber` | `PLACEHOLDER`                      |
-| Meta Pixel ID        | `src/config/site.ts` → `metaPixelId`    | empty (pixel never loads)          |
-| Instagram, LinkedIn  | `src/config/site.ts` → `socials`        | empty (hidden)                     |
-| Case-study figures   | `src/content/cases/`                    | `[PENDIENTE]` once the case exists |
-| Testimonial consent  | `src/content/testimonials/`             | Vero & Rafa: `consent: pending`    |
-| Logo as SVG          | `src/assets/`                           | PNG taken from the live page       |
-| Founders photo       | `src/assets/`                           | none yet                           |
+| What                  | Where                                   | Now                                |
+| --------------------- | --------------------------------------- | ---------------------------------- |
+| Production domain     | `src/config/site.ts` → `url`            | `PLACEHOLDER.sansara-media.com`    |
+| Cal.com booking link  | `src/config/site.ts` → `bookingUrl`     | `cal.com/PLACEHOLDER/...`          |
+| WhatsApp number       | `src/config/site.ts` → `whatsappNumber` | `PLACEHOLDER`                      |
+| Meta Pixel ID         | `src/config/site.ts` → `metaPixelId`    | empty (pixel never loads)          |
+| Instagram, LinkedIn   | `src/config/site.ts` → `socials`        | empty (hidden)                     |
+| Case-study figures    | `src/content/cases/`                    | `[PENDIENTE]` once the case exists |
+| Legal company details | `src/i18n/legal/*.json`                 | `[PENDIENTE]` name, NIF, address   |
+| Testimonial consent   | `src/content/testimonials/`             | Vero & Rafa: `consent: pending`    |
+| Logo as SVG           | `src/assets/`                           | PNG taken from the live page       |
+| Founders photo        | `src/assets/`                           | none yet                           |
 
 Also before launch: connect the repo in Netlify (production branch `main`, branch
 deploys for `develop`, deploy previews on), then set the custom domain.

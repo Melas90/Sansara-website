@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Servicios: el Client Loop, y cada una de sus piezas por separado",
+    "description": "Nuestro producto es el Sansara Client Loop, un sistema completo para captar clientes. Cada una de sus piezas también se puede contratar como servicio con alcance y precio cerrados."
+  },
+  "hero": {
+    "title": "Un producto. Y cada una de sus piezas, por separado.",
+    "lead": "La mayoría de los clientes quiere que le montemos el camino entero. Otros ya tienen la mitad y necesitan que la pieza que falta quede bien hecha. Las dos cosas nos parecen bien. Todo lo que ves aquí tiene alcance cerrado y precio cerrado."
+  },
+  "product": {
+    "label": "Nuestro producto",
+    "title": "El Sansara Client Loop",
+    "text": "El sistema completo para captar clientes: anuncio, página, seguimiento y reserva, conectados en un solo camino y entregados funcionando. Una oferta, un precio cerrado, en marcha en días y todo a tu nombre.",
+    "more": "Ver cómo funciona el Loop"
+  },
+  "list": {
+    "label": "Servicios que te hacemos nosotros",
+    "lead": "Las piezas con las que está hecho el Loop. Cada una encaja después en el sistema completo, así que nada de lo que contrates ahora acaba en la basura."
+  },
+  "detail": {
+    "whatYouGet": "Qué recibes",
+    "whoItsFor": "Para quién es",
+    "notFor": "Para quién no es",
+    "yourPart": "Qué necesitamos de ti",
+    "price": "Cómo funciona el precio",
+    "priceKinds": {
+      "fixed": "Un precio cerrado, acordado por escrito antes de empezar.",
+      "from": "Un precio cerrado que depende del tamaño. Te damos la cifra exacta por escrito antes de empezar.",
+      "monthly": "Una cuota mensual fija. Puedes cancelar cualquier mes y todo sigue siendo tuyo.",
+      "on-call": "Te damos el precio en una llamada corta, porque depende de lo que ya tengas."
+    },
+    "partOfSystem": "Esta es una de las piezas del Sansara Client Loop. Si necesitas el camino entero, lo montamos como un solo trabajo conectado, en lugar de ir comprando piezas de una en una.",
+    "partOfSystemLink": "Ver el Client Loop",
+    "others": "Otros servicios",
+    "back": "Todos los servicios"
+  },
+  "final": {
+    "title": "¿No tienes claro qué pieza necesitas?",
+    "text": "Para eso está la llamada gratis. Treinta minutos mirando tu negocio, y sales sabiendo qué pieza te falta, sigas con nosotros o no."
+  }
+}

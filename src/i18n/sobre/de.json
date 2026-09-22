@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Über uns: eine kleine Agentur, mit Absicht",
+    "description": "Sansara Media, das sind Miguel und Christiane. Zwei Menschen, zehn Jahre Marketing. Wir bauen Systeme, die Kunden bringen, für alle, die direkt gebucht werden."
+  },
+  "hero": {
+    "title": "Zwei Menschen. Klein mit Absicht.",
+    "lead": "Sansara Media, das sind Miguel und Christiane. Wir bauen die Systeme, die Kunden zu Geschäften bringen, in denen man dich direkt bucht. Und wir machen die Arbeit selbst."
+  },
+  "sections": [
+    {
+      "title": "Was uns zehn Jahre gezeigt haben",
+      "body": [
+        "Einzelteile verändern selten ein Geschäft. Hier eine schöne Landingpage, dort eine clevere Kampagne. Das hilft, und dann verpufft es, weil alles drumherum weiter von Hand zusammengehalten wird.",
+        "Wir haben es immer wieder gesehen: Selbstständige, die alles taten, was man ihnen geraten hatte. Posten, schnell antworten, nachfassen. Und trotzdem liefen sie Kunden hinterher. Nicht, weil sie zu wenig gearbeitet hätten. Sondern weil alles über sie selbst lief.",
+        "Also haben wir aufgehört, Einzelteile als Lösung zu verkaufen. Seitdem bauen wir den ganzen Weg, verbunden, und übergeben ihn funktionierend."
+      ]
+    },
+    {
+      "title": "Warum wir klein bleiben",
+      "body": [
+        "Wenn du mit uns arbeitest, arbeitest du mit uns. Zwischen dir und den Menschen, die die Arbeit machen, sitzt kein Kundenbetreuer. Und niemand lernt auf deine Kosten.",
+        "Klein heißt auch: Wir nehmen nur wenige Kunden gleichzeitig an, und nur, wenn wir glauben, dass es funktioniert. Wenn nicht, sagen wir dir das im ersten Gespräch."
+      ]
+    },
+    {
+      "title": "Woher der Name kommt",
+      "body": [
+        "Sansara ist der Kreislauf: Dinge, die wiederkehren. Genau das bauen wir. Kein einmaliges Strohfeuer an Aufmerksamkeit, sondern einen Kreislauf, der immer wieder die richtigen Menschen zu dir bringt, mit ihnen in Kontakt bleibt und die guten zurückholt."
+      ]
+    }
+  ],
+  "valuesTitle": "So arbeiten wir",
+  "values": [
+    {
+      "title": "Fertig für dich",
+      "text": "Wir bauen, verbinden und starten alles. Mit der Technik hast du nichts zu tun."
+    },
+    { "title": "Klare Worte", "text": "Was wir nicht einfach sagen können, sagen wir nicht." },
+    { "title": "Ehrliche Passung", "text": "Wenn es nicht zu dir passt, sagen wir es dir." },
+    {
+      "title": "Es gehört dir",
+      "text": "Werbekonto, Seite, Liste und Daten laufen vom ersten Tag an auf deinen Namen. Wenn du irgendwann gehst, nimmst du alles mit."
+    }
+  ],
+  "final": {
+    "title": "Sprich mit den beiden, die die Arbeit machen würden.",
+    "text": "Dreißig Minuten, kostenlos. Wir schauen uns dein Geschäft gemeinsam an und sagen dir ehrlich, was wir tun würden und ob du uns dafür überhaupt brauchst."
+  }
+}

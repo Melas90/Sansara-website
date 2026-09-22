@@ -15,12 +15,15 @@ import { pageCopy } from '../../../i18n/utils';
 
 interface Props {
   locale: Locale;
+  /** Overrides the default steps (how working with us goes) with a page's own. */
+  copy?: { title: string; lead: string; steps: { title: string; text: string }[] };
+  surface?: 'linen' | 'oat';
 }
-const { locale } = Astro.props;
-const copy = pageCopy('home', locale).process;
+const { locale, surface = 'oat' } = Astro.props;
+const copy = Astro.props.copy ?? pageCopy('home', locale).process;
 ---
 
-<Section surface="oat" labelledby="process-title">
+<Section surface={surface} labelledby="process-title">
   <Fragment slot="heading">
     <Heading id="process-title">{copy.title}</Heading>
     <p class="mt-4">{copy.lead}</p>

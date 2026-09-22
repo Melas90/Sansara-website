@@ -1,0 +1,111 @@
+---
+/**
+ * One case study: the story (Markdown body: before, what we built, what
+ * changed), the figures, the client's words, and the services involved.
+ */
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import Section from '../../../components/ui/Section.astro';
+import Heading from '../../../components/ui/Heading.astro';
+import Testimonials from '../../../components/blocks/Testimonials/Testimonials.astro';
+import FinalCTA from '../../../components/blocks/FinalCTA/FinalCTA.astro';
+import { defaultLocale } from '../../../config/site';
+import { localePath, pageCopy } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('cases', ({ data }) => !data.draft);
+  return cases.map((entry) => ({
+    params: {
+      locale: entry.data.locale === defaultLocale ? undefined : entry.data.locale,
+      key: entry.data.key,
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const locale = data.locale;
+const copy = pageCopy('casos', locale);
+const { Content } = await render(entry);
+const pending = data.results.some((result) => result.value.includes('[PENDIENTE]'));
+const place = [data.sector, data.location].filter(Boolean).join(', ');
+---
+
+<BaseLayout locale={locale} title={data.title} description={data.summary}>
+  <PageHero
+    locale={locale}
+    title={data.client}
+    lead={data.summary}
+    back={{ href: localePath(locale, '/casos/'), label: copy.labels.back }}
+  >
+    <p class="text-fg-muted mt-4 text-sm">{place}</p>
+  </PageHero>
+
+  <Section surface="oat">
+    <div class="case-story max-w-measure text-fg text-lg">
+      <Content />
+    </div>
+  </Section>
+
+  <Section labelledby="results-title">
+    <Fragment slot="heading">
+      <Heading id="results-title">{copy.labels.results}</Heading>
+    </Fragment>
+    <dl class="border-rule grid border-t sm:grid-cols-3" data-reveal>
+      {data.results.map((result, index) => (
+        <div
+          data-reveal-item
+          style={`--i:${index}`}
+          class="border-rule flex min-w-0 flex-col-reverse border-b py-5 sm:border-b-0 sm:border-l sm:px-6 sm:first:border-l-0 sm:first:pl-0"
+        >
+          <dt class="text-sm">{result.label}</dt>
+          <dd
+            data-count
+            class="font-display font-book text-fg leading-heading text-2xl wrap-break-word tabular-nums"
+          >
+            {result.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+    {pending && <p class="text-fg-muted mt-4 text-sm">{copy.labels.pendingNote}</p>}
+  </Section>
+
+  <Testimonials
+    locale={locale}
+    title={copy.labels.theirWords}
+    translatedNote={pageCopy('home', locale).testimonials.translated}
+  />
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
+</BaseLayout>
+
+<style is:global>
+  /* Markdown from the case file: headings and lists in the site's type. */
+  .case-story h2 {
+    font-family: var(--sm-font-display);
+    font-weight: var(--sm-weight-book);
+    font-size: var(--sm-text-xl);
+    line-height: var(--sm-leading-heading);
+    letter-spacing: var(--sm-tracking-heading);
+    margin-block: calc(var(--sm-space-unit) * 12) calc(var(--sm-space-unit) * 4);
+  }
+
+  .case-story h2:first-child {
+    margin-block-start: 0;
+  }
+
+  .case-story p + p {
+    margin-block-start: calc(var(--sm-space-unit) * 5);
+  }
+
+  .case-story li {
+    border-block-end: 1px solid var(--sm-rule);
+    padding-block: calc(var(--sm-space-unit) * 3);
+  }
+
+  .case-story ul {
+    border-block-start: 1px solid var(--sm-rule);
+  }
+</style>

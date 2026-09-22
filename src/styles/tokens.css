@@ -70,6 +70,8 @@
   /* ---- System diagram ---- */
   --sm-diagram-ring: 27rem; /* diameter of the loop from 1024px */
   --sm-sun: clamp(16rem, 8rem + 34vw, 44rem); /* the ember disc behind the hero */
+  --sm-sun-small: clamp(11rem, 6rem + 22vw, 28rem); /* the same disc on inner pages */
+  --sm-booking-height: 44rem; /* the embedded calendar */
   --sm-diagram-band: 4.5rem; /* thickness of the funnel at its wide end */
   --sm-diagram-node: 0.875rem;
 

@@ -1,0 +1,67 @@
+---
+/**
+ * PageHero: the opening of every page except the home page. Same family as the
+ * home hero (headline on linen with the ember sun) at a smaller scale, so inner
+ * pages feel related without competing with it.
+ *
+ * Props: title, lead, locale + actions (show the three ways to start), back
+ * ({ href, label } for a link above the title, used on detail pages).
+ * Content source: the calling page's copy.
+ */
+import Container from '../../ui/Container.astro';
+import Heading from '../../ui/Heading.astro';
+import Actions from '../../ui/Actions.astro';
+import TextLink from '../../ui/TextLink.astro';
+import type { Locale } from '../../../config/site';
+
+interface Props {
+  title: string;
+  lead?: string;
+  locale: Locale;
+  actions?: boolean;
+  back?: { href: string; label: string };
+}
+const { title, lead, locale, actions = false, back } = Astro.props;
+---
+
+<section aria-labelledby="page-title" class="surface-linen relative overflow-hidden">
+  <div class="sun" aria-hidden="true"></div>
+  <Container class="pt-section relative pb-16 lg:pb-24">
+    {back && (
+      <TextLink href={back.href} standalone class="mb-6 text-sm">
+        {back.label}
+      </TextLink>
+    )}
+    <Heading level={1} size="title" id="page-title" class="max-w-headline">
+      {title}
+    </Heading>
+    {lead && <p class="text-fg max-w-measure mt-8 text-lg">{lead}</p>}
+    {actions && <Actions locale={locale} class="mt-10" />}
+    <slot />
+  </Container>
+</section>
+
+<style>
+  .sun {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inline-size: var(--sm-sun-small);
+    block-size: var(--sm-sun-small);
+    border-radius: 50%;
+    background-color: var(--sm-ember);
+    transform: translate(40%, -55%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sun {
+      animation: rise var(--sm-duration-rise) var(--sm-ease) both;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      transform: translate(40%, -10%) scale(0.86);
+    }
+  }
+</style>

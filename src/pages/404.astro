@@ -1,0 +1,26 @@
+---
+/**
+ * 404. Netlify serves this one file for every missing URL, so it is written in
+ * the default language and offers the way back in all of them.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/blocks/PageHero/PageHero.astro';
+import Button from '../components/ui/Button.astro';
+import { defaultLocale } from '../config/site';
+import { localePath, useTranslations } from '../i18n/utils';
+
+const t = useTranslations(defaultLocale);
+---
+
+<BaseLayout
+  locale={defaultLocale}
+  title={t('notFound.title')}
+  description={t('notFound.text')}
+  noindex
+>
+  <PageHero locale={defaultLocale} title={t('notFound.title')} lead={t('notFound.text')}>
+    <Button href={localePath(defaultLocale)} class="mt-10">
+      {t('notFound.back')}
+    </Button>
+  </PageHero>
+</BaseLayout>

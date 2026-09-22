@@ -1,0 +1,47 @@
+---
+/**
+ * PriceModel: how the price works, without a number. The figure is given on the
+ * call (see DECISIONS.md: no price on pages a stranger lands on), so this block
+ * gives the guardrails instead: one payment, what is included, and that the ad
+ * budget is separate and paid to the platform.
+ *
+ * Props: title, lead, points[], noteTitle, note.
+ * Content source: the calling page's copy (i18n/sistema -> price).
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  title: string;
+  lead: string;
+  points: string[];
+  noteTitle: string;
+  note: string;
+}
+const { title, lead, points, noteTitle, note } = Astro.props;
+---
+
+<Section surface="oat" labelledby="price-title">
+  <Fragment slot="heading">
+    <Heading id="price-title">{title}</Heading>
+  </Fragment>
+
+  <p class="text-fg max-w-measure text-lg">{lead}</p>
+  <ul class="border-rule mt-8 border-t">
+    {points.map((point) => (
+      <li class="border-rule flex gap-x-4 border-b py-4">
+        <span aria-hidden="true" class="text-accent font-strong shrink-0">
+          ✓
+        </span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+
+  <div class="surface-paper border-rule mt-10 border p-6">
+    <Heading level={3} size="sub">
+      {noteTitle}
+    </Heading>
+    <p class="max-w-measure mt-3">{note}</p>
+  </div>
+</Section>

@@ -1,7 +1,7 @@
 ---
 /**
- * Hero: the promise at poster size, the three ways to start, and the four
- * things clients say about their own week. The ember disc is the brand's sun
+ * Hero: the promise at poster size, who the agency is, the three ways to
+ * start, and what it builds at a glance (the four pieces of the Loop). The ember disc is the brand's sun
  * (the same one as the favicon) rising out of the top right corner; it is the
  * hero's only graphic, so there is no stock photo and no gradient.
  *
@@ -39,18 +39,18 @@ const copy = pageCopy('home', locale).hero;
       </div>
 
       <div class="lg:col-span-6 lg:col-start-7">
-        <h2 class="text-fg-muted text-sm">{copy.painsTitle}</h2>
+        <h2 class="text-fg-muted text-sm">{copy.glanceTitle}</h2>
         <ul class="mt-4">
-          {copy.pains.map((pain, index) => (
+          {copy.glance.map((line, index) => (
             <li
               style={`--i:${index}`}
               class:list={[
                 'pain',
-                'border-rule font-display font-book text-fg leading-heading tracking-heading border-t py-5 text-xl italic',
+                'border-rule font-display font-book text-fg leading-heading tracking-heading border-t py-5 text-xl',
                 index % 2 === 1 && 'sm:pl-16',
               ]}
             >
-              <q>{pain}</q>
+              {line}
             </li>
           ))}
         </ul>

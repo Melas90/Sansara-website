@@ -1,18 +1,30 @@
 {
   "hero": {
     "title": "Deja de perseguir clientes. Que vengan ellos.",
-    "lead": "Lo tuyo lo haces bien. Conseguir que te reserven no debería costarte la vida. Nosotros montamos el sistema que lo hace por ti.",
-    "painsTitle": "¿Te suena?",
-    "pains": [
-      "Me preguntan el precio… y desaparecen.",
-      "Muchos likes. Nadie reserva.",
-      "Siempre pienso en hacer seguimiento. Y se me va la semana.",
-      "Nunca sé de dónde va a salir el próximo cliente."
-    ],
-    "facts": ["Diez años en marketing", "Dos personas, a propósito", "Montado y en marcha en días"]
+    "lead": "Sansara Media es una agencia de marketing de dos personas. Montamos los sistemas que traen clientes a coaches, consultores, terapeutas y negocios locales, esos donde la gente te reserva a ti directamente.",
+    "facts": ["Diez años en marketing", "Dos personas, a propósito", "Montado y en marcha en días"],
+    "glanceTitle": "Lo que montamos",
+    "glance": [
+      "Anuncios que llegan a quienes ya están buscando.",
+      "Páginas donde reservar contigo es el paso lógico.",
+      "Un seguimiento que contesta mientras estás con un cliente.",
+      "Reservas que caen en tu agenda, no en tus mensajes."
+    ]
+  },
+  "services": {
+    "title": "Lo que hacemos, de un vistazo.",
+    "lead": "Un producto que hace el trabajo entero, y cada una de sus piezas por separado. Alcance cerrado, precio cerrado, y te lo hacemos nosotros.",
+    "productLabel": "Nuestro producto",
+    "product": {
+      "title": "El Sansara Client Loop",
+      "text": "El sistema completo para captar clientes: anuncio, página, seguimiento y reserva, conectados en un solo camino y entregados funcionando. Una oferta, un precio cerrado, en marcha en días.",
+      "more": "Ver cómo funciona el Loop"
+    },
+    "servicesLabel": "Servicios que te hacemos nosotros",
+    "all": "Ver todos los servicios"
   },
   "system": {
-    "title": "Un solo camino. De «no te conozco» a «reservado».",
+    "title": "Cómo funciona el Client Loop: un solo camino, de «no te conozco» a «reservado».",
     "lead": "Lo montamos, lo conectamos y lo lanzamos por ti. Tú no tocas la parte técnica.",
     "start": "No te conocen",
     "end": "Reservado",
@@ -40,28 +52,6 @@
     "bookedNote": "En tu agenda, no en tus mensajes.",
     "loopNote": "¿Por qué un ciclo? Porque no se acaba en la reserva. El mismo seguimiento mantiene el contacto después, para que los buenos clientes vuelvan en lugar de perderse."
   },
-  "doors": {
-    "title": "Elige cuánto quieres quitarte de encima.",
-    "lead": "Las mismas piezas, tres formas de tenerlas.",
-    "more": "Ver cómo funciona",
-    "items": {
-      "sistema": {
-        "title": "El Sistema",
-        "kicker": "Lo montamos y lo llevamos todo",
-        "text": "Landing, reservas, Meta Ads, seguimiento y WhatsApp, conectados en un solo camino y entregados funcionando. Alcance cerrado, precio cerrado, en marcha en días."
-      },
-      "servicios": {
-        "title": "Te lo hacemos, pieza a pieza",
-        "kicker": "Te hacemos una parte",
-        "text": "¿Solo necesitas la landing, los anuncios o el sistema de reservas? Cada módulo tiene alcance y precio cerrados, y encaja después en el Sistema."
-      },
-      "productos": {
-        "title": "Productos",
-        "kicker": "Lo haces tú",
-        "text": "Plantillas y kits para quien prefiere montarlo por su cuenta, hechos con lo que usamos con clientes."
-      }
-    }
-  },
   "proof": {
     "title": "Cómo se ve en un negocio de verdad.",
     "pendingNote": "Las cifras marcadas con [PENDIENTE] esperan el visto bueno del cliente.",
@@ -74,22 +64,6 @@
   "statement": {
     "text": "Que te vean es la parte fácil. Un cliente se gana o se pierde en los diez minutos siguientes.",
     "note": "Ese hueco entre «me interesa» y «reservado» es lo único que montamos."
-  },
-  "fit": {
-    "title": "Para coaches, emprendedores y dueños de negocio.",
-    "lead": "Más exacto: cualquier negocio donde el cliente te reserva a ti directamente. Preferimos decirte que no ahora a cobrarte por algo que no va a funcionar.",
-    "forTitle": "Esto es para ti si…",
-    "for": [
-      "Eres coach, consultor, terapeuta o llevas un negocio donde te reservan directamente.",
-      "Ya hay gente que ha pagado por lo que haces. Solo quieres que sean más.",
-      "Estás cansado de que tus ingresos dependan de publicar y de la suerte.",
-      "Prefieres que te lo monten a aprender otra herramienta."
-    ],
-    "notTitle": "Seguramente no es para ti si…",
-    "not": [
-      "Todavía no tienes una oferta por la que alguien haya pagado. Un sistema no arregla eso, y te lo diremos.",
-      "Buscas a alguien que te lleve las redes o te haga contenido. Eso no es lo que montamos."
-    ]
   },
   "process": {
     "title": "Cómo es trabajar con nosotros.",

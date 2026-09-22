@@ -1,0 +1,53 @@
+---
+/**
+ * ServicesGlance: what the agency does, at a glance, for the home page: the
+ * product first, then the services as a compact list, then a link to the
+ * services index.
+ *
+ * Props: locale.
+ * Content source: i18n/home/<locale>.json -> services; content/services.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import TextLink from '../../ui/TextLink.astro';
+import ProductFeature from '../ProductFeature/ProductFeature.astro';
+import ServiceList from '../ServiceList/ServiceList.astro';
+import type { Locale } from '../../../config/site';
+import { mainNav } from '../../../config/nav';
+import { localePath, pageCopy } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('home', locale).services;
+const route = mainNav.find((item) => item.key === 'servicios');
+---
+
+<Section labelledby="services-title">
+  <div class="max-w-headline">
+    <Heading id="services-title" size="title">
+      {copy.title}
+    </Heading>
+    <p class="max-w-measure mt-6 text-lg">{copy.lead}</p>
+  </div>
+
+  <div class="mt-16">
+    <ProductFeature
+      locale={locale}
+      label={copy.productLabel}
+      title={copy.product.title}
+      text={copy.product.text}
+      more={copy.product.more}
+    />
+  </div>
+
+  <div class="mt-20">
+    <ServiceList locale={locale} label={copy.servicesLabel} compact />
+    {route?.live && (
+      <TextLink href={localePath(locale, route.path)} standalone class="mt-6">
+        {copy.all}
+      </TextLink>
+    )}
+  </div>
+</Section>

@@ -1,7 +1,7 @@
 ---
 locale: en
 question: 'Is the call really free?'
-pages: [home, sistema]
+pages: [home]
 order: 10
 ---
 

@@ -1,0 +1,26 @@
+---
+/**
+ * Thank-you page the contact form lands on. Kept out of search engines.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import Button from '../../../components/ui/Button.astro';
+import type { Locale } from '../../../config/site';
+import { localePath, localeStaticPaths, pageCopy } from '../../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('empezar', locale).thanks;
+---
+
+<BaseLayout locale={locale} title={copy.metaTitle} description={copy.text} noindex>
+  <PageHero locale={locale} title={copy.title} lead={copy.text}>
+    <Button href={localePath(locale)} variant="secondary" class="mt-10">
+      {copy.back}
+    </Button>
+  </PageHero>
+</BaseLayout>

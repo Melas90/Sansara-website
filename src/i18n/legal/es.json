@@ -1,0 +1,114 @@
+{
+  "notice": "Borrador. Antes de publicar esta web hay que completar los datos de la empresa marcados con [PENDIENTE] y un asesor legal tiene que revisar el texto.",
+  "updatedLabel": "Última actualización",
+  "updated": "22 de septiembre de 2026",
+  "pages": {
+    "avisoLegal": {
+      "title": "Aviso legal",
+      "description": "Quién está detrás de esta web y en qué condiciones puedes usarla.",
+      "sections": [
+        {
+          "title": "Quién es el titular de esta web",
+          "body": [
+            "Titular, conforme a la LSSI-CE (Ley 34/2002): [PENDIENTE: full legal name or company name].",
+            "NIF/CIF: [PENDIENTE].",
+            "Domicilio: [PENDIENTE].",
+            "Correo electrónico: info@sansara-media.com.",
+            "Nombre comercial: Sansara Media."
+          ]
+        },
+        {
+          "title": "Para qué sirve esta web",
+          "body": [
+            "Esta web presenta los servicios de Sansara Media y te permite ponerte en contacto con nosotros o reservar una llamada. Navegar por ella es gratis y no hace falta registrarse."
+          ]
+        },
+        {
+          "title": "Propiedad intelectual",
+          "body": [
+            "Los textos, el diseño, el logotipo y el código de esta web pertenecen a Sansara Media o se usan con permiso. Puedes compartir enlaces a ella con total libertad. Para copiar partes sustanciales con fines comerciales necesitas nuestro permiso por escrito."
+          ]
+        },
+        {
+          "title": "Responsabilidad",
+          "body": [
+            "Procuramos que la información de esta web sea correcta y esté al día, pero es información general, no una oferta contractual. Qué entregamos y a qué precio queda por escrito con cada cliente antes de empezar el trabajo.",
+            "No nos hacemos responsables del contenido de las webs externas a las que enlazamos."
+          ]
+        },
+        {
+          "title": "Legislación aplicable",
+          "body": [
+            "Esta web se rige por la legislación española. Cualquier conflicto se resolverá ante los juzgados y tribunales que por ley correspondan al domicilio del consumidor o, si se trata de empresas, ante los de [PENDIENTE: city]."
+          ]
+        }
+      ]
+    },
+    "privacidad": {
+      "title": "Política de privacidad",
+      "description": "Qué datos personales recogemos, para qué, y qué derechos tienes sobre ellos.",
+      "sections": [
+        {
+          "title": "Quién es el responsable del tratamiento",
+          "body": [
+            "[PENDIENTE: full legal name or company name], con nombre comercial Sansara Media. NIF/CIF: [PENDIENTE]. Domicilio: [PENDIENTE]. Contacto: info@sansara-media.com."
+          ]
+        },
+        {
+          "title": "Qué recogemos y para qué",
+          "body": [
+            "Formulario de contacto: tu nombre, tu correo electrónico y lo que nos escribas. Lo usamos solo para contestarte. Base jurídica: tu solicitud.",
+            "Reserva de una llamada: la reserva la gestiona Cal.com. Nos das tu nombre, tu correo electrónico y la hora que eliges. Lo usamos para hacer la llamada y enviarte recordatorios. Base jurídica: tu solicitud.",
+            "WhatsApp: si nos escribes, WhatsApp (Meta) trata tu número de teléfono y tus mensajes según sus propias condiciones. Usamos la conversación solo para contestarte.",
+            "Analítica y publicidad: solo si aceptas las cookies, el píxel de Meta registra visitas y acciones como pulsar un botón de reserva, para que sepamos qué anuncios traen gente hasta aquí. Base jurídica: tu consentimiento, que puedes retirar cuando quieras desde «Ajustes de cookies», en el pie de página."
+          ]
+        },
+        {
+          "title": "Quién más trata tus datos",
+          "body": [
+            "Netlify (alojamiento y formulario de contacto), Cal.com (reservas) y Meta Platforms (WhatsApp y, con tu consentimiento, el píxel). Algunos de estos proveedores están fuera del Espacio Económico Europeo y se acogen a cláusulas contractuales tipo o a un mecanismo equivalente. No vendemos tus datos a nadie."
+          ]
+        },
+        {
+          "title": "Cuánto tiempo los conservamos",
+          "body": [
+            "Mensajes y datos de reserva: mientras la conversación siga abierta y hasta 12 meses después. Si pasas a ser cliente, durante el tiempo que exija la ley para facturas y contratos."
+          ]
+        },
+        {
+          "title": "Tus derechos",
+          "body": [
+            "Puedes pedirnos acceder a tus datos, rectificarlos o suprimirlos, limitar su tratamiento u oponerte a él, y llevártelos a otro sitio (portabilidad). Escribe a info@sansara-media.com y te contestaremos en el plazo de un mes.",
+            "Si crees que no hemos tratado bien tus datos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos, la AEPD (www.aepd.es)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "description": "Qué guarda esta web en tu dispositivo y cómo cambiar tu elección.",
+      "sections": [
+        {
+          "title": "La versión corta",
+          "body": [
+            "Esta web funciona sin ninguna cookie. No medimos nada a menos que pulses «Aceptar» en el aviso de cookies."
+          ]
+        },
+        {
+          "title": "Qué guardamos",
+          "body": [
+            "Tu elección: una entrada en el almacenamiento local de tu navegador llamada «sm-consent», con el valor «granted» o «denied», para no volver a preguntarte. Se queda en tu dispositivo y no se nos envía.",
+            "Si aceptas: el píxel de Meta (Meta Platforms Ireland Ltd.) instala cookies como «_fbp» para medir qué anuncios traen visitas hasta aquí y si esas visitas reservan una llamada. Duran hasta 90 días.",
+            "El calendario de reservas lo ofrece Cal.com y, cuando lo usas, puede instalar las cookies estrictamente necesarias para hacer la reserva."
+          ]
+        },
+        {
+          "title": "Si cambias de opinión",
+          "body": [
+            "Pulsa «Ajustes de cookies» en el pie de cualquier página para volver a ver el aviso y cambiar tu respuesta. También puedes borrar las cookies y los datos del sitio desde los ajustes de tu navegador."
+          ]
+        }
+      ]
+    }
+  }
+}

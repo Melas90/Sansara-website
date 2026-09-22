@@ -1,7 +1,7 @@
 ---
 locale: es
 question: '¿Cuánto tarda en estar en marcha?'
-pages: [home, sistema]
+pages: [home]
 order: 40
 ---
 

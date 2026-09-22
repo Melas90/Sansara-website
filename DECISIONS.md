@@ -150,3 +150,33 @@ as the entry id, so the same slug in en, es and de collapses into one entry.
 
 **One script bundle.** `src/scripts/site.ts` imports every module and is loaded from BaseLayout.
 Five tiny per-block requests were costing about 0.3 s of LCP on throttled mobile.
+
+## 2026-09-22 — The rest of the site
+
+**Architecture, by the owner’s decision.** The home page is the agency’s overview (who we are,
+what we do, services at a glance, the Loop, proof, founders). The landing-page material (pains,
+for you / not for you, deliverables, price model, objections) lives on `/sistema`, which is the
+product page. `/servicios` shows the product first and the nine services under it. This replaces
+BRIEF §3’s “three doors” block.
+
+**The offer is named the Sansara Client Loop**, from the owner’s landing-page drafts. Nav label:
+“The Client Loop”.
+
+**No price on any page.** Per the spec the owner agreed in their landing work (see memory notes):
+the figure is given on the call, in writing. `PriceModel` states the guardrails instead: one
+payment, everything included, ad budget separate and paid to the platform.
+
+**Research informed the page anatomy** (agent survey of eight small agencies, 2026-09-22): fit /
+not-a-fit sections, budget guardrails instead of a price, FAQ on every money page, contract terms
+stated plainly, a “what we need from you” line per service. Clichés avoided on purpose: mission /
+vision / values blocks, anonymous percentages, partner badges, fake scarcity.
+
+**Spanish and German copy were written, not translated**, by separate passes with instructions to
+depart from the English where the language needed it. Notable departures are recorded in the
+agents’ reports; the German avoids long compounds in headlines, the Spanish uses «comillas».
+
+**Legal pages are drafts.** They carry `[PENDIENTE]` markers for company details and a visible
+draft notice until those are filled in and a legal adviser has read them.
+
+**Netlify Forms.** The contact form posts to Netlify with a honeypot field named
+`company-website`. Submissions appear in the Netlify UI; email notifications are configured there.

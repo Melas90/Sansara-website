@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "About: a small agency, on purpose",
+    "description": "Sansara Media is Miguel and Christiane. Two people, ten years in marketing, building client acquisition systems for businesses that get booked directly."
+  },
+  "hero": {
+    "title": "Two people. Small on purpose.",
+    "lead": "Sansara Media is Miguel and Christiane. We build the systems that bring clients to businesses where people book you directly, and we do the work ourselves."
+  },
+  "sections": [
+    {
+      "title": "What ten years taught us",
+      "body": [
+        "Single pieces rarely change a business. A nice landing page here, one clever campaign there. It helps, then it fades, because everything around it is still held together by hand.",
+        "We saw it again and again: owners doing everything they were told to, posting, replying fast, following up, and still chasing. Not because they weren't working hard enough. Because all of it ran through them.",
+        "So we stopped selling pieces as if they were answers, and started building the whole path, connected, and handing it over working."
+      ]
+    },
+    {
+      "title": "Why we stay small",
+      "body": [
+        "When you work with us, you work with us. There is no account manager between you and the people doing the work, and nobody learning on your budget.",
+        "Small also means we take on only a few businesses at a time, and only when we think it will work. If it won't, we'll tell you on the first call."
+      ]
+    },
+    {
+      "title": "Where the name comes from",
+      "body": [
+        "Sansara is the cycle: things coming round again. It's what we build. Not a one-off burst of attention, but a loop that keeps bringing the right people in, keeps in touch with them, and brings the good ones back."
+      ]
+    }
+  ],
+  "valuesTitle": "How we work",
+  "values": [
+    {
+      "title": "Done for you",
+      "text": "We build, connect and launch it. You never touch the tech."
+    },
+    { "title": "Plain words", "text": "If we can't say it simply, we don't say it." },
+    { "title": "Honest fit", "text": "If it's not right for you, we'll tell you." },
+    {
+      "title": "Yours to keep",
+      "text": "Ad account, page, list and data are in your name from day one. If you ever leave, you leave with all of it."
+    }
+  ],
+  "final": {
+    "title": "Talk to the two people who'd do the work.",
+    "text": "Thirty minutes, free. We look at your business together and tell you honestly what we'd do, and whether you need us for it."
+  }
+}

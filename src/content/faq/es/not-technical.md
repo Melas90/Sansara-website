@@ -1,7 +1,7 @@
 ---
 locale: es
 question: 'No tengo ni idea de tecnología. ¿Es un problema?'
-pages: [home, sistema]
+pages: [home]
 order: 20
 ---
 

@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "The Sansara Client Loop: an ad in, a booked client out",
+    "description": "Ad, page, follow-up, booking. A done-for-you client acquisition system, built, connected and launched for you at one fixed price, live in days."
+  },
+  "hero": {
+    "title": "The Sansara Client Loop: an ad in, a booked client out.",
+    "lead": "Ad, page, follow-up, booking. Four pieces, built and connected for you at one fixed price, live in days, so the right people find your work and book without you chasing anyone."
+  },
+  "pains": {
+    "title": "Sound familiar?",
+    "items": [
+      "They ask what I charge… and then just vanish.",
+      "Loads of likes. Nobody actually books.",
+      "I always mean to follow up. Then the week's just gone.",
+      "I never know where the next one's coming from."
+    ]
+  },
+  "leaks": {
+    "title": "You don't need more attention. You need what happens after it to work.",
+    "lead": "Your offer works. Your clients tell you so. The gap is everything between someone noticing you and someone actually booking. That's where clients leak out, quietly, every week.",
+    "items": [
+      "People find you, but nothing makes them want to book.",
+      "Someone shows interest, then waits, because no one replies in time.",
+      "They're ready to book, but there's no clear next step.",
+      "The curious ones drift off, and never come back."
+    ],
+    "punch": "None of this means you're bad at what you do. It means the bit between “interested” and “booked” was never actually built."
+  },
+  "stages": {
+    "title": "Four steps, one connected system, built around your offer.",
+    "lead": "We take the offer you already have and wire the four steps around it. Each one closes one of the leaks above.",
+    "items": [
+      {
+        "title": "Ad",
+        "text": "Your offer in front of the people already looking for what you do.",
+        "deliverables": [
+          "One ad campaign, set up for you",
+          "Up to 3 ad designs",
+          "Words that speak to your ideal client"
+        ]
+      },
+      {
+        "title": "Page",
+        "text": "One clear page where booking with you is the obvious next step.",
+        "deliverables": [
+          "Your own custom page",
+          "Your offer, positioned and written",
+          "Booking, reservation or sale connected"
+        ]
+      },
+      {
+        "title": "Follow-up",
+        "text": "Every enquiry gets a warm, instant reply, even while you're with a client. No one waits, no one is forgotten.",
+        "deliverables": [
+          "Automatic replies and reminders",
+          "A list of interested people that belongs to you"
+        ]
+      },
+      {
+        "title": "Booking",
+        "text": "Interest becomes a booked session, a reserved spot or a sale, straight into your calendar.",
+        "deliverables": [
+          "Booking in a couple of taps",
+          "Simple tracking: which ad works, what a booking costs"
+        ]
+      }
+    ]
+  },
+  "why": {
+    "title": "Not an agency retainer. Not software. A small studio that builds the whole thing and hands you the keys.",
+    "lead": "No proposal deck, no three-month wait, no dashboard you have to learn. We build, connect and launch the system, then show you what's working. You keep doing the work you love.",
+    "values": [
+      {
+        "title": "Done for you",
+        "text": "We build, connect and launch it. You never touch the tech."
+      },
+      { "title": "Fixed and fast", "text": "One price, live in days. No surprises." },
+      {
+        "title": "Yours to keep",
+        "text": "Ad account, page, list and data are set up in your name from day one."
+      }
+    ]
+  },
+  "fit": {
+    "title": "We only take it on when it fits.",
+    "lead": "We'd rather say no now than take your money for something that won't work.",
+    "forTitle": "It's a good fit if…",
+    "for": [
+      "You coach, consult, treat or run a business where clients book you directly.",
+      "You have one offer that already works. Clients come back and recommend you.",
+      "You know roughly what a client is worth to you, so an ad budget makes sense.",
+      "You'd rather have it built than learn to build it."
+    ],
+    "notTitle": "It's not for you if…",
+    "not": [
+      "You're still figuring out what you offer or who it's for.",
+      "You want to run five offers at once. We build around one.",
+      "You expect a system to work with no ad budget at all.",
+      "You want someone to run your social media or make content. That's not what we build."
+    ]
+  },
+  "process": {
+    "title": "Live in four steps.",
+    "lead": "Your part is one call, one round of feedback and a short handover. The rest is ours.",
+    "steps": [
+      {
+        "title": "Call: get clear on your offer",
+        "text": "We agree on the one thing you're offering and the one step you want people to take."
+      },
+      {
+        "title": "Build: page, words and ads",
+        "text": "We create your page, your copy and your ads, all around that one offer."
+      },
+      {
+        "title": "Connect: follow-up and booking",
+        "text": "Replies, reminders and your booking or checkout, wired together and tested."
+      },
+      {
+        "title": "Launch: go live and improve",
+        "text": "It goes live. We watch what's working, and show you how to read it yourself."
+      }
+    ]
+  },
+  "price": {
+    "title": "One offer. One system. One fixed price.",
+    "lead": "You get the exact figure on the free call, in writing, before you decide anything. It doesn't change afterwards.",
+    "points": [
+      "One payment for the build. No retainer you can't leave.",
+      "Everything listed above is included. Nothing is billed by the hour.",
+      "Need a second offer, more places to advertise or a deeper setup? Those are added on the same system, at a fixed price too."
+    ],
+    "adBudgetTitle": "About ad budget",
+    "adBudget": "The ad budget is separate. You pay it directly to the platform, in your own account. On the call we'll tell you what a sensible starting budget looks like for your offer. If there's no room for one right now, this isn't the moment, and we'll say so."
+  },
+  "faqTitle": "The doubts we hear on almost every call.",
+  "final": {
+    "title": "Find out if the Loop fits your business.",
+    "text": "One free call. We look at how people find you now, where they drop out, and whether this is the right fix. If it isn't, we'll tell you what is."
+  }
+}

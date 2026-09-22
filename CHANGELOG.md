@@ -6,6 +6,7 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Changed
 
+- Nav labels renamed; the offer is called the Sansara Client Loop across the site.
 - Motion (owner request): the sun rises and the hero quotes arrive on load, the statement lights
   up word by word on scroll (CSS only), process steps and proof figures reveal in sequence and
   figures count up, hovering a station lights its node on the loop. All off with reduced motion.
@@ -31,6 +32,13 @@ Every pull request adds a line here. Format: [Keep a Changelog](https://keepacha
 
 ### Added
 
+- The rest of the site (`feature/site-pages`) in en, es and de: the Client Loop (`/sistema`),
+  Services index and one page per service (nine), Client work index and case page, About,
+  Start (Cal.com embed, WhatsApp, Netlify form with honeypot, thank-you page), Legal notice,
+  Privacy, Cookies, and a 404. `Lead` fires on form submit, `Schedule` on a completed booking.
+- Home page rebuilt as the agency overview: who we are, what we build at a glance, the Loop,
+  proof, founders, process. The pains and fit lists moved to the Client Loop page.
+- Navigation: Services, The Client Loop, Client work, About.
 - Home page (`feature/home`) in English, Spanish and German: Hero, SystemDiagram (the one
   animated moment, static with reduced motion or without JavaScript), Doors, Proof,
   FitList, Process, Founders, FAQ and FinalCTA blocks.

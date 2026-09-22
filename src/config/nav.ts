@@ -15,22 +15,22 @@ export interface NavItem {
   flag?: FeatureFlag;
 }
 
-/** Header: the three doors, then cases and about. */
+/** Header: services (product + à la carte), the product itself, client work, about. */
 export const mainNav: NavItem[] = [
-  { key: 'sistema', path: '/sistema/', live: false },
-  { key: 'servicios', path: '/servicios/', live: false },
-  { key: 'productos', path: '/productos/', live: false, flag: 'products' },
-  { key: 'casos', path: '/casos/', live: false },
-  { key: 'sobre', path: '/sobre/', live: false },
+  { key: 'servicios', path: '/servicios/', live: true },
+  { key: 'sistema', path: '/sistema/', live: true },
+  { key: 'productos', path: '/productos/', live: true, flag: 'products' },
+  { key: 'casos', path: '/casos/', live: true },
+  { key: 'sobre', path: '/sobre/', live: true },
 ];
 
 /** Where the primary call to action points once /empezar exists. */
-export const startRoute: NavItem = { key: 'empezar', path: '/empezar/', live: false };
+export const startRoute: NavItem = { key: 'empezar', path: '/empezar/', live: true };
 
 export const legalNav: NavItem[] = [
-  { key: 'avisoLegal', path: '/aviso-legal/', live: false },
-  { key: 'privacidad', path: '/privacidad/', live: false },
-  { key: 'cookies', path: '/cookies/', live: false },
+  { key: 'avisoLegal', path: '/aviso-legal/', live: true },
+  { key: 'privacidad', path: '/privacidad/', live: true },
+  { key: 'cookies', path: '/cookies/', live: true },
 ];
 
 export const visible = (items: NavItem[]): NavItem[] =>

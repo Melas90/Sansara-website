@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Loslegen: buch das kostenlose Gespräch, 30 Minuten",
+    "description": "Buch ein kostenloses Gespräch von 30 Minuten, schreib uns auf WhatsApp oder per Formular. Wir sehen uns dein Geschäft gemeinsam an und zeigen dir, wo dir Kunden verloren gehen."
+  },
+  "hero": {
+    "title": "Drei Wege, um anzufangen. Nimm den, der zu dir passt.",
+    "lead": "Das Gespräch ist der schnellste: dreißig Minuten, in denen wir uns dein Geschäft ansehen. Danach weißt du, wo dir Kunden verloren gehen und was du zuerst angehen solltest, mit uns oder allein."
+  },
+  "call": {
+    "title": "Kostenloses Gespräch buchen",
+    "text": "Such dir einen Termin aus, der passt. Du bekommst eine Bestätigung und eine Erinnerung. Vorbereiten musst du nichts.",
+    "points": [
+      "Ein klarer Blick von außen darauf, wie Menschen dich heute finden.",
+      "Die zwei oder drei Stellen, an denen dir Kunden verloren gehen.",
+      "Was du zuerst angehen solltest und was es verändern würde."
+    ],
+    "placeholderNote": "Der Buchungskalender erscheint hier, sobald der Cal.com-Link in src/config/site.ts eingetragen ist.",
+    "frameTitle": "Buchungskalender",
+    "open": "Kalender in neuem Tab öffnen"
+  },
+  "whatsapp": {
+    "title": "Schreib uns auf WhatsApp",
+    "text": "Du schreibst lieber, als zu telefonieren? Erzähl uns in zwei Zeilen, was du machst und wo es hakt. Es antwortet ein Mensch, meistens noch am selben Tag."
+  },
+  "form": {
+    "title": "Oder schreib uns hier",
+    "text": "Wir lesen jede Nachricht selbst und antworten innerhalb von zwei Werktagen.",
+    "name": "Dein Name",
+    "email": "E-Mail",
+    "business": "Dein Geschäft oder deine Website (optional)",
+    "message": "Worum geht es?",
+    "messageHint": "Zwei, drei Zeilen reichen völlig.",
+    "send": "Nachricht senden",
+    "privacy": "Was du schreibst, nutzen wir nur, um dir zu antworten.",
+    "privacyLink": "Datenschutzerklärung"
+  },
+  "thanks": {
+    "metaTitle": "Nachricht angekommen",
+    "title": "Angekommen. Danke dir.",
+    "text": "Deine Nachricht ist bei uns. Einer von uns beiden antwortet dir innerhalb von zwei Werktagen, meistens schneller.",
+    "back": "Zurück zur Startseite"
+  }
+}

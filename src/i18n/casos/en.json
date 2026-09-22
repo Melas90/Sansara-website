@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Client work: what it looks like in a real business",
+    "description": "Real businesses, what we built for them and what happened. Named clients, their own words, and numbers only when we can back them up."
+  },
+  "hero": {
+    "title": "What it looks like in a real business.",
+    "lead": "Named clients, their own words, and numbers only when we can back them up. The list is short because we only show work we can put a name to."
+  },
+  "labels": {
+    "results": "What happened",
+    "pendingNote": "Figures marked [PENDIENTE] are waiting for the client's sign-off.",
+    "read": "Read the case",
+    "back": "All client work",
+    "theirWords": "In their words"
+  },
+  "final": {
+    "title": "Want to be the next one on this page?",
+    "text": "It starts with a free call. We look at your business together and tell you honestly whether we can help."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Leistungen: der Client Loop und jeder Baustein davon einzeln",
+    "description": "Unser Produkt ist der Sansara Client Loop, ein komplettes System, das dir Kunden bringt. Jeden Baustein davon gibt es auch einzeln, mit festem Umfang und zum Festpreis."
+  },
+  "hero": {
+    "title": "Ein Produkt. Und jeder Baustein davon, auch einzeln.",
+    "lead": "Die meisten Kunden wollen den ganzen Weg gebaut haben. Manche haben schon die Hälfte und brauchen nur das fehlende Stück, ordentlich gemacht. Beides ist in Ordnung. Alles hier hat einen festen Umfang und einen festen Preis."
+  },
+  "product": {
+    "label": "Unser Produkt",
+    "title": "Der Sansara Client Loop",
+    "text": "Das komplette System, das dir Kunden bringt: Anzeige, Seite, Nachfassen und Buchung, zu einem Weg verbunden und funktionierend übergeben. Ein Angebot, ein Festpreis, in wenigen Tagen live, alles auf deinen Namen.",
+    "more": "So funktioniert der Loop"
+  },
+  "list": {
+    "label": "Leistungen, die wir für dich erledigen",
+    "lead": "Die Bausteine, aus denen der Loop besteht. Jeder passt später ins ganze System. Nichts, was du jetzt kaufst, landet also im Müll."
+  },
+  "detail": {
+    "whatYouGet": "Was du bekommst",
+    "whoItsFor": "Für wen das ist",
+    "notFor": "Für wen das nichts ist",
+    "yourPart": "Was wir von dir brauchen",
+    "price": "So funktioniert der Preis",
+    "priceKinds": {
+      "fixed": "Ein Festpreis, schriftlich vereinbart, bevor wir anfangen.",
+      "from": "Ein Festpreis, der vom Umfang abhängt. Die genaue Zahl bekommst du schriftlich, bevor wir anfangen.",
+      "monthly": "Ein fester Monatsbetrag. Jeden Monat kündbar, und alles bleibt bei dir.",
+      "on-call": "Den Preis nennen wir dir in einem kurzen Gespräch, weil er davon abhängt, was du schon hast."
+    },
+    "partOfSystem": "Das ist einer der Bausteine des Sansara Client Loop. Wenn du den ganzen Weg brauchst, bauen wir ihn als einen zusammenhängenden Auftrag, statt Stück für Stück.",
+    "partOfSystemLink": "Zum Client Loop",
+    "others": "Weitere Leistungen",
+    "back": "Alle Leistungen"
+  },
+  "final": {
+    "title": "Nicht sicher, welcher Baustein dir fehlt?",
+    "text": "Dafür ist das kostenlose Gespräch da. Dreißig Minuten, in denen wir uns dein Geschäft ansehen. Danach weißt du, welches Stück fehlt, mit uns oder ohne uns."
+  }
+}

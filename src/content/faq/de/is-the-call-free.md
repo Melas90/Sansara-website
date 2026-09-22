@@ -1,7 +1,7 @@
 ---
 locale: de
 question: 'Ist das Gespräch wirklich kostenlos?'
-pages: [home, sistema]
+pages: [home]
 order: 10
 ---
 

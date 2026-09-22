@@ -6,6 +6,12 @@
   command = "npm run build"
   publish = "dist"
 
+# The 404 page is built once, in the default language.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
 [build.environment]
   NODE_VERSION = "24"
 

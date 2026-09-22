@@ -1,0 +1,37 @@
+---
+/**
+ * LegalLayout: the three legal pages share this. Title, the date, a visible
+ * draft notice while any [PENDIENTE] marker is left, and the text.
+ *
+ * Props: locale, page ('avisoLegal' | 'privacidad' | 'cookies').
+ * Content source: i18n/legal/<locale>.json.
+ */
+import BaseLayout from './BaseLayout.astro';
+import PageHero from '../components/blocks/PageHero/PageHero.astro';
+import TextSections from '../components/blocks/TextSections/TextSections.astro';
+import type { Locale } from '../config/site';
+import { pageCopy } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  page: 'avisoLegal' | 'privacidad' | 'cookies';
+}
+const { locale, page } = Astro.props;
+const copy = pageCopy('legal', locale);
+const text = copy.pages[page];
+const draft = JSON.stringify(copy.pages).includes('[PENDIENTE');
+---
+
+<BaseLayout locale={locale} title={text.title} description={text.description}>
+  <PageHero locale={locale} title={text.title}>
+    <p class="text-fg-muted mt-6 text-sm">
+      {copy.updatedLabel}: {copy.updated}
+    </p>
+    {draft && (
+      <p class="surface-paper border-accent text-fg max-w-measure mt-8 border border-dashed p-5 text-sm">
+        {copy.notice}
+      </p>
+    )}
+  </PageHero>
+  <TextSections sections={text.sections} size="sub" lead={false} />
+</BaseLayout>

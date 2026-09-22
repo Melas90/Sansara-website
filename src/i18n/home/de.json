@@ -1,18 +1,30 @@
 {
   "hero": {
     "title": "Lauf Kunden nicht mehr hinterher. Lass sie zu dir kommen.",
-    "lead": "Du bist gut in dem, was du tust. Gebucht zu werden sollte dich nicht deine ganze Kraft kosten. Wir bauen das System, das dir das abnimmt.",
-    "painsTitle": "Kommt dir das bekannt vor?",
-    "pains": [
-      "Sie fragen nach dem Preis … und sind dann einfach weg.",
-      "Jede Menge Likes. Niemand bucht.",
-      "Ich will immer nachfassen. Und dann ist die Woche vorbei.",
-      "Ich weiß nie, woher der nächste Kunde kommt."
-    ],
-    "facts": ["Zehn Jahre Marketing", "Zu zweit, mit Absicht", "In wenigen Tagen gebaut und live"]
+    "lead": "Sansara Media ist eine Marketingagentur aus zwei Menschen. Wir bauen die Systeme, die Coaches, Beratern, Therapeuten und lokalen Betrieben Kunden bringen. Also überall dort, wo man dich direkt bucht.",
+    "facts": ["Zehn Jahre Marketing", "Zu zweit, mit Absicht", "In wenigen Tagen gebaut und live"],
+    "glanceTitle": "Was wir bauen",
+    "glance": [
+      "Anzeigen, die Menschen erreichen, die schon suchen.",
+      "Seiten, auf denen die Buchung der logische nächste Schritt ist.",
+      "Nachfassen, das antwortet, während du beim Kunden bist.",
+      "Buchungen, die in deinem Kalender landen, nicht in deinen Nachrichten."
+    ]
+  },
+  "services": {
+    "title": "Was wir machen, auf einen Blick.",
+    "lead": "Ein Produkt, das die ganze Arbeit erledigt, und jeder Baustein davon einzeln. Fester Umfang, fester Preis, fertig für dich gemacht.",
+    "productLabel": "Unser Produkt",
+    "product": {
+      "title": "Der Sansara Client Loop",
+      "text": "Das komplette System, das dir Kunden bringt: Anzeige, Seite, Nachfassen und Buchung, zu einem Weg verbunden und funktionierend übergeben. Ein Angebot, ein Festpreis, in wenigen Tagen live.",
+      "more": "So funktioniert der Loop"
+    },
+    "servicesLabel": "Leistungen, die wir für dich erledigen",
+    "all": "Alle Leistungen ansehen"
   },
   "system": {
-    "title": "Ein Weg. Von „nie von dir gehört“ zu „gebucht“.",
+    "title": "So funktioniert der Client Loop: ein Weg, von „nie von dir gehört“ zu „gebucht“.",
     "lead": "Wir bauen, verbinden und starten alles für dich. Mit der Technik hast du nichts zu tun.",
     "start": "Nie von dir gehört",
     "end": "Gebucht",
@@ -40,28 +52,6 @@
     "bookedNote": "In deinem Kalender, nicht in deinen Nachrichten.",
     "loopNote": "Warum ein Kreislauf? Weil er nicht bei der Buchung endet. Dasselbe Nachfassen hält danach den Kontakt, damit gute Kunden wiederkommen, statt zu verschwinden."
   },
-  "doors": {
-    "title": "Entscheide, wie viel du abgeben willst.",
-    "lead": "Dieselben Bausteine, drei Wege dorthin.",
-    "more": "So funktioniert es",
-    "items": {
-      "sistema": {
-        "title": "Das System",
-        "kicker": "Wir bauen und betreuen alles",
-        "text": "Landingpage, Buchung, Meta Ads, Nachfassen und WhatsApp, zu einem Weg verbunden und funktionierend übergeben. Fester Umfang, fester Preis, in wenigen Tagen live."
-      },
-      "servicios": {
-        "title": "Wir machen das, Stück für Stück",
-        "kicker": "Wir übernehmen einen Teil",
-        "text": "Du brauchst nur die Landingpage, die Anzeigen oder das Buchungssystem? Jedes Modul hat einen festen Umfang und einen festen Preis und passt später ins System."
-      },
-      "productos": {
-        "title": "Produkte",
-        "kicker": "Du machst es selbst",
-        "text": "Vorlagen und Kits für alle, die es lieber selbst bauen. Entstanden aus dem, was wir bei Kunden einsetzen."
-      }
-    }
-  },
   "proof": {
     "title": "So sieht das in einem echten Betrieb aus.",
     "pendingNote": "Zahlen mit [PENDIENTE] warten noch auf die Freigabe des Kunden.",
@@ -74,22 +64,6 @@
   "statement": {
     "text": "Gesehen zu werden ist der leichte Teil. Ob ein Kunde bleibt oder geht, entscheidet sich in den zehn Minuten danach.",
     "note": "Genau diese Lücke zwischen „interessiert“ und „gebucht“ ist das Einzige, was wir bauen."
-  },
-  "fit": {
-    "title": "Für Coaches, Selbstständige und Unternehmer.",
-    "lead": "Genauer: jedes Geschäft, in dem Kunden dich direkt buchen. Wir sagen lieber jetzt Nein, als Geld für etwas zu nehmen, das nicht funktionieren wird.",
-    "forTitle": "Das ist etwas für dich, wenn …",
-    "for": [
-      "du coachst, berätst, behandelst oder ein Geschäft führst, in dem Kunden dich direkt buchen.",
-      "Menschen schon für dein Angebot bezahlt haben. Du willst einfach mehr davon.",
-      "du es leid bist, dass dein Einkommen von Posts und Glück abhängt.",
-      "du es lieber gebaut bekommst, als noch ein Tool zu lernen."
-    ],
-    "notTitle": "Wahrscheinlich nichts für dich, wenn …",
-    "not": [
-      "du noch kein Angebot hast, für das jemand bezahlt hat. Das kann kein System lösen, und das sagen wir dir auch.",
-      "du jemanden suchst, der deine Social-Media-Kanäle betreut oder Content erstellt. Das bauen wir nicht."
-    ]
   },
   "process": {
     "title": "So läuft die Zusammenarbeit.",

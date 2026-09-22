@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Der Sansara Client Loop: Anzeige rein, gebuchter Kunde raus",
+    "description": "Anzeige, Seite, Nachfassen, Buchung. Ein fertiges System, das dir Kunden bringt. Wir bauen, verbinden und starten es für dich, zu einem Festpreis und in wenigen Tagen live."
+  },
+  "hero": {
+    "title": "Der Sansara Client Loop: Anzeige rein, gebuchter Kunde raus.",
+    "lead": "Anzeige, Seite, Nachfassen, Buchung. Vier Bausteine, für dich gebaut und verbunden, zu einem Festpreis und in wenigen Tagen live. So finden die richtigen Menschen deine Arbeit und buchen, ohne dass du jemandem hinterherläufst."
+  },
+  "pains": {
+    "title": "Kommt dir das bekannt vor?",
+    "items": [
+      "Sie fragen nach dem Preis … und sind dann einfach weg.",
+      "Jede Menge Likes. Niemand bucht.",
+      "Ich will immer nachfassen. Und dann ist die Woche vorbei.",
+      "Ich weiß nie, woher der nächste Kunde kommt."
+    ]
+  },
+  "leaks": {
+    "title": "Du brauchst nicht mehr Aufmerksamkeit. Du brauchst, dass das Danach funktioniert.",
+    "lead": "Dein Angebot funktioniert. Das sagen dir deine Kunden. Die Lücke liegt zwischen dem Moment, in dem dich jemand bemerkt, und dem Moment, in dem er wirklich bucht. Dort gehen dir Kunden verloren, leise, jede Woche.",
+    "items": [
+      "Menschen finden dich, aber nichts bringt sie dazu, buchen zu wollen.",
+      "Jemand zeigt Interesse und wartet dann, weil niemand rechtzeitig antwortet.",
+      "Sie wären bereit zu buchen, aber der nächste Schritt ist nicht klar.",
+      "Die Neugierigen ziehen weiter und kommen nie zurück."
+    ],
+    "punch": "Nichts davon heißt, dass du schlecht bist in dem, was du tust. Es heißt nur, dass das Stück zwischen „interessiert“ und „gebucht“ nie wirklich gebaut wurde."
+  },
+  "stages": {
+    "title": "Vier Schritte, ein verbundenes System, rund um dein Angebot gebaut.",
+    "lead": "Wir nehmen das Angebot, das du schon hast, und bauen die vier Schritte drumherum. Jeder schließt eine der Lücken von oben.",
+    "items": [
+      {
+        "title": "Anzeige",
+        "text": "Dein Angebot vor den Menschen, die schon nach dem suchen, was du machst.",
+        "deliverables": [
+          "Eine Kampagne, für dich eingerichtet",
+          "Bis zu 3 Anzeigenmotive",
+          "Texte, die deinen Wunschkunden ansprechen"
+        ]
+      },
+      {
+        "title": "Seite",
+        "text": "Eine klare Seite, auf der die Buchung bei dir der logische nächste Schritt ist.",
+        "deliverables": [
+          "Deine eigene, individuell gebaute Seite",
+          "Dein Angebot, klar positioniert und getextet",
+          "Buchung, Reservierung oder Verkauf angebunden"
+        ]
+      },
+      {
+        "title": "Nachfassen",
+        "text": "Jede Anfrage bekommt sofort eine freundliche Antwort, auch wenn du gerade beim Kunden bist. Niemand wartet, niemand wird vergessen.",
+        "deliverables": [
+          "Automatische Antworten und Erinnerungen",
+          "Eine Liste mit Interessenten, die dir gehört"
+        ]
+      },
+      {
+        "title": "Buchung",
+        "text": "Aus Interesse wird eine gebuchte Sitzung, ein reservierter Platz oder ein Verkauf, direkt in deinem Kalender.",
+        "deliverables": [
+          "Buchung mit ein paar Klicks",
+          "Einfache Auswertung: welche Anzeige funktioniert, was eine Buchung kostet"
+        ]
+      }
+    ]
+  },
+  "why": {
+    "title": "Kein Agenturvertrag mit Monatspauschale. Keine Software. Ein kleines Studio, das alles baut und dir die Schlüssel gibt.",
+    "lead": "Keine Präsentation mit vierzig Folien, keine drei Monate Wartezeit, kein Dashboard, das du erst lernen musst. Wir bauen, verbinden und starten das System und zeigen dir dann, was funktioniert. Du machst weiter die Arbeit, die du liebst.",
+    "values": [
+      {
+        "title": "Fertig für dich",
+        "text": "Wir bauen, verbinden und starten alles. Mit der Technik hast du nichts zu tun."
+      },
+      {
+        "title": "Fest und schnell",
+        "text": "Ein Preis, in wenigen Tagen live. Keine Überraschungen."
+      },
+      {
+        "title": "Es gehört dir",
+        "text": "Werbekonto, Seite, Liste und Daten laufen vom ersten Tag an auf deinen Namen."
+      }
+    ]
+  },
+  "fit": {
+    "title": "Wir sagen nur zu, wenn es passt.",
+    "lead": "Wir sagen lieber jetzt Nein, als Geld für etwas zu nehmen, das nicht funktionieren wird.",
+    "forTitle": "Das passt gut, wenn …",
+    "for": [
+      "du coachst, berätst, behandelst oder ein Geschäft führst, in dem Kunden dich direkt buchen.",
+      "du ein Angebot hast, das schon funktioniert. Kunden kommen wieder und empfehlen dich weiter.",
+      "du ungefähr weißt, was dir ein Kunde wert ist. Dann ergibt ein Werbebudget Sinn.",
+      "du es lieber gebaut bekommst, als selbst bauen zu lernen."
+    ],
+    "notTitle": "Das ist nichts für dich, wenn …",
+    "not": [
+      "du noch herausfindest, was du anbietest oder für wen.",
+      "du fünf Angebote gleichzeitig bewerben willst. Wir bauen um eines herum.",
+      "du erwartest, dass ein System ganz ohne Werbebudget funktioniert.",
+      "du jemanden suchst, der deine Social-Media-Kanäle betreut oder Content erstellt. Das bauen wir nicht."
+    ]
+  },
+  "process": {
+    "title": "In vier Schritten live.",
+    "lead": "Dein Teil: ein Gespräch, eine Feedbackrunde und eine kurze Übergabe. Den Rest machen wir.",
+    "steps": [
+      {
+        "title": "Gespräch: dein Angebot schärfen",
+        "text": "Wir legen gemeinsam fest, was genau du anbietest und welchen einen Schritt die Menschen gehen sollen."
+      },
+      {
+        "title": "Bauen: Seite, Texte und Anzeigen",
+        "text": "Wir erstellen deine Seite, deine Texte und deine Anzeigen, alles rund um dieses eine Angebot."
+      },
+      {
+        "title": "Verbinden: Nachfassen und Buchung",
+        "text": "Antworten, Erinnerungen und deine Buchung oder dein Bezahlvorgang, miteinander verbunden und getestet."
+      },
+      {
+        "title": "Start: live gehen und verbessern",
+        "text": "Alles geht live. Wir beobachten, was funktioniert, und zeigen dir, wie du die Zahlen selbst liest."
+      }
+    ]
+  },
+  "price": {
+    "title": "Ein Angebot. Ein System. Ein Festpreis.",
+    "lead": "Die genaue Zahl bekommst du im kostenlosen Gespräch, schriftlich, bevor du irgendetwas entscheidest. Danach ändert sie sich nicht mehr.",
+    "points": [
+      "Eine Zahlung für den Aufbau. Kein Dauervertrag, aus dem du nicht herauskommst.",
+      "Alles, was oben steht, ist enthalten. Nichts wird nach Stunden abgerechnet.",
+      "Du brauchst ein zweites Angebot, weitere Werbekanäle oder ein tieferes Setup? Das kommt auf dasselbe System obendrauf, ebenfalls zum Festpreis."
+    ],
+    "adBudgetTitle": "Zum Werbebudget",
+    "adBudget": "Das Werbebudget kommt extra. Du zahlst es direkt an die Plattform, über dein eigenes Konto. Im Gespräch sagen wir dir, wie ein sinnvolles Startbudget für dein Angebot aussieht. Wenn dafür gerade kein Spielraum ist, ist jetzt nicht der richtige Moment, und das sagen wir dir auch."
+  },
+  "faqTitle": "Die Zweifel, die wir in fast jedem Gespräch hören.",
+  "final": {
+    "title": "Finde heraus, ob der Loop zu deinem Geschäft passt.",
+    "text": "Ein kostenloses Gespräch. Wir schauen uns an, wie Menschen dich heute finden, wo sie abspringen und ob der Loop die richtige Lösung ist. Wenn nicht, sagen wir dir, was es stattdessen wäre."
+  }
+}

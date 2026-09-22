@@ -1,0 +1,40 @@
+---
+/**
+ * Services index: the product (the Client Loop) first, then every done-for-you
+ * service from the collection.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import Section from '../../../components/ui/Section.astro';
+import ProductFeature from '../../../components/blocks/ProductFeature/ProductFeature.astro';
+import ServiceList from '../../../components/blocks/ServiceList/ServiceList.astro';
+import FinalCTA from '../../../components/blocks/FinalCTA/FinalCTA.astro';
+import type { Locale } from '../../../config/site';
+import { localeStaticPaths, pageCopy } from '../../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('servicios', locale);
+---
+
+<BaseLayout locale={locale} title={copy.meta.title} description={copy.meta.description}>
+  <PageHero locale={locale} title={copy.hero.title} lead={copy.hero.lead} />
+  <Section surface="oat">
+    <ProductFeature
+      locale={locale}
+      label={copy.product.label}
+      title={copy.product.title}
+      text={copy.product.text}
+      more={copy.product.more}
+      level={2}
+    />
+  </Section>
+  <Section>
+    <ServiceList locale={locale} label={copy.list.label} lead={copy.list.lead} level={2} />
+  </Section>
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
+</BaseLayout>

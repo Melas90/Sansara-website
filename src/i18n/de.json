@@ -1,7 +1,7 @@
 {
   "meta": {
-    "homeTitle": "Lauf Kunden nicht mehr hinterher. Lass sie zu dir kommen.",
-    "homeDescription": "Wir bauen das System, das Menschen von „nie von dir gehört“ zu „gebucht“ bringt. Fertig für dich gemacht, klar erklärt, zum Festpreis."
+    "homeTitle": "Marketingagentur für alle, die direkt gebucht werden",
+    "homeDescription": "Sansara Media ist eine Agentur aus zwei Menschen. Wir bauen den Client Loop, ein fertiges System aus Anzeigen, Seite, Nachfassen und Buchung, und jeden Baustein davon einzeln zum Festpreis."
   },
   "a11y": {
     "skipToContent": "Zum Inhalt springen",
@@ -13,8 +13,8 @@
     "home": "Sansara Media, Startseite"
   },
   "nav": {
-    "sistema": "Das System",
-    "servicios": "Wir machen das",
+    "sistema": "Der Client Loop",
+    "servicios": "Leistungen",
     "productos": "Produkte",
     "casos": "Kundenprojekte",
     "sobre": "Über uns",
@@ -43,5 +43,10 @@
     "accept": "Akzeptieren",
     "decline": "Nein danke",
     "more": "Cookie-Richtlinie lesen"
+  },
+  "notFound": {
+    "title": "Diese Seite gibt es nicht.",
+    "text": "Vielleicht ist der Link veraltet oder die Adresse hat einen Tippfehler. Alles, was wir machen, findest du von der Startseite aus.",
+    "back": "Zur Startseite"
   }
 }

@@ -1,7 +1,7 @@
 ---
 locale: en
 question: "I don't have an audience or a big following. Does this still work?"
-pages: [home, sistema]
+pages: [home]
 order: 30
 ---
 

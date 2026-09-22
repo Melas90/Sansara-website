@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Casos: cómo se ve en un negocio de verdad",
+    "description": "Negocios reales, lo que les montamos y lo que pasó. Clientes con nombre, sus propias palabras, y cifras solo cuando podemos respaldarlas."
+  },
+  "hero": {
+    "title": "Cómo se ve en un negocio de verdad.",
+    "lead": "Clientes con nombre, sus propias palabras, y cifras solo cuando podemos respaldarlas. La lista es corta porque solo enseñamos trabajos a los que podemos poner nombre."
+  },
+  "labels": {
+    "results": "Qué pasó",
+    "pendingNote": "Las cifras marcadas con [PENDIENTE] esperan el visto bueno del cliente.",
+    "read": "Leer el caso",
+    "back": "Todos los casos",
+    "theirWords": "Con sus palabras"
+  },
+  "final": {
+    "title": "¿Quieres ser el siguiente en esta página?",
+    "text": "Empieza con una llamada gratis. Miramos tu negocio juntos y te decimos con honestidad si podemos ayudarte."
+  }
+}

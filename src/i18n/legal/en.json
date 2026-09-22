@@ -1,0 +1,114 @@
+{
+  "notice": "Draft. The company details marked [PENDIENTE] must be filled in, and the text reviewed by a legal adviser, before this site goes live.",
+  "updatedLabel": "Last updated",
+  "updated": "22 September 2026",
+  "pages": {
+    "avisoLegal": {
+      "title": "Legal notice",
+      "description": "Who is behind this website and the terms for using it.",
+      "sections": [
+        {
+          "title": "Who runs this website",
+          "body": [
+            "Owner: [PENDIENTE: full legal name or company name].",
+            "Tax ID (NIF/CIF): [PENDIENTE].",
+            "Registered address: [PENDIENTE].",
+            "Email: info@sansara-media.com.",
+            "Trading name: Sansara Media."
+          ]
+        },
+        {
+          "title": "What this website is for",
+          "body": [
+            "This website presents the services of Sansara Media and lets you get in touch or book a call. Browsing it is free and does not require registration."
+          ]
+        },
+        {
+          "title": "Intellectual property",
+          "body": [
+            "The texts, design, logo and code of this website belong to Sansara Media or are used with permission. You may share links to it freely. Copying substantial parts for commercial use needs our written permission."
+          ]
+        },
+        {
+          "title": "Responsibility",
+          "body": [
+            "We keep the information here accurate and up to date, but it is general information, not a contractual offer. What we deliver and at what price is set out in writing for each client before work starts.",
+            "We are not responsible for the content of external sites we link to."
+          ]
+        },
+        {
+          "title": "Applicable law",
+          "body": [
+            "This website is governed by Spanish law. Any dispute will be brought before the courts that correspond by law to the consumer's place of residence or, for businesses, those of [PENDIENTE: city]."
+          ]
+        }
+      ]
+    },
+    "privacidad": {
+      "title": "Privacy policy",
+      "description": "What personal data we collect, why, and the rights you have over it.",
+      "sections": [
+        {
+          "title": "Who is responsible for your data",
+          "body": [
+            "[PENDIENTE: full legal name or company name], trading as Sansara Media. Tax ID: [PENDIENTE]. Address: [PENDIENTE]. Contact: info@sansara-media.com."
+          ]
+        },
+        {
+          "title": "What we collect, and why",
+          "body": [
+            "Contact form: your name, email, and whatever you write. We use it only to reply to you. Legal basis: your request.",
+            "Booking a call: the booking is handled by Cal.com. You give your name, email and the time you choose. We use it to hold the call and send reminders. Legal basis: your request.",
+            "WhatsApp: if you message us, WhatsApp (Meta) processes your phone number and messages under its own terms. We use the conversation only to answer you.",
+            "Analytics and advertising: only if you accept cookies, the Meta Pixel records visits and actions such as clicking a booking button, so we can tell which ads bring people here. Legal basis: your consent, which you can withdraw at any time from “Cookie settings” in the footer."
+          ]
+        },
+        {
+          "title": "Who else handles it",
+          "body": [
+            "Netlify (hosting and contact form), Cal.com (bookings), Meta Platforms (WhatsApp and, with your consent, the Pixel). Some of these providers are outside the European Economic Area and rely on standard contractual clauses or an equivalent mechanism. We do not sell your data to anyone."
+          ]
+        },
+        {
+          "title": "How long we keep it",
+          "body": [
+            "Messages and booking details: for as long as the conversation is live, and up to 12 months afterwards. If you become a client, for as long as the law requires for invoices and contracts."
+          ]
+        },
+        {
+          "title": "Your rights",
+          "body": [
+            "You can ask to see, correct or delete your data, limit or object to how we use it, and take it with you. Write to info@sansara-media.com and we will answer within one month.",
+            "If you think we have handled your data wrongly, you can complain to the Spanish Data Protection Agency (www.aepd.es)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "description": "What this website stores on your device, and how to change your choice.",
+      "sections": [
+        {
+          "title": "The short version",
+          "body": [
+            "This site works without any cookies. Nothing is tracked unless you press “Accept” in the cookie notice."
+          ]
+        },
+        {
+          "title": "What we store",
+          "body": [
+            "Your choice: one entry in your browser's local storage called “sm-consent”, with the value “granted” or “denied”, so we don't ask you again. It stays on your device and is not sent to us.",
+            "If you accept: the Meta Pixel (Meta Platforms Ireland Ltd.) sets cookies such as “_fbp” to measure which ads bring visitors here and whether they book a call. These last up to 90 days.",
+            "The booking calendar is provided by Cal.com and may set cookies strictly necessary for booking when you use it."
+          ]
+        },
+        {
+          "title": "Changing your mind",
+          "body": [
+            "Press “Cookie settings” in the footer of any page to see the notice again and change your answer. You can also delete cookies and site data from your browser's settings."
+          ]
+        }
+      ]
+    }
+  }
+}

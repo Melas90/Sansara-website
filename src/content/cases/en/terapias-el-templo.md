@@ -14,7 +14,20 @@ results:
     value: '[PENDIENTE]'
   - label: 'Clients who come back'
     value: '[PENDIENTE]'
-servicesUsed: []
+servicesUsed: [meta-ads-setup, landing-page, booking-system, whatsapp-automation]
 ---
 
-The full case study is written in `feature/casos`.
+## Before
+
+Vero and Rafa run a therapy practice in Candelaria, Tenerife. Every client had to be found by hand: write to them, insist, note the appointment by hand.
+
+## What we built
+
+- One ad campaign aimed at people already looking for their kind of session
+- A landing page for one clear offer, with booking connected
+- Automatic replies and reminders
+- Everything in their name: ad account, page, list, data
+
+## What changed
+
+People started booking by themselves, from the landing page alone, without anyone contacting them first. The figures are being confirmed with the client and will be published here once they have signed them off.

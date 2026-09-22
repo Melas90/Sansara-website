@@ -1,0 +1,55 @@
+---
+/**
+ * CaseList: every case study in the locale as a large row: client, sector,
+ * summary and a link to the full case. Renders nothing while there are none.
+ *
+ * Props: locale, readLabel.
+ * Content source: content/cases/<locale>/*.md.
+ */
+import { getCollection } from 'astro:content';
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import TextLink from '../../ui/TextLink.astro';
+import type { Locale } from '../../../config/site';
+import { localePath } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  readLabel: string;
+}
+const { locale, readLabel } = Astro.props;
+const cases = (
+  await getCollection('cases', ({ data }) => data.locale === locale && !data.draft)
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+{cases.length > 0 && (
+  <Section surface="oat">
+    <ul class="border-rule border-t">
+      {cases.map((entry) => (
+        <li class="border-rule grid gap-y-5 border-b py-12 lg:grid-cols-12 lg:gap-x-12">
+          <div class="lg:col-span-6">
+            <Heading level={2} size="title">
+              {entry.data.client}
+            </Heading>
+            <p class="text-fg-muted mt-3 text-sm">
+              {entry.data.sector}
+              {entry.data.location && `, ${entry.data.location}`}
+            </p>
+          </div>
+          <div class="lg:col-span-6 lg:pt-3">
+            <p class="text-fg text-lg">{entry.data.summary}</p>
+            <TextLink
+              href={localePath(locale, `/casos/${entry.data.key}/`)}
+              standalone
+              class="mt-4"
+            >
+              {readLabel}
+              <span class="sr-only">: {entry.data.client}</span>
+            </TextLink>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

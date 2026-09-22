@@ -7,3 +7,4 @@ import './consent';
 import './menu';
 import './diagram';
 import './reveal';
+import './booking';

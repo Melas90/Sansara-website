@@ -1,0 +1,15 @@
+---
+/** Legal page. The text lives in src/i18n/legal/<locale>.json. */
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import type { Locale } from '../../config/site';
+import { localeStaticPaths } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<LegalLayout locale={locale} page="privacidad" />

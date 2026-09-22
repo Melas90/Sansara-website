@@ -1,0 +1,42 @@
+---
+/**
+ * Leaks: the problem, as the four places where clients slip away between
+ * noticing you and booking. Each stage of the Loop closes one of them.
+ *
+ * Props: title, lead, items (the leaks), punch (the closing line).
+ * Content source: the calling page's copy (i18n/sistema -> leaks).
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  title: string;
+  lead: string;
+  items: string[];
+  punch: string;
+}
+const { title, lead, items, punch } = Astro.props;
+---
+
+<Section surface="oat" labelledby="leaks-title">
+  <div class="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+    <div class="lg:col-span-6">
+      <Heading id="leaks-title">{title}</Heading>
+      <p class="max-w-measure mt-6 text-lg">{lead}</p>
+    </div>
+    <div class="lg:col-span-6">
+      <ul class="border-rule border-t" data-reveal>
+        {items.map((item, index) => (
+          <li
+            data-reveal-item
+            style={`--i:${index}`}
+            class="border-rule font-display font-book text-fg leading-heading border-b py-5 text-xl"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+      <p class="border-accent text-fg mt-10 border-l-2 pl-5 text-lg">{punch}</p>
+    </div>
+  </div>
+</Section>

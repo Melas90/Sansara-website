@@ -1,7 +1,7 @@
 ---
 locale: de
 question: 'Ich habe von Technik keine Ahnung. Ist das ein Problem?'
-pages: [home, sistema]
+pages: [home]
 order: 20
 ---
 

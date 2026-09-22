@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Start: book the free 30-minute call",
+    "description": "Book a free 30-minute call, message us on WhatsApp or write to us. We look at your business together and show you where clients are slipping away."
+  },
+  "hero": {
+    "title": "Three ways to start. Pick the one that suits you.",
+    "lead": "The call is the quickest: thirty minutes looking at your actual business. You leave knowing where clients slip away and what to fix first, with us or on your own."
+  },
+  "call": {
+    "title": "Book the free call",
+    "text": "Pick a time that works. You'll get a confirmation and a reminder. Nothing to prepare.",
+    "points": [
+      "A clear look at how people find you now, from the outside.",
+      "The two or three spots where clients slip away.",
+      "What to fix first, and what it would change."
+    ],
+    "placeholderNote": "The booking calendar appears here once the Cal.com link is set in src/config/site.ts.",
+    "frameTitle": "Booking calendar",
+    "open": "Open the calendar in a new tab"
+  },
+  "whatsapp": {
+    "title": "Message us on WhatsApp",
+    "text": "Rather type than talk? Tell us in two lines what you do and where it gets stuck. A person answers, usually the same day."
+  },
+  "form": {
+    "title": "Or write to us",
+    "text": "We read every message ourselves and reply within two working days.",
+    "name": "Your name",
+    "email": "Email",
+    "business": "Your business or website (optional)",
+    "message": "What's going on?",
+    "messageHint": "Two or three lines is plenty.",
+    "send": "Send the message",
+    "privacy": "We use what you write only to reply to you.",
+    "privacyLink": "Privacy policy"
+  },
+  "thanks": {
+    "metaTitle": "Message received",
+    "title": "Got it. Thank you.",
+    "text": "Your message is with us. One of the two of us will reply within two working days, usually sooner.",
+    "back": "Back to the home page"
+  }
+}

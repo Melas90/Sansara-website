@@ -1,7 +1,7 @@
 ---
 locale: es
 question: 'No tengo audiencia ni muchos seguidores. ¿Funciona igual?'
-pages: [home, sistema]
+pages: [home]
 order: 30
 ---
 

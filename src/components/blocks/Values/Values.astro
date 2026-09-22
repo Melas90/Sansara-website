@@ -1,0 +1,37 @@
+---
+/**
+ * Values: a statement of how the agency works, with its principles as a row of
+ * short definitions. Written as behaviours ("everything is in your name"), not
+ * as abstract values.
+ *
+ * Props: title, lead (optional), values ({ title, text }), surface.
+ * Content source: the calling page's copy.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  title: string;
+  lead?: string;
+  values: { title: string; text: string }[];
+  surface?: 'linen' | 'oat' | 'deep';
+}
+const { title, lead, values, surface = 'deep' } = Astro.props;
+const columns = values.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
+---
+
+<Section surface={surface} labelledby="values-title">
+  <div class="max-w-headline">
+    <Heading id="values-title">{title}</Heading>
+    {lead && <p class="max-w-measure mt-6 text-lg">{lead}</p>}
+  </div>
+
+  <dl class:list={['mt-14 grid gap-x-10 gap-y-8 sm:grid-cols-2', columns]} data-reveal>
+    {values.map((value, index) => (
+      <div data-reveal-item style={`--i:${index}`} class="border-accent border-t-2 pt-5">
+        <dt class="font-display font-book text-fg leading-heading text-xl">{value.title}</dt>
+        <dd class="mt-2">{value.text}</dd>
+      </div>
+    ))}
+  </dl>
+</Section>

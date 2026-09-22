@@ -1,7 +1,7 @@
 {
   "meta": {
-    "homeTitle": "Stop chasing clients. Let them come to you.",
-    "homeDescription": "We build the system that takes people from never having heard of you to booked. Done for you, in plain words, for one fixed price."
+    "homeTitle": "Marketing agency for businesses that get booked directly",
+    "homeDescription": "Sansara Media is a two-person agency. We build the Client Loop, a done-for-you system of ads, page, follow-up and booking, and every piece of it as a fixed-price service."
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -13,8 +13,8 @@
     "home": "Sansara Media, home"
   },
   "nav": {
-    "sistema": "The System",
-    "servicios": "Done for you",
+    "sistema": "The Client Loop",
+    "servicios": "Services",
     "productos": "Products",
     "casos": "Client work",
     "sobre": "About",
@@ -43,5 +43,10 @@
     "accept": "Accept",
     "decline": "No thanks",
     "more": "Read the cookie policy"
+  },
+  "notFound": {
+    "title": "This page doesn’t exist.",
+    "text": "The link may be old, or the address mistyped. Everything we do starts from the home page.",
+    "back": "Go to the home page"
   }
 }

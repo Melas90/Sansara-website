@@ -1,7 +1,7 @@
 {
   "meta": {
-    "homeTitle": "Deja de perseguir clientes. Que vengan ellos.",
-    "homeDescription": "Montamos el sistema que lleva a la gente de no conocerte a reservar contigo. Te lo hacemos nosotros, te lo explicamos claro y a precio cerrado."
+    "homeTitle": "Agencia de marketing para negocios donde te reservan directamente",
+    "homeDescription": "Sansara Media es una agencia de dos personas. Montamos el Client Loop, un sistema de anuncios, página, seguimiento y reservas que te entregamos funcionando, y cada una de sus piezas como servicio a precio cerrado."
   },
   "a11y": {
     "skipToContent": "Saltar al contenido",
@@ -13,8 +13,8 @@
     "home": "Sansara Media, inicio"
   },
   "nav": {
-    "sistema": "El Sistema",
-    "servicios": "Te lo hacemos",
+    "sistema": "El Client Loop",
+    "servicios": "Servicios",
     "productos": "Productos",
     "casos": "Casos",
     "sobre": "Quiénes somos",
@@ -43,5 +43,10 @@
     "accept": "Aceptar",
     "decline": "No, gracias",
     "more": "Leer la política de cookies"
+  },
+  "notFound": {
+    "title": "Esta página no existe.",
+    "text": "Puede que el enlace sea antiguo o que la dirección esté mal escrita. Todo lo que hacemos empieza en la página de inicio.",
+    "back": "Ir a la página de inicio"
   }
 }

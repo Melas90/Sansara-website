@@ -1,7 +1,7 @@
 ---
 locale: en
 question: 'What does working with you look like?'
-pages: [home, sistema]
+pages: [home]
 order: 50
 ---
 

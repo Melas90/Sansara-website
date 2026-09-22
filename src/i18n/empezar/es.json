@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Empezar: reserva la llamada gratis de 30 minutos",
+    "description": "Reserva una llamada gratis de 30 minutos, escríbenos por WhatsApp o mándanos un mensaje. Miramos tu negocio juntos y te enseñamos por dónde se te escapan los clientes."
+  },
+  "hero": {
+    "title": "Tres formas de empezar. Elige la que te venga mejor.",
+    "lead": "La llamada es la más rápida: treinta minutos mirando tu negocio real. Sales sabiendo por dónde se te escapan clientes y qué arreglar primero, con nosotros o por tu cuenta."
+  },
+  "call": {
+    "title": "Reserva la llamada gratis",
+    "text": "Elige la hora que te venga bien. Te llegará una confirmación y un recordatorio. No tienes que preparar nada.",
+    "points": [
+      "Una mirada clara, desde fuera, a cómo te encuentra la gente hoy.",
+      "Los dos o tres puntos por donde se te escapan clientes.",
+      "Qué arreglar primero, y qué cambiaría con eso."
+    ],
+    "placeholderNote": "El calendario de reservas aparecerá aquí cuando el enlace de Cal.com esté configurado en src/config/site.ts.",
+    "frameTitle": "Calendario de reservas",
+    "open": "Abrir el calendario en una pestaña nueva"
+  },
+  "whatsapp": {
+    "title": "Escríbenos por WhatsApp",
+    "text": "¿Prefieres escribir a hablar? Cuéntanos en dos líneas a qué te dedicas y dónde se te atasca. Te contesta una persona, normalmente el mismo día."
+  },
+  "form": {
+    "title": "O escríbenos aquí",
+    "text": "Leemos todos los mensajes nosotros mismos y contestamos en un máximo de dos días laborables.",
+    "name": "Tu nombre",
+    "email": "Correo electrónico",
+    "business": "Tu negocio o tu web (opcional)",
+    "message": "Cuéntanos qué pasa",
+    "messageHint": "Con dos o tres líneas basta.",
+    "send": "Enviar el mensaje",
+    "privacy": "Lo que nos escribas lo usamos solo para contestarte.",
+    "privacyLink": "Política de privacidad"
+  },
+  "thanks": {
+    "metaTitle": "Mensaje recibido",
+    "title": "Recibido. Gracias.",
+    "text": "Ya tenemos tu mensaje. Uno de los dos te contestará en un máximo de dos días laborables, normalmente antes.",
+    "back": "Volver a la página de inicio"
+  }
+}

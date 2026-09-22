@@ -1,7 +1,7 @@
 ---
 locale: de
 question: 'Wie läuft die Zusammenarbeit mit euch ab?'
-pages: [home, sistema]
+pages: [home]
 order: 50
 ---
 

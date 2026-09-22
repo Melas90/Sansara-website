@@ -1,7 +1,7 @@
 ---
 locale: es
 question: '¿Cómo es trabajar con vosotros?'
-pages: [home, sistema]
+pages: [home]
 order: 50
 ---
 

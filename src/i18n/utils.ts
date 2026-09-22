@@ -28,10 +28,45 @@ const dictionaries: Record<Locale, unknown> = { en, es, de };
 import homeEn from './home/en.json';
 import homeEs from './home/es.json';
 import homeDe from './home/de.json';
+import sistemaEn from './sistema/en.json';
+import sistemaEs from './sistema/es.json';
+import sistemaDe from './sistema/de.json';
+import serviciosEn from './servicios/en.json';
+import serviciosEs from './servicios/es.json';
+import serviciosDe from './servicios/de.json';
+import sobreEn from './sobre/en.json';
+import sobreEs from './sobre/es.json';
+import sobreDe from './sobre/de.json';
+import empezarEn from './empezar/en.json';
+import empezarEs from './empezar/es.json';
+import empezarDe from './empezar/de.json';
+import casosEn from './casos/en.json';
+import casosEs from './casos/es.json';
+import casosDe from './casos/de.json';
+import legalEn from './legal/en.json';
+import legalEs from './legal/es.json';
+import legalDe from './legal/de.json';
 
 const pages = {
   home: { en: homeEn, es: homeEs, de: homeDe } satisfies Record<Locale, typeof homeEn>,
+  sistema: { en: sistemaEn, es: sistemaEs, de: sistemaDe } satisfies Record<
+    Locale,
+    typeof sistemaEn
+  >,
+  servicios: { en: serviciosEn, es: serviciosEs, de: serviciosDe } satisfies Record<
+    Locale,
+    typeof serviciosEn
+  >,
+  sobre: { en: sobreEn, es: sobreEs, de: sobreDe } satisfies Record<Locale, typeof sobreEn>,
+  empezar: { en: empezarEn, es: empezarEs, de: empezarDe } satisfies Record<
+    Locale,
+    typeof empezarEn
+  >,
+  casos: { en: casosEn, es: casosEs, de: casosDe } satisfies Record<Locale, typeof casosEn>,
+  legal: { en: legalEn, es: legalEs, de: legalDe } satisfies Record<Locale, typeof legalEn>,
 };
+
+export type PageName = keyof typeof pages;
 
 export function pageCopy<P extends keyof typeof pages>(page: P, locale: Locale) {
   return pages[page][locale] as (typeof pages)[P]['en'];

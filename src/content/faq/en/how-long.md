@@ -1,7 +1,7 @@
 ---
 locale: en
 question: "How long until it's live?"
-pages: [home, sistema]
+pages: [home]
 order: 40
 ---
 

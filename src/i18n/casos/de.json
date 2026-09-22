@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Kundenprojekte: so sieht das in einem echten Betrieb aus",
+    "description": "Echte Betriebe, was wir für sie gebaut haben und was dann passiert ist. Kunden mit Namen, ihre eigenen Worte, und Zahlen nur dann, wenn wir sie belegen können."
+  },
+  "hero": {
+    "title": "So sieht das in einem echten Betrieb aus.",
+    "lead": "Kunden mit Namen, ihre eigenen Worte, und Zahlen nur dann, wenn wir sie belegen können. Die Liste ist kurz, weil wir nur Arbeit zeigen, zu der wir einen Namen nennen dürfen."
+  },
+  "labels": {
+    "results": "Was passiert ist",
+    "pendingNote": "Zahlen mit [PENDIENTE] warten noch auf die Freigabe des Kunden.",
+    "read": "Den Fall lesen",
+    "back": "Alle Kundenprojekte",
+    "theirWords": "In ihren Worten"
+  },
+  "final": {
+    "title": "Willst du als Nächstes auf dieser Seite stehen?",
+    "text": "Es beginnt mit einem kostenlosen Gespräch. Wir schauen uns dein Geschäft gemeinsam an und sagen dir ehrlich, ob wir helfen können."
+  }
+}

@@ -1,7 +1,7 @@
 ---
 locale: de
 question: 'Ich habe keine große Reichweite. Funktioniert das trotzdem?'
-pages: [home, sistema]
+pages: [home]
 order: 30
 ---
 

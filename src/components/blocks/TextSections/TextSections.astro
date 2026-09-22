@@ -1,0 +1,38 @@
+---
+/**
+ * TextSections: long-form text in the site's editorial layout, each section's
+ * title hanging in the left rail. Used for the about page and the legal pages.
+ *
+ * Props: sections ({ title, body[] }), level (heading level, default 2), size.
+ * Content source: the calling page's copy.
+ */
+import Container from '../../ui/Container.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  sections: { title: string; body: string[] }[];
+  level?: 2 | 3;
+  size?: 'section' | 'sub';
+  lead?: boolean;
+}
+const { sections, level = 2, size = 'section', lead = true } = Astro.props;
+---
+
+<div class="surface-linen pb-section">
+  <Container>
+    {sections.map((section) => (
+      <section class="border-rule grid gap-y-6 border-t py-12 lg:grid-cols-12 lg:gap-x-12 lg:py-16">
+        <div class="lg:col-span-4">
+          <Heading level={level} size={size}>
+            {section.title}
+          </Heading>
+        </div>
+        <div class:list={['max-w-measure flex flex-col gap-y-5 lg:col-span-8', lead && 'text-lg']}>
+          {section.body.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+    ))}
+  </Container>
+</div>

@@ -1,0 +1,32 @@
+---
+/**
+ * About: the founders, the origin story, why the agency stays small, where the
+ * name comes from, how it works, and how working together goes.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/blocks/PageHero/PageHero.astro';
+import TextSections from '../../components/blocks/TextSections/TextSections.astro';
+import Founders from '../../components/blocks/Founders/Founders.astro';
+import Values from '../../components/blocks/Values/Values.astro';
+import Process from '../../components/blocks/Process/Process.astro';
+import FinalCTA from '../../components/blocks/FinalCTA/FinalCTA.astro';
+import type { Locale } from '../../config/site';
+import { localeStaticPaths, pageCopy } from '../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('sobre', locale);
+---
+
+<BaseLayout locale={locale} title={copy.meta.title} description={copy.meta.description}>
+  <PageHero locale={locale} title={copy.hero.title} lead={copy.hero.lead} />
+  <Founders locale={locale} />
+  <TextSections sections={copy.sections} />
+  <Values title={copy.valuesTitle} values={copy.values} />
+  <Process locale={locale} surface="linen" />
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
+</BaseLayout>

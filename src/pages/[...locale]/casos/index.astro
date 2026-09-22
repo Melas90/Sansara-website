@@ -1,0 +1,31 @@
+---
+/**
+ * Client work index: every case in the locale, then what clients say.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/blocks/PageHero/PageHero.astro';
+import CaseList from '../../../components/blocks/CaseList/CaseList.astro';
+import Testimonials from '../../../components/blocks/Testimonials/Testimonials.astro';
+import FinalCTA from '../../../components/blocks/FinalCTA/FinalCTA.astro';
+import type { Locale } from '../../../config/site';
+import { localeStaticPaths, pageCopy } from '../../../i18n/utils';
+
+export const getStaticPaths = localeStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('casos', locale);
+---
+
+<BaseLayout locale={locale} title={copy.meta.title} description={copy.meta.description}>
+  <PageHero locale={locale} title={copy.hero.title} lead={copy.hero.lead} />
+  <CaseList locale={locale} readLabel={copy.labels.read} />
+  <Testimonials
+    locale={locale}
+    title={copy.labels.theirWords}
+    translatedNote={pageCopy('home', locale).testimonials.translated}
+  />
+  <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
+</BaseLayout>

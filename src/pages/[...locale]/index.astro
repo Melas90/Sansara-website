@@ -6,11 +6,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/blocks/Hero/Hero.astro';
 import SystemDiagram from '../../components/blocks/SystemDiagram/SystemDiagram.astro';
-import Doors from '../../components/blocks/Doors/Doors.astro';
+import ServicesGlance from '../../components/blocks/ServicesGlance/ServicesGlance.astro';
 import Proof from '../../components/blocks/Proof/Proof.astro';
 import Testimonials from '../../components/blocks/Testimonials/Testimonials.astro';
 import Statement from '../../components/blocks/Statement/Statement.astro';
-import FitList from '../../components/blocks/FitList/FitList.astro';
 import Process from '../../components/blocks/Process/Process.astro';
 import Founders from '../../components/blocks/Founders/Founders.astro';
 import FAQ from '../../components/blocks/FAQ/FAQ.astro';
@@ -30,8 +29,8 @@ const copy = pageCopy('home', locale);
 
 <BaseLayout locale={locale} title={t('meta.homeTitle')} description={t('meta.homeDescription')}>
   <Hero locale={locale} />
+  <ServicesGlance locale={locale} />
   <SystemDiagram locale={locale} />
-  <Doors locale={locale} />
   <Proof locale={locale} />
   <Testimonials
     locale={locale}
@@ -39,9 +38,8 @@ const copy = pageCopy('home', locale);
     translatedNote={copy.testimonials.translated}
   />
   <Statement text={copy.statement.text} note={copy.statement.note} />
-  <FitList locale={locale} />
-  <Process locale={locale} />
   <Founders locale={locale} />
+  <Process locale={locale} />
   <FAQ locale={locale} page="home" title={copy.faq.title} />
   <FinalCTA locale={locale} title={copy.final.title} text={copy.final.text} />
 </BaseLayout>

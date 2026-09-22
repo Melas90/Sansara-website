@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Services: the Client Loop, and every piece of it on its own",
+    "description": "Our product is the Sansara Client Loop, a complete client acquisition system. Every piece of it is also available as a fixed-scope, fixed-price service."
+  },
+  "hero": {
+    "title": "One product. And every piece of it, on its own.",
+    "lead": "Most clients want the whole path built. Some already have half of it and need one missing piece done properly. Both are fine. Everything here has a fixed scope and a fixed price."
+  },
+  "product": {
+    "label": "Our product",
+    "title": "The Sansara Client Loop",
+    "text": "The complete client acquisition system: ad, page, follow-up and booking, connected into one path and handed over working. One offer, one fixed price, live in days, everything in your name.",
+    "more": "See how the Loop works"
+  },
+  "list": {
+    "label": "Done-for-you services",
+    "lead": "The building blocks the Loop is made of. Each one fits into the full system later, so nothing you buy now gets thrown away."
+  },
+  "detail": {
+    "whatYouGet": "What you get",
+    "whoItsFor": "Who it's for",
+    "notFor": "Who it's not for",
+    "yourPart": "What we need from you",
+    "price": "How the price works",
+    "priceKinds": {
+      "fixed": "One fixed price, agreed in writing before we start.",
+      "from": "A fixed price that depends on size. You get the exact figure in writing before we start.",
+      "monthly": "A fixed monthly fee. Cancel any month; everything stays yours.",
+      "on-call": "Quoted on a short call, because it depends on what you already have."
+    },
+    "partOfSystem": "This is one of the pieces of the Sansara Client Loop. If you need the whole path, it is built as one connected job rather than pieces bought one at a time.",
+    "partOfSystemLink": "See the Client Loop",
+    "others": "Other services",
+    "back": "All services"
+  },
+  "final": {
+    "title": "Not sure which piece you need?",
+    "text": "That's what the free call is for. Thirty minutes looking at your business, and you leave knowing which piece is missing, with us or without us."
+  }
+}

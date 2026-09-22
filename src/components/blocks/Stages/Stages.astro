@@ -1,0 +1,61 @@
+---
+/**
+ * Stages: the four stages of the Loop with exactly what is delivered in each.
+ * A real sequence, so it is numbered. This is the "what's included" of the
+ * flagship page.
+ *
+ * Props: title, lead, items ({ title, text, deliverables[] }).
+ * Content source: the calling page's copy (i18n/sistema -> stages).
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+
+interface Props {
+  title: string;
+  lead: string;
+  items: { title: string; text: string; deliverables: string[] }[];
+}
+const { title, lead, items } = Astro.props;
+---
+
+<Section labelledby="stages-title">
+  <div class="max-w-headline">
+    <Heading id="stages-title" size="title">
+      {title}
+    </Heading>
+    <p class="max-w-measure mt-6 text-lg">{lead}</p>
+  </div>
+
+  <ol class="border-rule mt-16 border-t" data-reveal>
+    {items.map((item, index) => (
+      <li
+        data-reveal-item
+        style={`--i:${index}`}
+        class="border-rule grid gap-y-4 border-b py-10 lg:grid-cols-12 lg:gap-x-12"
+      >
+        <span
+          aria-hidden="true"
+          class="font-display font-book text-accent leading-display text-3xl lg:col-span-1"
+        >
+          {index + 1}
+        </span>
+        <div class="lg:col-span-5">
+          <Heading level={3} size="section">
+            {item.title}
+          </Heading>
+          <p class="mt-3">{item.text}</p>
+        </div>
+        <ul class="lg:col-span-6">
+          {item.deliverables.map((deliverable) => (
+            <li class="border-rule flex gap-x-4 border-b py-3 first:pt-0 last:border-b-0">
+              <span aria-hidden="true" class="text-accent font-strong shrink-0">
+                ✓
+              </span>
+              <span class="text-fg">{deliverable}</span>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+</Section>

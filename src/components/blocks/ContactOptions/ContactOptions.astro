@@ -1,0 +1,138 @@
+---
+/**
+ * ContactOptions: the three ways to start, in priority order: the booking
+ * calendar (Cal.com, embedded), WhatsApp, and a short form (Netlify Forms with
+ * a honeypot). While the booking URL in config/site.ts is still a placeholder
+ * the calendar is replaced by a visible note, so nothing embeds a dead link.
+ *
+ * Analytics: `Schedule` fires from scripts/booking.ts when Cal.com reports a
+ * completed booking; `Lead` fires on the WhatsApp button and on form submit.
+ * Both only after cookie consent.
+ *
+ * Props: locale.
+ * Content source: i18n/empezar/<locale>.json; targets from config/site.ts.
+ */
+import Section from '../../ui/Section.astro';
+import Heading from '../../ui/Heading.astro';
+import Button from '../../ui/Button.astro';
+import TextLink from '../../ui/TextLink.astro';
+import { site, type Locale } from '../../../config/site';
+import { legalNav } from '../../../config/nav';
+import { localePath, pageCopy, whatsappUrl } from '../../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = pageCopy('empezar', locale);
+const bookingReady = !site.bookingUrl.includes('PLACEHOLDER');
+const embedUrl = `${site.bookingUrl}?embed=true&layout=month_view`;
+const privacy = legalNav.find((item) => item.key === 'privacidad');
+const field =
+  'border-fg/40 bg-paper text-fg rounded-control focus:border-fg min-h-control mt-2 block w-full border px-4 py-3 text-base';
+---
+
+<Section surface="oat" id="call" labelledby="call-title">
+  <Fragment slot="heading">
+    <Heading id="call-title">{copy.call.title}</Heading>
+    <p class="mt-4">{copy.call.text}</p>
+    <ul class="border-rule mt-6 border-t">
+      {copy.call.points.map((point) => (
+        <li class="border-rule flex gap-x-4 border-b py-3 text-sm">
+          <span aria-hidden="true" class="text-accent font-strong shrink-0">
+            ✓
+          </span>
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+  </Fragment>
+
+  {bookingReady ? (
+    <div>
+      <iframe
+        src={embedUrl}
+        title={copy.call.frameTitle}
+        loading="lazy"
+        data-booking-frame
+        class="surface-paper border-rule h-(--sm-booking-height) w-full border"
+      ></iframe>
+      <TextLink href={site.bookingUrl} standalone class="mt-3 text-sm" track="Lead">
+        {copy.call.open}
+      </TextLink>
+    </div>
+  ) : (
+    <p class="surface-paper border-accent border border-dashed p-6">{copy.call.placeholderNote}</p>
+  )}
+</Section>
+
+<Section id="whatsapp" labelledby="whatsapp-title">
+  <Fragment slot="heading">
+    <Heading id="whatsapp-title">{copy.whatsapp.title}</Heading>
+  </Fragment>
+  <p class="text-fg max-w-measure text-lg">{copy.whatsapp.text}</p>
+  <Button href={whatsappUrl(locale)} variant="secondary" track="Lead" rel="noopener" class="mt-8">
+    {copy.whatsapp.title}
+  </Button>
+</Section>
+
+<Section surface="oat" id="form" labelledby="form-title">
+  <Fragment slot="heading">
+    <Heading id="form-title">{copy.form.title}</Heading>
+    <p class="mt-4">{copy.form.text}</p>
+  </Fragment>
+
+  <form
+    name="contact"
+    method="POST"
+    action={localePath(locale, '/empezar/gracias/')}
+    data-netlify="true"
+    netlify-honeypot="company-website"
+    data-track-submit="Lead"
+    class="max-w-measure"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="hidden" name="language" value={locale} />
+    <p class="hidden">
+      <label>
+        Leave this empty
+        <input name="company-website" tabindex="-1" autocomplete="off" />
+      </label>
+    </p>
+
+    <label class="text-fg font-strong block">
+      {copy.form.name}
+      <input class={field} type="text" name="name" autocomplete="name" required />
+    </label>
+    <label class="text-fg font-strong mt-6 block">
+      {copy.form.email}
+      <input
+        class={field}
+        type="email"
+        name="email"
+        autocomplete="email"
+        spellcheck="false"
+        required
+      />
+    </label>
+    <label class="text-fg font-strong mt-6 block">
+      {copy.form.business}
+      <input class={field} type="text" name="business" autocomplete="organization" />
+    </label>
+    <label class="text-fg font-strong mt-6 block">
+      {copy.form.message}
+      <span class="text-fg-muted font-regular block text-sm">{copy.form.messageHint}</span>
+      <textarea class={field} name="message" rows="5" required></textarea>
+    </label>
+
+    <Button type="submit" class="mt-8">
+      {copy.form.send}
+    </Button>
+    <p class="text-fg-muted mt-4 text-sm">
+      {copy.form.privacy}
+      {privacy?.live && (
+        <TextLink href={localePath(locale, privacy.path)}>{copy.form.privacyLink}</TextLink>
+      )}
+    </p>
+  </form>
+</Section>
