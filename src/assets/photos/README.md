@@ -1,5 +1,8 @@
 # Photos
 
+The originals live in `C:Usersdiezgsansararandphotos`. Copy the ones the site
+uses into this folder; the build picks them up from here.
+
 Real photography only. Drop a file here with one of these names and it appears
 on the site at the next build; remove it and the section goes back to text.
 

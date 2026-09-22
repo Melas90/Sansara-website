@@ -9,6 +9,9 @@ Markdown files, three languages (English, Spanish, German). Deployed on Netlify.
 
 ## Where it lives
 
+This repo sits in `C:Usersdiezgsansarawebsite`, next to the CRM and the shared
+`brand/` folder. Open Claude Code in `C:Usersdiezgsansara`.
+
 | What                               | Branch    | Link                                                  |
 | ---------------------------------- | --------- | ----------------------------------------------------- |
 | Staging (newest work, for testing) | `develop` | https://develop--bespoke-frangollo-3044fc.netlify.app |
