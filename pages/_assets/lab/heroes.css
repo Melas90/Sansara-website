@@ -86,3 +86,33 @@ html.motion .hv-deck:not(:hover) .deck-card { animation: deck-breathe calc(var(-
 .hv-deck:hover .deck-card { transform: translate(calc(var(--x) * 1.45), var(--y)) rotate(calc(var(--r) * 1.4)); }
 .hv-deck .deck-card:hover { transform: translate(calc(var(--x) * 1.45), calc(var(--y) - 4%)) rotate(calc(var(--r) * 1.4)); }
 @media (max-width: 600px) { .deck-card { left: 2%; right: 16%; padding: 22px; } .hv-deck { aspect-ratio: 1 / 1.02; } }
+
+/* deck, round 2: an icon per offer and what each one includes */
+.deck-card { gap: 8px; padding: 24px 26px 26px; }
+.deck-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.deck-n { font-size: 36px; }
+.deck-ico { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--sand-3); color: var(--orange-dk); }
+.deck-ico svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.deck-card:nth-child(3) .deck-ico { background: var(--bg); }
+.deck-card:nth-child(4) .deck-ico { background: var(--ink-2); color: var(--orange); }
+.deck-promise { font-size: 17px; }
+.deck-inc { list-style: none; padding: 12px 0 0; margin: 4px 0 0; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: var(--text-small); }
+.deck-inc li { display: flex; gap: 10px; align-items: baseline; }
+.deck-inc li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); transform: translateY(-2px); }
+/* the sprite svg is the first child, so the cards are children 2 to 4 */
+.deck-card:nth-child(2) { background: var(--bg); }
+.deck-card:nth-child(3) { background: var(--sand-3); color: var(--brown); }
+.deck-card:nth-child(3) h3, .deck-card:nth-child(3) .deck-n { color: var(--ink); }
+.deck-card:nth-child(3) .link { color: var(--orange-dk); }
+.deck-card:nth-child(3) .deck-for { color: var(--brown-2-text); }
+.deck-card:nth-child(4) { background: var(--ink); color: var(--on-dark-muted); }
+.deck-card:nth-child(4) h3, .deck-card:nth-child(4) .deck-n { color: var(--bg); }
+.deck-card:nth-child(4) .link { color: var(--orange); }
+.deck-card:nth-child(4) .deck-for { color: var(--gold); }
+.deck-card:nth-child(4) .deck-inc { border-color: var(--line-on-dark); }
+.hv-deck { aspect-ratio: 1 / 1.2; }
+
+/* in the real hero: a little smaller, and under the words on a phone */
+.hx .hv-deck { aspect-ratio: 1 / 1.2; max-width: 480px; justify-self: end; }
+@media (max-width: 900px) { .hx .hv-deck { order: 0; justify-self: center; } }
+@media (max-width: 600px) { .hv-deck, .hx .hv-deck { aspect-ratio: 1 / 1.12; } .deck-inc { display: none; } }

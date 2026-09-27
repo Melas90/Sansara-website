@@ -6,14 +6,16 @@
   <!-- @include _partials/head.html -->
   <link rel="stylesheet" href="/assets/lab/homes.css">
   <link rel="stylesheet" href="/assets/lab/home-cris.css">
+  <link rel="stylesheet" href="/assets/lab/heroes.css">
   <script src="/assets/lab/homes.js" defer></script>
+  <script src="/assets/lab/heroes.js" defer></script>
   <meta name="robots" content="noindex">
 </head>
 <body class="c">
   <!-- @include _partials/header.html -->
   <main id="main">
 
-    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, the orb with two rings and two floating cards. -->
+    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and the three offers as a fanned deck of cards (chosen 2026-09-27, replaces the orb). -->
     <section class="hx" id="hero" aria-labelledby="hero-title">
       <div class="glow glow-a" aria-hidden="true"></div>
       <div class="glow glow-b" aria-hidden="true"></div>
@@ -30,11 +32,13 @@
             {{#each hero.facts}}<div><strong>{{ value }}</strong><span>{{ label }}</span></div>{{/each}}
           </div>
         </div>
-        <div class="hx-art reveal" aria-hidden="true">
-          <div class="orb-rings"><div class="orb-ring"><span class="orb-ring-dot"></span></div><div class="orb-ring orb-ring-2"></div></div>
-          <div class="orb"><div class="orb-mark"></div></div>
-          <div class="float-card float-a"><span class="k">{{ hero.float_stat_key }}</span><span class="v">{{ hero.float_stat_value }}</span></div>
-          <div class="float-card float-b"><span class="q">“{{ hero.float_quote }}”</span><span class="k">{{ hero.float_quote_by }}</span></div>
+        <div class="hx-art hv-deck" data-deck>
+          <svg class="sr-only" aria-hidden="true" focusable="false"><defs>
+            <symbol id="ico-system" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.2"/><circle cx="4.8" cy="17" r="2.2"/><circle cx="19.2" cy="17" r="2.2"/><path d="M10.6 6.4 6.2 15M13.4 6.4l4.4 8.6M7 17h10"/></symbol>
+            <symbol id="ico-services" viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L19.3 8a2.1 2.1 0 0 0-3-3L5.5 15.7 4 20z"/><path d="M14.5 6.8l2.9 2.9"/><path d="M13 20h7"/></symbol>
+            <symbol id="ico-consulting" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M16.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v5.5A1.5 1.5 0 0 1 20 18h-1v2.5L16 18h-3.5"/></symbol>
+          </defs></svg>
+          {{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><div class="deck-top"><span class="deck-n">{{ @number }}</span><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-{{{ key }}}"/></svg></span></div><p class="deck-for">{{ for }}</p><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><ul class="deck-inc">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
         </div>
       </div>
     </section>
