@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h2 class="label footer-title">{{ shared.footer.offers_title }}</h2>
+      <ul>
+        <li><a href="/system/">{{ shared.nav.system }}</a></li>
+        <li><a href="/consulting/">{{ shared.nav.consulting }}</a></li>
+        <li><a href="/services/">{{ shared.nav.services }}</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label footer-title">{{ shared.footer.studio_title }}</h2>
+      <ul>
+        <li><a href="/about/">{{ shared.footer.about }}</a></li>
+        <li><a href="/blog/">{{ shared.footer.blog }}</a></li>
+        <li><a href="/book-a-call/">{{ shared.footer.book }}</a></li>
+        <li><a href="/#contact">{{ shared.footer.contact }}</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label footer-title">{{ shared.footer.legal_title }}</h2>
+      <ul>
+        <li><a href="/legal-notice/">{{ shared.footer.legal_notice }}</a></li>
+        <li><a href="/privacy/">{{ shared.footer.privacy }}</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label footer-title">{{ shared.footer.newsletter_title }}</h2>
+      <p>{{ shared.footer.newsletter_text }}</p>
+      <form class="newsletter-form" name="newsletter" method="POST" action="/newsletter/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="honeypot" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="newsletter-row">
+          <label class="sr-only" for="newsletter-email">{{ shared.footer.newsletter_label }}</label>
+          <input class="control" id="newsletter-email" type="email" name="email" placeholder="{{{ shared.footer.newsletter_placeholder }}}" required autocomplete="email">
+          <button class="btn btn-light btn-sm" type="submit">{{ shared.footer.newsletter_button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+        </div>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required><span>{{ shared.footer.newsletter_consent }}</span></label>
+      </form>
+      <div class="footer-socials">{{ shared.footer.socials }}</div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>{{ shared.footer.tagline }}</p>
+    <p>&copy; {{ site.year }} {{ site.name }}. {{ shared.footer.rights }}</p>
+  </div>
+</footer>

@@ -1,0 +1,109 @@
+/*
+ * Sansara Media design tokens. The only file with hex values and durations.
+ * Source: docs/CLAUDE_CODE_BRIEF.md §3 (brand) and §6.1 (motion).
+ * Pages and partials use these variables and never a raw value.
+ */
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/brand/fonts/hanken-grotesk-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/brand/fonts/newsreader-latin-opsz-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('/brand/fonts/newsreader-latin-opsz-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ---- Colour (§3.1) ---- */
+  --bg: #fcfaf4;        /* page background, cream */
+  --card: #f7f2e8;      /* alternate section, muted card */
+  --peach: #fbe7d3;     /* soft highlight card */
+  --white: #ffffff;     /* cards, inputs */
+  --ink: #2a1e14;       /* headings, primary button, dark bands */
+  --ink-2: #3e2a19;     /* dark gradient partner */
+  --brown: #5b4a3b;     /* body text */
+  --brown-2: #8c6a47;   /* secondary text, labels. See design-system.md: contrast note */
+  --orange: #ee8b5e;    /* the only accent: icons, arrows, highlights. Never body text on cream */
+  --orange-dk: #b65a2e; /* accent text on light backgrounds, hover */
+  --line: rgba(42, 30, 20, 0.12);
+
+  /* Text colours on dark bands */
+  --on-dark: var(--bg);
+  --on-dark-muted: rgba(252, 250, 244, 0.72);
+  --line-on-dark: rgba(252, 250, 244, 0.18);
+
+  /* Gradients */
+  --grad-warm: linear-gradient(120deg, #fdeedf 0%, #f9dcc2 55%, #f2b98c 120%);
+  --grad-dark: linear-gradient(135deg, #2a1e14, #3e2a19);
+  --grad-orange: linear-gradient(160deg, #ee8b5e, #d8703f);
+
+  /* ---- Typography (§3.2) ---- */
+  --font-sans: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  --text-h1: clamp(40px, 6vw, 72px);
+  --text-h2: clamp(34px, 4.6vw, 50px);
+  --text-h3: clamp(22px, 2.4vw, 28px); /* not in the brief; derived, see design-system.md */
+  --text-lead: 19px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-label: 12px;
+
+  --leading-tight: 1.05;
+  --leading-heading: 1.15;
+  --leading-body: 1.6;
+
+  --weight-heading: 700;
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-label: 700;
+  --tracking-label: 0.28em;
+  --tracking-heading: -0.02em;
+
+  /* ---- Shape and space (§3.3) ---- */
+  --radius-pill: 100px;
+  --radius-card: 24px;   /* 20–28px range in the brief */
+  --radius-card-sm: 20px;
+  --radius-band: 32px;
+  --radius-field: 12px;  /* inputs; not in the brief, derived */
+
+  --max: 1200px;
+  --pad: 56px;
+  --section: 96px;
+  --gap: 24px;
+  --target: 44px;        /* minimum tap target */
+
+  /* ---- Motion (§6.1) ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 200ms;
+  --base: 550ms;
+  --slow: 900ms;
+  --rise: 40px;
+  --stagger: 110ms;
+  --rotate-every: 2800ms; /* rotating hero line */
+}
+
+@media (max-width: 980px) {
+  :root {
+    --pad: 28px;
+    --section: 72px;
+    --rise: 20px;
+    --stagger: 70ms;
+  }
+}

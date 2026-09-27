@@ -1,0 +1,24 @@
+<!-- @route /contact/thanks/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <!-- @include _partials/header.html -->
+  <main id="main">
+    <div class="container">
+      <div class="thanks">
+        <h1><em>{{ shared.thanks.contact_title }}</em></h1>
+        <p class="lead">{{ shared.thanks.contact_text }}</p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/book-a-call/">{{ shared.footer.book }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <a class="btn btn-ghost" href="/">{{ shared.thanks.home_link }}</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

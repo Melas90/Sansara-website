@@ -1,0 +1,24 @@
+<a class="skip" href="#main">{{ shared.nav.skip }}</a>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="logo" href="/" aria-label="{{{ shared.nav.home }}}">
+      <img src="/assets/images/logo-sansara-media.png" alt="Sansara Media" width="898" height="118">
+    </a>
+    <nav class="site-nav" aria-label="{{{ shared.nav.main_label }}}">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="{{{ shared.nav.menu }}}">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="/system/">{{ shared.nav.system }}</a></li>
+        <li><a href="/consulting/">{{ shared.nav.consulting }}</a></li>
+        <li><a href="/services/">{{ shared.nav.services }}</a></li>
+        <li><a href="/about/">{{ shared.nav.about }}</a></li>
+        <li><a href="/blog/">{{ shared.nav.blog }}</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary header-cta" href="/book-a-call/">{{ shared.nav.book }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </div>
+</header>
