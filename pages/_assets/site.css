@@ -329,3 +329,32 @@ html:not(.js) .close-btn { display: none; }
   font-size: var(--text-label); font-weight: var(--weight-label); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.6;
 }
 .thanks { min-height: 60vh; display: grid; align-content: center; gap: 20px; padding-block: var(--section); max-width: 40rem; }
+
+/* ---------- lead pop-up (owner request 2026-09-27) ---------- */
+.lead-dialog { width: min(640px, 100% - 2 * var(--pad)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: var(--radius-card); background: var(--bg); color: var(--brown); box-shadow: var(--shadow-float); overflow: auto; }
+.lead-dialog::backdrop { background: rgba(42, 30, 20, 0.45); backdrop-filter: blur(3px); }
+.lead-inner { display: grid; gap: 24px; padding: clamp(24px, 4vw, 40px); }
+.lead-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.lead-head h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); }
+.lead-head h2 em { font-style: italic; color: var(--gold-dk); }
+.lead-head .close-btn { flex: none; margin: -8px -8px 0 0; }
+.lead-dialog .form-actions { margin-top: 20px; }
+html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
+html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }
+@keyframes lead-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }
+@keyframes lead-fade { from { opacity: 0; } }
+html.lead-open { overflow: hidden; }
+/* without JavaScript the pop-up is a plain section at the end of the page */
+html:not(.js) .lead-dialog { display: block; position: static; margin: var(--section) auto; box-shadow: none; }
+
+/* the floating button: slides in after the hero, out of the way over the closing band */
+.lead-float { position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: 12px; min-height: var(--target); padding: 10px 12px 10px 22px; border-radius: var(--radius-pill); background: var(--ink); color: var(--bg); font-weight: var(--weight-medium); box-shadow: var(--shadow-float); cursor: pointer;
+  opacity: 0; transform: translateY(24px); pointer-events: none; transition: opacity var(--base) var(--ease), transform var(--base) var(--ease), background-color var(--fast) var(--ease); }
+.lead-float.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.lead-float:hover { background: var(--ink-2); }
+.lead-float .btn-arrow { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--orange); color: var(--ink); }
+.lead-float .btn-arrow svg { width: 14px; height: 14px; }
+html.lead-open .lead-float { opacity: 0; pointer-events: none; }
+
+/* a quiet line that opens the pop-up between sections */
+.lead-nudge { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 20px; margin-top: 40px; color: var(--brown); }

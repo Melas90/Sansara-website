@@ -18,6 +18,7 @@
  *   key:                  nested object or list (decided by the next line)
  *   - item                list of strings
  *   - key: value          list of objects
+ *   - "a: b"               quoted item: always a string, even with ": " inside
  * A value that starts with `PENDING` renders as a visible pending marker.
  */
 import { promises as fs } from 'node:fs';
@@ -64,6 +65,9 @@ function parseBlock(lines, i, indent) {
       const m = raw.match(/^\s*-\s(.*)$/);
       if (!m) break;
       const body = m[1];
+      // a quoted item is always a plain string, even with ": " inside
+      const quoted = body.trim().match(/^"(.*)"$/);
+      if (quoted) { out.push(quoted[1]); i++; continue; }
       const kv = body.match(/^([A-Za-z0-9_ -]+):(?:\s(.*))?$/);
       if (kv) {
         // object item: first key on the dash line, the rest indented by 2

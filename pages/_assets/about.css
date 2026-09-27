@@ -1,0 +1,15 @@
+/* About page: only what the home stylesheet doesn't already have. */
+.ab-hero .ph-split { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+.ab-hero .ph-arch { justify-self: end; }
+@media (max-width: 860px) { .ab-hero .ph-split { grid-template-columns: minmax(0, 1fr); } .ab-hero .ph-arch { justify-self: center; } }
+
+.ab-people { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px clamp(24px, 5vw, 72px); max-width: 920px; }
+.ab-people li { display: grid; gap: 10px; align-content: start; }
+.ab-people .placeholder { margin-bottom: 12px; max-width: none; }
+.ab-people h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
+.ab-role { font-size: var(--text-small); color: var(--brown-2-text); }
+@media (max-width: 640px) { .ab-people { grid-template-columns: minmax(0, 1fr); } }
+
+.ab-story { display: grid; gap: clamp(56px, 8vw, 104px); }
+.ab-story article { align-items: start; }
+.ab-story p { max-width: 60ch; }

@@ -10,7 +10,7 @@ export const site = {
   languages: ['en'],
   defaultLanguage: 'en',
   /** Routes that are planned (phase 2) but not built. Links to them are reported, not failed. */
-  plannedRoutes: ['/about/', '/blog/'],
+  plannedRoutes: ['/blog/'],
 };
 
 /**

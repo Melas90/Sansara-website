@@ -140,7 +140,7 @@ eyebrow: The people
 title: The people *behind* Sansara
 people: PENDING: who appears, with name, role, bio, one personal detail and a portrait (decision #12)
 more: More about us
-more_link: /#contact
+more_link: /about/
 
 ## Proof
 
@@ -174,9 +174,11 @@ close_text: A free intro call where we work out together what makes sense for yo
 
 ## Showcase
 
-<!-- Lab only (2026-09-27): photo variants of the Cris direction. Stock photos stand in until real work and portraits exist. -->
+<!-- 2026-09-27: the owner chose the photo-led home (A3). Stock photos stand in, each marked Pending, until real work and portraits exist; none may go live. -->
 eyebrow: What we build
 title: Built to look good *on every screen*.
 text: Your site, your funnel and your emails, designed as one thing and checked on the devices your clients actually use.
-stock: Stock photo, placeholder
+stock: PENDING: a real photo; this one is a free stock placeholder (Unsplash)
+alt_laptop: The Sansara home page on a laptop
+alt_phone: The Sansara home page on a phone
 band_title: Less busywork. *More business.*

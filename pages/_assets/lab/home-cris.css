@@ -60,7 +60,7 @@
 .c-close .contact-intro h2 em { color: var(--gold); }
 .c-close .contact-intro .lead { color: var(--on-dark-muted); }
 .c-close .contact-actions { justify-content: center; }
-.c-close .contact-actions a { color: var(--bg); }
+.c-close .contact-actions a:not(.btn) { color: var(--bg); }
 .c-close .btn-primary { background: var(--bg); color: var(--ink); }
 .c-close .btn-primary .btn-arrow { color: var(--ink); }
 .c-close .btn-primary:hover { background: var(--white); color: var(--ink); }

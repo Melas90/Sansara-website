@@ -42,3 +42,11 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 
 - The orb is out. The owner liked option 4 of the hero lab best: the three offers as a fanned deck of cards, now with an icon each. It sits in Cris's hero (A).
 - On the owner's request the lab has two photo variants of Cris's page (A2 mockups, A3 photo-led) next to the version without images. They use free Unsplash photos as placeholders, marked "Stock photo, placeholder" on the page and listed in `pages/_assets/lab/stock/CREDITS.md`. This is a lab-only exception to "placeholder frames, never a stock image": no stock photo goes live, and no stock face stands in for a real person.
+
+## 2026-09-27: home and About built (branch feat/home-about)
+
+- **Home** is the photo-led Cris direction (lab A3) with the offer deck in the hero. Its styles and script moved out of the lab into `pages/_assets/home.css` and `home.js`; the lab files stay for comparison.
+- **About** (`/about/`) is built from the owner's own About copy on the Astro site (develop, `src/i18n/sobre/en.json`), marked as working copy waiting for her approval. Nothing new was written. Two portrait frames for Miguel and Christiane; roles, bios and portraits are Pending (decision #12). The service pages wait.
+- **Photos:** the home and About use the free Unsplash placeholders from the lab, each marked Pending on the page, so `npm run verify` lists them until real photos replace them. They must not go live (`pages/_assets/images/placeholder/CREDITS.md`). People are never shown with stock photos.
+- **Lead pop-up** (owner request, replacing the WhatsApp idea): one Netlify form, `lead` (name, email, optional phone, interest, optional note, consent, hidden `source` naming the button and page). It opens from the closing band's "Let's talk", an "Ask about this offer" button in each offer panel (preselects the offer), a line after the four steps, and a floating "Get in touch" button that appears after the hero and hides over the closing band and footer. It never opens by itself. Submissions land in Netlify Forms; the CRM gets them later through a Netlify webhook or an integration.
+- **copy.md:** a list item in double quotes is always a string. Two About lines were silently dropped because they contain ": ".
