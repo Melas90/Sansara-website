@@ -8,13 +8,6 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Until the home page exists, the root shows the design lab. Remove this rule with Step 5.
-[[redirects]]
-  from = "/"
-  to = "/lab/"
-  status = 302
-  force = false
-
 [[redirects]]
   from = "/*"
   to = "/404.html"

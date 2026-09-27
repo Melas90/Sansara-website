@@ -16,7 +16,7 @@ The tokens in `tokens.css` are the brief (§3, §6.1) turned into CSS variables.
 
 ## Contrast notes
 
-- `--brown-2` `#8C6A47` on `--card` `#F7F2E8` is about 4.2:1 and on `--bg` about 4.5:1. Below the 4.5:1 floor for body-size text on the card surface. Used for 12px bold uppercase labels and optional hints only; do not use it for sentences on `--card`. Question raised in Round 1 (darken to `#7A5B3B` for text under 18px).
+- `--brown-2` `#8C6A47` on `--card` `#F7F2E8` is about 4.2:1 and on `--bg` about 4.5:1. Below the 4.5:1 floor for body-size text on the card surface. Decided in Round 1 (2026-09-27): `--brown-2` is for the 12px bold uppercase labels and hints only; any sentence under 18px uses `--brown-2-text` `#7A5B3B` (the `.muted` class).
 - `--orange` `#EE8B5E` is never text on light backgrounds (2.3:1). Accent text uses `--orange-dk` `#B65A2E` (4.7:1 on cream, large text and bold small text only; body sentences stay `--brown`).
 - Cream on `--ink` is 14:1; `--on-dark-muted` about 9:1.
 

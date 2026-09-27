@@ -1,0 +1,128 @@
+<!-- @route / -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+</head>
+<body>
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <!-- Hero: type only (R1.5 A). Headline, rotating line, subtext, two buttons. -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-inner stagger">
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.headline }}</span></span></h1>
+          <p class="hero-line reveal"><span class="rotator">{{#each hero.rotating}}<span>{{ this }}</span>{{/each}}</span></p>
+          <p class="lead reveal">{{ hero.subtext }} {{ hero.subtext_ending }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement: centred (R1.3 C). -->
+    <section class="section statement" id="statement">
+      <div class="container centred">
+        <p class="reveal">{{ statement.text }}</p>
+      </div>
+    </section>
+
+    <!-- What We Do: three cards side by side (R1.1 A), helper line visible (R1.2 A). -->
+    <section class="section" id="what-we-do" aria-labelledby="what-we-do-title">
+      <div class="container">
+        <div class="head-editorial reveal">
+          <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.title }}</span></span></h2>
+          <p class="lead">{{ what_we_do.lead }}</p>
+        </div>
+        <div class="grid grid-3 stagger">
+          {{#each what_we_do.offers}}
+          <article class="card offer reveal" id="offer-{{{ key }}}">
+            <h3 class="offer-name">{{ name }}</h3>
+            <p class="offer-promise">{{ promise }}</p>
+            <ul class="marks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <p class="small muted offer-for">{{ for }}</p>
+            <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </article>
+          {{/each}}
+        </div>
+        <div class="helper reveal">
+          <p class="h3">{{ shared.helper.question }}</p>
+          <ul class="helper-list">
+            {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
+          </ul>
+          <p class="small"><a href="#contact">{{ shared.helper.still_unsure }}</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work: four numbered steps, a real sequence. -->
+    <section class="section surface-card" id="how-we-work" aria-labelledby="how-we-work-title">
+      <div class="container">
+        <div class="head-editorial reveal">
+          <h2 id="how-we-work-title"><span class="mask"><span class="mask-in">{{ how_we_work.title }}</span></span></h2>
+          <p class="lead">{{ how_we_work.lead }}</p>
+        </div>
+        <ol class="grid grid-4 steps steps-row stagger">
+          {{#each how_we_work.steps}}
+          <li class="reveal"><span class="step-num" aria-hidden="true"></span><h3>{{ title }}</h3><p>{{ text }}</p></li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Why Sansara: editorial layout (R1.3 B as default), no icons (R1.4 C). -->
+    <section class="section" id="why-sansara" aria-labelledby="why-sansara-title">
+      <div class="container editorial reveal">
+        <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
+        <ul class="grid grid-2 stagger">
+          {{#each why_sansara.points}}
+          <li class="stack-sm reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- The People Behind Sansara: pending decision #12. Neutral frame, no stock photo. Layout follows the number of people (R1.6). -->
+    <section class="section surface-card" id="founders" aria-labelledby="founders-title">
+      <div class="container founders reveal">
+        <div class="placeholder placeholder-portrait"><span>Portrait<br>{{ founders.people }}</span></div>
+        <div class="stack">
+          <h2 id="founders-title"><span class="mask"><span class="mask-in">{{ founders.title }}</span></span></h2>
+          <p class="lead">{{ founders.people }}</p>
+          <a class="link" href="{{{ founders.more_link }}}">{{ founders.more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof: one quote on the dark gradient once approved (decision #7); a carousel only at three or more. -->
+    <section class="section proof" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="band band-dark reveal">
+          <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
+          <p class="lead">{{ proof.testimonials }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog teaser: hidden until three posts exist (brief §2.3). -->
+
+    <!-- FAQ: general questions, plain rows. -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        <div class="faq-list">
+          {{#each faq.items}}
+          <details class="faq-item"><summary>{{ q }}</summary><div class="faq-a"><p>{{ a }}</p></div></details>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- @include _partials/contact.html -->
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

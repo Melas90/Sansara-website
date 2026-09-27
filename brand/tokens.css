@@ -38,7 +38,8 @@
   --ink: #2a1e14;       /* headings, primary button, dark bands */
   --ink-2: #3e2a19;     /* dark gradient partner */
   --brown: #5b4a3b;     /* body text */
-  --brown-2: #8c6a47;   /* secondary text, labels. See design-system.md: contrast note */
+  --brown-2: #8c6a47;   /* labels (12px bold caps) and hints. See design-system.md: contrast note */
+  --brown-2-text: #7a5b3b; /* secondary text under 18px: brown-2 taken down to pass 4.5:1 on card (Round 1, 2026-09-27) */
   --orange: #ee8b5e;    /* the only accent: icons, arrows, highlights. Never body text on cream */
   --orange-dk: #b65a2e; /* accent text on light backgrounds, hover */
   --line: rgba(42, 30, 20, 0.12);

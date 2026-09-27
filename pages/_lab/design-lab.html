@@ -37,13 +37,13 @@
         <li><a href="#m1">M1 Rise through a mask</a> <span class="chip chip-decided">decided</span></li>
         <li><a href="#m2">M2 Section reveal with stagger</a> <span class="chip chip-decided">decided</span></li>
         <li><a href="#m3">M3 Hero with the rotating line</a> <span class="chip chip-decided">motion decided</span> <span class="chip chip-open">copy open</span></li>
-        <li><a href="#r1-1">R1.1 What We Do: how the three offers are shown</a> <span class="chip chip-open">open</span></li>
-        <li><a href="#r1-2">R1.2 The helper line for undecided visitors</a> <span class="chip chip-open">open</span></li>
-        <li><a href="#r1-3">R1.3 Section layouts: centred or editorial</a> <span class="chip chip-open">open</span></li>
-        <li><a href="#r1-4">R1.4 Icons or no icons</a> <span class="chip chip-open">open</span></li>
-        <li><a href="#r1-5">R1.5 Hero visual</a> <span class="chip chip-open">open</span></li>
+        <li><a href="#r1-1">R1.1 What We Do: how the three offers are shown</a> <span class="chip chip-chosen">A chosen</span></li>
+        <li><a href="#r1-2">R1.2 The helper line for undecided visitors</a> <span class="chip chip-chosen">A chosen</span></li>
+        <li><a href="#r1-3">R1.3 Section layouts: centred or editorial</a> <span class="chip chip-chosen">C chosen</span></li>
+        <li><a href="#r1-4">R1.4 Icons or no icons</a> <span class="chip chip-chosen">C chosen</span></li>
+        <li><a href="#r1-5">R1.5 Hero visual</a> <span class="chip chip-chosen">A chosen</span></li>
         <li><a href="#r1-6">R1.6 Founders layout</a> <span class="chip chip-open">open</span></li>
-        <li><a href="#r1-7">R1.7 Contact band</a> <span class="chip chip-open">open</span></li>
+        <li><a href="#r1-7">R1.7 Contact band</a> <span class="chip chip-chosen">A chosen</span></li>
       </ol>
     </div>
   </section>
@@ -111,7 +111,7 @@
           </div>
         </div>
       </div>
-      <p class="lab-note"><!-- @allow-raw: prose, not a style -->One thing to flag: brown-2 (<code>#8C6A47</code>) is the brief’s colour for secondary text and labels, but on the card background it reads at 4.2:1, below the 4.5:1 floor the brief sets for body text. It is fine for the 12px bold labels only if we accept that. Question 5 in Round 1.</p>
+      <p class="lab-note"><!-- @allow-raw: prose, not a style -->One thing to flag: brown-2 (<code>#8C6A47</code>) is the brief’s colour for secondary text and labels, but on the card background it reads at 4.2:1, below the 4.5:1 floor the brief sets for body text. It is fine for the 12px bold labels only if we accept that. Decided 2026-09-27: brown-2 stays for the labels, secondary text under 18px uses the darker <code>--brown-2-text</code>.</p>
     </div>
   </section>
 
@@ -190,14 +190,14 @@
   </section>
 
   <!-- ============================================================ R1.1 -->
-  <section class="lab-block" id="r1-1" data-status="open">
+  <section class="lab-block" id="r1-1" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.1</p>
         <h2>What We Do: how the three offers are shown</h2>
         <dl class="lab-meta">
           <dt>Where</dt><dd>Home, the core section, right after the statement</dd>
-          <dt>Status</dt><dd><span class="chip chip-open">Open. The first question of Round 1</span></dd>
+          <dt>Status</dt><dd><span class="chip chip-chosen">A chosen, 2026-09-27</span></dd>
         </dl>
         <p class="measure">The rule from the brief: the three offers are equals, same size, same weight, same structure. Every option below uses the same working copy, so only the form differs.</p>
       </header>
@@ -205,7 +205,7 @@
       <!-- A -->
       <div class="lab-option" id="r1-1-a">
         <div class="lab-option-head">
-          <h3>A. Three cards side by side <span class="chip chip-rec">Recommended</span></h3>
+          <h3>A. Three cards side by side <span class="chip chip-chosen">Chosen</span></h3>
           <p>What the visitor sees: three equal columns, each a quiet card with the name, the promise in italic serif, what it includes, who it is for and an Explore link. Everything visible at once, nothing to click first. Route: Native (three columns) + Custom CSS.</p>
         </div>
         <div class="grid grid-3 stagger">
@@ -224,7 +224,7 @@
       <!-- B -->
       <div class="lab-option" id="r1-1-b">
         <div class="lab-option-head">
-          <h3>B. Tabs, one offer at a time</h3>
+          <h3>B. Tabs, one offer at a time <span class="chip chip-rejected">Rejected</span></h3>
           <p>What the visitor sees: three pill tabs; below them one offer fills the width with room for a longer description. Calm, but two of the three offers are hidden until someone clicks, which is a risk for the “front door” job. Route: Native (Tabs widget).</p>
         </div>
         <div class="tabs" data-tabs>
@@ -252,7 +252,7 @@
       <!-- C -->
       <div class="lab-option" id="r1-1-c">
         <div class="lab-option-head">
-          <h3>C. Large alternating rows, one visual each</h3>
+          <h3>C. Large alternating rows, one visual each <span class="chip chip-rejected">Rejected</span></h3>
           <p>What the visitor sees: each offer gets a full-width row, text on one side and a visual on the other, sides alternating. The most editorial and the most room per offer, but three rows make the section long, and it only works once we have a visual per offer (imagery question R1.5). Route: Native.</p>
         </div>
         <div class="rows">
@@ -274,7 +274,7 @@
       <!-- D -->
       <div class="lab-option" id="r1-1-d">
         <div class="lab-option-head">
-          <h3>D. Bento grid, the four service areas as small tiles</h3>
+          <h3>D. Bento grid, the four service areas as small tiles <span class="chip chip-rejected">Rejected</span></h3>
           <p>What the visitor sees: a mosaic. The System and Consulting are two tall tiles; Services is a wide tile that breaks into four small ones for its areas. Lively and very “now”, but a mosaic always makes one tile look more important than another, which works against “three as equals”. Route: Native + Custom CSS.</p>
         </div>
         <div class="bento">
@@ -298,7 +298,7 @@
       <!-- E -->
       <div class="lab-option" id="r1-1-e">
         <div class="lab-option-head">
-          <h3>E. Flip cards, promise in front, contents behind</h3>
+          <h3>E. Flip cards, promise in front, contents behind <span class="chip chip-rejected">Rejected</span></h3>
           <p>What the visitor sees: three cards showing name and promise. Hovering (or tapping “What’s included” on a phone) turns the card over to show the list and the link. Playful, and it hides half the information behind a gesture; the back is also readable by keyboard and screen readers. Route: Native (Flip Box) or Custom CSS + JS.</p>
         </div>
         <div class="grid grid-3">
@@ -325,7 +325,7 @@
   </section>
 
   <!-- ============================================================ R1.2 -->
-  <section class="lab-block" id="r1-2" data-status="open">
+  <section class="lab-block" id="r1-2" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.2</p>
@@ -338,7 +338,7 @@
       </header>
       <div class="lab-stage">
         <div class="lab-variant lab-variant-wide">
-          <p class="lab-variant-title">A. Visible: a question with three answers <span class="chip chip-rec">Recommended</span></p>
+          <p class="lab-variant-title">A. Visible: a question with three answers <span class="chip chip-chosen">Chosen</span></p>
           <div class="helper helper-visible">
             <p class="h3">{{ shared.helper.question }}</p>
             <ul class="helper-list">
@@ -348,7 +348,7 @@
           </div>
         </div>
         <div class="lab-variant lab-variant-wide">
-          <p class="lab-variant-title">B. Subtle: one line, the answers on hover or tap</p>
+          <p class="lab-variant-title">B. Subtle: one line, the answers on hover or tap <span class="chip chip-rejected">Rejected</span></p>
           <details class="helper helper-subtle">
             <summary>{{ shared.helper.question }}</summary>
             <ul class="helper-list">
@@ -361,7 +361,7 @@
   </section>
 
   <!-- ============================================================ R1.3 -->
-  <section class="lab-block" id="r1-3" data-status="open">
+  <section class="lab-block" id="r1-3" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.3</p>
@@ -374,21 +374,21 @@
       </header>
       <div class="lab-stage lab-stage-one">
         <div class="lab-variant lab-variant-wide">
-          <p class="lab-variant-title">A. Centred and airy: heading in the middle, four points in a row</p>
+          <p class="lab-variant-title">A. Centred and airy: heading in the middle, four points in a row <span class="chip chip-maybe">Used for the statement and contact band only</span></p>
           <div class="layout-centred">
             <h3 class="h2">{{ why_sansara.title }}</h3>
             <ul class="grid grid-4">{{#each why_sansara.points}}<li class="stack-sm"><h4>{{ title }}</h4><p class="small">{{ text }}</p></li>{{/each}}</ul>
           </div>
         </div>
         <div class="lab-variant lab-variant-wide">
-          <p class="lab-variant-title">B. Editorial: heading holds the left third, the points sit offset to the right <span class="chip chip-rec">Recommended</span></p>
-          <div class="layout-editorial">
+          <p class="lab-variant-title">B. Editorial: heading holds the left third, the points sit offset to the right <span class="chip chip-chosen">Default</span></p>
+          <div class="editorial">
             <h3 class="h2">{{ why_sansara.title }}</h3>
             <ul class="grid grid-2">{{#each why_sansara.points}}<li class="stack-sm"><h4>{{ title }}</h4><p class="small">{{ text }}</p></li>{{/each}}</ul>
           </div>
         </div>
         <div class="lab-variant lab-variant-wide">
-          <p class="lab-variant-title">C. Mixed: centred for the short, wide moments (statement, contact), editorial for everything with a list</p>
+          <p class="lab-variant-title">C. Mixed: centred for the short, wide moments (statement, contact), editorial for everything with a list <span class="chip chip-chosen">Chosen</span></p>
           <p class="measure">Not a separate demo: it is A for the statement and the contact band, B for the rest. Most sites that feel designed rather than templated do this, because the change of rhythm is what keeps a long page readable.</p>
         </div>
       </div>
@@ -396,7 +396,7 @@
   </section>
 
   <!-- ============================================================ R1.4 -->
-  <section class="lab-block" id="r1-4" data-status="open">
+  <section class="lab-block" id="r1-4" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.4</p>
@@ -410,7 +410,7 @@
       </header>
       <div class="lab-stage">
         <div class="lab-variant">
-          <p class="lab-variant-title">A. Line icons (thin, one colour)</p>
+          <p class="lab-variant-title">A. Line icons (thin, one colour) <span class="chip chip-rejected">Rejected</span></p>
           <ul class="icon-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/></svg><span>Follow-up that answers while you work</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Booking that lands in your calendar</span></li>
@@ -418,7 +418,7 @@
           </ul>
         </div>
         <div class="lab-variant">
-          <p class="lab-variant-title">B. Filled icons in the accent</p>
+          <p class="lab-variant-title">B. Filled icons in the accent <span class="chip chip-rejected">Rejected</span></p>
           <ul class="icon-list icon-list-filled">
             <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/></svg><span>Follow-up that answers while you work</span></li>
             <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM5 4h14a2 2 0 0 1 2 2v2H3V6a2 2 0 0 1 2-2z"/></svg><span>Booking that lands in your calendar</span></li>
@@ -426,7 +426,7 @@
           </ul>
         </div>
         <div class="lab-variant">
-          <p class="lab-variant-title">C. No icons: the ember mark and the words <span class="chip chip-rec">Recommended</span></p>
+          <p class="lab-variant-title">C. No icons: the ember mark and the words <span class="chip chip-chosen">Chosen</span></p>
           <ul class="marks">
             <li>Follow-up that answers while you work</li>
             <li>Booking that lands in your calendar</li>
@@ -438,7 +438,7 @@
   </section>
 
   <!-- ============================================================ R1.5 -->
-  <section class="lab-block" id="r1-5" data-status="open">
+  <section class="lab-block" id="r1-5" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.5</p>
@@ -452,14 +452,14 @@
       </header>
       <div class="lab-stage">
         <div class="lab-variant">
-          <p class="lab-variant-title">A. Type only <span class="chip chip-rec">Recommended until real imagery exists</span></p>
+          <p class="lab-variant-title">A. Type only <span class="chip chip-chosen">Chosen until real photography exists</span></p>
           <div class="lab-mini-hero">
             <p class="h2">{{ hero.headline }}</p>
             <p class="small measure">{{ hero.subtext }}</p>
           </div>
         </div>
         <div class="lab-variant">
-          <p class="lab-variant-title">B. Type plus a visual on the right</p>
+          <p class="lab-variant-title">B. Type plus a visual on the right <span class="chip chip-maybe">Later, with real photography</span></p>
           <div class="lab-mini-hero lab-mini-hero-split">
             <div><p class="h2">{{ hero.headline }}</p><p class="small">{{ hero.subtext }}</p></div>
             <div class="placeholder placeholder-tall"><span>Visual<br><span class="pend">Pending</span></span></div>
@@ -510,7 +510,7 @@
   </section>
 
   <!-- ============================================================ R1.7 -->
-  <section class="lab-block" id="r1-7" data-status="open">
+  <section class="lab-block" id="r1-7" data-status="chosen">
     <div class="container">
       <header class="lab-head">
         <p class="lab-id">R1.7</p>
@@ -522,14 +522,14 @@
         </dl>
       </header>
       <div class="lab-option-head">
-        <h3>A. Band with one button; the form rises in when clicked <span class="chip chip-rec">Recommended, as the brief describes</span></h3>
+        <h3>A. Band with one button; the form rises in when clicked <span class="chip chip-chosen">Chosen</span></h3>
         <p>Below is the live section. Click “Let’s talk”, then Escape or the cross to close. Turn off JavaScript and the form is simply there.</p>
       </div>
     </div>
     <!-- @include _partials/contact.html -->
     <div class="container">
       <div class="lab-option-head">
-        <h3>B. Two columns, the form always visible</h3>
+        <h3>B. Two columns, the form always visible <span class="chip chip-rejected">Rejected</span></h3>
         <p>No click to reveal, so nobody misses it, but the band is much taller and the form competes with the headline. Fields are the same; this copy of them is for looking, not sending.</p>
       </div>
       <div class="band band-warm contact-b">

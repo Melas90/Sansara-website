@@ -18,3 +18,16 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **The lab is left out of production builds** (`CONTEXT=production` on Netlify). Branch deploys and previews include it.
 - **Thank-you pages exist from the start** because the two Netlify forms need somewhere to land. They use the foundation only: headline, one line, buttons. No new design element.
 - **Derived tokens not in the brief**, flagged in `brand/design-system.md`: `--text-h3`, `--radius-field`, `--text-small`, dark-band text colours. The owner can change them in one place.
+
+## 2026-09-27 — Design interview, Round 1 (owner followed every recommendation)
+
+- **R1.1 What We Do: A, three cards side by side.** All three offers visible at once, same size and structure. Rejected: B tabs (hides two offers behind a click), C alternating rows (needs a visual per offer, makes the section long), D bento (a mosaic always ranks one tile above the others), E flip cards (hides half the information behind a gesture).
+- **R1.2 Helper line: A, visible.** A question with three answers under the cards, linking to the three pages, plus "still not sure" to `#contact`. Rejected: B folded line.
+- **R1.3 Section layouts: C, mixed.** Editorial (heading in the left third, content offset right) is the default for anything with a list; centred only for the statement and the contact band, so the page changes rhythm.
+- **R1.4 Icons: C, none.** Lists use the small ember dot; real sequences use a numbered circle. Rejected: line icons, filled icons (fastest way to look like every other agency site).
+- **R1.5 Hero visual and imagery: A, type only** until real photography of the team and the work exists. No stock, no renders or illustrations unless the owner brings a direction later.
+- **R1.7 Contact band: A**, one button, the form rises in (as in the brief). Rejected: B two columns with the form always visible.
+- **Secondary text colour.** `--brown-2` stays for the 12px bold labels and hints; sentences under 18px use the new `--brown-2-text` `#7A5B3B` (4.5:1 on card). `.muted` uses it.
+- **R1.6 Founders layout** stays open until decision #12 (who appears). The home page shows the one-person frame as a neutral default with pending markers.
+- **FAQ rows** on the home page are plain `details` elements with a hairline between, no accordion widget. Not a Round 1 question; it is the least "designed" form and can be restyled once the owner sees it.
+- **Chosen styles moved from the lab into `site.css`** (offer cards, helper line, editorial layout, placeholder frames). The lab keeps the rejected variants with their labels.

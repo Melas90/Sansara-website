@@ -18,6 +18,20 @@ Rules that apply everywhere (brief §6.1): only `transform` and `opacity` animat
 | Contact band | Form panel rises in from below inside the band | Click "Let's talk", or arriving at `/#contact` | `--slow` transform, `--base` opacity | Same | Panel appears without movement | Custom CSS + JS (Elementor: Form widget + snippet) | Decided (brief §2.4) |
 | Contact form success | Checkmark draws itself | After a successful send | `--slow` circle, then `--base` tick | Same | Drawn already | Custom CSS (SVG stroke) | Decided (brief §2.4) |
 
+## Home, section by section (built 2026-09-27)
+
+| Section | Effect | Trigger | Timing | Mobile | Reduced motion | Route | Status |
+|---|---|---|---|---|---|---|---|
+| Hero | Headline rises through its mask; rotating line, lead and buttons rise in after it, staggered | Load (already in view) | `--slow` mask, `--stagger` between the four children | 20px rise, 70ms stagger | Static, first phrase shown | Custom CSS + JS | Built |
+| Statement | The sentence rises and fades in | Scroll | `--slow` / `--base` | Same | Static | Custom CSS + JS | Built |
+| What We Do | Head reveals with the H2 through its mask; the three cards arrive one after another; helper line after | Scroll | `--stagger` × index | Same | Static | Custom CSS + JS | Built |
+| How We Work | Head, then the four steps in order | Scroll | `--stagger` × index | Same | Static | Custom CSS + JS | Built |
+| Why Sansara | Heading through its mask, the four points staggered | Scroll | Same | Same | Static | Custom CSS + JS | Built |
+| Founders | Section rises; portrait frame will use the image mask once a photo exists | Scroll | `--slow` | Same | Static | Custom CSS + JS | Built |
+| Proof | The dark band rises; quote through its mask once approved | Scroll | `--slow` | Same | Static | Custom CSS + JS | Built |
+| FAQ | Section rises; rows open natively | Scroll, click | `--slow` | Same | Static | Native `details` | Built |
+| Contact | Band rises; panel rises in on click; checkmark draws on success | Scroll, click, submit | Baseline table above | Same | Panel appears without movement | Custom CSS + JS | Built |
+
 ## Open (design interview, Rounds 2 to 7)
 
 Filled in as the owner answers. Rejected options are kept with the reason so they do not come back.

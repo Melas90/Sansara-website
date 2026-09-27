@@ -49,6 +49,11 @@ await send('Page.enable');
 await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 800 });
 await send('Page.navigate', { url });
 await wait(2500); // fonts, entrance animations
+// Scroll through the page once so every section's entrance animation has played, then return to the top.
+await send('Runtime.evaluate', {
+  expression: `(async () => { document.documentElement.style.scrollBehavior = 'auto'; const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += ${Math.round(height * 0.6)}) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } window.scrollTo(0, 0); await new Promise((r) => setTimeout(r, 1200)); })()`,
+  awaitPromise: true,
+});
 if (selector) {
   await send('Runtime.evaluate', { expression: `document.querySelector(${JSON.stringify(selector)})?.scrollIntoView({block:'start'})`, awaitPromise: true });
   await wait(1500);

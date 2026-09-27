@@ -22,6 +22,8 @@
   new MutationObserver(applyGate).observe(html, { attributes: true, attributeFilter: ['data-motion'] });
 
   /* 2. reveal, stagger, mask */
+  const showAll = (root = document) => root.querySelectorAll('.reveal, .mask, .mask-img').forEach((el) => el.classList.add('is-in'));
+  window.addEventListener('beforeprint', () => showAll());
   const io = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
@@ -36,10 +38,11 @@
     root.querySelectorAll('.stagger').forEach((p) => [...p.children].forEach((c, i) => c.style.setProperty('--i', i)));
   const arm = (root = document) => {
     stagger(root);
+    if (!('IntersectionObserver' in window)) return showAll(root);
     root.querySelectorAll('.reveal, .mask, .mask-img').forEach((el) => {
-      // A masked element inside a revealing parent rides on the parent's .is-in.
-      const parent = el.parentElement?.closest('.reveal');
-      if (parent && parent !== el) return;
+      // A masked element inside a revealing parent rides on the parent's .is-in. Nested .reveal
+      // elements are observed on their own, so a card inside a revealing section still staggers.
+      if (!el.classList.contains('reveal') && el.parentElement?.closest('.reveal')) return;
       io.observe(el);
     });
   };

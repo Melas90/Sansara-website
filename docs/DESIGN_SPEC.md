@@ -19,32 +19,35 @@ Not in the brief, derived in Step 3 and open to change: `--text-h3` 22–28px, `
 
 ## Round 1 — Visual style and layout (open, shown in the lab)
 
-| # | Question | Options in the lab | Recommendation | Decision | Reason |
-|---|---|---|---|---|---|
-| R1.1 | What We Do: how the three equal offers are shown | A three cards · B tabs · C alternating rows · D bento · E flip cards | A | | |
-| R1.2 | The helper line for undecided visitors | A visible question with three answers · B one line that opens | A | | |
-| R1.3 | Section layouts | A centred and airy · B editorial (heading left, content offset right) · C mixed | C, with B as the default | | |
-| R1.4 | Icons | A line icons · B filled icons · C none, the ember mark and words | C | | |
-| R1.5 | Hero visual | A type only · B type plus a visual slot (render, photo, animation) | A until real imagery exists | | |
-| R1.6 | Founders layout | 1 person · 2 people · cards; photo style | Depends on decision #12 | | |
-| R1.7 | Contact band | A one button, the form rises in · B two columns, form always visible | A | | |
-| — | Imagery overall | real photography · illustration (style?) · 3D renders · abstract shapes · a mix | Photography of the team and work; abstract warmth (the gradient bands) in between; no stock | | |
-| — | brown-2 contrast | keep `#8C6A47` for labels only · darken secondary text to `#7A5B3B` | Darken for any text under 18px | | |
+Decided 2026-09-27; the owner followed every recommendation.
 
-## Per page (filled in as pages are built)
+| # | Question | Options in the lab | Decision | Rejected, and why |
+|---|---|---|---|---|
+| R1.1 | What We Do: how the three equal offers are shown | A three cards · B tabs · C alternating rows · D bento · E flip cards | **A** | B hides two offers behind a click; C needs a visual per offer and makes the section long; D ranks one tile above the others; E hides half the information behind a gesture |
+| R1.2 | The helper line for undecided visitors | A visible question with three answers · B one line that opens | **A** | B: the undecided visitor is exactly the one who will not click |
+| R1.3 | Section layouts | A centred and airy · B editorial · C mixed | **C**: editorial by default, centred for the statement and the contact band | A everywhere reads as a template; B everywhere never changes rhythm |
+| R1.4 | Icons | A line icons · B filled icons · C none | **C**: the ember dot for lists, a numbered circle for real sequences | Icon sets make every agency site look the same |
+| R1.5 | Hero visual | A type only · B type plus a visual slot | **A** until real photography exists | B waits for real imagery; never stock |
+| R1.6 | Founders layout | 1 person · 2 people · cards; photo style | Open, waits for decision #12 | |
+| R1.7 | Contact band | A one button, the form rises in · B two columns | **A** | B is much taller and the form competes with the headline |
+| — | Imagery overall | photography · illustration · 3D · abstract · mix | Photography of the team and the work; the warm and dark gradient bands carry the abstract warmth | Stock photos, never |
+| — | brown-2 contrast | keep for labels · darken text | `--brown-2` for labels and hints; `--brown-2-text` `#7A5B3B` for sentences under 18px | |
 
-### Home
+## Per page
+
+### Home (prototype built 2026-09-27, Step 5)
 | Section | Layout | Imagery | Components | Status |
 |---|---|---|---|---|
-| Hero | | | | |
-| Statement | | | | |
-| What We Do | | | | |
-| How We Work | | | | |
-| Why Sansara | | | | |
-| Founders | | | | |
-| Proof | | | | |
-| FAQ | | | | |
-| Contact | Warm band, panel opens (brief §2.4) | | Netlify form | Built, exact treatment open (R1.7) |
+| Hero | Left-aligned block, max 56rem; headline, rotating line in italic serif, lead, two buttons | None (R1.5 A) | `.hero`, `.rotator`, primary + ghost button | Built; headline and phrases pending (#4) |
+| Statement | Centred, one sentence at H2 size on the card surface | None | `.statement` | Built |
+| What We Do | Editorial head (title left, lead right), three equal white cards, helper line below | None | `.offer` cards, `.marks` list, `.link`, `.helper` | Built |
+| How We Work | Editorial head, four numbered steps in a row on the card surface | None | `.steps.steps-row` | Built |
+| Why Sansara | Editorial: heading left third, four points in a 2×2 grid | None | plain list | Built |
+| Founders | One-person frame left, text right (neutral default) | Real portraits only, pending #12 | `.founders`, `.placeholder` | Built as placeholder |
+| Proof | Dark gradient band, title and one quote | Optional round portrait later | `.band-dark` | Placeholder until #7 |
+| FAQ | Editorial: heading left, plain `details` rows right | None | `.faq-item` | Built |
+| Contact | Warm band, one button, panel rises in (R1.7 A) | None | Netlify form partial | Built |
+| Footer | Ink, four columns, newsletter form | Wordmark not repeated | partial | Built; newsletter text and socials pending |
 
 ### The System · Consulting · Services · Book a call
 To be asked page by page in Step 6.
