@@ -232,8 +232,8 @@ textarea.control { resize: vertical; min-height: calc(4 * 1.6em + 24px); }
 .footer-col a { display: inline-flex; align-items: center; min-height: 36px; color: var(--on-dark); text-decoration: none; }
 .footer-col a:hover { color: var(--orange); }
 .newsletter-form { display: grid; gap: 12px; margin-top: 8px; }
-.newsletter-row { display: flex; gap: 8px; }
-.newsletter-row .control { flex: 1; min-width: 0; }
+.newsletter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.newsletter-row .control { flex: 1 1 180px; min-width: 0; }
 .newsletter-row .control { background: transparent; color: var(--on-dark); border-color: var(--line-on-dark); }
 .newsletter-row .control::placeholder { color: var(--on-dark-muted); }
 .newsletter-row .control:hover { border-color: var(--on-dark-muted); }

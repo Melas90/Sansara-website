@@ -1,0 +1,112 @@
+<!-- @route /lab/home-1/ -->
+<!-- @copy home -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/lab/home-1.css">
+  <meta name="robots" content="noindex">
+</head>
+<body class="l">
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="l-hero" id="hero" aria-labelledby="hero-title">
+      <div class="container l-hero-grid stagger">
+        <div>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.headline }}</span></span></h1>
+          <p class="hero-line reveal"><span class="rotator">{{#each hero.rotating}}<span>{{ this }}</span>{{/each}}</span></p>
+        </div>
+        <div class="l-hero-aside reveal">
+          <p class="lead">{{ hero.subtext }} {{ hero.subtext_ending }}</p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="l-statement" id="statement">
+      <div class="container"><p class="reveal">{{ statement.text }}</p></div>
+    </section>
+
+    <section class="section" id="what-we-do" aria-labelledby="what-we-do-title">
+      <div class="container">
+        <div class="l-head reveal">
+          <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.title }}</span></span></h2>
+          <p class="lead">{{ what_we_do.lead }}</p>
+        </div>
+        <div class="ledger stagger">
+          {{#each what_we_do.offers}}
+          <article class="ledger-row reveal" id="offer-{{{ key }}}">
+            <div><h3>{{ name }}</h3><p class="small muted ledger-for">{{ for }}</p></div>
+            <div><p class="offer-promise">{{ promise }}</p><p class="small" style="margin-top: 12px">{{ text }}</p></div>
+            <ul class="marks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </article>
+          {{/each}}
+        </div>
+        <div class="helper reveal">
+          <p class="h3">{{ shared.helper.question }}</p>
+          <ul class="helper-list">
+            {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
+          </ul>
+          <p class="small"><a href="#contact">{{ shared.helper.still_unsure }}</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-we-work" aria-labelledby="how-we-work-title">
+      <div class="container">
+        <div class="l-head reveal">
+          <h2 id="how-we-work-title"><span class="mask"><span class="mask-in">{{ how_we_work.title }}</span></span></h2>
+          <p class="lead">{{ how_we_work.lead }}</p>
+        </div>
+        <ol class="l-steps stagger">
+          {{#each how_we_work.steps}}<li class="reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="why-sansara" aria-labelledby="why-sansara-title">
+      <div class="container editorial reveal">
+        <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
+        <ul class="l-why stagger">
+          {{#each why_sansara.points}}<li class="reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="founders" aria-labelledby="founders-title">
+      <div class="container founders reveal">
+        <div class="placeholder placeholder-portrait"><span>Portrait<br>{{ founders.people }}</span></div>
+        <div class="stack">
+          <h2 id="founders-title"><span class="mask"><span class="mask-in">{{ founders.title }}</span></span></h2>
+          <p class="lead">{{ founders.people }}</p>
+          <a class="link" href="{{{ founders.more_link }}}">{{ founders.more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="l-proof" id="proof" aria-labelledby="proof-title">
+      <div class="container editorial reveal">
+        <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
+        <div><p class="quote">“ {{ proof.testimonials }} ”</p></div>
+      </div>
+    </section>
+
+    <section class="section l-faq" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        <div class="faq-list">
+          {{#each faq.items}}<details class="faq-item"><summary>{{ q }}</summary><div class="faq-a"><p>{{ a }}</p></div></details>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- @include _partials/contact.html -->
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

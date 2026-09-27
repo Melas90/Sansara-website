@@ -1,0 +1,44 @@
+/*
+ * Home direction 1: LEDGER. Closest to the brief (pills, italic serif word, cream, warm band kept).
+ * What changes is the composition: no cards. The three offers are three wide rows divided by hairlines,
+ * like a printed price list. Scale and rhythm do the work; nothing is boxed.
+ */
+.l-hero { padding-block: clamp(64px, 9vw, 140px) clamp(56px, 7vw, 112px); }
+.l-hero-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 40px 64px; align-items: end; }
+.l-hero h1 { font-size: clamp(48px, 8.6vw, 116px); max-width: 11ch; letter-spacing: -0.035em; line-height: 0.96; }
+.l-hero .hero-line { font-size: clamp(26px, 3.4vw, 46px); margin-top: 18px; }
+.l-hero-aside { display: grid; gap: 22px; padding-bottom: 6px; }
+.l-hero-aside .lead { max-width: 30rem; }
+@media (max-width: 900px) { .l-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.l-statement { padding-block: clamp(56px, 8vw, 120px); border-block: 1px solid var(--line); }
+.l-statement p { font-size: clamp(30px, 4.6vw, 64px); line-height: 1.06; font-weight: var(--weight-heading); color: var(--ink); letter-spacing: -0.025em; max-width: 24ch; text-wrap: balance; }
+
+.l-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 40px; margin-bottom: 8px; }
+.l-head .lead { max-width: 30rem; }
+
+.ledger { border-top: 1px solid var(--line); }
+.ledger-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr) auto; gap: 24px 48px; padding-block: 44px; border-bottom: 1px solid var(--line); align-items: start; }
+.ledger-row h3 { font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -0.025em; line-height: 1.02; }
+.ledger-row .offer-promise { font-size: clamp(20px, 2vw, 27px); }
+.ledger-row .ledger-for { margin-top: 14px; }
+.ledger-row .link { align-self: center; }
+@media (max-width: 980px) { .ledger-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .ledger-row .link { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .ledger-row { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-block: 32px; } }
+
+.l-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 32px; position: relative; padding-top: 32px; counter-reset: step; }
+.l-steps::before { content: ''; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: var(--line); }
+.l-steps li { position: relative; display: grid; gap: 10px; counter-increment: step; }
+.l-steps li::before { content: ''; position: absolute; top: -32px; left: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--orange); }
+.l-steps h3::before { content: counter(step) '.'; color: var(--orange-dk); margin-right: 0.5em; font-variant-numeric: tabular-nums; }
+@media (max-width: 800px) { .l-steps { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .l-steps::before { display: none; } .l-steps li::before { display: none; } }
+@media (max-width: 480px) { .l-steps { grid-template-columns: minmax(0, 1fr); } }
+
+.l-why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.l-why li { padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
+@media (max-width: 600px) { .l-why { grid-template-columns: minmax(0, 1fr); } .l-why li { padding: 24px; } }
+
+.l-proof { border-block: 1px solid var(--line); padding-block: clamp(56px, 7vw, 96px); }
+.l-proof .quote { font-size: clamp(26px, 3.2vw, 44px); max-width: 24ch; margin-top: 16px; }
+
+.l-faq .faq-item summary { font-size: var(--text-h3); }

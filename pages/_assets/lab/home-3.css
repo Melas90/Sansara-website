@@ -1,0 +1,65 @@
+/*
+ * Home direction 3: SUN. The 70s wordmark's warmth taken seriously. Overrules the brief on type roles:
+ * Newsreader carries the headlines (light, large), Hanken is body and interface. An ember disc rises
+ * behind the hero once, the statement sits on a full ember band, the offers stand in arch-topped panels.
+ */
+.s h1, .s h2, .s h3, .s .h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; }
+.s h1 em, .s h2 em, .s h3 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1em; color: var(--orange-dk); }
+.s h1 { font-size: clamp(52px, 9.2vw, 132px); line-height: 0.94; }
+.s h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.0; }
+.s h3 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; }
+.s .offer-promise { font-family: var(--font-sans); font-style: normal; font-weight: var(--weight-medium); font-size: var(--text-lead); color: var(--brown); }
+.s .btn { font-weight: var(--weight-medium); }
+
+.s-hero { position: relative; overflow: hidden; padding-block: clamp(72px, 11vw, 176px) clamp(72px, 9vw, 140px); }
+.s-sun { position: absolute; right: -6vw; top: -4vw; width: clamp(280px, 44vw, 680px); aspect-ratio: 1; border-radius: 50%; background: var(--orange); z-index: 0; }
+html.motion .s-sun { transform: translateY(28%); opacity: 0; animation: sunrise calc(var(--slow) * 1.8 / var(--speed)) var(--ease) forwards; }
+@keyframes sunrise { to { transform: none; opacity: 1; } }
+.s-hero .container { position: relative; z-index: 1; }
+.s-hero-inner { display: grid; gap: 28px; max-width: 60rem; }
+.s-hero h1 { max-width: 12ch; }
+.s-hero .hero-line { font-family: var(--font-sans); font-style: normal; font-weight: var(--weight-medium); color: var(--brown); font-size: var(--text-h3); letter-spacing: 0; }
+.s-hero .lead { max-width: 36rem; }
+@media (max-width: 800px) { .s-sun { right: -30vw; top: -14vw; width: 78vw; } }
+
+.s-statement { background: var(--orange); color: var(--ink); padding-block: clamp(64px, 9vw, 136px); }
+.s-statement p { font-family: var(--font-serif); font-weight: 400; font-size: clamp(34px, 5.2vw, 72px); line-height: 1.04; letter-spacing: -0.02em; max-width: 20ch; margin-inline: auto; text-align: center; text-wrap: balance; }
+.s-statement p em { color: var(--ink); }
+
+.s-head { display: grid; gap: 14px; max-width: 44rem; margin-bottom: 48px; }
+.s-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.s-arch { border-radius: 999px 999px 28px 28px; padding: clamp(56px, 6vw, 88px) clamp(22px, 2.4vw, 32px) 36px; display: grid; gap: 16px; align-content: start; justify-items: center; text-align: center; }
+.s-arch:nth-child(1) { background: var(--peach); }
+.s-arch:nth-child(2) { background: var(--white); border: 1px solid var(--line); }
+.s-arch:nth-child(3) { background: var(--card); }
+.s-arch .offer-name { color: var(--brown-2-text); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; }
+.s-arch h3 { font-size: clamp(28px, 3vw, 40px); }
+.s-arch .marks { text-align: left; justify-self: stretch; margin-top: 8px; }
+.s-arch .link { margin-top: 8px; }
+@media (max-width: 900px) { .s-offers { grid-template-columns: minmax(0, 1fr); max-width: 30rem; } }
+
+.s-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.s-steps li { display: grid; gap: 14px; align-content: start; }
+.s-steps .step-num { width: 60px; height: 60px; background: var(--orange); color: var(--ink); font-family: var(--font-serif); font-size: 26px; font-weight: 400; }
+@media (max-width: 800px) { .s-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .s-steps { grid-template-columns: minmax(0, 1fr); } }
+
+.s-why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; }
+.s-why li { display: grid; gap: 8px; padding-left: 28px; position: relative; }
+.s-why li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 14px; height: 14px; border-radius: 50%; background: var(--orange); }
+@media (max-width: 600px) { .s-why { grid-template-columns: minmax(0, 1fr); } }
+
+.s .placeholder-portrait { border-radius: 999px 999px 24px 24px; }
+.s .proof .band { background: var(--peach); color: var(--ink); border-radius: var(--radius-band); text-align: center; justify-items: center; padding-block: clamp(56px, 7vw, 96px); }
+.s .proof .band h2 { color: var(--ink); }
+
+.s .contact .band-warm { background: var(--grad-dark); color: var(--on-dark); }
+.s .contact .band-warm h2 { color: var(--bg); }
+.s .contact .band-warm h2 em { color: var(--orange); }
+.s .contact .band-warm .lead { color: var(--on-dark-muted); }
+.s .contact .band-warm a { color: var(--bg); }
+.s .contact .band-warm .btn-primary { background: var(--orange); color: var(--ink); }
+.s .contact .band-warm .btn-primary .btn-arrow { background: var(--ink); color: var(--bg); }
+.s .contact .band-warm .card { color: var(--brown); }
+.s .contact .band-warm .card a { color: var(--orange-dk); }
+.s .contact .band-warm .card h3 { color: var(--ink); }

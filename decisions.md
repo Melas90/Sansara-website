@@ -31,3 +31,9 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **R1.6 Founders layout** stays open until decision #12 (who appears). The home page shows the one-person frame as a neutral default with pending markers.
 - **FAQ rows** on the home page are plain `details` elements with a hairline between, no accordion widget. Not a Round 1 question; it is the least "designed" form and can be restyled once the owner sees it.
 - **Chosen styles moved from the lab into `site.css`** (offer cards, helper line, editorial layout, placeholder frames). The lab keeps the rejected variants with their labels.
+
+## 2026-09-27 — Five home directions
+
+- **The owner saw the first prototype and found it still looked generated** ("still looks like Claude"). She asked for alternative home designs, first three, then five, on roughly the same colours, and allowed the brief's visual details (pills, italic serif word, gradient band, type roles, ground colour) to be overruled step by step for the sake of comparison. Built as `/lab/home-1/` to `/lab/home-5/` with an index at `/lab/homes/`: 1 Ledger (brief kept, cards replaced by hairline rows, bigger type), 2 Grid (one sans, square corners, twelve columns, margin labels), 3 Sun (serif headlines, ember disc, ember statement band, arch panels), 4 Night (dark ground, cream type, ember light), 5 Poster (square, no serif, edge-to-edge type, colour blocks, underline CTAs, marquee). All use the same copy and tokens; each has one stylesheet in `pages/_assets/lab/`.
+- **Honest diagnosis recorded:** the first prototype sat exactly on the most common generated look (cream + serif accent + terracotta + rounded cards + centred statement), which the brief's own spec points to. The way out is composition, scale and structure, not new colours.
+- **Mechanical QA (build, screenshots, overflow checks) is delegated to a smaller model**, at the owner's request, so the design work stays with the main session.
