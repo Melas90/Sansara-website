@@ -1,0 +1,92 @@
+<!-- @route /lab/heroes/ -->
+<!-- @copy home -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/lab/homes.css">
+  <link rel="stylesheet" href="/assets/lab/home-cris.css">
+  <link rel="stylesheet" href="/assets/lab/heroes.css">
+  <script src="/assets/lab/heroes.js" defer></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="c">
+  <!-- @include _partials/header.html -->
+  <main id="main">
+    <section class="hv-intro">
+      <div class="container">
+        <p class="eyebrow">Lab · hero options</p>
+        <h1>Four ways to <em>replace the orb</em></h1>
+        <p class="lead">Same page, same words, same sand ground as Cris's direction. Only the hero art changes. Move your mouse over each one; they all stop moving if your device asks for less motion.</p>
+        <ol class="hv-toc"><li><a href="#type">1. Kinetic type</a></li><li><a href="#field">2. Dot field</a></li><li><a href="#loop">3. The loop</a></li><li><a href="#deck">4. Offer deck</a></li></ol>
+      </div>
+    </section>
+
+    <!-- 1. Kinetic type: no picture. The italic half of the headline turns through the promises, letter by letter. -->
+    <p class="hv-tag" id="type"><span>1</span> Kinetic type. The words are the picture: a large headline whose italic half turns through the promises, letter by letter, with a gold line that draws under it.</p>
+    <section class="hv hv-type" aria-labelledby="h-type">
+      <div class="container hv-type-inner">
+        <p class="eyebrow">{{ hero.eyebrow }}</p>
+        <h2 class="hv-type-h" id="h-type">{{ hero.kt_start }} <span class="kt" data-kt><span class="kt-word is-on">{{ hero.kt_first }}</span>{{#each hero.rotating}}<span class="kt-word">{{ this }}</span>{{/each}}</span></h2>
+        <div class="hv-type-foot">
+          <p class="lead">{{ hero.cris_lead }}</p>
+          <div class="cluster"><a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Dot field: a quiet grid of gold dots that parts around the cursor and settles back. -->
+    <p class="hv-tag" id="field"><span>2</span> Dot field. A calm grid of gold dots breathing in a slow wave. The cursor pushes them aside like a hand through sand, and they spring back. On a phone, a tap does the same.</p>
+    <section class="hv hv-split" aria-labelledby="h-field">
+      <div class="container hv-grid">
+        <div class="hx-copy">
+          <p class="eyebrow">{{ hero.eyebrow }}</p>
+          <h2 class="hv-h" id="h-field">{{ hero.cris_headline }}</h2>
+          <p class="lead">{{ hero.cris_lead }}</p>
+          <div class="cluster"><a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a></div>
+        </div>
+        <div class="hv-art hv-field"><canvas data-field aria-hidden="true"></canvas></div>
+      </div>
+    </section>
+
+    <!-- 3. The loop: samsara is the cycle. One gold line draws an endless loop; a spark travels it; the three offers sit on it. -->
+    <p class="hv-tag" id="loop"><span>3</span> The loop. Sansara comes from samsara, the endless cycle. One fine gold line draws itself into a loop and a small ember spark keeps travelling it. The three offers sit on the line; hovering one lights it.</p>
+    <section class="hv hv-split" aria-labelledby="h-loop">
+      <div class="container hv-grid">
+        <div class="hx-copy">
+          <p class="eyebrow">{{ hero.eyebrow }}</p>
+          <h2 class="hv-h" id="h-loop">{{ hero.cris_headline }}</h2>
+          <p class="lead">{{ hero.cris_lead }}</p>
+          <div class="cluster"><a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a></div>
+        </div>
+        <div class="hv-art hv-loop" data-loop>
+          <svg viewBox="0 0 600 400" aria-hidden="true">
+            <path class="loop-ghost" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
+            <path class="loop-line" pathLength="1" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
+            <circle class="loop-spark-glow" r="16" cx="300" cy="200"/><circle class="loop-spark" r="5" cx="300" cy="200"/>
+          </svg>
+          {{#each what_we_do.offers}}<a class="loop-pin" href="{{{ link }}}"><i></i><span>{{ name }}</span></a>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Offer deck: the three offers as cards, fanned like a hand. They breathe apart, lift on hover, and a click brings one to the front. -->
+    <p class="hv-tag" id="deck"><span>4</span> Offer deck. The three offers as real cards, fanned like a hand, echoing the sliding step cards further down. They drift apart slowly, lift on hover, and a click brings one to the front.</p>
+    <section class="hv hv-split" aria-labelledby="h-deck">
+      <div class="container hv-grid">
+        <div class="hx-copy">
+          <p class="eyebrow">{{ hero.eyebrow }}</p>
+          <h2 class="hv-h" id="h-deck">{{ hero.cris_headline }}</h2>
+          <p class="lead">{{ hero.cris_lead }}</p>
+          <div class="cluster"><a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a></div>
+        </div>
+        <div class="hv-art hv-deck" data-deck>
+          {{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><span class="deck-n">{{ @number }}</span><p class="deck-for">{{ for }}</p><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
+        </div>
+      </div>
+    </section>
+    <p class="hv-tag hv-end">Tell me the number you like, or a mix (for example, the kinetic headline with the dot field behind it). It will replace the orb in whichever direction you pick.</p>
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>
