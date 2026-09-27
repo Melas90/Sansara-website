@@ -102,13 +102,13 @@ function parseBlock(lines, i, indent) {
 export function parseCopy(md) {
   const lines = md.replace(/\r\n/g, '\n').split('\n');
   const data = {};
-  let section = null, sub = null, buf = [];
+  let section = null, sub = null, buf = [], inComment = false;
   const flush = () => {
     if (!buf.some((l) => l.trim())) { buf = []; return; }
     const firstIndent = buf.find((l) => l.trim()).match(/^\s*/)[0].length;
     const [v, end] = parseBlock(buf, 0, firstIndent);
     // never drop copy silently: anything the block did not read is an error (e.g. keys after a list)
-    const left = buf.slice(end).find((l) => l.trim() && !/^s*<!--/.test(l));
+    const left = buf.slice(end).find((l) => l.trim() && !/^\s*<!--/.test(l));
     if (left) throw new Error(`copy.md: "${left.trim().slice(0, 60)}" in ${section}${sub ? "." + sub : ""} was not read. Keys cannot follow a list; move them above it.`);
     if (section && sub) data[section][sub] = v;
     else if (section && !Array.isArray(v)) Object.assign(data[section], v);
@@ -116,7 +116,9 @@ export function parseCopy(md) {
   };
   for (const line of lines) {
     if (/^#\s/.test(line)) continue; // page title
-    if (/^<!--/.test(line.trim()) && /-->$/.test(line.trim())) continue; // comments
+    // comments, on one line or spread over several
+    if (inComment) { if (line.includes('-->')) inComment = false; continue; }
+    if (/^<!--/.test(line.trim())) { if (!line.includes('-->')) inComment = true; continue; }
     const h2 = line.match(/^##\s+(.*)$/);
     const h3 = line.match(/^###\s+(.*)$/);
     if (h2) { flush(); section = slug(h2[1]); sub = null; data[section] ??= {}; continue; }
@@ -262,8 +264,12 @@ async function copyDir(from, to, filter = () => true) {
 
 async function readCopy(dir, lang) {
   const name = lang === site.defaultLanguage ? 'copy.md' : `copy.${lang}.md`;
-  try { return parseCopy(await fs.readFile(path.join(dir, name), 'utf8')); }
-  catch { return null; }
+  let md;
+  try { md = await fs.readFile(path.join(dir, name), 'utf8'); }
+  catch (error) { if (error.code === 'ENOENT') return null; throw error; }
+  // A copy error stops the build: swallowing it once shipped the home page without a single word.
+  try { return parseCopy(md); }
+  catch (error) { throw new Error(`${path.relative(ROOT, path.join(dir, name))}: ${error.message}`); }
 }
 
 export async function build() {
