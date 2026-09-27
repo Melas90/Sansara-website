@@ -107,9 +107,6 @@ required: Please fill in this field.
 invalid_email: Please enter an email address we can reply to.
 consent_needed: Please tick the box so we're allowed to contact you.
 ask: Ask about this offer
-form_haters: Allergic to forms? We get it.
-whatsapp: Send us a WhatsApp instead
-whatsapp_number: PENDING: WhatsApp number for the pop-up, international format, digits only (e.g. 4917612345678)
 nudge: Not sure where to start?
 nudge_button: Leave your details
 
