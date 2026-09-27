@@ -1,28 +1,27 @@
-<!-- @route /lab/home-4/ -->
+<!-- @route /lab/home-cris/ -->
 <!-- @copy home -->
 <!doctype html>
 <html lang="en">
 <head>
   <!-- @include _partials/head.html -->
   <link rel="stylesheet" href="/assets/lab/homes.css">
-  <link rel="stylesheet" href="/assets/lab/home-4.css">
+  <link rel="stylesheet" href="/assets/lab/home-cris.css">
   <script src="/assets/lab/homes.js" defer></script>
   <meta name="robots" content="noindex">
 </head>
-<body class="n">
+<body class="c">
   <!-- @include _partials/header.html -->
   <main id="main">
 
-    <!-- Hero: dark, with Cris's orb glowing in ember and her floating cards in espresso. -->
-    <section class="hx n-hero" id="hero" aria-labelledby="hero-title">
+    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, the orb with two rings and two floating cards. -->
+    <section class="hx" id="hero" aria-labelledby="hero-title">
       <div class="glow glow-a" aria-hidden="true"></div>
       <div class="glow glow-b" aria-hidden="true"></div>
       <div class="container hx-grid">
         <div class="hx-copy stagger">
           <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
-          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.headline }}</span></span></h1>
-          <p class="hero-line reveal"><span class="rotator">{{#each hero.rotating}}<span>{{ this }}</span>{{/each}}</span></p>
-          <p class="lead reveal">{{ hero.subtext }} {{ hero.subtext_ending }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.cris_headline }}</span></span></h1>
+          <p class="lead reveal">{{ hero.cris_lead }} {{ hero.subtext_ending }}</p>
           <div class="cluster reveal">
             <a class="btn btn-primary" href="/book-a-call/">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
             <a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a>
@@ -40,26 +39,28 @@
       </div>
     </section>
 
+    <!-- The four service areas and consulting, moving slowly. Replaces the invented "trusted by" row. -->
     <div class="mq" aria-hidden="true">
       <div class="mq-track">{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}</div>
     </div>
 
-    <section class="section n-statement" id="statement">
+    <!-- Statement: centred serif, words light up as you read. -->
+    <section class="section c-statement" id="statement">
       <div class="container centred">
         <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
-        <p class="n-statement-text" data-read>{{ statement.text }}</p>
+        <p class="c-statement-text" data-read>{{ statement.text }}</p>
       </div>
     </section>
 
-    <!-- What we do: Cris's interactive list, in the dark. -->
-    <section class="section" id="what-we-do" aria-labelledby="what-we-do-title">
+    <!-- What we do: Cris's interactive list, holding the three equal offers. -->
+    <section class="section c-band" id="what-we-do" aria-labelledby="what-we-do-title">
       <div class="container">
-        <div class="head-editorial reveal">
+        <div class="c-head reveal">
           <div class="stack-sm">
             <p class="eyebrow">{{ what_we_do.eyebrow }}</p>
-            <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.title }}</span></span></h2>
+            <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.cris_title }}</span></span></h2>
           </div>
-          <p class="lead">{{ what_we_do.lead }}</p>
+          <p class="c-head-aside">{{ what_we_do.lead }}</p>
         </div>
         <div class="sw reveal" data-switch>
           <div class="sw-list" role="tablist" aria-label="Offers" aria-orientation="vertical">
@@ -87,9 +88,9 @@
       </div>
     </section>
 
-    <!-- How we work: dark sliding cards, the last one lit in ember. -->
+    <!-- How we work: four cards that slide over each other; the last one is dark, as in Cris's phases. -->
     <section class="section" id="how-we-work" aria-labelledby="how-we-work-title">
-      <div class="container n-narrow">
+      <div class="container c-narrow">
         <div class="centred stack-sm reveal" style="margin-bottom: 48px">
           <p class="eyebrow">{{ how_we_work.eyebrow }}</p>
           <h2 id="how-we-work-title"><span class="mask"><span class="mask-in">{{ how_we_work.cris_title }}</span></span></h2>
@@ -102,18 +103,20 @@
       </div>
     </section>
 
-    <section class="section" id="why-sansara" aria-labelledby="why-sansara-title">
+    <!-- Why Sansara: four promises. -->
+    <section class="section c-band" id="why-sansara" aria-labelledby="why-sansara-title">
       <div class="container editorial reveal">
         <div class="stack-sm">
           <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
           <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
         </div>
-        <ul class="n-why stagger">
-          {{#each why_sansara.points}}<li class="reveal"><span class="n-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        <ul class="c-why stagger">
+          {{#each why_sansara.points}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
         </ul>
       </div>
     </section>
 
+    <!-- Founders: waits for decision #12. -->
     <section class="section" id="founders" aria-labelledby="founders-title">
       <div class="container founders reveal">
         <div class="placeholder placeholder-portrait"><span>Portrait<br>{{ founders.people }}</span></div>
@@ -126,25 +129,26 @@
       </div>
     </section>
 
-    <!-- Proof: the one bright island. -->
-    <section class="section" id="proof" aria-labelledby="proof-title">
+    <!-- Proof: Cris's quote cards, empty until a testimonial is approved (decision #7). -->
+    <section class="section c-band" id="proof" aria-labelledby="proof-title">
       <div class="container">
-        <div class="n-proof reveal">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
           <p class="eyebrow">{{ proof.eyebrow }}</p>
           <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
-          <div class="grid grid-2">
-            <figure class="tq"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
-            <figure class="tq"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
-          </div>
+        </div>
+        <div class="grid grid-2 stagger">
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
         </div>
       </div>
     </section>
 
+    <!-- FAQ: title left, questions right, plus turns into a cross. -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container editorial reveal">
         <div class="stack-sm">
           <p class="eyebrow">{{ faq.eyebrow }}</p>
-          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.cris_title }}</span></span></h2>
         </div>
         <div>
           {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
@@ -152,7 +156,8 @@
       </div>
     </section>
 
-    <div class="n-close">
+    <!-- Contact: the working form, inside Cris's dark closing band with one fine circle. -->
+    <div class="c-close">
       <div class="close-circle" aria-hidden="true"></div>
       <!-- @include _partials/contact.html -->
     </div>

@@ -54,15 +54,26 @@ await send('Runtime.evaluate', {
   expression: `(async () => { document.documentElement.style.scrollBehavior = 'auto'; const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += ${Math.round(height * 0.6)}) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } window.scrollTo(0, 0); await new Promise((r) => setTimeout(r, 1200)); })()`,
   awaitPromise: true,
 });
+const evaluate = async (expression) => (await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })).result.result.value;
+// selector "text=Some words" finds the first element whose own text contains those words.
+const findExpr = selector?.startsWith('text=')
+  ? `(() => { const t = ${JSON.stringify(selector.slice(5))}; const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) if (n.nodeValue.includes(t)) return n.parentElement; return null; })()`
+  : `document.querySelector(${JSON.stringify(selector)})`;
+let startY = 0;
 if (selector) {
-  await send('Runtime.evaluate', { expression: `document.querySelector(${JSON.stringify(selector)})?.scrollIntoView({block:'start'})`, awaitPromise: true });
+  startY = await evaluate(`(() => { const el = ${findExpr}; if (!el) return -1; el.scrollIntoView({block:'start'}); return el.getBoundingClientRect().top + window.scrollY; })()`);
+  if (startY < 0) { console.error('selector not found: ' + selector); startY = 0; }
   await wait(1500);
 }
-const evaluate = async (expression) => (await send('Runtime.evaluate', { expression, returnByValue: true })).result.result.value;
+// 6th argument: capture this many pixels from the selector down (full-strip mode).
+const stripArg = Number(process.argv[7] || 0);
 const full = !selector && fullArg !== '0';
 let clip;
 if (full) {
   clip = { x: 0, y: 0, width, height: await evaluate('Math.min(document.documentElement.scrollHeight, 16000)'), scale: 1 };
+} else if (stripArg) {
+  const total = await evaluate('document.documentElement.scrollHeight');
+  clip = { x: 0, y: Math.max(0, startY - 40), width, height: Math.min(stripArg, total - startY + 40, 16000), scale: 1 };
 } else {
   clip = { x: 0, y: await evaluate('window.scrollY'), width, height, scale: 1 };
 }

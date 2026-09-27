@@ -4,17 +4,21 @@
 <html lang="en">
 <head>
   <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/lab/homes.css">
   <link rel="stylesheet" href="/assets/lab/home-3.css">
+  <script src="/assets/lab/homes.js" defer></script>
   <meta name="robots" content="noindex">
 </head>
 <body class="s">
   <!-- @include _partials/header.html -->
   <main id="main">
 
-    <section class="s-hero" id="hero" aria-labelledby="hero-title">
-      <div class="s-sun" aria-hidden="true"></div>
-      <div class="container">
-        <div class="s-hero-inner stagger">
+    <!-- Hero: the sun is now Cris's orb, in ember, with her rings and floating cards. -->
+    <section class="hx s-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
           <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.headline }}</span></span></h1>
           <p class="hero-line reveal"><span class="rotator">{{#each hero.rotating}}<span>{{ this }}</span>{{/each}}</span></p>
           <p class="lead reveal">{{ hero.subtext }} {{ hero.subtext_ending }}</p>
@@ -23,16 +27,30 @@
             <a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a>
           </div>
         </div>
+        <div class="hx-art reveal" aria-hidden="true">
+          <div class="orb-rings"><div class="orb-ring"><span class="orb-ring-dot"></span></div><div class="orb-ring orb-ring-2"></div></div>
+          <div class="orb"></div>
+          <div class="float-card float-a"><span class="k">{{ hero.float_stat_key }}</span><span class="v">{{ hero.float_stat_value }}</span></div>
+          <div class="float-card float-b"><span class="q">“{{ hero.float_quote }}”</span><span class="k">{{ hero.float_quote_by }}</span></div>
+        </div>
       </div>
     </section>
 
+    <!-- Statement on the full ember band; the words light up as you read. -->
     <section class="s-statement" id="statement">
-      <div class="container"><p class="reveal">{{ statement.text }}</p></div>
+      <div class="container centred">
+        <p data-read>{{ statement.text }}</p>
+      </div>
     </section>
+    <div class="mq" aria-hidden="true">
+      <div class="mq-track">{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}</div>
+    </div>
 
+    <!-- What we do: the three arches stay; they now rise one after another and lift their top on hover. -->
     <section class="section" id="what-we-do" aria-labelledby="what-we-do-title">
       <div class="container">
         <div class="s-head reveal">
+          <p class="eyebrow">{{ what_we_do.eyebrow }}</p>
           <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.title }}</span></span></h2>
           <p class="lead">{{ what_we_do.lead }}</p>
         </div>
@@ -41,7 +59,7 @@
           <article class="s-arch reveal" id="offer-{{{ key }}}">
             <p class="offer-name">{{ name }}</p>
             <h3>{{ promise }}</h3>
-            <ul class="marks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <ul class="ticks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
             <p class="small muted">{{ for }}</p>
             <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </article>
@@ -52,26 +70,32 @@
           <ul class="helper-list">
             {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
           </ul>
-          <p class="small"><a href="#contact">{{ shared.helper.still_unsure }}</a></p>
         </div>
       </div>
     </section>
 
+    <!-- How we work: sliding stacked cards in peach; the last one is ember. -->
     <section class="section surface-card" id="how-we-work" aria-labelledby="how-we-work-title">
-      <div class="container">
+      <div class="container s-narrow">
         <div class="s-head reveal">
+          <p class="eyebrow">{{ how_we_work.eyebrow }}</p>
           <h2 id="how-we-work-title"><span class="mask"><span class="mask-in">{{ how_we_work.title }}</span></span></h2>
           <p class="lead">{{ how_we_work.lead }}</p>
         </div>
-        <ol class="s-steps steps stagger">
-          {{#each how_we_work.steps}}<li class="reveal"><span class="step-num" aria-hidden="true"></span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        <ol class="stack" data-stack>
+          {{#each how_we_work.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}<span class="tag">{{ tag }}</span></h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
         </ol>
       </div>
     </section>
 
     <section class="section" id="why-sansara" aria-labelledby="why-sansara-title">
       <div class="container editorial reveal">
-        <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
+        <div class="stack-sm">
+          <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
+          <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
+        </div>
         <ul class="s-why stagger">
           {{#each why_sansara.points}}<li class="reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
         </ul>
@@ -82,6 +106,7 @@
       <div class="container founders reveal">
         <div class="placeholder placeholder-portrait"><span>Portrait<br>{{ founders.people }}</span></div>
         <div class="stack">
+          <p class="eyebrow">{{ founders.eyebrow }}</p>
           <h2 id="founders-title"><span class="mask"><span class="mask-in">{{ founders.title }}</span></span></h2>
           <p class="lead">{{ founders.people }}</p>
           <a class="link" href="{{{ founders.more_link }}}">{{ founders.more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -89,25 +114,32 @@
       </div>
     </section>
 
-    <section class="section proof" id="proof" aria-labelledby="proof-title">
+    <section class="section" id="proof" aria-labelledby="proof-title">
       <div class="container">
-        <div class="band reveal">
+        <div class="s-proof reveal">
+          <p class="eyebrow">{{ proof.eyebrow }}</p>
           <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
-          <p class="lead">{{ proof.testimonials }}</p>
+          <figure class="tq"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container editorial reveal">
-        <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
-        <div class="faq-list">
-          {{#each faq.items}}<details class="faq-item"><summary>{{ q }}</summary><div class="faq-a"><p>{{ a }}</p></div></details>{{/each}}
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
         </div>
       </div>
     </section>
 
-    <!-- @include _partials/contact.html -->
+    <div class="s-close">
+      <div class="close-circle" aria-hidden="true"></div>
+      <!-- @include _partials/contact.html -->
+    </div>
   </main>
   <!-- @include _partials/footer.html -->
 </body>

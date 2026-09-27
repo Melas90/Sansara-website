@@ -49,6 +49,17 @@
   --on-dark-muted: rgba(252, 250, 244, 0.72);
   --line-on-dark: rgba(252, 250, 244, 0.18);
 
+  /* From Cris's reference design (2026-09-27): sand grounds, soft gold for italic words, the orb. */
+  --sand: #f4eee3;      /* page ground in the Cris direction */
+  --sand-2: #efe6d8;    /* alternate band */
+  --sand-3: #f3e1cc;    /* active row, warm tint */
+  --gold: #c79a6a;      /* italic word on dark; decorative lines on light */
+  --gold-dk: #8c6a47;   /* italic word on light (same value as brown-2, named for its role) */
+  --grad-orb: radial-gradient(circle at 32% 28%, #fbf3e9 0%, #e4c79e 45%, #c79a6a 78%, #8c6a47 110%);
+  --grad-orb-ember: radial-gradient(circle at 32% 28%, #fff3e7 0%, #f2b98c 40%, #ee8b5e 70%, #b65a2e 110%);
+  --shadow-float: 0 18px 40px -18px rgba(42, 30, 20, 0.35);
+  --glow-ember: 0 0 120px 20px rgba(238, 139, 94, 0.35);
+
   /* Gradients */
   --grad-warm: linear-gradient(120deg, #fdeedf 0%, #f9dcc2 55%, #f2b98c 120%);
   --grad-dark: linear-gradient(135deg, #2a1e14, #3e2a19);

@@ -26,6 +26,27 @@ subtext: More clients, more visibility, less effort. We take care of your online
 subtext_ending: PENDING: the ending of the hero subtext (decision #4)
 primary: Book a free call
 secondary: See what we do
+<!-- Cris's hero (2026-09-27). Her draft used invented figures; these three are claims the live page already makes. -->
+eyebrow: Digital growth studio
+cris_headline: Let's grow your business with *marketing that feels easy*.
+cris_lead: We take the overwhelm of marketing off your plate, so you can focus on what truly matters.
+facts:
+- value: 10+
+  label: years in marketing
+- value: Days
+  label: to build and launch
+- value: One
+  label: fixed contact person
+float_stat_key: Built and launched
+float_stat_value: in days
+float_quote: Everything we set up is in your name, from day one.
+float_quote_by: Our promise
+areas:
+- Web design
+- Branding and graphic design
+- Funnel and email marketing
+- E-learning and online courses
+- Consulting
 
 ## Statement
 
@@ -33,7 +54,9 @@ text: We take marketing *off your plate*, so you can focus on your core business
 
 ## What we do
 
+eyebrow: What we do
 title: What we *do*
+cris_title: Three ways to *work with us*
 lead: Three ways to work with us. Same studio, same standards. The difference is who takes responsibility for what.
 
 ### offers
@@ -76,20 +99,27 @@ lead: Three ways to work with us. Same studio, same standards. The difference is
 
 ## How we work
 
+eyebrow: How we work
 title: How we *work*
+cris_title: Four steps. *One clear path.*
 lead: Four steps, whichever way you work with us.
 steps:
 - title: Intro call
+  tag: Free
   text: A free call to understand where you are and what you need.
 - title: Plan
+  tag: In writing
   text: We write down what gets built, by whom, and what it costs.
 - title: Build
+  tag: Plain updates
   text: We build, connect and test. You get updates in plain words.
 - title: Launch and improve
+  tag: Ongoing
   text: It goes live in your name. Then we look at what the numbers say and improve it.
 
 ## Why Sansara
 
+eyebrow: Why Sansara
 title: Why *Sansara*
 points:
 - title: End-to-end responsibility
@@ -104,6 +134,7 @@ points:
 ## Founders
 
 <!-- decision #12: names, roles, bios and photos come only from the owner -->
+eyebrow: The people
 title: The people *behind* Sansara
 people: PENDING: who appears, with name, role, bio, one personal detail and a portrait (decision #12)
 more: More about us
@@ -112,12 +143,15 @@ more_link: /#contact
 ## Proof
 
 <!-- decision #7: written approval and English translation of the Terapias El Templo quote -->
+eyebrow: In their words
 title: In their *words*
 testimonials: PENDING: approved testimonial with name, business and quote (decision #7)
 
 ## FAQ
 
+eyebrow: FAQ
 title: Questions people *ask us*
+cris_title: Still have questions? *Here are the answers.*
 items:
 - q: How much does it cost?
   a: PENDING: real cost ranges per offer (decisions #5 and #6)
@@ -132,3 +166,6 @@ items:
 
 <!-- the band itself is in _partials/contact.html and its copy in _partials/copy.md -->
 anchor: contact
+eyebrow: Let's talk
+close_title: Let's plan your *growth*.
+close_text: A free intro call where we work out together what makes sense for your business.
