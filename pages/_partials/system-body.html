@@ -1,0 +1,218 @@
+<!--
+  The System / Client Loop page body. Shared by /system/ (site header and footer) and the standalone
+  landing page /client-loop/ (its own slim header and footer). Copy: pages/system/copy.md.
+  Every call to action opens the lead pop-up with "The System" preselected; data-source names the spot.
+-->
+<main id="main">
+
+  <!-- Hero: the loop itself. One gold line, a spark travelling it, the five moments on it. -->
+  <section class="hx sy-hero" id="hero" aria-labelledby="hero-title">
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+    <div class="container hx-grid">
+      <div class="hx-copy stagger">
+        <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+        <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+        <p class="sy-sub reveal">{{ hero.subtitle }}</p>
+        <p class="lead reveal">{{ hero.lead }}</p>
+        <div class="cluster reveal">
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <a class="btn btn-ghost" href="#how">{{ hero.secondary }}</a>
+        </div>
+        <p class="small muted reveal">{{ hero.note }}</p>
+        <div class="hx-facts reveal">
+          {{#each hero.facts}}<div><strong>{{ value }}</strong><span>{{ label }}</span></div>{{/each}}
+        </div>
+      </div>
+      <div class="hx-art sy-loop reveal" data-loop>
+        <svg viewBox="0 0 600 400" aria-hidden="true">
+          <path class="loop-ghost" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
+          <path class="loop-line" pathLength="1" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
+          <circle class="loop-spark-glow" r="16" cx="300" cy="200"/><circle class="loop-spark" r="5" cx="300" cy="200"/>
+        </svg>
+        <ol class="loop-stops">{{#each hero.stops}}<li class="loop-stop" data-at="{{{ at }}}"><i aria-hidden="true"></i><span>{{ name }}</span></li>{{/each}}</ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- A real client, in their words (Spanish original underneath). -->
+  <section class="sy-quote" aria-label="{{{ quote.by }}}">
+    <div class="container">
+      <figure class="reveal">
+        <blockquote><p>“{{ quote.text }}”</p></blockquote>
+        <figcaption><span>{{ quote.by }}</span><span class="sy-orig" lang="es">“{{ quote.original }}”</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- The problem: the four sentences they say, then why. -->
+  <section class="section c-band" id="problem" aria-labelledby="problem-title">
+    <div class="container editorial reveal">
+      <div class="stack-sm">
+        <p class="eyebrow">{{ problem.eyebrow }}</p>
+        <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
+        <p class="sy-familiar">{{ problem.familiar }}</p>
+        <ul class="sy-pains stagger">{{#each problem.pains}}<li class="reveal">“{{ this }}”</li>{{/each}}</ul>
+      </div>
+      <div class="stack-sm sy-body">{{#each problem.body}}<p>{{ this }}</p>{{/each}}</div>
+    </div>
+  </section>
+
+  <!-- Imagine instead: now and with the system, side by side. -->
+  <section class="section" id="instead" aria-labelledby="instead-title">
+    <div class="container">
+      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+        <p class="eyebrow">{{ instead.eyebrow }}</p>
+        <h2 id="instead-title"><span class="mask"><span class="mask-in">{{ instead.title }}</span></span></h2>
+      </div>
+      <div class="sy-rows reveal" role="table" aria-label="{{{ instead.eyebrow }}}">
+        <div class="sy-row sy-row-head" role="row"><span role="columnheader">{{ instead.now }}</span><span aria-hidden="true"></span><span role="columnheader">{{ instead.with }}</span></div>
+        {{#each instead.rows}}<div class="sy-row" role="row"><span role="cell" class="sy-now">“{{ now }}”</span><span class="sy-arrow" aria-hidden="true">→</span><span role="cell" class="sy-with">{{ with }}</span></div>{{/each}}
+      </div>
+      <div class="sy-after reveal">
+        <p>{{ instead.closing }}</p>
+        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="imagine instead">{{ instead.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The free call: what you leave with. -->
+  <section class="section c-band" id="call" aria-labelledby="call-title">
+    <div class="container">
+      <div class="c-head reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ call.eyebrow }}</p>
+          <h2 id="call-title"><span class="mask"><span class="mask-in">{{ call.title }}</span></span></h2>
+        </div>
+        <p class="c-head-aside">{{ call.lead }}</p>
+      </div>
+      <ol class="sy-outcomes stagger">
+        {{#each call.outcomes}}<li class="reveal"><span class="sy-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+      </ol>
+      <div class="sy-after reveal">
+        <p>{{ call.fit }}</p>
+        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ call.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        <p class="small muted">{{ call.small }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest fit: for you, not for you. -->
+  <section class="section" id="fit">
+    <div class="container sy-fit reveal">
+      <div class="sy-fit-col sy-yes">
+        <h2 class="h3">{{ fit.yes_title }}</h2>
+        <ul class="ticks">{{#each fit.yes}}<li>{{ this }}</li>{{/each}}</ul>
+      </div>
+      <div class="sy-fit-col sy-no">
+        <h2 class="h3">{{ fit.no_title }}</h2>
+        <ul class="sy-crosses">{{#each fit.no}}<li>{{ this }}</li>{{/each}}</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works: the five steps slide over each other; each names the sentence it ends. -->
+  <section class="section c-band" id="how" aria-labelledby="how-title">
+    <div class="container c-narrow">
+      <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+        <p class="eyebrow">{{ how.eyebrow }}</p>
+        <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.title }}</span></span></h2>
+        <p class="measure">{{ how.lead }}</p>
+      </div>
+      <ol class="stack" data-stack>
+        {{#each how.steps}}
+        <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
+        {{/each}}
+      </ol>
+      <p class="sy-practice reveal">{{ how.in_practice }}</p>
+    </div>
+  </section>
+
+  <!-- Why a loop: the joins, the do-it-yourself question, the handover. -->
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ why.eyebrow }}</p>
+          <h2 id="why-title"><span class="mask"><span class="mask-in">{{ why.title }}</span></span></h2>
+        </div>
+        <p class="lead">{{ why.lead }}</p>
+      </div>
+      <div class="sy-diy reveal">
+        <h3>{{ why.diy_title }}</h3>
+        <p>{{ why.diy_lead }}</p>
+        <ul>{{#each why.diy}}<li>{{ this }}</li>{{/each}}</ul>
+        <p>{{ why.diy_close }}</p>
+      </div>
+      <div class="editorial sy-whole reveal">
+        <p class="sy-whole-text">{{ why.whole }}</p>
+        <div class="stack-sm">
+          <h3>{{ why.handover_title }}</h3>
+          <p>{{ why.handover }}</p>
+          <p><strong>{{ why.handover_close }}</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who is behind it: portrait frame until the owner sends one (never stock for people). -->
+  <section class="section c-band" id="team" aria-labelledby="team-title">
+    <div class="container founders reveal">
+      <div class="placeholder placeholder-portrait"><span>Miguel &amp; Christiane<br>{{ team.portrait }}</span></div>
+      <div class="stack">
+        <p class="eyebrow">{{ team.eyebrow }}</p>
+        <h2 id="team-title"><span class="mask"><span class="mask-in">{{ team.title }}</span></span></h2>
+        {{#each team.body}}<p>{{ this }}</p>{{/each}}
+        <ul class="c-why sy-values">{{#each team.values}}<li><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- A real business: before, what we built, in their words. -->
+  <section class="section" id="case" aria-labelledby="case-title">
+    <div class="container">
+      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+        <p class="eyebrow">{{ case.eyebrow }}</p>
+        <h2 id="case-title"><span class="mask"><span class="mask-in">{{ case.title }}</span></span></h2>
+      </div>
+      <div class="sy-case stagger">
+        <div class="sy-case-col reveal"><h3>{{ case.before_title }}</h3><p>{{ case.before }}</p></div>
+        <div class="sy-case-col reveal"><h3>{{ case.built_title }}</h3><ul class="ticks">{{#each case.built}}<li>{{ this }}</li>{{/each}}</ul></div>
+        <figure class="sy-case-col sy-case-quote reveal"><h3>{{ case.words_title }}</h3><blockquote><p>“{{ case.words }}”</p></blockquote><figcaption lang="es">“{{ case.words_original }}”</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ. -->
+  <section class="section c-band" id="faq" aria-labelledby="faq-title">
+    <div class="container editorial reveal">
+      <div class="stack-sm">
+        <p class="eyebrow">{{ faq.eyebrow }}</p>
+        <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+      </div>
+      <div>
+        {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing band: the last call to action opens the pop-up. -->
+  <div class="c-close" id="contact">
+    <div class="close-circle" aria-hidden="true"></div>
+    <section class="contact section" aria-labelledby="close-title">
+      <div class="container">
+        <div class="band">
+          <div class="contact-intro">
+            <p class="eyebrow">{{ close.eyebrow }}</p>
+            <h2 id="close-title"><span class="mask"><span class="mask-in">{{ close.title }}</span></span></h2>
+            <p class="lead">{{ close.text }}</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="closing band">{{ close.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              <p class="small">{{ close.small }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

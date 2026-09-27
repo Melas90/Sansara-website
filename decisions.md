@@ -50,3 +50,12 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **Photos:** the home and About use the free Unsplash placeholders from the lab, each marked Pending on the page, so `npm run verify` lists them until real photos replace them. They must not go live (`pages/_assets/images/placeholder/CREDITS.md`). People are never shown with stock photos.
 - **Lead pop-up** (owner request): one Netlify form, `lead`, kept short on purpose: name, email or phone, interest, consent, plus a hidden `source` naming the button and page. No outside form tool, no WhatsApp (the owner dropped it). It opens from the closing band's "Let's talk", an "Ask about this offer" button in each offer panel (preselects the offer), a line after the four steps, and a floating "Get in touch" button that appears after the hero and hides over the closing band and footer. It never opens by itself. Submissions land in Netlify Forms; the CRM gets them later through a Netlify webhook or an integration.
 - **copy.md:** a list item in double quotes is always a string. Two About lines were silently dropped because they contain ": ".
+
+## 2026-09-27: The System page and the Client Loop landing page (branch feat/system)
+
+- Built from the owner's own landing page (`sansara-CALL-page.html`, kept out of git): the copy is hers, streamlined (fewer dashes and middle dots, the same claims), in `pages/system/copy.md`.
+- One body, two pages: `/system/` inside the site (full header and footer) and `/client-loop/`, a standalone landing page for ads (slim header with one button, slim footer, `noindex` with a canonical to `/system/`).
+- Every call to action opens the lead pop-up with "The System" preselected and a `source` naming the spot. The owner dropped WhatsApp; the form is the only way in.
+- Left out: the Botpress chat assistant (third-party script) and the "live demo" section, which promised an instant confirmation and reminder the Netlify form does not send.
+- The hero shows the Client Loop itself: the gold loop from the hero lab with the five moments on it and a spark travelling round.
+- To confirm with the owner: that Vero & Rafa (Terapias El Templo) agreed to be named on the site and in this public repo; "live in 15 days" against open decision #6; the portrait of Miguel and Christiane (Pending).
