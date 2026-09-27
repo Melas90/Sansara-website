@@ -339,6 +339,10 @@ html:not(.js) .close-btn { display: none; }
 .lead-head h2 em { font-style: italic; color: var(--gold-dk); }
 .lead-head .close-btn { flex: none; margin: -8px -8px 0 0; }
 .lead-dialog .form-actions { margin-top: 20px; }
+.lead-dialog .form-grid { align-items: start; }
+.lead-dialog .field-hint { font-size: var(--text-small); color: var(--brown-2-text); }
+.lead-alt { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: var(--text-small); color: var(--brown-2-text); }
+.lead-alt a { color: var(--orange-dk); font-weight: var(--weight-medium); }
 html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
 html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }

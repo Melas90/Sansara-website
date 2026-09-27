@@ -76,19 +76,18 @@ error_title: That didn't go through.
 error_text: Please try again in a moment, or email us directly at
 error_email: info@sansara-media.com
 required: Please fill in this field.
-invalid_email: Please enter an email address we can reply to.
+invalid_reach: Please enter an email address or a phone number.
 consent_needed: Please tick the box so we're allowed to contact you.
 
 ## Lead
 
 <!-- Owner request 2026-09-27: a pop-up where visitors leave their details and we get back to them. It opens from buttons along the page and a floating button, never on its own. Saved as the Netlify form "lead", to be connected to the CRM later. -->
 float: Get in touch
-title: Tell us about your *business*
-intro: Leave your details and we'll get back to you.
-name: Name
-email: Email
-phone: Phone
-optional: Optional
+title: Let's *talk*
+intro: Three quick fields and we'll get back to you.
+name: Your name
+reach: Email or phone
+reach_hint: Whichever you prefer. We only use it to get back to you.
 interest: What are you interested in?
 interest_placeholder: Choose one
 interest_options:
@@ -96,9 +95,8 @@ interest_options:
 - Done-for-You Services
 - Consulting
 - I'm not sure yet
-note: Anything we should know?
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.
-submit: Send my details
+submit: Get back to me
 sending: Sending
 close: Close
 success_title: Thank you. We'll be in touch.
@@ -109,6 +107,9 @@ required: Please fill in this field.
 invalid_email: Please enter an email address we can reply to.
 consent_needed: Please tick the box so we're allowed to contact you.
 ask: Ask about this offer
+form_haters: Allergic to forms? We get it.
+whatsapp: Send us a WhatsApp instead
+whatsapp_number: PENDING: WhatsApp number for the pop-up, international format, digits only (e.g. 4917612345678)
 nudge: Not sure where to start?
 nudge_button: Leave your details
 

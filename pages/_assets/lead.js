@@ -55,6 +55,8 @@
 
   /* validation and sending */
   const msg = form.dataset;
+  // an email address, or a phone number with at least 6 digits
+  const isReach = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || v.replace(/\D/g, '').length >= 6;
   const fields = [...form.querySelectorAll('.field')];
   const check = (field) => {
     const input = field.querySelector('input:not([type=hidden]), select, textarea');
@@ -62,7 +64,7 @@
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
     else if (input.required && !input.value.trim()) text = msg.msgRequired;
-    else if (input.type === 'email' && input.value && !input.checkValidity()) text = msg.msgEmail;
+    else if (input.hasAttribute('data-reach') && !isReach(input.value)) text = msg.msgReach;
     out.textContent = text;
     field.classList.toggle('is-invalid', Boolean(text));
     input.setAttribute('aria-invalid', String(Boolean(text)));
