@@ -161,6 +161,9 @@ lead: Ten years of building marketing in pieces taught us one thing. Each piece 
 diy_title: “But I could do all of this myself.”
 diy_lead: You could. Here's the thing:
 diy_close: Every piece is doable. That's exactly why everyone has pieces, and still chases clients. Pieces don't fail loudly. They leak quietly, in the gaps between them.
+followers_title: “But I already have plenty of followers.”
+followers_text: We work with businesses that have thousands, even tens of thousands of followers, and still don’t make a single sale from them. Followers are interest. Interest doesn’t pay the bills until something turns it into a booking.
+followers_close: Interest doesn’t mean sales. The Loop is what turns one into the other.
 whole: So we don't sell you pipes. We build the whole line and seal every join. One journey, mapped from the first time someone sees you to the client who keeps coming back. Built where your customers actually are. Paid for once. Tested until it runs on its own. That's the Loop, and it's the part nobody sells you in pieces.
 handover_title: And the part that surprises people: *we build it to not need us.*
 handover: We take responsibility for the whole Loop until it runs. Then we hand it over properly, not a login and a goodbye, but a walkthrough until you understand what every piece does and why. If you have a team, we train them to run it without us.
