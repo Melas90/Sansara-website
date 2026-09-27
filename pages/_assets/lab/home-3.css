@@ -3,11 +3,11 @@
  * Newsreader carries the headlines (light, large), Hanken is body and interface. An ember disc rises
  * behind the hero once, the statement sits on a full ember band, the offers stand in arch-topped panels.
  */
-.s h1, .s h2, .s h3, .s .h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; }
+.s h1, .s main h2, .s main h3, .s main .h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; }
 .s h1 em, .s h2 em, .s h3 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1em; color: var(--orange-dk); }
 .s h1 { font-size: clamp(52px, 9.2vw, 132px); line-height: 0.94; }
-.s h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.0; }
-.s h3 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; }
+.s main h2 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.0; }
+.s main h3 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.15; }
 .s .offer-promise { font-family: var(--font-sans); font-style: normal; font-weight: var(--weight-medium); font-size: var(--text-lead); color: var(--brown); }
 .s .btn { font-weight: var(--weight-medium); }
 
