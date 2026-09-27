@@ -1,0 +1,52 @@
+/*
+ * Lab: photo variants of the Cris direction (A2 mockups, A3 photo-led).
+ * Stock photos are placeholders until real portraits and client work exist (see stock/CREDITS.md).
+ * Device mockups: our own screenshots sit inside the screen area of each photo, positioned in percent.
+ */
+.ph figure { margin: 0; }
+.stock-tag { position: absolute; left: 14px; bottom: 14px; z-index: 2; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--bg); color: var(--brown-2-text); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: var(--weight-label); box-shadow: var(--shadow-float); }
+
+/* device mockups */
+.mock { position: relative; }
+.mock-photo { display: block; width: 100%; height: auto; }
+.mock-screen { position: absolute; overflow: hidden; background: var(--sand); }
+.mock-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.mock-laptop { border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-float); }
+.mock-laptop .mock-screen { left: 31.94%; top: 16.5%; width: 34.9%; height: 29.5%; }
+.mock-phone .mock-photo { mix-blend-mode: multiply; filter: brightness(1.08); }
+.mock-phone .mock-screen { left: 33.2%; top: 9.2%; width: 35.8%; height: 76.8%; border-radius: 9% / 4.2%; }
+.mock-phone .mock-screen::after { content: ""; position: absolute; top: 0; left: 25%; width: 50%; height: 3.4%; background: var(--ink); border-radius: 0 0 14px 14px; }
+
+/* A2: showcase section */
+.ph-show-grid { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+@media (max-width: 760px) { .ph-show-grid { grid-template-columns: minmax(0, 1fr); } .ph-show-grid .mock-phone { max-width: 360px; justify-self: center; } }
+
+/* a photo on top of each offer panel */
+.sw-img { position: relative; aspect-ratio: 16 / 7; border-radius: var(--radius-card-sm); overflow: hidden; margin-bottom: 8px; }
+.sw-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph-3 .sw-img { aspect-ratio: 16 / 9; }
+html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slow) var(--ease) both; }
+@keyframes ph-settle { from { transform: scale(1.08); opacity: 0.4; } to { transform: none; opacity: 1; } }
+
+/* arch photos: the people, and the statement in A3 */
+.ph-arch { position: relative; aspect-ratio: 4 / 5; max-width: 26rem; width: 100%; border-radius: 999px 999px var(--radius-card) var(--radius-card); overflow: hidden; background: var(--sand-2); }
+.ph-arch img { position: absolute; inset: -8% 0; width: 100%; height: 116%; object-fit: cover; }
+
+/* A3: statement beside a photo */
+.ph-split { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 40px 72px; align-items: center; }
+.ph-split .c-statement-text { text-align: left; }
+.ph-split .ph-arch { justify-self: center; }
+@media (max-width: 860px) { .ph-split { grid-template-columns: minmax(0, 1fr); } .ph-split .ph-arch { max-width: 20rem; } }
+
+/* A3: the band with the laptop large */
+.ph-band { background: var(--sand-2); border-block: 1px solid var(--line); padding-block: clamp(64px, 9vw, 120px); overflow: hidden; }
+.ph-band .container { margin-bottom: 48px; }
+.ph-band-art { position: relative; width: min(1100px, 100% - 2 * var(--pad)); margin-inline: auto; }
+
+/* slow drift as you scroll, where the browser supports scroll-linked animation */
+@supports (animation-timeline: view()) {
+  html.motion .ph-arch img { animation: ph-drift linear both; animation-timeline: view(); }
+  html.motion .ph-band-art .mock-laptop { animation: ph-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 60%; }
+  @keyframes ph-drift { from { transform: translateY(-6%); } to { transform: translateY(6%); } }
+  @keyframes ph-rise { from { transform: translateY(8%) scale(0.96); } to { transform: none; } }
+}

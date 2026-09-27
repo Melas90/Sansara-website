@@ -171,3 +171,12 @@ anchor: contact
 eyebrow: Let's talk
 close_title: Let's plan your *growth*.
 close_text: A free intro call where we work out together what makes sense for your business.
+
+## Showcase
+
+<!-- Lab only (2026-09-27): photo variants of the Cris direction. Stock photos stand in until real work and portraits exist. -->
+eyebrow: What we build
+title: Built to look good *on every screen*.
+text: Your site, your funnel and your emails, designed as one thing and checked on the devices your clients actually use.
+stock: Stock photo, placeholder
+band_title: Less busywork. *More business.*
