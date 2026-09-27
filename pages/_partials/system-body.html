@@ -45,16 +45,26 @@
     </div>
   </section>
 
-  <!-- The problem: the four sentences they say, then why. -->
-  <section class="section c-band" id="problem" aria-labelledby="problem-title">
-    <div class="container editorial reveal">
-      <div class="stack-sm">
+  <!-- The problem: the four sentences arrive as messages, then the turn, the cause and the conclusion. -->
+  <section class="section c-band sy-problem" id="problem" aria-labelledby="problem-title">
+    <div class="container">
+      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
         <p class="eyebrow">{{ problem.eyebrow }}</p>
         <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
-        <p class="sy-familiar">{{ problem.familiar }}</p>
-        <ul class="sy-pains stagger">{{#each problem.pains}}<li class="reveal">“{{ this }}”</li>{{/each}}</ul>
       </div>
-      <div class="stack-sm sy-body">{{#each problem.body}}<p>{{ this }}</p>{{/each}}</div>
+      <div class="sy-chat">
+        <p class="sy-chat-label reveal">{{ problem.familiar }}</p>
+        <ul class="sy-bubbles stagger">{{#each problem.pains}}<li class="reveal">{{ this }}</li>{{/each}}</ul>
+      </div>
+      <div class="sy-why-grid reveal">
+        <p class="sy-turn">{{ problem.turn }}</p>
+        <div class="stack-sm">
+          <p class="sy-intro">{{ problem.intro }}</p>
+          <p>{{ problem.cause }}</p>
+          <p>{{ problem.drift }}</p>
+        </div>
+      </div>
+      <p class="sy-conclusion reveal">{{ problem.conclusion }}</p>
     </div>
   </section>
 
@@ -160,16 +170,26 @@
     </div>
   </section>
 
-  <!-- Who is behind it: portrait frame until the owner sends one (never stock for people). -->
-  <section class="section c-band" id="team" aria-labelledby="team-title">
-    <div class="container founders reveal">
-      <div class="placeholder placeholder-portrait"><span>Miguel &amp; Christiane<br>{{ team.portrait }}</span></div>
-      <div class="stack">
-        <p class="eyebrow">{{ team.eyebrow }}</p>
-        <h2 id="team-title"><span class="mask"><span class="mask-in">{{ team.title }}</span></span></h2>
-        {{#each team.body}}<p>{{ this }}</p>{{/each}}
-        <ul class="c-why sy-values">{{#each team.values}}<li><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}</ul>
+  <!-- Meet the founders: the blend of both backgrounds. A wide team photo (Pending, never stock for people), the story, the four promises as a row. -->
+  <section class="section c-band sy-team" id="team" aria-labelledby="team-title">
+    <div class="container">
+      <div class="sy-team-grid">
+        <figure class="sy-team-photo reveal">
+          <div class="placeholder"><span>{{ team.photo }}</span></div>
+          <figcaption>{{ team.caption }}</figcaption>
+        </figure>
+        <div class="stack reveal">
+          <p class="eyebrow">{{ team.eyebrow }}</p>
+          <h2 id="team-title"><span class="mask"><span class="mask-in">{{ team.title }}</span></span></h2>
+          <p class="lead">{{ team.lead }}</p>
+          <div class="sy-blend">
+            <h3>{{ team.blend_title }}</h3>
+            <p>{{ team.blend }}</p>
+          </div>
+          <p>{{ team.text }}</p>
+        </div>
       </div>
+      <ul class="sy-promises stagger">{{#each team.values}}<li class="reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}</ul>
     </div>
   </section>
 

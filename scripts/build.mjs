@@ -106,7 +106,10 @@ export function parseCopy(md) {
   const flush = () => {
     if (!buf.some((l) => l.trim())) { buf = []; return; }
     const firstIndent = buf.find((l) => l.trim()).match(/^\s*/)[0].length;
-    const [v] = parseBlock(buf, 0, firstIndent);
+    const [v, end] = parseBlock(buf, 0, firstIndent);
+    // never drop copy silently: anything the block did not read is an error (e.g. keys after a list)
+    const left = buf.slice(end).find((l) => l.trim() && !/^s*<!--/.test(l));
+    if (left) throw new Error(`copy.md: "${left.trim().slice(0, 60)}" in ${section}${sub ? "." + sub : ""} was not read. Keys cannot follow a list; move them above it.`);
     if (section && sub) data[section][sub] = v;
     else if (section && !Array.isArray(v)) Object.assign(data[section], v);
     buf = [];

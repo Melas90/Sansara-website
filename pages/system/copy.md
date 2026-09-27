@@ -57,6 +57,11 @@ by: Vero & Rafa, Terapias El Templo, Candelaria
 eyebrow: The real problem
 title: You're doing everything *they tell you to*.
 familiar: Sound familiar?
+intro: Posting every day. Replying fast. Showing up on stories, following up, following up again. And somehow you're still the one chasing, after people who'll have forgotten your name by next week.
+turn: It's not that you're not working hard enough. You obviously are. It's that *all of it runs through you.*
+cause: Every enquiry, every follow-up, every “let me get back to you” only happens if you're there to make it happen.
+drift: Miss one message, have one busy week, and that client is gone. And the ones you do win? Nothing keeps them close, so most buy once and drift.
+conclusion: That's not you being disorganised. There's just *no system catching them* when you can't, and nothing bringing them back.
 
 ### pains
 
@@ -64,13 +69,6 @@ familiar: Sound familiar?
 - Loads of likes. Nobody actually books.
 - I always mean to follow up. Then the week's just gone.
 - I never know where the next one's coming from.
-
-### body
-
-- Posting every day. Replying fast. Showing up on stories, following up, following up again. And somehow you're still the one chasing, after people who'll have forgotten your name by next week.
-- It's not that you're not working hard enough. You obviously are. It's that all of it runs through you. Every enquiry, every follow-up, every “let me get back to you” only happens if you're there to make it happen.
-- Miss one message, have one busy week, and that client is gone. And the ones you do win? Nothing keeps them close, so most buy once and drift.
-- That's not you being disorganised. There's just no system catching them when you can't, and nothing bringing them back.
 
 ## Instead
 
@@ -132,7 +130,7 @@ no_title: Probably not for you if…
 eyebrow: How it actually works
 title: From “never heard of you” to “booked”, *and back again*.
 lead: One connected loop, built around the offer you already have. Each step closes one of the ways clients slip away. Built, connected and launched for you.
-ends: Ends
+ends: No more
 in_practice: In practice, one Loop is your ad campaign (up to 3 designs), your own page, automatic replies and reminders, booking connected, follow-up that keeps going after the session, and your own client dashboard, where every contact, conversation and booking lives in one place. Built and handed over in your name.
 
 ### steps
@@ -178,14 +176,15 @@ handover_close: You own it. You understand it. You can run it. That's the produc
 
 ## Team
 
-eyebrow: Who's behind this
-title: Not an agency. Not software. *A partner who builds the whole thing and hands you the keys.*
-portrait: PENDING: a photo of Miguel and Christiane (decision #12)
-
-### body
-
-- Hi, we're Miguel and Christiane. Ten years in marketing taught us that single pieces rarely change a business. A nice landing page here, one clever campaign there. It helps, then it fades, because everything around it is still held together by hand.
-- So we build the whole thing, connected, and hand it over working. An agency's craft and a tool's speed, without the drawbacks of either. No proposals and three-month waits, nothing you have to figure out alone. Done for you. Explained in plain words. One fixed price.
+<!-- Owner, 2026-09-27: "Meet the founders", positioned as a blend. Miguel: operations, company infrastructure and business development in large companies (no job title). Christiane: creative background, marketing, digital marketing and automation. Added the same day: Miguel's background is high tech (semiconductors) and scale-ups; he knows how to scale a business from real experience. -->
+eyebrow: Meet the founders
+title: Not an agency. Not software. *A partner* who builds the whole thing and hands you the keys.
+photo: PENDING: a photo of the founders (decision #12)
+caption: Miguel and Christiane, the founders of Sansara Media
+lead: Years of marketing, operations and business development, from high-tech companies and scale-ups to freelancers, coaches and business owners.
+blend_title: The perfect *blend*.
+blend: Miguel comes from high tech, from semiconductors to scale-ups, where he built the operations and infrastructure that let companies grow. He knows how a business scales from real experience. Christiane brings a creative background and years in marketing, digital marketing and automation.
+text: Together, we know what the best companies in the world do, and we narrow it down to what a business owner actually needs. So we can tailor the solution to you, whatever the complexity you're facing. Then we build the whole thing, connected, and hand it over working. Done for you. Explained in plain words. One fixed price.
 
 ### values
 

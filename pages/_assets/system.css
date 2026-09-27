@@ -38,11 +38,25 @@ html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(va
 .sy-quote figcaption > span:first-child { font-weight: var(--weight-medium); color: var(--ink); }
 .sy-orig { font-style: italic; }
 
+/* ---------- the italic accent on this page: the brand's dark orange (the light one is too pale on sand) ---------- */
+.sy h1 em, .sy main h2 em, .sy .sy-whole h3 em, .sy .sy-turn em, .sy .sy-conclusion em { color: var(--orange-dk); }
+.sy .c-close h2 em, .sy .sy-diy h3 em { color: var(--orange); }
+
 /* ---------- the problem ---------- */
-.sy-familiar { margin-top: 12px; font-weight: var(--weight-medium); color: var(--ink); }
-.sy-pains { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.sy-pains li { font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.3; color: var(--gold-dk); padding-left: 16px; border-left: 2px solid var(--gold); }
-.sy-body p:first-child { font-size: var(--text-lead); color: var(--ink); }
+/* the four sentences arrive like messages: bubbles, alternating sides, one after the other */
+.sy-chat { max-width: 720px; margin: 0 auto clamp(56px, 8vw, 96px); display: grid; gap: 14px; }
+.sy-chat-label { justify-self: center; font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--brown-2-text); }
+.sy-bubbles { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.sy-bubbles li { position: relative; max-width: min(460px, 88%); padding: 16px 22px; background: var(--bg); border: 1px solid var(--line); border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow-float); font-family: var(--font-serif); font-size: clamp(19px, 2vw, 23px); line-height: 1.3; color: var(--ink); }
+.sy-bubbles li:nth-child(even) { justify-self: end; border-radius: 22px 22px 6px 22px; background: var(--sand-3); }
+/* the turn, the cause, the conclusion */
+.sy-why-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 88px); align-items: start; }
+.sy-turn { font-family: var(--font-serif); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; }
+.sy-turn em { font-style: italic; }
+.sy-intro { font-size: var(--text-lead); color: var(--ink); }
+.sy-conclusion { margin-top: clamp(40px, 6vw, 72px); padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 48px); background: var(--ink); color: var(--bg); border-radius: var(--radius-card); font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; text-wrap: balance; }
+.sy .sy-conclusion em { color: var(--orange); font-style: italic; }
+@media (max-width: 800px) { .sy-why-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- now and with the system ---------- */
 .sy-rows { display: grid; border-top: 1px solid var(--line); }
@@ -100,9 +114,22 @@ html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(va
 .sy-whole h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
 .sy-whole h3 em { font-style: italic; color: var(--gold-dk); }
 
-/* ---------- who is behind it ---------- */
-.sy-values { margin-top: 16px; }
-.sy-values h3 { font-weight: var(--weight-medium); }
+/* ---------- who is behind it: studio first ---------- */
+.sy-team-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px clamp(32px, 6vw, 80px); align-items: center; }
+.sy-team-photo { margin: 0; display: grid; gap: 10px; }
+.sy-team-photo .placeholder { aspect-ratio: 4 / 3; min-height: 0; border-radius: var(--radius-card); max-width: none; }
+.sy-blend { display: grid; gap: 8px; padding: 20px 24px; border-left: 2px solid var(--orange); background: var(--bg); border-radius: 0 var(--radius-card-sm) var(--radius-card-sm) 0; }
+.sy-blend h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
+.sy-blend h3 em { font-style: italic; color: var(--orange-dk); }
+.sy-team-photo figcaption { font-size: var(--text-small); color: var(--brown-2-text); }
+.sy-promises { list-style: none; padding: 0; margin: clamp(48px, 7vw, 80px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.sy-promises li { display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-card-sm); }
+.sy-promises h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; color: var(--ink); }
+.sy-promises li:first-child { background: var(--ink); border-color: transparent; color: var(--on-dark-muted); }
+.sy-promises li:first-child h3 { color: var(--bg); }
+@media (max-width: 960px) { .sy-promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .sy-team-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .sy-promises { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- the case ---------- */
 .sy-case { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -121,3 +148,4 @@ html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(va
 .lp-header .header-row { grid-template-columns: auto auto; justify-content: space-between; }
 .lp-footer .footer-bottom { border-top: 0; }
 .lp-footer .cluster { gap: 8px 20px; }
+.sy .stack { --stack-num: var(--orange); }
