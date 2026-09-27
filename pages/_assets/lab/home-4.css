@@ -80,7 +80,7 @@
 .n-close .contact { position: relative; z-index: 1; padding-block: clamp(80px, 10vw, 136px); }
 .n-close .band { background: transparent; padding: 0; text-align: center; justify-items: center; }
 .n-close .contact-intro { justify-items: center; margin-inline: auto; }
-.n-close h2, .n-close h3, .n-close strong { color: var(--ink); }
+.n .n-close h2, .n .n-close h3, .n .n-close strong { color: var(--ink); }
 .n-close .contact-intro h2 em { color: var(--orange-dk); }
 .n-close .contact-actions { justify-content: center; }
 .n-close a { color: var(--ink); }
