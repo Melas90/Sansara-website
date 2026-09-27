@@ -1,9 +1,41 @@
 # Project brief for Claude Code – Sansara Media website
 
-**Owner:** Christiane Valoskova (Sansara Media) · **Date:** 27 September 2026 · **Version:** 2
-**How to use this file:** put it in the repo at `docs/CLAUDE_CODE_BRIEF.md` and start Claude Code from the repo root with: *"Read docs/CLAUDE_CODE_BRIEF.md and start with Step 1."*
+**Owner:** Christiane Valoskova (Sansara Media) · **Date:** 27 September 2026 · **Version:** 3 (evening of 27 Sep: current state added)
+**How to use this file:** start Claude Code from the repo root with *"Read docs/CLAUDE_CODE_BRIEF.md"*. Section **"Current state"** below tells you where the work stands; the rest is the original brief, corrected where decisions changed it.
 
-> **This brief is the newest source of truth.** Older files in the repo (`PRD.md`, `CLAUDE.md`, `copy.md` files, `decisions.md`) were written when the site was planned in German. Where they conflict with this brief, this brief wins. Point out each conflict you find and update the older file.
+> **This brief is the source of truth.** The "Current state" section overrides anything further down. `decisions.md` holds the dated detail behind each decision, `docs/DESIGN_SPEC.md` and `docs/MOTION_SPEC.md` the visual and motion detail. If you find a conflict between any of them, fix the older file the same day instead of asking again.
+
+---
+
+## Current state (27 September 2026, evening). Read this first
+
+**Scope right now: the home page only.** The owner wants one finished, good-looking home page before any other page. Consulting, Services, Blog, Book a call and the legal pages stay empty (not built) for now. Don't open design rounds for them until she asks.
+
+**What exists**
+- Pages built: Home (`/`), The System (`/system/`), Client Loop ads landing page (`/client-loop/`, noindex), About (`/about/`), three thank-you pages. Design lab under `/lab/` (not in production builds).
+- Branch: all of this is on `feat/system` (it contains `feat/home-about`). It has not been merged into `v2` or pushed yet.
+
+**Design decisions that are settled (don't re-ask)**
+- **Home = the photo-led Cris direction (lab A3)**: serif headline with the italic half, facts row (10+ years · Days to build · One contact person), the three offers as a **fanned deck of cards with an icon each** in the hero, a slow marquee of the service areas, the statement with an arched photo, "Three ways to work with us" as a list with a panel per offer, four stacking step cards (last one dark), Why Sansara, founders, testimonials, a large laptop showcase band, FAQ, dark closing band. Details: `decisions.md` (27 Sep entries) and `docs/DESIGN_SPEC.md`.
+- Italic accents in `--orange-dk` on light grounds (light orange only on dark). Motion: rise through a mask, soft rhythm.
+- Photos: the home and About use **free stock placeholders, each marked Pending**. They may be shown on the preview, but **must be replaced by real photos before the site goes public**. Never a stock photo of a person standing in for a real one.
+
+**How visitors get in touch (replaces §2.4 and the calendar)**
+- **One form, the lead pop-up** (Netlify form `lead`): name, "Email or phone" (one field, `reach`), "What are you interested in?" (The System · Done-for-You Services · Consulting · I'm not sure yet), privacy consent, plus a hidden `source` (which button on which page). No company, no message field, **no WhatsApp**.
+- **No booking calendar for now.** Every "Book a free call" button (header, hero, footer) opens the lead form (`/#lead`). A calendar (Cal.com was used on the old site) comes back only if the owner asks.
+- Submissions land in **Netlify Forms** and go straight into the **Sansara CRM** (separate repo `Crmsansara`) through a signed outgoing webhook on the `lead` form. The CRM reads `name`/`reach`/`interest`/`source` (an email-only lead is stored by email). Tested end to end on 27 Sep. For now it feeds the CRM's test client "Example client"; before real use it moves to a Sansara Media client with a fresh secret.
+
+**Hosting (decision #10, leaning Netlify)**
+- The site runs on Netlify as the preview project **`sansara-website-v2`** → https://sansara-website-v2.netlify.app (deployed by upload, not from Git; Forms enabled). It is not connected to GitHub, so it does not update on push.
+- Owner's question: moving to the WordPress domain. Answer given: Netlify Forms only work while Netlify hosts the site, so the plan is to **keep the site on Netlify and point `sansara-media.com` at it** (DNS) when it goes public. Moving the files into WordPress would need a WordPress form plugin plus a CRM adapter. Not decided yet.
+- Other Netlify projects, don't overwrite: `bespoke-frangollo-3044fc` (Git-linked, builds `main`, the old Astro site), `dazzling-choux-8352fc` (business.sansara-media.com, hand-uploaded landing page).
+- Deploying from this folder: `website-v2` is a git worktree of `C:\Users\diezg\sansara\website`, and uploading it directly fails on Netlify ("not a git repository"). Upload a copy without `.git`, `dist`, `node_modules`, `.netlify` and `Nueva carp`.
+
+**Open items the owner raised**
+- **Icon lab:** the owner proposed a lab to choose the icons. Not built yet. Note the conflict: R1.4 said "no icons", but the hero deck chosen later has one small line icon per offer. The icon lab settles it.
+- Everything still Pending on the home page is listed by `npm run verify` (hero subtext ending, founders, testimonial, FAQ costs and timelines, response time, newsletter promise, social links, favicon, real photos).
+
+**Fixed on 27 Sep:** the build swallowed copy errors, so home, About and The System were deployed without a single word. A copy error now stops the build. If a page renders empty, run `npm run build` and read the error.
 
 ---
 
@@ -59,7 +91,7 @@ A helper line can guide undecided visitors (working copy, pending approval): *"N
 
 **Not on the website:** digital products (courses, templates). They are sold through email funnels only.
 
-**Main goal of every page:** lead to `/book-a-call` ("Book a free call", working label). The contact form (§2.4) is the lighter alternative.
+**Main goal of every page:** get the visitor to leave their details in the lead form. The button label stays "Book a free call" (working), and it opens the form. *(Changed 27 Sep: no `/book-a-call` calendar page for now; see Current state.)*
 
 ---
 
@@ -75,8 +107,8 @@ A helper line can guide undecided visitors (working copy, pending approval): *"N
 /about                 About                            (phase 2)
 /blog                  Blog archive                     (phase 2)
 /blog/[slug]           Blog post                        (phase 2)
-/book-a-call           Booking page (calendar + short form)
-/book-a-call/thanks    Booking confirmation
+/book-a-call           Booking page: NOT built for now, only if the owner asks (the form replaces it)
+/book-a-call/thanks    Booking confirmation (exists, unused)
 /contact/thanks        Contact form confirmation
 /newsletter/thanks     Newsletter confirmation
 /legal-notice          Legal notice / imprint (footer only)
@@ -95,6 +127,8 @@ URLs: lowercase English words, hyphens, no dates. They stay stable even if an of
 ### 2.3 Page sections
 
 **Home – a real brand homepage.** It must feel like the home of a studio, not like a funnel landing page. No offer dominates it.
+
+> *27 Sep:* the list below was the starting point. The home that was chosen and built is the photo-led Cris direction described under Current state (no rotating line in the hero; a facts row and the offer deck instead; a showcase band added). The principle holds: the three offers are equals, and the deep selling stays on `/system`.
 
 1. **Hero** – who we are and the feeling we give (headline + rotating line + subtext + 2 buttons: "Book a free call" / "See what we do" → `#what-we-do`). About Sansara as a studio, not about one offer.
 2. **Statement** – 1–2 lines: we take marketing off your plate so you can focus on your core business.
@@ -126,6 +160,8 @@ Source: `funnels/system-lp-en/index.html` is already in English; adapt it, don't
 Don't use Kickstarter / Growth / Scale anywhere outside the Consulting context.
 
 ### 2.4 Contact section with form (Home, last section before the footer)
+
+> **Superseded on 27 Sep 2026.** The site uses one short lead pop-up (form `lead`) instead of the six-field `contact` form below, and the closing band's "Let's talk" opens it. Fields, the no-WhatsApp rule and the CRM link are under Current state. The rest of this section (states, no-JS fallback, Netlify Forms technique) still applies.
 
 **Purpose:** the minimum way for a visitor to reach us without booking a calendar slot. It complements `/book-a-call`, it doesn't replace it.
 
@@ -381,6 +417,8 @@ Flag anything that needs Elementor Pro or would be hard to maintain for a non-de
 
 Do these in order. Finish one step, show the result, commit, then continue.
 
+> *Where we are (27 Sep):* Steps 1 to 5 are done, and in Step 6 The System is built. The owner has paused the rest of Step 6 and put the home page first: finish it properly (real photos, the Pending content, the icon question), then continue.
+
 **Step 1 – Orientation (no code)**
 Read this brief, `CLAUDE.md`, `decisions.md` and `docs/PRD.md` if present. Check the repo matches §4. Report in 5–10 lines: what exists, what's missing, and every place where older files are German or conflict with this brief. Create missing folders and empty spec files.
 
@@ -420,7 +458,7 @@ Depends on #10: either set up Netlify deployment from GitHub (write `docs/DEPLOY
 | 7 | Written approval + numbers from Vero & Rafa (Terapias El Templo), and English translation of their quote |
 | 8 | Newsletter lead magnet |
 | 9 | Everything in the design interview (§6.2) |
-| 10 | **Hosting:** is this repo deployed on Netlify, or rebuilt in WordPress/Elementor? Netlify Forms only work on a Netlify-hosted site |
+| 10 | **Hosting:** is this repo deployed on Netlify, or rebuilt in WordPress/Elementor? Netlify Forms only work on a Netlify-hosted site. *27 Sep: running on Netlify (`sansara-website-v2`); recommended: keep it there and point sansara-media.com at it. Not yet decided.* |
 | 11 | Contact section: final headline, button label, real response time |
 | 12 | Founders: who appears, names, roles, bios, photos |
 | 13 | Target market of the English site (international, Spain/Canary Islands, DACH in English…) and whether a German version comes later |
