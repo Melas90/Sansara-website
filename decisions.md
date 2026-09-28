@@ -71,3 +71,6 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **Icon lab** proposed by the owner, not built yet. It settles the conflict between R1.4 (no icons) and the hero deck's one icon per offer.
 - **Bug fixed:** the build swallowed copy errors, so home, About and The System were deployed without text. A copy error now fails the build.
 - The brief now opens with a "Current state" section that overrides older sections. Keep it up to date instead of re-asking settled questions.
+## 2026-09-28: the client dashboard on The System page
+
+- At the owner's request, "How it actually works" on `/system/` ends with a photo of a tablet on a wooden desk showing Sansara's own CRM pipeline, with the caption "Your own client dashboard. Every enquiry and booking in one pipeline, in your name." The scene is AI-generated (Magnific, Nano Banana Pro) around a real screenshot of the CRM with demo customers only. The client's name is cropped out, and nothing from any real client appears. It is not a stock photo of a person, so the no-stock rule holds. File: `pages/_assets/images/system/crm-tablet.jpg`.

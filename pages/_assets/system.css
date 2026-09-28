@@ -99,6 +99,10 @@ html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(va
 .sy-ends span { font-family: var(--font-sans); font-style: normal; font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); margin-right: 6px; }
 .stack > li:last-child .sy-ends { color: var(--gold); }
 .stack > li:last-child .sy-ends span { color: var(--on-dark-muted); }
+/* scoped to the container so it outranks `.ph figure { margin: 0 }` in home.css */
+.c-narrow .sy-dashboard { margin: clamp(40px, 6vw, 64px) auto 0; max-width: 30rem; display: grid; gap: 12px; }
+.sy-dashboard img { width: 100%; height: auto; border-radius: var(--radius-card); box-shadow: var(--shadow-float); }
+.sy-dashboard figcaption { font-size: var(--text-small); color: var(--brown-2-text); text-align: center; }
 .sy-practice { margin-top: 48px; padding: clamp(24px, 3vw, 36px); border-left: 2px solid var(--gold); background: var(--bg); border-radius: 0 var(--radius-card-sm) var(--radius-card-sm) 0; }
 
 /* ---------- why a loop ---------- */
