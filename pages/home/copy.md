@@ -79,6 +79,9 @@ eyebrow: What we do
 title: What we *do*
 cris_title: Three ways to *work with us*
 lead: Three ways to work with us. Same studio, same standards. The difference is who takes responsibility for what.
+<!-- card 00 on top of the hero deck, presenting the other three (owner, 2026-09-29) -->
+intro_line: Same studio, same standards. You choose how much we take off your plate.
+intro_link: Take a look at what we do
 
 ### offers
 

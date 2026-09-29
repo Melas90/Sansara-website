@@ -239,6 +239,28 @@ html.motion .hv-deck:not(:hover) .deck-card { animation: deck-breathe calc(var(-
 @media (max-width: 900px) { .hx .hv-deck { order: 0; justify-self: center; } }
 @media (max-width: 600px) { .hv-deck, .hx .hv-deck { aspect-ratio: 1 / 1.12; } .deck-inc { display: none; } }
 
+/* 2026-09-29: light cards (no lists) and a card 00 on top that presents the other three.
+   Four cards: a tighter fan; the offers sit one place behind the cover. */
+.hx .hv-deck { aspect-ratio: 1 / 0.95; }
+.hx .hv-deck .deck-card { --r: calc(var(--p) * 4.5deg); --x: calc(var(--p) * 10%); --y: calc(var(--p) * 1.2%); z-index: calc(4 - var(--p)); }
+.hx .hv-deck .deck-card:not(.deck-intro) { --p: calc(var(--i) + 1); }
+.hx .hv-deck .deck-card:nth-child(3) { background: var(--bg); color: var(--brown); }
+.hx .hv-deck .deck-card:nth-child(4) { background: var(--sand-3); color: var(--brown); }
+.hx .hv-deck .deck-card:nth-child(4) h3, .hx .hv-deck .deck-card:nth-child(4) .deck-n { color: var(--ink); }
+.hx .hv-deck .deck-card:nth-child(4) .link { color: var(--orange-dk); }
+.hx .hv-deck .deck-card:nth-child(4) .deck-ico { background: var(--bg); color: var(--orange-dk); }
+.hx .hv-deck .deck-card:nth-child(5) { background: var(--ink); color: var(--on-dark-muted); }
+.hx .hv-deck .deck-card:nth-child(5) h3, .hx .hv-deck .deck-card:nth-child(5) .deck-n { color: var(--bg); }
+.hx .hv-deck .deck-card:nth-child(5) .deck-ico { background: var(--ink-2); color: var(--orange); }
+.hx .hv-deck .deck-card:nth-child(5) .link { color: var(--orange); }
+.hx .hv-deck .deck-intro { background: linear-gradient(135deg, var(--ink), var(--ink-2)); color: var(--on-dark-muted); border-color: transparent; }
+.hx .hv-deck .deck-intro h3 { color: var(--bg); }
+.hx .hv-deck .deck-intro h3 em { color: var(--orange); }
+.hx .hv-deck .deck-intro .deck-n { color: var(--gold); }
+.hx .hv-deck .deck-intro .deck-ico { background: var(--ink-2); color: var(--orange); }
+.hx .hv-deck .deck-intro .link { color: var(--orange); }
+@media (max-width: 600px) { .hx .hv-deck { aspect-ratio: 1 / 1.05; } }
+
 /* ===== photos and device mockups ===== */
 .ph figure { margin: 0; }
 .stock-tag { position: absolute; left: 14px; bottom: 14px; z-index: 2; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--bg); color: var(--brown-2-text); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: var(--weight-label); box-shadow: var(--shadow-float); }
