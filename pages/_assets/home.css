@@ -302,6 +302,10 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .motto-ico g { opacity: 0; transition: opacity var(--base) var(--ease); }
 .motto-ico g.is-in, .motto:not(.is-armed) .motto-ico [data-ico="loop"] { opacity: 1; }
 .ph-split .motto-lead { font-size: clamp(22px, 2.4vw, 30px); max-width: 32ch; }
+/* beside the motto the photo steps back: smaller arch, narrower column (owner, 2026-09-29) */
+.c-statement .ph-split { grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr); }
+.c-statement .ph-split .ph-arch { max-width: 17rem; }
+@media (max-width: 860px) { .c-statement .ph-split { grid-template-columns: minmax(0, 1fr); } .c-statement .ph-split .ph-arch { max-width: 13rem; } }
 
 /* A3: the band with the laptop large */
 .ph-band { background: var(--sand-2); border-block: 1px solid var(--line); padding-block: clamp(64px, 9vw, 120px); overflow: hidden; }
