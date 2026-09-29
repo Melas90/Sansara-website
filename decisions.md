@@ -81,3 +81,8 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - Rhythm: one word every `--rotate-every` (the hero line's 2.8 s), and the last word holds a little longer. It runs only while on screen. Without JavaScript or with reduced motion it shows "Be Sansara." still. Screen readers get the whole motto in one sentence.
 - The icons are five line icons drawn for this card only. The icon lab (open) may replace them.
 - A standalone version (1080×1350 WebM plus the HTML) was made for Canva and social media, outside the repo.
+## 2026-09-29: the founders photo
+
+- The owner supplied a photo of the two founders in the studio (`C:\Users\diezg\sansara\founder.png`). It replaces the stock photo in the home founders arch and in the About hero arch, and the Pending frame under "Meet the founders" on /system/ and /client-loop/, where it uses a 4:3 crop. The dark film border is trimmed. Files: `pages/_assets/images/people/founders.jpg` and `founders-wide.jpg`. Alt text is shared as `shared.people.founders_alt`.
+- On /system/ the photo now sits at the top of its column and stays in view beside the long story (sticky, desktop only).
+- Still open under decision #12: roles, bios and the individual portraits on About, and the founders text on Home.

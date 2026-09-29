@@ -181,7 +181,6 @@ handover_close: You own it. You understand it. You can run it. That's the produc
 <!-- Owner, 2026-09-27: "Meet the founders", positioned as a blend. Miguel: operations, company infrastructure and business development in large companies (no job title). Christiane: creative background, marketing, digital marketing and automation. Added the same day: Miguel's background is high tech (semiconductors) and scale-ups; he knows how to scale a business from real experience. -->
 eyebrow: Meet the founders
 title: Not an agency. Not software. *A partner* who builds the whole thing and hands you the keys.
-photo: PENDING: a photo of the founders (decision #12)
 caption: Miguel and Christiane, the founders of Sansara Media
 lead: Years of marketing, operations and business development, from high-tech companies and scale-ups to freelancers, coaches and business owners.
 blend_title: The perfect *blend*.

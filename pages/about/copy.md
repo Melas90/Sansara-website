@@ -71,4 +71,3 @@ text: Thirty minutes, free. We look at your business together and tell you hones
 button: Let's talk
 book_prefix: Prefer to pick a time?
 book_link: Book a call
-photo: PENDING: a real photo of the two of you or your workspace; this one is a free stock placeholder (Unsplash)

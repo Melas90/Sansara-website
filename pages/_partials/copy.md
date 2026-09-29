@@ -144,3 +144,7 @@ home_link: Back to the home page
 header_button: Get my free call
 footer_line: We build the thing that brings clients in, so you don't have to chase them.
 footer_site: Visit the full site
+
+## People
+
+founders_alt: Christiane and Miguel, the two founders of Sansara Media, in their studio
