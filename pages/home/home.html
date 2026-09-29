@@ -44,13 +44,27 @@
       <div class="mq-track">{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}</div>
     </div>
 
-    <!-- Statement: centred serif, words light up as you read. -->
+    <!-- Statement: the motto card ("Be" stays, the word swaps, from the Client Loop keynote, 2026-09-29), then the sentence, words light up as you read. -->
     <section class="section c-statement" id="statement">
       <div class="container ph-split">
         <figure class="ph-arch"><img src="/assets/images/placeholder/offer-services.jpg" alt="" loading="lazy"><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure>
-        <div class="stack-sm">
-          <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
-          <p class="c-statement-text" data-read>{{ statement.text }}</p>
+        <div class="stack">
+          <p class="eyebrow">{{ motto.eyebrow }}</p>
+          <div class="motto reveal is-dark" data-motto>
+            <p class="sr-only">{{ motto.sr }}</p>
+            <span class="motto-rail" aria-hidden="true">{{#each motto.words}}<i></i>{{/each}}</span>
+            <div class="motto-card" aria-hidden="true">
+              <p class="motto-line"><span>{{ motto.be }}</span><span class="motto-slot">{{#each motto.words}}<span class="motto-word">{{ word }}<span class="motto-stop">.</span></span>{{/each}}</span></p>
+              <svg class="motto-ico" viewBox="0 0 48 48" focusable="false">
+                <g data-ico="seen"><path d="M4 24s7.5-13 20-13 20 13 20 13-7.5 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6.5"/></g>
+                <g data-ico="chosen"><path d="M19 26V9.5a3 3 0 0 1 6 0V22"/><path d="M25 21.5v-2.5a3 3 0 0 1 6 0v3.5"/><path d="M31 22v-1a3 3 0 0 1 6 0v6.5c0 7.5-5 12.5-11.5 12.5h-1.5c-4 0-6.5-1.8-9-5l-6.3-8.2a2.9 2.9 0 0 1 4.3-3.9L19 32"/></g>
+                <g data-ico="booked"><rect x="7" y="10" width="34" height="31" rx="4"/><path d="M7 19h34M16 6v8M32 6v8"/><path d="M18 30l4.5 4.5L31 26"/></g>
+                <g data-ico="remembered"><path d="M24 40S7 30 7 18.5A9 9 0 0 1 24 14a9 9 0 0 1 17 4.5C41 30 24 40 24 40z"/></g>
+                <g data-ico="loop"><path d="M24 24c-4.5-5.5-8-8.5-12-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 12-8.5s8-8.5 12-8.5a8.5 8.5 0 0 1 0 17c-4 0-7.5-3-12-8.5z"/></g>
+              </svg>
+            </div>
+          </div>
+          <p class="c-statement-text motto-lead" data-read>{{ statement.text }}</p>
         </div>
       </div>
     </section>

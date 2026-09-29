@@ -54,6 +54,24 @@ areas:
 
 text: We take marketing *off your plate*, so you can focus on your core business.
 
+## Motto
+
+<!-- 2026-09-29 (owner): the Client Loop keynote as the studio's motto, under the hero. "Be" stays, the word swaps; the last one turns the card dark. -->
+eyebrow: The Sansara Client Loop
+be: Be
+sr: Be seen. Be chosen. Be booked. Be remembered. Be Sansara.
+words:
+- word: seen
+  icon: seen
+- word: chosen
+  icon: chosen
+- word: booked
+  icon: booked
+- word: remembered
+  icon: remembered
+- word: Sansara
+  icon: loop
+
 ## What we do
 
 eyebrow: What we do

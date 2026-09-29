@@ -105,4 +105,47 @@
       place();
     }));
   });
+
+  /* 5. motto: "Be" stays, the word swaps at the hero line's rhythm (--rotate-every); the last word
+     turns the card dark and holds a little longer. Runs only while on screen; still under reduced motion. */
+  document.querySelectorAll('[data-motto]').forEach((root) => {
+    if (reduce()) return;
+    const words = [...root.querySelectorAll('.motto-word')];
+    const icons = [...root.querySelectorAll('[data-ico]')];
+    const dots = [...root.querySelectorAll('.motto-rail i')];
+    const slot = root.querySelector('.motto-slot');
+    const last = words.length - 1;
+    const every = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--rotate-every')) || 2800;
+    let current = -1;
+    let timer = null;
+
+    root.classList.add('is-armed');
+    // the window is as wide as the widest word, so "Be" never moves
+    const fit = () => { slot.style.width = `${Math.max(...words.map((w) => w.offsetWidth))}px`; };
+    document.fonts.ready.then(fit);
+    addEventListener('resize', fit);
+
+    const show = (n) => {
+      const next = words[n];
+      // park the incoming word below the window without animating, then let it rise
+      next.style.transition = 'none';
+      next.classList.remove('is-out', 'is-in');
+      void next.offsetWidth;
+      next.style.removeProperty('transition');
+      next.classList.add('is-in');
+      if (current >= 0 && current !== n) words[current].classList.replace('is-in', 'is-out');
+      icons.forEach((g, j) => g.classList.toggle('is-in', j === n));
+      dots.forEach((d, j) => { d.classList.toggle('is-done', j < n); d.classList.toggle('is-now', j === n); });
+      root.classList.toggle('is-dark', n === last);
+      current = n;
+    };
+    const tick = () => {
+      show((current + 1) % words.length);
+      timer = setTimeout(tick, current === last ? every * 1.6 : every);
+    };
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !timer) tick();
+      if (!e.isIntersecting) { clearTimeout(timer); timer = null; }
+    }).observe(root);
+  });
 })();

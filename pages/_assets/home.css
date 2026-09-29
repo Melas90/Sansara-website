@@ -275,6 +275,34 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .ph-split .ph-arch { justify-self: center; }
 @media (max-width: 860px) { .ph-split { grid-template-columns: minmax(0, 1fr); } .ph-split .ph-arch { max-width: 20rem; } }
 
+/* The motto card, from the Client Loop keynote (2026-09-29): "Be" stays, the word swaps (home.js #5),
+   the last word turns the card dark. Without JavaScript or with reduced motion it shows "Be Sansara." */
+.motto { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(14px, 2vw, 22px); align-items: stretch; }
+.motto-rail { position: relative; display: flex; flex-direction: column; justify-content: space-between; width: 14px; padding-block: 14px; }
+.motto-rail::before { content: ''; position: absolute; left: 6px; top: 14px; bottom: 14px; width: 2px; background: var(--orange-dk); opacity: 0.25; }
+.motto-rail i { position: relative; width: 14px; height: 14px; border-radius: 50%; background: var(--orange-dk); border: 2px solid var(--orange-dk); transition: background var(--base) var(--ease), transform var(--base) var(--ease), box-shadow var(--base) var(--ease); }
+.motto.is-armed .motto-rail i { background: var(--bg); }
+.motto.is-armed .motto-rail i.is-done { background: var(--orange-dk); }
+.motto.is-armed .motto-rail i.is-now { background: var(--orange); transform: scale(1.35); box-shadow: 0 0 0 6px color-mix(in srgb, var(--orange) 22%, transparent); }
+.motto-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(20px, 3vw, 34px) clamp(22px, 3.4vw, 44px); background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-float); transition: background var(--base) var(--ease); }
+.motto.is-dark .motto-card { background: linear-gradient(135deg, var(--ink), var(--ink-2)); }
+/* "Be" and the word window share one line box, so the baselines match */
+.motto-line { display: flex; align-items: flex-start; font-family: var(--font-serif); font-size: clamp(30px, 4.2vw, 58px); line-height: 1.3; color: var(--ink); white-space: nowrap; transition: color var(--base) var(--ease); }
+.motto.is-dark .motto-line { color: var(--bg); }
+.motto-slot { position: relative; flex: none; height: 1.3em; overflow: hidden; margin-left: 0.26em; padding-right: 0.12em; }
+.motto-word { position: absolute; left: 0; top: 0; font-style: italic; color: var(--orange-dk); transform: translateY(105%); transition: transform var(--base) var(--ease); }
+.motto:not(.is-armed) .motto-word:last-child { position: relative; transform: none; }
+.motto.is-dark .motto-word { color: var(--orange); }
+.motto-word.is-in { transform: none; }
+.motto-word.is-out { transform: translateY(-115%); }
+.motto-stop { color: var(--ink); transition: color var(--base) var(--ease); }
+.motto.is-dark .motto-stop { color: var(--bg); }
+.motto-ico { flex: none; width: clamp(32px, 3.8vw, 50px); height: auto; fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke var(--base) var(--ease); }
+.motto.is-dark .motto-ico { stroke: var(--orange); }
+.motto-ico g { opacity: 0; transition: opacity var(--base) var(--ease); }
+.motto-ico g.is-in, .motto:not(.is-armed) .motto-ico [data-ico="loop"] { opacity: 1; }
+.ph-split .motto-lead { font-size: clamp(22px, 2.4vw, 30px); max-width: 32ch; }
+
 /* A3: the band with the laptop large */
 .ph-band { background: var(--sand-2); border-block: 1px solid var(--line); padding-block: clamp(64px, 9vw, 120px); overflow: hidden; }
 .ph-band .container { margin-bottom: 48px; }

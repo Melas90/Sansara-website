@@ -74,3 +74,10 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 ## 2026-09-28: the client dashboard on The System page
 
 - At the owner's request, "How it actually works" on `/system/` ends with a photo of a tablet on a wooden desk showing Sansara's own CRM pipeline, with the caption "Your own client dashboard. Every enquiry and booking in one pipeline, in your name." The scene is AI-generated (Magnific, Nano Banana Pro) around a real screenshot of the CRM with demo customers only. The client's name is cropped out, and nothing from any real client appears. It is not a stock photo of a person, so the no-stock rule holds. File: `pages/_assets/images/system/crm-tablet.jpg`.
+## 2026-09-29: the "Be ___." motto on the home page
+
+- The owner made an animation from the Client Loop keynote (`sansara-loop-keynote.png`): "Be" stays and the italic word swaps (seen, chosen, booked, remembered, Sansara), each with a line icon, a dot moving down a small orange timeline, and the card turning espresso on "Be Sansara."
+- **Where:** on Home, in the statement section right under the hero (option 2). The eyebrow reads "The Sansara Client Loop", as on the keynote. The owner sees it as the studio's motto, not as one offer, so it stays on Home. The service cards stay at the top of the page "for now". The hero was the alternative and was not chosen; putting it on /system/ as well is still open.
+- Rhythm: one word every `--rotate-every` (the hero line's 2.8 s), and the last word holds a little longer. It runs only while on screen. Without JavaScript or with reduced motion it shows "Be Sansara." still. Screen readers get the whole motto in one sentence.
+- The icons are five line icons drawn for this card only. The icon lab (open) may replace them.
+- A standalone version (1080×1350 WebM plus the HTML) was made for Canva and social media, outside the repo.
