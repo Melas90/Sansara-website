@@ -11,7 +11,7 @@
   <!-- @include _partials/header.html -->
   <main id="main">
 
-    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and the three offers as a fanned deck of cards (chosen 2026-09-27, replaces the orb). -->
+    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and the three offers as a fanned deck of cards (chosen 2026-09-27, replaces the orb; name, promise and link only since 2026-09-29, the lists live in What we do). -->
     <section class="hx" id="hero" aria-labelledby="hero-title">
       <div class="glow glow-a" aria-hidden="true"></div>
       <div class="glow glow-b" aria-hidden="true"></div>
@@ -34,7 +34,7 @@
             <symbol id="ico-services" viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L19.3 8a2.1 2.1 0 0 0-3-3L5.5 15.7 4 20z"/><path d="M14.5 6.8l2.9 2.9"/><path d="M13 20h7"/></symbol>
             <symbol id="ico-consulting" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M16.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v5.5A1.5 1.5 0 0 1 20 18h-1v2.5L16 18h-3.5"/></symbol>
           </defs></svg>
-          {{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><div class="deck-top"><span class="deck-n">{{ @number }}</span><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-{{{ key }}}"/></svg></span></div><p class="deck-for">{{ for }}</p><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><ul class="deck-inc">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
+          {{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><div class="deck-top"><span class="deck-n">{{ @number }}</span><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-{{{ key }}}"/></svg></span></div><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
         </div>
       </div>
     </section>

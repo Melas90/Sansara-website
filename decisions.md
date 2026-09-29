@@ -86,3 +86,8 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - The owner supplied a photo of the two founders in the studio (`C:\Users\diezg\sansara\founder.png`). It replaces the stock photo in the home founders arch and in the About hero arch, and the Pending frame under "Meet the founders" on /system/ and /client-loop/, where it uses a 4:3 crop. The dark film border is trimmed. Files: `pages/_assets/images/people/founders.jpg` and `founders-wide.jpg`. Alt text is shared as `shared.people.founders_alt`.
 - On /system/ the photo now sits at the top of its column and stays in view beside the long story (sticky, desktop only).
 - Still open under decision #12: roles, bios and the individual portraits on About, and the founders text on Home.
+## 2026-09-29 (evening): the cards stay on top, lighter; more in the offer lists
+
+- Tried and reverted the same evening: the motto in the hero, with the offer cards cascading lower down. The owner decided the cards stay on top. The layout stays hero (cards), then the motto beside the photo, then "Three ways to work with us" (list with panels).
+- Less text (the owner found the home too text-heavy): the hero cards now show only number, icon, name, promise and link. The lists live in "Three ways to work with us" only.
+- New points in the offer lists (owner): The System adds "Your own CRM, every contact and booking in one place" and "Nurturing and upselling that bring clients back". Done-for-You Services adds "Automations", also in the moving strip of areas. The wording is working copy.

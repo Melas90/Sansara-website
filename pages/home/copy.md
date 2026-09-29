@@ -48,6 +48,7 @@ areas:
 - Branding and graphic design
 - Funnel and email marketing
 - E-learning and online courses
+- Automations
 - Consulting
 
 ## Statement
@@ -90,6 +91,8 @@ lead: Three ways to work with us. Same studio, same standards. The difference is
   - Page where booking is the obvious next step
   - Follow-up that answers while you work
   - Booking that lands in your calendar
+  - Your own CRM, every contact and booking in one place
+  - Nurturing and upselling that bring clients back
   for: For businesses that just want it to work.
   link: /system/
   explore: Explore The System
@@ -102,6 +105,7 @@ lead: Three ways to work with us. Same studio, same standards. The difference is
   - Branding and graphic design
   - Funnel and email marketing
   - E-learning and online courses
+  - Automations
   for: For businesses that know exactly what they need.
   link: /services/
   explore: Explore Services
