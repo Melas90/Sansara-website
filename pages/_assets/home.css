@@ -342,3 +342,11 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
   @keyframes ph-rise { from { transform: translateY(8%) scale(0.96); } to { transform: none; } }
 }
 .stock-tag:has(.pend) { background: none; box-shadow: none; padding: 0; }
+
+/* Founders: the collage full width in a white print frame, tilted a touch; it straightens on hover (owner, 2026-09-29) */
+/* scoped to the container so it outranks `.ph figure { margin: 0 }`; `rotate` (not transform) so the reveal animation keeps the tilt */
+.container .fd-frame { margin: clamp(32px, 5vw, 56px) auto 0; padding: clamp(10px, 1.5vw, 20px) clamp(10px, 1.5vw, 20px) clamp(28px, 4vw, 52px); background: var(--white); border-radius: 6px; box-shadow: var(--shadow-float), 0 1px 0 var(--line); rotate: -0.8deg; transition: rotate var(--slow) var(--ease); }
+.fd-frame img { display: block; width: 100%; height: auto; border-radius: 2px; }
+.fd-frame:hover { rotate: 0deg; }
+.fd-foot { margin-top: clamp(28px, 4vw, 44px); }
+@media (max-width: 600px) { .fd-frame { rotate: none; } }

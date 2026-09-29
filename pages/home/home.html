@@ -137,13 +137,15 @@
       </div>
     </section>
 
-    <!-- Founders: the real photo of the two founders (2026-09-29); names, roles and bios still wait for decision #12. -->
+    <!-- Founders: the collage of the two founders, full width in a white print frame (owner, 2026-09-29); names, roles and bios still wait for decision #12. -->
     <section class="section" id="founders" aria-labelledby="founders-title">
-      <div class="container founders reveal">
-        <figure class="ph-arch"><img src="/assets/images/people/founders.jpg" alt="{{{ shared.people.founders_alt }}}" width="904" height="1128" loading="lazy"></figure>
-        <div class="stack">
+      <div class="container">
+        <div class="centred stack-sm reveal">
           <p class="eyebrow">{{ founders.eyebrow }}</p>
           <h2 id="founders-title"><span class="mask"><span class="mask-in">{{ founders.title }}</span></span></h2>
+        </div>
+        <figure class="fd-frame reveal"><img src="/assets/images/people/founders-collage.jpg" alt="{{{ founders.collage_alt }}}" width="1376" height="768" loading="lazy"></figure>
+        <div class="fd-foot centred stack-sm reveal">
           <p class="lead">{{ founders.people }}</p>
           <a class="link" href="{{{ founders.more_link }}}">{{ founders.more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>

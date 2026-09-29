@@ -166,6 +166,7 @@ title: The people *behind* Sansara
 people: PENDING: who appears, with name, role, bio, one personal detail and a portrait (decision #12)
 more: More about us
 more_link: /about/
+collage_alt: Miguel and Christiane, the founders of Sansara Media, in a paper collage with a laptop, notebooks, a camera and a plant
 
 ## Proof
 
