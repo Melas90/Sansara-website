@@ -380,3 +380,11 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
   .flip.is-open .flip-back, .flip:hover .flip-back { opacity: 1; pointer-events: auto; }
   .flip.is-open .flip-front, .flip:hover .flip-front { opacity: 0; }
 }
+/* the three flip cards in the deck's colours (owner, 2026-09-30): cream, sand, dark; each back in a contrasting one */
+.flip:nth-child(2) .flip-front { background: var(--sand-3); border-color: transparent; }
+.flip:nth-child(3) .flip-front { background: var(--ink); color: var(--bg); border-color: transparent; }
+.flip:nth-child(3) .flip-n { color: var(--gold); }
+.flip:nth-child(3) .flip-hint { color: var(--on-dark-muted); }
+.flip:nth-child(2) .flip-back { background: linear-gradient(135deg, var(--ink), var(--ink-2)); }
+.flip:nth-child(3) .flip-back { background: var(--sand-3); color: var(--brown); }
+.flip:nth-child(3) .flip-back .eyebrow, .flip:nth-child(3) .flip-back .link { color: var(--orange-dk); }
