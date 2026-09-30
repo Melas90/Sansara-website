@@ -118,7 +118,7 @@
     });
   });
 
-  /* 6. motto: "Be" stays, the word swaps at the hero line's rhythm (--rotate-every); the last word
+  /* 6. motto: "Be" stays, the word swaps every --motto-every; the last word
      turns the card dark and holds a little longer. Runs only while on screen; still under reduced motion. */
   document.querySelectorAll('[data-motto]').forEach((root) => {
     if (reduce()) return;
@@ -127,7 +127,7 @@
     const dots = [...root.querySelectorAll('.motto-rail i')];
     const slot = root.querySelector('.motto-slot');
     const last = words.length - 1;
-    const every = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--rotate-every')) || 2800;
+    const every = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motto-every')) || 1700;
     let current = -1;
     let timer = null;
 

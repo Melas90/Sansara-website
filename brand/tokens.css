@@ -109,6 +109,7 @@
   --rise: 40px;
   --stagger: 110ms;
   --rotate-every: 2800ms; /* rotating hero line */
+  --motto-every: 1700ms;  /* the "Be ___." motto card: one word every 1.7s, the owner found 2.8s too slow to be noticed (2026-09-30) */
 }
 
 @media (max-width: 980px) {
