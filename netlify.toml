@@ -1,23 +1,20 @@
-# Production = main. Branch deploy = develop (staging). Deploy previews on every PR.
-# Branch deploys and previews are switched on in the Netlify UI:
-# Site configuration > Build & deploy > Branches and deploy contexts.
+# Production = main. Branch deploy = v2 while the rebuild is in progress (enable it in the
+# Netlify UI: Site configuration > Build & deploy > Branches and deploy contexts).
 
 [build]
   command = "npm run build"
   publish = "dist"
 
-# The 404 page is built once, in the default language.
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
 
-[build.environment]
-  NODE_VERSION = "24"
-
-# Hashed build assets never change.
 [[headers]]
-  for = "/_astro/*"
+  for = "/brand/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -25,11 +22,11 @@
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    # Only self, Cal.com (booking embed) and Meta Pixel hosts.
-    # script-src has no 'unsafe-inline': astro.config.ts keeps every script in a file.
-    # style-src needs it for Astro's inlined @font-face block and the Cal.com embed.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://app.cal.com https://cal.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com https://app.cal.com https://cal.com; font-src 'self' https://app.cal.com https://cal.com; connect-src 'self' https://app.cal.com https://cal.com https://www.facebook.com https://connect.facebook.net; frame-src https://app.cal.com https://cal.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
+    # script-src: our own files plus the hash of the one inline line in _partials/head.html
+    # (document.documentElement.classList.add('js')). Recompute the hash if that line changes.
+    # frame-src 'self' is for the lab's phone-width preview. The booking calendar host is added in Step 6.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"

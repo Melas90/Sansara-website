@@ -1,0 +1,81 @@
+/*
+ * Direction A: CRIS. Her reference homepage ("1a", Sansara Media Website cris.html), rebuilt on the
+ * site's copy and components and improved: sliding step cards, reading highlight, marquee, the
+ * interactive offer list now holds the three equal offers, the contact form lives in her dark band.
+ * Sand ground, serif headlines, gold italic half, espresso pills, ember only as a spark.
+ */
+.c { background: var(--sand); --eyebrow: var(--gold-dk); }
+.c .site-header { background: transparent; position: relative; }
+.c .site-header::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line); }
+@media (max-width: 980px) { .c .nav-list { background: var(--sand); } }
+
+/* type: serif headlines, the italic half in gold */
+.c h1, .c main h2 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; }
+.c h1 { font-size: clamp(44px, 6.4vw, 84px); line-height: 1.02; max-width: 15ch; }
+.c main h2 { font-size: clamp(34px, 4.4vw, 58px); line-height: 1.06; }
+.c h1 em, .c main h2 em, .c .c-statement-text em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1em; color: var(--gold-dk); letter-spacing: -0.01em; }
+.c main h3 { font-weight: var(--weight-medium); }
+.c .btn-primary .btn-arrow { background: transparent; color: var(--bg); width: 22px; }
+.c .btn-primary { padding-right: 18px; }
+.c .btn-ghost { border-color: var(--line); background: var(--bg); }
+.c .btn-ghost:hover { border-color: var(--ink); }
+
+/* bands alternate sand and a deeper sand, separated by hairlines */
+.c-band { background: var(--sand-2); border-block: 1px solid var(--line); }
+.c-narrow { max-width: calc(980px + 2 * var(--pad)); }
+.c-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 40px; margin-bottom: 40px; }
+.c-head-aside { max-width: 26rem; font-size: var(--text-small); color: var(--brown-2-text); }
+
+.c .mq { background: var(--sand); }
+
+/* statement */
+.c-statement { padding-block: clamp(72px, 9vw, 128px); }
+.c-statement .container { gap: 24px; }
+.c-statement-text { font-family: var(--font-serif); font-size: clamp(30px, 3.8vw, 50px); line-height: 1.22; color: var(--ink); max-width: 30ch; text-wrap: balance; }
+
+/* offer list */
+.c .sw { --sw-bg: var(--bg); --sw-active: var(--sand-3); }
+.c .helper { margin-top: 40px; }
+
+/* why */
+.c-why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; }
+.c-why li { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 1px solid var(--line); }
+.c-why-n { font-family: var(--font-serif); font-size: 15px; color: var(--gold-dk); }
+.c-why h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); }
+@media (max-width: 600px) { .c-why { grid-template-columns: minmax(0, 1fr); } }
+
+.c .placeholder { background: var(--sand-2); }
+.c .placeholder-portrait { border-radius: 999px 999px var(--radius-card) var(--radius-card); }
+
+/* FAQ */
+.c #faq { background: var(--sand); }
+
+/* contact becomes Cris's dark closing band */
+.c-close { position: relative; overflow: hidden; background: var(--ink); color: var(--on-dark-muted); }
+.c-close .close-circle { --close-ring: rgba(199, 154, 106, 0.28); top: 40%; }
+.c-close .contact { position: relative; z-index: 1; padding-block: clamp(80px, 10vw, 136px); }
+.c-close .band { background: transparent; padding: 0; text-align: center; justify-items: center; }
+.c-close .contact-intro { justify-items: center; margin-inline: auto; }
+.c-close .contact-intro h2 { color: var(--bg); }
+.c-close .contact-intro h2 em { color: var(--gold); }
+.c-close .contact-intro .lead { color: var(--on-dark-muted); }
+.c-close .contact-actions { justify-content: center; }
+.c-close .contact-actions a:not(.btn) { color: var(--bg); }
+.c-close .btn-primary { background: var(--bg); color: var(--ink); }
+.c-close .btn-primary .btn-arrow { color: var(--ink); }
+.c-close .btn-primary:hover { background: var(--white); color: var(--ink); }
+.c-close .contact-panel { width: 100%; justify-items: center; }
+.c-close .contact-panel .card { text-align: left; width: 100%; color: var(--brown); }
+.c-close .contact-panel .card a { color: var(--orange-dk); }
+.c-close .contact-panel .card .btn-primary { background: var(--ink); color: var(--bg); }
+.c-close .contact-panel .card .btn-primary .btn-arrow { color: var(--bg); }
+
+.c .site-footer { background: var(--sand); color: var(--brown); border-top: 1px solid var(--line); }
+.c .footer-title { color: var(--gold-dk); }
+.c .footer-col a { color: var(--ink); }
+.c .footer-col a:hover { color: var(--orange-dk); }
+.c .footer-bottom { border-color: var(--line); }
+.c .newsletter-row .control { background: var(--bg); color: var(--ink); border-color: var(--line); }
+.c .newsletter-row .control::placeholder { color: var(--brown-2-text); }
+.c .newsletter-row .btn-light { background: var(--ink); color: var(--bg); }
+.c .newsletter-form .check, .c .newsletter-form .check a { color: var(--brown); }

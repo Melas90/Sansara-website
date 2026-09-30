@@ -1,0 +1,73 @@
+/*
+ * Direction B: SUN, second iteration. Its own identity stays: serif headlines, the sun in ember, the
+ * statement on a full ember band, the offers in arch-topped panels. From Cris it takes the eyebrows,
+ * the orb with rings and floating cards, the reading highlight, the marquee, the "+" FAQ, the sliding
+ * step cards and the closing band with one fine circle, here in warm ember instead of espresso.
+ */
+.s { --eyebrow: var(--orange-dk); }
+.s h1, .s main h2, .s main h3, .s main .h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; }
+.s h1 em, .s main h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 1em; color: var(--orange-dk); }
+.s h1 { font-size: clamp(50px, 7.4vw, 104px); line-height: 0.96; max-width: 11ch; }
+.s main h2 { font-size: clamp(38px, 5vw, 68px); line-height: 1.02; }
+.s main h3 { line-height: 1.15; }
+.s .btn { font-weight: var(--weight-medium); }
+
+/* hero: the sun as an ember orb */
+.s-hero { --orb: var(--grad-orb-ember); --orb-shadow: var(--glow-ember); --ring: rgba(182, 90, 46, 0.25); --glow-a: var(--peach); }
+.s-hero .orb { inset: 20%; }
+.s-hero .hero-line { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--orange-dk); font-size: var(--text-h3); }
+.s-hero .float-card .k { color: var(--orange-dk); }
+
+/* statement on ember, then the marquee on peach */
+.s-statement { background: var(--orange); color: var(--ink); padding-block: clamp(72px, 10vw, 144px); }
+.s-statement p { font-family: var(--font-serif); font-weight: 400; font-size: clamp(34px, 5.2vw, 72px); line-height: 1.05; letter-spacing: -0.02em; max-width: 20ch; text-wrap: balance; }
+.s-statement p em { font-style: italic; }
+html.motion .s-statement [data-read] .rw { opacity: 0.3; }
+html.motion .s-statement [data-read] .rw.is-read { opacity: 1; }
+.s .mq { background: var(--peach); border: 0; --mq: var(--ink); }
+.s .mq span::after { background: var(--orange-dk); }
+
+.s-head { display: grid; gap: 14px; max-width: 44rem; margin-bottom: 48px; }
+.s-narrow { max-width: calc(980px + 2 * var(--pad)); }
+
+/* arches */
+.s-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.s-arch { border-radius: 999px 999px 28px 28px; padding: clamp(60px, 6vw, 92px) clamp(22px, 2.4vw, 32px) 36px; display: grid; gap: 16px; align-content: start; justify-items: center; text-align: center; transition: transform calc(var(--base) / var(--speed)) var(--ease); }
+.s-arch:nth-child(1) { background: var(--peach); }
+.s-arch:nth-child(2) { background: var(--white); border: 1px solid var(--line); }
+.s-arch:nth-child(3) { background: var(--card); }
+html.motion .s-arch:hover { transform: translateY(-8px); }
+.s-arch .offer-name { color: var(--orange-dk); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; font-weight: var(--weight-label); }
+.s-arch h3 { font-size: clamp(26px, 2.8vw, 36px); }
+.s-arch .ticks { text-align: left; justify-self: stretch; margin-top: 8px; }
+@media (max-width: 900px) { .s-offers { grid-template-columns: minmax(0, 1fr); max-width: 30rem; } }
+
+/* stacked steps: peach cards, the last in ember */
+.s .stack { --stack-bg: var(--bg); --stack-num: var(--orange); --stack-last-bg: var(--orange); --stack-last-fg: var(--ink); --stack-last-head: var(--ink); }
+.s .stack > li:last-child .tag { background: var(--ink); color: var(--bg); }
+
+/* why: ember dots */
+.s-why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; }
+.s-why li { display: grid; gap: 8px; padding-left: 28px; position: relative; }
+.s-why li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 14px; height: 14px; border-radius: 50%; background: var(--orange); }
+.s-why h3 { font-size: var(--text-h3); }
+@media (max-width: 600px) { .s-why { grid-template-columns: minmax(0, 1fr); } }
+
+.s .placeholder-portrait { border-radius: 999px 999px 24px 24px; }
+
+/* proof: one quote on peach */
+.s-proof { display: grid; gap: 20px; justify-items: center; text-align: center; background: var(--peach); border-radius: var(--radius-band); padding: clamp(48px, 7vw, 96px) clamp(24px, 5vw, 72px); }
+.s-proof .tq { background: var(--bg); text-align: left; max-width: 44rem; width: 100%; }
+
+.s .fx-item summary::after { color: var(--orange-dk); }
+
+/* closing band: warm gradient with the fine circle, the form inside */
+.s-close { position: relative; overflow: hidden; background: var(--grad-warm); }
+.s-close .close-circle { --close-ring: rgba(182, 90, 46, 0.3); top: 42%; }
+.s-close .contact { position: relative; z-index: 1; padding-block: clamp(80px, 10vw, 136px); }
+.s-close .band { background: transparent; padding: 0; text-align: center; justify-items: center; }
+.s-close .contact-intro { justify-items: center; margin-inline: auto; }
+.s-close .contact-intro h2 em { color: var(--orange-dk); }
+.s-close .contact-actions { justify-content: center; }
+.s-close .contact-panel { width: 100%; justify-items: center; }
+.s-close .contact-panel .card { text-align: left; width: 100%; }

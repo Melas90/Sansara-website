@@ -1,0 +1,78 @@
+/*
+ * Motion. The decided baseline only (brief §6.1): section reveal with stagger, "rise through a mask",
+ * the rotating hero line, the button arrow, the checkmark on form success.
+ *
+ * Every animated rule is gated on `html.motion`, a class motion.js adds only when JavaScript runs,
+ * prefers-reduced-motion is off and the lab has not forced reduced motion. Without it, everything
+ * is simply visible: no text is ever hidden by CSS alone.
+ *
+ * --speed is a multiplier the lab sets (0.5, 1, 1.5). Durations come from tokens; nothing raw here.
+ */
+:root { --speed: 1; }
+
+/* ---------- section reveal ---------- */
+html.motion .reveal { opacity: 0; transform: translateY(var(--rise)); }
+html.motion .reveal.is-in {
+  opacity: 1; transform: none;
+  transition:
+    opacity calc(var(--base) / var(--speed)) var(--ease),
+    transform calc(var(--slow) / var(--speed)) var(--ease);
+  transition-delay: calc(var(--i, 0) * var(--stagger) / var(--speed));
+}
+/* .stagger: children get --i from motion.js, so they arrive one after another */
+
+/* ---------- rise through a mask ---------- */
+.mask { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.mask > .mask-in { display: block; }
+html.motion .mask > .mask-in { transform: translateY(115%); }
+html.motion .mask.is-in > .mask-in, html.motion .is-in .mask > .mask-in {
+  transform: none;
+  transition: transform calc(var(--slow) / var(--speed)) var(--ease);
+  transition-delay: calc(var(--i, 0) * var(--stagger) / var(--speed));
+}
+/* Images rising through their frame */
+.mask-img { overflow: hidden; border-radius: inherit; }
+html.motion .mask-img > img { transform: translateY(12%) scale(1.04); opacity: 0; }
+html.motion .mask-img.is-in > img, html.motion .is-in .mask-img > img {
+  transform: none; opacity: 1;
+  transition: transform calc(var(--slow) / var(--speed)) var(--ease), opacity calc(var(--base) / var(--speed)) var(--ease);
+}
+
+/* ---------- rotating line ---------- */
+.rotator { display: inline-grid; overflow: hidden; vertical-align: bottom; line-height: 1.25; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.rotator > span { grid-area: 1 / 1; white-space: nowrap; }
+html:not(.js) .rotator > span:not(:first-child) { display: none; }
+html.js .rotator > span { visibility: hidden; }
+html.js .rotator > span.is-current { visibility: visible; }
+html.motion .rotator > span { visibility: visible; opacity: 0; transform: translateY(100%); }
+html.motion .rotator > span.is-current {
+  opacity: 1; transform: none;
+  transition: transform calc(var(--base) / var(--speed)) var(--ease), opacity calc(var(--fast) / var(--speed)) linear;
+}
+html.motion .rotator > span.is-out {
+  opacity: 0; transform: translateY(-100%);
+  transition: transform calc(var(--base) / var(--speed)) var(--ease), opacity calc(var(--fast) / var(--speed)) linear;
+}
+
+/* ---------- button arrow and hover colour ---------- */
+html.motion .btn-arrow svg, html.motion .link svg { transition: transform calc(var(--fast) / var(--speed)) var(--ease); }
+html.motion .btn:hover .btn-arrow svg, html.motion .link:hover svg { transform: translateX(3px); }
+html.motion .btn, html.motion .control, html.motion .nav-list a {
+  transition:
+    background-color calc(var(--fast) / var(--speed)) var(--ease),
+    color calc(var(--fast) / var(--speed)) var(--ease),
+    border-color calc(var(--fast) / var(--speed)) var(--ease);
+}
+
+/* ---------- contact panel rise ---------- */
+html.motion .contact-panel.is-opening > * { opacity: 0; transform: translateY(var(--rise)); }
+html.motion .contact-panel.is-open > * {
+  opacity: 1; transform: none;
+  transition: opacity calc(var(--base) / var(--speed)) var(--ease), transform calc(var(--slow) / var(--speed)) var(--ease);
+}
+
+/* ---------- checkmark on success ---------- */
+.check-draw circle, .check-draw path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+html.motion .check-draw circle { stroke-dasharray: 160; stroke-dashoffset: 160; animation: draw calc(var(--slow) / var(--speed)) var(--ease) forwards; }
+html.motion .check-draw path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw calc(var(--base) / var(--speed)) var(--ease) forwards; animation-delay: calc(var(--base) / var(--speed)); }
+@keyframes draw { to { stroke-dashoffset: 0; } }

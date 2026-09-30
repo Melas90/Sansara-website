@@ -1,0 +1,118 @@
+/*
+ * Lab: four replacements for the orb in the hero, on Cris's sand ground.
+ * 1 kinetic type, 2 dot field (canvas), 3 the loop (SVG line), 4 offer deck. Script: heroes.js.
+ * Resting state is complete without JavaScript or motion: first word shown, dots still, line drawn, cards fanned.
+ */
+.hv-intro { padding-block: clamp(40px, 6vw, 80px) 24px; }
+.hv-intro .container { display: grid; gap: 18px; }
+.hv-intro .lead { max-width: 40rem; }
+.hv-toc { display: flex; flex-wrap: wrap; gap: 8px 12px; list-style: none; padding: 0; margin: 8px 0 0; }
+.hv-toc a { display: inline-block; padding: 8px 16px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--bg); color: var(--ink); text-decoration: none; font-size: var(--text-small); }
+.hv-toc a:hover { border-color: var(--ink); }
+
+.hv-tag { max-width: 1200px; margin: 56px auto 0; padding: 14px var(--pad); display: flex; gap: 14px; align-items: baseline; font-size: var(--text-small); color: var(--brown-2-text); border-top: 1px dashed var(--gold); scroll-margin-top: 24px; }
+.hv-tag span { flex: none; font-family: var(--font-serif); font-size: 28px; line-height: 1; color: var(--gold-dk); }
+.hv-end { margin-bottom: 72px; border-top-style: solid; }
+
+.hv { position: relative; overflow: hidden; padding-block: clamp(40px, 6vw, 88px); }
+.hv-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px 56px; align-items: center; }
+.c main .hv-h { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; font-size: clamp(40px, 5.2vw, 72px); line-height: 1.02; max-width: 15ch; color: var(--ink); }
+.hv-h em { font-style: italic; color: var(--gold-dk); }
+.hv-art { position: relative; width: 100%; }
+@media (max-width: 900px) { .hv-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* 1. kinetic type */
+.hv-type-inner { display: grid; gap: 28px; }
+.c main .hv-type-h { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.03em; font-size: clamp(48px, 8.4vw, 132px); line-height: 0.98; color: var(--ink); max-width: 15ch; }
+.kt { display: inline-grid; position: relative; font-style: italic; color: var(--gold-dk); padding-bottom: 0.08em; }
+.kt-word { grid-area: 1 / 1; }
+.kt-word:not(.is-on) { visibility: hidden; }
+.kt::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--gold); transform-origin: left; }
+.kt-w { display: inline-block; white-space: nowrap; }
+.kt-ch { display: inline-block; }
+html.motion .kt-word.is-on .kt-ch { animation: kt-in var(--base) var(--ease) both; animation-delay: calc(var(--c) * var(--fast) / 9); }
+html.motion .kt-word.is-out { visibility: visible; }
+html.motion .kt-word.is-out .kt-ch { animation: kt-out calc(var(--base) * 0.7) var(--ease) both; animation-delay: calc(var(--c) * var(--fast) / 16); }
+html.motion .kt.is-turning::after { animation: kt-line calc(var(--slow) * 4.6) var(--ease) both; }
+@keyframes kt-in { from { opacity: 0; transform: translateY(0.5em) rotate(4deg); } to { opacity: 1; transform: none; } }
+@keyframes kt-out { to { opacity: 0; transform: translateY(-0.4em); } }
+@keyframes kt-line { 0% { transform: scaleX(0); } 20%, 100% { transform: scaleX(1); } }
+.hv-type-foot { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+.hv-type-foot .lead { max-width: 30rem; }
+
+/* 2. dot field */
+.hv-field { aspect-ratio: 1; max-width: 560px; justify-self: center; }
+.hv-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: pan-y; }
+
+/* 3. the loop */
+.hv-loop { aspect-ratio: 3 / 2; }
+.hv-loop svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.loop-ghost { fill: none; stroke: var(--sand-2); stroke-width: 18; stroke-linecap: round; }
+.loop-line { fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.loop-spark { fill: var(--orange); }
+.loop-spark-glow { fill: var(--orange); opacity: 0.25; }
+html.motion .hv-loop:not(.is-drawn) .loop-line { stroke-dashoffset: 1; }
+html.motion .hv-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(var(--slow) * 3) var(--ease); }
+.loop-pin { position: absolute; display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--font-serif); font-size: clamp(16px, 1.7vw, 22px); white-space: nowrap; }
+.loop-pin i { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--sand); border: 1.5px solid var(--gold-dk); transition: transform var(--fast) var(--ease), background-color var(--fast) var(--ease); }
+.loop-pin span { padding: 6px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-pill); box-shadow: var(--shadow-float); transition: transform var(--fast) var(--ease); }
+.loop-pin:hover, .loop-pin:focus-visible { color: var(--ink); }
+.loop-pin:hover i, .loop-pin:focus-visible i, .loop-pin.is-near i { transform: scale(1.5); background: var(--orange); border-color: var(--orange); }
+.loop-pin:hover span, .loop-pin:focus-visible span { transform: translateY(-3px); }
+/* each dot sits exactly on the line; the label hangs off it */
+.loop-pin:nth-of-type(1) { left: 23.3%; top: 27.5%; flex-direction: row-reverse; transform: translate(calc(-100% + 7px), -50%); }
+.loop-pin:nth-of-type(2) { left: 50%; top: 50%; flex-direction: column-reverse; transform: translate(-50%, calc(-100% + 7px)); }
+.loop-pin:nth-of-type(3) { left: 76.7%; top: 72.5%; flex-direction: column; transform: translate(-50%, -7px); }
+@media (max-width: 600px) { .loop-pin span { padding: 4px 10px; } .loop-pin { gap: 6px; } .loop-pin:nth-of-type(1) { flex-direction: column-reverse; transform: translate(-30%, calc(-100% + 7px)); } .loop-pin:nth-of-type(3) { transform: translate(-70%, -7px); } }
+
+/* 4. offer deck */
+.hv-deck { aspect-ratio: 1 / 1.05; max-width: 500px; justify-self: center; }
+.deck-card { position: absolute; left: 4%; right: 22%; top: 8%; display: grid; gap: 10px; align-content: start; padding: 28px 28px 32px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-card); box-shadow: var(--shadow-float); cursor: pointer;
+  --p: var(--i); --r: calc(var(--p) * 6deg); --x: calc(var(--p) * 13%); --y: calc(var(--p) * 1.5%);
+  transform: translate(var(--x), var(--y)) rotate(var(--r)); transform-origin: 50% 120%; z-index: calc(3 - var(--p));
+  transition: transform var(--base) var(--ease); }
+.deck-card:nth-child(2) { background: var(--sand-3); }
+.deck-card:nth-child(3) { background: var(--ink); color: var(--on-dark-muted); }
+.deck-card:nth-child(3) h3, .deck-card:nth-child(3) .deck-n { color: var(--bg); }
+.deck-card:nth-child(3) .link { color: var(--orange); }
+.deck-card:nth-child(3) .deck-for { color: var(--gold); }
+.deck-n { font-family: var(--font-serif); font-size: 44px; line-height: 1; color: var(--gold-dk); }
+.deck-for { font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); }
+.deck-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3vw, 38px); line-height: 1.05; color: var(--ink); }
+.deck-promise { font-family: var(--font-serif); font-style: italic; font-size: 18px; line-height: 1.35; }
+.deck-card .link { margin-top: 8px; }
+html.motion .hv-deck:not(:hover) .deck-card { animation: deck-breathe calc(var(--slow) * 8) ease-in-out infinite; }
+@keyframes deck-breathe { 50% { transform: translate(calc(var(--x) * 1.2), calc(var(--y) - 1.5%)) rotate(calc(var(--r) * 1.25)); } }
+.hv-deck:hover .deck-card { transform: translate(calc(var(--x) * 1.45), var(--y)) rotate(calc(var(--r) * 1.4)); }
+.hv-deck .deck-card:hover { transform: translate(calc(var(--x) * 1.45), calc(var(--y) - 4%)) rotate(calc(var(--r) * 1.4)); }
+@media (max-width: 600px) { .deck-card { left: 2%; right: 16%; padding: 22px; } .hv-deck { aspect-ratio: 1 / 1.02; } }
+
+/* deck, round 2: an icon per offer and what each one includes */
+.deck-card { gap: 8px; padding: 24px 26px 26px; }
+.deck-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.deck-n { font-size: 36px; }
+.deck-ico { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--sand-3); color: var(--orange-dk); }
+.deck-ico svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.deck-card:nth-child(3) .deck-ico { background: var(--bg); }
+.deck-card:nth-child(4) .deck-ico { background: var(--ink-2); color: var(--orange); }
+.deck-promise { font-size: 17px; }
+.deck-inc { list-style: none; padding: 12px 0 0; margin: 4px 0 0; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: var(--text-small); }
+.deck-inc li { display: flex; gap: 10px; align-items: baseline; }
+.deck-inc li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); transform: translateY(-2px); }
+/* the sprite svg is the first child, so the cards are children 2 to 4 */
+.deck-card:nth-child(2) { background: var(--bg); }
+.deck-card:nth-child(3) { background: var(--sand-3); color: var(--brown); }
+.deck-card:nth-child(3) h3, .deck-card:nth-child(3) .deck-n { color: var(--ink); }
+.deck-card:nth-child(3) .link { color: var(--orange-dk); }
+.deck-card:nth-child(3) .deck-for { color: var(--brown-2-text); }
+.deck-card:nth-child(4) { background: var(--ink); color: var(--on-dark-muted); }
+.deck-card:nth-child(4) h3, .deck-card:nth-child(4) .deck-n { color: var(--bg); }
+.deck-card:nth-child(4) .link { color: var(--orange); }
+.deck-card:nth-child(4) .deck-for { color: var(--gold); }
+.deck-card:nth-child(4) .deck-inc { border-color: var(--line-on-dark); }
+.hv-deck { aspect-ratio: 1 / 1.2; }
+
+/* in the real hero: a little smaller, and under the words on a phone */
+.hx .hv-deck { aspect-ratio: 1 / 1.2; max-width: 480px; justify-self: end; }
+@media (max-width: 900px) { .hx .hv-deck { order: 0; justify-self: center; } }
+@media (max-width: 600px) { .hv-deck, .hx .hv-deck { aspect-ratio: 1 / 1.12; } .deck-inc { display: none; } }

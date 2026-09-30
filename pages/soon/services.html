@@ -1,0 +1,27 @@
+<!-- @route /services/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <!-- Services is not built yet (2026-09-30): the "coming soon" message, with the lead pop-up as the way in. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+    <div class="container">
+      <div class="thanks">
+        <p class="eyebrow">{{ soon.eyebrow }}</p>
+        <h1>{{ soon.title }}</h1>
+        <p class="lead">{{ soon.text }}</p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="#lead" data-lead-open data-source="coming soon">{{ soon.ask }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <a class="btn btn-ghost" href="/">{{ soon.home }}</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

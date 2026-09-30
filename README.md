@@ -1,142 +1,45 @@
 # Sansara Media — website
 
-The agency's home site. Static Astro site, Tailwind for styling, content in
-Markdown files, three languages (English, Spanish, German). Deployed on Netlify.
+The studio's website. Plain HTML, CSS and vanilla JavaScript, assembled by one small Node script. Deployed on Netlify from GitHub.
 
-- What we are building and in which order: [BRIEF.md](BRIEF.md)
-- How it should look, and why: [DESIGN.md](DESIGN.md)
-- Why things are the way they are: [DECISIONS.md](DECISIONS.md)
-
-## Where it lives
-
-This repo sits in `C:Usersdiezgsansarawebsite`, next to the CRM and the shared
-`brand/` folder. Open Claude Code in `C:Usersdiezgsansara`.
-
-| What                               | Branch    | Link                                                  |
-| ---------------------------------- | --------- | ----------------------------------------------------- |
-| Staging (newest work, for testing) | `develop` | https://develop--bespoke-frangollo-3044fc.netlify.app |
-| Production                         | `main`    | https://bespoke-frangollo-3044fc.netlify.app          |
-| Code                               |           | https://github.com/Melas90/Sansara-website            |
-
-Everything is pushed to `develop` first and tested on staging. `main` only changes
-through a release pull request from `develop`. Pull requests get their own preview link.
+- What we are building and how we work: [docs/CLAUDE_CODE_BRIEF.md](docs/CLAUDE_CODE_BRIEF.md)
+- Design decisions per section: [docs/DESIGN_SPEC.md](docs/DESIGN_SPEC.md) · motion: [docs/MOTION_SPEC.md](docs/MOTION_SPEC.md)
+- Why things are the way they are: [decisions.md](decisions.md)
 
 ## Run it
 
-Needs Node 22.12 or newer.
-
-```bash
-npm install
-npm run dev          # http://localhost:4321
-npm run verify       # everything CI runs: check, lint, format, build
-npm run check:launch # fails while any placeholder is left
-```
-
-## Before launch
-
-These are placeholders today. `npm run check:launch` lists whatever is left.
-
-| What                  | Where                                   | Now                                |
-| --------------------- | --------------------------------------- | ---------------------------------- |
-| Production domain     | `src/config/site.ts` → `url`            | `PLACEHOLDER.sansara-media.com`    |
-| Cal.com booking link  | `src/config/site.ts` → `bookingUrl`     | `cal.com/PLACEHOLDER/...`          |
-| WhatsApp number       | `src/config/site.ts` → `whatsappNumber` | `PLACEHOLDER`                      |
-| Meta Pixel ID         | `src/config/site.ts` → `metaPixelId`    | empty (pixel never loads)          |
-| Instagram, LinkedIn   | `src/config/site.ts` → `socials`        | empty (hidden)                     |
-| Case-study figures    | `src/content/cases/`                    | `[PENDIENTE]` once the case exists |
-| Legal company details | `src/i18n/legal/*.json`                 | `[PENDIENTE]` name, NIF, address   |
-| Testimonial consent   | `src/content/testimonials/`             | Vero & Rafa: `consent: pending`    |
-| Logo as SVG           | `src/assets/`                           | PNG taken from the live page       |
-| Founders photo        | `src/assets/`                           | none yet                           |
-
-Also before launch: connect the repo in Netlify (production branch `main`, branch
-deploys for `develop`, deploy previews on), then set the custom domain.
-
-## How to…
-
-### Change a piece of text
-
-Interface text (nav, buttons, footer, cookie notice) is in `src/i18n/en.json`,
-`es.json` and `de.json`. Same keys in all three. Page content is in
-`src/content/`. You never need to open a `.astro` file to change copy.
-
-### Add a service, product, case, FAQ entry or testimonial
-
-Add one Markdown file per language:
+Needs Node 20 or newer. There is nothing to install.
 
 ```
-src/content/services/en/landing-page.md
-src/content/services/es/landing-page.md
-src/content/services/de/landing-page.md
+npm run dev      # http://localhost:4321/   (the design lab is at /lab/)
+npm run build    # writes dist/
+npm run verify   # build + checks; run before every commit
 ```
 
-The frontmatter fields are defined, with comments, in `src/content.config.ts`. A
-missing or mistyped field fails the build with a message naming the file. Index
-pages, nav and sitemap pick the new entry up by themselves. Set `draft: true` to
-keep a file out of the site.
+The dev server rebuilds pages on every reload when a file in `pages/` or `brand/` changed. If you edit something in `scripts/`, restart it.
 
-### Switch a feature on
-
-`src/config/features.ts`. Set `products: true` when the first real product file
-exists. A flag that is off renders nothing and stays out of nav and sitemap.
-
-### Change the default language
-
-`src/config/site.ts`, `defaultLocale`. The default language is served at `/`, the
-others under `/es/`, `/de/`. One line; nothing else to edit.
-
-### Add a language
-
-Add the code to `locales` in `src/config/site.ts` (plus its name and Open Graph
-code just below), copy `src/i18n/en.json` to the new code, register it in
-`src/i18n/utils.ts`, and add the content files.
-
-### Show a new page in the navigation
-
-`src/config/nav.ts`. Set the route's `live: true` once the page exists. Labels
-come from `nav.<key>` in the i18n files.
-
-### Change a colour, font size or spacing
-
-`src/styles/tokens.css`, and only there. Components cannot use raw values:
-Tailwind's default palette, radii and shadows are switched off.
-
-### Add a page section
-
-One block = one folder in `src/components/blocks/` = one concern. Start the file
-with the README comment (purpose, props, content source), take copy from a
-collection or i18n, use tokens only. Re-read the "tells" list in BRIEF §1 before
-opening the pull request.
-
-## Structure
+## Where things live
 
 ```
-src/
-  components/ui/       Container, Section, Heading, Button, TextLink, Actions
-  components/blocks/   page sections, one folder each (from Phase 1)
-  components/layout/   Header, Footer, Nav, LanguageSwitch, CookieConsent, SkipLink
-  content/             services/ products/ cases/ faq/ testimonials/
-  content.config.ts    the schemas for the above
-  layouts/             BaseLayout
-  pages/[...locale]/   one file per route, built once per language
-  i18n/                en.json, es.json, de.json, utils.ts
-  config/              site.ts, features.ts, nav.ts
-  scripts/             consent.ts (analytics behind consent), menu.ts
-  styles/              tokens.css, global.css
-docs/live-page-copy.txt   text of the live landing page, the source for tone
+brand/            tokens.css (the only place with colours and durations), fonts, design-system.md, voice.md, positioning.md
+pages/
+  _assets/        site.css, motion.css, motion.js, images/, icons/, lab/ (lab-only CSS and JS)
+  _partials/      head.html, header.html, footer.html, contact.html, contact-form.html, copy.md (shared words)
+  _lab/           design-lab.html: options under discussion, side by side
+  home/           copy.md, home.html (Step 5)
+  system/ consulting/ services/ booking/ legal/   (Step 6)
+  thanks/         the three confirmation pages
+scripts/          build.mjs, check.mjs, serve.mjs, site.config.mjs
+docs/             the brief, DESIGN_SPEC.md, MOTION_SPEC.md, DESIGN_IDEAS.md
+references/       live-page-copy.txt and anything the owner adds
 ```
 
-## Git workflow
+## How to change a piece of text
 
-`main` is production, `develop` is staging, work happens on `feature/<name>`
-branched from `develop` and squash-merged back by pull request. Conventional
-Commits. Every pull request updates `CHANGELOG.md` and carries screenshots at 390
-and 1280 plus Lighthouse scores. Releases are a pull request from `develop` to
-`main`, then a tag. Full detail in BRIEF §6.
+Every word is in a `copy.md`: shared words (navigation, footer, contact section) in `pages/_partials/copy.md`, page words in `pages/<page>/copy.md`. Save, and `npm run dev` picks it up on the next reload. You never need to open an HTML file to change copy.
 
-## Analytics
+To mark something as missing, write `key: PENDING: what is needed`. It shows as a small "Pending" tag on the page and in the `npm run verify` list.
 
-Nothing is tracked before the visitor accepts the cookie notice. After that:
-`PageView` on load, `Lead` on any element with `data-track="Lead"` (every call
-and WhatsApp button), and `Schedule` when a booking completes (wired in
-`feature/empezar`). Event names match Meta's Conversions API.
+## Branches
+
+`main` is production. `v2` is the rebuild in progress (no shared history with the old Astro site, which stays on `develop`). Features are built one per branch from `v2` and merged back by pull request. Netlify: production deploys from `main`; enable a branch deploy for `v2` in Site configuration → Build & deploy → Branches, to get a staging link.

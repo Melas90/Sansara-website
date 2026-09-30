@@ -1,0 +1,559 @@
+<!-- @route /lab/ -->
+<!-- @copy home -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/lab/lab.css">
+  <script src="/assets/lab/lab.js" defer></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="lab">
+
+<div class="lab-bar" id="lab-bar" role="toolbar" aria-label="Lab controls">
+  <a class="lab-bar-title" href="#toc">{{ lab.title }}</a>
+  <button class="lab-btn" type="button" data-replay>{{ lab.replay }}</button>
+  <fieldset class="lab-seg">
+    <legend class="sr-only">{{ lab.speed }}</legend>
+    <label><input type="radio" name="speed" value="0.5"><span>0.5×</span></label>
+    <label><input type="radio" name="speed" value="1" checked><span>1×</span></label>
+    <label><input type="radio" name="speed" value="1.5"><span>1.5×</span></label>
+  </fieldset>
+  <label class="lab-check"><input type="checkbox" data-reduce><span>{{ lab.reduce }}</span></label>
+  <button class="lab-btn" type="button" data-mobile aria-pressed="false">{{ lab.mobile }}</button>
+</div>
+<div class="lab-frame" hidden><iframe title="Phone width preview" src="/lab/?frame=1" width="375"></iframe></div>
+
+<!-- @include _partials/header.html -->
+
+<main id="main">
+
+  <section class="section lab-intro" id="toc">
+    <div class="container">
+      <h1>{{ lab.title }}</h1>
+      <p class="lead measure">{{ lab.intro }}</p>
+      <ol class="lab-toc">
+        <li><a href="/lab/homes/">H. Five directions for the home page</a> <span class="chip chip-open">open, 2026-09-27</span></li>
+        <li><a href="#f1">F1 Foundation: type, colour, buttons, fields</a> <span class="chip chip-decided">decided</span></li>
+        <li><a href="#m1">M1 Rise through a mask</a> <span class="chip chip-decided">decided</span></li>
+        <li><a href="#m2">M2 Section reveal with stagger</a> <span class="chip chip-decided">decided</span></li>
+        <li><a href="#m3">M3 Hero with the rotating line</a> <span class="chip chip-decided">motion decided</span> <span class="chip chip-open">copy open</span></li>
+        <li><a href="#r1-1">R1.1 What We Do: how the three offers are shown</a> <span class="chip chip-chosen">A chosen</span></li>
+        <li><a href="#r1-2">R1.2 The helper line for undecided visitors</a> <span class="chip chip-chosen">A chosen</span></li>
+        <li><a href="#r1-3">R1.3 Section layouts: centred or editorial</a> <span class="chip chip-chosen">C chosen</span></li>
+        <li><a href="#r1-4">R1.4 Icons or no icons</a> <span class="chip chip-chosen">C chosen</span></li>
+        <li><a href="#r1-5">R1.5 Hero visual</a> <span class="chip chip-chosen">A chosen</span></li>
+        <li><a href="#r1-6">R1.6 Founders layout</a> <span class="chip chip-open">open</span></li>
+        <li><a href="#r1-7">R1.7 Contact band</a> <span class="chip chip-chosen">A chosen</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================ F1 -->
+  <section class="lab-block" id="f1" data-status="decided">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">F1</p>
+        <h2>Foundation: type, colour, buttons, fields</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Every page</dd>
+          <dt>Production route</dt><dd>Custom CSS (tokens + classes); in Elementor: global colours and fonts, plus a class per component</dd>
+          <dt>Status</dt><dd><span class="chip chip-decided">Decided in the brief, §3</span></dd>
+        </dl>
+      </header>
+      <div class="lab-stage">
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">Type: Hanken Grotesk 700 for headlines, Newsreader italic for the emotional half</p>
+          <div class="stack">
+            <p class="h1">Marketing that feels <em>easy</em>.</p>
+            <p class="h2">What we <em>do</em></p>
+            <p class="h3">A complete system, built for you</p>
+            <p class="lead measure">Lead, 19px. More clients, more visibility, less effort. We take care of your online presence so you don’t have to.</p>
+            <p class="measure">Body, 16px on 1.6. You bring a problem: “I need clients to book.” We own the whole solution, end to end, until it runs. Then we hand it over. <a href="#f1">An inline link</a> looks like this.</p>
+            <p class="label">Label, 12px, wide tracking</p>
+            <p class="quote measure">“Quotes and card titles in Newsreader italic, like this.”</p>
+          </div>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">Colour</p>
+          <ul class="lab-swatches">
+            <li><i style="background: var(--bg)"></i>bg, cream</li>
+            <li><i style="background: var(--card)"></i>card</li>
+            <li><i style="background: var(--peach)"></i>peach</li>
+            <li><i style="background: var(--white)"></i>white</li>
+            <li><i style="background: var(--ink)"></i>ink</li>
+            <li><i style="background: var(--ink-2)"></i>ink-2</li>
+            <li><i style="background: var(--brown)"></i>brown, body</li>
+            <li><i style="background: var(--brown-2)"></i>brown-2, labels</li>
+            <li><i style="background: var(--orange)"></i>orange, the accent</li>
+            <li><i style="background: var(--orange-dk)"></i>orange-dk, accent text</li>
+            <li><i style="background: var(--grad-warm)"></i>warm wash</li>
+            <li><i style="background: var(--grad-dark)"></i>dark</li>
+          </ul>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">Buttons and links (hover them)</p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="#f1">Book a free call<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#f1">See what we do</a>
+            <a class="link" href="#f1">Explore The System<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+          <div class="surface-dark lab-dark-strip">
+            <a class="btn btn-light" href="#f1">On a dark band<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          </div>
+          <p class="small muted">Missing content looks like this on every page until it arrives: <span class="pend">Pending</span></p>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">Form fields</p>
+          <div class="form-grid">
+            <div class="field"><label for="f1-name">Name</label><input class="control" id="f1-name" type="text"><p class="field-error"></p></div>
+            <div class="field is-invalid"><label for="f1-email">Email</label><input class="control" id="f1-email" type="email" value="hello@" aria-invalid="true"><p class="field-error">Please enter an email address we can reply to.</p></div>
+            <div class="field span-2"><label for="f1-topic">What can we help with?</label><div class="select-wrap"><select class="control" id="f1-topic"><option>Choose one</option><option>The System</option></select></div><p class="field-error"></p></div>
+          </div>
+        </div>
+      </div>
+      <p class="lab-note"><!-- @allow-raw: prose, not a style -->One thing to flag: brown-2 (<code>#8C6A47</code>) is the brief’s colour for secondary text and labels, but on the card background it reads at 4.2:1, below the 4.5:1 floor the brief sets for body text. It is fine for the 12px bold labels only if we accept that. Decided 2026-09-27: brown-2 stays for the labels, secondary text under 18px uses the darker <code>--brown-2-text</code>.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ M1 -->
+  <section class="lab-block" id="m1" data-status="decided">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">M1</p>
+        <h2>Rise through a mask</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Hero headline, every H2, the rotating line, images</dd>
+          <dt>Production route</dt><dd>Custom CSS + 20 lines of JS (an IntersectionObserver). Elementor: a class on the heading plus the snippet</dd>
+          <dt>Status</dt><dd><span class="chip chip-decided">Decided, §6.1</span></dd>
+        </dl>
+        <button class="lab-btn" type="button" data-replay-block="m1">Replay this block</button>
+      </header>
+      <div class="lab-stage lab-stage-one">
+        <div class="lab-variant lab-variant-wide reveal">
+          <h2 class="lab-demo-h2 mask"><span class="mask-in">How we <em>work</em></span></h2>
+          <p class="lead measure mask" style="--i: 1"><span class="mask-in">Four steps, whichever way you work with us.</span></p>
+          <figure class="lab-photo mask-img" style="--i: 2"><img src="/assets/images/logo-sansara-media.png" alt="" width="898" height="118"><figcaption>An image rises through its frame the same way (the wordmark stands in for a photo).</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ M2 -->
+  <section class="lab-block" id="m2" data-status="decided">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">M2</p>
+        <h2>Section reveal with stagger</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Every section, once per page view; children arrive one after another</dd>
+          <dt>Production route</dt><dd>Custom CSS + the same observer. Elementor: native entrance animations are close but bouncier; the snippet keeps our easing</dd>
+          <dt>Status</dt><dd><span class="chip chip-decided">Decided, §6.1</span></dd>
+        </dl>
+        <button class="lab-btn" type="button" data-replay-block="m2">Replay this block</button>
+      </header>
+      <div class="lab-stage lab-stage-one">
+        <ol class="grid grid-4 steps stagger lab-variant-wide">
+          {{#each how_we_work.steps}}
+          <li class="card card-muted reveal stack-sm"><span class="step-num" aria-hidden="true"></span><h3>{{ title }}</h3><p>{{ text }}</p></li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ M3 -->
+  <section class="lab-block" id="m3" data-status="decided">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">M3</p>
+        <h2>Hero with the rotating line</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home hero. Headline, rotating line, subtext, two buttons</dd>
+          <dt>Production route</dt><dd>Custom CSS + JS. Elementor: Animated Headline widget (native) is the nearest equivalent</dd>
+          <dt>Status</dt><dd><span class="chip chip-decided">Motion decided</span> <span class="chip chip-open">Headline and phrases open (decision #4)</span></dd>
+        </dl>
+        <button class="lab-btn" type="button" data-replay-block="m3">Replay this block</button>
+      </header>
+      <div class="lab-stage lab-stage-one">
+        <div class="lab-hero reveal stagger">
+          <h1><span class="mask"><span class="mask-in">{{ hero.headline }}</span></span></h1>
+          <p class="lab-hero-line h2"><span class="rotator">{{#each hero.rotating}}<span>{{ this }}</span>{{/each}}</span></p>
+          <p class="lead measure">{{ hero.subtext }} {{ hero.subtext_ending }}</p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="#m3">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#r1-1">{{ hero.secondary }}</a>
+          </div>
+        </div>
+      </div>
+      <p class="lab-note">Headline candidates from the brief: {{#each hero.headline_candidates}}“{{ this }}” {{/each}} The three rotating phrases are placeholders built from the subtext. Both are decision #4.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.1 -->
+  <section class="lab-block" id="r1-1" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.1</p>
+        <h2>What We Do: how the three offers are shown</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home, the core section, right after the statement</dd>
+          <dt>Status</dt><dd><span class="chip chip-chosen">A chosen, 2026-09-27</span></dd>
+        </dl>
+        <p class="measure">The rule from the brief: the three offers are equals, same size, same weight, same structure. Every option below uses the same working copy, so only the form differs.</p>
+      </header>
+
+      <!-- A -->
+      <div class="lab-option" id="r1-1-a">
+        <div class="lab-option-head">
+          <h3>A. Three cards side by side <span class="chip chip-chosen">Chosen</span></h3>
+          <p>What the visitor sees: three equal columns, each a quiet card with the name, the promise in italic serif, what it includes, who it is for and an Explore link. Everything visible at once, nothing to click first. Route: Native (three columns) + Custom CSS.</p>
+        </div>
+        <div class="grid grid-3 stagger">
+          {{#each what_we_do.offers}}
+          <article class="card offer">
+            <h4 class="offer-name">{{ name }}</h4>
+            <p class="offer-promise">{{ promise }}</p>
+            <ul class="marks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <p class="small muted offer-for">{{ for }}</p>
+            <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </article>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="lab-option" id="r1-1-b">
+        <div class="lab-option-head">
+          <h3>B. Tabs, one offer at a time <span class="chip chip-rejected">Rejected</span></h3>
+          <p>What the visitor sees: three pill tabs; below them one offer fills the width with room for a longer description. Calm, but two of the three offers are hidden until someone clicks, which is a risk for the “front door” job. Route: Native (Tabs widget).</p>
+        </div>
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist" aria-label="Offers">
+            {{#each what_we_do.offers}}<button class="tab" role="tab" id="tab-{{{ key }}}" aria-controls="panel-{{{ key }}}" aria-selected="{{#if @first}}true{{else}}false{{/if}}" tabindex="{{#if @first}}0{{else}}-1{{/if}}">{{ name }}</button>{{/each}}
+          </div>
+          {{#each what_we_do.offers}}
+          <div class="tab-panel card" role="tabpanel" id="panel-{{{ key }}}" aria-labelledby="tab-{{{ key }}}" {{#if @first}}{{else}}hidden{{/if}}>
+            <div class="grid grid-2">
+              <div class="stack-sm">
+                <p class="offer-promise h3">{{ promise }}</p>
+                <p>{{ text }}</p>
+                <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              </div>
+              <div class="stack-sm">
+                <ul class="marks">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+                <p class="small muted">{{ for }}</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="lab-option" id="r1-1-c">
+        <div class="lab-option-head">
+          <h3>C. Large alternating rows, one visual each <span class="chip chip-rejected">Rejected</span></h3>
+          <p>What the visitor sees: each offer gets a full-width row, text on one side and a visual on the other, sides alternating. The most editorial and the most room per offer, but three rows make the section long, and it only works once we have a visual per offer (imagery question R1.5). Route: Native.</p>
+        </div>
+        <div class="rows">
+          {{#each what_we_do.offers}}
+          <article class="row">
+            <div class="row-text stack-sm">
+              <h4 class="offer-name">{{ name }}</h4>
+              <p class="offer-promise h3">{{ promise }}</p>
+              <p>{{ text }}</p>
+              <p class="small muted">{{ for }}</p>
+              <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+            <div class="row-visual placeholder"><span>Visual for {{ name }}<br><span class="pend">Pending</span></span></div>
+          </article>
+          {{/each}}
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="lab-option" id="r1-1-d">
+        <div class="lab-option-head">
+          <h3>D. Bento grid, the four service areas as small tiles <span class="chip chip-rejected">Rejected</span></h3>
+          <p>What the visitor sees: a mosaic. The System and Consulting are two tall tiles; Services is a wide tile that breaks into four small ones for its areas. Lively and very “now”, but a mosaic always makes one tile look more important than another, which works against “three as equals”. Route: Native + Custom CSS.</p>
+        </div>
+        <div class="bento">
+          {{#each what_we_do.offers}}
+          <article class="card bento-{{{ key }}}">
+            <h4 class="offer-name">{{ name }}</h4>
+            <p class="offer-promise">{{ promise }}</p>
+            {{#if @index}}{{else}}<p class="small">{{ text }}</p>{{/if}}
+            <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </article>
+          {{/each}}
+          <ul class="bento-areas">
+            <li class="card card-peach">Web design</li>
+            <li class="card card-peach">Branding and graphic design</li>
+            <li class="card card-peach">Funnel and email marketing</li>
+            <li class="card card-peach">E-learning and online courses</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- E -->
+      <div class="lab-option" id="r1-1-e">
+        <div class="lab-option-head">
+          <h3>E. Flip cards, promise in front, contents behind <span class="chip chip-rejected">Rejected</span></h3>
+          <p>What the visitor sees: three cards showing name and promise. Hovering (or tapping “What’s included” on a phone) turns the card over to show the list and the link. Playful, and it hides half the information behind a gesture; the back is also readable by keyboard and screen readers. Route: Native (Flip Box) or Custom CSS + JS.</p>
+        </div>
+        <div class="grid grid-3">
+          {{#each what_we_do.offers}}
+          <div class="flip" data-flip>
+            <div class="flip-inner">
+              <div class="flip-face flip-front card">
+                <h4 class="offer-name">{{ name }}</h4>
+                <p class="offer-promise h3">{{ promise }}</p>
+                <button class="btn btn-ghost btn-sm" type="button" data-flip-toggle aria-expanded="false">What’s included</button>
+              </div>
+              <div class="flip-face flip-back card">
+                <p class="offer-name">{{ name }}</p>
+                <ul class="marks small">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+                <p class="small muted">{{ for }}</p>
+                <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.2 -->
+  <section class="lab-block" id="r1-2" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.2</p>
+        <h2>The helper line for undecided visitors</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home, directly under the three offers</dd>
+          <dt>Production route</dt><dd>Custom CSS</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open</span></dd>
+        </dl>
+      </header>
+      <div class="lab-stage">
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">A. Visible: a question with three answers <span class="chip chip-chosen">Chosen</span></p>
+          <div class="helper helper-visible">
+            <p class="h3">{{ shared.helper.question }}</p>
+            <ul class="helper-list">
+              {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
+            </ul>
+            <p class="small"><a href="{{{ shared.helper.still_unsure_link }}}">{{ shared.helper.still_unsure }}</a></p>
+          </div>
+        </div>
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">B. Subtle: one line, the answers on hover or tap <span class="chip chip-rejected">Rejected</span></p>
+          <details class="helper helper-subtle">
+            <summary>{{ shared.helper.question }}</summary>
+            <ul class="helper-list">
+              {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
+            </ul>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.3 -->
+  <section class="lab-block" id="r1-3" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.3</p>
+        <h2>Section layouts: centred and airy, or editorial</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Sets the rhythm of every inner section. Shown here on “Why Sansara”</dd>
+          <dt>Production route</dt><dd>Native (columns) + Custom CSS</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open</span></dd>
+        </dl>
+      </header>
+      <div class="lab-stage lab-stage-one">
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">A. Centred and airy: heading in the middle, four points in a row <span class="chip chip-maybe">Used for the statement and contact band only</span></p>
+          <div class="layout-centred">
+            <h3 class="h2">{{ why_sansara.title }}</h3>
+            <ul class="grid grid-4">{{#each why_sansara.points}}<li class="stack-sm"><h4>{{ title }}</h4><p class="small">{{ text }}</p></li>{{/each}}</ul>
+          </div>
+        </div>
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">B. Editorial: heading holds the left third, the points sit offset to the right <span class="chip chip-chosen">Default</span></p>
+          <div class="editorial">
+            <h3 class="h2">{{ why_sansara.title }}</h3>
+            <ul class="grid grid-2">{{#each why_sansara.points}}<li class="stack-sm"><h4>{{ title }}</h4><p class="small">{{ text }}</p></li>{{/each}}</ul>
+          </div>
+        </div>
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">C. Mixed: centred for the short, wide moments (statement, contact), editorial for everything with a list <span class="chip chip-chosen">Chosen</span></p>
+          <p class="measure">Not a separate demo: it is A for the statement and the contact band, B for the rest. Most sites that feel designed rather than templated do this, because the change of rhythm is what keeps a long page readable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.4 -->
+  <section class="lab-block" id="r1-4" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.4</p>
+        <h2>Icons or no icons</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>“What’s included” lists, the four steps, the four “Why Sansara” points</dd>
+          <dt>Production route</dt><dd>Asset (an open icon set as inline SVG) or none</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open</span></dd>
+        </dl>
+        <p class="measure">The same three points, three treatments. The one icon drawn here is a stand-in to judge the weight, not a proposed set.</p>
+      </header>
+      <div class="lab-stage">
+        <div class="lab-variant">
+          <p class="lab-variant-title">A. Line icons (thin, one colour) <span class="chip chip-rejected">Rejected</span></p>
+          <ul class="icon-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/></svg><span>Follow-up that answers while you work</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Booking that lands in your calendar</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H4zM8 20h8M12 16v4"/></svg><span>Page where booking is the obvious next step</span></li>
+          </ul>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">B. Filled icons in the accent <span class="chip chip-rejected">Rejected</span></p>
+          <ul class="icon-list icon-list-filled">
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/></svg><span>Follow-up that answers while you work</span></li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM5 4h14a2 2 0 0 1 2 2v2H3V6a2 2 0 0 1 2-2z"/></svg><span>Booking that lands in your calendar</span></li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16v12H4zM8 19h8v2H8z"/></svg><span>Page where booking is the obvious next step</span></li>
+          </ul>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">C. No icons: the ember mark and the words <span class="chip chip-chosen">Chosen</span></p>
+          <ul class="marks">
+            <li>Follow-up that answers while you work</li>
+            <li>Booking that lands in your calendar</li>
+            <li>Page where booking is the obvious next step</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.5 -->
+  <section class="lab-block" id="r1-5" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.5</p>
+        <h2>Hero visual</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home hero, right of or behind the headline</dd>
+          <dt>Production route</dt><dd>Asset (render, photo, Lottie, SVG) or none</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open. Ties to the imagery question</span></dd>
+        </dl>
+        <p class="measure">Two frames to judge the space, not the picture: the hero with type only, and the hero with a visual slot. A render, photo or animation would go where the slot is.</p>
+      </header>
+      <div class="lab-stage">
+        <div class="lab-variant">
+          <p class="lab-variant-title">A. Type only <span class="chip chip-chosen">Chosen until real photography exists</span></p>
+          <div class="lab-mini-hero">
+            <p class="h2">{{ hero.headline }}</p>
+            <p class="small measure">{{ hero.subtext }}</p>
+          </div>
+        </div>
+        <div class="lab-variant">
+          <p class="lab-variant-title">B. Type plus a visual on the right <span class="chip chip-maybe">Later, with real photography</span></p>
+          <div class="lab-mini-hero lab-mini-hero-split">
+            <div><p class="h2">{{ hero.headline }}</p><p class="small">{{ hero.subtext }}</p></div>
+            <div class="placeholder placeholder-tall"><span>Visual<br><span class="pend">Pending</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.6 -->
+  <section class="lab-block" id="r1-6" data-status="open">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.6</p>
+        <h2>Founders layout</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home, after “Why Sansara”. Longer version on /about later</dd>
+          <dt>Production route</dt><dd>Native (columns) + Custom CSS</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open. Depends on who appears (decision #12)</span></dd>
+        </dl>
+        <p class="measure">The layout follows the number of people. The frames are neutral placeholders, never stock photos.</p>
+      </header>
+      <div class="lab-stage">
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">One person: large portrait left, text right</p>
+          <div class="founders founders-1">
+            <div class="placeholder placeholder-portrait"><span>Portrait<br><span class="pend">Pending</span></span></div>
+            <div class="stack-sm"><h3>{{ founders.title }}</h3><p class="lead">Name, role <span class="pend">Pending</span></p><p class="measure">Two or three sentences of bio, one personal detail, an optional LinkedIn link. All from the owner.</p></div>
+          </div>
+        </div>
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">Two people: portraits side by side</p>
+          <div class="founders founders-2">
+            <div class="stack-sm"><div class="placeholder placeholder-portrait"><span>Portrait<br><span class="pend">Pending</span></span></div><p class="lead">Name, role <span class="pend">Pending</span></p><p class="small">Bio, one personal detail.</p></div>
+            <div class="stack-sm"><div class="placeholder placeholder-portrait"><span>Portrait<br><span class="pend">Pending</span></span></div><p class="lead">Name, role <span class="pend">Pending</span></p><p class="small">Bio, one personal detail.</p></div>
+          </div>
+        </div>
+        <div class="lab-variant lab-variant-wide">
+          <p class="lab-variant-title">Three or more: cards</p>
+          <div class="grid grid-3">
+            <div class="card card-muted stack-sm"><div class="placeholder placeholder-round"><span class="pend">Pending</span></div><p class="lead">Name, role</p><p class="small">Bio.</p></div>
+            <div class="card card-muted stack-sm"><div class="placeholder placeholder-round"><span class="pend">Pending</span></div><p class="lead">Name, role</p><p class="small">Bio.</p></div>
+            <div class="card card-muted stack-sm"><div class="placeholder placeholder-round"><span class="pend">Pending</span></div><p class="lead">Name, role</p><p class="small">Bio.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ R1.7 -->
+  <section class="lab-block" id="r1-7" data-status="chosen">
+    <div class="container">
+      <header class="lab-head">
+        <p class="lab-id">R1.7</p>
+        <h2>Contact band</h2>
+        <dl class="lab-meta">
+          <dt>Where</dt><dd>Home, the last section before the footer. The real partial, with the working Netlify form</dd>
+          <dt>Production route</dt><dd>Custom CSS + JS. Elementor: Form widget (Pro) with the same fields</dd>
+          <dt>Status</dt><dd><span class="chip chip-open">Open: A as in the brief, or B</span></dd>
+        </dl>
+      </header>
+      <div class="lab-option-head">
+        <h3>A. Band with one button; the form rises in when clicked <span class="chip chip-chosen">Chosen</span></h3>
+        <p>Below is the live section. Click “Let’s talk”, then Escape or the cross to close. Turn off JavaScript and the form is simply there.</p>
+      </div>
+    </div>
+    <!-- @include _partials/contact.html -->
+    <div class="container">
+      <div class="lab-option-head">
+        <h3>B. Two columns, the form always visible <span class="chip chip-rejected">Rejected</span></h3>
+        <p>No click to reveal, so nobody misses it, but the band is much taller and the form competes with the headline. Fields are the same; this copy of them is for looking, not sending.</p>
+      </div>
+      <div class="band band-warm contact-b">
+        <div class="contact-intro">
+          <h2>{{ shared.contact.headline }}</h2>
+          <p class="lead">{{ shared.contact.line }}</p>
+          <p class="small">{{ shared.contact.book_prefix }} <a href="/book-a-call/">{{ shared.contact.book_link }}</a></p>
+        </div>
+        <div class="card">
+          <div class="form-grid">
+            <div class="field"><label for="b-name">{{ shared.contact.form.name }}</label><input class="control" id="b-name" type="text"></div>
+            <div class="field"><label for="b-email">{{ shared.contact.form.email }}</label><input class="control" id="b-email" type="email"></div>
+            <div class="field span-2"><label for="b-topic">{{ shared.contact.form.topic }}</label><div class="select-wrap"><select class="control" id="b-topic"><option>{{ shared.contact.form.topic_placeholder }}</option></select></div></div>
+            <div class="field span-2"><label for="b-message">{{ shared.contact.form.message }}</label><textarea class="control" id="b-message" rows="4"></textarea></div>
+          </div>
+          <div class="form-actions"><span class="btn btn-primary">{{ shared.contact.form.submit }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- @include _partials/footer.html -->
+</body>
+</html>
