@@ -199,8 +199,8 @@ items:
   a: One fixed price per offer, agreed in writing before we start, and it doesn't change halfway. We give you the figure on the intro call, once we know what you need. If it's not the right fit, we'll say so on that call.
 - q: How long does it take?
   a: It depends on the offer and on what you already have. What we can promise is a date, agreed on the intro call and put in writing, and updates in plain words while we build.
-- q: I'm a small business. Is this for me?
-  a: It's who we build for: small businesses and solo owners who are good at their work and don't want to spend their days on marketing. Nothing here is sized for big companies.
+- q: Is this for a small business, or for a company?
+  a: Both. We build for solo owners and small businesses who are good at their work and don't want to spend their days on marketing. And what we build is made to scale: when a company needs it in volume, more pages, more campaigns, more locations, the same system delivers it.
 - q: I already have a website and some ads. Do I start from zero?
   a: No. We look at what you have and keep what works. Often the pieces exist and the problem is the joins: the page that doesn't lead to a booking, the enquiry nobody followed up. We connect them.
 - q: I've paid for marketing before and got nothing.
