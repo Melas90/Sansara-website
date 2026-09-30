@@ -84,6 +84,7 @@
               <p class="promise">{{ promise }}</p>
               <p>{{ text }}</p>
               <ul class="ticks">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+              {{#if more}}<p class="small"><a class="link" href="{{{ more_link }}}">{{ more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>{{/if}}
               <p class="cluster"><a class="btn btn-ghost btn-sm" href="#lead" data-lead-open data-topic="{{{ name }}}" data-source="offer: {{{ name }}}">{{ shared.lead.ask }}</a></p>
               <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
             </div>

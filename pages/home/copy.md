@@ -111,6 +111,8 @@ intro_link: Take a look at what we do
   - E-learning and online courses
   - Automations
   for: For businesses that know exactly what they need.
+  more: Building a course? See E-learning and Course Platforms
+  more_link: /e-learning/
   link: /services/
   explore: Explore Services
 - name: Consulting

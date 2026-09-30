@@ -106,12 +106,15 @@
     }));
   });
 
-  /* 5. flip cards: tap, Enter or Space flips; Escape flips back. Hover is CSS. Without this the faces stack. */
+  /* 5. flip cards: tap, Enter or Space flips, one card at a time; Escape flips back. Hover is CSS. Without this the faces stack. */
   document.querySelectorAll('.flips').forEach((root) => {
     root.classList.add('is-armed');
     root.querySelectorAll('[data-flip]').forEach((card) => {
       const front = card.querySelector('.flip-front');
-      const set = (open) => { card.classList.toggle('is-open', open); front.setAttribute('aria-expanded', String(open)); };
+      const set = (open) => {
+        if (open) root.querySelectorAll('[data-flip].is-open').forEach((o) => { if (o !== card) { o.classList.remove('is-open'); o.querySelector('.flip-front').setAttribute('aria-expanded', 'false'); } });
+        card.classList.toggle('is-open', open); front.setAttribute('aria-expanded', String(open));
+      };
       front.addEventListener('click', () => set(!card.classList.contains('is-open')));
       card.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); front.focus(); } });
       card.addEventListener('mouseleave', () => set(false));

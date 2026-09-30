@@ -12,6 +12,7 @@ main_label: Main
 system: The System
 consulting: Consulting
 services: Services
+elearning: E-learning
 about: About
 blog: Blog
 book: Book a free call
@@ -63,6 +64,7 @@ topic: What can we help with?
 topic_placeholder: Choose one
 topic_options:
 - The System
+- E-learning and Course Platforms
 - Consulting
 - Services
 - I'm not sure yet
@@ -92,6 +94,7 @@ interest: What are you interested in?
 interest_placeholder: Choose one
 interest_options:
 - The System
+- E-learning and Course Platforms
 - Done-for-You Services
 - Consulting
 - I'm not sure yet

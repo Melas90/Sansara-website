@@ -1,0 +1,153 @@
+<!-- @route /e-learning/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/course.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph">
+  <!-- The Course Platform (2026-09-30): the second product. Same skeleton as The System: hero, the problem, the idea, the two ways, the package, the process, proof, FAQ, the closing band. Every call to action opens the lead pop-up with the product preselected. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="hx cp-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="#lead" data-lead-open data-topic="E-learning and Course Platforms" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#package">{{ hero.secondary }}</a>
+          </div>
+          <p class="cp-platforms reveal"><span>{{ hero.platforms_label }}</span>{{#each hero.platforms}}<strong>{{ this }}</strong>{{/each}}<em>{{ hero.platforms_more }}</em></p>
+        </div>
+        <!-- PENDING: a real photo or screenshot of a course platform we built (never stock) -->
+        <div class="hx-art cp-art reveal"><div class="placeholder"><span>Pending</span></div></div>
+      </div>
+    </section>
+
+    <!-- The problem: three situations, then the turn. -->
+    <section class="section c-band" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ problem.eyebrow }}</p>
+            <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
+          </div>
+        </div>
+        <ul class="grid grid-3 cp-situations stagger">
+          {{#each problem.situations}}<li class="card reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+        <p class="cp-turn reveal">{{ problem.turn }}</p>
+      </div>
+    </section>
+
+    <!-- Strategy before setup. -->
+    <section class="section" id="strategy" aria-labelledby="strategy-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ strategy.eyebrow }}</p>
+          <h2 id="strategy-title"><span class="mask"><span class="mask-in">{{ strategy.title }}</span></span></h2>
+          <p class="measure">{{ strategy.lead }}</p>
+        </div>
+        <ul class="c-why stagger">
+          {{#each strategy.points}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Two ways: on its own, or inside the Loop. -->
+    <section class="section c-band" id="ways" aria-labelledby="ways-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ ways.eyebrow }}</p>
+          <h2 id="ways-title"><span class="mask"><span class="mask-in">{{ ways.title }}</span></span></h2>
+        </div>
+        <div class="grid grid-2 stagger">
+          <article class="card cp-way reveal">
+            <h3>{{ ways.alone_title }}</h3>
+            <p>{{ ways.alone_text }}</p>
+            <a class="btn btn-primary btn-sm" href="#lead" data-lead-open data-topic="E-learning and Course Platforms" data-source="two ways: package">{{ ways.alone_cta }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          </article>
+          <article class="card cp-way cp-way-dark reveal">
+            <h3>{{ ways.loop_title }}</h3>
+            <p>{{ ways.loop_text }}</p>
+            <a class="link" href="{{{ ways.loop_link }}}">{{ ways.loop_cta }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The package. -->
+    <section class="section" id="package" aria-labelledby="package-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ package.eyebrow }}</p>
+          <h2 id="package-title"><span class="mask"><span class="mask-in">{{ package.title }}</span></span></h2>
+          <p class="small">{{ package.note }}</p>
+        </div>
+        <div class="cp-package">
+          <ul class="ticks">{{#each package.includes}}<li>{{ this }}</li>{{/each}}</ul>
+          <dl class="cp-facts">
+            <div><dt>{{ package.price_label }}</dt><dd>{{ package.price }}</dd></div>
+            <div><dt>{{ package.time_label }}</dt><dd>{{ package.time }}</dd></div>
+            <div><dt>{{ package.support_label }}</dt><dd>{{ package.support }}</dd></div>
+          </dl>
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="E-learning and Course Platforms" data-source="package">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The process: five stacked steps, as on Home. -->
+    <section class="section c-band" id="process" aria-labelledby="process-title">
+      <div class="container c-narrow">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ process.eyebrow }}</p>
+          <h2 id="process-title"><span class="mask"><span class="mask-in">{{ process.title }}</span></span></h2>
+        </div>
+        <ol class="stack" data-stack>
+          {{#each process.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}</h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Proof: waits for a real testimonial. -->
+    <section class="section" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ proof.eyebrow }}</p>
+          <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
+        </div>
+        <div class="grid grid-2 stagger">
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.case }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Case <span class="pend">Pending</span></span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section c-band" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band: "Let's talk" opens the lead pop-up. -->
+    <!-- @include _partials/close-band.html -->
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>
