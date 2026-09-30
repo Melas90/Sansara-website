@@ -34,12 +34,17 @@ kt_start: Let's grow your business with
 kt_first: marketing that feels easy.
 cris_lead: We take the overwhelm of marketing off your plate, so you can focus on what truly matters.
 facts:
+<!-- 2026-09-30 (owner): operations and the countries added; one aligned row, a grid on phones -->
 - value: 10+
   label: years in marketing
+- value: 10+
+  label: years in operations
 - value: Days
   label: to build and launch
 - value: One
   label: fixed contact person
+- value: DACH · FR · ES
+  label: countries we serve
 float_stat_key: Built and launched
 float_stat_value: in days
 float_quote: Everything we set up is in your name, from day one.
