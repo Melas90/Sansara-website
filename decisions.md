@@ -97,3 +97,5 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - The privacy policy and legal notice have drafts of the owner's own on the old site (`src/i18n/legal/en.json` on `develop`), with the company details marked pending. They should replace the coming-soon page before the site goes on the real domain.
 - Every remaining "Book a call" link outside the lab opens the lead form.
 - The owner gave the go to put the photo-led site on `main`.
+
+- Branches (2026-09-30, owner): the same flow as the CRM. `develop` holds the site and `main` is production; features come off `develop` and a release fast-forwards `main`. The Astro site moved to `legacy/astro`. `develop` was moved onto the photo-led site by a merge (nothing rewritten). The `website` folder now has `legacy/astro` checked out and `website-v2` has `develop`.

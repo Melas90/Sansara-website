@@ -42,4 +42,4 @@ To mark something as missing, write `key: PENDING: what is needed`. It shows as 
 
 ## Branches
 
-`main` is production. `v2` is the rebuild in progress (no shared history with the old Astro site, which stays on `develop`). Features are built one per branch from `v2` and merged back by pull request. Netlify: production deploys from `main`; enable a branch deploy for `v2` in Site configuration → Build & deploy → Branches, to get a staging link.
+`main` is production and `develop` is where the work lands. Features are built one per branch from `develop` and merged back; a release fast-forwards `main` to `develop`. The old Astro site stays on `legacy/astro`. Netlify: production deploys from `main`; enable a branch deploy for `develop` in Site configuration → Build & deploy → Branches, to get a staging link.

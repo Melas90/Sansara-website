@@ -37,4 +37,4 @@ npm run verify   # build + checks: tokens only, links resolve, list of pending i
 
 ## Git
 
-`main` is production. `v2` is the rebuild branch (no shared history with the old Astro site, which lives on `develop` and in the history of `main`). Feature branches come off `v2` and go back by pull request. When v2 is ready, it replaces `main`; see `decisions.md`.
+`main` is production and `develop` is where the work lands, as in the CRM: feature branches come off `develop` and go back into it; a release is a fast-forward of `main` to `develop`. The old Astro site lives on `legacy/astro` (and in `main`'s history). `v2`, `feat/system` and `release/photo-led` are the rebuild's history up to 2026-09-30 and are no longer used.

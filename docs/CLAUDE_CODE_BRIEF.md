@@ -13,7 +13,7 @@
 
 **What exists**
 - Pages built: Home (`/`), The System (`/system/`), Client Loop ads landing page (`/client-loop/`, noindex), About (`/about/`), three thank-you pages. Design lab under `/lab/` (not in production builds).
-- Branch: all of this is on `feat/system` (it contains `feat/home-about`). It has not been merged into `v2` or pushed yet.
+- Branches (since 30 Sep): `develop` holds the site, `main` is production, features come off `develop`. The old Astro site is on `legacy/astro`. `v2`, `feat/system` and `release/photo-led` are history only.
 
 **Design decisions that are settled (don't re-ask)**
 - **Home = the photo-led Cris direction (lab A3)**: serif headline with the italic half, facts row (10+ years · Days to build · One contact person), the three offers as a **fanned deck of cards with an icon each** in the hero, a slow marquee of the service areas, the statement with an arched photo, "Three ways to work with us" as a list with a panel per offer, four stacking step cards (last one dark), Why Sansara, founders, testimonials, a large laptop showcase band, FAQ, dark closing band. Details: `decisions.md` (27 Sep entries) and `docs/DESIGN_SPEC.md`.
