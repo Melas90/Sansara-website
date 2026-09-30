@@ -367,7 +367,7 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .flip-back .link { color: var(--orange); }
 .flip.is-open .flip-front, .flip.is-open .flip-back { transform: rotateY(180deg); }
 .flip.is-open .flip-back { transform: none; }
-@media (hover: hover) { .flip:hover .flip-front { transform: rotateY(180deg); } .flip:hover .flip-back { transform: none; } }
+/* hover is handled by home.js (mouse only): a CSS :hover sticks after a tap on touch screens and left two cards flipped */
 /* no JavaScript: both faces stacked and readable */
 .flips:not(.is-armed) .flip { min-height: 0; perspective: none; }
 .flips:not(.is-armed) .flip-front, .flips:not(.is-armed) .flip-back { position: static; transform: none; backface-visibility: visible; }
@@ -377,8 +377,8 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 @media (prefers-reduced-motion: reduce) {
   .flip-front, .flip-back { transition: opacity var(--fast) var(--ease); transform: none !important; }
   .flip-back { opacity: 0; pointer-events: none; }
-  .flip.is-open .flip-back, .flip:hover .flip-back { opacity: 1; pointer-events: auto; }
-  .flip.is-open .flip-front, .flip:hover .flip-front { opacity: 0; }
+  .flip.is-open .flip-back { opacity: 1; pointer-events: auto; }
+  .flip.is-open .flip-front { opacity: 0; }
 }
 /* the three flip cards in the deck's colours (owner, 2026-09-30): cream, sand, dark; each back in a contrasting one */
 .flip:nth-child(2) .flip-front { background: var(--sand-3); border-color: transparent; }

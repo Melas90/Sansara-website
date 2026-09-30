@@ -106,7 +106,7 @@
     }));
   });
 
-  /* 5. flip cards: tap, Enter or Space flips, one card at a time; Escape flips back. Hover is CSS. Without this the faces stack. */
+  /* 5. flip cards: tap, Enter or Space flips, one card at a time; a mouse flips on hover; Escape flips back. Without this the faces stack. */
   document.querySelectorAll('.flips').forEach((root) => {
     root.classList.add('is-armed');
     root.querySelectorAll('[data-flip]').forEach((card) => {
@@ -115,9 +115,13 @@
         if (open) root.querySelectorAll('[data-flip].is-open').forEach((o) => { if (o !== card) { o.classList.remove('is-open'); o.querySelector('.flip-front').setAttribute('aria-expanded', 'false'); } });
         card.classList.toggle('is-open', open); front.setAttribute('aria-expanded', String(open));
       };
+      // a tap or click toggles this card only; a real mouse also flips on hover (touch never does, so nothing sticks)
       front.addEventListener('click', () => set(!card.classList.contains('is-open')));
+      // the back covers the button once open, so a tap on the back (not on its link) closes the card
+      card.querySelector('.flip-back').addEventListener('click', (e) => { if (!e.target.closest('a')) set(false); });
+      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') set(true); });
+      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') set(false); });
       card.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); front.focus(); } });
-      card.addEventListener('mouseleave', () => set(false));
     });
   });
 
