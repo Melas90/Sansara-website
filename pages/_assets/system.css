@@ -1,0 +1,156 @@
+/*
+ * The System / Client Loop page (/system/ and the standalone /client-loop/), on top of home.css.
+ * Only the pieces this page adds: the loop hero, the client quote, pains, now-and-with rows, outcomes,
+ * fit columns, the do-it-yourself list, the case study and the slim landing-page header and footer.
+ */
+
+/* ---------- hero: the loop ---------- */
+.sy-sub { font-family: var(--font-serif); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; color: var(--ink); max-width: 26ch; }
+.sy-hero .hx-copy .small { margin-top: -8px; }
+.sy-loop { aspect-ratio: 3 / 2; }
+.sy-loop svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.loop-ghost { fill: none; stroke: var(--sand-2); stroke-width: 18; stroke-linecap: round; }
+.loop-line { fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.loop-spark { fill: var(--orange); }
+.loop-spark-glow { fill: var(--orange); opacity: 0.25; }
+html.motion .sy-loop:not(.is-drawn) .loop-line { stroke-dashoffset: 1; }
+html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(var(--slow) * 3) var(--ease); }
+
+/* without JavaScript the stops are a numbered list under the drawing */
+.loop-stops { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; position: absolute; left: 0; right: 0; top: 100%; }
+.loop-stop { display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: clamp(15px, 1.5vw, 19px); color: var(--ink); white-space: nowrap; }
+.loop-stop i { flex: none; width: 13px; height: 13px; border-radius: 50%; background: var(--sand); border: 1.5px solid var(--gold-dk); transition: transform var(--fast) var(--ease), background-color var(--fast) var(--ease), border-color var(--fast) var(--ease); }
+.loop-stop span { padding: 5px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-pill); box-shadow: var(--shadow-float); transition: transform var(--fast) var(--ease), background-color var(--fast) var(--ease); }
+.loop-stop.is-near i { transform: scale(1.5); background: var(--orange); border-color: var(--orange); }
+.loop-stop.is-near span { background: var(--ink); color: var(--bg); transform: translateY(-2px); }
+/* once placed on the line: the dot sits on the line, the label above (top half) or below (bottom half) */
+.is-placed .loop-stops { position: static; display: block; }
+.is-placed .loop-stop { position: absolute; flex-direction: column; gap: 6px; transform: translate(-50%, -7px); }
+.is-placed .loop-stop[data-side="top"] { flex-direction: column-reverse; transform: translate(-50%, calc(-100% + 7px)); }
+@media (max-width: 600px) { .loop-stop span { padding: 3px 9px; } .is-placed .loop-stop { gap: 4px; } }
+@media (max-width: 900px) { .sy-hero .hx-art { order: 0; max-width: 560px; margin-top: 40px; } }
+
+/* ---------- the client quote under the hero ---------- */
+.sy-quote { padding-block: clamp(40px, 6vw, 72px); border-block: 1px solid var(--line); background: var(--bg); }
+.sy-quote figure { margin: 0 auto; max-width: 56rem; display: grid; gap: 16px; text-align: center; justify-items: center; }
+.sy-quote blockquote p { font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; color: var(--ink); text-wrap: balance; }
+.sy-quote figcaption { display: grid; gap: 6px; font-size: var(--text-small); color: var(--brown-2-text); }
+.sy-quote figcaption > span:first-child { font-weight: var(--weight-medium); color: var(--ink); }
+.sy-orig { font-style: italic; }
+
+/* ---------- the italic accent on this page: the brand's dark orange (the light one is too pale on sand) ---------- */
+.sy h1 em, .sy main h2 em, .sy .sy-whole h3 em, .sy .sy-turn em, .sy .sy-conclusion em { color: var(--orange-dk); }
+.sy .c-close h2 em, .sy .sy-diy h3 em { color: var(--orange); }
+
+/* ---------- the problem ---------- */
+/* the four sentences arrive like messages: bubbles, alternating sides, one after the other */
+.sy-chat { max-width: 720px; margin: 0 auto clamp(56px, 8vw, 96px); display: grid; gap: 14px; }
+.sy-chat-label { justify-self: center; font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--brown-2-text); }
+.sy-bubbles { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.sy-bubbles li { position: relative; max-width: min(460px, 88%); padding: 16px 22px; background: var(--bg); border: 1px solid var(--line); border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow-float); font-family: var(--font-serif); font-size: clamp(19px, 2vw, 23px); line-height: 1.3; color: var(--ink); }
+.sy-bubbles li:nth-child(even) { justify-self: end; border-radius: 22px 22px 6px 22px; background: var(--sand-3); }
+/* the turn, the cause, the conclusion */
+.sy-why-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 88px); align-items: start; }
+.sy-turn { font-family: var(--font-serif); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; }
+.sy-turn em { font-style: italic; }
+.sy-intro { font-size: var(--text-lead); color: var(--ink); }
+.sy-conclusion { margin-top: clamp(40px, 6vw, 72px); padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 48px); background: var(--ink); color: var(--bg); border-radius: var(--radius-card); font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; text-wrap: balance; }
+.sy .sy-conclusion em { color: var(--orange); font-style: italic; }
+@media (max-width: 800px) { .sy-why-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- now and with the system ---------- */
+.sy-rows { display: grid; border-top: 1px solid var(--line); }
+.sy-row { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1.2fr); gap: 16px; align-items: center; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.sy-row-head { padding-block: 12px; font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); }
+.sy-now { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--brown-2-text); }
+.sy-with { font-family: var(--font-serif); font-size: 22px; line-height: 1.3; color: var(--ink); }
+.sy-arrow { color: var(--orange-dk); font-size: 22px; text-align: center; }
+@media (max-width: 700px) {
+  .sy-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .sy-row-head { display: none; }
+  .sy-arrow { text-align: left; transform: rotate(90deg); width: 20px; }
+}
+.sy-after { display: grid; justify-items: center; text-align: center; gap: 18px; margin-top: 48px; max-width: 40rem; margin-inline: auto; }
+.sy-after > p:first-child { font-size: var(--text-lead); color: var(--ink); }
+
+/* ---------- the free call: what you leave with ---------- */
+.sy-outcomes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.sy-outcomes li { display: grid; gap: 10px; align-content: start; padding: clamp(24px, 3vw, 36px); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-card); }
+.sy-n { font-family: var(--font-serif); font-size: 40px; line-height: 1; color: var(--gold); }
+.sy-outcomes h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); line-height: 1.15; color: var(--ink); }
+@media (max-width: 860px) { .sy-outcomes { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- for you, not for you ---------- */
+.sy-fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.sy-fit-col { display: grid; gap: 20px; align-content: start; padding: clamp(28px, 4vw, 44px); border-radius: var(--radius-card); }
+.sy-fit-col .h3 { font-family: var(--font-serif); font-weight: 400; }
+.sy-yes { background: var(--sand-3); }
+.sy-yes .h3 { color: var(--ink); }
+.sy-no { background: var(--ink); color: var(--on-dark-muted); }
+.sy-no .h3 { color: var(--bg); }
+.sy-crosses { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.sy-crosses li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; }
+.sy-crosses li::before { content: "×"; color: var(--orange); font-size: 20px; line-height: 1.2; }
+@media (max-width: 760px) { .sy-fit { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- how it works ---------- */
+.sy .stack-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); }
+.sy-ends { font-family: var(--font-serif); font-style: italic; color: var(--gold-dk); margin-block: 4px 8px; }
+.sy-ends span { font-family: var(--font-sans); font-style: normal; font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); margin-right: 6px; }
+.stack > li:last-child .sy-ends { color: var(--gold); }
+.stack > li:last-child .sy-ends span { color: var(--on-dark-muted); }
+/* scoped to the container so it outranks `.ph figure { margin: 0 }` in home.css */
+.c-narrow .sy-dashboard { margin: clamp(40px, 6vw, 64px) auto 0; max-width: 30rem; display: grid; gap: 12px; }
+.sy-dashboard img { width: 100%; height: auto; border-radius: var(--radius-card); box-shadow: var(--shadow-float); }
+.sy-dashboard figcaption { font-size: var(--text-small); color: var(--brown-2-text); text-align: center; }
+.sy-practice { margin-top: 48px; padding: clamp(24px, 3vw, 36px); border-left: 2px solid var(--gold); background: var(--bg); border-radius: 0 var(--radius-card-sm) var(--radius-card-sm) 0; }
+
+/* ---------- why a loop ---------- */
+.sy-diy { margin-block: clamp(48px, 7vw, 88px); padding: clamp(28px, 5vw, 56px); background: var(--ink); color: var(--on-dark-muted); border-radius: var(--radius-band); display: grid; gap: 16px; }
+.sy-diy h3 { font-family: var(--font-serif); font-weight: 400; font-style: italic; font-size: clamp(26px, 3vw, 38px); color: var(--bg); }
+.sy-diy ul { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 0; }
+.sy-diy li { padding-block: 14px; border-top: 1px solid var(--line-on-dark); font-family: var(--font-serif); font-size: 20px; color: var(--bg); }
+.sy-diy li:last-child { border-bottom: 1px solid var(--line-on-dark); }
+.sy-diy-more { display: grid; gap: 12px; margin-top: 24px; padding-top: 32px; border-top: 1px solid var(--line-on-dark); }
+.sy-diy-punch { font-family: var(--font-serif); font-size: clamp(22px, 2.4vw, 28px); line-height: 1.3; color: var(--gold); }
+.sy-whole { align-items: start; }
+.sy-whole-text { font-family: var(--font-serif); font-size: clamp(20px, 2vw, 24px); line-height: 1.45; color: var(--ink); }
+.sy-whole h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
+.sy-whole h3 em { font-style: italic; color: var(--gold-dk); }
+
+/* ---------- who is behind it: studio first ---------- */
+.sy-team-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px clamp(32px, 6vw, 80px); align-items: center; }
+.sy-team-photo { margin: 0; display: grid; gap: 10px; align-self: start; position: sticky; top: 120px; } /* stays in view beside the long story */
+.sy-team-photo .placeholder { aspect-ratio: 4 / 3; min-height: 0; border-radius: var(--radius-card); max-width: none; }
+.sy-blend { display: grid; gap: 8px; padding: 20px 24px; border-left: 2px solid var(--orange); background: var(--bg); border-radius: 0 var(--radius-card-sm) var(--radius-card-sm) 0; }
+.sy-blend h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
+.sy-blend h3 em { font-style: italic; color: var(--orange-dk); }
+.sy-team-photo img { width: 100%; height: auto; border-radius: var(--radius-card); box-shadow: var(--shadow-float); }
+.sy-team-photo figcaption { font-size: var(--text-small); color: var(--brown-2-text); }
+.sy-promises { list-style: none; padding: 0; margin: clamp(48px, 7vw, 80px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.sy-promises li { display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-card-sm); }
+.sy-promises h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; color: var(--ink); }
+.sy-promises li:first-child { background: var(--ink); border-color: transparent; color: var(--on-dark-muted); }
+.sy-promises li:first-child h3 { color: var(--bg); }
+@media (max-width: 960px) { .sy-promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .sy-team-grid { grid-template-columns: minmax(0, 1fr); } .sy-team-photo { position: static; } }
+@media (max-width: 520px) { .sy-promises { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- the case ---------- */
+.sy-case { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.sy-case-col { margin: 0; display: grid; gap: 14px; align-content: start; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--bg); }
+.sy-case-col h3 { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); }
+.sy-case-quote { background: var(--ink); color: var(--on-dark-muted); border-color: transparent; }
+.sy-case-quote h3 { color: var(--gold); }
+.sy-case-quote blockquote p { font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.35; color: var(--bg); }
+.sy-case-quote figcaption { font-size: var(--text-small); font-style: italic; }
+@media (max-width: 900px) { .sy-case { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- closing band ---------- */
+.sy .c-close .eyebrow { justify-self: center; color: var(--gold); }
+
+/* ---------- standalone landing page: slim header and footer ---------- */
+.lp-header .header-row { grid-template-columns: auto auto; justify-content: space-between; }
+.lp-footer .footer-bottom { border-top: 0; }
+.lp-footer .cluster { gap: 8px 20px; }
+.sy .stack { --stack-num: var(--orange); }

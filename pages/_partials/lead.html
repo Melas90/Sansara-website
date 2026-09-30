@@ -1,0 +1,67 @@
+<!--
+  Lead pop-up (owner request 2026-09-27). One Netlify form, "lead", opened by any element with
+  data-lead-open (optional data-topic preselects the interest, data-source names the trigger).
+  Without JavaScript the triggers are plain links to #lead and the dialog shows as a normal section.
+  A hidden "source" field tells the CRM which button and page the lead came from.
+-->
+<button class="lead-float" type="button" data-lead-open data-source="floating button" hidden>{{ shared.lead.float }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+<dialog class="lead-dialog" id="lead" aria-labelledby="lead-title">
+  <div class="lead-inner">
+    <div class="lead-head">
+      <div class="stack-sm">
+        <h2 id="lead-title">{{ shared.lead.title }}</h2>
+        <p>{{ shared.lead.intro }}</p>
+      </div>
+      <button class="close-btn" type="button" data-lead-close aria-label="{{{ shared.lead.close }}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form class="lead-form" name="lead" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field"
+      data-msg-required="{{{ shared.lead.required }}}"
+      data-msg-reach="{{{ shared.lead.invalid_reach }}}"
+      data-msg-consent="{{{ shared.lead.consent_needed }}}"
+      data-msg-sending="{{{ shared.lead.sending }}}">
+      <input type="hidden" name="form-name" value="lead">
+      <input type="hidden" name="source" value="">
+      <p class="honeypot" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="l-name">{{ shared.lead.name }}</label>
+          <input class="control" id="l-name" name="name" type="text" required autocomplete="name">
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="l-reach">{{ shared.lead.reach }}</label>
+          <input class="control" id="l-reach" name="reach" type="text" required autocomplete="email" inputmode="email" aria-describedby="l-reach-hint" data-reach>
+          <p class="field-hint" id="l-reach-hint">{{ shared.lead.reach_hint }}</p>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field span-2">
+          <label for="l-interest">{{ shared.lead.interest }}</label>
+          <div class="select-wrap">
+            <select class="control" id="l-interest" name="interest" required>
+              <option value="" selected disabled>{{ shared.lead.interest_placeholder }}</option>
+              {{#each shared.lead.interest_options}}<option value="{{{ this }}}">{{ this }}</option>{{/each}}
+            </select>
+          </div>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="field span-2">
+          <label class="check"><input type="checkbox" id="l-privacy" name="privacy" value="yes" required><span>{{ shared.lead.privacy }}</span></label>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit"><span class="btn-label">{{ shared.lead.submit }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+      </div>
+    </form>
+    <div class="form-state form-success" hidden role="status">
+      <svg class="check-draw" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M18 29l7 7 14-15"/></svg>
+      <h3 tabindex="-1">{{ shared.lead.success_title }}</h3>
+      <p>{{ shared.lead.success_text }}</p>
+    </div>
+    <div class="form-state form-error" hidden role="alert">
+      <h3>{{ shared.lead.error_title }}</h3>
+      <p>{{ shared.lead.error_text }}</p>
+    </div>
+  </div>
+</dialog>
+<script src="/assets/lead.js" defer></script>

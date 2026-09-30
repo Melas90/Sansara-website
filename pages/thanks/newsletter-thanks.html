@@ -1,0 +1,23 @@
+<!-- @route /newsletter/thanks/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <!-- @include _partials/header.html -->
+  <main id="main">
+    <div class="container">
+      <div class="thanks">
+        <h1><em>{{ shared.thanks.newsletter_title }}</em></h1>
+        <p class="lead">{{ shared.thanks.newsletter_text }}</p>
+        <div class="cluster">
+          <a class="btn btn-ghost" href="/">{{ shared.thanks.home_link }}</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

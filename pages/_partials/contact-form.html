@@ -1,0 +1,58 @@
+<!-- The contact form alone. Included by contact.html (and by the lab's variant B). Netlify Forms: the form exists in static HTML, has a hidden form-name and a honeypot; motion.js submits with fetch for the inline success state. -->
+<form class="contact-form" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field"
+  data-msg-required="{{{ shared.contact.form.required }}}"
+  data-msg-email="{{{ shared.contact.form.invalid_email }}}"
+  data-msg-consent="{{{ shared.contact.form.consent_needed }}}"
+  data-msg-sending="{{{ shared.contact.form.sending }}}">
+  <input type="hidden" name="form-name" value="contact">
+  <p class="honeypot" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+  <div class="form-grid">
+    <div class="field">
+      <label for="c-name">{{ shared.contact.form.name }}</label>
+      <input class="control" id="c-name" name="name" type="text" required autocomplete="name">
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+    <div class="field">
+      <label for="c-email">{{ shared.contact.form.email }}</label>
+      <input class="control" id="c-email" name="email" type="email" required autocomplete="email">
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+    <div class="field">
+      <label for="c-company">{{ shared.contact.form.company }} <span class="optional">({{ shared.contact.form.optional }})</span></label>
+      <input class="control" id="c-company" name="company" type="text" autocomplete="organization">
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+    <div class="field">
+      <label for="c-topic">{{ shared.contact.form.topic }}</label>
+      <div class="select-wrap">
+        <select class="control" id="c-topic" name="topic" required>
+          <option value="" selected disabled>{{ shared.contact.form.topic_placeholder }}</option>
+          {{#each shared.contact.form.topic_options}}<option value="{{{ this }}}">{{ this }}</option>{{/each}}
+        </select>
+      </div>
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+    <div class="field span-2">
+      <label for="c-message">{{ shared.contact.form.message }}</label>
+      <textarea class="control" id="c-message" name="message" rows="4" required></textarea>
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+    <div class="field span-2">
+      <label class="check"><input type="checkbox" id="c-privacy" name="privacy" value="yes" required><span>{{ shared.contact.form.privacy }}</span></label>
+      <p class="field-error" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-primary" type="submit"><span class="btn-label">{{ shared.contact.form.submit }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+  </div>
+</form>
+<div class="form-state form-success" hidden role="status">
+  <svg class="check-draw" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M18 29l7 7 14-15"/></svg>
+  <h3 tabindex="-1">{{ shared.contact.form.success_title }}</h3>
+  <p>{{ shared.contact.form.success_text }}</p>
+  <a class="link" href="/#lead" data-lead-open data-source="book a call link">{{ shared.contact.book_link }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+</div>
+<div class="form-state form-error" hidden role="alert">
+  <h3>{{ shared.contact.form.error_title }}</h3>
+  <p>{{ shared.contact.form.error_text }} <a href="mailto:{{{ shared.contact.form.error_email }}}">{{ shared.contact.form.error_email }}</a>.</p>
+</div>

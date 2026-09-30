@@ -1,0 +1,197 @@
+<!-- @route / -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph ph-3">
+  <!-- Home: the photo-led Cris direction (A3), chosen 2026-09-27. Stock photos are placeholders, each marked Pending (see assets/images/placeholder/CREDITS.md). -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and the three offers as a fanned deck of cards (chosen 2026-09-27, replaces the orb; name, promise and link only since 2026-09-29, the lists live in What we do). -->
+    <section class="hx" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="glow glow-b" aria-hidden="true"></div>
+      <div class="container hx-grid">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.cris_headline }}</span></span></h1>
+          <p class="lead reveal">{{ hero.cris_lead }} {{ hero.subtext_ending }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="#lead" data-lead-open data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#what-we-do">{{ hero.secondary }}</a>
+          </div>
+          <div class="hx-facts reveal">
+            {{#each hero.facts}}<div><strong>{{ value }}</strong><span>{{ label }}</span></div>{{/each}}
+          </div>
+        </div>
+        <div class="hx-art hv-deck" data-deck>
+          <svg class="sr-only" aria-hidden="true" focusable="false"><defs>
+            <symbol id="ico-system" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.2"/><circle cx="4.8" cy="17" r="2.2"/><circle cx="19.2" cy="17" r="2.2"/><path d="M10.6 6.4 6.2 15M13.4 6.4l4.4 8.6M7 17h10"/></symbol>
+            <symbol id="ico-services" viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L19.3 8a2.1 2.1 0 0 0-3-3L5.5 15.7 4 20z"/><path d="M14.5 6.8l2.9 2.9"/><path d="M13 20h7"/></symbol>
+            <symbol id="ico-loop" viewBox="0 0 24 24"><path d="M12 12c-2.3-2.8-4-4.2-6-4.2a4.2 4.2 0 0 0 0 8.4c2 0 3.7-1.4 6-4.2s4-4.2 6-4.2a4.2 4.2 0 0 1 0 8.4c-2 0-3.7-1.4-6-4.2z"/></symbol>
+            <symbol id="ico-consulting" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M16.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v5.5A1.5 1.5 0 0 1 20 18h-1v2.5L16 18h-3.5"/></symbol>
+          </defs></svg>
+          <article class="deck-card deck-intro" style="--i: 0"><div class="deck-top"><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-loop"/></svg></span></div><h3>{{ what_we_do.cris_title }}</h3><p class="deck-promise">{{ what_we_do.intro_line }}</p><a class="link" href="#what-we-do">{{ what_we_do.intro_link }}</a></article>{{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><div class="deck-top"><span class="deck-n">{{ @number }}</span><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-{{{ key }}}"/></svg></span></div><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- The four service areas and consulting, moving slowly. Replaces the invented "trusted by" row. -->
+    <div class="mq" aria-hidden="true">
+      <div class="mq-track">{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}{{#each hero.areas}}<span>{{ this }}</span>{{/each}}</div>
+    </div>
+
+    <!-- Statement: the motto card ("Be" stays, the word swaps, from the Client Loop keynote, 2026-09-29), then the sentence, words light up as you read. -->
+    <section class="section c-statement" id="statement">
+      <div class="container ph-split">
+        <figure class="ph-arch"><img src="/assets/images/placeholder/offer-services.jpg" alt="" loading="lazy"><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure>
+        <div class="stack">
+          <p class="eyebrow">{{ motto.eyebrow }}</p>
+          <div class="motto reveal is-dark" data-motto>
+            <p class="sr-only">{{ motto.sr }}</p>
+            <span class="motto-rail" aria-hidden="true">{{#each motto.words}}<i></i>{{/each}}</span>
+            <div class="motto-card" aria-hidden="true">
+              <p class="motto-line"><span>{{ motto.be }}</span><span class="motto-slot">{{#each motto.words}}<span class="motto-word">{{ word }}<span class="motto-stop">.</span></span>{{/each}}</span></p>
+              <svg class="motto-ico" viewBox="0 0 48 48" focusable="false">
+                <g data-ico="seen"><path d="M4 24s7.5-13 20-13 20 13 20 13-7.5 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6.5"/></g>
+                <g data-ico="chosen"><path d="M19 26V9.5a3 3 0 0 1 6 0V22"/><path d="M25 21.5v-2.5a3 3 0 0 1 6 0v3.5"/><path d="M31 22v-1a3 3 0 0 1 6 0v6.5c0 7.5-5 12.5-11.5 12.5h-1.5c-4 0-6.5-1.8-9-5l-6.3-8.2a2.9 2.9 0 0 1 4.3-3.9L19 32"/></g>
+                <g data-ico="booked"><rect x="7" y="10" width="34" height="31" rx="4"/><path d="M7 19h34M16 6v8M32 6v8"/><path d="M18 30l4.5 4.5L31 26"/></g>
+                <g data-ico="remembered"><path d="M24 40S7 30 7 18.5A9 9 0 0 1 24 14a9 9 0 0 1 17 4.5C41 30 24 40 24 40z"/></g>
+                <g data-ico="loop"><path d="M24 24c-4.5-5.5-8-8.5-12-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 12-8.5s8-8.5 12-8.5a8.5 8.5 0 0 1 0 17c-4 0-7.5-3-12-8.5z"/></g>
+              </svg>
+            </div>
+          </div>
+          <p class="c-statement-text motto-lead" data-read>{{ statement.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we do: Cris's interactive list, holding the three equal offers. -->
+    <section class="section c-band" id="what-we-do" aria-labelledby="what-we-do-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ what_we_do.eyebrow }}</p>
+            <h2 id="what-we-do-title"><span class="mask"><span class="mask-in">{{ what_we_do.cris_title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ what_we_do.lead }}</p>
+        </div>
+        <div class="sw reveal" data-switch>
+          <div class="sw-list" role="tablist" aria-label="Offers" aria-orientation="vertical">
+            {{#each what_we_do.offers}}<button class="sw-tab" role="tab" id="t-{{{ key }}}" aria-controls="p-{{{ key }}}" aria-selected="false"><span class="num">{{ @number }}</span><span>{{ name }}</span><span class="arrow" aria-hidden="true">→</span></button>{{/each}}
+          </div>
+          <div class="sw-panels">
+            {{#each what_we_do.offers}}
+            <div class="sw-panel" role="tabpanel" id="p-{{{ key }}}" aria-labelledby="t-{{{ key }}}">
+              <figure class="sw-img"><img src="/assets/images/placeholder/offer-{{{ key }}}.jpg" alt="" loading="lazy"><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure>
+              <p class="eyebrow">{{ for }}</p>
+              <h3>{{ name }}</h3>
+              <p class="promise">{{ promise }}</p>
+              <p>{{ text }}</p>
+              <ul class="ticks">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+              <p class="cluster"><a class="btn btn-ghost btn-sm" href="#lead" data-lead-open data-topic="{{{ name }}}" data-source="offer: {{{ name }}}">{{ shared.lead.ask }}</a></p>
+              <a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="helper reveal">
+          <p class="h3">{{ shared.helper.question }}</p>
+          <ul class="helper-list">
+            {{#each shared.helper.options}}<li><span>{{ situation }}</span><a class="link" href="{{{ link }}}">{{ offer }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>{{/each}}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we work: four cards that slide over each other; the last one is dark, as in Cris's phases. -->
+    <section class="section" id="how-we-work" aria-labelledby="how-we-work-title">
+      <div class="container c-narrow">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ how_we_work.eyebrow }}</p>
+          <h2 id="how-we-work-title"><span class="mask"><span class="mask-in">{{ how_we_work.cris_title }}</span></span></h2>
+        </div>
+        <ol class="stack" data-stack>
+          {{#each how_we_work.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}<span class="tag">{{ tag }}</span></h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
+        </ol>
+        <p class="lead-nudge reveal"><span>{{ shared.lead.nudge }}</span><a class="btn btn-primary" href="#lead" data-lead-open data-source="after the steps">{{ shared.lead.nudge_button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></p>
+      </div>
+    </section>
+
+    <!-- Why Sansara: four promises. -->
+    <section class="section c-band" id="why-sansara" aria-labelledby="why-sansara-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
+          <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
+        </div>
+        <ul class="c-why stagger">
+          {{#each why_sansara.points}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Founders: the collage of the two founders, full width in a white print frame (owner, 2026-09-29); names, roles and bios still wait for decision #12. -->
+    <section class="section" id="founders" aria-labelledby="founders-title">
+      <div class="container">
+        <div class="centred stack-sm reveal">
+          <p class="eyebrow">{{ founders.eyebrow }}</p>
+          <h2 id="founders-title"><span class="mask"><span class="mask-in">{{ founders.title }}</span></span></h2>
+        </div>
+        <figure class="fd-frame reveal"><img src="/assets/images/people/founders-collage.jpg" alt="{{{ founders.collage_alt }}}" width="1376" height="768" loading="lazy"></figure>
+        <div class="fd-foot centred stack-sm reveal">
+          <p class="lead">{{ founders.people }}</p>
+          <a class="link" href="{{{ founders.more_link }}}">{{ founders.more }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof: Cris's quote cards, empty until a testimonial is approved (decision #7). -->
+    <section class="section c-band" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ proof.eyebrow }}</p>
+          <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
+        </div>
+        <div class="grid grid-2 stagger">
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
+          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Band: the laptop large, rising gently as you scroll. -->
+    <section class="ph-band" aria-labelledby="band-title">
+      <div class="container centred stack-sm reveal">
+        <p class="eyebrow">{{ showcase.eyebrow }}</p>
+        <h2 id="band-title"><span class="mask"><span class="mask-in">{{ showcase.band_title }}</span></span></h2>
+      </div>
+      <div class="ph-band-art"><figure class="mock mock-laptop mock-wide"><img class="mock-photo" src="/assets/images/placeholder/laptop-desk.jpg" alt="" width="1600" height="1200" loading="lazy"><span class="mock-screen"><img src="/assets/images/placeholder/screen-desktop.png" alt="{{{ showcase.alt_laptop }}}" width="1440" height="900" loading="lazy"></span><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure></div>
+    </section>
+
+    <!-- FAQ: title left, questions right, plus turns into a cross. -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.cris_title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band: "Let's talk" opens the lead pop-up. -->
+    <!-- @include _partials/close-band.html -->
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

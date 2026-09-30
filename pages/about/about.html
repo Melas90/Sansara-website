@@ -1,0 +1,93 @@
+<!-- @route /about/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/about.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph ph-3">
+  <!-- About: same language as the home (photo-led Cris direction). Copy from the Astro site's About page, waiting for approval. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <!-- Hero: headline and lead beside an arched photo of the two founders (2026-09-29). -->
+    <section class="hx ab-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container ph-split">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+        </div>
+        <figure class="ph-arch reveal"><img src="/assets/images/people/founders.jpg" alt="{{{ shared.people.founders_alt }}}" width="904" height="1128"></figure>
+      </div>
+    </section>
+
+    <!-- People: two portraits side by side (brief §2.5). Neutral frames until the owner sends portraits, never stock. -->
+    <section class="section c-band" id="people" aria-labelledby="people-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ people.eyebrow }}</p>
+          <h2 id="people-title"><span class="mask"><span class="mask-in">{{ people.title }}</span></span></h2>
+        </div>
+        <ul class="ab-people stagger">
+          {{#each people.list}}<li class="reveal">
+            <div class="placeholder placeholder-portrait"><span>Portrait<br>{{ name }}</span></div>
+            <h3>{{ name }}</h3>
+            <p class="ab-role">{{ role }}</p>
+            <p>{{ bio }}</p>
+          </li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Story: three short chapters, title left, words right. -->
+    <section class="section" id="story">
+      <div class="container ab-story">
+        {{#each story.sections}}
+        <article class="editorial reveal">
+          <h2><span class="mask"><span class="mask-in">{{ title }}</span></span></h2>
+          <div class="stack-sm">{{#each body}}<p>{{ this }}</p>{{/each}}</div>
+        </article>
+        {{/each}}
+      </div>
+    </section>
+
+    <!-- Values: the four promises, same grid as Why Sansara on the home. -->
+    <section class="section c-band" id="values" aria-labelledby="values-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ values.eyebrow }}</p>
+          <h2 id="values-title"><span class="mask"><span class="mask-in">{{ values.title }}</span></span></h2>
+        </div>
+        <ul class="c-why stagger">
+          {{#each values.points}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Closing band: "Let's talk" opens the lead pop-up. -->
+    <div class="c-close" id="contact">
+      <div class="close-circle" aria-hidden="true"></div>
+      <section class="contact section" aria-labelledby="final-title">
+        <div class="container">
+          <div class="band">
+            <div class="contact-intro">
+              <h2 id="final-title"><span class="mask"><span class="mask-in">{{ final.title }}</span></span></h2>
+              <p class="lead">{{ final.text }}</p>
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="#lead" data-lead-open data-source="about closing band">{{ final.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                <p class="small">{{ final.book_prefix }} <a href="/#lead" data-lead-open data-source="book a call link">{{ final.book_link }}</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

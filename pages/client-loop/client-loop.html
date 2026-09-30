@@ -1,0 +1,22 @@
+<!-- @route /client-loop/ -->
+<!-- @copy system -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/system.css">
+  <script src="/assets/home.js" defer></script>
+  <script src="/assets/loop.js" defer></script>
+  <!-- A landing page for ads: the same content lives at /system/, which is the one search engines should show. -->
+  <link rel="canonical" href="/system/">
+  <meta name="robots" content="noindex, follow">
+</head>
+<body class="c ph sy lp">
+  <!-- Standalone landing page: slim header and footer, no menu. Body shared with /system/. -->
+  <!-- @include _partials/header-lp.html -->
+  <!-- @include _partials/system-body.html -->
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer-lp.html -->
+</body>
+</html>
