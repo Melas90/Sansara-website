@@ -194,14 +194,27 @@ eyebrow: FAQ
 title: Questions people *ask us*
 cris_title: Still have questions? *Here are the answers.*
 items:
+<!-- 2026-09-30 (owner): written as objection handling, in the order the doubts come up: money, time, "a business like mine", trust, effort, afterwards. Facts only from the site; working copy, pending approval. -->
 - q: How much does it cost?
-  a: Every offer has one fixed price, agreed in writing before we start. We give you the figure on the intro call, once we know what you need.
+  a: One fixed price per offer, agreed in writing before we start, and it doesn't change halfway. We give you the figure on the intro call, once we know what you need. If it's not the right fit, we'll say so on that call.
 - q: How long does it take?
-  a: It depends on the offer and on what you already have. We agree the date on the intro call and put it in writing.
+  a: It depends on the offer and on what you already have. What we can promise is a date, agreed on the intro call and put in writing, and updates in plain words while we build.
+- q: I'm a small business. Is this for me?
+  a: It's who we build for: small businesses and solo owners who are good at their work and don't want to spend their days on marketing. Nothing here is sized for big companies.
+- q: I already have a website and some ads. Do I start from zero?
+  a: No. We look at what you have and keep what works. Often the pieces exist and the problem is the joins: the page that doesn't lead to a booking, the enquiry nobody followed up. We connect them.
+- q: I've paid for marketing before and got nothing.
+  a: That's the story we hear most, and usually the accounts, the page and the data were never yours, so leaving meant starting again. With us everything is in your name from day one, and we hand it over working, with a walkthrough, not a login and a goodbye.
+- q: Do you promise results?
+  a: We promise what we control: that it's built, connected, tested, working and in your name. Nobody can honestly promise a number of bookings. What we do is look at what the numbers say after launch and improve it.
+- q: How much of my time will it take?
+  a: One call to understand your business, your answers to a short list of questions, and a yes on the plan. Then we build and you get updates. You don't manage freelancers or learn tools.
+- q: I'm not technical. Will I be able to run it?
+  a: Yes. It's built so you can use it without us: everything is explained at handover, in plain words, and you always have one fixed contact person if you get stuck.
+- q: What happens after it's live? Am I tied to you?
+  a: No. Everything stays yours if we stop working together. Many clients keep us on to improve things month by month, but that's a choice, not a condition.
 - q: Which offer fits me?
   a: If you know exactly what you need, Services. If you just want it to work, The System. If you want to do it yourself with an expert at your side, Consulting. Not sure? Tell us where you are and we'll say honestly which one fits.
-- q: Who owns the accounts and tools?
-  a: You do. Everything we set up is in your name from day one, and it stays yours if we stop working together.
 
 ## Contact
 
