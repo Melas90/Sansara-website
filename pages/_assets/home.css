@@ -235,8 +235,8 @@ html.motion .hv-deck:not(:hover) .deck-card { animation: deck-breathe calc(var(-
 .hv-deck { aspect-ratio: 1 / 1.2; }
 
 /* in the real hero: a little smaller, and under the words on a phone */
-.hx .hv-deck { aspect-ratio: 1 / 1.2; max-width: 480px; justify-self: end; }
-@media (max-width: 900px) { .hx .hv-deck { order: 0; justify-self: center; } }
+.hx .hv-deck { aspect-ratio: 1 / 1.2; max-width: 480px; justify-self: end; margin-right: 40px; } /* a touch left, the fan was almost off screen (owner, 2026-09-30) */
+@media (max-width: 900px) { .hx .hv-deck { order: 0; justify-self: center; margin-right: 0; } }
 @media (max-width: 600px) { .hv-deck, .hx .hv-deck { aspect-ratio: 1 / 1.12; } .deck-inc { display: none; } }
 
 /* 2026-09-29: light cards (no lists) and a card 00 on top that presents the other three.
