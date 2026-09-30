@@ -28,6 +28,7 @@ primary: Book a free call
 secondary: See what we do
 <!-- Cris's hero (2026-09-27). Her draft used invented figures; these three are claims the live page already makes. -->
 eyebrow: Digital growth studio
+photo_alt: Five cards on linen, tied with an orange thread: Be seen. Be chosen. Be booked. Be remembered. Be Sansara.
 cris_headline: Let's grow your business with *marketing that feels easy*.
 kt_start: Let's grow your business with
 kt_first: marketing that feels easy.

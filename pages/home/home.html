@@ -11,11 +11,11 @@
   <!-- @include _partials/header.html -->
   <main id="main">
 
-    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and the three offers as a fanned deck of cards (chosen 2026-09-27, replaces the orb; name, promise and link only since 2026-09-29, the lists live in What we do). -->
+    <!-- Hero: Cris's layout. Serif headline with the gold italic half, facts row, and, since 2026-09-30, the photo of the motto cards on linen behind it (the offer deck left the hero so the cards appear once, in What we do). -->
     <section class="hx" id="hero" aria-labelledby="hero-title">
       <div class="glow glow-a" aria-hidden="true"></div>
       <div class="glow glow-b" aria-hidden="true"></div>
-      <div class="container hx-grid">
+      <div class="container hx-grid hx-solo">
         <div class="hx-copy stagger">
           <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
           <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.cris_headline }}</span></span></h1>
@@ -28,16 +28,8 @@
             {{#each hero.facts}}<div><strong>{{ value }}</strong><span>{{ label }}</span></div>{{/each}}
           </div>
         </div>
-        <div class="hx-art hv-deck" data-deck>
-          <svg class="sr-only" aria-hidden="true" focusable="false"><defs>
-            <symbol id="ico-system" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.2"/><circle cx="4.8" cy="17" r="2.2"/><circle cx="19.2" cy="17" r="2.2"/><path d="M10.6 6.4 6.2 15M13.4 6.4l4.4 8.6M7 17h10"/></symbol>
-            <symbol id="ico-services" viewBox="0 0 24 24"><path d="M4 20l4.5-1.2L19.3 8a2.1 2.1 0 0 0-3-3L5.5 15.7 4 20z"/><path d="M14.5 6.8l2.9 2.9"/><path d="M13 20h7"/></symbol>
-            <symbol id="ico-loop" viewBox="0 0 24 24"><path d="M12 12c-2.3-2.8-4-4.2-6-4.2a4.2 4.2 0 0 0 0 8.4c2 0 3.7-1.4 6-4.2s4-4.2 6-4.2a4.2 4.2 0 0 1 0 8.4c-2 0-3.7-1.4-6-4.2z"/></symbol>
-            <symbol id="ico-consulting" viewBox="0 0 24 24"><path d="M4 5.5h11a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V7A1.5 1.5 0 0 1 4 5.5z"/><path d="M16.5 9.5H20a1.5 1.5 0 0 1 1.5 1.5v5.5A1.5 1.5 0 0 1 20 18h-1v2.5L16 18h-3.5"/></symbol>
-          </defs></svg>
-          <article class="deck-card deck-intro" style="--i: 0"><div class="deck-top"><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-loop"/></svg></span></div><h3>{{ what_we_do.cris_title }}</h3><p class="deck-promise">{{ what_we_do.intro_line }}</p><a class="link" href="#what-we-do">{{ what_we_do.intro_link }}</a></article>{{#each what_we_do.offers}}<article class="deck-card" style="--i: {{ @index }}"><div class="deck-top"><span class="deck-n">{{ @number }}</span><span class="deck-ico"><svg aria-hidden="true"><use href="#ico-{{{ key }}}"/></svg></span></div><h3>{{ name }}</h3><p class="deck-promise">{{ promise }}</p><a class="link" href="{{{ link }}}">{{ explore }}</a></article>{{/each}}
-        </div>
       </div>
+      <figure class="hx-photo"><img src="/assets/images/home/hero-cards.jpg" alt="{{{ hero.photo_alt }}}" width="1376" height="768" fetchpriority="high"></figure>
     </section>
 
     <!-- The four service areas and consulting, moving slowly. Replaces the invented "trusted by" row. -->

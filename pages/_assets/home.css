@@ -388,3 +388,18 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .flip:nth-child(2) .flip-back { background: linear-gradient(135deg, var(--ink), var(--ink-2)); }
 .flip:nth-child(3) .flip-back { background: var(--sand-3); color: var(--brown); }
 .flip:nth-child(3) .flip-back .eyebrow, .flip:nth-child(3) .flip-back .link { color: var(--orange-dk); }
+
+/* Hero photo (owner, 2026-09-30): the motto cards on linen fill the hero, the copy sits on the plain left half.
+   Under 900px the photo goes below the copy instead, so the words never sit on the cards. */
+.hx { position: relative; overflow: hidden; }
+.hx-photo { position: absolute; inset: 0; margin: 0; z-index: 0; }
+.hx-photo img { width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
+.hx-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--bg) 70%, transparent) 0%, color-mix(in srgb, var(--bg) 20%, transparent) 40%, transparent 60%); }
+.hx .hx-solo { position: relative; z-index: 1; grid-template-columns: minmax(0, 1fr); min-height: min(82vh, 820px); align-content: center; }
+.hx .hx-solo .hx-copy { max-width: 40rem; }
+.hx .glow { display: none; }
+@media (max-width: 900px) {
+  .hx-photo { position: relative; inset: auto; aspect-ratio: 16 / 10; margin: 32px calc(-1 * var(--pad)) 0; }
+  .hx-photo::after { display: none; }
+  .hx .hx-solo { min-height: 0; }
+}
