@@ -116,7 +116,7 @@ nudge_button: Leave your details
 ## Helper
 
 <!-- working, from the brief §1 -->
-question: Not sure *which fits?*
+question: Three ways to *work with us* on your project.
 hint: Flip to see
 <!-- 2026-09-30 (owner): flip cards. Front: the visitor's situation as a question. Back: the offer and when it is the right one. Consulting's back in the owner's words. -->
 options:
