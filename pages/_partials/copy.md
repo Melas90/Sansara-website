@@ -27,14 +27,13 @@ about: About
 blog: Blog
 book: Book a call
 contact: Contact
-legal_notice: Legal notice
+legal_notice: Imprint
 privacy: Privacy policy
-newsletter_text: PENDING: newsletter promise and lead magnet (decision #8)
+newsletter_text: Practical notes on marketing that works, now and then. No spam.
 newsletter_label: Your email address
 newsletter_placeholder: you@example.com
 newsletter_button: Subscribe
 newsletter_consent: I'd like to receive the newsletter and agree to the [privacy policy](/privacy/). Unsubscribe any time.
-socials: PENDING: which social networks and their links
 rights: All rights reserved.
 tagline: We take digital marketing off your plate, so you can focus on your core business.
 
@@ -47,7 +46,7 @@ headline_alternatives:
 - Ready to take marketing *off your plate*?
 - Tell us what you need. We'll take it *from there*.
 line: Tell us briefly what you need and we'll get back to you.
-response_time: PENDING: real response time in working days (decision #11)
+response_time: We reply within two working days.
 open_button: Let's talk
 book_prefix: Prefer to pick a time?
 book_link: Book a call
@@ -90,6 +89,7 @@ intro: Three quick fields and we'll get back to you.
 name: Your name
 reach: Email or phone
 reach_hint: Whichever you prefer. We only use it to get back to you.
+invalid_reach: Please enter an email address or a phone number.
 interest: What are you interested in?
 interest_placeholder: Choose one
 interest_options:

@@ -78,7 +78,7 @@
           <div class="sw-panels">
             {{#each what_we_do.offers}}
             <div class="sw-panel" role="tabpanel" id="p-{{{ key }}}" aria-labelledby="t-{{{ key }}}">
-              <figure class="sw-img"><img src="/assets/images/placeholder/offer-{{{ key }}}.jpg" alt="" loading="lazy"><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure>
+              <figure class="sw-img"><img src="/assets/images/placeholder/offer-{{{ key }}}.jpg" alt="" loading="lazy"></figure>
               <p class="eyebrow">{{ for }}</p>
               <h3>{{ name }}</h3>
               <p class="promise">{{ promise }}</p>
@@ -148,19 +148,7 @@
       </div>
     </section>
 
-    <!-- Proof: Cris's quote cards, empty until a testimonial is approved (decision #7). -->
-    <section class="section c-band" id="proof" aria-labelledby="proof-title">
-      <div class="container">
-        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
-          <p class="eyebrow">{{ proof.eyebrow }}</p>
-          <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
-        </div>
-        <div class="grid grid-2 stagger">
-          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
-          <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote><figcaption class="tq-who"><i aria-hidden="true"></i><span class="small">Name, business <span class="pend">Pending</span></span></figcaption></figure>
-        </div>
-      </div>
-    </section>
+    <!-- Proof: waits for an approved testimonial (decision #7); the section is out until then (owner, 2026-09-30). Markup in git history. -->
 
     <!-- Band: the laptop large, rising gently as you scroll. -->
     <section class="ph-band" aria-labelledby="band-title">
@@ -168,7 +156,7 @@
         <p class="eyebrow">{{ showcase.eyebrow }}</p>
         <h2 id="band-title"><span class="mask"><span class="mask-in">{{ showcase.band_title }}</span></span></h2>
       </div>
-      <div class="ph-band-art"><figure class="mock mock-laptop mock-wide"><img class="mock-photo" src="/assets/images/placeholder/laptop-desk.jpg" alt="" width="1600" height="1200" loading="lazy"><span class="mock-screen"><img src="/assets/images/placeholder/screen-desktop.png" alt="{{{ showcase.alt_laptop }}}" width="1440" height="900" loading="lazy"></span><figcaption class="stock-tag">{{ showcase.stock }}</figcaption></figure></div>
+      <div class="ph-band-art"><figure class="mock mock-laptop mock-wide"><img class="mock-photo" src="/assets/images/placeholder/laptop-desk.jpg" alt="" width="1600" height="1200" loading="lazy"><span class="mock-screen"><img src="/assets/images/placeholder/screen-desktop.png" alt="{{{ showcase.alt_laptop }}}" width="1440" height="900" loading="lazy"></span></figure></div>
     </section>
 
     <!-- FAQ: title left, questions right, plus turns into a cross. -->

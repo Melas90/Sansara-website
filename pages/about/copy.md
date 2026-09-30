@@ -25,11 +25,9 @@ title: The people *behind* Sansara
 ### list
 
 - name: Miguel
-  role: PENDING: role (decision #12)
-  bio: PENDING: two or three sentences and one personal detail (decision #12)
+  bio: Comes from high tech, from semiconductors to scale-ups, where he built the operations and infrastructure that let companies grow. He knows how a business scales from real experience.
 - name: Christiane
-  role: PENDING: role (decision #12)
-  bio: PENDING: two or three sentences and one personal detail (decision #12)
+  bio: Brings a creative background and years in marketing, digital marketing and automation.
 
 ## Story
 

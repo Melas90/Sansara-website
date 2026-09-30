@@ -23,7 +23,7 @@ rotating:
 - More visibility.
 - Less effort.
 subtext: More clients, more visibility, less effort. We take care of your online presence so you don't have to. With years of experience in web, branding and marketing, we're the reliable partner at your side.
-subtext_ending: PENDING: the ending of the hero subtext (decision #4)
+subtext_ending:
 primary: Book a free call
 secondary: See what we do
 <!-- Cris's hero (2026-09-27). Her draft used invented figures; these three are claims the live page already makes. -->
@@ -176,7 +176,7 @@ points:
 <!-- decision #12: names, roles, bios and photos come only from the owner -->
 eyebrow: The people
 title: The people *behind* Sansara
-people: PENDING: who appears, with name, role, bio, one personal detail and a portrait (decision #12)
+people: Sansara Media is Miguel and Christiane. We build the systems that bring clients to businesses, and we do the work ourselves.
 more: More about us
 more_link: /about/
 collage_alt: Miguel and Christiane, the founders of Sansara Media, in a paper collage with a laptop, notebooks, a camera and a plant
@@ -195,9 +195,9 @@ title: Questions people *ask us*
 cris_title: Still have questions? *Here are the answers.*
 items:
 - q: How much does it cost?
-  a: PENDING: real cost ranges per offer (decisions #5 and #6)
+  a: Every offer has one fixed price, agreed in writing before we start. We give you the figure on the intro call, once we know what you need.
 - q: How long does it take?
-  a: PENDING: real timelines per offer (decision #6)
+  a: It depends on the offer and on what you already have. We agree the date on the intro call and put it in writing.
 - q: Which offer fits me?
   a: If you know exactly what you need, Services. If you just want it to work, The System. If you want to do it yourself with an expert at your side, Consulting. Not sure? Tell us where you are and we'll say honestly which one fits.
 - q: Who owns the accounts and tools?
@@ -217,7 +217,7 @@ close_text: A free intro call where we work out together what makes sense for yo
 eyebrow: What we build
 title: Built to look good *on every screen*.
 text: Your site, your funnel and your emails, designed as one thing and checked on the devices your clients actually use.
-stock: PENDING: a real photo; this one is a free stock placeholder (Unsplash)
+stock: Placeholder photo
 alt_laptop: The Sansara home page on a laptop
 alt_phone: The Sansara home page on a phone
 band_title: Less busywork. *More business.*
