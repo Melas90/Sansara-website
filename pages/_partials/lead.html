@@ -4,7 +4,7 @@
   Without JavaScript the triggers are plain links to #lead and the dialog shows as a normal section.
   A hidden "source" field tells the CRM which button and page the lead came from.
 -->
-<button class="lead-float" type="button" data-lead-open data-source="floating button" hidden>{{ shared.lead.float }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+<button class="lead-float" type="button" data-lead-open data-source="floating button" aria-label="{{{ shared.lead.float }}}" hidden><span class="lead-float-label">{{ shared.lead.float }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
 <dialog class="lead-dialog" id="lead" aria-labelledby="lead-title">
   <div class="lead-inner">
     <div class="lead-head">

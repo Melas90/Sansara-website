@@ -92,10 +92,10 @@
           </div>
         </div>
         <!-- Not sure which fits: three flip cards (owner, 2026-09-30). Front: the question. Back: the offer and when it fits. Flips on hover, tap or keyboard; the back is always in the page. -->
-        <div class="helper flips reveal">
-          <h3 class="h3">{{ shared.helper.question }}</h3>
-          <ul class="flip-grid">
-            {{#each shared.helper.options}}<li class="flip" data-flip>
+        <div class="helper flips">
+          <h3 class="h3 reveal">{{ shared.helper.question }}</h3>
+          <ul class="flip-grid stagger">
+            {{#each shared.helper.options}}<li class="flip reveal" data-flip>
               <button class="flip-front" type="button" aria-expanded="false"><span class="flip-n">{{ @number }}</span><span class="flip-q">{{ situation }}</span><span class="flip-hint">{{ shared.helper.hint }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a6 6 0 0 1 10.5-4M14 8a6 6 0 0 1-10.5 4"/><path d="M12.5 1v3h-3M3.5 15v-3h3"/></svg></span></button>
               <div class="flip-back"><p class="eyebrow">{{ offer }}</p><p>{{ answer }}</p><a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
             </li>{{/each}}

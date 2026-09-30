@@ -360,3 +360,8 @@ html.lead-open .lead-float { opacity: 0; pointer-events: none; }
 
 /* a quiet line that opens the pop-up between sections */
 .lead-nudge { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 20px; margin-top: 40px; color: var(--brown); }
+/* On phones the floating button is a small round one, so it stops covering links that scroll through the corner (owner, 2026-09-30) */
+@media (max-width: 600px) {
+  .lead-float { padding: 10px; gap: 0; width: var(--target); height: var(--target); justify-content: center; }
+  .lead-float-label { display: none; }
+}
