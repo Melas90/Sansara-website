@@ -89,7 +89,7 @@ intro_link: Take a look at what we do
 - name: The System
   key: system
   promise: A complete system, fully built for you and handed over. Yours to keep.
-  text: We design and build the whole thing, take responsibility until it runs, then hand it over.
+  text: We start from what you already have, design and build the rest, take responsibility until it runs, then hand it over.
   includes:
   - Ad that reaches the right people
   - Page where booking is the obvious next step
@@ -146,7 +146,7 @@ lead: Four steps, whichever way you work with us.
 steps:
 - title: Intro call
   tag: Free
-  text: A free call to understand where you are and what you need.
+  text: A free call to understand where you are, what you've already built, and what you need.
 - title: Plan
   tag: In writing
   text: We write down what gets built, by whom, and what it costs.
@@ -202,7 +202,7 @@ items:
 - q: Is this for a small business, or for a company?
   a: Both. We build for solo owners and small businesses who are good at their work and don't want to spend their days on marketing. And what we build is made to scale: when a company needs it in volume, more pages, more campaigns, more locations, the same system delivers it.
 - q: I already have a website and some ads. Do I start from zero?
-  a: No. We look at what you have and keep what works. Often the pieces exist and the problem is the joins: the page that doesn't lead to a booking, the enquiry nobody followed up. We connect them.
+  a: No, and almost nobody does. Most of our clients arrive with something: ads that ran, an Instagram following, a page that half works. We look at what you've built and what you're happy with, keep it, and build the system on top of it. From scratch only when there's nothing worth keeping.
 - q: I've paid for marketing before and got nothing.
   a: That's the story we hear most, and usually the accounts, the page and the data were never yours, so leaving meant starting again. With us everything is in your name from day one, and we hand it over working, with a walkthrough, not a login and a goodbye.
 - q: Do you promise results?

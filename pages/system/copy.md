@@ -119,6 +119,7 @@ no_title: Probably not for you if…
 - People have already paid for what you do, and you just want more of them
 - You're tired of your income depending on posting and luck
 - You'd rather have it built for you than learn another tool
+- You've already tried ads, posting or a page, and want it to finally add up to something
 
 ### no
 
@@ -129,7 +130,7 @@ no_title: Probably not for you if…
 
 eyebrow: How it actually works
 title: From “never heard of you” to “booked”, *and back again*.
-lead: One connected loop, built around the offer you already have. Each step closes one of the ways clients slip away. Built, connected and launched for you.
+lead: One connected loop, built around the offer you already have and on top of what already works for you: your ads, your following, your page. Each step closes one of the ways clients slip away. Built, connected and launched for you.
 ends: No more
 dashboard_caption: Your own client dashboard. Every enquiry and booking in one pipeline, in your name.
 dashboard_alt: The Sansara client dashboard on a tablet on a wooden desk, showing a pipeline of new, booked, attended, no-show and cancelled clients
