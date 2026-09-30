@@ -111,10 +111,20 @@ intro_link: Take a look at what we do
   - E-learning and online courses
   - Automations
   for: For businesses that know exactly what they need.
-  more: Building a course? See E-learning and Course Platforms
-  more_link: /e-learning/
   link: /services/
   explore: Explore Services
+- name: E-learning and Course Platforms
+  key: elearning
+  promise: Your course business, built the right way from the start.
+  text: A done-for-you course platform on Kajabi, LearnWorlds or others on demand. One closed package, on its own or inside the Loop.
+  includes:
+  - Platform setup, in your name
+  - Sales page, checkout and course structure
+  - Emails and automations
+  - A walkthrough at handover
+  for: For coaches, course creators and experts.
+  link: /e-learning/
+  explore: Explore E-learning
 - name: Consulting
   key: consulting
   promise: You build it. We guide you.
