@@ -30,7 +30,7 @@ Template syntax and the `copy.md` format are documented at the top of `scripts/b
 ## Commands
 
 ```
-npm run dev      # http://localhost:4321/  rebuilds on every request when a source file changed
+npm run dev      # http://localhost:4321/  rebuilds on every request when a source file changed (or double-click "Open website.bat")
 npm run build    # writes dist/
 npm run verify   # build + checks: tokens only, links resolve, list of pending items
 ```
