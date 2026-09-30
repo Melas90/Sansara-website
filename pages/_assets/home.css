@@ -350,3 +350,33 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .fd-frame:hover { rotate: 0deg; }
 .fd-foot { margin-top: clamp(28px, 4vw, 44px); }
 @media (max-width: 600px) { .fd-frame { rotate: none; } }
+/* Not sure which fits: flip cards (owner, 2026-09-30). The front asks, the back answers. */
+.flips { max-width: none; }
+.flip-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.flip { position: relative; min-height: 15rem; perspective: 1200px; }
+.flip-front, .flip-back { position: absolute; inset: 0; display: grid; align-content: space-between; gap: 12px; padding: 24px 26px; border-radius: var(--radius-card); backface-visibility: hidden; transition: transform var(--slow) var(--ease), opacity var(--slow) var(--ease); }
+.flip-front { width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--white); border: 1px solid var(--line); cursor: pointer; }
+.flip-front:focus-visible { outline: 2px solid var(--orange-dk); outline-offset: 3px; }
+.flip-n { font-family: var(--font-serif); font-size: 28px; color: var(--gold-dk); }
+.flip-q { font-family: var(--font-serif); font-size: clamp(22px, 2vw, 26px); line-height: 1.2; }
+.flip-hint { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); }
+.flip-hint svg { width: 14px; height: 14px; }
+.flip-back { background: var(--ink); color: var(--on-dark-muted); transform: rotateY(180deg); }
+.flip-back .eyebrow { color: var(--orange); }
+.flip-back p:not(.eyebrow) { font-size: var(--text-body); line-height: 1.55; }
+.flip-back .link { color: var(--orange); }
+.flip.is-open .flip-front, .flip.is-open .flip-back { transform: rotateY(180deg); }
+.flip.is-open .flip-back { transform: none; }
+@media (hover: hover) { .flip:hover .flip-front { transform: rotateY(180deg); } .flip:hover .flip-back { transform: none; } }
+/* no JavaScript: both faces stacked and readable */
+.flips:not(.is-armed) .flip { min-height: 0; perspective: none; }
+.flips:not(.is-armed) .flip-front, .flips:not(.is-armed) .flip-back { position: static; transform: none; backface-visibility: visible; }
+.flips:not(.is-armed) .flip-back { margin-top: -12px; border-radius: 0 0 var(--radius-card) var(--radius-card); }
+.flips:not(.is-armed) .flip-hint { display: none; }
+@media (max-width: 800px) { .flip-grid { grid-template-columns: minmax(0, 1fr); } .flip { min-height: 12rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .flip-front, .flip-back { transition: opacity var(--fast) var(--ease); transform: none !important; }
+  .flip-back { opacity: 0; pointer-events: none; }
+  .flip.is-open .flip-back, .flip:hover .flip-back { opacity: 1; pointer-events: auto; }
+  .flip.is-open .flip-front, .flip:hover .flip-front { opacity: 0; }
+}

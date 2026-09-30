@@ -113,17 +113,25 @@ nudge_button: Leave your details
 ## Helper
 
 <!-- working, from the brief §1 -->
-question: Not sure which fits? Ask yourself: *do you know what you need?*
+question: Not sure *which fits?*
+hint: Flip to see
+<!-- 2026-09-30 (owner): flip cards. Front: the visitor's situation as a question. Back: the offer and when it is the right one. Consulting's back in the owner's words. -->
 options:
-- situation: You know exactly what you need
+- situation: Do you know exactly what you need?
   offer: Services
+  answer: You bring a clear brief and we build it: web, branding, funnels and email, e-learning, automations. Fixed scope, fixed price.
   link: /services/
-- situation: You just want it to work
+  explore: Explore Services
+- situation: Do you just want it to work?
   offer: The System
+  answer: We build the whole loop, from the ad to the booking and the follow-up, in your name, and hand it over running.
   link: /system/
-- situation: You want to do it yourself, with an expert by your side
+  explore: Explore The System
+- situation: Tried many things and nothing seems to work?
   offer: Consulting
+  answer: You want some guidance. First we draw the strategy together; the implementation can come later, with us or without us.
   link: /consulting/
+  explore: Explore Consulting
 still_unsure: Still not sure? Tell us where you are
 still_unsure_link: /#contact
 

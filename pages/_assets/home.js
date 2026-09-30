@@ -106,7 +106,19 @@
     }));
   });
 
-  /* 5. motto: "Be" stays, the word swaps at the hero line's rhythm (--rotate-every); the last word
+  /* 5. flip cards: tap, Enter or Space flips; Escape flips back. Hover is CSS. Without this the faces stack. */
+  document.querySelectorAll('.flips').forEach((root) => {
+    root.classList.add('is-armed');
+    root.querySelectorAll('[data-flip]').forEach((card) => {
+      const front = card.querySelector('.flip-front');
+      const set = (open) => { card.classList.toggle('is-open', open); front.setAttribute('aria-expanded', String(open)); };
+      front.addEventListener('click', () => set(!card.classList.contains('is-open')));
+      card.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); front.focus(); } });
+      card.addEventListener('mouseleave', () => set(false));
+    });
+  });
+
+  /* 6. motto: "Be" stays, the word swaps at the hero line's rhythm (--rotate-every); the last word
      turns the card dark and holds a little longer. Runs only while on screen; still under reduced motion. */
   document.querySelectorAll('[data-motto]').forEach((root) => {
     if (reduce()) return;
