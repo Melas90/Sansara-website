@@ -21,6 +21,11 @@
       data-msg-sending="{{{ shared.lead.sending }}}">
       <input type="hidden" name="form-name" value="lead">
       <input type="hidden" name="source" value="">
+      <!-- Ad origin, filled by lead.js from the ad link; the CRM marks the lead as coming from an ad -->
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="fbclid" value="">
       <p class="honeypot" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-grid">
         <div class="field">

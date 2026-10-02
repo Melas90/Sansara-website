@@ -6,6 +6,20 @@
  * Submits to Netlify Forms with fetch for the inline success state; without fetch it posts normally.
  */
 (() => {
+  /* Ad origin: an ad link carries utm_* and Meta adds fbclid. They are kept for the whole visit,
+     so a visitor who clicks around before sending is still credited to the ad in the CRM. */
+  const AD_KEYS = ['utm_source', 'utm_campaign', 'utm_content', 'fbclid'];
+  const STORE = 'sansara-ad-origin';
+  let adOrigin = {};
+  try { adOrigin = JSON.parse(sessionStorage.getItem(STORE) || '{}'); } catch { /* storage blocked */ }
+  const params = new URLSearchParams(location.search);
+  if (AD_KEYS.some((k) => params.get(k))) {
+    adOrigin = Object.fromEntries(AD_KEYS.map((k) => [k, params.get(k) || '']));
+    try { sessionStorage.setItem(STORE, JSON.stringify(adOrigin)); } catch { /* storage blocked */ }
+  }
+  const leadForm = document.querySelector('#lead form');
+  if (leadForm) AD_KEYS.forEach((k) => { if (leadForm.elements[k]) leadForm.elements[k].value = adOrigin[k] || ''; });
+
   const dialog = document.getElementById('lead');
   if (!dialog || typeof dialog.showModal !== 'function') return; // no dialog support: #lead stays a plain section
   const form = dialog.querySelector('form');
