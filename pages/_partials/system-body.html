@@ -35,12 +35,12 @@
     </div>
   </section>
 
-  <!-- A real client, in their words (Spanish original underneath). -->
+  <!-- A real client, in their words (English only; the Spanish original stays in copy.md). -->
   <section class="sy-quote" aria-label="{{{ quote.by }}}">
     <div class="container">
       <figure class="reveal">
         <blockquote><p>“{{ quote.text }}”</p></blockquote>
-        <figcaption><span>{{ quote.by }}</span><span class="sy-orig" lang="es">“{{ quote.original }}”</span></figcaption>
+        <figcaption><span>{{ quote.by }}</span></figcaption>
       </figure>
     </div>
   </section>
@@ -208,7 +208,7 @@
       <div class="sy-case stagger">
         <div class="sy-case-col reveal"><h3>{{ case.before_title }}</h3><p>{{ case.before }}</p></div>
         <div class="sy-case-col reveal"><h3>{{ case.built_title }}</h3><ul class="ticks">{{#each case.built}}<li>{{ this }}</li>{{/each}}</ul></div>
-        <figure class="sy-case-col sy-case-quote reveal"><h3>{{ case.words_title }}</h3><blockquote><p>“{{ case.words }}”</p></blockquote><figcaption lang="es">“{{ case.words_original }}”</figcaption></figure>
+        <figure class="sy-case-col sy-case-quote reveal"><h3>{{ case.words_title }}</h3><blockquote><p>“{{ case.words }}”</p></blockquote></figure>
       </div>
     </div>
   </section>
