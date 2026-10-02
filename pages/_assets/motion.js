@@ -195,6 +195,7 @@
             body: new URLSearchParams(new FormData(form)),
           });
           if (!res.ok) throw new Error(String(res.status));
+          if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'contact form' });
           form.hidden = true;
           const success = contact.querySelector('.form-success');
           success.hidden = false;

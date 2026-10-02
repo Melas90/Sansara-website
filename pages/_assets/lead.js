@@ -90,6 +90,7 @@
         body: new URLSearchParams(new FormData(form)),
       });
       if (!res.ok) throw new Error(String(res.status));
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
       form.hidden = true;
       success.hidden = false;
       success.querySelector('h3').focus();
