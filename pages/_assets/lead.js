@@ -91,6 +91,16 @@
       });
       if (!res.ok) throw new Error(String(res.status));
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
+      // "Book your call" opens WhatsApp with a message that already carries their name.
+      // Without a number in copy.md the button stays hidden rather than linking nowhere.
+      const book = success.querySelector('.lead-book');
+      if (book) {
+        const number = (book.dataset.whatsapp || '').replace(/\D/g, '');
+        const name = String(new FormData(form).get('name') || '').trim();
+        const text = (book.dataset.whatsappMessage || '').replace('{name}', name);
+        book.hidden = !number;
+        book.href = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+      }
       form.hidden = true;
       success.hidden = false;
       success.querySelector('h3').focus();
