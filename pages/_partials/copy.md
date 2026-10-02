@@ -106,7 +106,7 @@ success_title: Thank you. We'll be in touch.
 success_text: We have your details. Want to pick a time for your free call right now? Message us on WhatsApp.
 <!-- Owner 2026-10-02: "Book your call" opens WhatsApp for now (no booking calendar yet). Number in international format, digits only, no + (e.g. 34600123456). {name} is replaced with the name from the form. -->
 book_button: Book your call
-whatsapp_number: 
+whatsapp_number: 34611017148
 whatsapp_message: Hi Sansara, I'm {name}. I just left my details on your website and I'd like to book my free call.
 error_title: That didn't go through.
 error_text: Please try again in a moment.
