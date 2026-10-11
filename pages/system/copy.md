@@ -124,7 +124,7 @@ no_title: Probably not for you if…
 ### no
 
 - You don't have an offer people have paid for yet. A system can't fix that, and we'll say so
-- You want someone to run your social media or make content. That's not what we build
+- You only want someone to make your content. That's a different service, [Content and Social Media](/content/), and it works best with a system behind it
 
 ## How
 
