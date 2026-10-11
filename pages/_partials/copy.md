@@ -13,6 +13,7 @@ system: The System
 consulting: Consulting
 services: Services
 elearning: E-learning
+content: Content and Social Media
 about: About
 blog: Blog
 book: Book a free call
@@ -96,6 +97,7 @@ interest_options:
 - The System
 - E-learning and Course Platforms
 - Done-for-You Services
+- Content and Social Media
 - Consulting
 - I'm not sure yet
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.

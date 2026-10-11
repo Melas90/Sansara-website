@@ -1,0 +1,123 @@
+<!-- @route /services/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/services.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph">
+  <!-- Done-for-You Services (2026-10-11): six areas, the sixth being Content and Social Media with its own page.
+       Structure from the brief §2.3; copy in pages/services/copy.md, working copy pending approval. Replaces the
+       coming-soon page at this route. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="hx sv-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid hx-solo">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Done-for-You Services" data-source="services: hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#areas">{{ hero.secondary }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The six areas, one card each. -->
+    <section class="section c-band" id="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ areas.eyebrow }}</p>
+            <h2 id="areas-title"><span class="mask"><span class="mask-in">{{ areas.title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ areas.lead }}</p>
+        </div>
+        <ul class="grid grid-3 sv-areas stagger">
+          {{#each areas.items}}
+          <li class="card sv-area reveal" id="area-{{{ key }}}">
+            <span class="c-why-n" aria-hidden="true">{{ @number }}</span>
+            <h3>{{ name }}</h3>
+            <p>{{ text }}</p>
+            <ul class="ticks">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <p class="sv-area-foot">
+              {{#if link}}<a class="link" href="{{{ link }}}">{{ link_label }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>{{else}}<a class="btn btn-ghost btn-sm" href="#lead" data-lead-open data-topic="Done-for-You Services" data-source="services: {{{ name }}}">{{ shared.lead.ask }}</a>{{/if}}
+            </p>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- How a project runs: the four stacked steps, as on Home. -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container c-narrow">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ how.eyebrow }}</p>
+          <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.title }}</span></span></h2>
+          <p class="lead">{{ how.lead }}</p>
+        </div>
+        <ol class="stack" data-stack>
+          {{#each how.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}<span class="tag">{{ tag }}</span></h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Want the whole thing instead? -->
+    <section class="section c-band" id="system" aria-labelledby="system-title">
+      <div class="container">
+        <article class="card sv-system reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ system.eyebrow }}</p>
+            <h2 id="system-title"><span class="mask"><span class="mask-in">{{ system.title }}</span></span></h2>
+            <p class="lead">{{ system.text }}</p>
+            <a class="link" href="{{{ system.link }}}">{{ system.link_label }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band, in the page's own words. -->
+    <div class="c-close" id="contact">
+      <div class="close-circle" aria-hidden="true"></div>
+      <section class="contact section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="band">
+            <div class="contact-intro">
+              <p class="eyebrow">{{ close.eyebrow }}</p>
+              <h2 id="contact-title"><span class="mask"><span class="mask-in">{{ close.title }}</span></span></h2>
+              <p class="lead">{{ close.text }} {{ shared.contact.response_time }}</p>
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Done-for-You Services" data-source="services: closing band">{{ close.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>
