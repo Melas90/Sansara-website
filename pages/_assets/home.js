@@ -190,4 +190,18 @@
       if (!e.isIntersecting) { clearTimeout(timer); timer = null; }
     }).observe(root);
   });
+
+  /* 7. the pen on the hero headline (owner, 2026-10-11): once the headline has risen, its italic words are gone over
+     with a marker, the same pen as on the "which offer fits" cards. Home only: the library is loaded there, elsewhere
+     this does nothing. */
+  const headline = document.querySelector('.hx h1');
+  const accent = headline?.querySelector('em');
+  if (accent && window.RoughNotation) {
+    const n = parseInt(token('--orange').slice(1), 16);
+    const wash = `rgba(${n >> 16}, ${(n >> 8) & 255}, ${n & 255}, 0.42)`; // the ember as see-through marker ink
+    document.fonts.ready.then(() => setTimeout(() => {
+      headline.classList.add('is-marked');
+      mark(accent, { type: 'highlight', color: wash, multiline: true, iterations: 1 });
+    }, reduce() ? 0 : parseFloat(token('--slow')) + parseFloat(token('--base'))));
+  }
 })();
