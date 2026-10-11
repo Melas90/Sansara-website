@@ -55,6 +55,7 @@ areas:
 - Funnel and email marketing
 - E-learning and online courses
 - Automations
+- Content and social media
 - Consulting
 
 ## Statement
@@ -130,6 +131,18 @@ intro_link: Take a look at what we do
   for: For coaches, course creators and experts.
   link: /e-learning/
   explore: Explore E-learning
+- name: Content and Social Media
+  key: content
+  promise: Content that brings sales, not just likes.
+  text: Monthly Reels and carousels planned around your offer, so every piece has a job: attract the right people, build their trust, or invite them to book.
+  includes:
+  - A monthly plan where every piece has a job
+  - Reels edited and carousels designed in your brand
+  - You post, or we publish for you
+  - The best pieces ready to run as ads
+  for: For coaches and business owners who want content that works with their ads.
+  link: /content/
+  explore: Explore Content and Social Media
 - name: Consulting
   key: consulting
   promise: You build it. We guide you.

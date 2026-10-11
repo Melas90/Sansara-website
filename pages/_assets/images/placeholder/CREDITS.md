@@ -11,5 +11,6 @@ of our own lab page, placed inside the device photos.
 | phone-hand.jpg | https://unsplash.com/photos/1691256676376-357c3aa66c89 |
 | offer-system.jpg | https://unsplash.com/photos/1541560052-3744e48ab80b |
 | offer-services.jpg | https://unsplash.com/photos/1596347909300-58c4d1bb35bc |
+| offer-content.jpg | copy of offer-services.jpg until a real photo exists (2026-10-12) |
 | offer-consulting.jpg | https://unsplash.com/photos/1552664730-d307ca884978 |
 | people-desk.jpg | https://unsplash.com/photos/1741720928078-4954276e0470 |
