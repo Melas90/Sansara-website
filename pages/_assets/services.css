@@ -1,0 +1,14 @@
+/* The Done-for-You Services page (2026-10-11). Reuses the home components (home.css); only what is specific lives here. Tokens only. */
+.sv-hero .hx-copy { max-width: 44rem; }
+.sv-areas { list-style: none; padding: 0; margin: 0; }
+.sv-area { display: grid; gap: 12px; align-content: start; }
+.sv-area h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.1; }
+.sv-area .ticks { padding-block: 4px; }
+.sv-area-foot { margin-top: auto; padding-top: 8px; }
+/* the sixth area has a page of its own: a warmer card */
+#area-content { background: var(--sand-3); border-color: transparent; }
+.sv-system { padding: clamp(32px, 5vw, 64px); background: linear-gradient(135deg, var(--ink), var(--ink-2)); color: var(--on-dark-muted); border-color: transparent; }
+.sv-system h2, .sv-system .lead { color: var(--bg); }
+.sv-system .eyebrow { color: var(--gold); }
+.sv-system .link { color: var(--orange); }
+.sv-system .stack-sm { max-width: 44rem; }

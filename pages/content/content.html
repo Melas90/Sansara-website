@@ -1,0 +1,241 @@
+<!-- @route /content/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/content.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph">
+  <!-- Content and Social Media (2026-10-11): the fourth offer, in two tiers. Built from pages/content/copy.md (working copy,
+       pending approval) on the home's components. Facts the owner has not given are PENDING in the copy and are hidden
+       here with {{#if}} until they exist: tax line, founding line, the client's time per month, the notice period, proof. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="hx ct-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid hx-solo">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Content and Social Media" data-source="content: hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#tiers">{{ hero.secondary }}</a>
+          </div>
+          <p class="small muted reveal">{{ hero.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem: four pains as chat bubbles (as on The System), then the turn. -->
+    <section class="section c-band" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ problem.eyebrow }}</p>
+            <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ problem.intro }}</p>
+        </div>
+        <ul class="ct-pains stagger">
+          {{#each problem.pains}}<li class="reveal">{{ this }}</li>{{/each}}
+        </ul>
+        <p class="ct-turn reveal">{{ problem.turn }}</p>
+      </div>
+    </section>
+
+    <!-- Why we're different: them and us, side by side. -->
+    <section class="section" id="difference" aria-labelledby="difference-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ difference.eyebrow }}</p>
+          <h2 id="difference-title"><span class="mask"><span class="mask-in">{{ difference.title }}</span></span></h2>
+          <p class="measure">{{ difference.lead }}</p>
+        </div>
+        <div class="stack">
+          <table class="ct-compare">
+            <thead><tr><th scope="col">{{ difference.they_title }}</th><th scope="col">{{ difference.we_title }}</th></tr></thead>
+            <tbody>{{#each difference.rows}}<tr><td>{{ they }}</td><td>{{ we }}</td></tr>{{/each}}</tbody>
+          </table>
+          <p class="small muted">{{ difference.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three jobs. -->
+    <section class="section c-band" id="jobs" aria-labelledby="jobs-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ jobs.eyebrow }}</p>
+            <h2 id="jobs-title"><span class="mask"><span class="mask-in">{{ jobs.title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ jobs.lead }}</p>
+        </div>
+        <ol class="grid grid-3 ct-jobs stagger">
+          {{#each jobs.jobs}}<li class="card reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p><p class="small muted">{{ example }}</p></li>{{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Content and ads together: four steps, then the loop. -->
+    <section class="section" id="together" aria-labelledby="together-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ together.eyebrow }}</p>
+          <h2 id="together-title"><span class="mask"><span class="mask-in">{{ together.title }}</span></span></h2>
+          <p class="measure">{{ together.lead }}</p>
+        </div>
+        <div class="stack">
+          <ol class="c-why stagger">
+            {{#each together.steps}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+          </ol>
+          <p class="ct-loop">{{ together.loop_text }} <a class="link" href="{{{ together.loop_link }}}">{{ together.loop_cta }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The two tiers. -->
+    <section class="section c-band" id="tiers" aria-labelledby="tiers-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ tiers.eyebrow }}</p>
+          <h2 id="tiers-title"><span class="mask"><span class="mask-in">{{ tiers.title }}</span></span></h2>
+          <p class="lead measure">{{ tiers.lead }}</p>
+        </div>
+        <div class="grid grid-2 ct-tiers stagger">
+          {{#each tiers.tiers}}
+          <article class="card ct-tier reveal" id="tier-{{{ key }}}">
+            {{#if badge}}<p class="ct-badge">{{ badge }}</p>{{/if}}
+            <h3>{{ name }}</h3>
+            <p class="ct-promise">{{ promise }}</p>
+            <p class="ct-price">{{ price }}</p>
+            <ul class="ticks">{{#each includes}}<li>{{ this }}</li>{{/each}}</ul>
+            <p class="ct-you"><strong>Your part:</strong> {{ you }}</p>
+            <p class="small muted">{{ for }}</p>
+            <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Content and Social Media" data-source="content: tier {{{ key }}}">{{ cta }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          </article>
+          {{/each}}
+        </div>
+        <div class="ct-terms reveal">
+          <p>{{ tiers.terms }}</p>
+          {{#if tiers.tax}}<p class="small muted">{{ tiers.tax }}</p>{{/if}}
+          <p><strong>{{ tiers.addons_title }}:</strong> {{#each tiers.addons}}<span class="ct-addon">{{ this }}</span>{{/each}}</p>
+          <p class="small muted">{{ tiers.not_included }}</p>
+          {{#if tiers.founding}}<p class="ct-founding">{{ tiers.founding }}</p>{{/if}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who does what. -->
+    <section class="section" id="split" aria-labelledby="split-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ split.eyebrow }}</p>
+          <h2 id="split-title"><span class="mask"><span class="mask-in">{{ split.title }}</span></span></h2>
+        </div>
+        <div class="grid grid-2 ct-split stagger">
+          <div class="card reveal"><h3>You</h3><ul class="ticks">{{#each split.you}}<li>{{ this }}</li>{{/each}}</ul></div>
+          <div class="card card-muted reveal"><h3>Us</h3><ul class="ticks">{{#each split.us}}<li>{{ this }}</li>{{/each}}</ul></div>
+        </div>
+        {{#if split.time}}<p class="centred small muted" style="margin-top: 24px">{{ split.time }}</p>{{/if}}
+      </div>
+    </section>
+
+    <!-- How a month runs: five stacked steps with their dates. -->
+    <section class="section c-band" id="month" aria-labelledby="month-title">
+      <div class="container c-narrow">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ month.eyebrow }}</p>
+          <h2 id="month-title"><span class="mask"><span class="mask-in">{{ month.title }}</span></span></h2>
+        </div>
+        <ol class="stack" data-stack>
+          {{#each month.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}<span class="tag">{{ when }}</span></h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- What we measure. -->
+    <section class="section" id="measure" aria-labelledby="measure-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ measure.eyebrow }}</p>
+          <h2 id="measure-title"><span class="mask"><span class="mask-in">{{ measure.title }}</span></span></h2>
+          <p class="measure">{{ measure.lead }}</p>
+        </div>
+        <div class="stack">
+          <ul class="c-why stagger">
+            {{#each measure.items}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
+          </ul>
+          <p class="ct-honest">{{ measure.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fit. -->
+    <section class="section c-band" id="fit" aria-labelledby="fit-title">
+      <div class="container">
+        <h2 id="fit-title" class="sr-only">Is it a fit?</h2>
+        <div class="grid grid-2 stagger">
+          <div class="card reveal"><h3>{{ fit.yes_title }}</h3><ul class="ticks">{{#each fit.yes}}<li>{{ this }}</li>{{/each}}</ul></div>
+          <div class="card card-muted ct-no reveal"><h3>{{ fit.no_title }}</h3><ul class="marks">{{#each fit.no}}<li>{{ this }}</li>{{/each}}</ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof: out until a content client agrees to be shown. -->
+    {{#if proof.testimonials}}
+    <section class="section" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ proof.eyebrow }}</p>
+          <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
+        </div>
+        <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote></figure>
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+          {{#if notice.line}}<p class="small muted" style="margin-top: 16px">{{ notice.line }}</p>{{/if}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band: the page's own words, opening the lead pop-up. -->
+    <div class="c-close" id="contact">
+      <div class="close-circle" aria-hidden="true"></div>
+      <section class="contact section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="band">
+            <div class="contact-intro">
+              <p class="eyebrow">{{ close.eyebrow }}</p>
+              <h2 id="contact-title"><span class="mask"><span class="mask-in">{{ close.title }}</span></span></h2>
+              <p class="lead">{{ close.text }}</p>
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Content and Social Media" data-source="content: closing band">{{ close.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                <span class="small">{{ close.small }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>
