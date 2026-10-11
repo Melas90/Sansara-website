@@ -25,6 +25,7 @@ Rules that apply everywhere (brief §6.1): only `transform` and `opacity` animat
 | Hero | Headline rises through its mask; rotating line, lead and buttons rise in after it, staggered | Load (already in view) | `--slow` mask, `--stagger` between the four children | 20px rise, 70ms stagger | Static, first phrase shown | Custom CSS + JS | Built |
 | Statement | The sentence rises and fades in | Scroll | `--slow` / `--base` | Same | Static | Custom CSS + JS | Built |
 | What We Do | Head reveals with the H2 through its mask; the three cards arrive one after another; helper line after | Scroll | `--stagger` × index | Same | Static | Custom CSS + JS | Built |
+| Which offer fits | Cards arrive one after another; the pen circles each "Click to discover" in turn the first time the cards are in view; a card flips in 3D on hover (mouse), tap or keyboard, one at a time; once turned, the pen underlines the offer's name | Scroll, then hover / tap / Enter | `--stagger` between cards, `--base` between circles, `--slow` flip and pen stroke | Tap flips; cards in one column | Crossfade instead of the flip; marks appear without being drawn | Custom CSS + JS, Rough Notation (Elementor: Flip Box plus a snippet) | Built 2026-10-11 |
 | How We Work | Head, then the four steps in order | Scroll | `--stagger` × index | Same | Static | Custom CSS + JS | Built |
 | Why Sansara | Heading through its mask, the four points staggered | Scroll | Same | Same | Static | Custom CSS + JS | Built |
 | Founders | Section rises; portrait frame will use the image mask once a photo exists | Scroll | `--slow` | Same | Static | Custom CSS + JS | Built |
@@ -38,7 +39,7 @@ Filled in as the owner answers. Rejected options are kept with the reason so the
 
 | Round | Topic | Options shown | Decision | Reason |
 |---|---|---|---|---|
-| 2 | Flip cards | 3D flip (lab R1.1 E) · back slides up · lift only | | |
+| 2 | Flip cards | 3D flip (lab R1.1 E) · back slides up · lift only | **3D flip**, for the "which offer fits" cards only (2026-09-30); given presence on 2026-10-11: lab `/lab/which-fits/` A (tall cards, "Click to discover", the pen) chosen over B (a Yes/No path on a hand-drawn line) | The small cards were generic and skipped; A keeps what visitors already know and makes it impossible to miss |
 | 2 | Card hover | lift + shadow · tilt · glow · image zoom | | |
 | 2 | Stacking cards | yes · no | | |
 | 2 | Expanding cards | yes · no | | |

@@ -41,6 +41,7 @@ Decided 2026-09-27; the owner followed every recommendation.
 | Hero | Left-aligned block, max 56rem; headline, rotating line in italic serif, lead, two buttons | None (R1.5 A) | `.hero`, `.rotator`, primary + ghost button | Built; headline and phrases pending (#4) |
 | Statement | Centred, one sentence at H2 size on the card surface | None | `.statement` | Built |
 | What We Do | Editorial head (title left, lead right), three equal white cards, helper line below | None | `.offer` cards, `.marks` list, `.link`, `.helper` | Built |
+| Which offer fits (2026-10-11) | Its own section after What We Do: H2 heading, three tall flip cards (white, sand, dark) with the question large and an ember plus with "Click to discover"; back: offer name, answer, Explore link; "Still not sure" line below opens the lead form | None; the pen's circle and underline (Rough Notation) | `.fits`, `.fit`, `.flip`, `.fit-go` | Built. Replaces the small row of flip cards at the foot of What We Do, which visitors skipped |
 | How We Work | Editorial head, four numbered steps in a row on the card surface | None | `.steps.steps-row` | Built |
 | Why Sansara | Editorial: heading left third, four points in a 2×2 grid | None | plain list | Built |
 | Founders | One-person frame left, text right (neutral default) | Real portraits only, pending #12 | `.founders`, `.placeholder` | Built as placeholder |
