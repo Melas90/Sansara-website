@@ -441,3 +441,9 @@ html.motion .sw-panel:not([hidden]) .sw-img img { animation: ph-settle var(--slo
 .fit-unsure { margin-top: 40px; font-size: var(--text-lead); }
 .fit-unsure a { color: var(--ink); font-weight: var(--weight-medium); text-decoration-color: var(--orange); text-decoration-thickness: 2px; }
 @media (max-width: 899px) { .fits-cards { grid-template-columns: minmax(0, 1fr); margin-top: 40px; } .fit.flip { min-height: 20rem; } }
+
+/* The pen on the hero headline (owner, 2026-10-11): home.js highlights the italic words once the headline has risen.
+   The words turn ink so they read on the wash, and the headline's mask lets the stroke run past its edge. */
+.hx h1 em { position: relative; transition: color var(--base) var(--ease); }
+.hx h1.is-marked .mask { overflow: visible; }
+.hx h1.is-marked em { color: var(--ink); }
