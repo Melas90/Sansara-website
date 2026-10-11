@@ -24,6 +24,8 @@ async function walk(dir, out = []) {
 // 1. tokens only
 for (const f of await walk(path.join(ROOT, 'pages'))) {
   if (!/\.(html|css|js)$/.test(f)) continue;
+  // third-party libraries the lab tries out (pages/_assets/lab/vendor/) are not ours to rewrite
+  if (f.split(path.sep).includes('vendor')) continue;
   const src = await fs.readFile(f, 'utf8');
   const rel = path.relative(ROOT, f);
   src.split('\n').forEach((line, i) => {

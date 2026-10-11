@@ -122,6 +122,8 @@ nudge_button: Leave your details
 <!-- working, from the brief §1 -->
 question: Three ways to *work with us* on your project.
 hint: Flip to see
+<!-- 2026-10-11 (owner): the cards are their own section with a "Click to discover" button; the hint above is no longer shown on the home. Working copy. -->
+discover: Click to discover
 <!-- 2026-09-30 (owner): flip cards. Front: the visitor's situation as a question. Back: the offer and when it is the right one. Consulting's back in the owner's words. -->
 options:
 - situation: Do you know exactly what you need?

@@ -106,14 +106,28 @@
     }));
   });
 
-  /* 5. flip cards: tap, Enter or Space flips, one card at a time; a mouse flips on hover; Escape flips back. Without this the faces stack. */
+  /* 5. flip cards: tap, Enter or Space flips, one card at a time; a mouse flips on hover; Escape flips back. Without this the faces stack.
+     The pen (Rough Notation, assets/vendor/) circles each "Click to discover" when the cards come into view and underlines the
+     offer's name once a card has turned. Without the library the cards work the same, unmarked. */
+  const token = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const pen = new WeakMap();
+  const mark = (el, opts) => {
+    if (!window.RoughNotation || !el) return;
+    if (!pen.has(el)) pen.set(el, window.RoughNotation.annotate(el, { animate: !reduce(), animationDuration: parseFloat(token('--slow')), ...opts }));
+    pen.get(el).show();
+  };
   document.querySelectorAll('.flips').forEach((root) => {
     root.classList.add('is-armed');
     root.querySelectorAll('[data-flip]').forEach((card) => {
       const front = card.querySelector('.flip-front');
+      const name = card.querySelector('.flip-back [data-mark]');
       const set = (open) => {
-        if (open) root.querySelectorAll('[data-flip].is-open').forEach((o) => { if (o !== card) { o.classList.remove('is-open'); o.querySelector('.flip-front').setAttribute('aria-expanded', 'false'); } });
+        if (open === card.classList.contains('is-open')) return;
+        if (open) root.querySelectorAll('[data-flip].is-open').forEach((o) => { if (o !== card) { o.classList.remove('is-open'); o.querySelector('.flip-front').setAttribute('aria-expanded', 'false'); pen.get(o.querySelector('.flip-back [data-mark]'))?.hide(); } });
         card.classList.toggle('is-open', open); front.setAttribute('aria-expanded', String(open));
+        // the name is underlined once the card has turned
+        if (open) setTimeout(() => { if (card.classList.contains('is-open')) mark(name, { type: 'underline', color: token('--orange'), strokeWidth: 3, iterations: 2, padding: 4 }); }, reduce() ? 0 : parseFloat(token('--slow')));
+        else pen.get(name)?.hide();
       };
       // a tap or click toggles this card only; a real mouse also flips on hover (touch never does, so nothing sticks)
       front.addEventListener('click', () => set(!card.classList.contains('is-open')));
@@ -123,6 +137,15 @@
       card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') set(false); });
       card.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); front.focus(); } });
     });
+    // the invitation: one circle after another, the first time the cards are in view
+    const cues = [...root.querySelectorAll('.flip-front [data-cue]')];
+    if (!cues.length || !window.RoughNotation) return;
+    const seen = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      seen.disconnect();
+      cues.forEach((cue, i) => setTimeout(() => mark(cue, { type: 'circle', color: token('--orange-dk'), strokeWidth: 2.5, iterations: 2, padding: [10, 14] }), reduce() ? 0 : i * parseFloat(token('--base'))));
+    }, { threshold: 0.4 });
+    seen.observe(root);
   });
 
   /* 6. motto: "Be" stays, the word swaps every --motto-every; the last word

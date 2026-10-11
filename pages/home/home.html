@@ -4,6 +4,7 @@
 <head>
   <!-- @include _partials/head.html -->
   <link rel="stylesheet" href="/assets/home.css">
+  <script src="/assets/vendor/rough-notation.iife.js" defer></script>
   <script src="/assets/home.js" defer></script>
 </head>
 <body class="c ph ph-3">
@@ -91,16 +92,20 @@
             {{/each}}
           </div>
         </div>
-        <!-- Not sure which fits: three flip cards (owner, 2026-09-30). Front: the question. Back: the offer and when it fits. Flips on hover, tap or keyboard; the back is always in the page. -->
-        <div class="helper flips">
-          <h3 class="h3 reveal">{{ shared.helper.question }}</h3>
-          <ul class="flip-grid stagger">
-            {{#each shared.helper.options}}<li class="flip reveal" data-flip>
-              <button class="flip-front" type="button" aria-expanded="false"><span class="flip-n">{{ @number }}</span><span class="flip-q">{{ situation }}</span><span class="flip-hint">{{ shared.helper.hint }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8a6 6 0 0 1 10.5-4M14 8a6 6 0 0 1-10.5 4"/><path d="M12.5 1v3h-3M3.5 15v-3h3"/></svg></span></button>
-              <div class="flip-back"><p class="eyebrow">{{ offer }}</p><p>{{ answer }}</p></div>
-            </li>{{/each}}
-          </ul>
-        </div>
+      </div>
+    </section>
+
+    <!-- Which offer fits: three large flip cards in their own section (owner, 2026-10-11). Until then they were a small row at the foot of What we do, and visitors skipped them. Front: the question and a "Click to discover" button, which the pen circles when the cards come into view. Back: the offer, underlined by the pen, when it fits, and the link. Flips on hover, tap or keyboard; the back is always in the page. -->
+    <section class="section fits" id="which-fits" aria-labelledby="which-fits-title">
+      <div class="container">
+        <div class="reveal"><h2 id="which-fits-title"><span class="mask"><span class="mask-in">{{ shared.helper.question }}</span></span></h2></div>
+        <ul class="fits-cards flips stagger">
+          {{#each shared.helper.options}}<li class="flip fit reveal" data-flip>
+            <button class="flip-front" type="button" aria-expanded="false"><span class="fit-q">{{ situation }}</span><span class="fit-go"><span class="fit-plus" aria-hidden="true"></span><span data-cue>{{ shared.helper.discover }}</span></span></button>
+            <div class="flip-back"><p class="fit-offer"><span data-mark>{{ offer }}</span></p><p>{{ answer }}</p><p><a class="link" href="{{{ link }}}">{{ explore }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p></div>
+          </li>{{/each}}
+        </ul>
+        <p class="fit-unsure reveal"><a href="#lead" data-lead-open data-source="which fits: still not sure">{{ shared.helper.still_unsure }}</a></p>
       </div>
     </section>
 

@@ -17,6 +17,7 @@
 
 **Design decisions that are settled (don't re-ask)**
 - **Home = the photo-led Cris direction (lab A3)**: serif headline with the italic half, facts row (10+ years · Days to build · One contact person), the three offers as a **fanned deck of cards with an icon each** in the hero, a slow marquee of the service areas, the statement with an arched photo, "Three ways to work with us" as a list with a panel per offer, four stacking step cards (last one dark), Why Sansara, founders, testimonials, a large laptop showcase band, FAQ, dark closing band. Details: `decisions.md` (27 Sep entries) and `docs/DESIGN_SPEC.md`.
+- **"Which offer fits" is its own section on Home** (11 Oct): three tall flip cards with "Click to discover", marked by a pen (Rough Notation, the one approved library; see `pages/_assets/vendor/README.md`). Chosen from `/lab/which-fits/`; details in `decisions.md`.
 - Italic accents in `--orange-dk` on light grounds (light orange only on dark). Motion: rise through a mask, soft rhythm.
 - Photos: the home and About use **free stock placeholders, each marked Pending**. They may be shown on the preview, but **must be replaced by real photos before the site goes public**. Never a stock photo of a person standing in for a real one.
 
