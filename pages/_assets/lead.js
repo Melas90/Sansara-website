@@ -69,8 +69,24 @@
 
   /* validation and sending */
   const msg = form.dataset;
-  // an email address, or a phone number with at least 6 digits
-  const isReach = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || v.replace(/\D/g, '').length >= 6;
+  // An email address, or a phone number in international form (+44 7484 732570, 0044…): the
+  // same rule as the CRM's intake, which drops anything else. A local number ("07484 732570")
+  // can't be dialled from abroad, so the visitor is asked for the country code instead.
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  const phoneDigits = (v) => {
+    const t = v.trim();
+    if (!/^(\+|00)?[\d\s().\/-]+$/.test(t)) return null; // not a phone number at all
+    const d = t.replace(/\D/g, '');
+    if (t.startsWith('+')) return d;
+    return d.startsWith('00') ? d.slice(2) : '';
+  };
+  const reachError = (v) => {
+    if (isEmail(v)) return '';
+    const d = phoneDigits(v);
+    if (d === null) return msg.msgReach;
+    if (!d) return msg.msgCountry;
+    return /^[1-9]\d{7,14}$/.test(d) ? '' : msg.msgReach;
+  };
   const fields = [...form.querySelectorAll('.field')];
   const check = (field) => {
     const input = field.querySelector('input:not([type=hidden]), select, textarea');
@@ -78,7 +94,7 @@
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
     else if (input.required && !input.value.trim()) text = msg.msgRequired;
-    else if (input.hasAttribute('data-reach') && !isReach(input.value)) text = msg.msgReach;
+    else if (input.hasAttribute('data-reach')) text = reachError(input.value);
     out.textContent = text;
     field.classList.toggle('is-invalid', Boolean(text));
     input.setAttribute('aria-invalid', String(Boolean(text)));
