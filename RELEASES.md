@@ -4,6 +4,16 @@ One production release a month at most (owner, 2026-10-15). Each entry says what
 how it was checked, and what is still open. Newest first. The deploy procedure is in the
 `sansara-deploy` skill.
 
+## Next release (planned 2026-11-16)
+
+On `develop`, not live yet.
+
+- Lead form: **Email and WhatsApp as two fields**, one or both, at least one, each checked when
+  filled in (owner, 2026-10-15). The CRM needs no change.
+- Fix: a tap on the privacy box (or the send button) right after leaving a wrong field was lost,
+  because the error message pushed the box down under the finger. Live since 2026-10-15.
+- Release notes (this file).
+
 ## 2026-10-15
 
 - **Live:** https://sansara-website-v2.netlify.app, Netlify deploy `6ad07c31d4348d9b73310a23`
