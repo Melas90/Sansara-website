@@ -22,7 +22,7 @@
 - Photos: the home and About use **free stock placeholders, each marked Pending**. They may be shown on the preview, but **must be replaced by real photos before the site goes public**. Never a stock photo of a person standing in for a real one.
 
 **How visitors get in touch (replaces §2.4 and the calendar)**
-- **One form, the lead pop-up** (Netlify form `lead`): name, "Email or phone" (one field, `reach`), "What are you interested in?" (The System · Done-for-You Services · Consulting · I'm not sure yet), privacy consent, plus a hidden `source` (which button on which page). No company, no message field, **no WhatsApp**.
+- **One form, the lead pop-up** (Netlify form `lead`): name, "Email" and "WhatsApp" (one or both, at least one; the older single field `reach` is gone since 2026-10-15), "What are you interested in?" (The System · Done-for-You Services · Consulting · I'm not sure yet), privacy consent, plus a hidden `source` (which button on which page). No company, no message field, **no WhatsApp**.
 - **No booking calendar for now.** Every "Book a free call" button (header, hero, footer) opens the lead form (`/#lead`). A calendar (Cal.com was used on the old site) comes back only if the owner asks.
 - Submissions land in **Netlify Forms** and go straight into the **Sansara CRM** (separate repo `Crmsansara`) through a signed outgoing webhook on the `lead` form. The CRM reads `name`/`reach`/`interest`/`source` (an email-only lead is stored by email). Tested end to end on 27 Sep. For now it feeds the CRM's test client "Example client"; before real use it moves to a Sansara Media client with a fresh secret.
 

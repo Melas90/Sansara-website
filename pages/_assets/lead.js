@@ -69,9 +69,9 @@
 
   /* validation and sending */
   const msg = form.dataset;
-  // An email address, or a phone number in international form (+44 7484 732570, 0044…): the
-  // same rule as the CRM's intake, which drops anything else. A local number ("07484 732570")
-  // can't be dialled from abroad, so the visitor is asked for the country code instead.
+  // Email, WhatsApp, or both: at least one, and each one valid when filled in. A phone must be in
+  // international form (+44 7484 732570, 0044…), the same rule as the CRM's intake, which drops
+  // anything else; a local number ("07484 732570") gets "add your country code".
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   const phoneDigits = (v) => {
     const t = v.trim();
@@ -80,12 +80,19 @@
     if (t.startsWith('+')) return d;
     return d.startsWith('00') ? d.slice(2) : '';
   };
-  const reachError = (v) => {
-    if (isEmail(v)) return '';
+  const emailInput = form.querySelector('[data-contact="email"]');
+  const whatsappInput = form.querySelector('[data-contact="whatsapp"]');
+  const contactError = (input) => {
+    const v = input.value.trim();
+    if (input === emailInput) {
+      if (v) return isEmail(v) ? '' : msg.msgEmail;
+      return whatsappInput.value.trim() ? '' : msg.msgContact; // neither given: asked once, on the email
+    }
+    if (!v) return '';
     const d = phoneDigits(v);
-    if (d === null) return msg.msgReach;
+    if (d === null) return msg.msgWhatsapp;
     if (!d) return msg.msgCountry;
-    return /^[1-9]\d{7,14}$/.test(d) ? '' : msg.msgReach;
+    return /^[1-9]\d{7,14}$/.test(d) ? '' : msg.msgWhatsapp;
   };
   const fields = [...form.querySelectorAll('.field')];
   const check = (field) => {
@@ -94,16 +101,25 @@
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
     else if (input.required && !input.value.trim()) text = msg.msgRequired;
-    else if (input.hasAttribute('data-reach')) text = reachError(input.value);
+    else if (input.dataset.contact) text = contactError(input);
     out.textContent = text;
     field.classList.toggle('is-invalid', Boolean(text));
     input.setAttribute('aria-invalid', String(Boolean(text)));
     return !text;
   };
-  fields.forEach((f) => f.querySelector('input, select, textarea')?.addEventListener('change', () => check(f)));
-  // a value that starts like a phone number shows the WhatsApp mark: that is how we'll write back
-  const reach = form.querySelector('[data-reach]');
-  reach?.addEventListener('input', () => reach.closest('.field').classList.toggle('is-phone', /^\s*[+(\d]/.test(reach.value)));
+  // A field is checked when it loses focus, and an error message pushes everything below it down.
+  // When that happens because the visitor pressed something else (the privacy box, the button),
+  // the message waits until the finger or mouse is lifted; otherwise the press lands on empty space.
+  let pressing = false;
+  const waiting = new Set();
+  // the timeout covers touch: there the field loses focus after the finger is lifted, just before the tap's click
+  const checkSoon = (f) => setTimeout(() => { if (pressing) waiting.add(f); else check(f); }, 0);
+  dialog.addEventListener('pointerdown', () => { pressing = true; }, true);
+  document.addEventListener('pointerup', () => { pressing = false; waiting.forEach(check); waiting.clear(); }, true);
+  document.addEventListener('pointercancel', () => { pressing = false; waiting.forEach(check); waiting.clear(); }, true);
+  fields.forEach((f) => f.querySelector('input, select, textarea')?.addEventListener('change', () => checkSoon(f)));
+  // a WhatsApp number answers "email or WhatsApp", so the email's "give us one" clears with it
+  whatsappInput?.addEventListener('change', () => checkSoon(emailInput.closest('.field')));
   form.setAttribute('novalidate', '');
   form.addEventListener('submit', async (e) => {
     const ok = fields.map(check).every(Boolean);
