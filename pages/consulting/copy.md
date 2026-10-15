@@ -6,7 +6,7 @@
 brochure's own layout is ignored. Structure from the brief §2.3: hero, who it's for, Kickstarter →
 Growth → Scale as one path, what a session looks like, "not sure what fits?", FAQ, final CTA.
 Owner decisions: the first program is called Kickstarter (as on Home and in positioning.md);
-Kickstarter shows its price, 2,200 €; Growth and Scale are priced on a call.
+No program shows a price on the page; all three are priced on a call (owner, 2026-10-15, removing the 2,200 € shown earlier that day).
 Two items of the Business Foundation Kit are new, not in the brochure (owner, 2026-10-15): the offer
 structure and the concepts. Working copy, pending approval. Left out on purpose: the brochure's
 phone number (the site uses the lead form and WhatsApp) and its testimonials (screenshots of client
@@ -53,7 +53,7 @@ lead: Each program starts where the last one ends. Most people begin with Kickst
   key: kickstarter
   promise: Find your direction
   text: We get clear on your business and lay the foundation for how you show up online.
-  price: 2,200 €
+  price: Price on a call
   link: #kickstarter
   link_label: See what's included
 - name: Growth
@@ -122,7 +122,6 @@ lead: Everything we work out together is written down and kept in one place, in 
 
 name: Kickstarter
 promise: Strategy, implementation and four weeks working with us, 1:1.
-price: 2,200 €
 text: For a clear, professional start to your online business.
 takeaway_title: What you take away
 cta: Start with Kickstarter
@@ -187,8 +186,8 @@ title: Things people *ask before they start*.
   a: In Kickstarter you create, with our strategy and feedback behind you. In Content and Social Media we plan and produce the content for you, month after month.
 - q: What happens after the four weeks?
   a: A follow-up call to look at what works and what to adjust. Then you carry on with your plan on your own, or we take the next step together with Growth.
-- q: How much do Growth and Scale cost?
-  a: It depends on the building blocks your business needs. We agree the scope and a fixed price on a call, in writing, before we start.
+- q: How much does it cost?
+  a: Each program has one fixed price, agreed on a call once we know your business and what you need, and put in writing before we start.
 - q: Do I keep everything we create?
   a: Yes. The kit and everything we set up are yours.
 
