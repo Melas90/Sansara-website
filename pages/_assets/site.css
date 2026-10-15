@@ -341,6 +341,12 @@ html:not(.js) .close-btn { display: none; }
 .lead-dialog .form-actions { margin-top: 20px; }
 .lead-dialog .form-grid { align-items: start; }
 .lead-dialog .field-hint { font-size: var(--text-small); color: var(--brown-2-text); }
+/* "Email or WhatsApp": a WhatsApp mark inside the field once the value looks like a phone */
+.reach-wrap { position: relative; }
+.reach-wrap .control { width: 100%; }
+.reach-wa { position: absolute; right: 14px; top: 50%; width: 22px; height: 22px; margin-top: -11px; color: var(--orange-dk); opacity: 0; transform: scale(0.8); transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease); pointer-events: none; }
+.field.is-phone .reach-wa { opacity: 1; transform: none; }
+.field.is-phone .control { padding-right: 48px; }
 html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
 html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }

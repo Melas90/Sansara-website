@@ -101,6 +101,9 @@
     return !text;
   };
   fields.forEach((f) => f.querySelector('input, select, textarea')?.addEventListener('change', () => check(f)));
+  // a value that starts like a phone number shows the WhatsApp mark: that is how we'll write back
+  const reach = form.querySelector('[data-reach]');
+  reach?.addEventListener('input', () => reach.closest('.field').classList.toggle('is-phone', /^\s*[+(\d]/.test(reach.value)));
   form.setAttribute('novalidate', '');
   form.addEventListener('submit', async (e) => {
     const ok = fields.map(check).every(Boolean);

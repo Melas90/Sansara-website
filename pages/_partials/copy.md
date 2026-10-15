@@ -88,8 +88,8 @@ float: Get in touch
 title: Let's *talk*
 intro: Before you book your call, we need a few details. You'll get the booking link right after.
 name: Your name
-reach: Email or phone
-reach_hint: Whichever you prefer. For a phone, start with your country code, like +44 7123 456789. We only use it to get back to you.
+reach: Email or WhatsApp
+reach_hint: Whichever you prefer. For WhatsApp, start with your country code, like +44 7123 456789.
 invalid_reach: Please enter an email address, or a phone number with its country code.
 need_country_code: Please add your country code at the start, like +44 7123 456789.
 interest: What are you interested in?
