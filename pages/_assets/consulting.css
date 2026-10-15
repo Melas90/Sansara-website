@@ -1,0 +1,32 @@
+/* The Consulting page (2026-10-15). Reuses the home components (home.css) and Content's chat bubbles and price card (content.css); only what is specific lives here. Tokens only. */
+.cn-hero .hx-copy { max-width: 44rem; }
+
+/* the three programs, one path */
+.cn-path { list-style: none; padding: 0; margin: 0; }
+.cn-program { display: grid; gap: 12px; align-content: start; }
+.cn-program h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 2.8vw, 36px); line-height: 1.1; }
+.cn-promise { font-family: var(--font-serif); font-style: italic; font-size: var(--text-h3); line-height: 1.25; color: var(--gold-dk); }
+.cn-price { margin-top: auto; padding-top: 8px; font-weight: var(--weight-heading); color: var(--orange-dk); }
+#program-kickstarter { border-color: var(--orange); }
+
+/* the Business Foundation Kit */
+.cn-kit { list-style: none; padding: 0; margin: 0; }
+.cn-kit .card { display: grid; gap: 10px; align-content: start; }
+.cn-kit h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); line-height: 1.15; color: var(--ink); }
+.cn-kit .card:nth-child(-n + 2) { background: var(--sand-3); border-color: transparent; }
+
+/* Kickstarter's price */
+.cn-offer { max-width: 40rem; margin-inline: auto; border-color: var(--orange); }
+.cn-offer-name { font-family: var(--font-serif); font-weight: 400; font-size: clamp(34px, 3.6vw, 48px); line-height: 1.05; }
+.cn-offer-price { font-family: var(--font-serif); font-size: clamp(40px, 4.4vw, 56px); line-height: 1; color: var(--orange-dk); }
+.cn-takeaways { padding-bottom: 8px; }
+
+/* Growth's building blocks, on the dark band */
+.cn-growth { display: grid; gap: 32px; }
+.cn-blocks { list-style: none; padding: 0; margin: 0; }
+.cn-blocks > li { display: grid; gap: 10px; align-content: start; padding-top: 16px; border-top: 1px solid var(--line-on-dark); }
+.cn-blocks h3 { font-size: var(--text-label); font-weight: var(--weight-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.cn-blocks ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; color: var(--bg); }
+.cn-growth-note { max-width: 44rem; font-size: var(--text-small); }
+
+.cn-fit-links { justify-content: center; }

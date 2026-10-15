@@ -1,0 +1,187 @@
+<!-- @route /consulting/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/content.css">
+  <link rel="stylesheet" href="/assets/services.css">
+  <link rel="stylesheet" href="/assets/consulting.css">
+  <script src="/assets/home.js" defer></script>
+</head>
+<body class="c ph">
+  <!-- Consulting (2026-10-15): Kickstarter, Growth and Scale, from the owner's brochure. Structure from the brief §2.3;
+       copy in pages/consulting/copy.md, working copy pending approval. Replaces the coming-soon page at this route.
+       Reuses the home components (home.css) and the chat bubbles and price card of Content (content.css). -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="hx cn-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid hx-solo">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+          <div class="cluster reveal">
+            <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Consulting" data-source="consulting: hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-ghost" href="#kickstarter">{{ hero.secondary }}</a>
+          </div>
+          <p class="small muted reveal">{{ hero.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for: four pains as chat bubbles, then the turn to Kickstarter. -->
+    <section class="section c-band" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ problem.eyebrow }}</p>
+            <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ problem.intro }}</p>
+        </div>
+        <ul class="ct-pains stagger">
+          {{#each problem.pains}}<li class="reveal">{{ this }}</li>{{/each}}
+        </ul>
+        <p class="ct-turn reveal">{{ problem.turn }}</p>
+      </div>
+    </section>
+
+    <!-- The three programs as one path. -->
+    <section class="section" id="path" aria-labelledby="path-title">
+      <div class="container">
+        <div class="centred stack-sm reveal" style="margin-bottom: 40px">
+          <p class="eyebrow">{{ path.eyebrow }}</p>
+          <h2 id="path-title"><span class="mask"><span class="mask-in">{{ path.title }}</span></span></h2>
+          <p class="lead measure">{{ path.lead }}</p>
+        </div>
+        <ol class="grid grid-3 cn-path stagger">
+          {{#each path.programs}}
+          <li class="card cn-program reveal" id="program-{{{ key }}}">
+            <span class="c-why-n" aria-hidden="true">{{ @number }}</span>
+            <h3>{{ name }}</h3>
+            <p class="cn-promise">{{ promise }}</p>
+            <p>{{ text }}</p>
+            <p class="cn-price">{{ price }}</p>
+            <a class="link" href="{{{ link }}}"{{#if ask}} data-lead-open data-topic="Consulting" data-source="consulting: {{{ name }}}"{{/if}}>{{ link_label }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Kickstarter in four steps (what a session looks like), as the stacked steps on Home and Services. -->
+    <section class="section c-band" id="kickstarter" aria-labelledby="kickstarter-title">
+      <div class="container c-narrow">
+        <div class="centred stack-sm reveal" style="margin-bottom: 48px">
+          <p class="eyebrow">{{ kickstarter.eyebrow }}</p>
+          <h2 id="kickstarter-title"><span class="mask"><span class="mask-in">{{ kickstarter.title }}</span></span></h2>
+          <p class="lead">{{ kickstarter.lead }}</p>
+        </div>
+        <ol class="stack" data-stack>
+          {{#each kickstarter.steps}}
+          <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}<span class="tag">{{ tag }}</span></h3><p>{{ text }}</p></div></article></li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- The Business Foundation Kit. -->
+    <section class="section" id="kit" aria-labelledby="kit-title">
+      <div class="container">
+        <div class="c-head reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ kit.eyebrow }}</p>
+            <h2 id="kit-title"><span class="mask"><span class="mask-in">{{ kit.title }}</span></span></h2>
+          </div>
+          <p class="c-head-aside">{{ kit.lead }}</p>
+        </div>
+        <ul class="grid grid-4 cn-kit stagger">
+          {{#each kit.items}}<li class="card reveal"><h3>{{ name }}</h3><p>{{ text }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Kickstarter's price, the one program with a price on the page (owner, 2026-10-15). -->
+    <section class="section c-band" id="price" aria-labelledby="price-title">
+      <div class="container">
+        <article class="card ct-tier cn-offer reveal">
+          <h2 class="cn-offer-name" id="price-title">{{ price.name }}</h2>
+          <p class="ct-promise">{{ price.promise }}</p>
+          <p class="cn-offer-price">{{ price.price }}</p>
+          <p>{{ price.text }}</p>
+          <p class="eyebrow">{{ price.takeaway_title }}</p>
+          <ul class="ticks cn-takeaways">{{#each price.takeaways}}<li>{{ this }}</li>{{/each}}</ul>
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Consulting" data-source="consulting: Kickstarter price">{{ price.cta }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- What comes next: Growth and its building blocks. -->
+    <section class="section" id="growth" aria-labelledby="growth-title">
+      <div class="container">
+        <article class="card sv-system cn-growth reveal">
+          <div class="stack-sm">
+            <p class="eyebrow">{{ growth.eyebrow }}</p>
+            <h2 id="growth-title"><span class="mask"><span class="mask-in">{{ growth.title }}</span></span></h2>
+            <p class="lead">{{ growth.lead }}</p>
+          </div>
+          <ul class="grid grid-4 cn-blocks">
+            {{#each growth.blocks}}<li><h3>{{ name }}</h3><ul>{{#each items}}<li>{{ this }}</li>{{/each}}</ul></li>{{/each}}
+          </ul>
+          <p class="cn-growth-note">{{ growth.note }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Not sure what fits? The other two offers. -->
+    <section class="section c-band" id="fit" aria-labelledby="fit-title">
+      <div class="container c-narrow centred stack-sm reveal">
+        <p class="eyebrow">{{ fit.eyebrow }}</p>
+        <h2 id="fit-title"><span class="mask"><span class="mask-in">{{ fit.title }}</span></span></h2>
+        <p class="lead measure">{{ fit.text }}</p>
+        <div class="cluster cn-fit-links">
+          <a class="btn btn-ghost" href="/services/">{{ fit.services_label }}</a>
+          <a class="btn btn-ghost" href="/system/">{{ fit.system_label }}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container editorial reveal">
+        <div class="stack-sm">
+          <p class="eyebrow">{{ faq.eyebrow }}</p>
+          <h2 id="faq-title"><span class="mask"><span class="mask-in">{{ faq.title }}</span></span></h2>
+        </div>
+        <div>
+          {{#each faq.items}}<details class="fx-item"><summary>{{ q }}</summary><div class="fx-a"><p>{{ a }}</p></div></details>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band, in the brochure's own words. -->
+    <div class="c-close" id="contact">
+      <div class="close-circle" aria-hidden="true"></div>
+      <section class="contact section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="band">
+            <div class="contact-intro">
+              <p class="eyebrow">{{ close.eyebrow }}</p>
+              <h2 id="contact-title"><span class="mask"><span class="mask-in">{{ close.title }}</span></span></h2>
+              <p class="lead">{{ close.text }} {{ shared.contact.response_time }}</p>
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="#lead" data-lead-open data-topic="Consulting" data-source="consulting: closing band">{{ close.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer.html -->
+</body>
+</html>

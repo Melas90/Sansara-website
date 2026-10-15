@@ -1,7 +1,7 @@
 # Coming soon
 
 <!--
-2026-09-30 (owner): Services, Consulting and Blog are not built yet. (Services built 2026-10-11.) Until they are, each of
+2026-09-30 (owner): Services, Consulting and Blog are not built yet. (Services built 2026-10-11, Consulting 2026-10-15.) Until they are, each of
 those routes shows this one message and opens the lead form. Working copy, pending approval.
 -->
 
