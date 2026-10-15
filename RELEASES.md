@@ -6,11 +6,21 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-On `develop`, not live yet.
+Nothing on `develop` yet.
 
-- Consulting, Kickstarter: a program done with us, not a two-hour workshop; channels of your choice
-  (social media, ads or both) instead of Instagram only; 1:1 sessions with an expert and WhatsApp
-  support instead of the workshop recording (owner, 2026-10-15).
+## 2026-10-15, evening
+
+At the owner's request ("remove the Kickstarter price of the website… and deploy").
+
+- **Live:** Netlify deploy `6ad0f009964e74e6a5af59cb`. **Code:** `main` = `785e6f6`, tag
+  `release-2026-10-15-evening`.
+- Consulting: **no price on the page.** Kickstarter is "Price on a call" like Growth and Scale; the
+  FAQ asks "How much does it cost?" (one fixed price per program, agreed on a call, in writing).
+- Consulting, Kickstarter: a program done with us, not a two-hour workshop; the channels of your
+  choice (social media, ads or both) instead of Instagram only; 1:1 sessions with an expert and
+  WhatsApp support instead of the workshop recording.
+- **Checked:** `npm run verify`, production build, every page on desktop and phone (28 of 28 clean).
+  After the deploy: `/consulting/` shows no price and no Instagram, and shows the new wording.
 
 ## 2026-10-15, hotfix (afternoon)
 
