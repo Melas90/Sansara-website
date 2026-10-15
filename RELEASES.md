@@ -6,13 +6,25 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-On `develop`, not live yet.
+Nothing on `develop` yet.
 
+## 2026-10-15, hotfix (afternoon)
+
+Outside the calendar, at the owner's request ("Sí, venga, arréglalo"): the lost tap could cost leads.
+
+- **Live:** Netlify deploy `6ad0a11ac618099539789ac1`. **Code:** `main` = `develop` = `6a51bfb`,
+  tag `release-2026-10-15-hotfix`.
 - Lead form: **Email and WhatsApp as two fields**, one or both, at least one, each checked when
-  filled in (owner, 2026-10-15). The CRM needs no change.
+  filled in (owner, 2026-10-15). The CRM reads `email` and `whatsapp` with no change.
 - Fix: a tap on the privacy box (or the send button) right after leaving a wrong field was lost,
-  because the error message pushed the box down under the finger. Live since 2026-10-15.
+  because the error message pushed the box down under the finger (25 px on desktop, 47 px on a
+  phone). Error messages now wait until the press is over.
 - Release notes (this file).
+- **Checked:** `npm run verify`, production build without the lab, every page on desktop and phone
+  (28 of 28 clean), 9 email/WhatsApp combinations, the tap on the privacy box and on the send button
+  with mouse and touch. After the deploy: the live pages serve the two fields and the fix; Netlify
+  registered the new `email` and `whatsapp` fields; a test lead with both ("TEST Claude hotfix 15-oct
+  (borrar)", test-hotfix@example.com, +44 7700 900124) was saved by the form at 09:47 UTC.
 
 ## 2026-10-15
 
