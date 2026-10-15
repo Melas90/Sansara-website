@@ -6,7 +6,11 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-Nothing on `develop` yet.
+On `develop`, not live yet.
+
+- Consulting, Kickstarter: a program done with us, not a two-hour workshop; channels of your choice
+  (social media, ads or both) instead of Instagram only; 1:1 sessions with an expert and WhatsApp
+  support instead of the workshop recording (owner, 2026-10-15).
 
 ## 2026-10-15, hotfix (afternoon)
 
