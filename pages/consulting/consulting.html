@@ -104,13 +104,13 @@
       </div>
     </section>
 
-    <!-- Kickstarter's price, the one program with a price on the page (owner, 2026-10-15). -->
+    <!-- What Kickstarter includes and its call to action. No price on the page (owner, 2026-10-15); a price line shows only if copy.md sets one. -->
     <section class="section c-band" id="price" aria-labelledby="price-title">
       <div class="container">
         <article class="card ct-tier cn-offer reveal">
           <h2 class="cn-offer-name" id="price-title">{{ price.name }}</h2>
           <p class="ct-promise">{{ price.promise }}</p>
-          <p class="cn-offer-price">{{ price.price }}</p>
+          {{#if price.price}}<p class="cn-offer-price">{{ price.price }}</p>{{/if}}
           <p>{{ price.text }}</p>
           <p class="eyebrow">{{ price.takeaway_title }}</p>
           <ul class="ticks cn-takeaways">{{#each price.takeaways}}<li>{{ this }}</li>{{/each}}</ul>
