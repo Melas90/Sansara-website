@@ -129,10 +129,11 @@
         if (open) setTimeout(() => { if (card.classList.contains('is-open')) mark(name, { type: 'underline', color: token('--orange'), strokeWidth: 3, iterations: 2, padding: 4 }); }, reduce() ? 0 : parseFloat(token('--slow')));
         else pen.get(name)?.hide();
       };
-      // a tap or click toggles this card only; a real mouse also flips on hover (touch never does, so nothing sticks)
-      front.addEventListener('click', () => set(!card.classList.contains('is-open')));
-      // the back covers the button once open, so a tap on the back (not on its link) closes the card
-      card.querySelector('.flip-back').addEventListener('click', (e) => { if (!e.target.closest('a')) set(false); });
+      // a tap or a key toggles this card only. A real mouse flips on hover, so its click only ever opens: the
+      // card is already turned when "Click to discover" is clicked, and a toggle would turn it straight back.
+      front.addEventListener('click', (e) => set(e.pointerType === 'mouse' ? true : !card.classList.contains('is-open')));
+      // the back covers the button once open, so a tap on the back (not on its link) closes the card; a mouse closes it by leaving
+      card.querySelector('.flip-back').addEventListener('click', (e) => { if (!e.target.closest('a') && e.pointerType !== 'mouse') set(false); });
       card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') set(true); });
       card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') set(false); });
       card.addEventListener('keydown', (e) => { if (e.key === 'Escape') { set(false); front.focus(); } });
