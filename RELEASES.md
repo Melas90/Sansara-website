@@ -8,6 +8,18 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-16
+
+At the owner's request ("ok DEPLOY"), outside the calendar.
+
+- **Live:** Netlify deploy `6ad222abe755e344a511bda8`. **Code:** `main` = `1aa2d7f`, tag `release-2026-10-16`.
+- Content: **a keynote animation under the hero.** Attract, Trust and Sell pass with their icon, line
+  and node, then the ground turns dark and "Every post has one job." lands. Code, not video:
+  6 KB of CSS and 3 KB of JS. Plays once when in view; "Play again"; reduced motion shows the last frame.
+- **Checked:** `npm run verify`, production build (no lab), every page on desktop and phone (28 of 28
+  clean), the animation plays to the end on `/content/` and is centred on desktop and phone. After the
+  deploy: `/content/` serves the animation and its two files; the lab stays private (404).
+
 ## 2026-10-15, evening
 
 At the owner's request ("remove the Kickstarter price of the website… and deploy").
