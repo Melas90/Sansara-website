@@ -229,7 +229,10 @@
           <p class="eyebrow">{{ proof.eyebrow }}</p>
           <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
         </div>
-        <figure class="tq reveal"><blockquote class="quote">{{ proof.testimonials }}</blockquote></figure>
+        <figure class="tq ct-quote reveal">
+          <blockquote class="quote">{{ proof.testimonials }}</blockquote>
+          <figcaption class="tq-who"><i aria-hidden="true"></i><div><strong>{{ proof.who }}</strong><br><span class="small muted">{{ proof.who_note }}</span></div></figcaption>
+        </figure>
       </div>
     </section>
     {{/if}}
