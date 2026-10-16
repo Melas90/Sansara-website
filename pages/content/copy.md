@@ -31,6 +31,16 @@ primary: Book a free call
 secondary: See the two ways to work with us
 note: Free 30-minute call. We look at what you post today and what it could be doing for you.
 
+## Keynote
+
+<!-- 2026-10-16 (owner): the keynote animation under the hero, in code (pages/_assets/content-keynote.css and .js).
+The three jobs and their lines come from Jobs below. Working copy, pending approval. -->
+label: The three jobs of a post
+final: Every post has *one job*
+line: Attract, build trust, or sell. Never just likes.
+replay: Play again
+caption: "Attract: posts that bring the right people to you. Trust: posts that show who you are. Sell: posts that give a clear next step. Every post has one job."
+
 ## Problem
 
 eyebrow: Sound familiar?
