@@ -249,10 +249,16 @@ no_title: Probably not for you if…
 
 ## Proof
 
-<!-- Hidden until a content client agrees to be shown: before/after Reels and one quote about time saved (see Confluence: "Proof plan before going public"). -->
+<!-- Hidden until a content client agrees to be shown: before/after Reels and one quote about time saved (see Confluence: "Proof plan before going public").
+2026-10-16 (owner): the quote is from a client's WhatsApp voice note to Christiane in German (agencia/marketing/WhatsApp Audio
+2026-10-16 at 14.19.16.ogg, 3 min), about the scripts Christiane reworked for her. Only her own praise is used, in her order,
+translated into natural English; nothing added. "gefiltert" in the transcript is read as "gefehlt" (what was missing): check
+it against the audio. Needs her written OK on the English wording and on her name before it goes live (decision #7). -->
 eyebrow: In their words
-title: Content that's *already working*
-testimonials: PENDING: an approved quote from a content client, with name and business
+title: Scripts that *finally say it*
+testimonials: “When I saw how you'd rewritten my scripts, I just thought: wow. How do you even know how to do that? Just reading them, I could see exactly what was missing from my content, and now the value comes across so much better. The scripts you reworked for me are absolutely amazing.”
+who: PENDING: the client's name and business, with her written OK
+who_note: Translated from German
 examples: PENDING: three before/after pairs (raw clip, finished Reel), with the client's written OK
 
 ## FAQ

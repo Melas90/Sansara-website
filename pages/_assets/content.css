@@ -36,6 +36,9 @@
 .ct-addon { display: inline-block; margin: 2px 6px 2px 0; padding: 4px 12px; border: 1px solid var(--line); border-radius: var(--radius-pill); font-size: var(--text-small); background: var(--white); }
 .ct-founding { font-family: var(--font-serif); font-style: italic; color: var(--orange-dk); }
 
+/* a client's words */
+.ct-quote { width: 100%; max-width: 46rem; margin-inline: auto; justify-self: center; }
+
 /* who does what, fit */
 .ct-split .card, .ct-no { display: grid; gap: 16px; align-content: start; }
 .ct-split h3, #fit h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); }
