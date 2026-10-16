@@ -37,7 +37,19 @@
 .ct-founding { font-family: var(--font-serif); font-style: italic; color: var(--orange-dk); }
 
 /* a client's words */
-.ct-quote { width: 100%; max-width: 46rem; margin-inline: auto; justify-self: center; }
+.ct-chat { width: 100%; max-width: 36rem; margin: 0 auto; justify-self: center; display: grid; gap: 12px; padding: clamp(20px, 3vw, 28px); border-radius: var(--radius-card); background: var(--sand-2); border: 1px solid var(--line); }
+.ct-chat-head { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.ct-chat-head i { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--grad-orb); }
+.ct-voice { justify-self: start; display: flex; align-items: center; gap: 12px; width: min(100%, 22rem); padding: 10px 16px 10px 10px; border-radius: var(--radius-card-sm) var(--radius-card-sm) var(--radius-card-sm) 6px; background: var(--white); border: 1px solid var(--line); }
+.ct-voice-play { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--orange); }
+.ct-voice-play svg { width: 16px; height: 16px; fill: var(--ink); }
+.ct-voice-wave { flex: 1; display: flex; align-items: center; gap: 2px; height: 28px; }
+.ct-voice-wave span { flex: 1; height: var(--h); min-height: 3px; border-radius: 2px; background: var(--brown-2); opacity: 0.55; }
+.ct-voice-time { flex: none; font-size: var(--text-small); color: var(--brown-2-text); }
+.ct-chat-quotes { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ct-chat-quotes li { justify-self: start; max-width: 30rem; padding: 12px 18px; border-radius: var(--radius-card-sm) var(--radius-card-sm) var(--radius-card-sm) 6px; background: var(--white); border: 1px solid var(--line); }
+.ct-chat-quotes blockquote { margin: 0; font-family: var(--font-serif); font-size: var(--text-lead); line-height: 1.4; color: var(--ink); }
+.ct-chat-note { padding-top: 4px; }
 
 /* who does what, fit */
 .ct-split .card, .ct-no { display: grid; gap: 16px; align-content: start; }
