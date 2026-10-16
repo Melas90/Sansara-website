@@ -8,6 +8,18 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-16, afternoon
+
+At the owner's request ("Okay, deploy").
+
+- **Live:** Netlify deploy `6ad23a3125f2bdbf36d252f1`. **Code:** `main` = `af74320`, tag `release-2026-10-16-afternoon`.
+- Content: **the proof section is live with Alice's words.** A WhatsApp-style chat: her voice note (3:01)
+  and two moments from it, translated from German and marked so. Not a screenshot of typed text.
+  First name only, as the owner gave it.
+- **Checked:** `npm run verify`, production build, every page on desktop and phone (28 of 28, no
+  visible PENDING). After the deploy: `/content/` shows the chat with her name; `/consulting/` still
+  shows no Kickstarter price.
+
 ## 2026-10-16
 
 At the owner's request ("ok DEPLOY"), outside the calendar.
