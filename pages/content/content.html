@@ -5,6 +5,8 @@
   <!-- @include _partials/head.html -->
   <link rel="stylesheet" href="/assets/home.css">
   <link rel="stylesheet" href="/assets/content.css">
+  <link rel="stylesheet" href="/assets/content-keynote.css">
+  <script src="/assets/content-keynote.js" defer></script>
   <script src="/assets/home.js" defer></script>
 </head>
 <body class="c ph">
@@ -31,6 +33,37 @@
     </section>
 
     <!-- The problem: four pains as chat bubbles (as on The System), then the turn. -->
+    <!-- The keynote (owner, 2026-10-16): the three jobs pass, then "Every post has one job." In code, about 9 KB; plays
+         once when in view, "Play again" replays, reduced motion shows the last frame. Words in copy.md (Keynote, Jobs). -->
+    <section class="section ck-band" aria-label="{{{ keynote.label }}}">
+      <div class="container">
+        <figure class="ck" data-ck>
+          <div class="ck-dark" aria-hidden="true"></div>
+          <p class="ck-label" aria-hidden="true"><span class="ck-rule"></span>{{ keynote.label }}<span class="ck-rule"></span></p>
+          <div class="ck-seal" aria-hidden="true">
+            <svg class="ck-ring" viewBox="0 0 160 160"><circle cx="80" cy="80" r="70" pathLength="1"/></svg>
+            <svg class="ck-icon" data-icon="0" viewBox="0 0 48 48"><circle cx="24" cy="24" r="3" pathLength="1"/><path d="M14 24a10 10 0 0 1 20 0" pathLength="1"/><path d="M8 24a16 16 0 0 1 32 0" pathLength="1"/><path d="M14 24a10 10 0 0 0 20 0" pathLength="1"/><path d="M8 24a16 16 0 0 0 32 0" pathLength="1"/></svg>
+            <svg class="ck-icon" data-icon="1" viewBox="0 0 48 48"><path d="M24 40S7 30 7 18.5A9 9 0 0 1 24 14a9 9 0 0 1 17 4.5C41 30 24 40 24 40z" pathLength="1"/></svg>
+            <svg class="ck-icon" data-icon="2" viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="4" pathLength="1"/><path d="M7 19h34M16 6v8M32 6v8" pathLength="1"/><path class="ck-accent" d="M18 30l4.5 4.5L31 26" pathLength="1"/></svg>
+            <svg class="ck-icon" data-icon="3" viewBox="0 0 48 48"><path class="ck-accent" d="M24 24c-4.5-5.5-8-8.5-12-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 12-8.5s8-8.5 12-8.5a8.5 8.5 0 0 1 0 17c-4 0-7.5-3-12-8.5z" pathLength="1"/></svg>
+          </div>
+          <div class="ck-words">
+            {{#each jobs.jobs}}<p class="ck-word" data-word="{{ @index }}"><em>{{ title }}</em><span>.</span></p>{{/each}}
+            <p class="ck-word ck-final" data-word="3">{{ keynote.final }}<span>.</span></p>
+          </div>
+          <div class="ck-lines">
+            {{#each jobs.jobs}}<p class="ck-line" data-line="{{ @index }}">{{ text }}</p>{{/each}}
+            <p class="ck-line" data-line="3">{{ keynote.line }}</p>
+          </div>
+          <ol class="ck-thread" aria-hidden="true">
+            {{#each jobs.jobs}}<li data-node="{{ @index }}"><span class="ck-node"></span><span class="ck-node-label">{{ title }}</span></li>{{/each}}
+          </ol>
+          <button class="ck-replay" type="button" data-ck-replay>{{ keynote.replay }}</button>
+          <figcaption class="sr-only">{{ keynote.caption }}</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section c-band" id="problem" aria-labelledby="problem-title">
       <div class="container">
         <div class="c-head reveal">

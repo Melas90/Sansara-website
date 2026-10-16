@@ -1,5 +1,5 @@
 /*
- * Lab, 2026-10-16: the Content page's keynote (pages/_lab/content-keynote.html). Plays once when it comes into view:
+ * The Content page keynote (owner, 2026-10-16; first tried in pages/_lab/content-keynote.html). Plays once when it comes into view:
  * each job (Attract, Trust, Sell) with its icon, line and node, then the ground turns dark and the closing line lands.
  * All timings come from the motion tokens (--base, --slow). With reduced motion it shows the last frame.
  */

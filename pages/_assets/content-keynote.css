@@ -1,6 +1,6 @@
-/* Lab, 2026-10-16: keynote animation for the Content page (pages/_lab/content-keynote.html). Tokens only. */
+/* The Content page keynote (owner, 2026-10-16; first tried in /lab/content-keynote/). Tokens only. */
 .ck-band { padding-block: clamp(48px, 7vw, 96px); }
-.ck { position: relative; margin: 0 auto; max-width: 1080px; aspect-ratio: 16 / 9; border-radius: var(--radius-card); overflow: hidden; background: radial-gradient(130% 95% at 50% 40%, var(--bg) 0%, var(--sand) 70%); border: 1px solid var(--line); box-shadow: var(--shadow-float); isolation: isolate; }
+.ck { position: relative; margin: 0 auto; width: 100%; max-width: 1080px; justify-self: center; aspect-ratio: 16 / 9; border-radius: var(--radius-card); overflow: hidden; background: radial-gradient(130% 95% at 50% 40%, var(--bg) 0%, var(--sand) 70%); border: 1px solid var(--line); box-shadow: var(--shadow-float); isolation: isolate; }
 .ck-dark { position: absolute; inset: 0; background: var(--grad-dark); opacity: 0; transition: opacity var(--slow) var(--ease); z-index: -1; }
 .ck.is-final .ck-dark { opacity: 1; }
 
