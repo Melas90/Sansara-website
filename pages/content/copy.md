@@ -253,12 +253,12 @@ no_title: Probably not for you if…
 2026-10-16 (owner): the quote is from a client's WhatsApp voice note to Christiane in German (agencia/marketing/WhatsApp Audio
 2026-10-16 at 14.19.16.ogg, 3 min), about the scripts Christiane reworked for her. Only her own praise is used, in her order,
 translated into natural English; nothing added. "gefiltert" in the transcript is read as "gefehlt" (what was missing): check
-it against the audio. Needs her written OK on the English wording and on her name before it goes live (decision #7). -->
+it against the audio. Her name (first name only) given by the owner on 2026-10-16 ("alice"), when asked to publish it. -->
 eyebrow: In their words
 title: Scripts that *finally say it*
 testimonials: yes
 examples: PENDING: three before/after pairs (raw clip, finished Reel), with the client's written OK
-who: PENDING: the client's name and business, with her written OK
+who: Alice
 who_note: WhatsApp voice note to Christiane, in German
 voice_length: 3:01
 chat_note: Two moments from her voice note, translated from German.
