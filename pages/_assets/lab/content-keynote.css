@@ -1,0 +1,69 @@
+/* Lab, 2026-10-16: keynote animation for the Content page (pages/_lab/content-keynote.html). Tokens only. */
+.ck-band { padding-block: clamp(48px, 7vw, 96px); }
+.ck { position: relative; margin: 0 auto; max-width: 1080px; aspect-ratio: 16 / 9; border-radius: var(--radius-card); overflow: hidden; background: radial-gradient(130% 95% at 50% 40%, var(--bg) 0%, var(--sand) 70%); border: 1px solid var(--line); box-shadow: var(--shadow-float); isolation: isolate; }
+.ck-dark { position: absolute; inset: 0; background: var(--grad-dark); opacity: 0; transition: opacity var(--slow) var(--ease); z-index: -1; }
+.ck.is-final .ck-dark { opacity: 1; }
+
+.ck-label { position: absolute; top: 7%; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 18px; font-size: var(--text-label); font-weight: var(--weight-label); letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); opacity: 0.75; transition: color var(--slow) var(--ease); }
+.ck-rule { width: 56px; height: 1px; background: var(--orange-dk); }
+.ck.is-final .ck-label { color: var(--bg); }
+
+/* the seal and its icons: drawn stroke by stroke */
+.ck-seal { position: absolute; top: 17%; left: 50%; width: clamp(72px, 11%, 120px); aspect-ratio: 1; transform: translateX(-50%); }
+.ck-seal svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ck-ring circle { stroke: var(--orange-dk); stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: center; transition: stroke-dashoffset var(--slow) var(--ease), stroke var(--slow) var(--ease); }
+.ck.is-on .ck-ring circle { stroke-dashoffset: 0; }
+.ck.is-final .ck-ring circle { stroke: var(--gold); }
+.ck-icon { inset: 24% !important; width: 52% !important; height: 52% !important; stroke: var(--ink); stroke-width: 1.4; opacity: 0; transition: opacity var(--base) var(--ease); }
+.ck-icon * { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--slow) var(--ease); }
+.ck-icon .ck-accent { stroke: var(--orange-dk); stroke-width: 1.8; }
+.ck-icon.is-in { opacity: 1; }
+.ck-icon.is-in * { stroke-dashoffset: 0; }
+.ck-icon[data-icon="3"] { stroke: var(--orange); }
+.ck-icon[data-icon="3"] .ck-accent { stroke: var(--orange); }
+
+/* the words: rise into focus, leave upwards */
+.ck-words, .ck-lines { position: absolute; left: 0; right: 0; }
+.ck-words { top: 40%; height: 26%; }
+.ck-lines { top: 67%; }
+.ck-word, .ck-line { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; transform: translateY(32px); filter: blur(8px); transition: opacity var(--base) var(--ease), transform var(--base) var(--ease), filter var(--base) var(--ease); }
+.ck-word { font-family: var(--font-serif); font-weight: 400; font-size: clamp(48px, 9vw, 128px); line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+.ck-word em { font-style: italic; color: var(--orange-dk); }
+.ck-final { font-size: clamp(32px, 5.6vw, 76px); font-weight: 300; color: var(--bg); top: 18%; }
+.ck-final em { color: var(--orange); }
+.ck-line { font-family: var(--font-serif); font-style: italic; font-size: clamp(16px, 2.2vw, 28px); color: var(--brown); padding-inline: 8%; }
+.ck-line[data-line="3"] { color: var(--on-dark-muted); }
+.is-in { opacity: 1; transform: none; filter: none; }
+/* the outgoing word clears fast, so two words never sit on top of each other */
+.ck-word.is-out, .ck-line.is-out { opacity: 0; transform: translateY(-32px); filter: blur(8px); transition-duration: var(--fast); }
+
+/* the thread: one node per job, filled as each job is shown */
+.ck-thread { position: absolute; left: 22%; right: 22%; bottom: 13%; display: flex; justify-content: space-between; list-style: none; margin: 0; padding: 0; }
+.ck-thread::before, .ck-thread::after { content: ''; position: absolute; top: 6px; left: 6px; right: 6px; height: 1px; background: var(--line); }
+.ck-thread::after { background: var(--orange-dk); height: 2px; top: 5px; right: auto; width: calc((100% - 12px) * var(--ck-fill, 0)); transition: width var(--slow) var(--ease), background var(--slow) var(--ease); }
+.ck.is-final .ck-thread::before { background: var(--line-on-dark); }
+.ck.is-final .ck-thread::after { background: var(--orange); }
+.ck-thread li { position: relative; display: grid; justify-items: center; gap: 10px; z-index: 1; }
+.ck-node { width: 13px; height: 13px; border-radius: 50%; background: var(--sand); border: 1.4px solid var(--line); transition: background var(--base) var(--ease), border-color var(--base) var(--ease), transform var(--base) var(--ease); }
+.ck-node-label { font-size: var(--text-label); font-weight: var(--weight-label); letter-spacing: 0.28em; text-transform: uppercase; color: var(--brown-2-text); opacity: 0.6; transition: opacity var(--base) var(--ease), color var(--slow) var(--ease); }
+.ck-thread li.is-lit .ck-node { background: var(--orange-dk); border-color: var(--orange-dk); }
+.ck-thread li.is-now .ck-node { transform: scale(1.35); box-shadow: 0 0 0 8px var(--sand-3); }
+.ck-thread li.is-lit .ck-node-label { opacity: 1; color: var(--ink); }
+.ck.is-final .ck-thread li .ck-node { background: var(--orange); border-color: var(--orange); transform: none; box-shadow: none; }
+.ck.is-final .ck-thread li .ck-node-label { color: var(--on-dark-muted); opacity: 1; }
+
+.ck-replay { position: absolute; right: 3%; bottom: 4%; padding: 6px 14px; border: 1px solid var(--line-on-dark); border-radius: var(--radius-pill); background: transparent; color: var(--on-dark-muted); font-size: var(--text-small); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity var(--base) var(--ease); }
+.ck.is-done .ck-replay { opacity: 1; pointer-events: auto; }
+
+/* a phone: taller frame, same story */
+@media (max-width: 700px) {
+  .ck { aspect-ratio: 4 / 5; }
+  .ck-seal { top: 15%; width: 84px; }
+  .ck-words { top: 37%; }
+  .ck-lines { top: 60%; }
+  .ck-thread { left: 12%; right: 12%; }
+  .ck-label { gap: 0; letter-spacing: 0.2em; white-space: nowrap; }
+  .ck-rule { display: none; }
+  .ck-thread { bottom: 18%; }
+  .ck-replay { bottom: 4%; right: 50%; transform: translateX(50%); }
+}

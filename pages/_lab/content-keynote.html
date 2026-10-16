@@ -1,0 +1,74 @@
+<!-- @route /lab/content-keynote/ -->
+<!-- @copy content -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/content.css">
+  <link rel="stylesheet" href="/assets/lab/content-keynote.css">
+  <script src="/assets/home.js" defer></script>
+  <script src="/assets/lab/content-keynote.js" defer></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="c ph">
+  <!-- Lab, 16 October 2026: a keynote animation for the Content and Social Media page (owner asked to see one), in the
+       style of the "Be ___." chapter cards. Code only (HTML, CSS, a small script): no video file, a few KB. It plays once
+       when it comes into view: Attract, Trust, Sell, each with its icon and its job, then the ground turns dark and
+       "Every post has one job." lands. "Play again" replays it. With reduced motion it shows the last frame.
+       Shown under the Content page's live hero so it can be judged in place. Words from pages/content/copy.md (Hero, Jobs);
+       the closing line is the hero's own. -->
+  <!-- @include _partials/header.html -->
+  <main id="main">
+
+    <section class="hx ct-hero" id="hero" aria-labelledby="hero-title">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="container hx-grid hx-solo">
+        <div class="hx-copy stagger">
+          <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
+          <p class="lead reveal">{{ hero.lead }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section c-band ck-band" aria-label="Every post has one job">
+      <div class="container">
+        <figure class="ck" data-ck>
+          <div class="ck-dark" aria-hidden="true"></div>
+          <p class="ck-label" aria-hidden="true"><span class="ck-rule"></span>The three jobs of a post<span class="ck-rule"></span></p>
+
+          <div class="ck-seal" aria-hidden="true">
+            <svg class="ck-ring" viewBox="0 0 160 160"><circle cx="80" cy="80" r="70" pathLength="1"/></svg>
+            <!-- attract: rings reaching out from one point -->
+            <svg class="ck-icon" data-icon="0" viewBox="0 0 48 48"><circle cx="24" cy="24" r="3" pathLength="1"/><path d="M14 24a10 10 0 0 1 20 0" pathLength="1"/><path d="M8 24a16 16 0 0 1 32 0" pathLength="1"/><path d="M14 24a10 10 0 0 0 20 0" pathLength="1"/><path d="M8 24a16 16 0 0 0 32 0" pathLength="1"/></svg>
+            <!-- trust: a heart -->
+            <svg class="ck-icon" data-icon="1" viewBox="0 0 48 48"><path d="M24 40S7 30 7 18.5A9 9 0 0 1 24 14a9 9 0 0 1 17 4.5C41 30 24 40 24 40z" pathLength="1"/></svg>
+            <!-- sell: a booked day -->
+            <svg class="ck-icon" data-icon="2" viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="31" rx="4" pathLength="1"/><path d="M7 19h34M16 6v8M32 6v8" pathLength="1"/><path class="ck-accent" d="M18 30l4.5 4.5L31 26" pathLength="1"/></svg>
+            <!-- the final: the loop -->
+            <svg class="ck-icon" data-icon="3" viewBox="0 0 48 48"><path class="ck-accent" d="M24 24c-4.5-5.5-8-8.5-12-8.5a8.5 8.5 0 0 0 0 17c4 0 7.5-3 12-8.5s8-8.5 12-8.5a8.5 8.5 0 0 1 0 17c-4 0-7.5-3-12-8.5z" pathLength="1"/></svg>
+          </div>
+
+          <div class="ck-words">
+            {{#each jobs.jobs}}<p class="ck-word" data-word="{{ @index }}"><em>{{ title }}</em><span>.</span></p>{{/each}}
+            <p class="ck-word ck-final" data-word="3">Every post has <em>one job</em><span>.</span></p>
+          </div>
+          <div class="ck-lines">
+            {{#each jobs.jobs}}<p class="ck-line" data-line="{{ @index }}">{{ text }}</p>{{/each}}
+            <p class="ck-line" data-line="3">Attract, build trust, or sell. Never just likes.</p>
+          </div>
+
+          <ol class="ck-thread" aria-hidden="true">
+            {{#each jobs.jobs}}<li data-node="{{ @index }}"><span class="ck-node"></span><span class="ck-node-label">{{ title }}</span></li>{{/each}}
+          </ol>
+          <button class="ck-replay" type="button" data-ck-replay>Play again</button>
+          <figcaption class="sr-only">Attract: posts that bring the right people to you. Trust: posts that show who you are. Sell: posts that give a clear next step. Every post has one job.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+  <!-- @include _partials/footer.html -->
+</body>
+</html>
