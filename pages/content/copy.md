@@ -256,10 +256,19 @@ translated into natural English; nothing added. "gefiltert" in the transcript is
 it against the audio. Needs her written OK on the English wording and on her name before it goes live (decision #7). -->
 eyebrow: In their words
 title: Scripts that *finally say it*
-testimonials: “When I saw how you'd rewritten my scripts, I just thought: wow. How do you even know how to do that? Just reading them, I could see exactly what was missing from my content, and now the value comes across so much better. The scripts you reworked for me are absolutely amazing.”
-who: PENDING: the client's name and business, with her written OK
-who_note: Translated from German
+testimonials: yes
 examples: PENDING: three before/after pairs (raw clip, finished Reel), with the client's written OK
+who: PENDING: the client's name and business, with her written OK
+who_note: WhatsApp voice note to Christiane, in German
+voice_length: 3:01
+chat_note: Two moments from her voice note, translated from German.
+
+### quotes
+
+<!-- Two extracts of the same voice note (owner, 2026-10-16: "sacas dos mejor", "prefiero WhatsApp snapshots"). Shown as
+chat bubbles under the voice note itself, never as a fake screenshot of text she did not type: she spoke, in German. -->
+- When I saw how you'd rewritten my scripts, I just thought: wow. How do you even know how to do that?
+- Just reading them, I could see exactly what was missing from my content. Now the value comes across so much better.
 
 ## FAQ
 

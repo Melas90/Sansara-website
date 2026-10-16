@@ -229,9 +229,16 @@
           <p class="eyebrow">{{ proof.eyebrow }}</p>
           <h2 id="proof-title"><span class="mask"><span class="mask-in">{{ proof.title }}</span></span></h2>
         </div>
-        <figure class="tq ct-quote reveal">
-          <blockquote class="quote">{{ proof.testimonials }}</blockquote>
-          <figcaption class="tq-who"><i aria-hidden="true"></i><div><strong>{{ proof.who }}</strong><br><span class="small muted">{{ proof.who_note }}</span></div></figcaption>
+        <!-- A WhatsApp-style chat: her voice note, then two moments from it as bubbles. Not a screenshot: she spoke, in German. -->
+        <figure class="ct-chat reveal">
+          <figcaption class="ct-chat-head"><i aria-hidden="true"></i><span><strong>{{ proof.who }}</strong><br><span class="small muted">{{ proof.who_note }}</span></span></figcaption>
+          <div class="ct-voice" role="img" aria-label="Voice note, {{{ proof.voice_length }}}">
+            <span class="ct-voice-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="ct-voice-wave" aria-hidden="true"><span style="--h: 30%"></span><span style="--h: 55%"></span><span style="--h: 40%"></span><span style="--h: 70%"></span><span style="--h: 90%"></span><span style="--h: 60%"></span><span style="--h: 45%"></span><span style="--h: 80%"></span><span style="--h: 100%"></span><span style="--h: 65%"></span><span style="--h: 50%"></span><span style="--h: 75%"></span><span style="--h: 35%"></span><span style="--h: 60%"></span><span style="--h: 85%"></span><span style="--h: 55%"></span><span style="--h: 40%"></span><span style="--h: 70%"></span><span style="--h: 95%"></span><span style="--h: 60%"></span><span style="--h: 45%"></span><span style="--h: 30%"></span><span style="--h: 55%"></span><span style="--h: 80%"></span><span style="--h: 65%"></span><span style="--h: 40%"></span><span style="--h: 50%"></span><span style="--h: 35%"></span><span style="--h: 25%"></span><span style="--h: 45%"></span></span>
+            <span class="ct-voice-time">{{ proof.voice_length }}</span>
+          </div>
+          <ul class="ct-chat-quotes stagger">{{#each proof.quotes}}<li class="reveal"><blockquote>{{ this }}</blockquote></li>{{/each}}</ul>
+          <p class="small muted ct-chat-note">{{ proof.chat_note }}</p>
         </figure>
       </div>
     </section>
