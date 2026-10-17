@@ -37,58 +37,69 @@ note: Free 30-minute call. We look at your business together.
 - name: They come back
   at: 0.875
 
-### facts
-
-- value: 10+
-  label: years in marketing
-- value: Coaches
-  label: and business owners
-- value: Days
-  label: to build and launch
-
 ## Quote
 
+<!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->
 text: They came through the page on their own. They booked by themselves, without us contacting them. Before, we chased clients one by one. Now it's great to wake up in the morning and see bookings.
 original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
-by: Vero & Rafa, Terapias El Templo, Candelaria
+by: Therapist
 
 ## Problem
 
 eyebrow: The real problem
 title: You're doing everything *they tell you to*.
 familiar: Sound familiar?
-intro: Posting every day. Replying fast. Showing up on stories, following up, following up again. And somehow you're still the one chasing, after people who'll have forgotten your name by next week.
+told: They tell you
+actually: What actually happens
+intro: So you do all of it, and you do it well. And somehow you're still the one chasing, after people who'll have forgotten your name by next week.
 turn: It's not that you're not working hard enough. You obviously are. It's that *all of it runs through you.*
 cause: Every enquiry, every follow-up, every “let me get back to you” only happens if you're there to make it happen.
 drift: Miss one message, have one busy week, and that client is gone. And the ones you do win? Nothing keeps them close, so most buy once and drift.
-conclusion: That's not you being disorganised. There's just *no system catching them* when you can't, and nothing bringing them back.
+conclusion: You're not disorganised. You're just doing it all by hand. Let us show you *how easy this can be*.
+next: Keep reading
 
-### pains
+### myths
 
-- They ask what I charge, and then just vanish.
-- Loads of likes. Nobody actually books.
-- I always mean to follow up. Then the week's just gone.
-- I never know where the next one's coming from.
+<!-- 2026-10-17 (owner): the section challenges the advice coaches get ("they tell you"), in place of four pains that assumed an Instagram-DM business. Realities from the Client Loop grid (Funnel · Client Loop VSL). Other candidates there: "your profile is your shop window", "people want to talk before they book", "a good session is the best marketing", "you need a new tool". -->
+- told: Post every day. Show up on stories.
+  actually: You get attention, mostly from the wrong people. The ones who would buy never see a clear offer.
+- told: Reply fast to every message.
+  actually: You can't answer at nine at night and mid-session. Speed matters, it just shouldn't depend on you.
+- told: Just run more ads.
+  actually: Ads multiply whatever happens after the click. If the path leaks, you pay for more people to leak out.
 
 ## Instead
 
+<!-- 2026-10-17 (owner): four flip cards, one per stage. Front: the coach's or therapist's pain, in their words (little traction, leads that don't fit, no-shows and cancellations, clients who don't come back). Back: the ending to imagine, how the Loop gets there (from the Client Loop grid, nothing promised that the grid doesn't), and one line tied to a core value. The closing line is value 3. -->
 eyebrow: Imagine instead
 title: Same four moments. *Different endings.*
-now: Now
-with: With the system
-closing: This isn't about working harder. It's finally having something that works while you don't, even staying in touch with past clients, so the good ones come back.
+cue: Click to imagine
+closing: We don't hand you a plan. We build it with you, and it runs.
+next: Discover how
 button: I want that
 
 ### rows
 
-- now: They ask what I charge…
-  with: They get an answer in seconds, and a link to book, right there.
-- now: Loads of likes…
-  with: Those likes turn into names in your calendar.
-- now: I always mean to follow up…
-  with: It follows up for you, warmly, every time.
-- now: I never know where the next one's coming from…
-  with: You open your calendar, and it's already answered.
+- stage: Be seen
+  now: Posting every day or not at all, it's the same. A few likes, some views. Never a booking, never a sale.
+  end: Attention that turns into clients.
+  how: The right people see your offer. Whether you post or not, everything out there has one job, bringing them to book your service or buy your product.
+  value: We agree what success looks like before spending, and cut what doesn't work.
+- stage: Be chosen
+  now: The people who reach out aren't ready to book or buy. Half of them don't even know what I offer.
+  end: Leads who are ready.
+  how: They already know what you offer. They come with their questions ready, and they show up to the call or session engaged.
+  value: We work out who your best clients are before we build anything.
+- stage: Be booked
+  now: They book. Then they cancel, or just don't show up.
+  end: No-shows become an anecdote.
+  how: The people who book turn up, and the rare one who can't simply moves to another time. Your calendar holds. Cancellations become the exception.
+  value: Not zero, we won't promise that. Just rare enough to be a story.
+- stage: Be remembered
+  now: I'm always chasing new clients, or paying for ads to find them.
+  end: Clients come to you.
+  how: Past clients come back and bring others with them, for who you are and the work you do. You stop chasing.
+  value: A relationship, not a transaction, for your clients too.
 
 ## Call
 
@@ -125,6 +136,7 @@ no_title: Probably not for you if…
 
 - You don't have an offer people have paid for yet. A system can't fix that, and we'll say so
 - You only want someone to make your content. That's a different service, [Content and Social Media](/content/), and it works best with a system behind it
+- You'd rather not question how you've done things so far. We will, kindly, and it only works if you're open to it
 
 ## How
 
@@ -132,27 +144,52 @@ eyebrow: How it actually works
 title: From “never heard of you” to “booked”, *and back again*.
 lead: One connected loop, built around the offer you already have and on top of what already works for you: your ads, your following, your page. Each step closes one of the ways clients slip away. Built, connected and launched for you.
 ends: No more
-dashboard_caption: Your own client dashboard. Every enquiry and booking in one pipeline, in your name.
+dashboard_caption: Our own client dashboard, ready for WhatsApp and email, with every enquiry and booking in one place. Already using a CRM? We work with the one you have. Don't have one? You don't need one to start.
 dashboard_alt: The Sansara client dashboard on a tablet on a wooden desk, showing a pipeline of new, booked, attended, no-show and cancelled clients
 in_practice: In practice, one Loop is your ad campaign (up to 3 designs), your own page, automatic replies and reminders, booking connected, follow-up that keeps going after the session, and your own client dashboard, where every contact, conversation and booking lives in one place. Built and handed over in your name.
+<!-- 2026-10-17 (owner): two example Loops replace the "in practice" line above (kept for reference, no longer shown). Examples only: every Loop is built around the client's offer. -->
+examples_title: Two Loops, *for example*.
+examples_lead: Every business is different, so every Loop is too. Here are two we could build.
+ads_title: A coach who grows with ads
+organic_title: A therapist who grows on content and referrals
+examples_note: Yours is built around your offer, for you. On the free call we work out which pieces you need, and which you don't.
+next: See it in a real business
+
+### example_ads
+
+- An audit of your business, your offer and your brand, before anything is built
+- Ads with hooks written for the people who would actually buy
+- Automations that qualify everyone who responds
+- An assistant trained on your business that answers in your voice and pre-qualifies every lead, day or night
+- Booking and reminders, connected to the CRM of your choice
+- A plan that brings clients back, so the next booking doesn't cost another ad
+
+### example_organic
+
+- An audit of your business, your offer and your brand, before anything is built
+- Content that sells, every post with one job
+- A simple way for happy clients to refer others
+- The same assistant, qualifying whoever reaches out, in your voice
+- Booking and reminders, connected to the CRM of your choice
+- A plan that brings clients back, without spending on ads
 
 ### steps
 
 - title: They see you
-  ends: I never know where the next one's coming from.
+  ends: A few likes, some views. Never a booking.
   text: The right people notice you. Not everyone, the ones already looking.
 - title: They reach out
-  ends: Loads of likes. Nobody actually books.
+  ends: They reach out, but they're not ready to buy.
   text: Instead of a like that disappears, they leave their details.
 - title: It follows up
-  ends: I always mean to follow up…
+  ends: I always mean to follow up. Then the week's gone.
   text: Warm replies and reminders go out on their own, even mid-session.
 - title: They book you
-  ends: They ask what I charge, then vanish.
+  ends: They book, then cancel or don't show up.
   text: A couple of taps and they're on your calendar, not in your DMs. No chasing from you.
 - title: They come back
-  ends: One-time clients who quietly drift off.
-  text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so one client becomes several.
+  ends: They don't come back, so I chase new ones.
+  text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so more of them come back.
 
 ## Why
 
@@ -187,6 +224,7 @@ lead: Years of marketing, operations and business development, from high-tech co
 blend_title: The perfect *blend*.
 blend: Miguel comes from high tech, from semiconductors to scale-ups, where he built the operations and infrastructure that let companies grow. He knows how a business scales from real experience. Christiane brings a creative background and years in marketing, digital marketing and automation.
 text: Together, we know what the best companies in the world do, and we narrow it down to what a business owner actually needs. So we can tailor the solution to you, whatever the complexity you're facing. Then we build the whole thing, connected, and hand it over working. Done for you. Explained in plain words. One fixed price.
+next: Is it right for you?
 
 ### values
 
@@ -209,6 +247,7 @@ built_title: What we built
 words_title: In their words
 words: They came through the page on their own. They booked by themselves. And everything is in our name, we see everything.
 words_original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos. Y todo está a nuestro nombre, lo vemos todo.
+next: Meet the people who build it
 
 ### built
 
