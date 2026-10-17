@@ -150,8 +150,8 @@ in_practice: In practice, one Loop is your ad campaign (up to 3 designs), your o
 <!-- 2026-10-17 (owner): two example Loops replace the "in practice" line above (kept for reference, no longer shown). Examples only: every Loop is built around the client's offer. -->
 examples_title: Two Loops, *for example*.
 examples_lead: Every business is different, so every Loop is too. Here are two we could build.
-ads_title: A coach who grows with ads
-organic_title: A therapist who grows on content and referrals
+ads_title: An online coaching business that grows with ads
+organic_title: An in-person coaching business that grows on content and referrals
 examples_note: Yours is built around your offer, for you. On the free call we work out which pieces you need, and which you don't.
 next: See it in a real business
 
