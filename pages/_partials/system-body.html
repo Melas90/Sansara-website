@@ -199,7 +199,7 @@
       </div>
       <div class="sy-fit-col sy-no">
         <h2 class="h3">{{ fit.no_title }}</h2>
-        <ul class="sy-crosses">{{#each fit.no}}<li>{{ this }}</li>{{/each}}</ul>
+        <ul class="sy-crosses">{{#each fit.no}}<li><span>{{ this }}</span></li>{{/each}}</ul><!-- the span keeps a line with a link in one grid cell; without it the link broke out into its own column (fixed 2026-10-17) -->
       </div>
     </div>
   </section>
