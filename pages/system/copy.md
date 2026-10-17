@@ -20,9 +20,9 @@ eyebrow: For business coaches and entrepreneurs
 title: The Sansara *Client Loop*.
 subtitle: Your perfect customer journey, from discovery to a steady flow of clients.
 lead: We map that journey with you and we build it, from the first time someone discovers you to a pool of clients who keep buying from you. Built around your offer, yours to run, onsite or online.
-primary: Show me where I'm losing clients
+primary: I want my free call
 secondary: How does it work?
-note: Free 30-minute call. We look at your business together.
+note: 30 minutes, free. Find out where you're losing clients, and what to fix first.
 
 ### stops
 
