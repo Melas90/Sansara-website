@@ -171,3 +171,30 @@ footer_site: Visit the full site
 ## People
 
 founders_alt: Christiane and Miguel, the two founders of Sansara Media, in their studio
+
+## Values
+
+<!-- 2026-10-17 (owner): Sansara Media's five core values, in the owner's words (from the partner programme work). One list for the whole site: the home shows it in full; About and The System should read it from here too, instead of their own lists. The "in practice" line carries the weight. -->
+title: Values that change *how we work*.
+lead: Anyone can write values on a website. These are the ones that decide what we do, and what we say no to.
+items:
+- title: Clarity before complexity
+  icon: clarity
+  text: We understand the business before recommending a solution. We challenge assumptions, identify the real bottleneck, and prioritise what matters instead of adding unnecessary tools, campaigns, or processes.
+  practice: Diagnose first, recommend second.
+- title: Honesty over hype
+  icon: honesty
+  text: We communicate openly about what is realistic, what is uncertain, and what results depend on. We don't promise guaranteed growth or sell services simply because we can.
+  practice: Transparent pricing, realistic expectations, and honest advice, even when the best answer is not to buy from us.
+- title: Strategy that becomes reality
+  icon: reality
+  text: Good advice is only valuable when it can be put into practice. We bridge the gap between knowing what should change and actually making it happen, combining strategic thinking with hands-on implementation.
+  practice: Recommendations are actionable, responsibilities are clear, and implementation is part of the conversation.
+- title: Partnership built on trust
+  icon: trust
+  text: We treat clients and collaborators as long-term partners, not transactions. We respect their expertise, protect their reputation, communicate openly, and aim to make every relationship better for everyone involved.
+  practice: Clear boundaries, confidentiality, mutual respect, and no surprises.
+- title: Progress through evidence
+  icon: evidence
+  text: We focus on meaningful business outcomes, measure what matters, learn from what happens, and continuously improve. We value evidence over assumptions and progress over appearances.
+  practice: Define success upfront, track relevant metrics, and adjust based on results.

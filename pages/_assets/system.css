@@ -42,33 +42,72 @@ html.motion .sy-loop.is-drawn .loop-line { transition: stroke-dashoffset calc(va
 .sy .c-close h2 em, .sy .sy-diy h3 em { color: var(--orange); }
 
 /* ---------- the problem ---------- */
-/* the four sentences arrive like messages: bubbles, alternating sides, one after the other */
-.sy-chat { max-width: 720px; margin: 0 auto clamp(56px, 8vw, 96px); display: grid; gap: 14px; }
+/* the advice they get (owner, 2026-10-17): what "they" tell you, as a message bubble, and under it what actually
+   happens. Three side by side; one column on phones. */
+.sy-myths { margin: 0 auto clamp(56px, 8vw, 96px); display: grid; gap: 20px; }
 .sy-chat-label { justify-self: center; font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--brown-2-text); }
-.sy-bubbles { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.sy-bubbles li { position: relative; max-width: min(460px, 88%); padding: 16px 22px; background: var(--bg); border: 1px solid var(--line); border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow-float); font-family: var(--font-serif); font-size: clamp(19px, 2vw, 23px); line-height: 1.3; color: var(--ink); }
-.sy-bubbles li:nth-child(even) { justify-self: end; border-radius: 22px 22px 6px 22px; background: var(--sand-3); }
+.sy-myth-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 24px; }
+.sy-myth-list li { display: grid; grid-row: span 2; grid-template-rows: subgrid; } /* the "what actually happens" lines start on one line across the three */
+.sy-myth-list p { margin: 0; }
+.sy-myth-list span { display: block; margin-bottom: 6px; font-family: var(--font-sans); font-style: normal; font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--brown-2-text); }
+.sy-told { padding: 18px 22px; background: var(--bg); border: 1px solid var(--line); border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow-float); font-family: var(--font-serif); font-size: clamp(20px, 2vw, 24px); line-height: 1.25; color: var(--ink); }
+.sy-actually { padding: 0 6px; font-size: var(--text-body); line-height: 1.5; color: var(--ink); }
+.sy-actually span { color: var(--orange-dk); }
+@media (max-width: 860px) { .sy-myth-list { grid-template-columns: minmax(0, 1fr); } .sy-myth-list li + li { margin-top: 18px; } }
 /* the turn, the cause, the conclusion */
 .sy-why-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 88px); align-items: start; }
 .sy-turn { font-family: var(--font-serif); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; }
 .sy-turn em { font-style: italic; }
+.sy-turn-solo { max-width: 30ch; margin-inline: auto; text-align: center; text-wrap: balance; }
 .sy-intro { font-size: var(--text-lead); color: var(--ink); }
 .sy-conclusion { margin-top: clamp(40px, 6vw, 72px); padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 48px); background: var(--ink); color: var(--bg); border-radius: var(--radius-card); font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; text-wrap: balance; }
 .sy .sy-conclusion em { color: var(--orange); font-style: italic; }
+.sy-conclusion { display: grid; gap: 18px; justify-items: start; }
+/* "keep going" links between sections (owner, 2026-10-17): a word and an arrow that bobs downward */
+.sy-next { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: var(--text-body); font-weight: var(--weight-medium); color: var(--orange-dk); text-decoration: none; }
+.sy-next:hover { text-decoration: underline; text-underline-offset: 4px; }
+.sy-conclusion .sy-next { color: var(--orange); }
+.sy-flow { margin-top: clamp(40px, 6vw, 64px); text-align: center; }
+.sy-after-actions { justify-content: center; align-items: center; gap: 24px; }
+/* two example Loops (owner, 2026-10-17): side by side, one light, one dark; numbered, they are a sequence */
+.sy-examples { margin-top: clamp(56px, 8vw, 88px); display: grid; gap: 28px; }
+.sy-examples-title { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); color: var(--ink); }
+.sy-examples-title em { font-style: italic; color: var(--orange-dk); }
+.sy-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.sy-example { display: grid; gap: 16px; align-content: start; padding: clamp(24px, 3vw, 36px); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-card); }
+.sy-example h4 { font-family: var(--font-serif); font-weight: 400; font-style: italic; font-size: clamp(22px, 2.2vw, 26px); line-height: 1.2; color: var(--ink); }
+.sy-example ol { margin: 0; padding-left: 1.3em; list-style: decimal; display: grid; gap: 10px; }
+.sy-example li { padding-left: 4px; line-height: 1.45; }
+.sy-example li::marker { font-family: var(--font-serif); color: var(--gold-dk); }
+.sy-example-dark { background: var(--ink); color: var(--on-dark-muted); border-color: transparent; }
+.sy-example-dark h4 { color: var(--bg); }
+.sy-example-dark li::marker { color: var(--gold); }
+.sy-examples-note { text-align: center; font-family: var(--font-serif); font-style: italic; font-size: clamp(19px, 1.8vw, 22px); color: var(--ink); max-width: 36rem; margin-inline: auto; }
+@media (max-width: 760px) { .sy-example-grid { grid-template-columns: minmax(0, 1fr); } }
+.sy-next svg { width: 18px; height: 18px; }
+html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease) infinite; }
+@keyframes sy-nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 @media (max-width: 800px) { .sy-why-grid { grid-template-columns: minmax(0, 1fr); } }
 
-/* ---------- now and with the system ---------- */
-.sy-rows { display: grid; border-top: 1px solid var(--line); }
-.sy-row { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1.2fr); gap: 16px; align-items: center; padding-block: 22px; border-bottom: 1px solid var(--line); }
-.sy-row-head { padding-block: 12px; font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; font-weight: var(--weight-label); color: var(--brown-2-text); }
-.sy-now { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--brown-2-text); }
-.sy-with { font-family: var(--font-serif); font-size: 22px; line-height: 1.3; color: var(--ink); }
-.sy-arrow { color: var(--orange-dk); font-size: 22px; text-align: center; }
-@media (max-width: 700px) {
-  .sy-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-  .sy-row-head { display: none; }
-  .sy-arrow { text-align: left; transform: rotate(90deg); width: 20px; }
-}
+/* ---------- imagine instead: four flip cards (owner, 2026-10-17) ----------
+   The home's flip component (home.css, home.js §5) in a 2 × 2 grid. The colours go from light to dark,
+   be seen to be remembered: cream, sand, sand, dark; each back in a contrasting one. */
+.sy-flips { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.sy-flip.fit.flip { min-height: clamp(23rem, 30vw, 27rem); }
+.sy-flip .fit-q { font-size: clamp(26px, 2.5vw, 36px); }
+.sy-stage { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--gold-dk); }
+.sy-flip .flip-back { gap: 18px; }
+.sy-flip .flip-back .fit-offer { font-size: clamp(32px, 3vw, 46px); }
+.sy-flip .flip-back p.sy-value { padding-top: 16px; border-top: 1px solid var(--line-on-dark); font-family: var(--font-serif); font-style: italic; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.35; color: var(--gold); }
+.sy-flips .flip:nth-child(3) .flip-front { background: var(--sand-3); color: var(--ink); }
+.sy-flips .flip:nth-child(3) .flip-back { background: linear-gradient(135deg, var(--ink), var(--ink-2)); color: var(--on-dark-muted); }
+.sy-flips .flip:nth-child(3) .flip-back .fit-offer { color: var(--bg); }
+.sy-flips .flip:nth-child(4) .flip-front { background: var(--ink); color: var(--bg); border-color: transparent; }
+.sy-flips .flip:nth-child(4) .sy-stage { color: var(--gold); }
+.sy-flips .flip:nth-child(4) .flip-back { background: var(--sand-3); color: var(--brown); }
+.sy-flips .flip:nth-child(4) .flip-back .fit-offer { color: var(--ink); }
+.sy-flips .flip:nth-child(4) .flip-back p.sy-value { border-top-color: var(--line); color: var(--gold-dk); }
+@media (max-width: 899px) { .sy-flips { grid-template-columns: minmax(0, 1fr); } .sy-flip.fit.flip { min-height: 27rem; } }
 .sy-after { display: grid; justify-items: center; text-align: center; gap: 18px; margin-top: 48px; max-width: 40rem; margin-inline: auto; }
 .sy-after > p:first-child { font-size: var(--text-lead); color: var(--ink); }
 

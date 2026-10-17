@@ -62,6 +62,30 @@
       </div>
     </section>
 
+    <!-- Our values (owner, 2026-10-17): the five core values, early and very visible, in place of the old "Why Sansara" four promises. Each row: the value, what it means, and "in practice", which carries the weight. Copy: shared.values (pages/_partials/copy.md), one list for the whole site. Not numbered: they are not a sequence. -->
+    <section class="section band-dark c-values" id="values" aria-labelledby="values-title">
+      <div class="container">
+        <div class="stack-sm reveal">
+          <h2 id="values-title"><span class="mask"><span class="mask-in">{{ shared.values.title }}</span></span></h2>
+          <p class="c-values-lead">{{ shared.values.lead }}</p>
+        </div>
+        <!-- The five value icons (owner, 2026-10-17), drawn like the motto's: 48 grid, round 1.8 stroke, one orange accent each.
+             clarity: a lens with one straight line in it (the real bottleneck, seen) · honesty: a speech bubble with a tick
+             (honest advice) · reality: a dotted path that turns solid and reaches a flag · trust: two linked rings
+             · evidence: a line rising on a chart. -->
+        <svg class="sr-only" aria-hidden="true" focusable="false">
+          <symbol id="vi-clarity" viewBox="0 0 48 48"><circle cx="21" cy="21" r="12.5"/><path d="M30.5 30.5L41 41"/><path d="M14.5 21h13" style="stroke: var(--vi-accent)"/></symbol>
+          <symbol id="vi-honesty" viewBox="0 0 48 48"><path d="M9 10h30a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H22l-8 7v-7H9a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z"/><path d="M17 22.5l4.5 4.5 9.5-10" style="stroke: var(--vi-accent)"/></symbol>
+          <symbol id="vi-reality" viewBox="0 0 48 48"><path d="M5 42c8 0 9-12 17-12" stroke-dasharray="0.1 5" stroke-width="2.4"/><path d="M22 30c7 0 8-13 15-13" style="stroke: var(--vi-accent)"/><path d="M37 17V5M37 5h8l-2.5 4 2.5 4h-8"/></symbol>
+          <symbol id="vi-trust" viewBox="0 0 48 48"><circle cx="18" cy="24" r="11"/><circle cx="30" cy="24" r="11" style="stroke: var(--vi-accent)"/></symbol>
+          <symbol id="vi-evidence" viewBox="0 0 48 48"><path d="M7 6v35h35"/><path d="M13 33l8-9 6 5 12-14" style="stroke: var(--vi-accent)"/><path d="M33 15h6v6" style="stroke: var(--vi-accent)"/></symbol>
+        </svg>
+        <ul class="c-values-list stagger">
+          {{#each shared.values.items}}<li class="reveal"><div class="c-values-name"><svg class="c-values-ico" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#vi-{{ icon }}"/></svg><h3>{{ title }}</h3></div><p>{{ text }}</p><p class="c-values-practice">{{ practice }}</p></li>{{/each}}
+        </ul>
+      </div>
+    </section>
+
     <!-- What we do: Cris's interactive list, holding the three equal offers. -->
     <section class="section c-band" id="what-we-do" aria-labelledby="what-we-do-title">
       <div class="container">
@@ -125,18 +149,7 @@
       </div>
     </section>
 
-    <!-- Why Sansara: four promises. -->
-    <section class="section c-band" id="why-sansara" aria-labelledby="why-sansara-title">
-      <div class="container editorial reveal">
-        <div class="stack-sm">
-          <p class="eyebrow">{{ why_sansara.eyebrow }}</p>
-          <h2 id="why-sansara-title"><span class="mask"><span class="mask-in">{{ why_sansara.title }}</span></span></h2>
-        </div>
-        <ul class="c-why stagger">
-          {{#each why_sansara.points}}<li class="reveal"><span class="c-why-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
-        </ul>
-      </div>
-    </section>
+    <!-- "Why Sansara" (four promises) was here until 2026-10-17; the core values above replace it. Its copy stays in copy.md for the lab pages. -->
 
     <!-- Founders: the collage of the two founders, full width in a white print frame (owner, 2026-09-29); names, roles and bios still wait for decision #12. -->
     <section class="section" id="founders" aria-labelledby="founders-title">
