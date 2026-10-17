@@ -39,14 +39,14 @@ facts:
   label: years in marketing
 - value: 10+
   label: years in operations
-- value: Days
+- value: 4 weeks
   label: to build and launch
 - value: One
   label: fixed contact person
 - value: DACH · FR · ES
   label: countries we serve
 float_stat_key: Built and launched
-float_stat_value: in days
+float_stat_value: in 4 weeks
 float_quote: Everything we set up is in your name, from day one.
 float_quote_by: Our promise
 areas:

@@ -231,7 +231,7 @@ next: Is it right for you?
 - title: Done for you
   text: You never touch the tech.
 - title: Fixed and fast
-  text: One price, live in 15 days. No retainer, no surprises.
+  text: One price, live in four weeks. No retainer, no surprises.
 - title: Yours to run
   text: Everything in your name from day one, and we train you or your team to run it without us. Walk away any time and you take all of it.
 - title: Honest fit
@@ -273,7 +273,7 @@ title: Things you *might be wondering*.
 - q: I don't have an audience or a big following. Does this still work?
   a: Yes, that's one of the main situations we build for. If you don't have an audience yet, the system starts with getting you seen by the right people. If you do, it starts by turning that attention into bookings.
 - q: How long until it's live?
-  a: Days, not months. We'll give you a realistic timeline for your case on the free call.
+  a: About four weeks. We'll give you a realistic timeline for your case on the free call.
 - q: What does working with you look like?
   a: If you want your system built after the call, we agree on the setup and a fixed price. You tell us about your offer and how you like to work, and we build, connect and launch everything for you. At the end we walk you or your team through it until you can run it yourselves. Everything is in your name from day one.
 
