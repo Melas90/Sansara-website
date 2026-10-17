@@ -52,7 +52,10 @@ them); this file says why they matter and who has to act. Done items move to `RE
       Pixel, `loop.sansara-media.com` opens it); `agencia/client-loop-landing` (never published);
       `business.sansara-media.com` (an old page uploaded on 2026-08-30). Proposal: redirect
       business.sansara-media.com to `/client-loop/` and keep one landing, or finish the standalone one.
-- [ ] **Own domain.** The site still runs on `sansara-website-v2.netlify.app` (decision #10). Point the
+- [ ] **Own domain: live, finish the details.** `sansara-media.com` and `www` already serve this site (seen 2026-10-17). Still to do:
+      set `url` in `scripts/site.config.mjs` to it (canonical and sharing links), fix `loop.sansara-media.com` (its
+      HTTPS certificate does not cover it: browsers show a security warning), and redirect `business.sansara-media.com`
+      (an old page whose booking buttons point to a placeholder link). Point the
       domain, then update `scripts/site.config.mjs` (`url`).
 
 ## 6. Spanish version

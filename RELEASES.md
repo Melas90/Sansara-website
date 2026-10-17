@@ -8,6 +8,18 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-17
+
+At the owner's request ("revísalo"), outside the calendar: a tracking fix.
+
+- **Live:** Netlify deploy `6ad326cef1e83fd4c6049c18`. **Code:** `main` = `8ef2c61`, tag `release-2026-10-17`.
+- **Meta Conversions API Gateway let through.** The Pixel has a gateway set up in Events Manager
+  (openbridge: AWS primary, Google Cloud fallback); the site's Content-Security-Policy blocked it, so
+  only browser events reached Meta. `connect-src` now allows those two exact hosts.
+- **Checked:** after the deploy, the live CSP header carries both hosts; visiting `/system/` as an iPhone
+  from the Facebook app, the browser sends PageView to Meta and POSTs to the gateway's `/events`, with no
+  CSP error (the check answered both locally, so it added no events to the account).
+
 ## 2026-10-16, afternoon
 
 At the owner's request ("Okay, deploy").
