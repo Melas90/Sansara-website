@@ -126,6 +126,7 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .sy-yes .h3 { color: var(--ink); }
 .sy-no { background: var(--ink); color: var(--on-dark-muted); }
 .sy-no .h3 { color: var(--bg); }
+.sy-no a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
 .sy-crosses { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .sy-crosses li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; }
 .sy-crosses li::before { content: "×"; color: var(--orange); font-size: 20px; line-height: 1.2; }
