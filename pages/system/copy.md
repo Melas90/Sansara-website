@@ -107,8 +107,8 @@ eyebrow: Free call
 title: Know what's really costing you clients, *in one call*.
 lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you: thirty minutes, together, looking at your actual business. You leave with:
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
-button: Show me where I'm losing clients
-small: Free, nothing to prepare, and you'll leave knowing more than when you started.
+button: I want my free call
+small: 30 minutes, free. You'll find out exactly where you're losing clients, and what to fix first.
 
 ### outcomes
 
