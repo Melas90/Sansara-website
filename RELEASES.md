@@ -8,6 +8,22 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-17, evening
+
+At the owner's request ("deploy to production and do it"), outside the calendar: The System's new story and the core values.
+
+- **Live:** Netlify deploy `6ad3f607a857b5280a4a8f65`. **Code:** `main` = `151c744`, tag `release-2026-10-17b`.
+- **The System** (and `/client-loop/`, same body):
+  - The problem section challenges the advice coaches get: three "They tell you" myths (post every day, reply fast, run more ads) with what actually happens. The dark box ends with "Let us show you how easy this can be" and a "Keep reading" link.
+  - Imagine instead: four flip cards, pain on the front, the ending on the back (a full calendar of the right people, leads who are ready, no-shows become an anecdote, clients come to you), each with a core-value line.
+  - How it works: two example Loops (online coaching with ads, in-person coaching on content and referrals); the dashboard caption covers WhatsApp, email, any CRM or none.
+  - Order: the free call now comes after the proof. "Keep going" links between sections. Both main buttons say "I want my free call".
+  - Hero facts removed; the quote is signed "Therapist"; the case no longer names the clients; "not for you" adds the open-mind line and its link no longer breaks out of the sentence.
+- **Home:** the five core values with icons replace "Why Sansara", right after the statement (one shared list).
+- **Delivery time is four weeks everywhere** (home facts, the System promise, FAQ).
+- **Checked:** `npm run verify`; production build without the lab; the exact build as a draft first: 14 pages on desktop (1366) and phone (390) with no broken images, sideways scroll or visible Pending; the lead form on `/client-loop/` carries name, WhatsApp, interest, `utm_*` and `fbclid` (POST intercepted); flip cards on the System and the home with mouse, tap, Enter and Escape, one open at a time; every in-page link has a target. After the deploy: sansara-media.com and the netlify.app address serve the new pages, `/lab/` is 404, and a test lead ("TEST Claude 2026-10-17 (borrar)", +44 7700 900417) raised the `lead` form's submissions from 3 to 4.
+- **Open:** delete the test lead in the CRM; Meta's pixel tries to load an error-log image from `connect.facebook.net`, which `img-src` blocks (tracking is not affected); Ad 2's on-screen "Built in 10 weeks" should say four weeks; the founders' promises on the System still say "in your name".
+
 ## 2026-10-17
 
 At the owner's request ("revísalo"), outside the calendar: a tracking fix.
