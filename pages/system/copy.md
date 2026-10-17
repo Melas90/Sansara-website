@@ -242,7 +242,7 @@ next: Is it right for you?
 eyebrow: A real business
 title: What the Loop looks like *when it's running*.
 before_title: Before
-before: Vero and Rafa run a therapy practice in Candelaria. They'd paid an agency before and were left with no access to their own ad account, their data, or the videos they'd paid for. Every client was chased by hand, one by one.
+before: A therapy practice with two therapists. They'd paid an agency before and were left with no access to their own ad account, their data, or the videos they'd paid for. Every client was chased by hand, one by one.
 built_title: What we built
 words_title: In their words
 words: They came through the page on their own. They booked by themselves. And everything is in our name, we see everything.
