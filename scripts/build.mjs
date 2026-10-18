@@ -4,6 +4,8 @@
  *
  * Template syntax (kept deliberately small):
  *   <!-- @route /path/ -->                first line of a page, optional
+ *   <!-- @langs es -->                    the languages a page is built in (default: only the default
+ *                                         language); /es/<route> reads copy.es.md beside copy.md
  *   <!-- @include _partials/header.html --> inline another file (recursive)
  *   {{ hero.headline }}                   a value from copy.md (inline markdown rendered)
  *   {{{ hero.headline }}}                 the same, as plain text (for attributes, <title>)
@@ -300,6 +302,11 @@ export async function build() {
       const routeTag = html.match(/^<!--\s*@route\s+(\S+)\s*-->\s*\n?/);
       const route = routeTag ? routeTag[1] : routes[p.name] ?? `/${p.name}/`;
       if (routeTag) html = html.slice(routeTag[0].length);
+      // a page is built only in the languages it asks for; without @langs, only in the default one
+      const langsTag = html.match(/<!--\s*@langs\s+([^>]+?)\s*-->\s*\n?/);
+      const langs = langsTag ? langsTag[1].split(/\s+/) : [site.defaultLanguage];
+      if (!langs.includes(lang)) continue;
+      if (langsTag) html = html.replace(langsTag[0], '');
       const prefix = lang === site.defaultLanguage ? '' : `/${lang}`;
       // `<!-- @copy home -->` lets a page (the lab) borrow another page's copy instead of duplicating words.
       let copy = {};

@@ -24,6 +24,7 @@
       data-msg-sending="{{{ shared.lead.sending }}}">
       <input type="hidden" name="form-name" value="lead">
       <input type="hidden" name="source" value="">
+      <!-- A translated list keeps the English option values (label: shown, value: what the CRM reads), so leads look the same in the CRM whatever the page's language -->
       <!-- Ad origin, filled by lead.js from the ad link; the CRM marks the lead as coming from an ad -->
       <input type="hidden" name="utm_source" value="">
       <input type="hidden" name="utm_campaign" value="">
@@ -58,7 +59,7 @@
           <div class="select-wrap">
             <select class="control" id="l-interest" name="interest" required>
               <option value="" selected disabled>{{ shared.lead.interest_placeholder }}</option>
-              {{#each shared.lead.interest_options}}<option value="{{{ this }}}">{{ this }}</option>{{/each}}
+              {{#each shared.lead.interest_options}}{{#if value}}<option value="{{{ value }}}">{{ label }}</option>{{else}}<option value="{{{ this }}}">{{ this }}</option>{{/if}}{{/each}}
             </select>
           </div>
           <p class="field-error" aria-live="polite"></p>
