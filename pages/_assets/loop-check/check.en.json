@@ -974,7 +974,8 @@
     "Your biggest leak, and one thing to do this week.",
     "Your personal report, written by us.",
     "You book your free call."
-   ]
+   ],
+   "kicker_auto": "Take your free assessment"
   },
   "why": "Why this matters",
   "assume": "What many assume:",
@@ -1130,12 +1131,6 @@
    "lessme": "Write down which step of your path only works because you personally do it. That is the step to build next, before you add more people to the top."
   },
   "quick_seen_referrals": "This week, ask your three happiest clients to introduce you to one person each. That is the fastest version of what already works, while you set up one channel you control.",
-  "quick_booked_s5": "For every booking this week, send a reminder the day before with a one-tap way to move it. Count the no-shows against last week.",
-  "nudge": {
-   "title": "Where are you losing clients?",
-   "text": "A few questions, five minutes, and you see your biggest leak. Then your free call.",
-   "button": "Start the check",
-   "close": "Not now"
-  }
+  "quick_booked_s5": "For every booking this week, send a reminder the day before with a one-tap way to move it. Count the no-shows against last week."
  }
 }

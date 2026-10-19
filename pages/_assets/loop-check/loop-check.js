@@ -46,13 +46,13 @@
     dialog.querySelector('.lc-pills').innerHTML = D.ORDER.map((k) => `<span data-stage="${k}">${ic(k)}${esc(stageShort(k))}</span>`).join('');
   };
   const open = async (trigger) => {
+    if (trigger?.dataset?.source !== 'scroll pop-up') auto = false;
     opener = trigger;
-    hideNudge?.();
     A.__source = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     await load();
     let done = null;
     try { done = JSON.parse(sessionStorage.getItem(DONE) || 'null'); } catch { /* storage blocked */ }
-    if (done) renderReturning(done); else if (!card.innerHTML) { step = 0; render(); }
+    if (done) renderReturning(done); else if (!card.innerHTML || step === 0) { step = 0; render(); }
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
   };
@@ -72,50 +72,33 @@
     addEventListener('load', () => { document.getElementById('lead')?.close?.(); open(null); });
   }
 
-  /* ---------- the scroll nudge (owner, 2026-10-19: "a pop-up when people scroll down, not annoying, a couple of
-     times per visit") ----------
-     A small card, not the full pop-up: it appears once the visitor has read about half the page, and once more near
-     the end if they closed the first one and some time has passed. Never more than twice a visit, never once the
-     Check is done or open, never over another open pop-up. */
-  const nudge = document.querySelector('.lc-nudge');
-  const NUDGES = 'sansara-check-nudges';
-  const seen = () => { try { return JSON.parse(sessionStorage.getItem(NUDGES) || '{"n":0,"at":0}'); } catch { return { n: 2, at: 0 }; } };
-  const hideNudge = () => { if (!nudge || nudge.hidden) return; nudge.classList.remove('is-on'); document.documentElement.classList.remove('lc-nudging'); nudge.hidden = true; };
-  let showing = false; // set at once: two scroll frames in a row must not count as two nudges
-  const showNudge = async () => {
-    if (showing) return;
-    showing = true;
-    const st = seen(); st.n += 1; st.at = Date.now();
-    try { sessionStorage.setItem(NUDGES, JSON.stringify(st)); } catch { /* storage blocked: shows once */ }
-    await load();
-    nudge.querySelector('.lc-nudge-title').textContent = T.nudge.title;
-    nudge.querySelector('.lc-nudge-text').textContent = T.nudge.text;
-    nudge.querySelector('.lc-nudge-go').textContent = T.nudge.button;
-    nudge.querySelector('.lc-nudge-close').setAttribute('aria-label', T.nudge.close);
-    nudge.hidden = false;
-    showing = false;
-    requestAnimationFrame(() => nudge.classList.add('is-on'));
-    document.documentElement.classList.add('lc-nudging');
-  };
-  if (nudge) {
-    nudge.querySelector('.lc-nudge-close').addEventListener('click', hideNudge);
-    nudge.querySelector('.lc-nudge-go').addEventListener('click', () => { hideNudge(); open(nudge.querySelector('.lc-nudge-go').closest('.lc-nudge')); });
-    nudge.dataset.source = 'scroll nudge';
-    const busy = () => dialog.open || document.getElementById('lead')?.open || (() => { try { return !!sessionStorage.getItem(DONE); } catch { return true; } })();
-    let ticking = false;
-    addEventListener('scroll', () => {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(() => {
-        ticking = false;
-        if (!nudge.hidden || busy()) return;
-        const st = seen();
-        if (st.n >= 2) return;
-        const depth = (scrollY + innerHeight) / document.documentElement.scrollHeight;
-        if (st.n === 0 && depth > 0.45) showNudge();
-        else if (st.n === 1 && depth > 0.85 && Date.now() - st.at > 45000) showNudge();
-      });
-    }, { passive: true });
-  }
+  /* ---------- the scroll pop-up (owner, 2026-10-19: "the pop-up with the picture in the middle of the screen when people
+     scroll: take your free assessment; a couple of times per visit") ----------
+     The Check itself opens on its own: once the visitor has read about half the page, and once more near the end if
+     they closed it and some time has passed. Never more than twice a visit, never once the Check is done, never over
+     another open pop-up. Its first screen then says "Take your free assessment" instead of "one step closer". */
+  const AUTO = 'sansara-check-popups';
+  const seen = () => { try { return JSON.parse(sessionStorage.getItem(AUTO) || '{"n":0,"at":0}'); } catch { return { n: 2, at: 0 }; } };
+  let auto = false, showing = false;
+  const busy = () => dialog.open || document.getElementById('lead')?.open || (() => { try { return !!sessionStorage.getItem(DONE); } catch { return true; } })();
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      if (showing || busy()) return;
+      const st = seen();
+      if (st.n >= 2) return;
+      const depth = (scrollY + innerHeight) / document.documentElement.scrollHeight;
+      if ((st.n === 0 && depth > 0.45) || (st.n === 1 && depth > 0.85 && Date.now() - st.at > 45000)) {
+        showing = true;
+        st.n += 1; st.at = Date.now();
+        try { sessionStorage.setItem(AUTO, JSON.stringify(st)); } catch { /* storage blocked: opens once */ }
+        auto = true;
+        open({ dataset: { source: 'scroll pop-up' } }).finally(() => { showing = false; });
+      }
+    });
+  }, { passive: true });
 
   /* ---------- the learning panel ---------- */
   const panelHtml = () => `<div class="tip" hidden><div class="head"></div><p class="tip-text"></p><button type="button" class="more" hidden>${ic('chev')}<span>${esc(T.why)}</span></button><div class="detail" hidden></div></div>`;
@@ -170,7 +153,7 @@
     card.innerHTML = `<div class="screen lc-intro">
       <figure class="lc-photo"><img src="/assets/images/people/chris-check.jpg" alt="${esc(I.photo_alt)}" width="1080" height="1350"></figure>
       <div class="stack">
-      <p class="lc-kicker">${I.kicker}</p>
+      <p class="lc-kicker">${auto ? I.kicker_auto : I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
       <p class="lead">${I.lead}</p>
       <ol class="lc-gets">${I.gets.map((g, i) => `<li><span class="n">${i + 1}</span><span>${g}</span></li>`).join('')}</ol>
