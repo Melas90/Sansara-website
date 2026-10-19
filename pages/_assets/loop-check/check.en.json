@@ -1,0 +1,1130 @@
+{
+ "P": {
+  "seen": "<path d=\"M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
+  "chosen": "<path d=\"M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z\"/>",
+  "booked": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4\"/>",
+  "remembered": "<path d=\"M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3\"/><path d=\"M18 3v4h-4M6 21v-4h4\"/>",
+  "referrals": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20a6.5 6.5 0 0 1 13 0\"/><circle cx=\"17\" cy=\"9\" r=\"2.5\"/><path d=\"M16 15a5 5 0 0 1 5.5 5\"/>",
+  "local": "<path d=\"M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z\"/><circle cx=\"12\" cy=\"10\" r=\"2.5\"/>",
+  "social": "<path d=\"M21 12a8 8 0 0 1-11.7 7.1L4 21l1.9-5.3A8 8 0 1 1 21 12z\"/>",
+  "ads": "<path d=\"M3 10v4h3l7 5V5L6 10H3z\"/><path d=\"M17 9a4 4 0 0 1 0 6M19.5 6.5a8 8 0 0 1 0 11\"/>",
+  "events": "<path d=\"M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z\"/><path d=\"M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6\"/>",
+  "webinars": "<rect x=\"3\" y=\"5\" width=\"13\" height=\"14\" rx=\"2\"/><path d=\"M16 10l5-3v10l-5-3z\"/>",
+  "email": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/>",
+  "search": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"M20 20l-4.5-4.5\"/>",
+  "partners": "<path d=\"M8 12l-2.5 2.5a3 3 0 0 0 4.2 4.2L12 16.5M16 12l2.5-2.5a3 3 0 0 0-4.2-4.2L12 7.5\"/><path d=\"M9.5 14.5l5-5\"/>",
+  "unsure": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01\"/>",
+  "starting": "<path d=\"M12 21V11\"/><path d=\"M12 11c0-4 3-6 7-6 0 4-3 6-7 6zM12 15c0-3-2.5-5-6-5 0 3 2.5 5 6 5z\"/>",
+  "check": "<path d=\"M4 12.5l5 5L20 7\"/>",
+  "arrow": "<path d=\"M4 12h16M14 6l6 6-6 6\"/>",
+  "chev": "<path d=\"M9 6l6 6-6 6\"/>",
+  "spark": "<path d=\"M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8\"/>",
+  "digital": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\"/>",
+  "inperson": "<circle cx=\"12\" cy=\"7\" r=\"3.5\"/><path d=\"M5 21a7 7 0 0 1 14 0\"/>",
+  "online": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"12\" rx=\"2\"/><circle cx=\"12\" cy=\"11\" r=\"2.5\"/><path d=\"M8 20h8\"/>",
+  "physical": "<path d=\"M3 7l9-4 9 4v10l-9 4-9-4z\"/><path d=\"M3 7l9 4 9-4M12 11v10\"/>",
+  "b2b": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M9 8V5h6v3M3 13h18\"/>",
+  "other": "<circle cx=\"6\" cy=\"12\" r=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"1.5\"/><circle cx=\"18\" cy=\"12\" r=\"1.5\"/>"
+ },
+ "STAGE_NAME": {
+  "seen": "Be seen",
+  "chosen": "Be chosen",
+  "booked": "Be booked",
+  "remembered": "Be remembered"
+ },
+ "ORDER": [
+  "seen",
+  "chosen",
+  "booked",
+  "remembered"
+ ],
+ "LEARN": {
+  "referrals": {
+   "tip": "Referrals are the best clients you will get: they arrive already trusting you. The catch is that you cannot turn them up when you need more.",
+   "assume": "If I do great work, clients will come on their own.",
+   "happens": "Great work earns referrals, but at a pace you do not control. Months with none are normal, and most happy clients never think to refer anyone unless they are asked.",
+   "check": "How many of your last ten clients did you ask for a referral, and how easy did you make it?"
+  },
+  "local": {
+   "tip": "Being local is a real advantage. Do the people who pass by every day know exactly what you offer and how to book?",
+   "assume": "Everyone around here already knows me.",
+   "happens": "Most people who walk past a business every day cannot say what it offers or what it costs. Familiar is not the same as clear. The ones who do look you up land on Google first, not on your door.",
+   "check": "Search your own business on Google Maps. Is there a clear offer, recent reviews and a way to book without calling?"
+  },
+  "social": {
+   "tip": "Followers are interest, not income. What counts is whether your posts lead somewhere people can book or buy.",
+   "assume": "More followers means more clients.",
+   "happens": "Businesses with ten thousand followers and no bookings are common. Followers watch. A tiny share ever acts, and only when a post gives them one clear next step. Posting more raises views, not bookings.",
+   "check": "Open your last five posts. Does each one tell people what to do next, and where?"
+  },
+  "ads": {
+   "tip": "Ads multiply whatever happens after the click. If the path after it leaks, you pay for more people to leak out.",
+   "assume": "Ads bring clients. If they do not work, the ads were bad.",
+   "happens": "Ads bring attention. What happens after the click decides whether that attention becomes a client: the page, the reply speed, the follow-up. Many agencies only run the ads, so the leak after the click stays and the budget pays for it.",
+   "check": "Before spending another euro, follow the path yourself: click your ad, read the page, send an enquiry. How long until someone answers?"
+  },
+  "events": {
+   "tip": "Events build trust fast, face to face. The leak is usually afterwards: who follows up with the people you met?",
+   "assume": "The people I meet will get in touch when they are ready.",
+   "happens": "They mean to. Then life happens, the card goes in a drawer, and they forget your name. The person who follows up within two days is the one they remember.",
+   "check": "After your last event, how many people did you contact within 48 hours?"
+  },
+  "webinars": {
+   "tip": "Live sessions build trust at scale. What happens to the people who watched but did not buy?",
+   "assume": "If they watch to the end, they will buy.",
+   "happens": "Most people who buy after a webinar decide later, in the days after, from the follow-up. The session opens the door. Without a sequence behind it, most of the trust you built simply fades.",
+   "check": "What reaches the people who attended but did not buy, and when?"
+  },
+  "email": {
+   "tip": "Your email list is the one channel you fully own. No algorithm decides who sees it.",
+   "assume": "Nobody reads newsletters any more.",
+   "happens": "Email is still the channel with the highest return for repeat business, because it reaches people who already said yes once. And nobody can take your list away: no platform change, no ban, no algorithm.",
+   "check": "Do you have a list at all, and when did you last send something useful to it?"
+  },
+  "search": {
+   "tip": "People who search for you are already looking. They are some of the warmest visitors you will get.",
+   "assume": "I need a proper website before Google can bring me clients.",
+   "happens": "A complete Google profile with recent reviews and one clear page beats a beautiful website nobody finds. People searching already want what you do. The question is only whether they find you or your competitor.",
+   "check": "Search what you do plus your town. Where do you appear, and what do people see?"
+  },
+  "partners": {
+   "tip": "Platforms bring clients, but they own the relationship. Can you reach those clients directly next time?",
+   "assume": "The platform brings the clients, so the marketing is handled.",
+   "happens": "The platform keeps the fee and the relationship. The client is theirs until you make them yours. If the platform changes its rules or its ranking, your clients disappear with it.",
+   "check": "Of the clients who came through a platform, how many could you contact directly tomorrow?"
+  },
+  "unsure": {
+   "tip": "Very common, and an important finding: if you do not know what works, you cannot do more of it.",
+   "assume": "It does not matter where they come from, as long as they come.",
+   "happens": "It matters the moment you want more. Without knowing which channel brings clients, you cannot repeat it, and you keep spending on the ones that do not.",
+   "check": "One question to every new client, \"how did you hear about us?\", written down, fixes this in a month."
+  },
+  "starting": {
+   "tip": "Then the first piece of the path matters most: being seen, with a clear offer. Your results will focus on that.",
+   "assume": "I need everything in place before I can get my first clients. Or the opposite: I will sort the marketing out later, once I have clients.",
+   "happens": "Neither. The first clients come from one clear offer and one way to be seen, often as simple as telling people directly and giving them a way to book. You do not need the whole path yet. You need the first piece working, and then you add the next one while the offer takes shape. And one offer means one: fifteen offers and no sales is the same starting point as no offer at all.",
+   "check": "If someone asked you today what you offer and how to book, could you answer in two sentences and one link?"
+  },
+  "s1": {
+   "tip": "When people see you and scroll on, the problem is rarely reach.",
+   "assume": "I need more reach. More posts, more ads, more followers.",
+   "happens": "Usually the problem is not how many people see you but whether what they see makes them stop. A clear offer for a clear person beats twice the audience. More reach pours more people past the same unclear message.",
+   "check": "Could a stranger say in one sentence who you help and with what, from your profile alone?"
+  },
+  "s2": {
+   "tip": "Likes without enquiries usually mean people do not know what you offer, or for whom.",
+   "assume": "They are just not ready yet.",
+   "happens": "Interest with no clear next step evaporates. People like what you share, but they do not know what working with you looks like, what it costs, or how to start. So they do nothing, and the moment passes.",
+   "check": "Where, exactly, does an interested follower find your offer and a way to start?"
+  },
+  "s3": {
+   "tip": "Most people who go quiet after asking are not out of budget. They were surprised, or not yet sure.",
+   "assume": "They cannot afford it.",
+   "happens": "Most go quiet because the price surprised them, or because they did not feel sure enough to commit. Showing a price early does not lose clients, it filters. The ones who ask anyway are the ones who can pay.",
+   "check": "What does someone see about price and proof before they write to you?"
+  },
+  "s4": {
+   "tip": "Every extra message before a booking is a chance to drift away.",
+   "assume": "People like the personal touch of booking through me.",
+   "happens": "They like the personal touch in the session. Before it, every back-and-forth is a chance for life to get in the way. Let people pick a time themselves, and keep the personal touch for the work.",
+   "check": "Count the messages between \"I would like to book\" and a confirmed time. What is the number?"
+  },
+  "s5": {
+   "tip": "A booking that does not turn up costs more than a lead that never booked: it took your time twice.",
+   "assume": "People who do not show up were not serious. Nothing to do about it.",
+   "happens": "Most no-shows are forgotten appointments, not changed minds. A reminder the day before, a one-tap way to move the appointment, and a small deposit turn most of them into kept bookings, with the same clients.",
+   "check": "What does a client receive between booking and the appointment?"
+  },
+  "s6": {
+   "tip": "A path that flows is rare. The next leak is clients who do not come back.",
+   "assume": "If booking works, the marketing is done.",
+   "happens": "Booking is the middle of the Loop, not the end. The expensive leak after it is the client who comes once and is never reminded to return, so every month starts from zero.",
+   "check": "What happens, automatically, in the week after a session?"
+  },
+  "chosen.clear": {
+   "tip": "People decide in seconds whether you are for them. Clear beats clever.",
+   "assume": "My work speaks for itself once people look.",
+   "happens": "People give a profile a few seconds. If they cannot tell who it is for and what it does, they leave before looking at the work. Clever names and vague promises cost more clients than plain words ever will.",
+   "check": "Read your bio as a stranger. Who is it for, and what changes for them?"
+  },
+  "chosen.price": {
+   "tip": "A missing price is the most common reason people ask and then go quiet.",
+   "assume": "If I show prices, I will scare people off.",
+   "happens": "Hiding the price moves the shock to the conversation, where it is more awkward and more final. A starting price lets people decide quietly, so the ones who write already know they can afford it.",
+   "check": "Could someone find a starting price without asking you?"
+  },
+  "chosen.proof": {
+   "tip": "Other people’s words do what your own cannot: they make it safe to say yes.",
+   "assume": "My clients are happy. People can sense that.",
+   "happens": "They cannot. Before buying, people look for proof that someone like them got a result. Without it, every claim is just you saying so. Three honest reviews do more than a page of promises.",
+   "check": "How many client words can a stranger read before contacting you?"
+  },
+  "chosen.site": {
+   "tip": "One page that answers the three questions everyone has: what, for whom, how much.",
+   "assume": "A website is a big project. Instagram is enough.",
+   "happens": "A page is where attention becomes a decision. It does not need to be big. One screen that says what you do, for whom, what it costs and how to start does most of the work.",
+   "check": "Where do you send someone who asks \"where can I read more\"?"
+  },
+  "chosen.reply": {
+   "tip": "Interest cools fast. The first to reply usually wins, and it does not have to be you personally.",
+   "assume": "People understand that I am busy and will wait.",
+   "happens": "They do not wait. They write to two or three places and go with whoever answers. A warm reply within minutes, even an automatic one that says when you will be back, keeps the conversation alive.",
+   "check": "How long did your last three enquiries wait for a first reply?"
+  },
+  "booked.link": {
+   "tip": "Every message you have to answer before someone can book is a place to lose them.",
+   "assume": "They can just message me to book.",
+   "happens": "A message to book means a wait, then a question, then another wait. A link means a booking in one tap, at 11 at night, while they are still motivated.",
+   "check": "Can someone book you right now without you touching your phone?"
+  },
+  "booked.calendar": {
+   "tip": "When people choose their own slot, they keep it more often.",
+   "assume": "I need to control my calendar myself.",
+   "happens": "You still control it: you set the hours. The client chooses within them. People who pick their own time show up more, because it was their decision, not a compromise over chat.",
+   "check": "What happens when someone wants a time and you are in a session?"
+  },
+  "booked.reminders": {
+   "tip": "Most no-shows are forgotten appointments, not changed minds.",
+   "assume": "If they do not show up, they were not serious.",
+   "happens": "Most no-shows simply forgot, or lost the message. A reminder the day before, with a way to move the appointment, turns most of them into kept bookings or free slots you can fill.",
+   "check": "What reminds your clients of their appointment, and when?"
+  },
+  "booked.deposit": {
+   "tip": "A small deposit turns a maybe into a plan.",
+   "assume": "Asking for money upfront will put people off.",
+   "happens": "A small deposit puts off exactly the people who were going to cancel. Everyone else sees it as normal. Cancellations drop, and the ones who do cancel do it in time.",
+   "check": "What does cancelling cost a client today?"
+  },
+  "booked.auto": {
+   "tip": "A warm reply at nine at night does not have to come from you.",
+   "assume": "Automatic replies feel cold.",
+   "happens": "Silence feels colder. A reply that says \"thanks, here is how to book, and here is when I am back\" keeps people warm while you are working. The personal part comes in the session.",
+   "check": "What does someone get when they write to you during a session?"
+  },
+  "remembered.checkin": {
+   "tip": "A check-in is the cheapest marketing there is, and the one most people skip.",
+   "assume": "If they liked it, they will come back.",
+   "happens": "They liked it, and then the week filled up. A short message a few days later, \"how are you feeling?\", brings you back to mind at the moment it matters, and often brings the next booking with it.",
+   "check": "When did you last hear from a client without them booking?"
+  },
+  "remembered.rebook": {
+   "tip": "The next booking should not depend on them remembering you.",
+   "assume": "Clients know when they need to come back.",
+   "happens": "They do not keep track. A reminder when the next session is due, with a link, does the remembering for them. Without it, the gap grows until they have moved on.",
+   "check": "How does a client find out that it is time to come back?"
+  },
+  "remembered.reviews": {
+   "tip": "Happy clients want to help. Most are never asked.",
+   "assume": "It feels awkward to ask for a review.",
+   "happens": "Asked at the right moment, right after a good result, most clients say yes gladly. Each review works for you with every stranger who reads it, for years.",
+   "check": "When, exactly, do you ask?"
+  },
+  "remembered.list": {
+   "tip": "A list is the difference between a client and a stranger who once paid you.",
+   "assume": "I remember my clients. I do not need a system.",
+   "happens": "You remember them. The question is whether you can reach them: all of them, this week, with one message. A list, even a simple one, is what makes past clients a channel.",
+   "check": "Could you message every past client tomorrow morning?"
+  },
+  "remembered.news": {
+   "tip": "The people who already paid you are the easiest to sell to again.",
+   "assume": "Past clients will get annoyed if I write to them.",
+   "happens": "They get annoyed by noise, not by something useful from someone they trust. A note every few weeks keeps you present, and it costs a fraction of finding a new client.",
+   "check": "What did your past clients last hear from you?"
+  },
+  "goal.seen": {
+   "tip": "This is the one most people pick. It is also the one most often picked for the wrong reason.",
+   "assume": "More people seeing me is always the fix.",
+   "happens": "If the path after the first look leaks, more visibility means more people leaking out, often paid for. Visibility is the right fix only when the rest of the path already holds.",
+   "check": "Your answers on the next screens will show whether the leak is before or after people find you."
+  },
+  "goal.chosen": {
+   "tip": "Turning interest into enquiries is mostly about clarity and proof.",
+   "assume": "I need better content.",
+   "happens": "Usually the content is fine. What is missing is a clear offer, a visible price and words from other clients, in the place where interested people look.",
+   "check": "Where does an interested person land, and what do they find there?"
+  },
+  "goal.chosen2": {
+   "tip": "Going quiet after the price is a trust problem more than a money problem.",
+   "assume": "My price is too high.",
+   "happens": "A price feels high when there is nothing next to it: no proof, no explanation of what it includes, no way to start small. The same price with context converts very differently.",
+   "check": "What surrounds your price when people see it?"
+  },
+  "goal.booked": {
+   "tip": "Time in DMs is the clearest sign that the booking step is missing a link.",
+   "assume": "The chat is part of the service.",
+   "happens": "The chat is where bookings get lost. A link to pick a time, with reminders, removes most of the back-and-forth. The personal part moves to the session, where it belongs.",
+   "check": "Count the messages before your last five bookings."
+  },
+  "goal.booked2": {
+   "tip": "No-shows are usually a reminder problem, not a client problem.",
+   "assume": "Some people are just unreliable.",
+   "happens": "A reminder the day before, a way to move the appointment, and a small deposit cut no-shows to the rare exception, with the same clients.",
+   "check": "What does a client receive between booking and the appointment?"
+  },
+  "goal.remembered": {
+   "tip": "Clients coming back is the cheapest growth there is.",
+   "assume": "I have to keep finding new clients.",
+   "happens": "A past client costs nothing to reach and already trusts you. Check-ins, rebooking reminders and a simple way to refer turn one booking into many.",
+   "check": "How many of your last ten clients came back or sent someone?"
+  },
+  "goal.loop": {
+   "tip": "That is the whole Loop. It runs on connections between the pieces, not on you.",
+   "assume": "I need to do more.",
+   "happens": "You are doing enough. The problem is that all of it runs through you. Each step of the path can be connected so it works while you are in a session, and the pieces talk to each other.",
+   "check": "Which steps today only happen if you personally do them?"
+  },
+  "goal.content": {
+   "tip": "Content works when every post has one job. Someone else can make it, but the job must be clear first.",
+   "assume": "Better content will bring clients.",
+   "happens": "Content brings attention. It brings clients only when there is a path after it: an offer, a page, a way to book. Outsourcing content before that path exists buys more views that go nowhere.",
+   "check": "What should a post lead to?"
+  },
+  "goal.shop": {
+   "tip": "Selling online changes the step after the click, not the ones before it.",
+   "assume": "A shop or platform will sell on its own.",
+   "happens": "A shop still needs people to find it, trust it and come back. The same four stages apply. The platform is the booking step for products.",
+   "check": "Who will find the shop, and from where?"
+  }
+ },
+ "STAGE_EXPLAIN": {
+  "seen": "This is whether the right people come across you at all, and whether a channel you control brings them. A high score means at least one channel you can turn up is working. A low score means you depend on luck or on others talking about you.",
+  "chosen": "This is what happens in the seconds after someone finds you: do they understand who you help, see a price, see proof, and get a reply? A low score here means interest arrives and leaks away before anyone writes to you.",
+  "booked": "This is the step from \"I want this\" to a confirmed time: a link, a calendar, reminders, a deposit. A low score means willing clients get lost in messages, or book and do not show up.",
+  "remembered": "This is what brings clients back and makes them send others: check-ins, rebooking reminders, reviews, a list you can reach. A low score means every month starts from zero."
+ },
+ "CHANNELS": [
+  {
+   "id": "referrals",
+   "label": "Word of mouth and referrals from past clients",
+   "remembered": true
+  },
+  {
+   "id": "local",
+   "label": "My location: people walk in or live nearby"
+  },
+  {
+   "id": "social",
+   "label": "Social media (Instagram, TikTok, Facebook, LinkedIn)",
+   "controllable": true
+  },
+  {
+   "id": "ads",
+   "label": "Paid ads (Meta, Google)",
+   "controllable": true
+  },
+  {
+   "id": "events",
+   "label": "Events, workshops or networking",
+   "controllable": true
+  },
+  {
+   "id": "webinars",
+   "label": "Webinars or free live sessions",
+   "controllable": true
+  },
+  {
+   "id": "email",
+   "label": "Email newsletter",
+   "controllable": true,
+   "remembered": true
+  },
+  {
+   "id": "search",
+   "label": "Website, blog or Google profile",
+   "controllable": true
+  },
+  {
+   "id": "partners",
+   "label": "Partners or platforms (clinics, gyms, Treatwell, Udemy)"
+  },
+  {
+   "id": "unsure",
+   "label": "I am honestly not sure",
+   "meta": true
+  },
+  {
+   "id": "starting",
+   "label": "I am just starting, no regular clients yet",
+   "meta": true
+  }
+ ],
+ "Q": [
+  {
+   "id": "intent",
+   "type": "single",
+   "stage": null,
+   "title": "What brings you <em class=\"w\">here</em>?",
+   "helper": "It does not matter where you start. It matters where you want to be.",
+   "opts": [
+    {
+     "id": "fix",
+     "icon": "booked",
+     "label": "Something is leaking",
+     "ex": "I lose clients somewhere along the way and I want to find where."
+    },
+    {
+     "id": "grow",
+     "icon": "spark",
+     "label": "It works, and I want the next step",
+     "ex": "More clients, higher prices, online, products, less of me. Growth, not repair."
+    },
+    {
+     "id": "start",
+     "icon": "starting",
+     "label": "I am starting",
+     "ex": "No regular clients yet, or starting again. I want to know where to begin."
+    },
+    {
+     "id": "unsure",
+     "icon": "unsure",
+     "label": "I am not sure",
+     "ex": "Things are in place and something is off, but I could not say what. Let the answers decide."
+    }
+   ]
+  },
+  {
+   "id": "guess",
+   "type": "single",
+   "stage": null,
+   "showIf": {
+    "intent": [
+     "fix",
+     "unsure"
+    ]
+   },
+   "title": "Before we start: where do you <em class=\"w\">think</em> you are losing the most clients?",
+   "helper": "Your gut answer. We will come back to it at the end.",
+   "opts": [
+    {
+     "id": "seen",
+     "icon": "seen",
+     "label": "People do not find me",
+     "ex": "They do not know I exist. Not much presence, organic or paid, and nobody new walks in."
+    },
+    {
+     "id": "chosen",
+     "icon": "chosen",
+     "label": "They find me, but do not get in touch",
+     "ex": "Likes, views, maybe a follow. Then nothing. They never write or ask."
+    },
+    {
+     "id": "booked",
+     "icon": "booked",
+     "label": "They get in touch, but do not book",
+     "ex": "We start talking, they ask how much it is, and nothing really happens after that."
+    },
+    {
+     "id": "remembered",
+     "icon": "remembered",
+     "label": "They book once and do not come back",
+     "ex": "The session goes well. Then I never hear from them again."
+    },
+    {
+     "id": "unsure",
+     "icon": "unsure",
+     "label": "A bit of everything, or not sure",
+     "ex": "Things are in place, but none of it is quite working yet."
+    }
+   ]
+  },
+  {
+   "id": "next",
+   "type": "single",
+   "stage": null,
+   "showIf": {
+    "intent": [
+     "grow"
+    ]
+   },
+   "title": "What does the next step <em class=\"w\">look</em> like for you?",
+   "helper": "Pick the one closest. We use it to point your results at the right thing.",
+   "opts": [
+    {
+     "id": "more",
+     "icon": "seen",
+     "label": "More clients like the ones I have"
+    },
+    {
+     "id": "price",
+     "icon": "chosen",
+     "label": "Fewer clients, higher prices"
+    },
+    {
+     "id": "group",
+     "icon": "online",
+     "label": "Group programmes or online sessions"
+    },
+    {
+     "id": "product",
+     "icon": "digital",
+     "label": "Courses or digital products"
+    },
+    {
+     "id": "team",
+     "icon": "b2b",
+     "label": "A team, a second location, or more hours covered"
+    },
+    {
+     "id": "lessme",
+     "icon": "spark",
+     "label": "Less of me in the day-to-day"
+    }
+   ]
+  },
+  {
+   "id": "business",
+   "type": "multi",
+   "stage": null,
+   "intro": "First, a little about your business. A studio and an online course lose clients in very different places, so this makes sure your results fit yours.",
+   "title": "How do clients <em class=\"w\">pay</em> you?",
+   "helper": "Tick all that apply.",
+   "opts": [
+    {
+     "id": "inperson",
+     "icon": "inperson",
+     "label": "Sessions or treatments in person",
+     "ex": "massage, face yoga studio, therapy practice"
+    },
+    {
+     "id": "online",
+     "icon": "online",
+     "label": "Live sessions online, one-on-one or in groups",
+     "ex": "coaching, online classes"
+    },
+    {
+     "id": "digital",
+     "icon": "digital",
+     "label": "Courses or digital products",
+     "ex": "online course, membership, templates"
+    },
+    {
+     "id": "physical",
+     "icon": "physical",
+     "label": "Physical products, in a shop or online store"
+    },
+    {
+     "id": "b2b",
+     "icon": "b2b",
+     "label": "Programmes or workshops for companies",
+     "ex": "corporate wellness, team training"
+    },
+    {
+     "id": "other",
+     "icon": "other",
+     "label": "Something else"
+    }
+   ]
+  },
+  {
+   "id": "channels",
+   "type": "multi",
+   "stage": "seen",
+   "title": "What do you use to get <em class=\"w\">clients</em>?",
+   "helper": "Tick all that apply. Tap the small circle on any one to read why it matters.",
+   "opts": [
+    {
+     "id": "referrals",
+     "icon": "referrals",
+     "label": "Word of mouth and referrals from past clients",
+     "learn": "referrals"
+    },
+    {
+     "id": "local",
+     "icon": "local",
+     "label": "My location: people walk in or live nearby",
+     "learn": "local"
+    },
+    {
+     "id": "social",
+     "icon": "social",
+     "label": "Social media (Instagram, TikTok, Facebook, LinkedIn)",
+     "learn": "social"
+    },
+    {
+     "id": "ads",
+     "icon": "ads",
+     "label": "Paid ads (Meta, Google)",
+     "learn": "ads"
+    },
+    {
+     "id": "events",
+     "icon": "events",
+     "label": "Events, workshops or networking",
+     "learn": "events"
+    },
+    {
+     "id": "webinars",
+     "icon": "webinars",
+     "label": "Webinars or free live sessions",
+     "learn": "webinars"
+    },
+    {
+     "id": "email",
+     "icon": "email",
+     "label": "Email newsletter",
+     "learn": "email"
+    },
+    {
+     "id": "search",
+     "icon": "search",
+     "label": "Website, blog or Google profile",
+     "learn": "search"
+    },
+    {
+     "id": "partners",
+     "icon": "partners",
+     "label": "Partners or platforms (clinics, gyms, Treatwell, Udemy)",
+     "learn": "partners"
+    },
+    {
+     "id": "unsure",
+     "icon": "unsure",
+     "label": "I am honestly not sure",
+     "learn": "unsure"
+    },
+    {
+     "id": "starting",
+     "icon": "starting",
+     "label": "I am just starting, no regular clients yet",
+     "learn": "starting"
+    }
+   ],
+   "patternTip": {
+    "min": 4,
+    "text": "It is like fishing: trying lots of spots helps you find where it works. But what keeps you going is getting really good at one."
+   }
+  },
+  {
+   "id": "bring",
+   "type": "rate",
+   "stage": "seen",
+   "title": "How much does each one <em class=\"w\">bring</em> you?",
+   "helper": "One tap per channel.",
+   "choices": [
+    {
+     "id": "none",
+     "label": "Little or nothing"
+    },
+    {
+     "id": "some",
+     "label": "Some clients"
+    },
+    {
+     "id": "sustains",
+     "label": "It sustains my business"
+    },
+    {
+     "id": "stopped",
+     "label": "Tried it, stopped"
+    }
+   ]
+  },
+  {
+   "id": "volume",
+   "type": "single",
+   "stage": null,
+   "title": "And roughly how many new clients or sales do those bring you in a typical <em class=\"w\">month</em>?",
+   "helper": "A rough number is fine. It helps us judge the size of each leak.",
+   "opts": [
+    {
+     "id": "0",
+     "label": "None yet"
+    },
+    {
+     "id": "1",
+     "label": "1 to 5"
+    },
+    {
+     "id": "6",
+     "label": "6 to 15"
+    },
+    {
+     "id": "16",
+     "label": "16 to 40"
+    },
+    {
+     "id": "40",
+     "label": "More than 40"
+    }
+   ]
+  },
+  {
+   "id": "stall",
+   "type": "ladder",
+   "stage": "chosen",
+   "mirror": true,
+   "title": "Picture the path from discovering you to booking. Where does it usually <em class=\"w\">stall</em>?",
+   "helper": "Think about new people who do not know you yet, not referrals. Pick the step that feels most stuck.",
+   "opts": [
+    {
+     "id": "s1",
+     "name": "Seen",
+     "label": "They see me, but do not really engage",
+     "learn": "s1"
+    },
+    {
+     "id": "s2",
+     "name": "Engaged",
+     "label": "They like, follow or comment, but do not get in touch",
+     "learn": "s2"
+    },
+    {
+     "id": "s3",
+     "name": "In touch",
+     "label": "They get in touch or leave their details, then go quiet, often after the price",
+     "learn": "s3"
+    },
+    {
+     "id": "s4",
+     "name": "Ready",
+     "label": "They want to book, but get lost in the back-and-forth",
+     "learn": "s4"
+    },
+    {
+     "id": "s5",
+     "name": "Booked",
+     "label": "They book, then cancel or do not show up",
+     "learn": "s5"
+    },
+    {
+     "id": "s6",
+     "name": "Flows",
+     "label": "It flows: they book or buy on their own, and they turn up",
+     "learn": "s6"
+    }
+   ]
+  },
+  {
+   "id": "chosen",
+   "type": "multi",
+   "stage": "chosen",
+   "mirror": true,
+   "title": "When someone checks you out, what will they <em class=\"w\">find</em>?",
+   "helper": "Tick all that apply.",
+   "opts": [
+    {
+     "id": "clear",
+     "label": "A bio or page that says clearly who you help and how",
+     "learn": "chosen.clear"
+    },
+    {
+     "id": "price",
+     "label": "Your prices, or at least a starting price",
+     "learn": "chosen.price"
+    },
+    {
+     "id": "proof",
+     "label": "Reviews or client stories they can see",
+     "learn": "chosen.proof"
+    },
+    {
+     "id": "site",
+     "label": "A website or page that explains your services",
+     "learn": "chosen.site"
+    },
+    {
+     "id": "reply",
+     "label": "A reply to their message within a few hours",
+     "learn": "chosen.reply"
+    },
+    {
+     "id": "none",
+     "label": "None of these yet",
+     "none": true
+    }
+   ]
+  },
+  {
+   "id": "worth",
+   "type": "single",
+   "stage": null,
+   "title": "While we are on prices: what is a new client <em class=\"w\">worth</em> to you, roughly?",
+   "helper": "Over the time they stay with you. We use it to put your result in euros.",
+   "opts": [
+    {
+     "id": "30",
+     "label": "Under €50"
+    },
+    {
+     "id": "100",
+     "label": "€50 to €150"
+    },
+    {
+     "id": "300",
+     "label": "€150 to €500"
+    },
+    {
+     "id": "1000",
+     "label": "€500 to €1,500"
+    },
+    {
+     "id": "2500",
+     "label": "More than €1,500"
+    }
+   ]
+  },
+  {
+   "id": "booked",
+   "type": "multi",
+   "stage": "booked",
+   "mirror": true,
+   "title": "When someone wants to book or buy, what is in <em class=\"w\">place</em>?",
+   "helper": "Tick all that apply.",
+   "opts": [
+    {
+     "id": "link",
+     "label": "A booking or buy link in my bio or on my website",
+     "learn": "booked.link"
+    },
+    {
+     "id": "calendar",
+     "label": "They pick a time or pay online themselves, without messaging me",
+     "learn": "booked.calendar"
+    },
+    {
+     "id": "reminders",
+     "label": "Automatic confirmation, reminders or access after they book or buy",
+     "learn": "booked.reminders"
+    },
+    {
+     "id": "deposit",
+     "label": "Payment or a deposit upfront",
+     "learn": "booked.deposit"
+    },
+    {
+     "id": "auto",
+     "label": "Automatic replies on WhatsApp or Instagram",
+     "learn": "booked.auto"
+    },
+    {
+     "id": "none",
+     "label": "None of these yet",
+     "none": true
+    }
+   ]
+  },
+  {
+   "id": "remembered",
+   "type": "multi",
+   "stage": "remembered",
+   "title": "After a session or purchase, what <em class=\"w\">happens</em>?",
+   "helper": "Tick all that apply.",
+   "opts": [
+    {
+     "id": "checkin",
+     "label": "I check in to see how it went",
+     "learn": "remembered.checkin"
+    },
+    {
+     "id": "rebook",
+     "label": "Clients get a reminder to book again, or an offer for the next product",
+     "learn": "remembered.rebook"
+    },
+    {
+     "id": "reviews",
+     "label": "I ask for reviews or referrals",
+     "learn": "remembered.reviews"
+    },
+    {
+     "id": "list",
+     "label": "I keep their details in a list or client system",
+     "learn": "remembered.list"
+    },
+    {
+     "id": "news",
+     "label": "I send news or offers to past clients",
+     "learn": "remembered.news"
+    },
+    {
+     "id": "none",
+     "label": "None of these yet",
+     "none": true
+    }
+   ]
+  },
+  {
+   "id": "spend",
+   "type": "single",
+   "stage": null,
+   "title": "What do you invest in marketing in a typical month <em class=\"w\">today</em>?",
+   "helper": "Ads, tools, help. So we only suggest things that fit where you are now.",
+   "opts": [
+    {
+     "id": "0",
+     "label": "Nothing at the moment"
+    },
+    {
+     "id": "50",
+     "label": "Under €100"
+    },
+    {
+     "id": "300",
+     "label": "€100 to €500"
+    },
+    {
+     "id": "1000",
+     "label": "€500 to €1,500"
+    },
+    {
+     "id": "2000",
+     "label": "More than €1,500"
+    }
+   ]
+  },
+  {
+   "id": "goal",
+   "type": "single",
+   "stage": null,
+   "mirror": true,
+   "title": "Last one. If you could fix <em class=\"w\">one</em> thing in the next three months, what would it be?",
+   "helper": "Pick one.",
+   "opts": [
+    {
+     "id": "seen",
+     "icon": "seen",
+     "label": "More of the right people finding me",
+     "learn": "goal.seen"
+    },
+    {
+     "id": "chosen",
+     "icon": "chosen",
+     "label": "Turning followers and interest into real enquiries",
+     "learn": "goal.chosen"
+    },
+    {
+     "id": "chosen2",
+     "icon": "chosen",
+     "label": "Fewer people going quiet after asking about the price",
+     "learn": "goal.chosen2"
+    },
+    {
+     "id": "booked",
+     "icon": "booked",
+     "label": "Less time chatting in DMs to get a booking",
+     "learn": "goal.booked"
+    },
+    {
+     "id": "booked2",
+     "icon": "booked",
+     "label": "Fewer no-shows and cancellations",
+     "learn": "goal.booked2"
+    },
+    {
+     "id": "remembered",
+     "icon": "remembered",
+     "label": "More clients coming back or referring others",
+     "learn": "goal.remembered"
+    },
+    {
+     "id": "loop",
+     "icon": "spark",
+     "label": "Marketing that works without me doing everything",
+     "learn": "goal.loop"
+    },
+    {
+     "id": "content",
+     "icon": "social",
+     "label": "Someone to take content creation off my plate",
+     "learn": "goal.content"
+    },
+    {
+     "id": "shop",
+     "icon": "digital",
+     "label": "Selling online: a shop or course platform",
+     "learn": "goal.shop"
+    }
+   ]
+  }
+ ],
+ "NEXT": {
+  "more": "More of the same clients means more of what already brings them, plus one channel you can turn up when referrals are quiet.",
+  "price": "Higher prices are a trust question, not a pricing question. The people who pay more need to see proof and a clear promise before they ever talk to you.",
+  "group": "Groups and online sessions change the first step of your path: people decide from a page and a calendar, not from a conversation with you.",
+  "product": "Selling a product is a second Loop, not an extension of the first. The people who buy a course have never sat in a session with you, so the trust has to come from somewhere else: your content, your proof, your page.",
+  "team": "Growing past yourself means the path has to work without you in it: enquiries answered, bookings taken and clients followed up even when you are not the one doing it.",
+  "lessme": "Less of you means every step that only happens because you do it has to be handed to a system or a person. Start with the one that eats most of your week."
+ },
+ "QUICK": {
+  "seen": "Pick the one channel that already brought you a paying client. For the next two weeks, put your effort there only, and count what comes in.",
+  "chosen": "Add your starting price and one client story to the first place people find you. Then watch whether the questions you get change.",
+  "booked": "For one week, answer every enquiry within the hour with a link where they can pick a time. Note how many book without a second message.",
+  "remembered": "Message your last ten clients. Ask how it went, and ask one of them for a review. It takes twenty minutes."
+ },
+ "STAGE_LINE": {
+  "seen": "the right people are not finding you yet",
+  "chosen": "people find you, but something stops them from getting in touch",
+  "booked": "willing clients are slipping away between “I want this” and a booking",
+  "remembered": "clients come once, and nothing brings them back"
+ },
+ "ui": {
+  "brand": "Sansara Media",
+  "name": "The Client Loop Check",
+  "close": "Close",
+  "step": "Question {n} of {total}",
+  "back": "Back",
+  "next": "Next",
+  "start": "Start the check",
+  "intro": {
+   "title": "Where are you <em class=\"w\">losing</em> clients?",
+   "lead": "A dozen questions about what you have tried, what worked, what did not, and what would take it further.",
+   "p1": "This is for two kinds of people: the ones losing clients somewhere along the way, and the ones whose path works and who want the next step. It does not matter where you start. It matters where you want to be.",
+   "p2": "Every question comes with what most people get wrong about it: the advice you keep hearing, and what actually happens when you follow it. You will probably catch yourself on one or two. That is the point.",
+   "f1": "At the end you see your own path, from “never heard of you” to “booked” to “came back”, and the step where it leaks most. Then you book your free call, where we look at that step together and decide what to fix first.",
+   "f2": "No right answers, no grade, no score. You do not need to be an expert or have a big online business. Zero tried or a hundred things tried, both are a good starting point.",
+   "time": "About five minutes. Nothing to prepare, and you can stop at any point."
+  },
+  "why": "Why this matters",
+  "assume": "What many assume:",
+  "happens": "What actually happens:",
+  "worth_checking": "Worth checking:",
+  "rate_none": "You did not tick a channel you use, so we will skip this one.",
+  "pattern_head": "More is not always better",
+  "mirror": {
+   "stall_social": "<b>They tell you:</b> post more. <b>What actually happens:</b> you already post, and it brings {result}. Posting more sends more people past the same gap. So let us find the gap.",
+   "social_some": "some clients, not a living",
+   "social_little": "little",
+   "stall_start": "So far: you are at the start. Now, what happens when new people come across you.",
+   "stall_sustains": "So far: <b>{list}</b> keeps your business going. Now, what happens when new people come across you.",
+   "stall_none_one": "So far: you use one channel, and it does not sustain the business on its own. Now, what happens when new people come across you.",
+   "stall_none": "So far: you use {n} channels, and none of them sustains the business on its own. Now, what happens when new people come across you.",
+   "and": "and",
+   "chosen_s3": "<b>They tell you:</b> follow up harder, send another message. <b>What actually happens:</b> people who went quiet after the price were not convinced before they asked. The fix is what they see before they write, not after.",
+   "chosen_s2": "<b>They tell you:</b> engage more, reply to every comment. <b>What actually happens:</b> engagement without a clear offer stays engagement. Let us look at what people find when they look closer.",
+   "chosen": "Now the moment after someone finds you: what they see, and whether it makes them write.",
+   "booked_s5": "<b>They tell you:</b> charge more, or just accept that some people do not show. <b>What actually happens:</b> most no-shows forgot. What reaches them between booking and the appointment decides it.",
+   "booked_s4": "<b>They tell you:</b> reply faster, be available. <b>What actually happens:</b> you cannot answer at nine at night and mid-session. Speed matters, it just should not depend on you.",
+   "booked": "Now the step from “I want this” to a time in your calendar.",
+   "goal": "<b>They tell you:</b> work harder. <b>What actually happens:</b> you obviously already do. The question is which parts only happen when you personally do them. One last question, then your snapshot."
+  },
+  "words": {
+   "book": "book",
+   "buy": "buy",
+   "booking": "booking",
+   "purchase": "purchase"
+  },
+  "findings": {
+   "s1_noreach": "Hardly anyone new sees you unless someone sends them. That is a reach problem, and it is the most fixable kind.",
+   "s1": "People see you, but nothing makes them stop and pay attention.",
+   "s2": "You get attention, but your offer is not turning it into interest.",
+   "s3": "People raise their hand, then drop off, usually around price or trust.",
+   "s4": "Willing clients are getting lost in DMs and emails before they {book}.",
+   "s5": "People book and then do not turn up. That is usually a reminder and commitment problem, not a client problem.",
+   "why_stall": "From where you said the path stalls.",
+   "ads_sustains": "Your ads are working. Make sure the ad account, the page and the data are in your name, so the results stay yours whoever runs them.",
+   "why_ads_sustains": "Paid ads sustain the business.",
+   "social_none": "You post regularly, but social media is not bringing you clients. That is effort without a path to booking.",
+   "why_social_none": "Social media: little or nothing.",
+   "ads_none": "You are paying for ads that are not turning into clients. The leak is after the click.",
+   "why_ads_none": "Paid ads: little or nothing.",
+   "ads_stopped": "You have already invested in ads without results. Before spending more, it is worth finding where it leaked.",
+   "why_ads_stopped": "Paid ads: tried, stopped.",
+   "events_none": "You meet people at events, but they do not become clients. The leak is usually the follow-up.",
+   "why_events_none": "Events: little or nothing.",
+   "referrals_only": "People clearly love your work, but your growth depends on others talking about you. You cannot turn it up when you need more clients.",
+   "why_referrals_only": "Only referrals or location sustain the business.",
+   "many": "You show up in a lot of places. The question is which ones actually bring paying clients.",
+   "why_many": "{n} channels, none sustains the business.",
+   "unsure": "You do not know where your clients come from, so you cannot do more of what works.",
+   "why_unsure": "Worth tracking for one month.",
+   "starting": "You are at the start, so the first piece matters most: one clear offer, one way to be seen, and a way to book. The rest can wait until that works.",
+   "why_starting": "Just starting.",
+   "why_missing": "Not in place yet.",
+   "chosen_price": "Nobody can see a price before they ask. That is the moment most people go quiet.",
+   "chosen_proof": "There is nothing from other clients to make saying yes feel safe.",
+   "booked_calendar": "Every {booking} still needs a conversation with you first.",
+   "booked_reminders": "Nothing reminds people before their appointment, which is where most no-shows come from.",
+   "remembered_rebook": "The next booking depends on the client remembering you.",
+   "remembered_list": "Past clients are not in any list, so there is no way to reach them again.",
+   "healthy": "Your path works: people find you, choose you, book and come back. Nothing here needs repair.",
+   "why_healthy": "Nothing leaking badly.",
+   "why_next": "From what the next step looks like for you.",
+   "proof": "You already have reviews and client stories. That is the asset that lets strangers trust you before they meet you, and it does most of the work when you grow. Put it where new people look first.",
+   "why_proof": "Proof in place.",
+   "no_proof": "Your growth still depends on others talking about you, and strangers cannot read that. To grow past referrals you need proof they can see: reviews, client stories, results.",
+   "why_no_proof": "Only referrals or location sustain the business, no visible proof.",
+   "controllable": "You already have a channel you control. Growing is mostly a question of what you point it at, and whether the next step after it is built for strangers.",
+   "why_controllable": "A controllable channel is working."
+  },
+  "status": {
+   "weakest": "Biggest leak",
+   "leaking": "Leaking",
+   "holding": "Holding",
+   "working": "Working"
+  },
+  "means": "What this means",
+  "hide": "Hide",
+  "results": {
+   "label": "Your Loop snapshot",
+   "healthy": "Your path <em class=\"w\">holds</em>. Your next step is growth, not repair.",
+   "grow": "Before the next step, one stage needs work: <em class=\"w\">{stage}</em>.",
+   "start": "Where to <em class=\"w\">begin</em>: {stage}.",
+   "plain": "Your biggest leak: <em class=\"w\">{stage}</em>.",
+   "right": "You were <em class=\"w\">right</em>: your biggest leak is {stage}.",
+   "wrong": "You thought it was {guess}. Your answers point to <em class=\"w\">{stage}</em>.",
+   "healthy_line": "In plain words: nothing is leaking badly. {stage} is the softest of the four, and that is where growth will push first.",
+   "want_need": "You want to fix <b>{goal}</b>. Your answers say the bigger leak comes {when}: {line}. Fixing {goal} first would pour more people into the same hole.",
+   "later": "later",
+   "earlier": "earlier",
+   "plain_line": "In plain words: {line}. Second comes {second}.",
+   "euros": "If sealing this leak brought you just one more client a month, that is roughly <b>€{amount}</b> a year, at what you said a client is worth to you.",
+   "quick": "One thing to do this week",
+   "limit": "This snapshot only knows what you told us. To see what is really happening, we look at your actual page, offer and messages. That is what we do on the call.",
+   "restart": "Start again"
+  },
+  "call": {
+   "title": "On your free call: <em class=\"w\">{stage}</em>, together.",
+   "seen": "We look at how the right people could find you: which channel you can turn up, and what they should see first.",
+   "chosen": "We look at what people see when they find you, your offer, your price, your proof, and what would make them write to you.",
+   "booked": "We look at the step from “I want this” to a booking: how people reach you, how they book, and what makes them turn up.",
+   "remembered": "We look at what happens after a session: how clients come back and send others, without you chasing them.",
+   "healthy": "We look at your next step: what to build so the path that works today carries more clients tomorrow.",
+   "outcomes": [
+    "Your leak, seen from the outside, on your real page, offer and messages",
+    "What to fix first, and what it would change",
+    "What it would take, with us or on your own"
+   ],
+   "length": "Thirty minutes, free. Nothing to prepare.",
+   "title_healthy": "On your free call: <em class=\"w\">your next step</em>, together."
+  },
+  "form": {
+   "title": "Leave your email to book your call",
+   "text": "We send you your full report in writing: what each of your answers means, the tips you read, and your one thing to do this week. Then you choose a time for your call.",
+   "name": "Your name",
+   "email": "Email",
+   "privacy": "I have read the <a href=\"/privacy/\">privacy policy</a> and agree that my answers are stored so you can send me my report and contact me about my call.",
+   "submit": "Send and book my call",
+   "sending": "Sending",
+   "need": "Please add your name and a valid email address.",
+   "consent": "Please accept the privacy policy so we can send your report.",
+   "failed": "That didn't go through. Please try again in a moment."
+  },
+  "done": {
+   "title": "Thank you, {name}. Your report is on its way to {email}.",
+   "note": "We write it for you personally, so it can take a little while to arrive.",
+   "book_title": "Now choose a time for your call.",
+   "bands": {
+    "burned": "You have already paid for leads that went nowhere, so we keep this simple: thirty minutes on what we would build for you and what it costs. And we say so if we are not the right fit.",
+    "nofit": "You do not need the whole path yet, and we will not sell you one. Thirty minutes on what the first piece would be, and whether it is worth it now.",
+    "notyet": "We have seen your check, so we skip the basics. Thirty minutes on your biggest leak, what to fix first and what it would cost. If it is not right for you, we say so.",
+    "good": "We have seen your check, so we skip the basics. Thirty minutes on your biggest leak, what to fix first and what it would cost. If it is not right for you, we say so."
+   },
+   "after": "After the call you get it in writing: the things we would fix for you, and the quote.",
+   "button": "Book my free call",
+   "whatsapp_message": "Hi Sansara, I'm {name}. I just did the Client Loop Check (biggest leak: {stage}) and I'd like to book my free call."
+  },
+  "returning": {
+   "title": "You have done the check, <em class=\"w\">{name}</em>.",
+   "text": "Your report is on its way. Choose a time for your free call:"
+  },
+  "quick_healthy": {
+   "more": "Ask your three happiest clients for one introduction each this week, and write down what they say about you when they do. Those words are your next ad.",
+   "price": "Raise the price for new clients only, by a step you find slightly uncomfortable, and put two client stories next to it. Watch what changes in the questions you get.",
+   "group": "Offer one group session to your existing clients this month, with a page and a calendar link, no DMs. How they book tells you whether the page is ready for strangers.",
+   "product": "Offer your existing clients the first version of your digital product this month, before you show it to strangers. They already trust you, so their answer tells you whether the offer is ready, not whether your marketing is.",
+   "team": "For one week, write down every enquiry, booking and follow-up you handle personally. The longest list is the first thing to hand over.",
+   "lessme": "Write down which step of your path only works because you personally do it. That is the step to build next, before you add more people to the top."
+  },
+  "quick_seen_referrals": "This week, ask your three happiest clients to introduce you to one person each. That is the fastest version of what already works, while you set up one channel you control.",
+  "quick_booked_s5": "For every booking this week, send a reminder the day before with a one-tap way to move it. Count the no-shows against last week."
+ }
+}
