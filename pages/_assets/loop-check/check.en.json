@@ -963,15 +963,32 @@
   "step": "Question {n} of {total}",
   "back": "Back",
   "next": "Next",
-  "start": "Start the check",
+  "start": "Start my five-minute check",
   "intro": {
-   "title": "Where are you <em class=\"w\">losing</em> clients?",
-   "lead": "A dozen questions about what you have tried, what worked, what did not, and what would take it further.",
-   "p1": "This is for two kinds of people: the ones losing clients somewhere along the way, and the ones whose path works and who want the next step. It does not matter where you start. It matters where you want to be.",
-   "p2": "Every question comes with what most people get wrong about it: the advice you keep hearing, and what actually happens when you follow it. You will probably catch yourself on one or two. That is the point.",
-   "f1": "At the end you see your own path, from “never heard of you” to “booked” to “came back”, and the step where it leaks most. Then you book your free call, where we look at that step together and decide what to fix first.",
-   "f2": "No right answers, no grade, no score. You do not need to be an expert or have a big online business. Zero tried or a hundred things tried, both are a good starting point.",
-   "time": "About five minutes. Nothing to prepare, and you can stop at any point."
+   "kicker": "One step before your free call",
+   "title": "Five minutes now, so your call is about <em class=\"w\">you</em>.",
+   "lead": "Before we talk, we want to know where your clients slip away. Answer a dozen quick questions and we come to your call already knowing your business, instead of spending half of it on the basics.",
+   "photo_alt": "Christiane and Miguel, the founders of Sansara Media, in their studio",
+   "photo_caption": "We read every check ourselves before your call.",
+   "steps": [
+    {
+     "icon": "check",
+     "title": "Five minutes",
+     "text": "A dozen questions about how clients find you, choose you, book and come back."
+    },
+    {
+     "icon": "seen",
+     "title": "Straight away",
+     "text": "Your snapshot: the step where you lose the most clients, and one thing to do this week."
+    },
+    {
+     "icon": "booked",
+     "title": "Then your free call",
+     "text": "Thirty minutes on that step, together, and what to fix first."
+    }
+   ],
+   "note": "No right answers, no score. Each question comes with what most people get wrong about it, so you learn something either way.",
+   "time": "Nothing to prepare, and you can stop at any point."
   },
   "why": "Why this matters",
   "assume": "What many assume:",

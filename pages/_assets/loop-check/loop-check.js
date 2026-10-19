@@ -112,23 +112,22 @@
     wire(q);
     top();
   }
+  // the first screen: the button said "free call", so it says why five minutes come first (owner, 2026-10-19)
   function renderIntro() {
     progress.hidden = true;
     const I = T.intro;
     card.innerHTML = `<div class="screen stack">
+      <figure class="lc-photo"><img src="/assets/images/people/founders-wide.jpg" alt="${esc(I.photo_alt)}" width="904" height="678"><figcaption>${I.photo_caption}</figcaption></figure>
+      <p class="lc-kicker">${I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
-      <p class="lead">${I.lead}</p><p>${I.p1}</p><p>${I.p2}</p>
-      <div class="findings">
-        <div class="finding"><span class="n">${ic('seen')}</span><div><p>${I.f1}</p></div></div>
-        <div class="finding"><span class="n">${ic('check')}</span><div><p>${I.f2}</p></div></div>
-      </div>
-      <p class="muted">${I.time}</p>
+      <p class="lead">${I.lead}</p>
+      <ol class="lc-steps">${I.steps.map((st) => `<li><span class="n">${ic(st.icon)}</span><div><b>${st.title}</b><p>${st.text}</p></div></li>`).join('')}</ol>
+      <p class="muted">${I.note} ${I.time}</p>
       <div class="actions"><button type="button" class="btn btn-primary lc-start">${esc(T.start)} ${ic('arrow')}</button></div>
     </div>`;
     card.querySelector('.lc-start').onclick = () => { dir = 1; step = 1; render(); };
     top();
   }
-  // a span with role=button: a <button> inside the option's <button> is not allowed, browsers move it out
   const infoBtn = (o) => (o.learn ? `<span class="info" role="button" tabindex="0" data-learn="${o.learn}" aria-label="${esc(T.why)}">i</span>` : '');
   const optsHtml = (q, single) => `<div class="opts" role="${single ? 'radiogroup' : 'group'}">` + q.opts.map((o) => `<button type="button" class="opt ${single ? 'single' : ''}" data-id="${o.id}" aria-pressed="false"><span class="box">${ic('check')}</span>${o.icon ? `<span class="ico">${ic(o.icon)}</span>` : ''}<span class="txt">${o.label}${o.ex ? `<span class="ex">${o.ex}</span>` : ''}</span>${infoBtn(o)}</button>`).join('') + '</div>';
   const ladderHtml = (q) => `<div class="ladder" role="radiogroup">` + q.opts.map((o, i) => `<button type="button" class="opt single" data-id="${o.id}" aria-pressed="false"><span class="step">${i + 1}</span><span class="txt"><span class="name">${o.name}</span>${o.label.replace('book', word('book', 'buy'))}</span>${infoBtn(o)}</button>`).join('') + '</div>';

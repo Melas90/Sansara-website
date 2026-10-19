@@ -127,3 +127,13 @@ html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
 .lc-dialog .done { display: flex; gap: 10px; align-items: center; color: var(--on-dark); font-weight: 700; }
 .lc-dialog .done svg.i { color: var(--orange); }
 @media (max-width: 440px) { .lc-dialog .bar .lab { min-width: 92px; font-size: 14px; } .lc-dialog .bar .num { min-width: 76px; font-size: 12px; } }
+
+/* the first screen: a photo of the founders, then why five minutes come before the call (owner, 2026-10-19) */
+.lc-dialog .lc-photo { margin: -24px calc(-1 * clamp(18px, 4vw, 32px)) 4px; position: relative; }
+.lc-dialog .lc-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 25%; border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.lc-dialog .lc-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 12px; background: linear-gradient(to top, rgba(42, 30, 20, 0.8), rgba(42, 30, 20, 0)); color: var(--on-dark); font-size: var(--text-small); font-weight: 500; }
+.lc-dialog .lc-kicker { color: var(--orange-dk); font-weight: 700; font-size: var(--text-small); }
+.lc-dialog .lc-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lc-dialog .lc-steps li { display: flex; gap: 12px; align-items: flex-start; background: var(--white); border-radius: 16px; padding: 14px 16px; }
+.lc-dialog .lc-steps .n { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); display: grid; place-items: center; }
+.lc-dialog .lc-steps b { color: var(--ink); display: block; }
