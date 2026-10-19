@@ -12,3 +12,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '29206514812289586');
 fbq('track', 'PageView');
+/* A page can send one more standard event on load: <html data-pixel="Schedule"> on the booking thank-you page,
+   where the calendar sends people after they book (owner, 2026-10-19: the funnel needs "Lead" and "Schedule"). */
+if (document.documentElement.dataset.pixel) fbq('track', document.documentElement.dataset.pixel);

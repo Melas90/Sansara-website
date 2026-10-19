@@ -21,6 +21,9 @@
   const A = {};
   let step = 0, dir = 1, opener = null;
 
+  // Meta Pixel steps of this funnel (owner, 2026-10-19): LoopCheckStarted (custom) → Lead (email left) →
+  // BookingClick (custom, calendar opened) or Contact (WhatsApp); Schedule fires on /book-a-call/thanks/ after booking.
+  const pixel = (event, data, custom = false) => { if (typeof window.fbq === 'function') window.fbq(custom ? 'trackCustom' : 'track', event, data || {}); };
   const fmt = (s, v = {}) => String(s).replace(/\{(\w+)\}/g, (_, k) => (v[k] ?? `{${k}}`));
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
   const ic = (k, extra = '') => `<svg class="i ${extra}" viewBox="0 0 24 24" aria-hidden="true">${P[k] || P.other}</svg>`;
@@ -44,6 +47,7 @@
   };
   const open = async (trigger) => {
     opener = trigger;
+    hideNudge?.();
     A.__source = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     await load();
     let done = null;
@@ -52,6 +56,8 @@
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
   };
+  // a click on a booking link (calendar or WhatsApp) reports itself to the Pixel
+  dialog.addEventListener('click', (e) => { const a = e.target.closest('[data-pixel]'); if (a) pixel(a.dataset.pixel, { content_name: 'loop check' }, a.dataset.pixel === 'BookingClick'); });
   dialog.addEventListener('close', () => { document.documentElement.classList.remove('lead-open'); opener?.focus?.(); });
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
   dialog.querySelector('[data-lc-close]').addEventListener('click', () => dialog.close());
@@ -64,6 +70,51 @@
   }, true);
   if (location.hash === '#lead' || location.hash === '#loop-check') {
     addEventListener('load', () => { document.getElementById('lead')?.close?.(); open(null); });
+  }
+
+  /* ---------- the scroll nudge (owner, 2026-10-19: "a pop-up when people scroll down, not annoying, a couple of
+     times per visit") ----------
+     A small card, not the full pop-up: it appears once the visitor has read about half the page, and once more near
+     the end if they closed the first one and some time has passed. Never more than twice a visit, never once the
+     Check is done or open, never over another open pop-up. */
+  const nudge = document.querySelector('.lc-nudge');
+  const NUDGES = 'sansara-check-nudges';
+  const seen = () => { try { return JSON.parse(sessionStorage.getItem(NUDGES) || '{"n":0,"at":0}'); } catch { return { n: 2, at: 0 }; } };
+  const hideNudge = () => { if (!nudge || nudge.hidden) return; nudge.classList.remove('is-on'); document.documentElement.classList.remove('lc-nudging'); nudge.hidden = true; };
+  let showing = false; // set at once: two scroll frames in a row must not count as two nudges
+  const showNudge = async () => {
+    if (showing) return;
+    showing = true;
+    const st = seen(); st.n += 1; st.at = Date.now();
+    try { sessionStorage.setItem(NUDGES, JSON.stringify(st)); } catch { /* storage blocked: shows once */ }
+    await load();
+    nudge.querySelector('.lc-nudge-title').textContent = T.nudge.title;
+    nudge.querySelector('.lc-nudge-text').textContent = T.nudge.text;
+    nudge.querySelector('.lc-nudge-go').textContent = T.nudge.button;
+    nudge.querySelector('.lc-nudge-close').setAttribute('aria-label', T.nudge.close);
+    nudge.hidden = false;
+    showing = false;
+    requestAnimationFrame(() => nudge.classList.add('is-on'));
+    document.documentElement.classList.add('lc-nudging');
+  };
+  if (nudge) {
+    nudge.querySelector('.lc-nudge-close').addEventListener('click', hideNudge);
+    nudge.querySelector('.lc-nudge-go').addEventListener('click', () => { hideNudge(); open(nudge.querySelector('.lc-nudge-go').closest('.lc-nudge')); });
+    nudge.dataset.source = 'scroll nudge';
+    const busy = () => dialog.open || document.getElementById('lead')?.open || (() => { try { return !!sessionStorage.getItem(DONE); } catch { return true; } })();
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        if (!nudge.hidden || busy()) return;
+        const st = seen();
+        if (st.n >= 2) return;
+        const depth = (scrollY + innerHeight) / document.documentElement.scrollHeight;
+        if (st.n === 0 && depth > 0.45) showNudge();
+        else if (st.n === 1 && depth > 0.85 && Date.now() - st.at > 45000) showNudge();
+      });
+    }, { passive: true });
   }
 
   /* ---------- the learning panel ---------- */
@@ -127,7 +178,7 @@
       <div class="actions"><button type="button" class="btn btn-primary lc-start">${esc(T.start)} ${ic('arrow')}</button></div>
       </div>
     </div>`;
-    card.querySelector('.lc-start').onclick = () => { dir = 1; step = 1; render(); };
+    card.querySelector('.lc-start').onclick = () => { pixel('LoopCheckStarted', null, true); dir = 1; step = 1; render(); };
     top();
   }
   const infoBtn = (o) => (o.learn ? `<span class="info" role="button" tabindex="0" data-learn="${o.learn}" aria-label="${esc(T.why)}">i</span>` : '');
@@ -350,7 +401,7 @@
       try {
         const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
         if (!res.ok) throw new Error(String(res.status));
-        if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'loop check' });
+        pixel('Lead', { content_name: 'loop check', content_category: stageName(R.weakest) });
         const done = { name, email, stage: stageName(R.weakest), fit: fitKey };
         try { sessionStorage.setItem(DONE, JSON.stringify(done)); } catch { /* storage blocked */ }
         renderDone(done);
@@ -368,9 +419,9 @@
     const wa = number ? `https://wa.me/${number}?text=${encodeURIComponent(fmt(T.done.whatsapp_message, { name: done.name, stage: done.stage }))}` : '';
     const cal = /^https?:\/\//.test(dialog.dataset.calendar || '') ? new URL(dialog.dataset.calendar) : null;
     if (cal) { cal.searchParams.set('name', done.name); cal.searchParams.set('email', done.email); }
-    const primary = cal ? `<a class="btn btn-light" href="${cal}" target="_blank" rel="noopener">${esc(T.done.button)} ${ic('arrow')}</a>`
-      : wa ? `<a class="btn btn-light" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp_only)} ${ic('arrow')}</a>` : '';
-    const secondary = cal && wa ? `<a class="lc-wa" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp)}</a>` : '';
+    const primary = cal ? `<a class="btn btn-light" data-pixel="BookingClick" href="${cal}" target="_blank" rel="noopener">${esc(T.done.button)} ${ic('arrow')}</a>`
+      : wa ? `<a class="btn btn-light" data-pixel="Contact" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp_only)} ${ic('arrow')}</a>` : '';
+    const secondary = cal && wa ? `<a class="lc-wa" data-pixel="Contact" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp)}</a>` : '';
     return primary + secondary;
   };
   function renderDone(done) {
