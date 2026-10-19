@@ -121,8 +121,7 @@
       <p class="lc-kicker">${I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
       <p class="lead">${I.lead}</p>
-      <ol class="lc-steps">${I.steps.map((st) => `<li><span class="n">${ic(st.icon)}</span><div><b>${st.title}</b><p>${st.text}</p></div></li>`).join('')}</ol>
-      <p class="muted">${I.note} ${I.time}</p>
+      <p class="muted">${I.note}</p>
       <div class="actions"><button type="button" class="btn btn-primary lc-start">${esc(T.start)} ${ic('arrow')}</button></div>
     </div>`;
     card.querySelector('.lc-start').onclick = () => { dir = 1; step = 1; render(); };

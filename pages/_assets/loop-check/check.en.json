@@ -963,32 +963,14 @@
   "step": "Question {n} of {total}",
   "back": "Back",
   "next": "Next",
-  "start": "Start my five-minute check",
+  "start": "Start the questions",
   "intro": {
-   "kicker": "One step before your free call",
-   "title": "Five minutes now, so your call is about <em class=\"w\">you</em>.",
-   "lead": "Before we talk, we want to know where your clients slip away. Answer a dozen quick questions and we come to your call already knowing your business, instead of spending half of it on the basics.",
+   "kicker": "Before your free call",
+   "title": "A few questions, <em class=\"w\">five minutes</em>.",
+   "lead": "So we know we can really help you, and your call is time well spent.",
    "photo_alt": "Christiane and Miguel, the founders of Sansara Media, in their studio",
    "photo_caption": "We read every check ourselves before your call.",
-   "steps": [
-    {
-     "icon": "check",
-     "title": "Five minutes",
-     "text": "A dozen questions about how clients find you, choose you, book and come back."
-    },
-    {
-     "icon": "seen",
-     "title": "Straight away",
-     "text": "Your snapshot: the step where you lose the most clients, and one thing to do this week."
-    },
-    {
-     "icon": "booked",
-     "title": "Then your free call",
-     "text": "Thirty minutes on that step, together, and what to fix first."
-    }
-   ],
-   "note": "No right answers, no score. Each question comes with what most people get wrong about it, so you learn something either way.",
-   "time": "Nothing to prepare, and you can stop at any point."
+   "note": "Then you book your free call. No right answers, and you can stop any time."
   },
   "why": "Why this matters",
   "assume": "What many assume:",
