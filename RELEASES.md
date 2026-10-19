@@ -6,7 +6,7 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-Nothing on `develop` yet.
+- Share tags: `og:url` and `og:site_name` on every page; `site.url` is sansara-media.com (share image and hreflang no longer point at netlify.app).
 
 ## 2026-10-19
 
