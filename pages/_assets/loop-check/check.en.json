@@ -965,11 +965,10 @@
   "next": "Next",
   "start": "Start the questions",
   "intro": {
-   "kicker": "Before your free call",
+   "kicker": "You're one step closer to your free call",
    "title": "A few questions, <em class=\"w\">five minutes</em>.",
    "lead": "So we know we can really help you, and your call is time well spent.",
-   "photo_alt": "Christiane and Miguel, the founders of Sansara Media, in their studio",
-   "photo_caption": "We read every check ourselves before your call.",
+   "photo_alt": "Christiane from Sansara Media, smiling, with a thumbs up",
    "note": "Then you book your free call. No right answers, and you can stop any time."
   },
   "why": "Why this matters",

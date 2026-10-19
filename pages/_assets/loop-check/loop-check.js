@@ -117,7 +117,7 @@
     progress.hidden = true;
     const I = T.intro;
     card.innerHTML = `<div class="screen stack">
-      <figure class="lc-photo"><img src="/assets/images/people/founders-wide.jpg" alt="${esc(I.photo_alt)}" width="904" height="678"><figcaption>${I.photo_caption}</figcaption></figure>
+      <figure class="lc-photo"><img src="/assets/images/people/chris-check.jpg" alt="${esc(I.photo_alt)}" width="960" height="720"></figure>
       <p class="lc-kicker">${I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
       <p class="lead">${I.lead}</p>
