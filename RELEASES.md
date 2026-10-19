@@ -8,6 +8,22 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-19
+
+At the owner's request ("Okay. Deploy."), outside the calendar: the Spanish System page and the Client Loop Check funnel.
+
+- **Live:** Netlify deploy `6ad635c99d89886c09885c00`. **Code:** `main` = `35c0eca`, tag `release-2026-10-19`.
+- **Spanish System page** at `/es/sistema/`: its own Spanish copy (not a translation), the slim landing shell, hreflang to `/system/`. The rest of the site stays in English.
+- **The Client Loop Check** before the free call (Home, The System, `/client-loop/`): the call buttons open a short assessment first. Intro with Chris's photo (larger), "A few questions, five minutes", three steps (your biggest leak and one thing to do this week, your personal report written by us, you book your free call). The email step is sent as the `lead` form with `weakest`, `fit` and the answers in words, so it reaches the CRM like any lead.
+- **Scroll pop-up:** scrolling opens the Check, centred, with "Take your free assessment": at about half the page, once more near the end after 45 seconds, never a third time in a visit, never once the Check is done.
+- **Booking on Calendly** (`calendly.com/sansara-media/business-strategy-call`, name and email filled in) after the Check and after the contact pop-up, in English and Spanish; WhatsApp underneath for questions.
+- **Icons** on The System's steps (the new Sansara icon set, `pages/_partials/loop-icons.html`).
+- **Contentsquare (Hotjar)** tag `33cbc9dd983b3` on `/system/`, `/client-loop/` and `/es/sistema/`, with its domains in the CSP.
+- **Pixel funnel:** `LoopCheckStarted` (custom), `Lead` on the email step, `BookingClick` (custom) on Calendly or `Contact` on WhatsApp, `Schedule` on `/book-a-call/thanks/`.
+- **Checked:** `npm run verify`; production build without the lab; on the exact build: 17 pages on desktop (1366) and phone (390) clean; the full Check with the POST intercepted (all fields, `form-name=lead`, Calendly link with name and email, the returning screen, Pixel calls); the contact pop-up's finish screen in English and Spanish; the scroll pop-up's timing. After the deploy: pages respond, `/lab/` and internal docs are 404, Contentsquare loads on `/system/` and `/es/sistema/` with no CSP violations, and a test lead ("TEST Claude 2026-10-19 release (borrar)", +44 7700 900419) reached the `lead` form.
+- **Note:** netlify-cli 27 runs `build.command` before a deploy; deploy the checked `dist/` with `--no-build`.
+- **Open:** in Calendly, redirect the event's confirmation to `/book-a-call/thanks/` (otherwise `Schedule` never fires) and check the event is the free 30-minute call; delete the CRM test leads marked "(borrar)"; the Check in Spanish (later, owner); a cookie-consent banner for the Pixel and Contentsquare (GDPR); the CRM doesn't store `weakest`/`fit`/`answers` yet (they are in the Netlify submission and the email).
+
 ## 2026-10-17, evening
 
 At the owner's request ("deploy to production and do it"), outside the calendar: The System's new story and the core values.
