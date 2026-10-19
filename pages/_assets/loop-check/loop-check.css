@@ -139,4 +139,5 @@ html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
 .lc-dialog .lc-steps b { color: var(--ink); display: block; }
 .lc-dialog .lc-gets { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .lc-dialog .lc-gets li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); }
-.lc-dialog .lc-gets svg.i { color: var(--orange-dk); margin-top: 3px; }
+.lc-dialog .lc-gets .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+.lc-dialog .lc-gets li { align-items: center; }
