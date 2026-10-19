@@ -4,8 +4,8 @@
  */
 export const site = {
   name: 'Sansara Media',
-  /** Production origin, no trailing slash: the Netlify address until the domain is pointed at it (decision #10). */
-  url: 'https://sansara-website-v2.netlify.app',
+  /** Production origin, no trailing slash. sansara-media.com points at the Netlify site (decision #10). */
+  url: 'https://sansara-media.com',
   /** Languages built. English everywhere; Spanish only for the pages that ask for it with
    *  `<!-- @langs es -->` (owner, 2026-10-18: the System in Spanish, the rest English for now). */
   languages: ['en', 'es'],
