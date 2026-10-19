@@ -192,3 +192,9 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .lp-footer .footer-bottom { border-top: 0; }
 .lp-footer .cluster { gap: 8px 20px; }
 .sy .stack { --stack-num: var(--orange); }
+
+/* The five steps of How it works carry the Sansara icons in place of 01 to 05 (owner, 2026-10-19).
+   Icons: pages/_partials/loop-icons.html, drawn like the home's value icons. */
+.li { width: 48px; height: 48px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; --li-accent: var(--orange); flex: none; }
+.sy-step-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--peach); display: grid; place-items: center; flex: none; }
+.sy-step-icon .li { width: 36px; height: 36px; }
