@@ -1113,7 +1113,9 @@
    },
    "after": "After the call you get it in writing: the things we would fix for you, and the quote.",
    "button": "Book my free call",
-   "whatsapp_message": "Hi Sansara, I'm {name}. I just did the Client Loop Check (biggest leak: {stage}) and I'd like to book my free call."
+   "whatsapp_message": "Hi Sansara, I'm {name}. I just did the Client Loop Check (biggest leak: {stage}) and I'd like to book my free call.",
+   "whatsapp": "Questions first? Write to us on WhatsApp",
+   "whatsapp_only": "Book my free call on WhatsApp"
   },
   "returning": {
    "title": "You have done the check, <em class=\"w\">{name}</em>.",

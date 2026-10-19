@@ -117,7 +117,7 @@
     progress.hidden = true;
     const I = T.intro;
     card.innerHTML = `<div class="screen stack">
-      <figure class="lc-photo"><img src="/assets/images/people/chris-check.jpg" alt="${esc(I.photo_alt)}" width="1440" height="1080"></figure>
+      <figure class="lc-photo"><img src="/assets/images/people/chris-check.jpg" alt="${esc(I.photo_alt)}" width="1080" height="1350"></figure>
       <p class="lc-kicker">${I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
       <p class="lead">${I.lead}</p>
@@ -359,10 +359,17 @@
     };
     top();
   }
+  // booking: the calendar first (name and email filled in), WhatsApp underneath for questions. Without a calendar
+  // link yet (copy.md: shared.lead.calendar_url), WhatsApp is the booking button (owner, 2026-10-19).
   const bookLink = (done) => {
     const number = (dialog.dataset.whatsapp || '').replace(/\D/g, '');
-    const text = fmt(T.done.whatsapp_message, { name: done.name, stage: done.stage });
-    return number ? `<a class="btn btn-light" href="https://wa.me/${number}?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${esc(T.done.button)} ${ic('arrow')}</a>` : '';
+    const wa = number ? `https://wa.me/${number}?text=${encodeURIComponent(fmt(T.done.whatsapp_message, { name: done.name, stage: done.stage }))}` : '';
+    const cal = /^https?:\/\//.test(dialog.dataset.calendar || '') ? new URL(dialog.dataset.calendar) : null;
+    if (cal) { cal.searchParams.set('name', done.name); cal.searchParams.set('email', done.email); }
+    const primary = cal ? `<a class="btn btn-light" href="${cal}" target="_blank" rel="noopener">${esc(T.done.button)} ${ic('arrow')}</a>`
+      : wa ? `<a class="btn btn-light" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp_only)} ${ic('arrow')}</a>` : '';
+    const secondary = cal && wa ? `<a class="lc-wa" href="${wa}" target="_blank" rel="noopener">${esc(T.done.whatsapp)}</a>` : '';
+    return primary + secondary;
   };
   function renderDone(done) {
     const Dn = T.done;
