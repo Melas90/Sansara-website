@@ -6,7 +6,16 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-- Share tags: `og:url` and `og:site_name` on every page; `site.url` is sansara-media.com (share image and hreflang no longer point at netlify.app).
+Nothing on `develop` yet.
+
+## 2026-10-19, hotfix
+
+Owner: "Meta me está bloqueando la página web porque dice que falta eso" (Sharing Debugger: missing `og:url`, `fb:app_id`).
+
+- **Live:** Netlify deploy `6ad63f86cb2d7da0003e9fe0`. **Code:** `main` = `3856354`, tag `release-2026-10-19b`.
+- `og:url` (the page's own address) and `og:site_name` on every page. `site.url` is now `https://sansara-media.com`, so the share image and the EN/ES hreflang links no longer point at the netlify.app address. `fb:app_id` left out: it is only for a Facebook developer app.
+- **Checked:** `npm run verify`, production build without the lab; after the deploy, fetched as `facebookexternalhit`: `/`, `/system/`, `/client-loop/`, `/es/sistema/` answer 200 with `og:url`, `og:image` on sansara-media.com; `/lab/` is 404.
+- **Open:** `loop.sansara-media.com` does not reach Netlify: its DNS is a CNAME to All-Inkl (`w0214780.kasserver.com`), HTTPS times out, and the Netlify site has no domain alias for it. Ads must not point there until it is fixed.
 
 ## 2026-10-19
 
