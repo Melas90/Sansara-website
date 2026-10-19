@@ -6,8 +6,9 @@ export const site = {
   name: 'Sansara Media',
   /** Production origin, no trailing slash: the Netlify address until the domain is pointed at it (decision #10). */
   url: 'https://sansara-website-v2.netlify.app',
-  /** Languages built. Only English until the owner asks for a second one (§3.4). */
-  languages: ['en'],
+  /** Languages built. English everywhere; Spanish only for the pages that ask for it with
+   *  `<!-- @langs es -->` (owner, 2026-10-18: the System in Spanish, the rest English for now). */
+  languages: ['en', 'es'],
   defaultLanguage: 'en',
   /** Routes that are planned (phase 2) but not built. Links to them are reported, not failed. */
   plannedRoutes: ['/blog/'],
