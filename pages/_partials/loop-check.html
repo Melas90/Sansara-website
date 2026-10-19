@@ -1,0 +1,25 @@
+<!--
+  The Client Loop Check (owner, 2026-10-19): a pop-up with a dozen questions, a snapshot of where clients leak,
+  and the email as the gate to booking the call. On a page that includes this partial (after lead.html), every
+  free-call button opens the Check instead of the contact pop-up. Words: assets/loop-check/check.<lang>.json.
+  The WhatsApp number for the booking link is the same as the contact pop-up's.
+-->
+<dialog class="lead-dialog lc-dialog" id="loop-check" aria-labelledby="lc-title" data-src="/assets/loop-check/check.en.json" data-whatsapp="{{{ shared.lead.whatsapp_number }}}" data-calendar="{{{ shared.lead.calendar_url }}}">
+  <div class="lc">
+    <div class="lc-top">
+      <div class="lc-brand" id="lc-title"><strong></strong><span></span></div>
+      <button class="close-btn" type="button" data-lc-close aria-label="{{{ shared.lead.close }}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="lc-progress" hidden>
+      <svg class="lc-ring" viewBox="0 0 64 64" aria-hidden="true">
+        <circle class="track" cx="32" cy="32" r="26"></circle>
+        <circle class="lc-ring-fill" cx="32" cy="32" r="26" stroke-dasharray="163.4" stroke-dashoffset="163.4"></circle>
+        <text class="lc-ring-num" x="32" y="37" text-anchor="middle">0</text>
+      </svg>
+      <div><div class="lc-pills"></div><p class="muted lc-step"></p></div>
+    </div>
+    <div class="lc-card" aria-live="polite"></div>
+  </div>
+</dialog>
+<link rel="stylesheet" href="/assets/loop-check/loop-check.css">
+<script src="/assets/loop-check/loop-check.js" defer></script>

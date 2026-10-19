@@ -1,0 +1,19 @@
+/* Lab, 2026-10-19: the Sansara icon set (pages/_partials/loop-icons.html), on cream and on the dark band,
+   and in place of the numbers on The System's five steps. */
+.li { width: 48px; height: 48px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; --li-accent: var(--orange); flex: none; }
+.li-lab { padding-block: var(--section); }
+.li-lab h2 { margin-bottom: 8px; }
+.li-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin-top: 32px; }
+.li-cell { display: grid; justify-items: center; gap: 12px; padding: 24px 12px; border-radius: var(--radius-card-sm); background: var(--card); text-align: center; }
+.li-cell .li { width: 56px; height: 56px; }
+.li-cell b { color: var(--ink); font-size: var(--text-small); }
+.li-cell small { color: var(--brown-2-text); font-size: 13px; }
+.li-dark { background: var(--grad-dark); border-radius: var(--radius-band); padding: 40px; margin-top: 32px; }
+.li-dark .li-cell { background: rgba(252, 250, 244, 0.06); }
+.li-dark .li { stroke: var(--on-dark); }
+.li-dark b { color: var(--on-dark); }
+.li-dark small { color: var(--on-dark-muted); }
+.li-steps .stack-num { display: none; }
+.li-steps .stack-card { align-items: start; }
+.li-steps .li-badge { width: 64px; height: 64px; border-radius: 50%; background: var(--peach); display: grid; place-items: center; flex: none; }
+.li-steps .li-badge .li { width: 36px; height: 36px; }

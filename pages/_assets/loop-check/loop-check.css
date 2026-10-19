@@ -1,0 +1,144 @@
+/* The Client Loop Check pop-up (owner, 2026-10-19). The owner's prototype set in the site's tokens; everything is
+   scoped to .lc-dialog so the page around it is untouched. The dialog frame itself is the contact pop-up's
+   (.lead-dialog in site.css). */
+.lc-dialog { width: min(680px, 100% - 2 * var(--pad)); background: var(--bg); }
+.lc-dialog .lc { padding: clamp(20px, 4vw, 36px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
+.lc-dialog .lc-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.lc-dialog .lc-brand { display: flex; align-items: baseline; gap: 12px; font-size: var(--text-small); color: var(--brown-2-text); }
+.lc-dialog .lc-brand strong { color: var(--ink); font-weight: 700; }
+.lc-dialog .lc-card { background: var(--card); border-radius: var(--radius-card); padding: 24px clamp(18px, 4vw, 32px) 28px; color: var(--brown); }
+
+.lc-dialog h2, .lc-dialog h3 { color: var(--ink); margin: 0; text-wrap: balance; }
+.lc-dialog .lc-h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.08; }
+.lc-dialog h2 { font-size: clamp(22px, 3.6vw, 28px); line-height: 1.15; }
+.lc-dialog h3 { font-size: 18px; line-height: 1.2; }
+.lc-dialog em.w { font-family: var(--font-serif); font-style: italic; color: var(--brown-2); }
+.lc-dialog p { margin: 0; }
+.lc-dialog .muted, .lc-dialog .lc-help { color: var(--brown-2-text); font-size: var(--text-small); }
+.lc-dialog .stack { display: flex; flex-direction: column; gap: 16px; }
+.lc-dialog svg.i { width: 20px; height: 20px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* progress: the Loop ring and the four stages */
+.lc-dialog .lc-progress { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.lc-dialog .lc-ring { width: 56px; height: 56px; flex: none; }
+.lc-dialog .lc-ring .track { fill: none; stroke: var(--line); stroke-width: 6; }
+.lc-dialog .lc-ring-fill { fill: none; stroke: var(--orange); stroke-width: 6; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset var(--base) var(--ease); }
+.lc-dialog .lc-ring-num { font-family: var(--font-sans); font-weight: 700; font-size: 14px; fill: var(--ink); }
+.lc-dialog .lc-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.lc-dialog .lc-pills span { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; padding: 4px 10px 4px 8px; border-radius: var(--radius-pill); border: 1px solid var(--line); color: var(--brown-2-text); }
+.lc-dialog .lc-pills span svg.i { width: 14px; height: 14px; }
+.lc-dialog .lc-pills span.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.lc-dialog .lc-step { margin-top: 6px; }
+
+/* screens */
+html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
+@keyframes lc-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.lc-dialog .mirror { background: var(--peach); border-radius: 16px; padding: 12px 16px; font-size: 15px; }
+.lc-dialog .mirror b { color: var(--ink); }
+
+/* options */
+.lc-dialog .opts { display: flex; flex-direction: column; gap: 10px; }
+.lc-dialog .opt { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: var(--white); border: 1.5px solid var(--line); border-radius: 16px; padding: 12px 12px 12px 16px; font: inherit; color: var(--ink); cursor: pointer; min-height: var(--target); transition: border-color var(--fast), background var(--fast); }
+.lc-dialog .opt:hover { border-color: var(--brown-2); }
+.lc-dialog .opt:focus-visible, .lc-dialog .info:focus-visible, .lc-dialog .rate button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.lc-dialog .opt.is-on { border-color: var(--ink); background: var(--sand-3); }
+.lc-dialog .opt .box { flex: none; width: 22px; height: 22px; border: 1.5px solid var(--brown-2); border-radius: 6px; display: grid; place-items: center; color: transparent; }
+.lc-dialog .opt.single .box { border-radius: 50%; }
+.lc-dialog .opt.is-on .box { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.lc-dialog .opt .box svg { width: 14px; height: 14px; }
+.lc-dialog .opt .ico { color: var(--orange-dk); display: flex; }
+.lc-dialog .opt .txt { flex: 1; min-width: 0; }
+.lc-dialog .opt .ex { display: block; font-size: 13px; color: var(--brown-2-text); }
+.lc-dialog .info { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--line); background: transparent; color: var(--brown-2-text); font: inherit; font-weight: 700; font-size: 13px; display: grid; place-items: center; cursor: pointer; }
+.lc-dialog .info:hover, .lc-dialog .info.is-open { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* the learning panel */
+.lc-dialog .tip { background: var(--peach); border-radius: 16px; padding: 14px 16px; font-size: 15px; display: flex; flex-direction: column; gap: 8px; }
+.lc-dialog .tip[hidden], .lc-dialog .detail[hidden], .lc-dialog .explain[hidden] { display: none; }
+.lc-dialog .tip .head { display: flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; }
+.lc-dialog .tip .head svg.i { color: var(--orange-dk); }
+.lc-dialog .tip .more, .lc-dialog .bar .more { align-self: flex-start; background: none; border: none; font: inherit; font-size: 14px; font-weight: 700; color: var(--orange-dk); cursor: pointer; padding: 4px 0; display: inline-flex; gap: 6px; align-items: center; }
+.lc-dialog .tip .more svg.i { width: 14px; height: 14px; transition: transform var(--fast); }
+.lc-dialog .tip .more.is-open svg.i { transform: rotate(90deg); }
+.lc-dialog .detail { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
+.lc-dialog .detail b { color: var(--ink); }
+.lc-dialog .detail p { font-size: 14px; }
+
+/* the path ladder */
+.lc-dialog .ladder { display: flex; flex-direction: column; }
+.lc-dialog .ladder .opt { border-radius: 0; border-width: 0 0 1.5px; background: transparent; padding: 14px 8px; }
+.lc-dialog .ladder .opt.is-on { background: var(--sand-3); border-radius: 12px; }
+.lc-dialog .ladder .step { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--brown-2); display: grid; place-items: center; font-size: 13px; font-weight: 700; color: var(--ink); }
+.lc-dialog .ladder .opt.is-on .step { background: var(--orange); border-color: var(--orange); }
+.lc-dialog .ladder .name { font-weight: 700; display: block; }
+
+/* one row per channel */
+.lc-dialog .rate { display: flex; flex-direction: column; gap: 14px; }
+.lc-dialog .rate .row { background: var(--white); border: 1.5px solid var(--line); border-radius: 16px; padding: 12px 14px; }
+.lc-dialog .rate .row b { display: flex; align-items: center; gap: 8px; color: var(--ink); margin-bottom: 8px; }
+.lc-dialog .rate .row b svg.i { color: var(--orange-dk); }
+.lc-dialog .rate .choices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.lc-dialog .rate .choices button { font: inherit; font-size: 13px; line-height: 1.2; padding: 8px 10px; border-radius: var(--radius-pill); border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; min-height: 40px; }
+.lc-dialog .rate .choices button.is-on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* buttons */
+.lc-dialog .actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+.lc-dialog .btn svg.i { width: 16px; height: 16px; }
+.lc-dialog .link { background: none; border: none; font: inherit; font-size: 14px; color: var(--brown-2-text); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 8px 0; }
+.lc-dialog .link:hover { color: var(--ink); }
+
+/* results */
+.lc-dialog .bars, .lc-dialog .findings { display: flex; flex-direction: column; gap: 10px; }
+.lc-dialog .bar { background: var(--white); border-radius: 16px; padding: 12px 14px; }
+.lc-dialog .bar .top { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; font-size: 15px; }
+.lc-dialog .bar .lab { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; min-width: 110px; }
+.lc-dialog .bar .lab svg.i { color: var(--orange-dk); }
+.lc-dialog .bar .dots { display: flex; gap: 6px; justify-content: flex-end; }
+.lc-dialog .bar .dots i { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--line); }
+.lc-dialog .bar .dots i.on { background: var(--gold); border-color: var(--gold); }
+.lc-dialog .bar.weak .dots i.on { background: var(--orange); border-color: var(--orange); }
+.lc-dialog .bar .num { text-align: right; font-size: 13px; font-weight: 700; color: var(--brown-2-text); min-width: 88px; }
+.lc-dialog .bar.weak .num { color: var(--orange-dk); }
+.lc-dialog .bar .explain { font-size: 14px; padding-top: 8px; }
+.lc-dialog .finding { display: flex; gap: 12px; background: var(--white); border-radius: 16px; padding: 14px 16px; }
+.lc-dialog .finding .n { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+.lc-dialog .finding .n svg.i { width: 15px; height: 15px; }
+.lc-dialog .finding p { color: var(--ink); }
+.lc-dialog .finding small { display: block; color: var(--brown-2-text); font-size: 13px; margin-top: 4px; }
+.lc-dialog .quick { background: var(--peach); border-radius: 16px; padding: 16px 18px; }
+.lc-dialog .quick h3 { margin-bottom: 4px; display: flex; gap: 8px; align-items: center; }
+.lc-dialog .quick h3 svg.i, .lc-dialog .lc-call li svg.i { color: var(--orange-dk); }
+.lc-dialog .limit { font-size: 14px; color: var(--brown-2-text); border-left: 3px solid var(--gold); padding-left: 12px; }
+
+/* the call, sold on their own leak (owner, 2026-10-19) */
+.lc-dialog .lc-call { border: 1.5px solid var(--ink); border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+.lc-dialog .lc-call ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.lc-dialog .lc-call li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); }
+
+/* the email gate and the booking */
+.lc-dialog .band { background: var(--grad-dark); color: var(--on-dark); border-radius: 20px; padding: 22px 24px; }
+.lc-dialog .band h3, .lc-dialog .band label { color: var(--on-dark); }
+.lc-dialog .band p, .lc-dialog .band .check { color: var(--on-dark-muted); }
+.lc-dialog .band a:not(.btn) { color: var(--on-dark); }
+.lc-dialog .band .field label { font-size: 14px; font-weight: 700; }
+.lc-dialog .band .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+.lc-dialog .band .check input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--orange); }
+.lc-dialog .err { color: var(--orange); font-size: 14px; }
+.lc-dialog .done { display: flex; gap: 10px; align-items: center; color: var(--on-dark); font-weight: 700; }
+.lc-dialog .done svg.i { color: var(--orange); }
+@media (max-width: 440px) { .lc-dialog .bar .lab { min-width: 92px; font-size: 14px; } .lc-dialog .bar .num { min-width: 76px; font-size: 12px; } }
+
+/* the first screen: a photo of the founders, then why five minutes come before the call (owner, 2026-10-19) */
+.lc-dialog .lc-photo { margin: -24px calc(-1 * clamp(18px, 4vw, 32px)) 4px; position: relative; }
+.lc-dialog .lc-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-height: 52dvh; object-fit: cover; object-position: 50% 30%; border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.lc-dialog .lc-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 12px; background: linear-gradient(to top, rgba(42, 30, 20, 0.8), rgba(42, 30, 20, 0)); color: var(--on-dark); font-size: var(--text-small); font-weight: 500; }
+.lc-dialog .lc-kicker { color: var(--orange-dk); font-weight: 700; font-size: var(--text-small); }
+.lc-dialog .lc-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lc-dialog .lc-steps li { display: flex; gap: 12px; align-items: flex-start; background: var(--white); border-radius: 16px; padding: 14px 16px; }
+.lc-dialog .lc-steps .n { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); display: grid; place-items: center; }
+.lc-dialog .lc-steps b { color: var(--ink); display: block; }
+.lc-dialog .lc-gets { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.lc-dialog .lc-gets li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); }
+.lc-dialog .lc-gets .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+.lc-dialog .lc-gets li { align-items: center; }
+.lc-dialog .lc-wa { color: var(--on-dark); font-size: var(--text-small); text-decoration: underline; text-underline-offset: 3px; }

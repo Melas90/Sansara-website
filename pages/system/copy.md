@@ -22,7 +22,7 @@ subtitle: Your perfect customer journey, from discovery to a steady flow of clie
 lead: We map that journey with you and we build it, from the first time someone discovers you to a pool of clients who keep buying from you. Built around your offer, yours to run, onsite or online.
 primary: I want my free call
 secondary: How does it work?
-note: 30 minutes, free. Find out where you're losing clients, and what to fix first.
+note: A five-minute check, then a free 30-minute call. Find out where you're losing clients, and what to fix first.
 
 ### stops
 
@@ -103,12 +103,14 @@ button: I want that
 
 ## Call
 
+<!-- 2026-10-19 (owner): every free-call button opens the Client Loop Check first; the call is sold on the weakest stage it finds ("we look into your things and determine what to fix first"). -->
+
 eyebrow: Free call
 title: Know what's really costing you clients, *in one call*.
-lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you: thirty minutes, together, looking at your actual business. You leave with:
+lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you. First a five-minute check of your path, from first look to coming back. Then thirty minutes together on your actual business, your page, your offer, your messages: we look at where clients slip away and decide what to fix first. You leave with:
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
 button: I want my free call
-small: 30 minutes, free. You'll find out exactly where you're losing clients, and what to fix first.
+small: A five-minute check, then 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
 
 ### outcomes
 
@@ -176,18 +178,23 @@ next: See it in a real business
 ### steps
 
 - title: They see you
+  icon: seen
   ends: A few likes, some views. Never a booking.
   text: The right people notice you. Not everyone, the ones already looking.
 - title: They reach out
+  icon: reach
   ends: They reach out, but they're not ready to buy.
   text: Instead of a like that disappears, they leave their details.
 - title: It follows up
+  icon: follow
   ends: I always mean to follow up. Then the week's gone.
   text: Warm replies and reminders go out on their own, even mid-session.
 - title: They book you
+  icon: book
   ends: They book, then cancel or don't show up.
   text: A couple of taps and they're on your calendar, not in your DMs. No chasing from you.
 - title: They come back
+  icon: back
   ends: They don't come back, so I chase new ones.
   text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so more of them come back.
 

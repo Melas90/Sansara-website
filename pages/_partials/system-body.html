@@ -1,3 +1,4 @@
+<!-- @include _partials/loop-icons.html -->
 <!--
   The System / Client Loop page body. Shared by /system/ (site header and footer) and the standalone
   landing page /client-loop/ (its own slim header and footer). Copy: pages/system/copy.md.
@@ -94,7 +95,7 @@
       </div>
       <ol class="stack" data-stack>
         {{#each how.steps}}
-        <li style="--i: {{ @index }}"><article class="stack-card"><span class="stack-num" aria-hidden="true">{{ @number }}</span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
+        <li style="--i: {{ @index }}"><article class="stack-card"><span class="sy-step-icon" aria-hidden="true"><svg class="li"><use href="#li-{{{ icon }}}"/></svg></span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
         {{/each}}
       </ol>
       <!-- Two example Loops (owner, 2026-10-17), so people see what a Loop actually is: one that grows with ads, one on content and referrals. Examples only: every Loop is built around the client's offer. Replaces the "in practice" paragraph. -->

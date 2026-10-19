@@ -1,0 +1,59 @@
+<!-- @route /lab/icons/ -->
+<!-- @copy system -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/system.css">
+  <script src="/assets/home.js" defer></script>
+  <link rel="stylesheet" href="/assets/lab/icons.css">
+  <meta name="robots" content="noindex">
+</head>
+<body class="c ph sy">
+  <!-- Lab, 2026-10-19 (owner: "a set of icons for the website: they see you, reach out, follow up, book you, come back,
+       and the CRM, ads, Instagram and social media"). Drawn like the home's value icons. A: the set on cream and on dark.
+       B: The System's five steps with the icons in place of the numbers. -->
+  <!-- @include _partials/loop-icons.html -->
+  <main id="main" class="container li-lab">
+    <h2>Sansara icons</h2>
+    <p class="lead">One line, one orange accent, like the values on the home. Five for the steps of the Loop, nine for the tools around it.</p>
+    <div class="li-grid">
+      <div class="li-cell"><svg class="li"><use href="#li-seen"/></svg><b>They see you</b><small>li-seen</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-reach"/></svg><b>They reach out</b><small>li-reach</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-follow"/></svg><b>It follows up</b><small>li-follow</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-book"/></svg><b>They book you</b><small>li-book</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-back"/></svg><b>They come back</b><small>li-back</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-crm"/></svg><b>Client dashboard</b><small>li-crm</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-ads"/></svg><b>Ads</b><small>li-ads</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-social"/></svg><b>Instagram, social</b><small>li-social</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-chat"/></svg><b>WhatsApp, messages</b><small>li-chat</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-email"/></svg><b>Email</b><small>li-email</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-page"/></svg><b>Your page</b><small>li-page</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-referral"/></svg><b>Referrals</b><small>li-referral</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-automation"/></svg><b>Automations</b><small>li-automation</small></div>
+      <div class="li-cell"><svg class="li"><use href="#li-assistant"/></svg><b>Assistant</b><small>li-assistant</small></div>
+    </div>
+    <div class="li-dark">
+      <div class="li-grid" style="margin-top: 0">
+        <div class="li-cell"><svg class="li"><use href="#li-seen"/></svg><b>They see you</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-reach"/></svg><b>They reach out</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-follow"/></svg><b>It follows up</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-book"/></svg><b>They book you</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-back"/></svg><b>They come back</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-crm"/></svg><b>Client dashboard</b></div>
+        <div class="li-cell"><svg class="li"><use href="#li-ads"/></svg><b>Ads</b></div>
+      </div>
+    </div>
+    <h2 style="margin-top: var(--section)">On The System: the five steps</h2>
+    <p class="lead">The same cards as on /system/, with the icon in place of 01 to 05.</p>
+    </main>
+  <section class="section c-band" style="margin-top: 32px"><div class="container c-narrow"><ol class="stack li-steps" data-stack>
+      {{#each how.steps}}
+      <li style="--i: {{ @index }}"><article class="stack-card"><span class="li-badge"><svg class="li"><use href="#li-{{{ icon }}}"/></svg></span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
+      {{/each}}
+    </ol></div></section>
+  <main>
+  </main>
+</body>
+</html>
