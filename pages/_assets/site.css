@@ -179,6 +179,8 @@ textarea.control { resize: vertical; min-height: calc(4 * 1.6em + 24px); }
 .form-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 8px; }
 .form-state { display: grid; gap: 12px; justify-items: start; }
 .form-state svg { width: 56px; height: 56px; color: var(--orange-dk); }
+.form-state .lead-wa { color: var(--ink-2); font-size: var(--text-small); text-decoration: underline; text-underline-offset: 3px; }
+.form-state .lead-wa[hidden] { display: none; }
 .honeypot { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 
 /* ---------- header ---------- */

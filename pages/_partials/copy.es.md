@@ -57,9 +57,11 @@ submit: Que me contactéis
 sending: Enviando
 close: Cerrar
 success_title: Gracias. Te escribimos pronto.
-success_text: Ya tenemos tus datos. ¿Quieres elegir ya la hora de tu llamada gratuita? Escríbenos por WhatsApp.
+success_text: Ya tenemos tus datos. ¿Quieres elegir ya la hora de tu llamada gratuita?
 book_button: Reservar mi llamada
 whatsapp_number: 34611017148
+calendar_url: https://calendly.com/sansara-media/business-strategy-call
+whatsapp_alt: ¿Prefieres preguntar antes? Escríbenos por WhatsApp
 whatsapp_message: Hola Sansara, soy {name}. Acabo de dejar mis datos en vuestra web y me gustaría reservar mi llamada gratuita.
 error_title: No se ha podido enviar.
 error_text: Inténtalo de nuevo en un momento.

@@ -140,15 +140,31 @@
       });
       if (!res.ok) throw new Error(String(res.status));
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
-      // "Book your call" opens WhatsApp with a message that already carries their name.
-      // Without a number in copy.md the button stays hidden rather than linking nowhere.
+      // "Book your call" opens the calendar with name and email filled in, and WhatsApp sits underneath for
+      // questions (owner, 2026-10-19). Without a calendar link the button opens WhatsApp with a message that already
+      // carries their name; without a number either, it stays hidden rather than linking nowhere.
       const book = success.querySelector('.lead-book');
+      const alt = success.querySelector('.lead-wa');
       if (book) {
+        const data = new FormData(form);
         const number = (book.dataset.whatsapp || '').replace(/\D/g, '');
-        const name = String(new FormData(form).get('name') || '').trim();
+        const name = String(data.get('name') || '').trim();
+        const email = String(data.get('email') || '').trim();
         const text = (book.dataset.whatsappMessage || '').replace('{name}', name);
-        book.hidden = !number;
-        book.href = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+        const wa = number ? `https://wa.me/${number}?text=${encodeURIComponent(text)}` : '';
+        const cal = /^https?:\/\//.test(book.dataset.calendar || '') ? new URL(book.dataset.calendar) : null;
+        if (cal) {
+          cal.searchParams.set('name', name);
+          if (email) cal.searchParams.set('email', email);
+        }
+        book.href = cal ? String(cal) : wa;
+        book.hidden = !book.href;
+        book.onclick = () => { if (typeof window.fbq === 'function') cal ? window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up' }) : window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
+        if (alt) {
+          alt.hidden = !(cal && wa);
+          alt.href = wa;
+          alt.onclick = () => { if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
+        }
       }
       form.hidden = true;
       success.hidden = false;
