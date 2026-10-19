@@ -150,3 +150,17 @@ html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
   .lc-dialog .lc-intro .lc-photo { margin: 0; }
   .lc-dialog .lc-intro .lc-photo img { border-radius: var(--radius-card-sm); max-height: none; }
 }
+
+/* the scroll nudge: a small card bottom right (bottom sheet on a phone), above the floating button's place */
+.lc-nudge { position: fixed; right: var(--pad); bottom: var(--pad); z-index: 40; width: min(360px, calc(100% - 2 * var(--pad))); background: var(--bg); color: var(--brown); border-radius: var(--radius-card-sm); box-shadow: var(--shadow-float); padding: 20px 20px 18px; display: grid; gap: 8px; opacity: 0; transform: translateY(16px); transition: opacity var(--base) var(--ease), transform var(--base) var(--ease); }
+.lc-nudge.is-on { opacity: 1; transform: none; }
+.lc-nudge[hidden] { display: none; }
+.lc-nudge-title { font-family: var(--font-serif); font-size: 22px; line-height: 1.15; color: var(--ink); padding-right: 32px; }
+.lc-nudge-text { font-size: var(--text-small); }
+.lc-nudge .lc-nudge-go { justify-self: start; margin-top: 4px; }
+.lc-nudge-close { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border: 0; background: transparent; color: var(--brown-2-text); border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+.lc-nudge-close svg { width: 18px; height: 18px; }
+.lc-nudge-close:hover { background: var(--card); color: var(--ink); }
+.lc-nudge-close:focus-visible, .lc-nudge-go:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+html.lc-nudging .lead-float { opacity: 0; pointer-events: none; }
+@media (max-width: 520px) { .lc-nudge { left: 12px; right: 12px; bottom: 12px; width: auto; } }
