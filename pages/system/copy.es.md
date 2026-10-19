@@ -170,18 +170,23 @@ next: Míralo en un negocio real
 ### steps
 
 - title: Te ven
+  icon: seen
   ends: Unos likes, algunas visualizaciones. Ninguna reserva.
   text: Te ve la gente adecuada. No todo el mundo, solo quien ya está buscando.
 - title: Te escriben
+  icon: reach
   ends: Me escriben, pero no están listos para comprar.
   text: En lugar de un like que se pierde, te dejan sus datos.
 - title: Seguimiento solo
+  icon: follow
   ends: Siempre pienso hacer seguimiento. Y luego se me va la semana.
   text: Las respuestas y los recordatorios salen solos, aunque estés en plena sesión.
 - title: Te reservan
+  icon: book
   ends: Reservan, y luego cancelan o no aparecen.
   text: Un par de toques y están en tu agenda, no en tus mensajes privados. Sin perseguir a nadie.
 - title: Vuelven
+  icon: back
   ends: No vuelven, así que persigo clientes nuevos.
   text: Después de la reserva, el Loop sigue en contacto con seguimientos, nuevas reservas y la siguiente oferta adecuada, para que vuelvan más.
 

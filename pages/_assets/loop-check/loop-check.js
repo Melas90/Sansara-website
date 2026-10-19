@@ -116,14 +116,16 @@
   function renderIntro() {
     progress.hidden = true;
     const I = T.intro;
-    card.innerHTML = `<div class="screen stack">
+    card.innerHTML = `<div class="screen lc-intro">
       <figure class="lc-photo"><img src="/assets/images/people/chris-check.jpg" alt="${esc(I.photo_alt)}" width="1080" height="1350"></figure>
+      <div class="stack">
       <p class="lc-kicker">${I.kicker}</p>
       <h2 class="lc-h1">${I.title}</h2>
       <p class="lead">${I.lead}</p>
       <ol class="lc-gets">${I.gets.map((g, i) => `<li><span class="n">${i + 1}</span><span>${g}</span></li>`).join('')}</ol>
       <p class="muted">${I.note}</p>
       <div class="actions"><button type="button" class="btn btn-primary lc-start">${esc(T.start)} ${ic('arrow')}</button></div>
+      </div>
     </div>`;
     card.querySelector('.lc-start').onclick = () => { dir = 1; step = 1; render(); };
     top();

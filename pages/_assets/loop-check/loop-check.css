@@ -130,7 +130,7 @@ html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
 
 /* the first screen: a photo of the founders, then why five minutes come before the call (owner, 2026-10-19) */
 .lc-dialog .lc-photo { margin: -24px calc(-1 * clamp(18px, 4vw, 32px)) 4px; position: relative; }
-.lc-dialog .lc-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-height: 52dvh; object-fit: cover; object-position: 50% 30%; border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.lc-dialog .lc-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-height: 46dvh; object-fit: cover; object-position: 50% 30%; border-radius: var(--radius-card) var(--radius-card) 0 0; }
 .lc-dialog .lc-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 12px; background: linear-gradient(to top, rgba(42, 30, 20, 0.8), rgba(42, 30, 20, 0)); color: var(--on-dark); font-size: var(--text-small); font-weight: 500; }
 .lc-dialog .lc-kicker { color: var(--orange-dk); font-weight: 700; font-size: var(--text-small); }
 .lc-dialog .lc-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -142,3 +142,11 @@ html.motion .lc-dialog .screen { animation: lc-rise var(--base) var(--ease); }
 .lc-dialog .lc-gets .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--sand-3); color: var(--orange-dk); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
 .lc-dialog .lc-gets li { align-items: center; }
 .lc-dialog .lc-wa { color: var(--on-dark); font-size: var(--text-small); text-decoration: underline; text-underline-offset: 3px; }
+
+/* the first screen: photo on top on a phone; on a wider screen the whole portrait beside the text, not cropped wide */
+.lc-dialog .lc-intro { display: grid; gap: 16px; }
+@media (min-width: 640px) {
+  .lc-dialog .lc-intro { grid-template-columns: minmax(200px, 40%) 1fr; gap: 28px; align-items: start; }
+  .lc-dialog .lc-intro .lc-photo { margin: 0; }
+  .lc-dialog .lc-intro .lc-photo img { border-radius: var(--radius-card-sm); max-height: none; }
+}
