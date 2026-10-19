@@ -109,12 +109,13 @@ submit: Get back to me
 sending: Sending
 close: Close
 success_title: Thank you. We'll be in touch.
-success_text: We have your details. Want to pick a time for your free call right now? Message us on WhatsApp.
+success_text: We have your details. Want to pick a time for your free call right now?
 <!-- Owner 2026-10-02: "Book your call" opens WhatsApp for now (no booking calendar yet). Number in international format, digits only, no + (e.g. 34600123456). {name} is replaced with the name from the form. -->
 book_button: Book your call
 whatsapp_number: 34611017148
-<!-- 2026-10-19 (owner): after the Client Loop Check they book the call on the calendar, and can still write on WhatsApp. Calendly link to be sent by the owner; until then WhatsApp stays the main button. -->
-calendar_url: PENDING: the Calendly (or other) link where people book the free 30-minute call
+<!-- 2026-10-19 (owner): people book the call on Calendly (after the Client Loop Check and after this form), and can still write on WhatsApp. Without a link here, WhatsApp becomes the main button again. -->
+calendar_url: https://calendly.com/sansara-media/business-strategy-call
+whatsapp_alt: Questions first? Write to us on WhatsApp
 whatsapp_message: Hi Sansara, I'm {name}. I just left my details on your website and I'd like to book my free call.
 error_title: That didn't go through.
 error_text: Please try again in a moment.

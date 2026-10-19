@@ -81,8 +81,10 @@
       <svg class="check-draw" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M18 29l7 7 14-15"/></svg>
       <h3 tabindex="-1">{{ shared.lead.success_title }}</h3>
       <p>{{ shared.lead.success_text }}</p>
-      <!-- lead.js fills in the WhatsApp link with the visitor's name once the form is saved -->
-      <a class="btn btn-primary lead-book" href="https://wa.me/{{{ shared.lead.whatsapp_number }}}" target="_blank" rel="noopener" data-whatsapp="{{{ shared.lead.whatsapp_number }}}" data-whatsapp-message="{{{ shared.lead.whatsapp_message }}}">{{ shared.lead.book_button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+      <!-- lead.js fills in the links once the form is saved: "Book your call" goes to the calendar with name and email
+           filled in, WhatsApp underneath for questions. Without a calendar link the button opens WhatsApp. -->
+      <a class="btn btn-primary lead-book" href="https://wa.me/{{{ shared.lead.whatsapp_number }}}" target="_blank" rel="noopener" data-calendar="{{{ shared.lead.calendar_url }}}" data-whatsapp="{{{ shared.lead.whatsapp_number }}}" data-whatsapp-message="{{{ shared.lead.whatsapp_message }}}">{{ shared.lead.book_button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+      <a class="lead-wa" hidden href="https://wa.me/{{{ shared.lead.whatsapp_number }}}" target="_blank" rel="noopener">{{ shared.lead.whatsapp_alt }}</a>
     </div>
     <div class="form-state form-error" hidden role="alert">
       <h3>{{ shared.lead.error_title }}</h3>
