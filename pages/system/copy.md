@@ -178,18 +178,23 @@ next: See it in a real business
 ### steps
 
 - title: They see you
+  icon: seen
   ends: A few likes, some views. Never a booking.
   text: The right people notice you. Not everyone, the ones already looking.
 - title: They reach out
+  icon: reach
   ends: They reach out, but they're not ready to buy.
   text: Instead of a like that disappears, they leave their details.
 - title: It follows up
+  icon: follow
   ends: I always mean to follow up. Then the week's gone.
   text: Warm replies and reminders go out on their own, even mid-session.
 - title: They book you
+  icon: book
   ends: They book, then cancel or don't show up.
   text: A couple of taps and they're on your calendar, not in your DMs. No chasing from you.
 - title: They come back
+  icon: back
   ends: They don't come back, so I chase new ones.
   text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so more of them come back.
 
