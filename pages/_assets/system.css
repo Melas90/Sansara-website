@@ -198,3 +198,9 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .li { width: 48px; height: 48px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; --li-accent: var(--orange); flex: none; }
 .sy-step-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--peach); display: grid; place-items: center; flex: none; }
 .sy-step-icon .li { width: 36px; height: 36px; }
+
+/* The explainer film under the hero (owner, 22 Oct 2026) */
+.sy-film-video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-card); box-shadow: var(--shadow-float); background: var(--sand); }
+.sy-film-note { margin-top: 14px; opacity: 0.75; }
+.sy-film-after { margin: 28px auto 0; font-size: 1.15em; }
+@media (min-width: 900px) { .sy-film-note { display: none; } }

@@ -37,6 +37,17 @@ note: A five-minute check, then a free 30-minute call. Find out where you're los
 - name: They come back
   at: 0.875
 
+## Film
+
+eyebrow: In 90 seconds
+title: The whole *Client Loop*, in one film.
+lead: The Client Loop is a complete sales funnel. It starts at the top, with your ads and the moment people discover your offer. And it doesn't stop when someone books or buys: every client lands in your CRM, and the right automations and follow-ups keep them close, so they come back.
+after: Working with us doesn't mean fixing everything at once. We start at the beginning, with your offer, and build the Loop one step at a time.
+note: On a phone, tap full screen and turn it sideways.
+file: /assets/video/system-loop-en.mp4
+poster: /assets/video/system-loop-en.jpg
+label: Film: the Sansara Client Loop, explained in 90 seconds, with voice and captions
+
 ## Quote
 
 <!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->

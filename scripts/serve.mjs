@@ -14,6 +14,7 @@ const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.webp': 'image/webp',
   '.avif': 'image/avif', '.ico': 'image/x-icon', '.json': 'application/json', '.txt': 'text/plain', '.xml': 'application/xml',
+  '.mp4': 'video/mp4', '.webm': 'video/webm',
 };
 
 async function newest(dir) {
@@ -60,6 +61,15 @@ http
       let body;
       try { body = await fs.readFile(file); } catch { return res.end('Not found'); }
       res.setHeader('Content-Type', TYPES[path.extname(file)] || 'application/octet-stream');
+      // Byte ranges, as Netlify serves them: browsers need them to play and seek video (and Safari won't play without).
+      res.setHeader('Accept-Ranges', 'bytes');
+      const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+      if (range && res.statusCode === 200) {
+        const start = range[1] ? Number(range[1]) : body.length - Number(range[2]);
+        const end = range[1] && range[2] ? Math.min(Number(range[2]), body.length - 1) : body.length - 1;
+        res.writeHead(206, { 'Content-Range': `bytes ${start}-${end}/${body.length}` });
+        return res.end(body.subarray(start, end + 1));
+      }
       res.end(body);
     } catch (e) {
       res.statusCode = 500;
