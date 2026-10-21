@@ -201,6 +201,7 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 
 /* The explainer film under the hero (owner, 22 Oct 2026) */
 .sy-film-video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-card); box-shadow: var(--shadow-float); background: var(--sand); }
+.sy-film-intro { font-size: 1.2em; font-weight: 600; }
 .sy-film-note { margin-top: 14px; opacity: 0.75; }
 .sy-film-after { margin: 28px auto 0; font-size: 1.15em; }
 @media (min-width: 900px) { .sy-film-note { display: none; } }
