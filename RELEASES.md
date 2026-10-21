@@ -8,6 +8,32 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-22 and 2026-10-22b
+
+At the owner's request ("Publish now", then "correct that, and then deploy"), outside the calendar: the explainer
+film on the System pages.
+
+- **Live:** Netlify deploys `6ad94e55b47af1d6a877b6d4` (`13ced81`, tag `release-2026-10-22`) and
+  `6ad94fdd4738d799fb8a8601` (`942c53c`, tag `release-2026-10-22b`).
+- **The Client Loop film** right under the hero of `/system/` (English, Chris's voice and captions),
+  `/es/sistema/` (Spanish, captions) and `/client-loop/` (they share the body): 16:9 on every screen, a poster of the
+  full map, `preload="none"` (nothing downloads until play), 6.5 MB per film. Above it: "Already have something
+  running? You don't have to start from scratch…", then what the Loop is (a complete sales funnel that doesn't stop
+  at the booking). Below it: "Working with us doesn't mean fixing everything at once…". On phones, a note to turn the
+  phone sideways.
+- **Pixel:** a standard `ViewContent` (`content_name: system film 15s`, `content_category` = en/es) after 15 s of real
+  watching (seeking ahead doesn't count), once per page view.
+- **Dev server** (`scripts/serve.mjs`, not deployed): serves video as `video/mp4` with byte ranges; without them the
+  lab's English film played silent.
+- **Checked:** `npm run verify`; production build from a clean worktree of `develop` (15 pages, no lab); every page on
+  desktop (1366) and phone (390): no JS errors, broken images, sideways scroll or PENDING, no mp4 requested before
+  play; the film plays with sound; the 15 s event fires (and doesn't when seeking); the Spanish page has no English
+  Check pop-up; the lead form end to end with the POST intercepted. After the deploy: the three pages serve the film
+  and the new line, the videos answer with byte ranges (206), `/lab/` is 404, and one real test lead through
+  `/es/sistema/` ("TEST Claude 2026-10-22 (borrar)", +44 7700 900422) reached the success screen and Calendly.
+- **Open:** delete that test lead in the CRM; Netlify bandwidth: each full play is 6.5 MB (about 150 plays per GB,
+  20 credits per GB).
+
 ## 2026-10-19, hotfix
 
 Owner: "Meta me está bloqueando la página web porque dice que falta eso" (Sharing Debugger: missing `og:url`, `fb:app_id`).
