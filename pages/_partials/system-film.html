@@ -5,6 +5,8 @@
       <div class="centred stack-sm reveal" style="margin-bottom: 32px">
         <p class="eyebrow">{{ film.eyebrow }}</p>
         <h2 id="film-title"><span class="mask"><span class="mask-in">{{ film.title }}</span></span></h2>
+        <!-- first, so people who already run something don't think they must pay for everything from scratch (owner, 22 Oct) -->
+        <p class="measure sy-film-intro">{{ film.intro }}</p>
         <p class="measure">{{ film.lead }}</p>
       </div>
       <video class="sy-film-video" controls playsinline preload="none" poster="{{{ film.poster }}}" aria-label="{{{ film.label }}}">
