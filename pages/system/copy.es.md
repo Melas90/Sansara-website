@@ -35,6 +35,17 @@ note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreg
 - name: Vuelven
   at: 0.875
 
+## Film
+
+eyebrow: En menos de dos minutos
+title: Todo el *Client Loop*, en un vídeo.
+lead: El Client Loop es un embudo de ventas completo. Empieza arriba, con tus anuncios y el momento en que la gente descubre tu oferta. Y no termina cuando alguien reserva o compra: cada cliente entra en tu CRM, y las automatizaciones y el seguimiento adecuados lo mantienen cerca, para que vuelva.
+after: Trabajar con nosotros no es arreglarlo todo a la vez. Empezamos por el principio, por tu oferta, y construimos el circuito paso a paso.
+note: En el móvil, pulsa pantalla completa y gíralo en horizontal.
+file: /assets/video/system-loop-es.mp4
+poster: /assets/video/system-loop-es.jpg
+label: Vídeo: el Client Loop de Sansara explicado paso a paso, con subtítulos
+
 ## Quote
 
 text: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.

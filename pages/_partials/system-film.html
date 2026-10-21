@@ -1,0 +1,18 @@
+  <!-- The explainer film (owner, 22 Oct 2026): 16:9 on every screen ("at worst they turn the phone"). Light and fast:
+       ~6.5 MB, nothing downloads until play (preload none), a 77 KB poster of the full map meanwhile. -->
+  <section class="section sy-film" id="film" aria-labelledby="film-title">
+    <div class="container c-narrow">
+      <div class="centred stack-sm reveal" style="margin-bottom: 32px">
+        <p class="eyebrow">{{ film.eyebrow }}</p>
+        <h2 id="film-title"><span class="mask"><span class="mask-in">{{ film.title }}</span></span></h2>
+        <p class="measure">{{ film.lead }}</p>
+      </div>
+      <video class="sy-film-video" controls playsinline preload="none" poster="{{{ film.poster }}}" aria-label="{{{ film.label }}}">
+        <source src="{{{ film.file }}}" type="video/mp4">
+      </video>
+      <p class="small centred sy-film-note">{{ film.note }}</p>
+      <!-- what working with us looks like (owner, 22 Oct: visitors don't know what they get; start at the beginning) -->
+      <p class="measure centred sy-film-after reveal">{{ film.after }}</p>
+      <script src="/assets/film.js" defer></script>
+    </div>
+  </section>
