@@ -44,9 +44,9 @@ stages:
 - step: Step 04
   name: Be remembered
   img: /assets/images/loop-stages/stage-en-3.webp
-primary: Check where I'm losing clients
+primary: I want my free call
 secondary: See how it works
-note: A five-minute check, then a free 30-minute call.
+note: A two-minute check, then a free 30-minute call.
 
 ### stops
 
@@ -161,10 +161,10 @@ button: I want that
 
 eyebrow: Free call
 title: Know what's really costing you clients, *in one call*.
-lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you. First a five-minute check of your path, from first look to coming back. Then thirty minutes together on your actual business, your page, your offer, your messages: we look at where clients slip away and decide what to fix first. You leave with:
+lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you. First a two-minute check of your path, from first look to coming back. Then thirty minutes together on your actual business, your page, your offer, your messages: we look at where clients slip away and decide what to fix first. You leave with:
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
 button: I want my free call
-small: A five-minute check, then 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
+small: A two-minute check, then 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
 
 ### outcomes
 
@@ -343,5 +343,5 @@ title: Things you *might be wondering*.
 eyebrow: One free call
 title: Stop chasing clients. *Let them come, and keep coming back.*
 text: One call. We find where your loop is broken, and what it would take to close it. More on your calendar. Fewer hours in your DMs. A business that keeps going while you do.
-button: Yes, show me where I'm losing clients
+button: I want my free call
 small: Free, 30 minutes, nothing to prepare.
