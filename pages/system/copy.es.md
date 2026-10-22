@@ -21,7 +21,8 @@ lead: Lo hacemos por ti, con las herramientas que ya usas y un precio fijo por p
 blocks:
 - Una oferta clara
 - Captación de contactos
-- Cualificación con IA
+- Cualificación automática de contactos
+- Automatización con IA
 - Reserva automática
 - Seguimiento por email y WhatsApp
 - Tu propio CRM

@@ -23,7 +23,8 @@ lead: Done for you, on the tools you already use, at a fixed price per package.
 blocks:
 - One clear offer
 - Lead generation
-- AI qualification
+- Automatic lead qualification
+- AI automation
 - Automated booking
 - Email and WhatsApp follow-up
 - Your own CRM
