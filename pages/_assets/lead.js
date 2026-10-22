@@ -29,8 +29,10 @@
   const failure = dialog.querySelector('.form-error');
   let opener = null;
 
-  /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LeadFormOpen when a
-     button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it. */
+  /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LoopCheckStarted when a
+     button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it.
+     LoopCheckStarted is the name the Client Loop Check used for its first step; the owner kept it ("put loop check started
+     in the talk to us button") because Meta already knows it and a custom conversion can be built on it right away. */
   const pixel = (event, data) => { if (typeof window.fbq === 'function') window.fbq('trackCustom', event, data); };
   let started = false;
   form.addEventListener('input', () => {
@@ -43,7 +45,7 @@
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     const topic = trigger?.dataset.topic;
     if (topic && [...interest.options].some((o) => o.value === topic)) interest.value = topic;
-    if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LeadFormOpen', { content_name: trigger.dataset.source || 'link' });
+    if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
