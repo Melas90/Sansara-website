@@ -41,12 +41,15 @@
 
   <!-- @include _partials/system-film.html -->
 
-  <!-- A real client, in their words (English only; the Spanish original stays in copy.md). -->
+  <!-- A real client, in their words, shown as the WhatsApp message it came from (owner, 2026-10-22): a received message,
+       their sentences reordered to open with the strongest one, nothing added (no time, no ticks). The Spanish original
+       stays in copy.md; the English page says it is translated. -->
   <section class="sy-quote" aria-label="{{{ quote.by }}}">
     <div class="container">
-      <figure class="reveal">
-        <blockquote><p>“{{ quote.text }}”</p></blockquote>
-        <figcaption><span>{{ quote.by }}</span></figcaption>
+      <figure class="sy-wa reveal">
+        <div class="sy-wa-head" aria-hidden="true"><span class="sy-wa-avatar">{{{ quote.initial }}}</span><span class="sy-wa-who"><strong>{{ quote.by }}</strong><small>WhatsApp</small></span></div>
+        <div class="sy-wa-chat"><blockquote class="sy-wa-msg"><p>{{ quote.text }}</p></blockquote></div>
+        <figcaption>{{ quote.note }}</figcaption>
       </figure>
     </div>
   </section>

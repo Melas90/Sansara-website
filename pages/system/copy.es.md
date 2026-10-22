@@ -72,7 +72,9 @@ label: Vídeo: el Client Loop de Sansara explicado paso a paso, con subtítulos
 
 ## Quote
 
-text: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
+text: Ahora da gusto despertarse y encontrarse reservas nuevas. Llegaron por la landing y reservaron solas, sin que tuviéramos que escribirles. Antes teníamos que ir buscando clientes uno a uno.
+note: Basado en un mensaje de WhatsApp tras el lanzamiento.
+initial: T
 original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Terapeuta
 

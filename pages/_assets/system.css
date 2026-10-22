@@ -235,3 +235,18 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 @keyframes sy-stage-on { 0%, 22% { transform: translateY(-8px); box-shadow: 0 0 0 2px var(--orange), var(--shadow-float); } 30%, 100% { transform: none; } }
 @media (max-width: 900px) { .sy-stages { margin-top: 40px; } .sy-stage img { max-width: 150px; } }
 .sy-hero-price { font-weight: 600; color: var(--ink); }
+
+/* The client's words as the WhatsApp message they came from (owner, 22 Oct 2026): a received message, on WhatsApp's
+   own wallpaper, header with the sender; WhatsApp's colours are tokens (--wa-*). */
+.sy-quote .sy-wa { margin: 0 auto; max-width: 34rem; display: grid; gap: 12px; text-align: left; justify-items: stretch; }
+.sy-wa-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--wa-head); border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.sy-wa-avatar { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--wa-green); color: var(--bg); font-family: var(--font-sans); font-weight: 700; font-size: 18px; }
+.sy-wa-who { display: grid; line-height: 1.2; color: var(--wa-text); font-family: var(--font-sans); }
+.sy-wa-who strong { font-weight: 600; font-size: 16px; }
+.sy-wa-who small { font-size: 13px; opacity: 0.6; }
+.sy-wa-head + .sy-wa-chat { margin-top: -12px; }
+.sy-wa-chat { padding: 22px 18px 26px; background: var(--wa-chat); border-radius: 0 0 var(--radius-card) var(--radius-card); box-shadow: var(--shadow-float); }
+.sy-wa-msg { position: relative; margin: 0; max-width: 92%; padding: 12px 16px 13px; background: var(--bg); border-radius: 0 14px 14px 14px; box-shadow: 0 1px 0 var(--line); }
+.sy-wa-msg::before { content: ''; position: absolute; top: 0; left: -8px; border: 8px solid transparent; border-top-color: var(--bg); border-right-color: var(--bg); border-width: 0 8px 10px 0; border-color: transparent var(--bg) transparent transparent; }
+.sy-quote .sy-wa-msg p { margin: 0; font-family: var(--font-sans); font-style: normal; font-size: clamp(16px, 1.6vw, 18px); line-height: 1.45; color: var(--wa-text); text-wrap: pretty; }
+.sy-wa figcaption { justify-self: center; font-size: var(--text-small); color: var(--brown-2-text); }

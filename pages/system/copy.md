@@ -75,7 +75,9 @@ label: Film: the Sansara Client Loop, explained in 90 seconds, with voice and ca
 ## Quote
 
 <!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->
-text: They came through the page on their own. They booked by themselves, without us contacting them. Before, we chased clients one by one. Now it's great to wake up in the morning and see bookings.
+text: Now it's great to wake up in the morning and start seeing bookings. They came through the landing page alone and booked by themselves, without us contacting them. Before, we chased clients one by one.
+note: From a WhatsApp message after launch, translated from Spanish.
+initial: T
 original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Therapist
 

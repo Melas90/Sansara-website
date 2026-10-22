@@ -62,6 +62,11 @@
 
   /* Gradients */
   --grad-warm: linear-gradient(120deg, #fdeedf 0%, #f9dcc2 55%, #f2b98c 120%);
+  /* WhatsApp's own colours, only for the client message shown as a chat on the System pages (owner, 2026-10-22) */
+  --wa-chat: #efeae2;   /* chat wallpaper */
+  --wa-head: #f0f2f5;   /* chat header */
+  --wa-green: #25d366;
+  --wa-text: #111b21;
   --grad-dark: linear-gradient(135deg, #2a1e14, #3e2a19);
   --grad-orange: linear-gradient(160deg, #ee8b5e, #d8703f);
 
