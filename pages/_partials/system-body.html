@@ -15,33 +15,50 @@
         <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
         <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
         <p class="sy-sub reveal">{{ hero.subtitle }}</p>
-        <p class="lead reveal">{{ hero.lead }}</p>
+        <p class="sy-hero-price reveal">{{ hero.lead }}</p>
         <div class="cluster reveal">
           <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
-          <a class="btn btn-ghost" href="#how">{{ hero.secondary }}</a>
+          <a class="btn btn-ghost" href="#film">{{ hero.secondary }}</a>
         </div>
         <p class="small muted reveal">{{ hero.note }}</p>
+        <!-- What's inside, in the Loop's order, as a moving band under the buttons, instead of a paragraph (owner, 22 Oct:
+             "demasiado texto"). Screen readers get the list once; the band is decoration; still under reduced motion. -->
+        <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}<li>{{ hero.whatsapp }}</li></ul>
+        <div class="mq sy-hero-mq reveal" aria-hidden="true">
+          <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}<span class="sy-mq-wa"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span>{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}<span class="sy-mq-wa mq-dup"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span></div>
+        </div>
         <!-- The facts row (10+ years in marketing · Coaches and business owners · Days to build and launch) was removed by the owner on 2026-10-17. -->
       </div>
-      <div class="hx-art sy-loop reveal" data-loop>
-        <svg viewBox="0 0 600 400" aria-hidden="true">
-          <path class="loop-ghost" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
-          <path class="loop-line" pathLength="1" d="M300 200 C 380 80, 560 80, 560 200 C 560 320, 380 320, 300 200 C 220 80, 40 80, 40 200 C 40 320, 220 320, 300 200 Z"/>
-          <circle class="loop-spark-glow" r="16" cx="300" cy="200"/><circle class="loop-spark" r="5" cx="300" cy="200"/>
-        </svg>
-        <ol class="loop-stops">{{#each hero.stops}}<li class="loop-stop" data-at="{{{ at }}}"><i aria-hidden="true"></i><span>{{ name }}</span></li>{{/each}}</ol>
+      <!-- The four stages with the illustrations of the system map (owner, 22 Oct: the infinity loop was ugly). They come
+           in one by one in the Loop's order, clockwise, round an orange line that keeps flowing; one stage at a time lifts.
+           Spanish pages use the Spanish illustrations. -->
+      <div class="hx-art sy-stages reveal">
+        <svg class="sy-stages-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="14" y="14" width="72" height="72" rx="20"/></svg>
+        <ol class="sy-stages-list stagger">{{#each hero.stages}}<li class="sy-stage reveal" style="--i: {{ @index }}"><img src="{{{ img }}}" alt="" width="448" height="386"><span class="sy-stage-n">{{ step }}</span><strong>{{ name }}</strong></li>{{/each}}</ol>
       </div>
     </div>
   </section>
 
   <!-- @include _partials/system-film.html -->
 
-  <!-- A real client, in their words (English only; the Spanish original stays in copy.md). -->
+  <!-- A real client, in their words, shown as the WhatsApp message it came from (owner, 2026-10-22): a received message,
+       their sentences reordered to open with the strongest one, nothing added (no time, no ticks). The Spanish original
+       stays in copy.md; the English page says it is translated. -->
   <section class="sy-quote" aria-label="{{{ quote.by }}}">
-    <div class="container">
-      <figure class="reveal">
-        <blockquote><p>“{{ quote.text }}”</p></blockquote>
-        <figcaption><span>{{ quote.by }}</span></figcaption>
+    <p class="sy-wa-title reveal"><span class="sy-step-icon" aria-hidden="true"><svg class="li"><use href="#li-chat"/></svg></span>{{ quote.heading }}</p>
+    <div class="container sy-wa-pair">
+      <figure class="sy-wa reveal">
+        <div class="sy-wa-head" aria-hidden="true"><svg class="sy-wa-ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="sy-wa-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4.5 4.5-6 8-6s6.5 1.5 8 6"/></svg></span><span class="sy-wa-who"><strong>{{ quote.by }}</strong><small>{{ quote.channel }}</small></span><svg class="sy-wa-ico" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3z"/></svg><svg class="sy-wa-ico" viewBox="0 0 24 24"><path d="M6.6 3.5l2.7 3.2-1.8 2.4a12 12 0 0 0 7.4 7.4l2.4-1.8 3.2 2.7-1.6 3a3 3 0 0 1-3.2 1.3A18 18 0 0 1 2.3 8.3 3 3 0 0 1 3.6 5.1z"/></svg></div>
+        <div class="sy-wa-chat"><blockquote class="sy-wa-msg"><p>{{ quote.text }}<span class="sy-wa-time" aria-hidden="true">{{{ quote.time }}}</span></p></blockquote></div>
+        <div class="sy-wa-bar" aria-hidden="true"><span class="sy-wa-input"><svg class="sy-wa-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg>{{ quote.placeholder }}</span><span class="sy-wa-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span></div>
+        <figcaption>{{ quote.note }}</figcaption>
+      </figure>
+      <!-- a second client: a business coach after the first call booked through the Loop (owner, 2026-10-22) -->
+      <figure class="sy-wa reveal" aria-label="{{{ quote_2.by }}}">
+        <div class="sy-wa-head" aria-hidden="true"><svg class="sy-wa-ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="sy-wa-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4.5 4.5-6 8-6s6.5 1.5 8 6"/></svg></span><span class="sy-wa-who"><strong>{{ quote_2.by }}</strong><small>{{ quote_2.channel }}</small></span><svg class="sy-wa-ico" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3v8l-6-3z"/></svg><svg class="sy-wa-ico" viewBox="0 0 24 24"><path d="M6.6 3.5l2.7 3.2-1.8 2.4a12 12 0 0 0 7.4 7.4l2.4-1.8 3.2 2.7-1.6 3a3 3 0 0 1-3.2 1.3A18 18 0 0 1 2.3 8.3 3 3 0 0 1 3.6 5.1z"/></svg></div>
+        <div class="sy-wa-chat"><blockquote class="sy-wa-msg"><p>{{ quote_2.text }}<span class="sy-wa-time" aria-hidden="true">{{{ quote_2.time }}}</span></p></blockquote></div>
+        <div class="sy-wa-bar" aria-hidden="true"><span class="sy-wa-input"><svg class="sy-wa-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg>{{ quote.placeholder }}</span><span class="sy-wa-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span></div>
+        <figcaption>{{ quote_2.note }}</figcaption>
       </figure>
     </div>
   </section>

@@ -14,12 +14,36 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 
 ## Hero
 
-eyebrow: Para coaches, terapeutas y profesionales que trabajan con cita
-title: El *Client Loop* de Sansara.
-subtitle: El camino de tus clientes, desde que te descubren hasta que vuelven una y otra vez.
-lead: Lo diseñamos contigo y lo construimos, desde la primera vez que alguien te descubre hasta una cartera de clientes que vuelve a reservar. Hecho alrededor de tu oferta, en presencial o en online.
+eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
+title: Convierte desconocidos en clientes *que vuelven*.
+subtitle: Más que un embudo de ventas. Un embudo termina en la venta; el Client Loop sigue y hace que tus clientes vuelvan.
+lead: Lo hacemos por ti, con las herramientas que ya usas y un precio fijo por paquete.
+whatsapp: Compatible con WhatsApp
+blocks:
+- Una oferta clara
+- Captación de contactos
+- Cualificación automática de contactos
+- Automatización con IA
+- Reserva automática
+- Seguimiento por email y WhatsApp
+- Tu propio CRM
+- Clientes que vuelven
+- Todo en un sistema que funciona
+stages:
+- step: Paso 01
+  name: Que te vean
+  img: /assets/images/loop-stages/stage-es-0.webp
+- step: Paso 02
+  name: Que te elijan
+  img: /assets/images/loop-stages/stage-es-1.webp
+- step: Paso 03
+  name: Que reserven
+  img: /assets/images/loop-stages/stage-es-2.webp
+- step: Paso 04
+  name: Que te recuerden
+  img: /assets/images/loop-stages/stage-es-3.webp
 primary: Quiero mi llamada gratis
-secondary: ¿Cómo funciona?
+secondary: Mira cómo funciona
 note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreglar primero.
 
 ### stops
@@ -40,7 +64,7 @@ note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreg
 eyebrow: En menos de dos minutos
 title: Todo el *Client Loop*, en un vídeo.
 intro: ¿Ya tienes algo en marcha? No hace falta empezar de cero. Miramos lo que tienes, mantenemos lo que funciona y arreglamos lo que no.
-lead: El Client Loop es un embudo de ventas completo. Empieza arriba, con tus anuncios y el momento en que la gente descubre tu oferta. Y no termina cuando alguien reserva o compra: cada cliente entra en tu CRM, y las automatizaciones y el seguimiento adecuados lo mantienen cerca, para que vuelva.
+lead: Un embudo de ventas termina cuando alguien compra. El Client Loop sigue. Empieza con tus anuncios y el momento en que la gente descubre tu oferta, y después de la reserva cada cliente entra en tu CRM, donde las automatizaciones y el seguimiento adecuados lo mantienen cerca, para que vuelva.
 after: Trabajar con nosotros no es arreglarlo todo a la vez. Empezamos por el principio, por tu oferta, y construimos el circuito paso a paso.
 note: En el móvil, pulsa pantalla completa y gíralo en horizontal.
 file: /assets/video/system-loop-es.mp4
@@ -49,9 +73,24 @@ label: Vídeo: el Client Loop de Sansara explicado paso a paso, con subtítulos
 
 ## Quote
 
-text: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
-original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
+heading: Lo que nos escriben nuestros clientes
+text: Ahora da gusto despertarse y encontrarse reservas nuevas. Llegaron por la landing y reservaron solas, sin que tuviéramos que escribirles. Antes teníamos que ir buscando clientes uno a uno.
+note: Basado en un mensaje de WhatsApp tras el lanzamiento.
+initial: T
+original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Terapeuta
+channel: WhatsApp
+time: 08:12
+placeholder: Mensaje
+
+## Quote 2
+
+text: Es la primera vez, después de pasar por muchas agencias, probar cosas distintas y gastar mucho dinero, que alguien llega a mi llamada listo para comprar.
+note: Basado en el mensaje de un cliente.
+initial: B
+by: Business coach
+channel: Mensaje de cliente
+time: 19:46
 
 ## Problem
 

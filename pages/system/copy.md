@@ -16,13 +16,37 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 ## Hero
 
-eyebrow: For business coaches and entrepreneurs
-title: The Sansara *Client Loop*.
-subtitle: Your perfect customer journey, from discovery to a steady flow of clients.
-lead: We map that journey with you and we build it, from the first time someone discovers you to a pool of clients who keep buying from you. Built around your offer, yours to run, onsite or online.
-primary: I want my free call
-secondary: How does it work?
-note: A five-minute check, then a free 30-minute call. Find out where you're losing clients, and what to fix first.
+eyebrow: For coaches, therapists and practitioners with paying clients
+title: Turn strangers into clients *who keep coming back*.
+subtitle: More than a sales funnel. A funnel stops at the sale; the Client Loop keeps going and brings your clients back.
+lead: Done for you, on the tools you already use, at a fixed price per package.
+whatsapp: WhatsApp compatible
+blocks:
+- One clear offer
+- Lead generation
+- Automatic lead qualification
+- AI automation
+- Automated booking
+- Email and WhatsApp follow-up
+- Your own CRM
+- Clients who come back
+- All in one working system
+stages:
+- step: Step 01
+  name: Be seen
+  img: /assets/images/loop-stages/stage-en-0.webp
+- step: Step 02
+  name: Be chosen
+  img: /assets/images/loop-stages/stage-en-1.webp
+- step: Step 03
+  name: Be booked
+  img: /assets/images/loop-stages/stage-en-2.webp
+- step: Step 04
+  name: Be remembered
+  img: /assets/images/loop-stages/stage-en-3.webp
+primary: Check where I'm losing clients
+secondary: See how it works
+note: A five-minute check, then a free 30-minute call.
 
 ### stops
 
@@ -42,7 +66,7 @@ note: A five-minute check, then a free 30-minute call. Find out where you're los
 eyebrow: In 90 seconds
 title: The whole *Client Loop*, in one film.
 intro: Already have something running? You don't have to start from scratch. We look at what you have, keep what works and fix what doesn't.
-lead: The Client Loop is a complete sales funnel. It starts at the top, with your ads and the moment people discover your offer. And it doesn't stop when someone books or buys: every client lands in your CRM, and the right automations and follow-ups keep them close, so they come back.
+lead: A sales funnel stops when someone buys. The Client Loop keeps going. It starts with your ads and the moment people discover your offer, and after the booking every client lands in your CRM, where the right automations and follow-ups keep them close, so they come back.
 after: Working with us doesn't mean fixing everything at once. We start at the beginning, with your offer, and build the Loop one step at a time.
 note: On a phone, tap full screen and turn it sideways.
 file: /assets/video/system-loop-en.mp4
@@ -52,9 +76,27 @@ label: Film: the Sansara Client Loop, explained in 90 seconds, with voice and ca
 ## Quote
 
 <!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->
-text: They came through the page on their own. They booked by themselves, without us contacting them. Before, we chased clients one by one. Now it's great to wake up in the morning and see bookings.
-original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
+heading: What our clients write to us
+text: Now it's great to wake up in the morning and start seeing bookings. They came through the landing page alone and booked by themselves, without us contacting them. Before, we chased clients one by one.
+note: From a WhatsApp message after launch, translated from Spanish.
+initial: T
+original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Therapist
+channel: WhatsApp
+time: 08:12
+placeholder: Message
+
+## Quote 2
+
+<!-- 2026-10-22 (owner): a business coach, after the first call booked through the Loop. Wording as the owner gave it,
+     lightly tidied; not confirmed as the client's exact words or channel, so "based on" and no "WhatsApp". Permission to
+     publish: to confirm. -->
+text: This is the first time, after working with many agencies, trying different things and spending a lot of money, that someone actually shows up to my call ready to buy.
+note: Based on a client's message.
+initial: B
+by: Business coach
+channel: Client message
+time: 19:46
 
 ## Problem
 
