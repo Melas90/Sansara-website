@@ -29,11 +29,21 @@
   const failure = dialog.querySelector('.form-error');
   let opener = null;
 
+  /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LeadFormOpen when a
+     button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it. */
+  const pixel = (event, data) => { if (typeof window.fbq === 'function') window.fbq('trackCustom', event, data); };
+  let started = false;
+  form.addEventListener('input', () => {
+    if (started) return;
+    started = true;
+    pixel('LeadFormStarted', { content_name: source.value.split(' on ')[0] });
+  });
   const open = (trigger) => {
     opener = trigger;
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     const topic = trigger?.dataset.topic;
     if (topic && [...interest.options].some((o) => o.value === topic)) interest.value = topic;
+    if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LeadFormOpen', { content_name: trigger.dataset.source || 'link' });
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
