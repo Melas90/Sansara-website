@@ -8,6 +8,28 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-22c
+
+At the owner's request ("after that i think we can deploy"), the same day: the System pages' new hero and client chats.
+
+- **Live:** Netlify deploy `6ad9ce1af3434d0cc631c84a`. **Code:** `main` = `356859e`, tag `release-2026-10-22c`.
+- **Hero** (`/system/`, `/es/sistema/`, `/client-loop/`): "Turn strangers into clients *who keep coming back*" / "Convierte
+  desconocidos en clientes *que vuelven*", for practitioners who already have paying clients; more than a sales funnel
+  (it keeps going after the sale); done for you, at a fixed price per package. The second button ("See how it works")
+  goes to the film. Under the buttons, a moving band with the ten parts of the Loop, "WhatsApp compatible" among them
+  with the site's chat icon. The infinity loop is gone: the art is the system map's four illustrations (Spanish ones on
+  the Spanish page), clockwise round a flowing orange line.
+- **Client words as WhatsApp chats**, side by side under "What our clients write to us": the therapist (Vero and Rafa,
+  English reordered and translated, Spanish reworded and marked "based on") and a business coach ("based on a client's
+  message"; channel and exact wording not confirmed). No platform logos (Meta's rules); WhatsApp's colours as tokens.
+- **Checked:** `npm run verify`; production build from a clean worktree (15 pages, no lab); every page on desktop and
+  phone clean; the lead form end to end with the POST intercepted. After the deploy: the three pages serve the new hero,
+  the stages, both chats, the band and the film; the stage images answer 200; `/lab/` is 404. The film's 15 s
+  `ViewContent` was checked on the live site (intercepted): fires on `/es/sistema/` (es) and `/client-loop/` (en).
+- **Open:** both clients' permission to publish their words; confirm whether the coach's message came by WhatsApp and
+  in those words (then the chat can say "WhatsApp" and drop "based on"). On a 1366x900 laptop the band sits just under
+  the fold.
+
 ## 2026-10-22 and 2026-10-22b
 
 At the owner's request ("Publish now", then "correct that, and then deploy"), outside the calendar: the explainer
