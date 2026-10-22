@@ -14,12 +14,12 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 
 ## Hero
 
-eyebrow: Para coaches, terapeutas y profesionales que trabajan con cita
-title: El *Client Loop* de Sansara.
-subtitle: El camino de tus clientes, desde que te descubren hasta que vuelven una y otra vez.
-lead: Lo diseñamos contigo y lo construimos, desde la primera vez que alguien te descubre hasta una cartera de clientes que vuelve a reservar. Hecho alrededor de tu oferta, en presencial o en online.
+eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
+title: Convierte desconocidos en clientes *que vuelven*.
+subtitle: Más que un embudo de ventas. Un embudo termina en la venta; el Client Loop sigue y hace que tus clientes vuelvan.
+lead: Damos forma a tu oferta, te traemos los contactos adecuados, conectamos tus reservas y tu seguimiento, y construimos el plan para que vuelvan, con las herramientas que ya usas. Lo hacemos por ti, con un precio fijo por paquete.
 primary: Quiero mi llamada gratis
-secondary: ¿Cómo funciona?
+secondary: Mira cómo funciona
 note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreglar primero.
 
 ### stops
@@ -40,7 +40,7 @@ note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreg
 eyebrow: En menos de dos minutos
 title: Todo el *Client Loop*, en un vídeo.
 intro: ¿Ya tienes algo en marcha? No hace falta empezar de cero. Miramos lo que tienes, mantenemos lo que funciona y arreglamos lo que no.
-lead: El Client Loop es un embudo de ventas completo. Empieza arriba, con tus anuncios y el momento en que la gente descubre tu oferta. Y no termina cuando alguien reserva o compra: cada cliente entra en tu CRM, y las automatizaciones y el seguimiento adecuados lo mantienen cerca, para que vuelva.
+lead: Un embudo de ventas termina cuando alguien compra. El Client Loop sigue. Empieza con tus anuncios y el momento en que la gente descubre tu oferta, y después de la reserva cada cliente entra en tu CRM, donde las automatizaciones y el seguimiento adecuados lo mantienen cerca, para que vuelva.
 after: Trabajar con nosotros no es arreglarlo todo a la vez. Empezamos por el principio, por tu oferta, y construimos el circuito paso a paso.
 note: En el móvil, pulsa pantalla completa y gíralo en horizontal.
 file: /assets/video/system-loop-es.mp4

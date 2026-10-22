@@ -16,13 +16,13 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 ## Hero
 
-eyebrow: For business coaches and entrepreneurs
-title: The Sansara *Client Loop*.
-subtitle: Your perfect customer journey, from discovery to a steady flow of clients.
-lead: We map that journey with you and we build it, from the first time someone discovers you to a pool of clients who keep buying from you. Built around your offer, yours to run, onsite or online.
-primary: I want my free call
-secondary: How does it work?
-note: A five-minute check, then a free 30-minute call. Find out where you're losing clients, and what to fix first.
+eyebrow: For coaches, therapists and practitioners with paying clients
+title: Turn strangers into clients *who keep coming back*.
+subtitle: More than a sales funnel. A funnel stops at the sale; the Client Loop keeps going and brings your clients back.
+lead: We shape your offer, bring you the right leads, connect your booking and follow-ups, and build the plan that brings clients back, on the tools you already use. Done for you, at a fixed price per package.
+primary: Check where I'm losing clients
+secondary: See how it works
+note: A five-minute check, then a free 30-minute call.
 
 ### stops
 
@@ -42,7 +42,7 @@ note: A five-minute check, then a free 30-minute call. Find out where you're los
 eyebrow: In 90 seconds
 title: The whole *Client Loop*, in one film.
 intro: Already have something running? You don't have to start from scratch. We look at what you have, keep what works and fix what doesn't.
-lead: The Client Loop is a complete sales funnel. It starts at the top, with your ads and the moment people discover your offer. And it doesn't stop when someone books or buys: every client lands in your CRM, and the right automations and follow-ups keep them close, so they come back.
+lead: A sales funnel stops when someone buys. The Client Loop keeps going. It starts with your ads and the moment people discover your offer, and after the booking every client lands in your CRM, where the right automations and follow-ups keep them close, so they come back.
 after: Working with us doesn't mean fixing everything at once. We start at the beginning, with your offer, and build the Loop one step at a time.
 note: On a phone, tap full screen and turn it sideways.
 file: /assets/video/system-loop-en.mp4
