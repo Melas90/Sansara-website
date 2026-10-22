@@ -67,6 +67,10 @@
   --wa-head: #f0f2f5;   /* chat header */
   --wa-green: #25d366;
   --wa-text: #111b21;
+  --wa-icon: #54656f;   /* header and input-bar icons */
+  --wa-time: #667781;   /* time inside the bubble */
+  --wa-avatar: #dfe5e7; /* default avatar */
+  --wa-doodle: #e5ddd3; /* the wallpaper's faint pattern */
   --grad-dark: linear-gradient(135deg, #2a1e14, #3e2a19);
   --grad-orange: linear-gradient(160deg, #ee8b5e, #d8703f);
 

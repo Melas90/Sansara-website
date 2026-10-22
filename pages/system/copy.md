@@ -20,6 +20,7 @@ eyebrow: For coaches, therapists and practitioners with paying clients
 title: Turn strangers into clients *who keep coming back*.
 subtitle: More than a sales funnel. A funnel stops at the sale; the Client Loop keeps going and brings your clients back.
 lead: Done for you, on the tools you already use, at a fixed price per package.
+whatsapp: WhatsApp compatible
 blocks:
 - One clear offer
 - Lead generation
@@ -75,11 +76,27 @@ label: Film: the Sansara Client Loop, explained in 90 seconds, with voice and ca
 ## Quote
 
 <!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->
+heading: What our clients write to us
 text: Now it's great to wake up in the morning and start seeing bookings. They came through the landing page alone and booked by themselves, without us contacting them. Before, we chased clients one by one.
 note: From a WhatsApp message after launch, translated from Spanish.
 initial: T
 original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Therapist
+channel: WhatsApp
+time: 08:12
+placeholder: Message
+
+## Quote 2
+
+<!-- 2026-10-22 (owner): a business coach, after the first call booked through the Loop. Wording as the owner gave it,
+     lightly tidied; not confirmed as the client's exact words or channel, so "based on" and no "WhatsApp". Permission to
+     publish: to confirm. -->
+text: This is the first time, after working with many agencies, trying different things and spending a lot of money, that someone actually shows up to my call ready to buy.
+note: Based on a client's message.
+initial: B
+by: Business coach
+channel: Client message
+time: 19:46
 
 ## Problem
 

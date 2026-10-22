@@ -18,6 +18,7 @@ eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
 title: Convierte desconocidos en clientes *que vuelven*.
 subtitle: Más que un embudo de ventas. Un embudo termina en la venta; el Client Loop sigue y hace que tus clientes vuelvan.
 lead: Lo hacemos por ti, con las herramientas que ya usas y un precio fijo por paquete.
+whatsapp: Compatible con WhatsApp
 blocks:
 - Una oferta clara
 - Captación de contactos
@@ -72,11 +73,24 @@ label: Vídeo: el Client Loop de Sansara explicado paso a paso, con subtítulos
 
 ## Quote
 
+heading: Lo que nos escriben nuestros clientes
 text: Ahora da gusto despertarse y encontrarse reservas nuevas. Llegaron por la landing y reservaron solas, sin que tuviéramos que escribirles. Antes teníamos que ir buscando clientes uno a uno.
 note: Basado en un mensaje de WhatsApp tras el lanzamiento.
 initial: T
 original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Terapeuta
+channel: WhatsApp
+time: 08:12
+placeholder: Mensaje
+
+## Quote 2
+
+text: Es la primera vez, después de pasar por muchas agencias, probar cosas distintas y gastar mucho dinero, que alguien llega a mi llamada listo para comprar.
+note: Basado en el mensaje de un cliente.
+initial: B
+by: Business coach
+channel: Mensaje de cliente
+time: 19:46
 
 ## Problem
 
