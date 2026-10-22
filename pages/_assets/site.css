@@ -334,6 +334,15 @@ html:not(.js) .close-btn { display: none; }
 
 /* ---------- lead pop-up (owner request 2026-09-27) ---------- */
 .lead-dialog { width: min(640px, 100% - 2 * var(--pad)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: var(--radius-card); background: var(--bg); color: var(--brown); box-shadow: var(--shadow-float); overflow: auto; }
+/* Chris's photo (2026-10-22): a short band on top on a phone, the whole column beside the form from 760 px */
+.lead-dialog.has-photo { width: min(960px, 100% - 2 * var(--pad)); }
+.lead-photo { margin: 0; }
+.lead-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; max-height: 28dvh; object-fit: cover; object-position: 50% 28%; }
+@media (min-width: 760px) {
+  .lead-dialog.has-photo[open] { display: grid; grid-template-columns: minmax(240px, 38%) 1fr; }
+  .lead-photo { position: relative; }
+  .lead-photo img { position: absolute; inset: 0; height: 100%; max-height: none; aspect-ratio: auto; object-position: 50% 30%; }
+}
 .lead-dialog::backdrop { background: rgba(42, 30, 20, 0.45); backdrop-filter: blur(3px); }
 .lead-inner { display: grid; gap: 24px; padding: clamp(24px, 4vw, 40px); }
 .lead-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
