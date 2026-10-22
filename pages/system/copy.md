@@ -46,7 +46,7 @@ stages:
   img: /assets/images/loop-stages/stage-en-3.webp
 primary: I want my free call
 secondary: See how it works
-note: A two-minute check, then a free 30-minute call.
+note: 30 minutes, free. Find out where you're losing clients, and what to fix first.
 
 ### stops
 
@@ -157,14 +157,14 @@ button: I want that
 
 ## Call
 
-<!-- 2026-10-19 (owner): every free-call button opens the Client Loop Check first; the call is sold on the weakest stage it finds ("we look into your things and determine what to fix first"). -->
+<!-- 2026-10-22 (owner): the Client Loop Check is off; every free-call button opens the short form, then the calendar. The Check's wording here went back to the call alone. -->
 
 eyebrow: Free call
 title: Know what's really costing you clients, *in one call*.
-lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you. First a two-minute check of your path, from first look to coming back. Then thirty minutes together on your actual business, your page, your offer, your messages: we look at where clients slip away and decide what to fix first. You leave with:
+lead: You're juggling a lot to keep this business running. The last thing you need is another course. So this call does the work for you. Thirty minutes together on your actual business, your page, your offer, your messages: we look at where clients slip away and decide what to fix first. You leave with:
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
 button: I want my free call
-small: A two-minute check, then 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
+small: 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
 
 ### outcomes
 

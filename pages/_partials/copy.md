@@ -104,6 +104,8 @@ interest_options:
 - Content and Social Media
 - Consulting
 - I'm not sure yet
+message: Tell us about your case and we'll look into it
+message_hint: Optional. A couple of lines is enough: what you do and where you feel stuck.
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.
 submit: Get back to me
 sending: Sending

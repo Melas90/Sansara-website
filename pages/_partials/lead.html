@@ -68,6 +68,14 @@
           </div>
           <p class="field-error" aria-live="polite"></p>
         </div>
+        <!-- Optional (owner, 2026-10-22: "cuéntanos tu caso", less friction than the Check). Netlify keeps it with the
+             submission and puts it in the notification email. -->
+        <div class="field span-2">
+          <label for="l-message">{{ shared.lead.message }}</label>
+          <textarea class="control" id="l-message" name="message" rows="3" aria-describedby="l-message-hint"></textarea>
+          <p class="field-hint" id="l-message-hint">{{ shared.lead.message_hint }}</p>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
         <div class="field span-2">
           <label class="check"><input type="checkbox" id="l-privacy" name="privacy" value="yes" required><span>{{ shared.lead.privacy }}</span></label>
           <p class="field-error" aria-live="polite"></p>
