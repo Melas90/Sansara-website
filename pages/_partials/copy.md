@@ -167,7 +167,7 @@ home_link: Back to the home page
 ## LP
 
 <!-- Slim header and footer of the standalone landing pages (/client-loop/). From the owner's landing page. -->
-header_button: Get my free call
+header_button: I want my free call
 footer_line: We build the thing that brings clients in, so you don't have to chase them.
 footer_site: Visit the full site
 
