@@ -73,10 +73,10 @@
   }
 
   /* ---------- the scroll pop-up (owner, 2026-10-19: "the pop-up with the picture in the middle of the screen when people
-     scroll: take your free assessment; a couple of times per visit") ----------
+     scroll: get your free call; a couple of times per visit") ----------
      The Check itself opens on its own: once the visitor has read about half the page, and once more near the end if
      they closed it and some time has passed. Never more than twice a visit, never once the Check is done, never over
-     another open pop-up. Its first screen then says "Take your free assessment" instead of "one step closer". */
+     another open pop-up. Its first screen then says "Get your free call: two minutes first" instead of "one step closer". */
   const AUTO = 'sansara-check-popups';
   const seen = () => { try { return JSON.parse(sessionStorage.getItem(AUTO) || '{"n":0,"at":0}'); } catch { return { n: 2, at: 0 }; } };
   let auto = false, showing = false;
