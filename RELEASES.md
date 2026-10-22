@@ -8,6 +8,17 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-22d
+
+Owner: "olvidaste actualizar los botones… 2 min check before the call not 5", and the pop-up said "free assessment".
+
+- **Live:** Netlify deploy `6ad9cf82cfa498c990ef536c`. **Code:** `main` = `f051344`, tag `release-2026-10-22d`.
+- English System pages and the landing: the hero and closing buttons and the landing header say "I want my free call";
+  the check is two minutes (hero note, call section, the Check's intro "A few questions, two minutes"); the scroll
+  pop-up's first line is "Get your free call: two minutes first" instead of "Take your free assessment".
+- **Checked:** verify; production build from a clean worktree; every page on desktop and phone clean; live: the
+  buttons, no "five-minute" left, the Check's texts served.
+
 ## 2026-10-22c
 
 At the owner's request ("after that i think we can deploy"), the same day: the System pages' new hero and client chats.
