@@ -8,6 +8,34 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-22e, hotfix
+
+Owner: no leads since 15 October. The three real leads (4, 13 and 14 October) came from Meta ads to `/client-loop/` and
+opened the short form straight away; since then the ads pointed to `/system/` and, from 19 October, every call button
+opened the Client Loop Check first. Owner: "revertir el quiz y pasar al formulario simplemente con el enlace de Calendly".
+
+- **Live:** https://sansara-media.com, Netlify deploy `6ada7947f49fa34814f00ebd` (manual upload of the production build).
+- **Code:** `main` = `develop` = `25152a6` (merge of `fix/form-first`), tag `release-2026-10-22e`.
+- **The form first again:** the call buttons on Home, The System and `/client-loop/` open the short contact pop-up, then
+  "Book your call" opens Calendly with name and email filled in. The Check is off (its files stay; each page notes how to
+  bring it back).
+- **Scroll pop-up** kept, now opening the contact pop-up, on Home, The System, `/client-loop/` and `/es/sistema/`.
+- **Contact pop-up:** Chris's photo (top on a phone, beside the form from 760 px) and an optional field "Tell us about your
+  case and we'll look into it" / "Cuéntanos tu caso y lo analizaremos" (`message`).
+- **Pixel:** `LoopCheckStarted` (custom) when a call button opens the form (not the scroll pop-up), `LeadFormStarted`
+  (custom) on the first keystroke, then `Lead` on sending, as before.
+- **The System's copy** no longer mentions the two-minute check.
+- **Checked:** `npm run verify`; production build without the lab; the 15 pages of the build at 1366 and 390 px (no JS
+  errors, broken images, sideways scroll or visible PENDING); the form on `/client-loop/`, `/system/`, `/` and
+  `/es/sistema/` against the build (button and scroll open it, `message`, `utm_source` and `fbclid` sent, Calendly after
+  sending, Pixel events, no pop-up after sending: 36 checks). After the deploy: the four pages serve the new markup,
+  `/lab/` is 404, and a test lead ("TEST Claude 2026-10-22e (borrar)", +44 7700 900422) reached the `lead` form.
+- **Known:** Netlify's spam filter put that test lead in spam, as it did the earlier test; it was marked "not spam" by
+  hand. Spam never reaches the CRM: check Forms → `lead` → Spam submissions weekly. The CRM doesn't store `message` yet.
+- **Open:** delete the CRM test leads marked "(borrar)"; Calendly's confirmation redirect to `/book-a-call/thanks/` (for
+  `Schedule`); `loop.sansara-media.com` points at the old host (certificate error), fix its DNS or drop it; cookie consent
+  banner for the Pixel and Contentsquare.
+
 ## 2026-10-22d
 
 Owner: "olvidaste actualizar los botones… 2 min check before the call not 5", and the pop-up said "free assessment".
