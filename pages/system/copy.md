@@ -19,7 +19,16 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 eyebrow: For coaches, therapists and practitioners with paying clients
 title: Turn strangers into clients *who keep coming back*.
 subtitle: More than a sales funnel. A funnel stops at the sale; the Client Loop keeps going and brings your clients back.
-lead: We shape your offer, bring you the right leads, connect your booking and follow-ups, and build the plan that brings clients back, on the tools you already use. Done for you, at a fixed price per package.
+lead: Done for you, on the tools you already use, at a fixed price per package.
+blocks:
+- One clear offer
+- Lead generation
+- AI qualification
+- Automated booking
+- Email and WhatsApp follow-up
+- Your own CRM
+- Clients who come back
+- All in one working system
 primary: Check where I'm losing clients
 secondary: See how it works
 note: A five-minute check, then a free 30-minute call.

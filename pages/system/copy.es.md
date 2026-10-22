@@ -17,7 +17,16 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
 title: Convierte desconocidos en clientes *que vuelven*.
 subtitle: Más que un embudo de ventas. Un embudo termina en la venta; el Client Loop sigue y hace que tus clientes vuelvan.
-lead: Damos forma a tu oferta, te traemos los contactos adecuados, conectamos tus reservas y tu seguimiento, y construimos el plan para que vuelvan, con las herramientas que ya usas. Lo hacemos por ti, con un precio fijo por paquete.
+lead: Lo hacemos por ti, con las herramientas que ya usas y un precio fijo por paquete.
+blocks:
+- Una oferta clara
+- Captación de contactos
+- Cualificación con IA
+- Reserva automática
+- Seguimiento por email y WhatsApp
+- Tu propio CRM
+- Clientes que vuelven
+- Todo en un sistema que funciona
 primary: Quiero mi llamada gratis
 secondary: Mira cómo funciona
 note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreglar primero.

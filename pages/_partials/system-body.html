@@ -15,7 +15,13 @@
         <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
         <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
         <p class="sy-sub reveal">{{ hero.subtitle }}</p>
-        <p class="lead reveal">{{ hero.lead }}</p>
+        <!-- What's inside, in the Loop's order, as a moving band instead of a paragraph (owner, 22 Oct: "demasiado
+             texto"). Screen readers get the list once; the band itself is decoration. Still under reduced motion. -->
+        <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}</ul>
+        <div class="mq sy-hero-mq reveal" aria-hidden="true">
+          <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}</div>
+        </div>
+        <p class="sy-hero-price reveal">{{ hero.lead }}</p>
         <div class="cluster reveal">
           <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
           <a class="btn btn-ghost" href="#film">{{ hero.secondary }}</a>

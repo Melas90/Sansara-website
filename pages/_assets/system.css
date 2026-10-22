@@ -205,3 +205,15 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .sy-film-note { margin-top: 14px; opacity: 0.75; }
 .sy-film-after { margin: 28px auto 0; font-size: 1.15em; }
 @media (min-width: 900px) { .sy-film-note { display: none; } }
+
+/* Hero: what's inside the Loop, as a moving band in the copy column (owner, 22 Oct 2026). Reuses the home's .mq;
+   fades at both ends; without motion (reduced motion, no JS) it wraps into a still list without the duplicate. */
+.c .sy-hero-mq { background: none; border-block: 0; padding-block: 4px; margin-block: 4px 2px; -webkit-mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent); mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent); }
+.sy-hero-mq span { gap: 18px; padding-right: 18px; font-family: var(--font-sans); font-style: normal; font-weight: 600; font-size: 17px; color: var(--ink); }
+.sy-hero-mq span::before { content: ''; width: 16px; height: 16px; flex: none; border-radius: 50%; background: var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.3 2.2 4.7-4.9' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+.sy-hero-mq span::after { display: none; }
+html.motion .sy-hero-mq .mq-track { animation-duration: calc(var(--slow) * 30 / var(--speed)); }
+html:not(.motion) .sy-hero-mq { white-space: normal; -webkit-mask-image: none; mask-image: none; }
+html:not(.motion) .sy-hero-mq .mq-track { flex-wrap: wrap; row-gap: 10px; }
+html:not(.motion) .sy-hero-mq .mq-dup { display: none; }
+.sy-hero-price { font-weight: 600; color: var(--ink); }
