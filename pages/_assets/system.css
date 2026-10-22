@@ -7,7 +7,7 @@
 /* ---------- hero: the loop ---------- */
 .sy-sub { font-family: var(--font-serif); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; color: var(--ink); max-width: 26ch; }
 .sy-hero .hx-copy .small { margin-top: -8px; }
-.sy-loop { aspect-ratio: 3 / 2; }
+
 .sy-loop svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .loop-ghost { fill: none; stroke: var(--sand-2); stroke-width: 18; stroke-linecap: round; }
 .loop-line { fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 0; }
@@ -206,9 +206,32 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .sy-film-after { margin: 28px auto 0; font-size: 1.15em; }
 @media (min-width: 900px) { .sy-film-note { display: none; } }
 
-/* Hero: what's inside the Loop, as still pills with a check, in the Loop's order (owner, 22 Oct 2026). */
-.sy-hero-parts { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; max-width: 560px; }
-.sy-hero-parts li { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 9px; border-radius: var(--radius-pill); background: var(--bg); box-shadow: 0 1px 0 var(--line); font-family: var(--font-sans); font-weight: 600; font-size: 15px; line-height: 1.2; color: var(--ink); }
-@media (max-width: 600px) { .sy-hero-parts { gap: 6px; } .sy-hero-parts li { font-size: 13px; padding: 6px 11px 6px 7px; gap: 6px; } .sy-hero-parts li::before { width: 14px; height: 14px; } }
-.sy-hero-parts li::before { content: ''; width: 16px; height: 16px; flex: none; border-radius: 50%; background: var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.3 2.2 4.7-4.9' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+/* Hero: what's inside the Loop, as a moving band under the buttons (owner, 22 Oct 2026). Reuses the home's .mq;
+   fades at both ends; without motion (reduced motion, no JS) it wraps into a still list without the duplicate. */
+.c .sy-hero-mq { background: none; border-block: 0; padding-block: 4px; margin-block: 18px 0; -webkit-mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent); mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent); }
+.sy-hero-mq span { gap: 18px; padding-right: 18px; font-family: var(--font-sans); font-style: normal; font-weight: 600; font-size: 17px; color: var(--ink); }
+.sy-hero-mq span::before { content: ''; width: 16px; height: 16px; flex: none; border-radius: 50%; background: var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.3 2.2 4.7-4.9' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+.sy-hero-mq span::after { display: none; }
+html.motion .sy-hero-mq .mq-track { animation-duration: calc(var(--slow) * 30 / var(--speed)); }
+html:not(.motion) .sy-hero-mq { white-space: normal; -webkit-mask-image: none; mask-image: none; }
+html:not(.motion) .sy-hero-mq .mq-track { flex-wrap: wrap; row-gap: 10px; }
+html:not(.motion) .sy-hero-mq .mq-dup { display: none; }
+
+/* Hero art: the four stages of the system map, clockwise round a flowing orange line (owner, 22 Oct 2026). */
+.sy-stages { position: relative; width: 100%; max-width: 560px; justify-self: center; }
+.sy-stages-ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sy-stages-ring rect { fill: none; stroke: var(--orange); stroke-width: 0.6; stroke-dasharray: 2 2.4; vector-effect: non-scaling-stroke; opacity: 0.75; }
+.sy-stages-ring rect { stroke-width: 2.5px; stroke-dasharray: 8 10; }
+html.motion .sy-stages-ring rect { animation: sy-flow calc(var(--slow) * 2 / var(--speed)) linear infinite; }
+@keyframes sy-flow { to { stroke-dashoffset: -36; } }
+.sy-stages-list { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2.4vw, 28px); }
+.sy-stage:nth-child(3) { grid-area: 2 / 2; }
+.sy-stage:nth-child(4) { grid-area: 2 / 1; }
+.sy-stage { display: grid; justify-items: center; text-align: center; gap: 4px; padding: 14px 12px 16px; border-radius: var(--radius-card); background: var(--bg); box-shadow: var(--shadow-float); }
+.sy-stage img { width: 100%; max-width: 220px; height: auto; }
+.sy-stage-n { font-family: var(--font-sans); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); }
+.sy-stage strong { font-family: var(--font-sans); font-weight: 800; font-size: clamp(17px, 1.6vw, 21px); color: var(--ink); }
+html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--speed)) var(--ease) infinite; animation-delay: calc(var(--slow) * 2 * var(--i) / var(--speed) + var(--slow) * 2); }
+@keyframes sy-stage-on { 0%, 22% { transform: translateY(-8px); box-shadow: 0 0 0 2px var(--orange), var(--shadow-float); } 30%, 100% { transform: none; } }
+@media (max-width: 900px) { .sy-stages { margin-top: 40px; } .sy-stage img { max-width: 150px; } }
 .sy-hero-price { font-weight: 600; color: var(--ink); }

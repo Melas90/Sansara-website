@@ -30,6 +30,19 @@ blocks:
 - Your own CRM
 - Clients who come back
 - All in one working system
+stages:
+- step: Step 01
+  name: Be seen
+  img: /assets/images/loop-stages/stage-en-0.webp
+- step: Step 02
+  name: Be chosen
+  img: /assets/images/loop-stages/stage-en-1.webp
+- step: Step 03
+  name: Be booked
+  img: /assets/images/loop-stages/stage-en-2.webp
+- step: Step 04
+  name: Be remembered
+  img: /assets/images/loop-stages/stage-en-3.webp
 primary: Check where I'm losing clients
 secondary: See how it works
 note: A five-minute check, then a free 30-minute call.
@@ -63,7 +76,7 @@ label: Film: the Sansara Client Loop, explained in 90 seconds, with voice and ca
 
 <!-- 2026-10-17 (owner): the quote is attributed to "Therapist", without names or place. -->
 text: They came through the page on their own. They booked by themselves, without us contacting them. Before, we chased clients one by one. Now it's great to wake up in the morning and see bookings.
-original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
+original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Therapist
 
 ## Problem

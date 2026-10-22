@@ -28,6 +28,19 @@ blocks:
 - Tu propio CRM
 - Clientes que vuelven
 - Todo en un sistema que funciona
+stages:
+- step: Paso 01
+  name: Que te vean
+  img: /assets/images/loop-stages/stage-es-0.webp
+- step: Paso 02
+  name: Que te elijan
+  img: /assets/images/loop-stages/stage-es-1.webp
+- step: Paso 03
+  name: Que reserven
+  img: /assets/images/loop-stages/stage-es-2.webp
+- step: Paso 04
+  name: Que te recuerden
+  img: /assets/images/loop-stages/stage-es-3.webp
 primary: Quiero mi llamada gratis
 secondary: Mira cómo funciona
 note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreglar primero.
@@ -59,8 +72,8 @@ label: Vídeo: el Client Loop de Sansara explicado paso a paso, con subtítulos
 
 ## Quote
 
-text: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
-original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos.
+text: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
+original: Vinieron solo por la landing. Reservaron por sí mismas, sin que nosotros les contactáramos: no teníamos ni cómo. Antes íbamos cazando clientes uno a uno. Ahora es genial levantarse por la mañana y empezar a ver reservas.
 by: Terapeuta
 
 ## Problem
