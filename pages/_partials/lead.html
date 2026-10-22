@@ -5,7 +5,10 @@
   A hidden "source" field tells the CRM which button and page the lead came from.
 -->
 <button class="lead-float" type="button" data-lead-open data-source="floating button" aria-label="{{{ shared.lead.float }}}" hidden><span class="lead-float-label">{{ shared.lead.float }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-<dialog class="lead-dialog" id="lead" aria-labelledby="lead-title">
+<dialog class="lead-dialog has-photo" id="lead" aria-labelledby="lead-title">
+  <!-- Chris's photo from the Client Loop Check, kept when the Check came off (owner, 2026-10-22: "podemos dejar la imagen de Cris"):
+       on top on a phone, beside the form on a wider screen. -->
+  <figure class="lead-photo"><img src="/assets/images/people/chris-check.jpg" alt="{{{ shared.lead.photo_alt }}}" width="1080" height="1350" loading="lazy" decoding="async"></figure>
   <div class="lead-inner">
     <div class="lead-head">
       <div class="stack-sm">
@@ -66,6 +69,14 @@
               {{#each shared.lead.interest_options}}{{#if value}}<option value="{{{ value }}}">{{ label }}</option>{{else}}<option value="{{{ this }}}">{{ this }}</option>{{/if}}{{/each}}
             </select>
           </div>
+          <p class="field-error" aria-live="polite"></p>
+        </div>
+        <!-- Optional (owner, 2026-10-22: "cuéntanos tu caso", less friction than the Check). Netlify keeps it with the
+             submission and puts it in the notification email. -->
+        <div class="field span-2">
+          <label for="l-message">{{ shared.lead.message }}</label>
+          <textarea class="control" id="l-message" name="message" rows="3" aria-describedby="l-message-hint"></textarea>
+          <p class="field-hint" id="l-message-hint">{{ shared.lead.message_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
         <div class="field span-2">

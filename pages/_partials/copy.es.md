@@ -52,6 +52,9 @@ interest_options:
   value: Consulting
 - label: Aún no lo sé
   value: I'm not sure yet
+photo_alt: Christiane, de Sansara Media, apoyada en su escritorio y mirándote
+message: Cuéntanos tu caso y lo analizaremos
+message_hint: Opcional. Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
 submit: Que me contactéis
 sending: Enviando

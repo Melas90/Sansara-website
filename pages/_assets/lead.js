@@ -2,7 +2,7 @@
  * Lead pop-up. Any [data-lead-open] opens the #lead dialog; data-topic preselects the interest,
  * data-source is written to the hidden "source" field with the page path, so the CRM knows where
  * the lead came from. The floating button shows once the hero is out of view and hides while the
- * closing band or the footer is on screen. It never opens on its own.
+ * closing band or the footer is on screen. It opens on its own only on pages marked data-lead-popup (see below).
  * Submits to Netlify Forms with fetch for the inline success state; without fetch it posts normally.
  */
 (() => {
@@ -29,11 +29,23 @@
   const failure = dialog.querySelector('.form-error');
   let opener = null;
 
+  /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LoopCheckStarted when a
+     button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it.
+     LoopCheckStarted is the name the Client Loop Check used for its first step; the owner kept it ("put loop check started
+     in the talk to us button") because Meta already knows it and a custom conversion can be built on it right away. */
+  const pixel = (event, data) => { if (typeof window.fbq === 'function') window.fbq('trackCustom', event, data); };
+  let started = false;
+  form.addEventListener('input', () => {
+    if (started) return;
+    started = true;
+    pixel('LeadFormStarted', { content_name: source.value.split(' on ')[0] });
+  });
   const open = (trigger) => {
     opener = trigger;
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     const topic = trigger?.dataset.topic;
     if (topic && [...interest.options].some((o) => o.value === topic)) interest.value = topic;
+    if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
@@ -53,6 +65,33 @@
     open(t);
   });
   if (location.hash === '#lead') open(null);
+
+  /* The scroll pop-up (owner, 2026-10-19, kept on 2026-10-22 when the Check came off): on a page whose <body> has
+     data-lead-popup, this pop-up opens on its own once the visitor has read about half the page, and once more near the
+     end if they closed it and some time has passed. Never more than twice a visit, never once they have sent the form,
+     never over another open pop-up. */
+  const SENT = 'sansara-lead-sent';
+  const AUTO = 'sansara-lead-popups';
+  if (document.body.hasAttribute('data-lead-popup')) {
+    const seen = () => { try { return JSON.parse(sessionStorage.getItem(AUTO) || '{"n":0,"at":0}'); } catch { return { n: 2, at: 0 }; } };
+    const sent = () => { try { return !!sessionStorage.getItem(SENT); } catch { return true; } };
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        if (dialog.open || document.querySelector('dialog[open]') || sent()) return;
+        const st = seen();
+        if (st.n >= 2) return;
+        const depth = (scrollY + innerHeight) / document.documentElement.scrollHeight;
+        if ((st.n === 0 && depth > 0.45) || (st.n === 1 && depth > 0.85 && Date.now() - st.at > 45000)) {
+          st.n += 1; st.at = Date.now();
+          try { sessionStorage.setItem(AUTO, JSON.stringify(st)); } catch { /* storage blocked: opens once */ }
+          open({ dataset: { source: 'scroll pop-up' } });
+        }
+      });
+    }, { passive: true });
+  }
 
   /* floating button: after the hero, not over the closing band */
   const float = document.querySelector('.lead-float');
@@ -140,6 +179,7 @@
       });
       if (!res.ok) throw new Error(String(res.status));
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
+      try { sessionStorage.setItem(SENT, '1'); } catch { /* storage blocked */ }
       // "Book your call" opens the calendar with name and email filled in, and WhatsApp sits underneath for
       // questions (owner, 2026-10-19). Without a calendar link the button opens WhatsApp with a message that already
       // carries their name; without a number either, it stays hidden rather than linking nowhere.
