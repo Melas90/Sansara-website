@@ -8,6 +8,17 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-23b
+
+- **Live:** https://sansara-media.com, Netlify deploy `6adb4723adce73558f3fd941`. **Code:** `main` = `develop` = `f712c6a`
+  (merge of `fix/free-assessment`), tag `release-2026-10-23b`.
+- **The hero's small line under "Talk to us"** (owner: "talk to us and get your free assessment, is that bad or lying?",
+  then "deploy already"): "Get a free assessment: on a 30-minute call we look at where you're losing clients and what to
+  fix first." / "Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar
+  primero." The assessment is the call; no written report is promised. Copy only.
+- **Checked:** `npm run verify`; production build without the lab; 15 pages at 1366 and 390 px; the form test against the
+  build (36 checks); after the deploy the line is live on `/client-loop/`, `/system/` and `/es/sistema/`.
+
 ## 2026-10-23
 
 Owner: "talk to us means that they can send us a message, and free call means that they need to show up… then go ahead
