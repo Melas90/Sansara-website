@@ -8,6 +8,23 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-23
+
+Owner: "talk to us means that they can send us a message, and free call means that they need to show up… then go ahead
+… and deploy Netlify once you have done these changes".
+
+- **Live:** https://sansara-media.com, Netlify deploy `6adb45ce560ac3cef1eeab74` (manual upload of the production build).
+- **Code:** `main` = `develop` = `2f83938` (merge of `fix/talk-to-us`), tag `release-2026-10-23`.
+- **Call buttons say what they open:** **Talk to us** / **Háblanos** on the hero, the closing band, the landing header,
+  the site header and the home hero; the hero's small line "Free, no commitment. Book a 30-minute call if you like." /
+  "Gratis y sin compromiso. Si quieres, reserva una llamada de 30 minutos." The call section keeps **Book a free call** /
+  **Reserva tu llamada gratis**. Copy only, no code.
+- **Checked:** `npm run verify`; production build without the lab; the 15 pages at 1366 and 390 px; the form test against
+  the build (36 checks). After the deploy: `/client-loop/`, `/system/`, `/es/sistema/` and `/` serve the new words and none
+  of the old, `/lab/` is 404. No test lead: the form is unchanged since 2026-10-22e, which was tested live.
+- **Open:** the ad text still says "Book your free call" (change it in Ads Manager to match); the items open in
+  2026-10-22e.
+
 ## 2026-10-22e, hotfix
 
 Owner: no leads since 15 October. The three real leads (4, 13 and 14 October) came from Meta ads to `/client-loop/` and
