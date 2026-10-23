@@ -44,7 +44,7 @@ stages:
   img: /assets/images/loop-stages/stage-es-3.webp
 primary: Háblanos
 secondary: Mira cómo funciona
-note: Gratis y sin compromiso. Si quieres, reserva una llamada de 30 minutos.
+note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.
 
 ### stops
 
