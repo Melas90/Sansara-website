@@ -16,7 +16,7 @@ privacy: Privacidad (en inglés)
 
 ## LP
 
-header_button: Quiero mi llamada gratis
+header_button: Háblanos
 footer_line: Construimos lo que te trae clientes, para que no tengas que perseguirlos.
 footer_site: Ver la web completa (en inglés)
 

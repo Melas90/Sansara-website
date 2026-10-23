@@ -42,9 +42,9 @@ stages:
 - step: Paso 04
   name: Que te recuerden
   img: /assets/images/loop-stages/stage-es-3.webp
-primary: Quiero mi llamada gratis
+primary: Háblanos
 secondary: Mira cómo funciona
-note: 30 minutos, gratis. Descubre dónde estás perdiendo clientes y qué arreglar primero.
+note: Gratis y sin compromiso. Si quieres, reserva una llamada de 30 minutos.
 
 ### stops
 
@@ -153,7 +153,7 @@ eyebrow: Llamada gratuita
 title: Descubre qué te está costando clientes, *en una sola llamada*.
 lead: Ya haces malabares para sacar adelante tu negocio. Lo último que necesitas es otro curso. Así que esta llamada hace el trabajo por ti: treinta minutos, juntos, mirando tu negocio de verdad. Te llevas:
 fit: ¿Lees esto y piensas “esto me pasa a mí”? Entonces la llamada es para ti.
-button: Quiero mi llamada gratis
+button: Reserva tu llamada gratis
 small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué arreglar primero.
 
 ### outcomes
