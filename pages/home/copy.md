@@ -24,7 +24,7 @@ rotating:
 - Less effort.
 subtext: More clients, more visibility, less effort. We take care of your online presence so you don't have to. With years of experience in web, branding and marketing, we're the reliable partner at your side.
 subtext_ending:
-primary: Book a free call
+primary: Talk to us
 secondary: See what we do
 <!-- Cris's hero (2026-09-27). Her draft used invented figures; these three are claims the live page already makes. -->
 eyebrow: Digital growth studio
