@@ -46,7 +46,7 @@ stages:
   img: /assets/images/loop-stages/stage-en-3.webp
 primary: Talk to us
 secondary: See how it works
-note: Free, no commitment. Book a 30-minute call if you like.
+note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
 
 ### stops
 
