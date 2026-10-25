@@ -86,7 +86,7 @@ consent_needed: Please tick the box so we're allowed to contact you.
 <!-- Owner request 2026-09-27: a pop-up where visitors leave their details and we get back to them. It opens from buttons along the page and a floating button, never on its own. Saved as the Netlify form "lead", to be connected to the CRM later. -->
 float: Get in touch
 title: Let's *talk*
-intro: Before you book your call, we need a few details. You'll get the booking link right after.
+intro: We need your contact details to send you the call invite. You'll pick a time right after.
 name: Your name
 email: Email
 whatsapp: WhatsApp (optional)

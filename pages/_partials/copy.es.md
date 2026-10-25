@@ -28,7 +28,7 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 
 float: Escríbenos
 title: *Hablemos*
-intro: Antes de reservar tu llamada, necesitamos unos datos. Justo después te damos el enlace para reservar.
+intro: Necesitamos tus datos de contacto para enviarte la invitación a la llamada. Justo después eliges la hora.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp (opcional)
