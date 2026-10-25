@@ -139,7 +139,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Add a note about your case (optional)
-privacy_notice: By sending, you agree that we store your details to get back to you. [Privacy policy](/privacy/).
+privacy_notice: We only use your details for your call: to send you the invite and get back to you. [Privacy policy](/privacy/).
 next: Next
 whatsapp_direct: Prefer WhatsApp? Message us
 whatsapp_direct_text: Hi%20Sansara%2C%20I%27d%20like%20to%20know%20more%20about%20the%20free%20call.

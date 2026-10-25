@@ -86,7 +86,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Añadir una nota sobre tu caso (opcional)
-privacy_notice: Al enviar, aceptas que guardemos tus datos para responderte. [Política de privacidad](/privacy/) (en inglés).
+privacy_notice: Solo usamos tus datos para tu llamada: enviarte la invitación y responderte. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
 whatsapp_direct_text: Hola%20Sansara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20llamada%20gratuita.
