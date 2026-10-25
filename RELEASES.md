@@ -8,6 +8,36 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-25
+
+Owner: "what can we do to increase the probability that people complete the form… do all of this, including
+Hotjar", the steps "for the Client Loop only", then the hero ("we could be a bit more specific… option B") and
+"publish".
+
+- **Live:** https://sansara-media.com, Netlify deploy `6ade38a221bea3fc1d62b03a`. **Code:** `main` = `develop` =
+  `d768008` (merge of `fix/form-friction`), tag `release-2026-10-25`.
+- **The contact form in two steps:** the name first with "Next" (Enter too), then the rest under it. Email required,
+  WhatsApp optional with a country code beside it (guessed from the browser's language; a local number is sent in
+  international form). "What are you interested in?" hidden on the System pages, the note behind a link. The button
+  repeats the page's promise ("Get my free assessment" / "Quiero mi evaluación gratis"). A business coach's words
+  beside it (shortened with "(…)", "based on a client's message"). "Prefer WhatsApp? Message us" (Pixel `Contact`).
+  New intro ("We need your contact details to send you the call invite…") and privacy line ("We only use your details
+  for your call…") in place of the required box. Chris's photo is a small portrait beside the title on a phone.
+- **Hotjar (Contentsquare):** loads from `assets/cs.js`, off on a local copy; on `/client-loop/` the form's steps are
+  page events (opened, started typing, step 2, blocked by <field>, sent, calendar, WhatsApp, closed).
+- **Pixel:** off on a local copy (localhost, 127.x, 192.168.x).
+- **Hero of The System:** "We build your lead generation, landing pages, payments and bookings for you. As one
+  connected system, or piece by piece." / "Te montamos la captación, las landing pages, los cobros y las reservas.
+  Como un sistema conectado, o pieza a pieza."; the line under it without "Done for you".
+- **Checked:** `npm run verify`; production build without the lab; 15 pages at 1366 and 390 px; the form against the
+  build (57 checks: both steps, Enter, empty name and missing email blocked, numbers from UK, ES, DE, NL, Pixel steps,
+  Calendly, no JS errors); no request to Meta or Contentsquare from a local copy. After the deploy: the new hero and
+  form markup on `/client-loop/`, `/system/`, `/es/sistema/`; Contentsquare loads, records and receives the page events
+  on `/client-loop/`; a test lead ("TEST Claude 2026-10-25 (borrar)", +44 7700 900525, test@example.com) reached the
+  `lead` form with the number in international form; Netlify filed it as spam, marked "not spam" by hand.
+- **Open:** delete the CRM test leads marked "(borrar)"; in Contentsquare add `sansara-media.com` to the project,
+  unmask text and media, check the 15 % recording quota (trial ends in 9 days); cookie consent banner.
+
 ## 2026-10-23b
 
 - **Live:** https://sansara-media.com, Netlify deploy `6adb4723adce73558f3fd941`. **Code:** `main` = `develop` = `f712c6a`
