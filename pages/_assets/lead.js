@@ -30,6 +30,15 @@
   const interestField = form.querySelector('[data-interest-field]');
   let opener = null;
 
+  /* Form steps to Contentsquare (Hotjar), on a page whose <body> has data-hotjar-steps (owner, 2026-10-25: the Client
+     Loop landing only): each step is a page event, so Session Replay can show just the visits that opened the form and
+     where they stopped. Nothing typed is sent; names of the fields that blocked sending are. Nothing goes to Meta. */
+  const hj = (name) => {
+    if (!document.body.hasAttribute('data-hotjar-steps')) return;
+    (window._uxa = window._uxa || []).push(['trackPageEvent', name]);
+  };
+  let sentNow = false;
+
   /* Less friction after "Talk to us" (owner, 2026-10-24): the button repeats the page's promise where the page sets
      data-lead-submit; the note about their case opens from a link; the WhatsApp country code is pre-chosen. */
   const submitLabel = form.querySelector('[type=submit] .btn-label');
@@ -62,12 +71,13 @@
   const goNext = () => {
     if (!check(nameField)) { nameField.querySelector('input')?.focus(); return; }
     showStep(2);
+    hj('Form: step 2 (name in)');
     form.querySelector('#l-email')?.focus();
   };
   form.querySelector('.lead-next')?.addEventListener('click', goNext);
   showStep(1);
   // "Prefer WhatsApp?": straight to WhatsApp, reported to the Pixel like the other WhatsApp links
-  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
 
   const ccSelect = form.querySelector('.wa-cc');
   if (ccSelect) {
@@ -91,6 +101,7 @@
     if (started) return;
     started = true;
     pixel('LeadFormStarted', { content_name: source.value.split(' on ')[0] });
+    hj('Form: started typing');
   });
   const open = (trigger) => {
     opener = trigger;
@@ -102,12 +113,14 @@
     knownTopic = known;
     showStep(step); // a reopened form keeps the step it was at
     if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
+    hj(trigger?.dataset.source === 'scroll pop-up' ? 'Form: opened by scroll pop-up' : 'Form: opened by a button');
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
   };
   const close = () => dialog.close();
   dialog.addEventListener('close', () => {
+    if (!sentNow) hj(started ? 'Form: closed after typing, not sent' : 'Form: closed without typing');
     document.documentElement.classList.remove('lead-open');
     opener?.focus?.();
   });
@@ -223,7 +236,12 @@
     // Enter in the name field on step 1 means "Next", not "send"
     if (step === 1) { e.preventDefault(); goNext(); return; }
     const ok = fields.map(check).every(Boolean);
-    if (!ok) { e.preventDefault(); form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus(); return; }
+    if (!ok) {
+      e.preventDefault();
+      hj(`Form: blocked by ${[...form.querySelectorAll('.is-invalid [name]')].map((el) => el.name).join(', ') || 'a field'}`);
+      form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus();
+      return;
+    }
     if (!window.fetch) return; // plain POST, then Netlify's redirect to the thanks page
     e.preventDefault();
     // the number goes out in international form, the way the CRM stores it
@@ -242,6 +260,8 @@
       });
       if (!res.ok) throw new Error(String(res.status));
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
+      sentNow = true;
+      hj('Form: sent');
       try { sessionStorage.setItem(SENT, '1'); } catch { /* storage blocked */ }
       // "Book your call" opens the calendar with name and email filled in, and WhatsApp sits underneath for
       // questions (owner, 2026-10-19). Without a calendar link the button opens WhatsApp with a message that already
@@ -262,7 +282,7 @@
         }
         book.href = cal ? String(cal) : wa;
         book.hidden = !book.href;
-        book.onclick = () => { if (typeof window.fbq === 'function') cal ? window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up' }) : window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
+        book.onclick = () => { hj(cal ? 'Form: opened the calendar' : 'Form: WhatsApp after sending'); if (typeof window.fbq === 'function') cal ? window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up' }) : window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
         if (alt) {
           alt.hidden = !(cal && wa);
           alt.href = wa;
