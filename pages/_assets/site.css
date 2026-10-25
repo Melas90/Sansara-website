@@ -356,6 +356,21 @@ html:not(.js) .close-btn { display: none; }
 .wa-wrap { position: relative; }
 .wa-wrap .control { width: 100%; padding-right: 48px; }
 .wa-mark { position: absolute; right: 14px; top: 50%; width: 22px; height: 22px; margin-top: -11px; color: var(--orange-dk); pointer-events: none; }
+/* Less friction (2026-10-24): the country code beside the number, the note behind a link, a privacy line instead of a box */
+.wa-wrap.has-cc { display: grid; grid-template-columns: auto 1fr; gap: 8px; }
+.wa-wrap.has-cc .wa-cc { width: auto; padding-right: 10px; }
+.lead-note { margin: -4px 0 0; }
+.lead-note-toggle { background: none; border: 0; padding: 6px 0; cursor: pointer; font: inherit; font-size: var(--text-small); color: var(--orange-dk); min-height: var(--target); }
+.lead-legal { margin-top: 18px; font-size: var(--text-small); color: var(--brown-2-text); }
+.lead-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+/* On a phone the photo is a small portrait beside the title; from 760 px the full column is used instead */
+.lead-avatar { display: block; flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
+@media (max-width: 759px) {
+  .lead-dialog.has-photo .lead-photo { display: none; }
+}
+@media (min-width: 760px) {
+  .lead-avatar { display: none; }
+}
 html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
 html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }

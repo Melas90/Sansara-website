@@ -44,6 +44,7 @@ stages:
 - step: Step 04
   name: Be remembered
   img: /assets/images/loop-stages/stage-en-3.webp
+lead_submit: Get my free assessment
 primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.

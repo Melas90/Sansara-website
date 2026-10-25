@@ -91,7 +91,7 @@ name: Your name
 email: Email
 whatsapp: WhatsApp
 contact_hint: One or both, whichever you prefer.
-whatsapp_hint: Start with your country code, like +44 7123 456789.
+whatsapp_hint: Pick your country on the left and type your number as you normally would.
 need_contact: Please give us an email or a WhatsApp number.
 invalid_whatsapp: Please check the number, with its country code, like +44 7123 456789.
 need_country_code: Please add your country code at the start, like +44 7123 456789.
@@ -105,6 +105,41 @@ interest_options:
 - Consulting
 - I'm not sure yet
 photo_alt: Christiane from Sansara Media, leaning over her desk and looking at you
+country_code: Country code
+<!-- The first one that matches the browser's language is chosen (lead.js); the visitor can change it -->
+country_codes:
+- label: ES +34
+  value: +34
+- label: UK +44
+  value: +44
+- label: IE +353
+  value: +353
+- label: DE +49
+  value: +49
+- label: AT +43
+  value: +43
+- label: CH +41
+  value: +41
+- label: NL +31
+  value: +31
+- label: BE +32
+  value: +32
+- label: FR +33
+  value: +33
+- label: IT +39
+  value: +39
+- label: PT +351
+  value: +351
+- label: SE +46
+  value: +46
+- label: DK +45
+  value: +45
+- label: NO +47
+  value: +47
+- label: US +1
+  value: +1
+message_toggle: Add a note about your case (optional)
+privacy_notice: By sending, you agree that we store your details to get back to you. [Privacy policy](/privacy/).
 message: Tell us about your case and we'll look into it
 message_hint: Optional. A couple of lines is enough: what you do and where you feel stuck.
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.

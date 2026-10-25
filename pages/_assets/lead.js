@@ -27,7 +27,31 @@
   const interest = form.querySelector('[name="interest"]');
   const success = dialog.querySelector('.form-success');
   const failure = dialog.querySelector('.form-error');
+  const interestField = form.querySelector('[data-interest-field]');
   let opener = null;
+
+  /* Less friction after "Talk to us" (owner, 2026-10-24): the button repeats the page's promise where the page sets
+     data-lead-submit; the note about their case opens from a link; the WhatsApp country code is pre-chosen. */
+  const submitLabel = form.querySelector('[type=submit] .btn-label');
+  if (document.body.dataset.leadSubmit) submitLabel.textContent = document.body.dataset.leadSubmit;
+  const noteToggle = form.querySelector('.lead-note-toggle');
+  noteToggle?.addEventListener('click', () => {
+    const field = document.getElementById(noteToggle.getAttribute('aria-controls'));
+    field.hidden = false;
+    noteToggle.closest('.lead-note').hidden = true;
+    field.querySelector('textarea')?.focus();
+  });
+  const ccSelect = form.querySelector('.wa-cc');
+  if (ccSelect) {
+    // the browser's language guesses the country: en-GB +44, de +49, es +34…; else the page's language
+    const BY_REGION = { ES: '+34', GB: '+44', UK: '+44', IE: '+353', DE: '+49', AT: '+43', CH: '+41', NL: '+31', BE: '+32', FR: '+33', IT: '+39', PT: '+351', SE: '+46', DK: '+45', NO: '+47', US: '+1' };
+    const BY_LANG = { es: '+34', de: '+49', nl: '+31', fr: '+33', it: '+39', pt: '+351', sv: '+46', da: '+45', nb: '+47', no: '+47', en: '+44' };
+    const guess = (navigator.languages || [navigator.language || '']).map((l) => {
+      const [lang, region] = String(l).split('-');
+      return BY_REGION[(region || '').toUpperCase()] || BY_LANG[(lang || '').toLowerCase()];
+    }).find(Boolean) || (document.documentElement.lang === 'es' ? '+34' : '+44');
+    if ([...ccSelect.options].some((o) => o.value === guess)) ccSelect.value = guess;
+  }
 
   /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LoopCheckStarted when a
      button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it.
@@ -43,8 +67,11 @@
   const open = (trigger) => {
     opener = trigger;
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
-    const topic = trigger?.dataset.topic;
-    if (topic && [...interest.options].some((o) => o.value === topic)) interest.value = topic;
+    // The offer is known from the button or the page (owner, 2026-10-24: one field less): set it and hide the question.
+    const topic = trigger?.dataset.topic || document.body.dataset.leadTopic;
+    const known = Boolean(topic && [...interest.options].some((o) => o.value === topic));
+    if (known) interest.value = topic;
+    interestField.hidden = known;
     if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
@@ -108,16 +135,17 @@
 
   /* validation and sending */
   const msg = form.dataset;
-  // Email, WhatsApp, or both: at least one, and each one valid when filled in. A phone must be in
-  // international form (+44 7484 732570, 0044…), the same rule as the CRM's intake, which drops
-  // anything else; a local number ("07484 732570") gets "add your country code".
+  // Email, WhatsApp, or both: at least one, and each one valid when filled in. The CRM's intake needs the
+  // international form (+44 7484 732570); a local number ("07484 732570", "612 345 678") takes the country code
+  // chosen beside it, without its leading 0. With no code to take, it gets "add your country code".
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   const phoneDigits = (v) => {
     const t = v.trim();
     if (!/^(\+|00)?[\d\s().\/-]+$/.test(t)) return null; // not a phone number at all
     const d = t.replace(/\D/g, '');
     if (t.startsWith('+')) return d;
-    return d.startsWith('00') ? d.slice(2) : '';
+    if (d.startsWith('00')) return d.slice(2);
+    return ccSelect ? ccSelect.value.replace(/\D/g, '') + d.replace(/^0/, '') : '';
   };
   const emailInput = form.querySelector('[data-contact="email"]');
   const whatsappInput = form.querySelector('[data-contact="whatsapp"]');
@@ -135,7 +163,7 @@
   };
   const fields = [...form.querySelectorAll('.field')];
   const check = (field) => {
-    const input = field.querySelector('input:not([type=hidden]), select, textarea');
+    const input = field.querySelector('[data-contact]') || field.querySelector('input:not([type=hidden]), select, textarea');
     const out = field.querySelector('.field-error');
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
@@ -158,13 +186,16 @@
   document.addEventListener('pointercancel', () => { pressing = false; waiting.forEach(check); waiting.clear(); }, true);
   fields.forEach((f) => f.querySelector('input, select, textarea')?.addEventListener('change', () => checkSoon(f)));
   // a WhatsApp number answers "email or WhatsApp", so the email's "give us one" clears with it
-  whatsappInput?.addEventListener('change', () => checkSoon(emailInput.closest('.field')));
+  whatsappInput?.addEventListener('change', () => { checkSoon(whatsappInput.closest('.field')); checkSoon(emailInput.closest('.field')); });
+  ccSelect?.addEventListener('change', () => { if (whatsappInput.value.trim()) checkSoon(whatsappInput.closest('.field')); });
   form.setAttribute('novalidate', '');
   form.addEventListener('submit', async (e) => {
     const ok = fields.map(check).every(Boolean);
     if (!ok) { e.preventDefault(); form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus(); return; }
     if (!window.fetch) return; // plain POST, then Netlify's redirect to the thanks page
     e.preventDefault();
+    // the number goes out in international form, the way the CRM stores it
+    if (whatsappInput?.value.trim()) whatsappInput.value = `+${phoneDigits(whatsappInput.value)}`;
     const button = form.querySelector('[type=submit]');
     const label = button.querySelector('.btn-label');
     const idle = label.textContent;

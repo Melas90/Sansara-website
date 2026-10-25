@@ -192,3 +192,13 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 
 - Owner: "talk to us means that they can send us a message, and free call means that they need to show up". The buttons now say what they open (the short form with an optional message), and the call is the step after it (Calendly after sending). The hero, the closing band, the landing header and the site header say **Talk to us** / **Háblanos**; the hero's small line says "Free, no commitment. Book a 30-minute call if you like." / "Gratis y sin compromiso. Si quieres, reserva una llamada de 30 minutos." The call section, which explains the call, keeps a call button: **Book a free call** / **Reserva tu llamada gratis**. The pop-up title stays "Let's talk" / "Hablemos" (owner: "Let's talk está genial").
 - **The hero's small line promises the assessment** (owner, same day: "talk to us and get your free assessment, is that bad or lying?"): not a lie as long as the assessment is the call, so the line says what it is: "Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first." / "Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero." No written report is promised (that was the Check's).
+
+## 2026-10-24: less friction after "Talk to us" (branch `fix/form-friction`, demo, not live)
+
+- Owner: people press the button but don't continue; "show me a demo". On a phone the form went from 1,237 to 794 px tall:
+  Chris's photo is a small portrait beside the title (the full column stays from 760 px); the WhatsApp number takes a
+  country code chosen beside it (guessed from the browser's language) so a local number is enough, and lead.js sends it
+  in international form; "What are you interested in?" is hidden where the page or button names the offer
+  (`data-lead-topic` on the System pages); the note about their case opens from a link; the button repeats the page's
+  promise ("Get my free assessment" / "Quiero mi evaluación gratis", `data-lead-submit`); a line about privacy replaces
+  the required box (`privacy` = "notice"), to be confirmed by whoever advises the owner on legal matters.

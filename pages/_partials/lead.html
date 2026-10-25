@@ -11,6 +11,9 @@
   <figure class="lead-photo"><img src="/assets/images/people/chris-check.jpg" alt="{{{ shared.lead.photo_alt }}}" width="1080" height="1350" loading="lazy" decoding="async"></figure>
   <div class="lead-inner">
     <div class="lead-head">
+      <!-- On a phone the photo is this small portrait beside the title, so the first field and the button sit higher
+           (owner, 2026-10-24: less friction after "Talk to us"); from 760 px the full photo column above is used. -->
+      <img class="lead-avatar" src="/assets/images/people/chris-check.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async">
       <div class="stack-sm">
         <h2 id="lead-title">{{ shared.lead.title }}</h2>
         <p>{{ shared.lead.intro }}</p>
@@ -54,14 +57,20 @@
         </div>
         <div class="field">
           <label for="l-whatsapp">{{ shared.lead.whatsapp }}</label>
-          <div class="wa-wrap">
+          <!-- The country code is chosen here (guessed from the browser's language), so a local number like 612 345 678
+               is enough; lead.js joins them before sending, in the international form the CRM needs. -->
+          <div class="wa-wrap has-cc">
+            <select class="control wa-cc" id="l-cc" aria-label="{{{ shared.lead.country_code }}}">
+              {{#each shared.lead.country_codes}}<option value="{{{ value }}}">{{ label }}</option>{{/each}}
+            </select>
             <input class="control" id="l-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="l-whatsapp-hint" data-contact="whatsapp">
             <svg class="wa-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M9.2 7.9c-.4 0-.8.4-.9.9-.2 1.3.4 2.9 1.7 4.2 1.4 1.4 3 2.1 4.3 1.9.5-.1.9-.5.9-.9v-.9l-1.8-.8-.9.9c-1-.4-2-1.4-2.4-2.4l.9-.9-.8-1.8z"/></svg>
           </div>
           <p class="field-hint" id="l-whatsapp-hint">{{ shared.lead.whatsapp_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <div class="field span-2">
+        <!-- Hidden when the button or the page already names the offer (data-topic, or data-lead-topic on <body>) -->
+        <div class="field span-2" data-interest-field>
           <label for="l-interest">{{ shared.lead.interest }}</label>
           <div class="select-wrap">
             <select class="control" id="l-interest" name="interest" required>
@@ -73,17 +82,18 @@
         </div>
         <!-- Optional (owner, 2026-10-22: "cuéntanos tu caso", less friction than the Check). Netlify keeps it with the
              submission and puts it in the notification email. -->
-        <div class="field span-2">
+        <p class="span-2 lead-note"><button class="link lead-note-toggle" type="button" aria-expanded="false" aria-controls="l-message-field">+ {{ shared.lead.message_toggle }}</button></p>
+        <div class="field span-2" id="l-message-field" hidden>
           <label for="l-message">{{ shared.lead.message }}</label>
           <textarea class="control" id="l-message" name="message" rows="3" aria-describedby="l-message-hint"></textarea>
           <p class="field-hint" id="l-message-hint">{{ shared.lead.message_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <div class="field span-2">
-          <label class="check"><input type="checkbox" id="l-privacy" name="privacy" value="yes" required><span>{{ shared.lead.privacy }}</span></label>
-          <p class="field-error" aria-live="polite"></p>
-        </div>
+        <!-- A notice instead of a required box (owner, 2026-10-24: less friction; the legal basis for answering a request is
+             the request itself, art. 6.1.b GDPR). `privacy` still reaches Netlify and the CRM as "notice". -->
+        <input type="hidden" name="privacy" value="notice">
       </div>
+      <p class="lead-legal">{{ shared.lead.privacy_notice }}</p>
       <div class="form-actions">
         <button class="btn btn-primary" type="submit"><span class="btn-label">{{ shared.lead.submit }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
       </div>

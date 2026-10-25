@@ -42,6 +42,7 @@ stages:
 - step: Paso 04
   name: Que te recuerden
   img: /assets/images/loop-stages/stage-es-3.webp
+lead_submit: Quiero mi evaluación gratis
 primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.

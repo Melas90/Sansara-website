@@ -33,7 +33,7 @@ name: Tu nombre
 email: Email
 whatsapp: WhatsApp
 contact_hint: Uno de los dos o ambos, como prefieras.
-whatsapp_hint: Empieza por el prefijo del país, por ejemplo +34 612 345 678.
+whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
 need_contact: Déjanos un email o un número de WhatsApp.
 invalid_whatsapp: Revisa el número, con el prefijo del país, por ejemplo +34 612 345 678.
 need_country_code: Añade el prefijo del país al principio, por ejemplo +34 612 345 678.
@@ -53,6 +53,40 @@ interest_options:
 - label: Aún no lo sé
   value: I'm not sure yet
 photo_alt: Christiane, de Sansara Media, apoyada en su escritorio y mirándote
+country_code: Prefijo del país
+country_codes:
+- label: ES +34
+  value: +34
+- label: UK +44
+  value: +44
+- label: IE +353
+  value: +353
+- label: DE +49
+  value: +49
+- label: AT +43
+  value: +43
+- label: CH +41
+  value: +41
+- label: NL +31
+  value: +31
+- label: BE +32
+  value: +32
+- label: FR +33
+  value: +33
+- label: IT +39
+  value: +39
+- label: PT +351
+  value: +351
+- label: SE +46
+  value: +46
+- label: DK +45
+  value: +45
+- label: NO +47
+  value: +47
+- label: US +1
+  value: +1
+message_toggle: Añadir una nota sobre tu caso (opcional)
+privacy_notice: Al enviar, aceptas que guardemos tus datos para responderte. [Política de privacidad](/privacy/) (en inglés).
 message: Cuéntanos tu caso y lo analizaremos
 message_hint: Opcional. Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
