@@ -140,6 +140,11 @@ country_codes:
   value: +1
 message_toggle: Add a note about your case (optional)
 privacy_notice: By sending, you agree that we store your details to get back to you. [Privacy policy](/privacy/).
+next: Next
+whatsapp_direct: Prefer WhatsApp? Message us
+whatsapp_direct_text: Hi%20Sansara%2C%20I%27d%20like%20to%20know%20more%20about%20the%20free%20call.
+proof_quote: “This is the first time, after working with many agencies (…), that someone actually shows up to my call ready to buy.”
+proof_by: Business coach, based on a client's message
 message: Tell us about your case and we'll look into it
 message_hint: Optional. A couple of lines is enough: what you do and where you feel stuck.
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.

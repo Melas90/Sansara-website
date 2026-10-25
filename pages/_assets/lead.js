@@ -41,6 +41,34 @@
     noteToggle.closest('.lead-note').hidden = true;
     field.querySelector('textarea')?.focus();
   });
+  /* Two steps (owner, 2026-10-25: "what can we do so more people complete the form"): only the name shows first, with
+     "Next"; the rest appears under it once the name is in. The interest question stays hidden where the offer is known,
+     the note stays folded until its link is pressed. Without JavaScript none of this runs and every field shows. */
+  let knownTopic = false;
+  let step = 1;
+  const stepTwo = [...form.querySelectorAll('[data-step="2"]')];
+  const nextRow = form.querySelector('[data-step-only="1"]');
+  const nameField = form.querySelector('[data-step="1"]');
+  const showStep = (n) => {
+    step = n;
+    nextRow.hidden = n !== 1;
+    stepTwo.forEach((el) => {
+      if (n === 1) { el.hidden = true; return; }
+      if (el === interestField) el.hidden = knownTopic;
+      else if (el.id === 'l-message-field') el.hidden = !noteToggle?.closest('.lead-note').hidden;
+      else el.hidden = false;
+    });
+  };
+  const goNext = () => {
+    if (!check(nameField)) { nameField.querySelector('input')?.focus(); return; }
+    showStep(2);
+    form.querySelector('#l-whatsapp')?.focus();
+  };
+  form.querySelector('.lead-next')?.addEventListener('click', goNext);
+  showStep(1);
+  // "Prefer WhatsApp?": straight to WhatsApp, reported to the Pixel like the other WhatsApp links
+  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+
   const ccSelect = form.querySelector('.wa-cc');
   if (ccSelect) {
     // the browser's language guesses the country: en-GB +44, de +49, es +34…; else the page's language
@@ -71,7 +99,8 @@
     const topic = trigger?.dataset.topic || document.body.dataset.leadTopic;
     const known = Boolean(topic && [...interest.options].some((o) => o.value === topic));
     if (known) interest.value = topic;
-    interestField.hidden = known;
+    knownTopic = known;
+    showStep(step); // a reopened form keeps the step it was at
     if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
@@ -190,6 +219,8 @@
   ccSelect?.addEventListener('change', () => { if (whatsappInput.value.trim()) checkSoon(whatsappInput.closest('.field')); });
   form.setAttribute('novalidate', '');
   form.addEventListener('submit', async (e) => {
+    // Enter in the name field on step 1 means "Next", not "send"
+    if (step === 1) { e.preventDefault(); goNext(); return; }
     const ok = fields.map(check).every(Boolean);
     if (!ok) { e.preventDefault(); form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus(); return; }
     if (!window.fetch) return; // plain POST, then Netlify's redirect to the thanks page

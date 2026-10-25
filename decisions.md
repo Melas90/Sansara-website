@@ -202,3 +202,5 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   (`data-lead-topic` on the System pages); the note about their case opens from a link; the button repeats the page's
   promise ("Get my free assessment" / "Quiero mi evaluación gratis", `data-lead-submit`); a line about privacy replaces
   the required box (`privacy` = "notice"), to be confirmed by whoever advises the owner on legal matters.
+- **Two steps, WhatsApp straight away, a client's words** (owner, 2026-10-25: "what can we do to increase the probability that people complete the form… do all of this"): the name first with "Next", then the rest under it (Enter on the name also means Next; without JavaScript everything shows at once); "Prefer WhatsApp? Message us" under the buttons, Pixel `Contact` (`lead pop-up direct`); the business coach's quote from The System beside the button, shortened with "(…)" and labelled "based on a client's message" as on the page.
+- **No Pixel on a local copy** (owner: "show me before, without firing any pixel"): `pixel.js` gives localhost, 127.x and 192.168.x a silent `fbq`, so the dev server sends nothing to Meta.
