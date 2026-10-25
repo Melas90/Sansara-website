@@ -5,7 +5,7 @@
    Never on a local copy (owner, 2026-10-25: "show me before, without firing any pixel"): on localhost, 127.x and
    192.168.x the page gets a silent fbq that sends nothing, so the dev server can be clicked through freely. */
 if (/^(localhost|127\.|192\.168\.|\[::1\])/.test(location.hostname)) {
-  window.fbq = function () {};
+  window.fbq = window.fbq || function () {}; // a test may have put its own recorder here first
 } else {
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

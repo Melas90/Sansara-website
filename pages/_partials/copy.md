@@ -89,10 +89,10 @@ title: Let's *talk*
 intro: Before you book your call, we need a few details. You'll get the booking link right after.
 name: Your name
 email: Email
-whatsapp: WhatsApp
-contact_hint: One or both, whichever you prefer.
+whatsapp: WhatsApp (optional)
+contact_hint: We send your call details here.
 whatsapp_hint: Pick your country on the left and type your number as you normally would.
-need_contact: Please give us an email or a WhatsApp number.
+need_contact: Please give us your email so we can send your call details.
 invalid_whatsapp: Please check the number, with its country code, like +44 7123 456789.
 need_country_code: Please add your country code at the start, like +44 7123 456789.
 interest: What are you interested in?

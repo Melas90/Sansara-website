@@ -31,10 +31,10 @@ title: *Hablemos*
 intro: Antes de reservar tu llamada, necesitamos unos datos. Justo después te damos el enlace para reservar.
 name: Tu nombre
 email: Email
-whatsapp: WhatsApp
-contact_hint: Uno de los dos o ambos, como prefieras.
+whatsapp: WhatsApp (opcional)
+contact_hint: Aquí te enviamos los detalles de la llamada.
 whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
-need_contact: Déjanos un email o un número de WhatsApp.
+need_contact: Déjanos tu email para enviarte los detalles de la llamada.
 invalid_whatsapp: Revisa el número, con el prefijo del país, por ejemplo +34 612 345 678.
 need_country_code: Añade el prefijo del país al principio, por ejemplo +34 612 345 678.
 interest: ¿Qué te interesa?

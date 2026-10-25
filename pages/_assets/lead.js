@@ -62,7 +62,7 @@
   const goNext = () => {
     if (!check(nameField)) { nameField.querySelector('input')?.focus(); return; }
     showStep(2);
-    form.querySelector('#l-whatsapp')?.focus();
+    form.querySelector('#l-email')?.focus();
   };
   form.querySelector('.lead-next')?.addEventListener('click', goNext);
   showStep(1);
@@ -181,8 +181,9 @@
   const contactError = (input) => {
     const v = input.value.trim();
     if (input === emailInput) {
+      // the email is required (owner, 2026-10-25: "I would put mail mandatory"); WhatsApp is optional
       if (v) return isEmail(v) ? '' : msg.msgEmail;
-      return whatsappInput.value.trim() ? '' : msg.msgContact; // neither given: asked once, on the email
+      return msg.msgContact;
     }
     if (!v) return '';
     const d = phoneDigits(v);

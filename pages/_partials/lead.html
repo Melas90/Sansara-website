@@ -49,11 +49,11 @@
           <input class="control" id="l-name" name="name" type="text" required autocomplete="name">
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <!-- Email, WhatsApp, or both (owner, 2026-10-15): at least one, each checked when filled in.
+        <!-- The email is required and WhatsApp optional (owner, 2026-10-25; it was "one or both" from 2026-10-15); each is checked when filled in.
              The CRM reads `email` and `whatsapp` as they are, and still reads the older `reach`. -->
         <div class="field" data-step="2">
           <label for="l-email">{{ shared.lead.email }}</label>
-          <input class="control" id="l-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="l-contact-hint" data-contact="email">
+          <input class="control" id="l-email" name="email" type="email" required autocomplete="email" inputmode="email" aria-describedby="l-contact-hint" data-contact="email">
           <p class="field-hint" id="l-contact-hint">{{ shared.lead.contact_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
