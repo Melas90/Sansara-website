@@ -18,8 +18,8 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 eyebrow: For coaches, therapists and practitioners with paying clients
 title: Turn strangers into clients *who keep coming back*.
-subtitle: More than a sales funnel. A funnel stops at the sale; the Client Loop keeps going and brings your clients back.
-lead: Done for you, on the tools you already use, at a fixed price per package.
+subtitle: We build your lead generation, landing pages, payments and bookings for you. As one connected system, or piece by piece.
+lead: On the tools you already use, at a fixed price per package.
 whatsapp: WhatsApp compatible
 blocks:
 - One clear offer
@@ -44,6 +44,7 @@ stages:
 - step: Step 04
   name: Be remembered
   img: /assets/images/loop-stages/stage-en-3.webp
+lead_submit: Get my free assessment
 primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.

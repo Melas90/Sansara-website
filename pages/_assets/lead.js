@@ -27,7 +27,69 @@
   const interest = form.querySelector('[name="interest"]');
   const success = dialog.querySelector('.form-success');
   const failure = dialog.querySelector('.form-error');
+  const interestField = form.querySelector('[data-interest-field]');
   let opener = null;
+
+  /* Form steps to Contentsquare (Hotjar), on a page whose <body> has data-hotjar-steps (owner, 2026-10-25: the Client
+     Loop landing only): each step is a page event, so Session Replay can show just the visits that opened the form and
+     where they stopped. Nothing typed is sent; names of the fields that blocked sending are. Nothing goes to Meta. */
+  const hj = (name) => {
+    if (!document.body.hasAttribute('data-hotjar-steps')) return;
+    (window._uxa = window._uxa || []).push(['trackPageEvent', name]);
+  };
+  let sentNow = false;
+
+  /* Less friction after "Talk to us" (owner, 2026-10-24): the button repeats the page's promise where the page sets
+     data-lead-submit; the note about their case opens from a link; the WhatsApp country code is pre-chosen. */
+  const submitLabel = form.querySelector('[type=submit] .btn-label');
+  if (document.body.dataset.leadSubmit) submitLabel.textContent = document.body.dataset.leadSubmit;
+  const noteToggle = form.querySelector('.lead-note-toggle');
+  noteToggle?.addEventListener('click', () => {
+    const field = document.getElementById(noteToggle.getAttribute('aria-controls'));
+    field.hidden = false;
+    noteToggle.closest('.lead-note').hidden = true;
+    field.querySelector('textarea')?.focus();
+  });
+  /* Two steps (owner, 2026-10-25: "what can we do so more people complete the form"): only the name shows first, with
+     "Next"; the rest appears under it once the name is in. The interest question stays hidden where the offer is known,
+     the note stays folded until its link is pressed. Without JavaScript none of this runs and every field shows. */
+  let knownTopic = false;
+  let step = 1;
+  const stepTwo = [...form.querySelectorAll('[data-step="2"]')];
+  const nextRow = form.querySelector('[data-step-only="1"]');
+  const nameField = form.querySelector('[data-step="1"]');
+  const showStep = (n) => {
+    step = n;
+    nextRow.hidden = n !== 1;
+    stepTwo.forEach((el) => {
+      if (n === 1) { el.hidden = true; return; }
+      if (el === interestField) el.hidden = knownTopic;
+      else if (el.id === 'l-message-field') el.hidden = !noteToggle?.closest('.lead-note').hidden;
+      else el.hidden = false;
+    });
+  };
+  const goNext = () => {
+    if (!check(nameField)) { nameField.querySelector('input')?.focus(); return; }
+    showStep(2);
+    hj('Form: step 2 (name in)');
+    form.querySelector('#l-email')?.focus();
+  };
+  form.querySelector('.lead-next')?.addEventListener('click', goNext);
+  showStep(1);
+  // "Prefer WhatsApp?": straight to WhatsApp, reported to the Pixel like the other WhatsApp links
+  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+
+  const ccSelect = form.querySelector('.wa-cc');
+  if (ccSelect) {
+    // the browser's language guesses the country: en-GB +44, de +49, es +34…; else the page's language
+    const BY_REGION = { ES: '+34', GB: '+44', UK: '+44', IE: '+353', DE: '+49', AT: '+43', CH: '+41', NL: '+31', BE: '+32', FR: '+33', IT: '+39', PT: '+351', SE: '+46', DK: '+45', NO: '+47', US: '+1' };
+    const BY_LANG = { es: '+34', de: '+49', nl: '+31', fr: '+33', it: '+39', pt: '+351', sv: '+46', da: '+45', nb: '+47', no: '+47', en: '+44' };
+    const guess = (navigator.languages || [navigator.language || '']).map((l) => {
+      const [lang, region] = String(l).split('-');
+      return BY_REGION[(region || '').toUpperCase()] || BY_LANG[(lang || '').toLowerCase()];
+    }).find(Boolean) || (document.documentElement.lang === 'es' ? '+34' : '+44');
+    if ([...ccSelect.options].some((o) => o.value === guess)) ccSelect.value = guess;
+  }
 
   /* Pixel steps before the Lead (owner, 2026-10-22: "more events" to optimise a lead campaign on): LoopCheckStarted when a
      button opens the form (not the scroll pop-up, which opens on its own), LeadFormStarted the first time they type in it.
@@ -39,19 +101,26 @@
     if (started) return;
     started = true;
     pixel('LeadFormStarted', { content_name: source.value.split(' on ')[0] });
+    hj('Form: started typing');
   });
   const open = (trigger) => {
     opener = trigger;
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
-    const topic = trigger?.dataset.topic;
-    if (topic && [...interest.options].some((o) => o.value === topic)) interest.value = topic;
+    // The offer is known from the button or the page (owner, 2026-10-24: one field less): set it and hide the question.
+    const topic = trigger?.dataset.topic || document.body.dataset.leadTopic;
+    const known = Boolean(topic && [...interest.options].some((o) => o.value === topic));
+    if (known) interest.value = topic;
+    knownTopic = known;
+    showStep(step); // a reopened form keeps the step it was at
     if (trigger && trigger.dataset.source !== 'scroll pop-up') pixel('LoopCheckStarted', { content_name: trigger.dataset.source || 'link' });
+    hj(trigger?.dataset.source === 'scroll pop-up' ? 'Form: opened by scroll pop-up' : 'Form: opened by a button');
     dialog.showModal();
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
   };
   const close = () => dialog.close();
   dialog.addEventListener('close', () => {
+    if (!sentNow) hj(started ? 'Form: closed after typing, not sent' : 'Form: closed without typing');
     document.documentElement.classList.remove('lead-open');
     opener?.focus?.();
   });
@@ -108,24 +177,26 @@
 
   /* validation and sending */
   const msg = form.dataset;
-  // Email, WhatsApp, or both: at least one, and each one valid when filled in. A phone must be in
-  // international form (+44 7484 732570, 0044…), the same rule as the CRM's intake, which drops
-  // anything else; a local number ("07484 732570") gets "add your country code".
+  // Email, WhatsApp, or both: at least one, and each one valid when filled in. The CRM's intake needs the
+  // international form (+44 7484 732570); a local number ("07484 732570", "612 345 678") takes the country code
+  // chosen beside it, without its leading 0. With no code to take, it gets "add your country code".
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   const phoneDigits = (v) => {
     const t = v.trim();
     if (!/^(\+|00)?[\d\s().\/-]+$/.test(t)) return null; // not a phone number at all
     const d = t.replace(/\D/g, '');
     if (t.startsWith('+')) return d;
-    return d.startsWith('00') ? d.slice(2) : '';
+    if (d.startsWith('00')) return d.slice(2);
+    return ccSelect ? ccSelect.value.replace(/\D/g, '') + d.replace(/^0/, '') : '';
   };
   const emailInput = form.querySelector('[data-contact="email"]');
   const whatsappInput = form.querySelector('[data-contact="whatsapp"]');
   const contactError = (input) => {
     const v = input.value.trim();
     if (input === emailInput) {
+      // the email is required (owner, 2026-10-25: "I would put mail mandatory"); WhatsApp is optional
       if (v) return isEmail(v) ? '' : msg.msgEmail;
-      return whatsappInput.value.trim() ? '' : msg.msgContact; // neither given: asked once, on the email
+      return msg.msgContact;
     }
     if (!v) return '';
     const d = phoneDigits(v);
@@ -135,7 +206,7 @@
   };
   const fields = [...form.querySelectorAll('.field')];
   const check = (field) => {
-    const input = field.querySelector('input:not([type=hidden]), select, textarea');
+    const input = field.querySelector('[data-contact]') || field.querySelector('input:not([type=hidden]), select, textarea');
     const out = field.querySelector('.field-error');
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
@@ -158,13 +229,23 @@
   document.addEventListener('pointercancel', () => { pressing = false; waiting.forEach(check); waiting.clear(); }, true);
   fields.forEach((f) => f.querySelector('input, select, textarea')?.addEventListener('change', () => checkSoon(f)));
   // a WhatsApp number answers "email or WhatsApp", so the email's "give us one" clears with it
-  whatsappInput?.addEventListener('change', () => checkSoon(emailInput.closest('.field')));
+  whatsappInput?.addEventListener('change', () => { checkSoon(whatsappInput.closest('.field')); checkSoon(emailInput.closest('.field')); });
+  ccSelect?.addEventListener('change', () => { if (whatsappInput.value.trim()) checkSoon(whatsappInput.closest('.field')); });
   form.setAttribute('novalidate', '');
   form.addEventListener('submit', async (e) => {
+    // Enter in the name field on step 1 means "Next", not "send"
+    if (step === 1) { e.preventDefault(); goNext(); return; }
     const ok = fields.map(check).every(Boolean);
-    if (!ok) { e.preventDefault(); form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus(); return; }
+    if (!ok) {
+      e.preventDefault();
+      hj(`Form: blocked by ${[...form.querySelectorAll('.is-invalid [name]')].map((el) => el.name).join(', ') || 'a field'}`);
+      form.querySelector('.is-invalid input, .is-invalid select, .is-invalid textarea')?.focus();
+      return;
+    }
     if (!window.fetch) return; // plain POST, then Netlify's redirect to the thanks page
     e.preventDefault();
+    // the number goes out in international form, the way the CRM stores it
+    if (whatsappInput?.value.trim()) whatsappInput.value = `+${phoneDigits(whatsappInput.value)}`;
     const button = form.querySelector('[type=submit]');
     const label = button.querySelector('.btn-label');
     const idle = label.textContent;
@@ -179,6 +260,8 @@
       });
       if (!res.ok) throw new Error(String(res.status));
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'lead pop-up' });
+      sentNow = true;
+      hj('Form: sent');
       try { sessionStorage.setItem(SENT, '1'); } catch { /* storage blocked */ }
       // "Book your call" opens the calendar with name and email filled in, and WhatsApp sits underneath for
       // questions (owner, 2026-10-19). Without a calendar link the button opens WhatsApp with a message that already
@@ -199,7 +282,7 @@
         }
         book.href = cal ? String(cal) : wa;
         book.hidden = !book.href;
-        book.onclick = () => { if (typeof window.fbq === 'function') cal ? window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up' }) : window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
+        book.onclick = () => { hj(cal ? 'Form: opened the calendar' : 'Form: WhatsApp after sending'); if (typeof window.fbq === 'function') cal ? window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up' }) : window.fbq('track', 'Contact', { content_name: 'lead pop-up' }); };
         if (alt) {
           alt.hidden = !(cal && wa);
           alt.href = wa;

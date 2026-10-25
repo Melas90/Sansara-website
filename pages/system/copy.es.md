@@ -16,8 +16,8 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 
 eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
 title: Convierte desconocidos en clientes *que vuelven*.
-subtitle: Más que un embudo de ventas. Un embudo termina en la venta; el Client Loop sigue y hace que tus clientes vuelvan.
-lead: Lo hacemos por ti, con las herramientas que ya usas y un precio fijo por paquete.
+subtitle: Te montamos la captación, las landing pages, los cobros y las reservas. Como un sistema conectado, o pieza a pieza.
+lead: Con las herramientas que ya usas y un precio fijo por paquete.
 whatsapp: Compatible con WhatsApp
 blocks:
 - Una oferta clara
@@ -42,6 +42,7 @@ stages:
 - step: Paso 04
   name: Que te recuerden
   img: /assets/images/loop-stages/stage-es-3.webp
+lead_submit: Quiero mi evaluación gratis
 primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.

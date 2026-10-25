@@ -11,6 +11,9 @@
   <figure class="lead-photo"><img src="/assets/images/people/chris-check.jpg" alt="{{{ shared.lead.photo_alt }}}" width="1080" height="1350" loading="lazy" decoding="async"></figure>
   <div class="lead-inner">
     <div class="lead-head">
+      <!-- On a phone the photo is this small portrait beside the title, so the first field and the button sit higher
+           (owner, 2026-10-24: less friction after "Talk to us"); from 760 px the full photo column above is used. -->
+      <img class="lead-avatar" src="/assets/images/people/chris-check.jpg" alt="" width="1080" height="1350" loading="lazy" decoding="async">
       <div class="stack-sm">
         <h2 id="lead-title">{{ shared.lead.title }}</h2>
         <p>{{ shared.lead.intro }}</p>
@@ -38,30 +41,38 @@
       <input type="hidden" name="fit" value="">
       <input type="hidden" name="answers" value="">
       <p class="honeypot" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <!-- Two steps (owner, 2026-10-25: more people finish the form): the name first with "Next", then the rest appears
+           under it. lead.js hides [data-step="2"] until "Next"; without JavaScript every field shows, as before. -->
       <div class="form-grid">
-        <div class="field span-2">
+        <div class="field span-2" data-step="1">
           <label for="l-name">{{ shared.lead.name }}</label>
           <input class="control" id="l-name" name="name" type="text" required autocomplete="name">
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <!-- Email, WhatsApp, or both (owner, 2026-10-15): at least one, each checked when filled in.
+        <!-- The email is required and WhatsApp optional (owner, 2026-10-25; it was "one or both" from 2026-10-15); each is checked when filled in.
              The CRM reads `email` and `whatsapp` as they are, and still reads the older `reach`. -->
-        <div class="field">
+        <div class="field" data-step="2">
           <label for="l-email">{{ shared.lead.email }}</label>
-          <input class="control" id="l-email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="l-contact-hint" data-contact="email">
+          <input class="control" id="l-email" name="email" type="email" required autocomplete="email" inputmode="email" aria-describedby="l-contact-hint" data-contact="email">
           <p class="field-hint" id="l-contact-hint">{{ shared.lead.contact_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <div class="field">
+        <div class="field" data-step="2">
           <label for="l-whatsapp">{{ shared.lead.whatsapp }}</label>
-          <div class="wa-wrap">
+          <!-- The country code is chosen here (guessed from the browser's language), so a local number like 612 345 678
+               is enough; lead.js joins them before sending, in the international form the CRM needs. -->
+          <div class="wa-wrap has-cc">
+            <select class="control wa-cc" id="l-cc" aria-label="{{{ shared.lead.country_code }}}">
+              {{#each shared.lead.country_codes}}<option value="{{{ value }}}">{{ label }}</option>{{/each}}
+            </select>
             <input class="control" id="l-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="l-whatsapp-hint" data-contact="whatsapp">
             <svg class="wa-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z"/><path d="M9.2 7.9c-.4 0-.8.4-.9.9-.2 1.3.4 2.9 1.7 4.2 1.4 1.4 3 2.1 4.3 1.9.5-.1.9-.5.9-.9v-.9l-1.8-.8-.9.9c-1-.4-2-1.4-2.4-2.4l.9-.9-.8-1.8z"/></svg>
           </div>
           <p class="field-hint" id="l-whatsapp-hint">{{ shared.lead.whatsapp_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <div class="field span-2">
+        <!-- Hidden when the button or the page already names the offer (data-topic, or data-lead-topic on <body>) -->
+        <div class="field span-2" data-interest-field data-step="2">
           <label for="l-interest">{{ shared.lead.interest }}</label>
           <div class="select-wrap">
             <select class="control" id="l-interest" name="interest" required>
@@ -73,20 +84,31 @@
         </div>
         <!-- Optional (owner, 2026-10-22: "cuéntanos tu caso", less friction than the Check). Netlify keeps it with the
              submission and puts it in the notification email. -->
-        <div class="field span-2">
+        <p class="span-2 lead-note" data-step="2"><button class="link lead-note-toggle" type="button" aria-expanded="false" aria-controls="l-message-field">+ {{ shared.lead.message_toggle }}</button></p>
+        <div class="field span-2" id="l-message-field" data-step="2" hidden>
           <label for="l-message">{{ shared.lead.message }}</label>
           <textarea class="control" id="l-message" name="message" rows="3" aria-describedby="l-message-hint"></textarea>
           <p class="field-hint" id="l-message-hint">{{ shared.lead.message_hint }}</p>
           <p class="field-error" aria-live="polite"></p>
         </div>
-        <div class="field span-2">
-          <label class="check"><input type="checkbox" id="l-privacy" name="privacy" value="yes" required><span>{{ shared.lead.privacy }}</span></label>
-          <p class="field-error" aria-live="polite"></p>
-        </div>
+        <!-- A notice instead of a required box (owner, 2026-10-24: less friction; the legal basis for answering a request is
+             the request itself, art. 6.1.b GDPR). `privacy` still reaches Netlify and the CRM as "notice". -->
+        <input type="hidden" name="privacy" value="notice">
       </div>
-      <div class="form-actions">
+      <!-- A real client's words beside the button (from The System's quotes; owner, 2026-10-25) -->
+      <figure class="lead-proof" data-step="2">
+        <blockquote>{{ shared.lead.proof_quote }}</blockquote>
+        <figcaption>{{ shared.lead.proof_by }}</figcaption>
+      </figure>
+      <p class="lead-legal" data-step="2">{{ shared.lead.privacy_notice }}</p>
+      <div class="form-actions lead-next-row" data-step-only="1" hidden>
+        <button class="btn btn-primary lead-next" type="button"><span>{{ shared.lead.next }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+      </div>
+      <div class="form-actions" data-step="2">
         <button class="btn btn-primary" type="submit"><span class="btn-label">{{ shared.lead.submit }}</span><span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
       </div>
+      <!-- For whoever would rather not fill anything in (owner, 2026-10-25): WhatsApp straight away; Pixel `Contact` -->
+      <p class="lead-wa-direct"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener">{{ shared.lead.whatsapp_direct }}</a></p>
     </form>
     <div class="form-state form-success" hidden role="status">
       <svg class="check-draw" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M18 29l7 7 14-15"/></svg>

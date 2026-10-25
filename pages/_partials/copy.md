@@ -86,13 +86,13 @@ consent_needed: Please tick the box so we're allowed to contact you.
 <!-- Owner request 2026-09-27: a pop-up where visitors leave their details and we get back to them. It opens from buttons along the page and a floating button, never on its own. Saved as the Netlify form "lead", to be connected to the CRM later. -->
 float: Get in touch
 title: Let's *talk*
-intro: Before you book your call, we need a few details. You'll get the booking link right after.
+intro: We need your contact details to send you the call invite. You'll pick a time right after.
 name: Your name
 email: Email
-whatsapp: WhatsApp
-contact_hint: One or both, whichever you prefer.
-whatsapp_hint: Start with your country code, like +44 7123 456789.
-need_contact: Please give us an email or a WhatsApp number.
+whatsapp: WhatsApp (optional)
+contact_hint: We send your call details here.
+whatsapp_hint: Pick your country on the left and type your number as you normally would.
+need_contact: Please give us your email so we can send your call details.
 invalid_whatsapp: Please check the number, with its country code, like +44 7123 456789.
 need_country_code: Please add your country code at the start, like +44 7123 456789.
 interest: What are you interested in?
@@ -105,6 +105,46 @@ interest_options:
 - Consulting
 - I'm not sure yet
 photo_alt: Christiane from Sansara Media, leaning over her desk and looking at you
+country_code: Country code
+<!-- The first one that matches the browser's language is chosen (lead.js); the visitor can change it -->
+country_codes:
+- label: ES +34
+  value: +34
+- label: UK +44
+  value: +44
+- label: IE +353
+  value: +353
+- label: DE +49
+  value: +49
+- label: AT +43
+  value: +43
+- label: CH +41
+  value: +41
+- label: NL +31
+  value: +31
+- label: BE +32
+  value: +32
+- label: FR +33
+  value: +33
+- label: IT +39
+  value: +39
+- label: PT +351
+  value: +351
+- label: SE +46
+  value: +46
+- label: DK +45
+  value: +45
+- label: NO +47
+  value: +47
+- label: US +1
+  value: +1
+message_toggle: Add a note about your case (optional)
+privacy_notice: We only use your details for your call: to send you the invite and get back to you. [Privacy policy](/privacy/).
+next: Next
+whatsapp_direct: Prefer WhatsApp? Message us
+whatsapp_direct_text: Hi%20Sansara%2C%20I%27d%20like%20to%20know%20more%20about%20the%20free%20call.
+proof_quote: “This is the first time, after working with many agencies (…), that someone actually shows up to my call ready to buy.”
+proof_by: Business coach, based on a client's message
 message: Tell us about your case and we'll look into it
 message_hint: Optional. A couple of lines is enough: what you do and where you feel stuck.
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.
