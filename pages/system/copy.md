@@ -48,6 +48,15 @@ lead_submit: Get my free assessment
 primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
+<!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
+hello: Hi, I'm Chris.
+photo_note: building your Loop, so you don't have to
+photo_alt: Christiane, co-founder of Sansara Media, at work on her laptop
+not_sales: An info call, not a sales call.
+checks:
+- Built for you. You never touch the tech.
+- On the tools you already use.
+- One fixed price per package.
 
 ### stops
 
@@ -132,25 +141,31 @@ cue: Click to imagine
 closing: We don't hand you a plan. We build it with you, and it runs.
 next: Discover how
 button: I want that
+get_title: What we build *for you*
+get_note: As one connected system, or piece by piece.
 
 ### rows
 
 - stage: Be seen
+  img: /assets/images/loop-stages/stage-en-0.webp
   now: Posting every day or not at all, it's the same. A few likes, some views. Never a booking, never a sale.
   end: Attention that turns into clients.
   how: The right people see your offer. Whether you post or not, everything out there has one job, bringing them to book your service or buy your product.
   value: We agree what success looks like before spending, and cut what doesn't work.
 - stage: Be chosen
+  img: /assets/images/loop-stages/stage-en-1.webp
   now: The people who reach out aren't ready to book or buy. Half of them don't even know what I offer.
   end: Leads who are ready.
   how: They already know what you offer. They come with their questions ready, and they show up to the call or session engaged.
   value: We work out who your best clients are before we build anything.
 - stage: Be booked
+  img: /assets/images/loop-stages/stage-en-2.webp
   now: They book. Then they cancel, or just don't show up.
   end: No-shows become an anecdote.
   how: The people who book turn up, and the rare one who can't simply moves to another time. Your calendar holds. Cancellations become the exception.
   value: Not zero, we won't promise that. Just rare enough to be a story.
 - stage: Be remembered
+  img: /assets/images/loop-stages/stage-en-3.webp
   now: I'm always chasing new clients, or paying for ads to find them.
   end: Clients come to you.
   how: Past clients come back and bring others with them, for who you are and the work you do. You stop chasing.
@@ -166,6 +181,9 @@ lead: You're juggling a lot to keep this business running. The last thing you ne
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
 button: Book a free call
 small: 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
+not_sales_text: Thirty minutes on your business. You leave knowing what to fix first, with us or on your own.
+photo_note: that's me, on the other side of the call
+photo_alt: Christiane, co-founder of Sansara Media, at her desk
 
 ### outcomes
 
@@ -180,6 +198,7 @@ small: 30 minutes, free. You'll know exactly where you're losing clients, and wh
 
 yes_title: This is for you if…
 no_title: Probably not for you if…
+note: be honest with yourself here
 
 ### yes
 
@@ -264,6 +283,7 @@ diy_close: Every piece is doable. That's exactly why everyone has pieces, and st
 followers_title: “But I already have plenty of followers.”
 followers_text: We work with businesses that have thousands, even tens of thousands of followers, and still don’t make a single sale from them. Followers are interest. Interest doesn’t pay the bills until something turns it into a booking.
 followers_close: Interest doesn’t mean sales. The Loop is what turns one into the other.
+honest: Honest answer
 whole: So we don't sell you pipes. We build the whole line and seal every join. One journey, mapped from the first time someone sees you to the client who keeps coming back. Built where your customers actually are. Paid for once. Tested until it runs on its own. That's the Loop, and it's the part nobody sells you in pieces.
 handover_title: And the part that surprises people: *we build it to not need us.*
 handover: We take responsibility for the whole Loop until it runs. Then we hand it over properly, not a login and a goodbye, but a walkthrough until you understand what every piece does and why. If you have a team, we train them to run it without us.

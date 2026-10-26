@@ -46,6 +46,15 @@ lead_submit: Quiero mi evaluación gratis
 primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.
+<!-- 2026-10-26 (owner): el aspecto humano, tras funnelarchitektinnen.de. Líneas nuevas; los checks y la línea de la llamada repiten lo que ya decimos. -->
+hello: Hola, soy Chris.
+photo_note: montando tu Loop, para que tú no tengas que hacerlo
+photo_alt: Christiane, cofundadora de Sansara Media, trabajando con su portátil
+not_sales: Una llamada informativa, no de ventas.
+checks:
+- Te lo montamos. Tú no tocas nada técnico.
+- Con las herramientas que ya usas.
+- Un precio fijo por paquete.
 
 ### stops
 
@@ -124,25 +133,31 @@ cue: Dale la vuelta
 closing: No te entregamos un plan. Lo construimos contigo, y funciona.
 next: Descubre cómo
 button: Quiero eso
+get_title: Lo que te *montamos*
+get_note: Como un sistema conectado, o pieza a pieza.
 
 ### rows
 
 - stage: Que te vean
+  img: /assets/images/loop-stages/stage-es-0.webp
   now: Publique todos los días o ninguno, da igual. Unos likes, algunas visualizaciones. Ninguna reserva, ninguna venta.
   end: Atención que se convierte en clientes.
   how: Tu oferta llega a la gente adecuada. Publiques o no, todo lo que tienes ahí fuera tiene un único trabajo, que reserven tu servicio o compren tu producto.
   value: Acordamos qué significa que funcione antes de gastar, y cortamos lo que no funciona.
 - stage: Que te elijan
+  img: /assets/images/loop-stages/stage-es-1.webp
   now: La gente que me escribe no está preparada para reservar ni para comprar. La mitad ni siquiera sabe qué ofrezco.
   end: Contactos que ya llegan decididos.
   how: Ya saben lo que ofreces. Llegan con sus preguntas preparadas y con ganas, a la llamada o a la sesión.
   value: Antes de construir nada, averiguamos quiénes son tus mejores clientes.
 - stage: Que te reserven
+  img: /assets/images/loop-stages/stage-es-2.webp
   now: Reservan. Y luego cancelan, o directamente no aparecen.
   end: Las ausencias pasan a ser una anécdota.
   how: Quien reserva, viene, y quien de verdad no puede, simplemente cambia la hora. Tu agenda se mantiene. Las cancelaciones pasan a ser la excepción.
   value: Cero no, eso no lo prometemos. Solo tan pocas que se convierten en anécdota.
 - stage: Que te recuerden
+  img: /assets/images/loop-stages/stage-es-3.webp
   now: Siempre estoy buscando clientes nuevos, o pagando anuncios para encontrarlos.
   end: Los clientes vienen a ti.
   how: Quien ya trabajó contigo vuelve y trae a otras personas, por cómo eres y por cómo trabajas. Dejas de perseguir.
@@ -156,6 +171,9 @@ lead: Ya haces malabares para sacar adelante tu negocio. Lo último que necesita
 fit: ¿Lees esto y piensas “esto me pasa a mí”? Entonces la llamada es para ti.
 button: Reserva tu llamada gratis
 small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué arreglar primero.
+not_sales_text: Treinta minutos sobre tu negocio. Sales sabiendo qué arreglar primero, con nosotros o por tu cuenta.
+photo_note: esa soy yo, al otro lado de la llamada
+photo_alt: Christiane, cofundadora de Sansara Media, en su escritorio
 
 ### outcomes
 
@@ -170,6 +188,7 @@ small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué ar
 
 yes_title: Es para ti si…
 no_title: Probablemente no es para ti si…
+note: sé sincero contigo aquí
 
 ### yes
 
@@ -253,6 +272,7 @@ diy_close: Cada pieza se puede hacer. Por eso todo el mundo tiene piezas, y aun 
 followers_title: “Pero ya tengo muchos seguidores.”
 followers_text: Trabajamos con negocios que tienen miles, incluso decenas de miles de seguidores, y no sacan ni una venta de ellos. Los seguidores son interés. Y el interés no paga las facturas hasta que algo lo convierte en una reserva.
 followers_close: Interés no es lo mismo que ventas. El Loop es lo que convierte uno en lo otro.
+honest: Respuesta sincera
 whole: Por eso no te vendemos tuberías. Construimos la línea entera y sellamos cada junta. Un único recorrido, desde la primera vez que alguien te ve hasta el cliente que vuelve una y otra vez. Construido donde de verdad están tus clientes. Se paga una vez. Lo probamos hasta que funciona solo. Eso es el Loop, y es la parte que nadie te vende por piezas.
 handover_title: Y lo que más sorprende, *lo construimos para que no nos necesites.*
 handover: Nos hacemos responsables del Loop entero hasta que funciona. Después te lo entregamos bien. No un usuario y un adiós, sino un recorrido hasta que entiendes qué hace cada pieza y por qué. Si tienes equipo, lo formamos para llevarlo sin nosotros.

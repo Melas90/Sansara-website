@@ -1,0 +1,149 @@
+<!-- @route /lab/client-loop-human/ -->
+<!-- @copy system -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- @include _partials/head.html -->
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/system.css">
+  <link rel="stylesheet" href="/assets/lab/client-loop-human.css">
+  <script src="/assets/lab/vendor/rough-notation.iife.js" defer></script>
+  <script src="/assets/lab/client-loop-human.js" defer></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="lp hu" data-lead-popup data-lead-topic="The System" data-lead-submit="{{{ hero.lead_submit }}}">
+  <!-- Lab, 26 October 2026: the Client Loop landing made to look less generated and more like a small studio's own page,
+       after the owner compared it with funnelarchitektinnen.de ("make it look less AI and more like them… get a picture
+       and put it on the background"). What it borrows from them: a real photo of the person behind it as the hero, a
+       heavy plain headline with a marker stroke, handwritten notes with arrows, crossed-out advice, the objections people
+       actually raise answered in plain words, and checklists instead of icon cards. Words: the real /client-loop/ copy
+       (@copy system); the few new lines are in pages/_lab/copy.md (Human). Photos: Chris's own shoot (chris-tomas). -->
+  <!-- @include _partials/header-lp.html -->
+  <main id="main">
+
+    <!-- 1. Hero: the photo is the background. On a phone it fills the screen with the words over its lower half; on a
+         wide screen she sits on the right and the same photo, blurred, carries on under the words. -->
+    <section class="hu-hero">
+      <div class="hu-hero-bg" aria-hidden="true"></div>
+      <img class="hu-hero-photo" src="/assets/lab/img/hero-laptop.jpg" alt="" width="1170" height="1300">
+      <p class="hu-hand hu-hero-note" aria-hidden="true">{{ human.photo_note }}<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 10c30 2 70 10 98 44"/><path d="M90 52l15 4-2-15"/></svg></p>
+      <div class="container hu-hero-copy">
+        <p class="hu-hand hu-hello">{{ human.hello }}</p>
+        <h1 class="hu-h1" data-hu-mark>{{ hero.title }}</h1>
+        <p class="hu-sub">{{ hero.subtitle }}</p>
+        <ul class="hu-checks">{{#each human.checks}}<li>{{ this }}</li>{{/each}}</ul>
+        <div class="hu-cta">
+          <a class="btn btn-primary hu-btn" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}</a>
+          <p class="hu-hand hu-not-sales-note"><svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M56 30C40 34 20 30 8 14"/><path d="M6 26 7 12l13 2"/></svg>{{ human.not_sales }}</p>
+          <p class="hu-small">{{ hero.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Proof first, as the messages they are -->
+    <section class="hu-proof">
+      <div class="container">
+        <p class="hu-hand hu-proof-note">{{ human.proof_note }}</p>
+        <div class="hu-msgs">
+          <figure class="hu-msg hu-tilt-l">
+            <blockquote>{{ quote.text }}</blockquote>
+            <figcaption><b>{{ quote.by }}</b> {{ quote.channel }}, {{ quote.time }}<br><span>{{ quote.note }}</span></figcaption>
+          </figure>
+          <figure class="hu-msg hu-tilt-r">
+            <blockquote>{{ quote_2.text }}</blockquote>
+            <figcaption><b>{{ quote_2.by }}</b> {{ quote_2.note }}</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The advice they get, crossed out by hand -->
+    <section class="hu-told">
+      <div class="container hu-narrow">
+        <h2 class="hu-h2" data-hu-mark>{{ problem.title }}</h2>
+        <ul class="hu-myths">{{#each problem.myths}}<li>
+          <p class="hu-label">{{ human.told_label }}</p>
+          <p class="hu-strike" data-hu-strike>{{ told }}</p>
+          <p class="hu-label hu-label-real">{{ human.actually_label }}</p>
+          <p class="hu-real">{{ actually }}</p>
+        </li>{{/each}}</ul>
+        <p class="hu-big">{{ problem.turn }}</p>
+        <p>{{ problem.cause }}</p>
+      </div>
+    </section>
+
+    <!-- 4. What we build, as a checklist of tiles with dotted edges, not icon cards -->
+    <section class="hu-get">
+      <div class="container">
+        <h2 class="hu-h2" data-hu-mark>{{ human.get_title }}</h2>
+        <ul class="hu-tiles">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}</ul>
+        <p class="hu-hand hu-get-note">{{ human.get_note }}</p>
+      </div>
+    </section>
+
+    <!-- 5. What people say to us, answered -->
+    <section class="hu-say">
+      <div class="container hu-narrow">
+        <h2 class="hu-h2" data-hu-mark>{{ human.say_title }}</h2>
+        <article class="hu-obj">
+          <h3 class="hu-said">{{ why.diy_title }}</h3>
+          <p class="hu-sticker">{{ human.honest }}</p>
+          <p>{{ why.diy_lead }}</p>
+          <ul class="hu-yes-but">{{#each why.diy}}<li>{{ this }}</li>{{/each}}</ul>
+          <p class="hu-close">{{ why.diy_close }}</p>
+        </article>
+        <article class="hu-obj">
+          <h3 class="hu-said">{{ why.followers_title }}</h3>
+          <p class="hu-sticker">{{ human.honest }}</p>
+          <p>{{ why.followers_text }}</p>
+          <p class="hu-close">{{ why.followers_close }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Who it is for, two plain lists -->
+    <section class="hu-fit">
+      <div class="container">
+        <p class="hu-hand hu-fit-note">{{ human.fit_note }}</p>
+        <div class="hu-fit-cols">
+          <div><h2 class="hu-h3">{{ fit.yes_title }}</h2><ul class="hu-list hu-list-yes">{{#each fit.yes}}<li>{{ this }}</li>{{/each}}</ul></div>
+          <div><h2 class="hu-h3">{{ fit.no_title }}</h2><ul class="hu-list hu-list-no">{{#each fit.no}}<li>{{ this }}</li>{{/each}}</ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. The call, with the person you'll talk to -->
+    <section class="hu-call">
+      <div class="container hu-call-grid">
+        <figure class="hu-polaroid">
+          <img src="/assets/lab/img/chris-leaning.jpg" alt="Christiane, co-founder of Sansara Media, at her desk" width="800" height="1000" loading="lazy">
+          <figcaption class="hu-hand">{{ human.call_note }}</figcaption>
+        </figure>
+        <div>
+          <h2 class="hu-h2" data-hu-mark>{{ call.title }}</h2>
+          <p>{{ call.lead }}</p>
+          <ul class="hu-list hu-list-yes">{{#each call.outcomes}}<li><b>{{ title }}.</b> {{ text }}</li>{{/each}}</ul>
+          <div class="hu-not-sales">
+            <p class="hu-not-sales-title">{{ human.not_sales }}</p>
+            <p>{{ human.not_sales_text }}</p>
+          </div>
+          <a class="btn btn-primary hu-btn" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ hero.primary }}</a>
+          <p class="hu-small">{{ call.small }}</p>
+          <p class="hu-pending">{{ human.miguel }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Close -->
+    <section class="hu-end">
+      <div class="container hu-narrow">
+        <h2 class="hu-h2 hu-on-dark" data-hu-mark>{{ close.title }}</h2>
+        <p>{{ close.text }}</p>
+        <a class="btn hu-btn hu-btn-light" href="#lead" data-lead-open data-topic="The System" data-source="close">{{ close.button }}</a>
+      </div>
+    </section>
+  </main>
+  <!-- @include _partials/lead.html -->
+  <!-- @include _partials/footer-lp.html -->
+</body>
+</html>
