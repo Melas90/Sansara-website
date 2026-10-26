@@ -253,7 +253,7 @@ method_label: Our *method*.
   text: We build your page on your domain and connect how your clients say yes. You get the copy structure section by section; you write, and we review it twice.
 - title: Closing call, handover and five support tickets
   icon: key
-  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets for 60 days, a question or a small fix under 30 minutes each.
+  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets for 30 days, a question or a small fix under 30 minutes each.
 
 ### example_ads
 
@@ -299,7 +299,7 @@ method_label: Our *method*.
 ## Price
 
 <!-- 2026-10-26 (owner): the first package, in her words. Price as given; VAT not stated. -->
-name: The Foundation
+name: Sansara Client Foundation
 price: €2,500
 lead: The base your clients find, trust and say yes to. Works with whatever brings people to you: Instagram, your list, referrals or ads.
 included_title: Included
@@ -307,23 +307,32 @@ included_title: Included
 ### included
 
 - title: Offer research and positioning
+  icon: search
   text: We look at your offer, your clients and your competitors, and sharpen what you sell, who it’s for and why you.
 - title: Two strategy calls
+  icon: call
   text: The first cleans up the offer and decides how your clients say yes. The second checks the page plan before we build.
 - title: Funnel architecture
+  icon: map
   text: Every step from first click to booking or purchase, mapped and checked before anything is built.
 - title: One sales page
+  icon: page
   text: Built by us, on your domain.
 - title: Copy structure and review
+  icon: pen
   text: We give you the structure, section by section. You write, and we review it twice.
 - title: One integration: how your clients say yes
+  icon: book
   text: A booking calendar or a checkout, connected to your page, with its confirmation (and course access, if you sell online).
-- title: Three visuals for your page
+- title: Three visuals for your page, ads or content
+  icon: image
   text:
 - title: Closing call and documentation
+  icon: key
   text: We walk you through everything, and you keep a written guide and every login.
 - title: Five support tickets after delivery
-  text: A question or a small fix under 30 minutes each, valid for 60 days.
+  icon: ticket
+  text: A question or a small fix under 30 minutes each, valid for 30 days.
 
 ## Why
 

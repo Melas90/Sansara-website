@@ -238,7 +238,7 @@ method_label: Nuestro *método*.
   text: Construimos tu página en tu dominio y conectamos cómo te dicen que sí. Te damos la estructura del texto, sección por sección; tú escribes y nosotros lo revisamos dos veces.
 - title: Llamada de cierre, entrega y cinco tickets de soporte
   icon: key
-  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte durante 60 días, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte durante 30 días, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
 
 ### example_ads
 
@@ -283,8 +283,8 @@ method_label: Nuestro *método*.
 
 ## Price
 
-<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete se queda en inglés hasta que ella diga otro. -->
-name: The Foundation
+<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete es Sansara Client Foundation (propietaria, 2026-10-26), igual en los dos idiomas. -->
+name: Sansara Client Foundation
 price: 2.500 €
 lead: La base que tus clientes encuentran, en la que confían y a la que dicen que sí. Funciona con lo que sea que te trae gente: Instagram, tu lista, recomendaciones o anuncios.
 included_title: Incluye
@@ -292,23 +292,32 @@ included_title: Incluye
 ### included
 
 - title: Investigación de la oferta y posicionamiento
+  icon: search
   text: Miramos tu oferta, tus clientes y tu competencia, y afinamos qué vendes, para quién es y por qué tú.
 - title: Dos llamadas de estrategia
+  icon: call
   text: La primera ordena la oferta y decide cómo te dicen que sí tus clientes. La segunda revisa el plan de la página antes de construir.
 - title: Arquitectura del funnel
+  icon: map
   text: Cada paso, del primer clic a la reserva o la compra, trazado y revisado antes de construir nada.
 - title: Una página de venta
+  icon: page
   text: Hecha por nosotros, en tu dominio.
 - title: Estructura del texto y revisión
+  icon: pen
   text: Te damos la estructura, sección por sección. Tú escribes y nosotros lo revisamos dos veces.
 - title: Una integración: cómo te dicen que sí
+  icon: book
   text: Un calendario de reservas o un pago, conectado a tu página, con su confirmación (y el acceso al curso, si vendes online).
-- title: Tres visuales para tu página
+- title: Tres visuales para tu página, anuncios o contenido
+  icon: image
   text:
 - title: Llamada de cierre y documentación
+  icon: key
   text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos.
 - title: Cinco tickets de soporte tras la entrega
-  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 60 días.
+  icon: ticket
+  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 30 días.
 
 ## Why
 
