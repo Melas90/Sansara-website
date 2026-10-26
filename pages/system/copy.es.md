@@ -173,7 +173,7 @@ button: Reserva tu llamada gratis
 small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué arreglar primero.
 not_sales_text: Treinta minutos sobre tu negocio. Sales sabiendo qué arreglar primero, con nosotros o por tu cuenta.
 photo_note: esa soy yo, al otro lado de la llamada
-photo_alt: Christiane, cofundadora de Sansara Media, en su escritorio
+photo_alt: Christiane, cofundadora de Sansara Media, riéndose
 
 ### outcomes
 

@@ -183,7 +183,7 @@ button: Book a free call
 small: 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
 not_sales_text: Thirty minutes on your business. You leave knowing what to fix first, with us or on your own.
 photo_note: that's me, on the other side of the call
-photo_alt: Christiane, co-founder of Sansara Media, at her desk
+photo_alt: Christiane, co-founder of Sansara Media, laughing
 
 ### outcomes
 
