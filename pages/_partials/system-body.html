@@ -6,40 +6,48 @@
 -->
 <main id="main">
 
-  <!-- Hero: the loop itself. One gold line, a spark travelling it, the five moments on it. -->
-  <section class="hx sy-hero" id="hero" aria-labelledby="hero-title">
-    <div class="glow glow-a" aria-hidden="true"></div>
-    <div class="glow glow-b" aria-hidden="true"></div>
-    <div class="container hx-grid">
-      <div class="hx-copy stagger">
-        <p class="eyebrow reveal">{{ hero.eyebrow }}</p>
+  <!-- Hero (owner, 2026-10-26: "make it look less AI and more like them… get a picture and put it on the background", after
+       funnelarchitektinnen.de; lab: /lab/client-loop-human/). A real, bright photo of Chrissy smiling on the phone at her
+       laptop (owner's pick, DSC00741): on a wide screen it fills the hero with her on the left and the words on the white
+       wall on the right; on a phone she is on top and the words follow on cream. A handwritten hello and note, three plain checks (they restate the
+       old "on the tools you already use, at a fixed price per package" line), and "an info call, not a sales call"
+       beside the button. The four stage illustrations moved to "Imagine instead", now the numbered 1 2 3 4; the moving
+       band of what's inside became the tiles there. -->
+  <section class="sy-hero" id="hero" aria-labelledby="hero-title">
+    <picture>
+      <source media="(min-width: 900px)" srcset="/assets/images/people/chris-call-wide.jpg" width="1920" height="1504">
+      <img class="sy-hero-img" src="/assets/images/people/chris-call-phone.jpg" alt="{{{ hero.photo_alt }}}" width="900" height="900" fetchpriority="high">
+    </picture>
+    <p class="hand sy-hero-note" aria-hidden="true">{{ hero.photo_note }}<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 10c30 2 70 10 98 44"/><path d="M90 52l15 4-2-15"/></svg></p>
+    <div class="container">
+      <div class="sy-hero-copy stagger">
+        <p class="sy-for reveal">{{ hero.eyebrow }}</p>
+        <p class="hand sy-hello reveal">{{ hero.hello }}</p>
         <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
         <p class="sy-sub reveal">{{ hero.subtitle }}</p>
-        <p class="sy-hero-price reveal">{{ hero.lead }}</p>
-        <div class="cluster reveal">
+        <ul class="sy-checks reveal">{{#each hero.checks}}<li>{{ this }}</li>{{/each}}</ul>
+        <div class="sy-hero-cta reveal">
           <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
-          <a class="btn btn-ghost" href="#film">{{ hero.secondary }}</a>
+          <p class="hand sy-not-sales-note"><svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M56 30C40 34 20 30 8 14"/><path d="M6 26 7 12l13 2"/></svg>{{ hero.not_sales }}</p>
         </div>
-        <p class="small muted reveal">{{ hero.note }}</p>
-        <!-- What's inside, in the Loop's order, as a moving band under the buttons, instead of a paragraph (owner, 22 Oct:
-             "demasiado texto"). Screen readers get the list once; the band is decoration; still under reduced motion. -->
-        <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}<li>{{ hero.whatsapp }}</li></ul>
-        <div class="mq sy-hero-mq reveal" aria-hidden="true">
-          <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}<span class="sy-mq-wa"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span>{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}<span class="sy-mq-wa mq-dup"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span></div>
-        </div>
-        <!-- The facts row (10+ years in marketing · Coaches and business owners · Days to build and launch) was removed by the owner on 2026-10-17. -->
-      </div>
-      <!-- The four stages with the illustrations of the system map (owner, 22 Oct: the infinity loop was ugly). They come
-           in one by one in the Loop's order, clockwise, round an orange line that keeps flowing; one stage at a time lifts.
-           Spanish pages use the Spanish illustrations. -->
-      <div class="hx-art sy-stages reveal">
-        <svg class="sy-stages-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="14" y="14" width="72" height="72" rx="20"/></svg>
-        <ol class="sy-stages-list stagger">{{#each hero.stages}}<li class="sy-stage reveal" style="--i: {{ @index }}"><img src="{{{ img }}}" alt="" width="448" height="386"><span class="sy-stage-n">{{ step }}</span><strong>{{ name }}</strong></li>{{/each}}</ol>
+        <p class="small reveal">{{ hero.note }}</p>
+        <a class="sy-next sy-hero-next reveal" href="#how">{{ hero.secondary }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- @include _partials/system-film.html -->
+  <!-- What's inside, as a moving band right under the hero (owner, 2026-10-26: "bring them, it's dynamic"; the photo and
+       the band fade into the page's own colour). Screen readers get the list once; the band is decoration; still under
+       reduced motion. -->
+  <div class="sy-band">
+    <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}<li>{{ hero.whatsapp }}</li></ul>
+    <div class="mq sy-hero-mq" aria-hidden="true">
+      <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}<span class="sy-mq-wa"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span>{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}<span class="sy-mq-wa mq-dup"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span></div>
+    </div>
+  </div>
+
+  <!-- The film (the 90-second VSL) was removed by the owner on 2026-10-26 ("kill VSL"): no visitor watched 15 seconds of it
+       after 22 Oct. To bring it back, include _partials/system-film.html here. -->
 
   <!-- A real client, in their words, shown as the WhatsApp message it came from (owner, 2026-10-22): a received message,
        their sentences reordered to open with the strongest one, nothing added (no time, no ticks). The Spanish original
@@ -72,51 +80,42 @@
       </div>
       <div class="sy-myths">
         <p class="sy-chat-label reveal">{{ problem.familiar }}</p>
-        <ul class="sy-myth-list stagger">{{#each problem.myths}}<li class="reveal"><p class="sy-told"><span>{{ problem.told }}</span>“{{ told }}”</p><p class="sy-actually"><span>{{ problem.actually }}</span>{{ actually }}</p></li>{{/each}}</ul>
+        <ul class="sy-myth-list stagger">{{#each problem.myths}}<li class="reveal"><p class="sy-told"><span class="hand">{{ problem.told }}</span><span class="sy-told-text" data-hand-strike>“{{ told }}”</span></p><p class="sy-actually"><span class="hand">{{ problem.actually }}</span>{{ actually }}</p></li>{{/each}}</ul>
       </div>
       <!-- The turn alone, centred: the three paragraphs beside it (intro, cause, drift) were removed by the owner on 2026-10-17; their copy stays in copy.md. -->
       <p class="sy-turn sy-turn-solo reveal">{{ problem.turn }}</p>
       <!-- The closing box hands over to the flip cards below (owner, 2026-10-17): "let us show you how easy this can be", with a link down. -->
-      <div class="sy-conclusion reveal"><p>{{ problem.conclusion }}</p><a class="sy-next" href="#instead">{{ problem.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
+      <div class="sy-conclusion reveal"><p>{{ problem.conclusion }}</p><a class="sy-next" href="#how">{{ problem.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
     </div>
   </section>
 
-  <!-- Imagine instead: four flip cards, one per stage (owner, 2026-10-17). Front: the pain in their words and the "Click to imagine" invitation the pen circles; back: the ending (underlined by the pen once turned), how the Loop gets there, and a line tied to a core value. The home's flip component: home.css "flip cards" and home.js §5 (hover, tap, keyboard, Escape; both faces readable without JavaScript). -->
-  <section class="section" id="instead" aria-labelledby="instead-title">
-    <div class="container">
-      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
-        <p class="eyebrow">{{ instead.eyebrow }}</p>
-        <h2 id="instead-title"><span class="mask"><span class="mask-in">{{ instead.title }}</span></span></h2>
-      </div>
-      <ul class="sy-flips flips stagger">
-        {{#each instead.rows}}<li class="flip fit sy-flip reveal" data-flip>
-          <button class="flip-front" type="button" aria-expanded="false"><span class="sy-stage">{{ stage }}</span><span class="fit-q">“{{ now }}”</span><span class="fit-go"><span class="fit-plus" aria-hidden="true"></span><span data-cue>{{ instead.cue }}</span></span></button>
-          <div class="flip-back"><p class="fit-offer"><span data-mark>{{ end }}</span></p><p>{{ how }}</p><p class="sy-value">{{ value }}</p></div>
-        </li>{{/each}}
-      </ul>
-      <div class="sy-after reveal">
-        <p>{{ instead.closing }}</p>
-        <div class="cluster sy-after-actions">
-          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="imagine instead">{{ instead.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
-          <a class="sy-next" href="#how">{{ instead.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works: the five steps slide over each other; each names the sentence it ends. -->
+  <!-- "Imagine instead" (the four stages) and "What we build for you" (the tiles) were removed by the owner on 2026-10-26:
+       the problem section already tells the pain, and the tiles promised more than The Foundation includes. Their copy
+       stays in copy.md (Instead, Hero blocks). -->
+  <!-- How it works, as the 1 2 3 4 of working together (owner, 2026-10-26: "there is redundancy between Imagine instead
+       and How it works… the 1 2 3 4 could be used like they do", after funnelarchitektinnen.de's numbered phases): the
+       free call, two strategy calls, we build and you review, the handover. The five Loop steps that slid over each other
+       are gone (Imagine instead tells the stages); their copy stays in copy.md. -->
   <section class="section c-band" id="how" aria-labelledby="how-title">
     <div class="container c-narrow">
       <div class="centred stack-sm reveal" style="margin-bottom: 48px">
         <p class="eyebrow">{{ how.eyebrow }}</p>
-        <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.title }}</span></span></h2>
-        <p class="measure">{{ how.lead }}</p>
+        <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.process_title }}</span></span></h2>
+        <p class="measure">{{ how.process_lead }}</p>
       </div>
-      <ol class="stack" data-stack>
-        {{#each how.steps}}
-        <li style="--i: {{ @index }}"><article class="stack-card"><span class="sy-step-icon" aria-hidden="true"><svg class="li"><use href="#li-{{{ icon }}}"/></svg></span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
-        {{/each}}
-      </ol>
+      <!-- Drawn as a method chart, like the owner's reference (funnelarchitektinnen.de, "Unsere Methode"): a dark panel, the
+           badge, four boxes in a zigzag hung on one line, each with its number tag. On a phone the line runs down the left. -->
+      <div class="sy-method reveal">
+        <p class="sy-method-badge"><span>{{ how.method_label }}</span></p>
+        <ol class="sy-method-steps">
+          {{#each how.process}}<li class="sy-method-step">
+            <span class="sy-method-n" aria-hidden="true">{{ @n }}</span>
+            <svg class="li" aria-hidden="true"><use href="#li-{{{ icon }}}"/></svg>
+            <h3>{{ title }}</h3>
+            <p>{{ text }}</p>
+          </li>{{/each}}
+        </ol>
+      </div>
       <!-- Two example Loops (owner, 2026-10-17), so people see what a Loop actually is: one that grows with ads, one on content and referrals. Examples only: every Loop is built around the client's offer. Replaces the "in practice" paragraph. -->
       <div class="sy-examples reveal">
         <div class="centred stack-sm">
@@ -129,35 +128,62 @@
         </div>
         <p class="sy-examples-note">{{ how.examples_note }}</p>
       </div>
-      <!-- The client dashboard on a tablet: Sansara's own CRM with demo customers, AI-generated scene (2026-09-28). -->
-      <figure class="sy-dashboard reveal">
-        <img src="/assets/images/system/crm-tablet.jpg" alt="{{{ how.dashboard_alt }}}" width="896" height="1200" loading="lazy">
-        <figcaption>{{ how.dashboard_caption }}</figcaption>
-      </figure>
-      <p class="sy-flow reveal"><a class="sy-next" href="#case">{{ how.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- The price (owner, 2026-10-26): the first package, The Foundation, in her words. -->
+  <section class="section" id="price" aria-labelledby="price-title">
+    <div class="container">
+      <div class="sy-price reveal">
+        <!-- Laid out wide (owner, 2026-10-26: "the offer has some white space, perhaps rearrange the icons"): the price and
+             name beside the pitch and the button, then what's included as a grid of icon cards. -->
+        <p class="sy-price-banner">{{ price.payment }}</p>
+        <div class="sy-price-head">
+          <div class="sy-price-name">
+            <p class="sy-price-tag">{{ price.price }}</p>
+            <h2 id="price-title">{{ price.name }}</h2>
+          </div>
+          <div class="sy-price-pitch">
+            <p class="sy-price-lead">{{ price.lead }}</p>
+            <div class="sy-price-cta">
+              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              <p class="hand sy-price-note">{{ hero.not_sales }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="sy-price-body">
+          <h3 class="hand">{{ price.included_title }}</h3>
+          <ul class="sy-price-list">{{#each price.included}}<li><svg class="li" aria-hidden="true"><use href="#li-{{{ icon }}}"/></svg><h4>{{ title }}</h4>{{#if text}}<p>{{ text }}</p>{{/if}}</li>{{/each}}</ul>
+        </div>
+        <div class="sy-price-more">
+          <p class="hand">{{ price.more_title }}</p>
+          <p>{{ price.more_text }} <a href="#lead" data-lead-open data-topic="The System" data-source="price: more">{{ price.more_link }}</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Why a loop: the joins, the do-it-yourself question, the handover. -->
-  <section class="section" id="why" aria-labelledby="why-title">
+  <!-- The intro ("Why a loop, not just services" / "Value doesn't leak in the pipes…" and its paragraph) was removed by the
+       owner on 2026-10-26; the section opens on the objections. Copy stays in copy.md (Why). -->
+  <section class="section" id="why">
     <div class="container">
-      <div class="editorial reveal">
-        <div class="stack-sm">
-          <p class="eyebrow">{{ why.eyebrow }}</p>
-          <h2 id="why-title"><span class="mask"><span class="mask-in">{{ why.title }}</span></span></h2>
-        </div>
-        <p class="lead">{{ why.lead }}</p>
-      </div>
-      <div class="sy-diy reveal">
-        <h3>{{ why.diy_title }}</h3>
-        <p>{{ why.diy_lead }}</p>
-        <ul>{{#each why.diy}}<li>{{ this }}</li>{{/each}}</ul>
-        <p>{{ why.diy_close }}</p>
-        <div class="sy-diy-more">
+      <!-- What people say to us, answered (owner, 2026-10-26, after funnelarchitektinnen.de's "things people say"): each
+           objection in their words with an "Honest answer" sticker. -->
+      <div class="sy-objections">
+        <article class="sy-obj reveal">
+          <p class="hand sy-sticker">{{ why.honest }}</p>
+          <h3>{{ why.diy_title }}</h3>
+          <p>{{ why.diy_lead }}</p>
+          <ul>{{#each why.diy}}<li>{{ this }}</li>{{/each}}</ul>
+          <p class="sy-obj-close">{{ why.diy_close }}</p>
+        </article>
+        <article class="sy-obj reveal">
+          <p class="hand sy-sticker">{{ why.honest }}</p>
           <h3>{{ why.followers_title }}</h3>
           <p>{{ why.followers_text }}</p>
-          <p class="sy-diy-punch">{{ why.followers_close }}</p>
-        </div>
+          <p class="sy-obj-close">{{ why.followers_close }}</p>
+        </article>
       </div>
       <div class="editorial sy-whole reveal">
         <p class="sy-whole-text">{{ why.whole }}</p>
@@ -170,48 +196,14 @@
     </div>
   </section>
 
-  <!-- A real business: before, what we built, in their words. -->
-  <section class="section" id="case" aria-labelledby="case-title">
-    <div class="container">
-      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
-        <p class="eyebrow">{{ case.eyebrow }}</p>
-        <h2 id="case-title"><span class="mask"><span class="mask-in">{{ case.title }}</span></span></h2>
-      </div>
-      <div class="sy-case stagger">
-        <div class="sy-case-col reveal"><h3>{{ case.before_title }}</h3><p>{{ case.before }}</p></div>
-        <div class="sy-case-col reveal"><h3>{{ case.built_title }}</h3><ul class="ticks">{{#each case.built}}<li>{{ this }}</li>{{/each}}</ul></div>
-        <figure class="sy-case-col sy-case-quote reveal"><h3>{{ case.words_title }}</h3><blockquote><p>“{{ case.words }}”</p></blockquote></figure>
-      </div>
-      <p class="sy-flow reveal"><a class="sy-next" href="#team">{{ case.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></p>
-    </div>
-  </section>
-
-  <!-- Meet the founders: the blend of both backgrounds. A wide photo of the two founders (2026-09-29), the story, the four promises as a row. -->
-  <section class="section c-band sy-team" id="team" aria-labelledby="team-title">
-    <div class="container">
-      <div class="sy-team-grid">
-        <figure class="sy-team-photo reveal">
-          <img src="/assets/images/people/founders-wide.jpg" alt="{{{ shared.people.founders_alt }}}" width="904" height="678" loading="lazy">
-          <figcaption>{{ team.caption }}</figcaption>
-        </figure>
-        <div class="stack reveal">
-          <p class="eyebrow">{{ team.eyebrow }}</p>
-          <h2 id="team-title"><span class="mask"><span class="mask-in">{{ team.title }}</span></span></h2>
-          <p class="lead">{{ team.lead }}</p>
-          <div class="sy-blend">
-            <h3>{{ team.blend_title }}</h3>
-            <p>{{ team.blend }}</p>
-          </div>
-          <p>{{ team.text }}</p>
-        </div>
-      </div>
-      <ul class="sy-promises stagger">{{#each team.values}}<li class="reveal"><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}</ul>
-      <p class="sy-flow reveal"><a class="sy-next" href="#fit">{{ team.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></p>
-    </div>
-  </section>
+  <!-- "A real business" was removed on 2026-10-26 (owner: "is a real business section needed?"): its quote repeats the
+       therapist's WhatsApp message at the top, and its story was about ownership. Its copy stays in copy.md (Case). -->
+  <!-- "Meet the founders" was removed on 2026-10-26 (owner: "remove that since we have Chris at the end"): Chris's photo
+       sits beside the call button. Its copy stays in copy.md (Team). -->
 
   <!-- Honest fit: for you, not for you. -->
   <section class="section" id="fit">
+    <div class="container"><p class="hand sy-fit-note reveal">{{ fit.note }}</p></div>
     <div class="container sy-fit reveal">
       <div class="sy-fit-col sy-yes">
         <h2 class="h3">{{ fit.yes_title }}</h2>
@@ -224,22 +216,22 @@
     </div>
   </section>
 
-  <!-- The free call: what you leave with. -->
-  <section class="section c-band" id="call" aria-labelledby="call-title">
-    <div class="container">
-      <div class="c-head reveal">
-        <div class="stack-sm">
-          <p class="eyebrow">{{ call.eyebrow }}</p>
-          <h2 id="call-title"><span class="mask"><span class="mask-in">{{ call.title }}</span></span></h2>
-        </div>
-        <p class="c-head-aside">{{ call.lead }}</p>
-      </div>
-      <ol class="sy-outcomes stagger">
-        {{#each call.outcomes}}<li class="reveal"><span class="sy-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
-      </ol>
-      <div class="sy-after reveal">
-        <p>{{ call.fit }}</p>
-        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ call.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+  <!-- The free call, laid out as in the lab concept (owner, 2026-10-26: "this is nice"): Chris as a polaroid on the left,
+       on the right the heading, what the call is, what you leave with as a checklist, the "info call, not a sales call"
+       box and the same "Talk to us" as the hero. The eyebrow, the numbered outcome cards and the "yeah, that's me" line
+       are gone from this section; their copy stays in copy.md. -->
+  <section class="section" id="call" aria-labelledby="call-title">
+    <div class="container sy-call-grid">
+      <figure class="sy-polaroid reveal">
+        <img src="/assets/images/people/chris-laughing.jpg" alt="{{{ call.photo_alt }}}" width="746" height="932" loading="lazy">
+        <figcaption class="hand">{{ call.photo_note }}</figcaption>
+      </figure>
+      <div class="sy-call-act reveal">
+        <h2 id="call-title"><span class="mask"><span class="mask-in">{{ call.title }}</span></span></h2>
+        <p>{{ call.lead }}</p>
+        <ul class="ticks sy-call-list">{{#each call.outcomes}}<li><span><b>{{ title }}.</b> {{ text }}</span></li>{{/each}}</ul>
+        <div class="sy-not-sales"><p class="hand">{{ hero.not_sales }}</p><p>{{ call.not_sales_text }}</p></div>
+        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
         <p class="small muted">{{ call.small }}</p>
       </div>
     </div>

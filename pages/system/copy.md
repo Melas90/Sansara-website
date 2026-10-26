@@ -16,7 +16,7 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 ## Hero
 
-eyebrow: For coaches, therapists and practitioners with paying clients
+eyebrow: For coaches and business owners with paying clients
 title: Turn strangers into clients *who keep coming back*.
 subtitle: We build your lead generation, landing pages, payments and bookings for you. As one connected system, or piece by piece.
 lead: On the tools you already use, at a fixed price per package.
@@ -48,6 +48,15 @@ lead_submit: Get my free assessment
 primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
+<!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
+hello: Hi, I'm Chrissy.
+photo_note: building your Loop, so you don't have to
+photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
+not_sales: An info call, not a sales call.
+checks:
+- Built for you. You never touch the tech.
+- On the tools you already use.
+- One fixed price per package.
 
 ### stops
 
@@ -132,25 +141,31 @@ cue: Click to imagine
 closing: We don't hand you a plan. We build it with you, and it runs.
 next: Discover how
 button: I want that
+get_title: What we build *for you*
+get_note: As one connected system, or piece by piece.
 
 ### rows
 
 - stage: Be seen
+  img: /assets/images/loop-stages/stage-en-0.webp
   now: Posting every day or not at all, it's the same. A few likes, some views. Never a booking, never a sale.
   end: Attention that turns into clients.
   how: The right people see your offer. Whether you post or not, everything out there has one job, bringing them to book your service or buy your product.
   value: We agree what success looks like before spending, and cut what doesn't work.
 - stage: Be chosen
+  img: /assets/images/loop-stages/stage-en-1.webp
   now: The people who reach out aren't ready to book or buy. Half of them don't even know what I offer.
   end: Leads who are ready.
   how: They already know what you offer. They come with their questions ready, and they show up to the call or session engaged.
   value: We work out who your best clients are before we build anything.
 - stage: Be booked
+  img: /assets/images/loop-stages/stage-en-2.webp
   now: They book. Then they cancel, or just don't show up.
   end: No-shows become an anecdote.
   how: The people who book turn up, and the rare one who can't simply moves to another time. Your calendar holds. Cancellations become the exception.
   value: Not zero, we won't promise that. Just rare enough to be a story.
 - stage: Be remembered
+  img: /assets/images/loop-stages/stage-en-3.webp
   now: I'm always chasing new clients, or paying for ads to find them.
   end: Clients come to you.
   how: Past clients come back and bring others with them, for who you are and the work you do. You stop chasing.
@@ -166,6 +181,9 @@ lead: You're juggling a lot to keep this business running. The last thing you ne
 fit: Reading this thinking “yeah, that’s me”? Then the call is for you.
 button: Book a free call
 small: 30 minutes, free. You'll know exactly where you're losing clients, and what to fix first.
+not_sales_text: Thirty minutes on your business. You leave knowing what to fix first, with us or on your own.
+photo_note: that's me, on the other side of the call
+photo_alt: Christiane, co-founder of Sansara Media, laughing
 
 ### outcomes
 
@@ -180,6 +198,7 @@ small: 30 minutes, free. You'll know exactly where you're losing clients, and wh
 
 yes_title: This is for you if…
 no_title: Probably not for you if…
+note: be honest with yourself here
 
 ### yes
 
@@ -211,6 +230,30 @@ ads_title: An online coaching business that grows with ads
 organic_title: An in-person coaching business that grows on content and referrals
 examples_note: Yours is built around your offer, for you. On the free call we work out which pieces you need, and which you don't.
 next: See it in a real business
+
+<!-- 2026-10-26 (owner): "there is redundancy between Imagine instead and How it works… the 1 2 3 4 could be used like
+     they do", then the four steps in her words: "The Check and a call / Two strategy calls: offer, positioning,
+     architecture / We build, and you review / Closing call, handover and five support tickets". Step 1 is called the
+     free call because the Client Loop Check is off since 2026-10-22. The texts come from the Foundation package (Price).
+     The five Loop steps below (steps) are no longer shown; Imagine instead tells the stages. -->
+process_title: How we work together: *the four steps*.
+process_lead: The same four steps, whatever we build for you.
+method_label: Our *method*.
+
+### process
+
+- title: A free call
+  icon: call
+  text: Thirty minutes on your business. We look at where you're losing clients and what to fix first. If it's not right for you, we'll tell you.
+- title: Two strategy calls: offer, positioning, architecture
+  icon: map
+  text: The first cleans up the offer and decides how your clients say yes. The second checks the page plan before we build. Every step from first click to booking or purchase, mapped and checked before anything is built.
+- title: We build, and you review
+  icon: build
+  text: We build your page on your domain and connect how your clients say yes. You get the copy structure section by section; you write, and we review it twice.
+- title: Closing call, handover and five support tickets
+  icon: key
+  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets valid for 3 months, a question or a small fix under 30 minutes each.
 
 ### example_ads
 
@@ -253,6 +296,51 @@ next: See it in a real business
   ends: They don't come back, so I chase new ones.
   text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so more of them come back.
 
+## Price
+
+<!-- 2026-10-26 (owner): the first package, in her words. Price as given; VAT not stated. -->
+name: Sansara Client Foundation
+price: €2,500
+lead: The base your clients find, trust and say yes to. Works with whatever brings people to you: Instagram, your list, referrals or ads.
+included_title: Included
+<!-- 2026-10-26 (owner): "something in the offer, like there are many things we can do, just ask, and a flexible payment
+     banner". No payment terms given, so the banner only invites the question. The services named are those of the
+     band under the hero (Hero blocks). -->
+payment: Flexible payment. Ask us how.
+more_title: There's much more we can do.
+more_text: Lead generation, automations, email and WhatsApp follow-up, your own CRM: we build those too.
+more_link: Just ask
+
+### included
+
+- title: Offer research and positioning
+  icon: search
+  text: We look at your offer, your clients and your competitors, and sharpen what you sell, who it’s for and why you.
+- title: Two strategy calls
+  icon: call
+  text: The first cleans up the offer and decides how your clients say yes. The second checks the page plan before we build.
+- title: Funnel architecture
+  icon: map
+  text: Every step from first click to booking or purchase, mapped and checked before anything is built.
+- title: One sales page
+  icon: page
+  text: Built by us, on your domain.
+- title: Copy structure and review
+  icon: pen
+  text: We give you the structure, section by section. You write, and we review it twice.
+- title: One integration: how your clients say yes
+  icon: book
+  text: A booking calendar or a checkout, connected to your page, with its confirmation (and course access, if you sell online).
+- title: Three visuals for your page, ads or content
+  icon: image
+  text:
+- title: Closing call and documentation
+  icon: key
+  text: We walk you through everything, and you keep a written guide and every login.
+- title: Five support tickets after delivery
+  icon: ticket
+  text: A question or a small fix under 30 minutes each, valid for 3 months.
+
 ## Why
 
 eyebrow: Why a loop, not just services
@@ -264,6 +352,7 @@ diy_close: Every piece is doable. That's exactly why everyone has pieces, and st
 followers_title: “But I already have plenty of followers.”
 followers_text: We work with businesses that have thousands, even tens of thousands of followers, and still don’t make a single sale from them. Followers are interest. Interest doesn’t pay the bills until something turns it into a booking.
 followers_close: Interest doesn’t mean sales. The Loop is what turns one into the other.
+honest: Honest answer
 whole: So we don't sell you pipes. We build the whole line and seal every join. One journey, mapped from the first time someone sees you to the client who keeps coming back. Built where your customers actually are. Paid for once. Tested until it runs on its own. That's the Loop, and it's the part nobody sells you in pieces.
 handover_title: And the part that surprises people: *we build it to not need us.*
 handover: We take responsibility for the whole Loop until it runs. Then we hand it over properly, not a login and a goodbye, but a walkthrough until you understand what every piece does and why. If you have a team, we train them to run it without us.

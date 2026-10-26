@@ -104,7 +104,7 @@ interest_options:
 - Content and Social Media
 - Consulting
 - I'm not sure yet
-photo_alt: Christiane from Sansara Media, leaning over her desk and looking at you
+photo_alt: Christiane from Sansara Media, laughing
 country_code: Country code
 <!-- The first one that matches the browser's language is chosen (lead.js); the visitor can change it -->
 country_codes:

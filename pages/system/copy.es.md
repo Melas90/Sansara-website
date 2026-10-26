@@ -14,7 +14,7 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 
 ## Hero
 
-eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
+eyebrow: Para coaches y dueños de negocio que ya tienen clientes
 title: Convierte desconocidos en clientes *que vuelven*.
 subtitle: Te montamos la captación, las landing pages, los cobros y las reservas. Como un sistema conectado, o pieza a pieza.
 lead: Con las herramientas que ya usas y un precio fijo por paquete.
@@ -46,6 +46,15 @@ lead_submit: Quiero mi evaluación gratis
 primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.
+<!-- 2026-10-26 (owner): el aspecto humano, tras funnelarchitektinnen.de. Líneas nuevas; los checks y la línea de la llamada repiten lo que ya decimos. -->
+hello: Hola, soy Chrissy.
+photo_note: montando tu Loop, para que tú no tengas que hacerlo
+photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junto a su portátil
+not_sales: Una llamada informativa, no de ventas.
+checks:
+- Te lo montamos. Tú no tocas nada técnico.
+- Con las herramientas que ya usas.
+- Un precio fijo por paquete.
 
 ### stops
 
@@ -124,25 +133,31 @@ cue: Dale la vuelta
 closing: No te entregamos un plan. Lo construimos contigo, y funciona.
 next: Descubre cómo
 button: Quiero eso
+get_title: Lo que te *montamos*
+get_note: Como un sistema conectado, o pieza a pieza.
 
 ### rows
 
 - stage: Que te vean
+  img: /assets/images/loop-stages/stage-es-0.webp
   now: Publique todos los días o ninguno, da igual. Unos likes, algunas visualizaciones. Ninguna reserva, ninguna venta.
   end: Atención que se convierte en clientes.
   how: Tu oferta llega a la gente adecuada. Publiques o no, todo lo que tienes ahí fuera tiene un único trabajo, que reserven tu servicio o compren tu producto.
   value: Acordamos qué significa que funcione antes de gastar, y cortamos lo que no funciona.
 - stage: Que te elijan
+  img: /assets/images/loop-stages/stage-es-1.webp
   now: La gente que me escribe no está preparada para reservar ni para comprar. La mitad ni siquiera sabe qué ofrezco.
   end: Contactos que ya llegan decididos.
   how: Ya saben lo que ofreces. Llegan con sus preguntas preparadas y con ganas, a la llamada o a la sesión.
   value: Antes de construir nada, averiguamos quiénes son tus mejores clientes.
 - stage: Que te reserven
+  img: /assets/images/loop-stages/stage-es-2.webp
   now: Reservan. Y luego cancelan, o directamente no aparecen.
   end: Las ausencias pasan a ser una anécdota.
   how: Quien reserva, viene, y quien de verdad no puede, simplemente cambia la hora. Tu agenda se mantiene. Las cancelaciones pasan a ser la excepción.
   value: Cero no, eso no lo prometemos. Solo tan pocas que se convierten en anécdota.
 - stage: Que te recuerden
+  img: /assets/images/loop-stages/stage-es-3.webp
   now: Siempre estoy buscando clientes nuevos, o pagando anuncios para encontrarlos.
   end: Los clientes vienen a ti.
   how: Quien ya trabajó contigo vuelve y trae a otras personas, por cómo eres y por cómo trabajas. Dejas de perseguir.
@@ -156,6 +171,9 @@ lead: Ya haces malabares para sacar adelante tu negocio. Lo último que necesita
 fit: ¿Lees esto y piensas “esto me pasa a mí”? Entonces la llamada es para ti.
 button: Reserva tu llamada gratis
 small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué arreglar primero.
+not_sales_text: Treinta minutos sobre tu negocio. Sales sabiendo qué arreglar primero, con nosotros o por tu cuenta.
+photo_note: esa soy yo, al otro lado de la llamada
+photo_alt: Christiane, cofundadora de Sansara Media, riéndose
 
 ### outcomes
 
@@ -170,6 +188,7 @@ small: 30 minutos, gratis. Sabrás exactamente dónde pierdes clientes y qué ar
 
 yes_title: Es para ti si…
 no_title: Probablemente no es para ti si…
+note: sé sincero contigo aquí
 
 ### yes
 
@@ -200,6 +219,26 @@ ads_title: Un negocio de coaching online que crece con anuncios
 organic_title: Una consulta presencial que crece con contenido y recomendaciones
 examples_note: El tuyo se construye alrededor de tu oferta. En la llamada gratuita vemos qué piezas necesitas y cuáles no.
 next: Míralo en un negocio real
+
+<!-- 2026-10-26 (propietaria): los cuatro pasos, con sus palabras; el paso 1 es la llamada gratuita (el Client Loop Check está apagado desde el 22-10). -->
+process_title: Cómo trabajamos juntos: *los cuatro pasos*.
+process_lead: Los mismos cuatro pasos, construyamos lo que construyamos para ti.
+method_label: Nuestro *método*.
+
+### process
+
+- title: Una llamada gratuita
+  icon: call
+  text: Treinta minutos sobre tu negocio. Vemos dónde pierdes clientes y qué arreglar primero. Si no es para ti, te lo diremos.
+- title: Dos llamadas de estrategia: oferta, posicionamiento, arquitectura
+  icon: map
+  text: La primera ordena la oferta y decide cómo te dicen que sí tus clientes. La segunda revisa el plan de la página antes de construir. Cada paso, del primer clic a la reserva o la compra, trazado y revisado antes de construir nada.
+- title: Construimos, y tú revisas
+  icon: build
+  text: Construimos tu página en tu dominio y conectamos cómo te dicen que sí. Te damos la estructura del texto, sección por sección; tú escribes y nosotros lo revisamos dos veces.
+- title: Llamada de cierre, entrega y cinco tickets de soporte
+  icon: key
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte válidos durante 3 meses, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
 
 ### example_ads
 
@@ -242,6 +281,48 @@ next: Míralo en un negocio real
   ends: No vuelven, así que persigo clientes nuevos.
   text: Después de la reserva, el Loop sigue en contacto con seguimientos, nuevas reservas y la siguiente oferta adecuada, para que vuelvan más.
 
+## Price
+
+<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete es Sansara Client Foundation (propietaria, 2026-10-26), igual en los dos idiomas. -->
+name: Sansara Client Foundation
+price: 2.500 €
+lead: La base que tus clientes encuentran, en la que confían y a la que dicen que sí. Funciona con lo que sea que te trae gente: Instagram, tu lista, recomendaciones o anuncios.
+included_title: Incluye
+payment: Pago flexible. Pregúntanos cómo.
+more_title: Podemos hacer mucho más.
+more_text: Captación, automatizaciones, seguimiento por email y WhatsApp, tu propio CRM: también lo montamos.
+more_link: Solo pregúntanos
+
+### included
+
+- title: Investigación de la oferta y posicionamiento
+  icon: search
+  text: Miramos tu oferta, tus clientes y tu competencia, y afinamos qué vendes, para quién es y por qué tú.
+- title: Dos llamadas de estrategia
+  icon: call
+  text: La primera ordena la oferta y decide cómo te dicen que sí tus clientes. La segunda revisa el plan de la página antes de construir.
+- title: Arquitectura del funnel
+  icon: map
+  text: Cada paso, del primer clic a la reserva o la compra, trazado y revisado antes de construir nada.
+- title: Una página de venta
+  icon: page
+  text: Hecha por nosotros, en tu dominio.
+- title: Estructura del texto y revisión
+  icon: pen
+  text: Te damos la estructura, sección por sección. Tú escribes y nosotros lo revisamos dos veces.
+- title: Una integración: cómo te dicen que sí
+  icon: book
+  text: Un calendario de reservas o un pago, conectado a tu página, con su confirmación (y el acceso al curso, si vendes online).
+- title: Tres visuales para tu página, anuncios o contenido
+  icon: image
+  text:
+- title: Llamada de cierre y documentación
+  icon: key
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos.
+- title: Cinco tickets de soporte tras la entrega
+  icon: ticket
+  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 3 meses.
+
 ## Why
 
 eyebrow: Por qué un circuito y no servicios sueltos
@@ -253,6 +334,7 @@ diy_close: Cada pieza se puede hacer. Por eso todo el mundo tiene piezas, y aun 
 followers_title: “Pero ya tengo muchos seguidores.”
 followers_text: Trabajamos con negocios que tienen miles, incluso decenas de miles de seguidores, y no sacan ni una venta de ellos. Los seguidores son interés. Y el interés no paga las facturas hasta que algo lo convierte en una reserva.
 followers_close: Interés no es lo mismo que ventas. El Loop es lo que convierte uno en lo otro.
+honest: Respuesta sincera
 whole: Por eso no te vendemos tuberías. Construimos la línea entera y sellamos cada junta. Un único recorrido, desde la primera vez que alguien te ve hasta el cliente que vuelve una y otra vez. Construido donde de verdad están tus clientes. Se paga una vez. Lo probamos hasta que funciona solo. Eso es el Loop, y es la parte que nadie te vende por piezas.
 handover_title: Y lo que más sorprende, *lo construimos para que no nos necesites.*
 handover: Nos hacemos responsables del Loop entero hasta que funciona. Después te lo entregamos bien. No un usuario y un adiós, sino un recorrido hasta que entiendes qué hace cada pieza y por qué. Si tienes equipo, lo formamos para llevarlo sin nosotros.
