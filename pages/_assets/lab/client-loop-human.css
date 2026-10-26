@@ -6,7 +6,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
-  src: url('/assets/lab/vendor/caveat-latin-wght-normal.woff2') format('woff2');
+  src: url('/brand/fonts/caveat-latin-wght-normal.woff2') format('woff2');
 }
 
 .hu { background: var(--bg); }
