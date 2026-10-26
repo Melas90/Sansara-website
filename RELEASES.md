@@ -6,7 +6,50 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-Nothing on `develop` yet.
+On `develop`, not live: **the human look on the System pages** (`/system/`, `/client-loop/`, `/es/sistema/`; they share
+one body), merged from `feat/human-look` on 2026-10-26. The why, decision by decision, is in `decisions.md`
+(2026-10-26).
+
+- **Why:** leads stopped after 15 Oct and the page read as generated. The owner compared it with
+  funnelarchitektinnen.de ("make it look less AI and more like them"), and the film had no viewers.
+- **References checked:**
+  - funnelarchitektinnen.de/funnelmentoring-erstgespraech: the hero photo of the people behind it, handwritten
+    notes, crossed-out advice, "things people say" answered, the numbered method chart ("Unsere Methode"),
+    "an info call, not a sales call";
+  - the top-5 competitor research of 2026-10-25 (productised offers that show a price);
+  - Meta Pixel data from 22 to 26 Oct: about 470 page views, and the film's 15 s `ViewContent` only 4 times, all on
+    22 Oct right after release, none after;
+  - Hotjar (Contentsquare) sessions: text masked, nothing usable yet;
+  - the lab concept `/lab/client-loop-human/`.
+- **Changes:**
+  - **Hero:** a bright real photo of Chrissy on the phone at her laptop; "Hi, I'm Chrissy."; three checks; "An info
+    call, not a sales call."; "For coaches and business owners with paying clients"; the moving band of services under
+    it, fading into the page.
+  - **How it works** = our method: the free call, two strategy calls, we build and you review, closing call and
+    handover. Drawn as a chart with new icons.
+  - **Price section, Sansara Client Foundation, €2,500:**
+    - everything included, as icon cards;
+    - "Flexible payment. Ask us how.";
+    - "There's much more we can do… Just ask";
+    - support tickets valid for 3 months.
+  - **Removed:** the film (VSL), "Imagine instead", the tiles, the dashboard photo, "A real business", "Meet the
+    founders", and the "Why a loop" intro. Their copy stays in `copy.md`.
+  - **Style:** headings in heavy Hanken with the italic phrase underlined by the pen; handwritten labels (Caveat,
+    a brand font now, `--font-hand`); the client messages taped on; the objections boxed with an "Honest answer"
+    sticker; Chrissy laughing beside the call button and in the "Talk to us" form (every page).
+- **Pixel:** `PageView`, `LoopCheckStarted` (every button, `content_name` = where: header, hero, price, price: more,
+  free call, closing band, floating button), `LeadFormStarted`, `Lead`, `Contact` and `BookingClick` are unchanged and
+  were checked on all three pages. The film's `ViewContent` (`system film 15s`) no longer fires, because the film is
+  gone. Hotjar's form steps on `/client-loop/` are unchanged.
+- **Checked so far:** `npm run verify`; production build without the lab; the two-step form test (57 checks: steps,
+  Enter, missing email blocked, numbers from UK, ES, DE, NL, Pixel steps, Calendly, no JS errors); the Hotjar steps;
+  desktop (1440) and phone (390) screenshots of every changed section; no sideways scroll.
+- **Still to decide before the release:**
+  - turn off the scroll pop-up and the floating button;
+  - end the page on the call;
+  - hero and objection copy that promise more than the Client Foundation;
+  - "Two Loops, for example";
+  - payment terms behind "Flexible payment".
 
 ## 2026-10-25
 
