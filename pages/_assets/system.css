@@ -380,15 +380,17 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-fit-note { margin: 0 0 24px; font-size: 30px; transform: rotate(-2deg); }
 .sy .ticks li { position: relative; display: block; padding-left: 34px; }
 
-/* the call: Chris beside the button */
-.sy-call-end { display: grid; gap: 48px; align-items: center; margin-top: 56px; }
-@media (min-width: 860px) { .sy-call-end { grid-template-columns: 340px minmax(0, 1fr); gap: 72px; } }
-.sy-polaroid { margin: 0 auto; max-width: 320px; padding: 14px 14px 0; background: var(--white); transform: rotate(-2.5deg); box-shadow: var(--shadow-float); }
+/* the call: Chris as a polaroid on the left, the heading and the button on the right */
+.sy-call-grid { display: grid; gap: 48px; align-items: start; }
+@media (min-width: 900px) { .sy-call-grid { grid-template-columns: 380px minmax(0, 1fr); gap: 72px; } }
+.sy-polaroid { margin: 0 auto; max-width: 340px; padding: 14px 14px 0; background: var(--white); rotate: -2.5deg; box-shadow: var(--shadow-float); } /* rotate, not transform: the entrance animation owns transform */
 .sy-polaroid img { display: block; width: 100%; height: auto; }
 .sy-polaroid figcaption { padding: 14px 6px 18px; font-size: 26px; text-align: center; color: var(--ink); }
-.sy-call-act { display: grid; gap: 18px; justify-items: start; }
+.sy-call-act { display: grid; gap: 20px; justify-items: start; }
 .sy-call-act > * { margin: 0; }
-.sy-call-act > p:not([class]) { font-size: var(--text-lead); color: var(--ink); }
+.sy-call-act > p:not([class]) { font-size: 18px; line-height: var(--leading-body); color: var(--brown); }
+.sy-call-list li { font-size: 17px; line-height: 1.5; color: var(--brown); }
+.sy-call-list b { color: var(--ink); }
 .sy-not-sales { padding: 18px 22px; border: 2px dashed var(--orange); border-radius: 14px; background: var(--peach); }
 .sy-not-sales p { margin: 0; }
 .sy-not-sales .hand { font-size: 30px; margin-bottom: 4px; }

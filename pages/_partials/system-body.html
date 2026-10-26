@@ -241,31 +241,23 @@
     </div>
   </section>
 
-  <!-- The free call: what you leave with. -->
-  <section class="section c-band" id="call" aria-labelledby="call-title">
-    <div class="container">
-      <div class="c-head reveal">
-        <div class="stack-sm">
-          <p class="eyebrow">{{ call.eyebrow }}</p>
-          <h2 id="call-title"><span class="mask"><span class="mask-in">{{ call.title }}</span></span></h2>
-        </div>
-        <p class="c-head-aside">{{ call.lead }}</p>
-      </div>
-      <ol class="sy-outcomes stagger">
-        {{#each call.outcomes}}<li class="reveal"><span class="sy-n" aria-hidden="true">{{ @number }}</span><h3>{{ title }}</h3><p>{{ text }}</p></li>{{/each}}
-      </ol>
-      <!-- The person on the other side of the call, and what kind of call it is (owner, 2026-10-26). -->
-      <div class="sy-call-end reveal">
-        <figure class="sy-polaroid">
-          <img src="/assets/images/people/chris-leaning.jpg" alt="{{{ call.photo_alt }}}" width="800" height="1000" loading="lazy">
-          <figcaption class="hand">{{ call.photo_note }}</figcaption>
-        </figure>
-        <div class="sy-call-act">
-          <div class="sy-not-sales"><p class="hand">{{ hero.not_sales }}</p><p>{{ call.not_sales_text }}</p></div>
-          <p>{{ call.fit }}</p>
-          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ call.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
-          <p class="small muted">{{ call.small }}</p>
-        </div>
+  <!-- The free call, laid out as in the lab concept (owner, 2026-10-26: "this is nice"): Chris as a polaroid on the left,
+       on the right the heading, what the call is, what you leave with as a checklist, the "info call, not a sales call"
+       box and the same "Talk to us" as the hero. The eyebrow, the numbered outcome cards and the "yeah, that's me" line
+       are gone from this section; their copy stays in copy.md. -->
+  <section class="section" id="call" aria-labelledby="call-title">
+    <div class="container sy-call-grid">
+      <figure class="sy-polaroid reveal">
+        <img src="/assets/images/people/chris-leaning.jpg" alt="{{{ call.photo_alt }}}" width="800" height="1000" loading="lazy">
+        <figcaption class="hand">{{ call.photo_note }}</figcaption>
+      </figure>
+      <div class="sy-call-act reveal">
+        <h2 id="call-title"><span class="mask"><span class="mask-in">{{ call.title }}</span></span></h2>
+        <p>{{ call.lead }}</p>
+        <ul class="ticks sy-call-list">{{#each call.outcomes}}<li><span><b>{{ title }}.</b> {{ text }}</span></li>{{/each}}</ul>
+        <div class="sy-not-sales"><p class="hand">{{ hero.not_sales }}</p><p>{{ call.not_sales_text }}</p></div>
+        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        <p class="small muted">{{ call.small }}</p>
       </div>
     </div>
   </section>
