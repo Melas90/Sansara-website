@@ -286,7 +286,7 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy main .eyebrow::before { display: none; }
 
 /* hero: the photo is the background, light (owner's photo DSC00741, 2026-10-26) */
-.sy-hero { position: relative; overflow: hidden; isolation: isolate; background: var(--bg); }
+.sy-hero { position: relative; overflow: hidden; isolation: isolate; background: transparent; } /* the page's own colour, so the photo fades into it */
 .sy-hero picture { display: block; }
 .sy-hero-img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 40% 35%; -webkit-mask-image: linear-gradient(180deg, black 78%, transparent); mask-image: linear-gradient(180deg, black 78%, transparent); }
 .sy-hero-copy { display: grid; gap: 18px; justify-items: start; padding-top: 8px; padding-bottom: 56px; }
@@ -310,14 +310,19 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 @media (min-width: 900px) {
   .sy-hero { display: flex; align-items: center; min-height: min(92vh, 860px); }
   .sy-hero picture { position: absolute; inset: 0; z-index: -2; }
-  .sy-hero-img { height: 100%; aspect-ratio: auto; object-position: 30% 45%; -webkit-mask-image: none; mask-image: none; }
+  .sy-hero-img { height: 100%; aspect-ratio: auto; object-position: 30% 45%; -webkit-mask-image: linear-gradient(180deg, black 82%, transparent); mask-image: linear-gradient(180deg, black 82%, transparent); }
   /* a soft wash of cream over the wall behind the words, nothing over her */
-  .sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 0%, transparent 44%, color-mix(in srgb, var(--bg) 70%, transparent) 58%, color-mix(in srgb, var(--bg) 88%, transparent) 100%); }
+  .sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 0%, transparent 44%, color-mix(in srgb, var(--sand) 70%, transparent) 58%, color-mix(in srgb, var(--sand) 88%, transparent) 100%); }
   .sy-hero > .container { width: 100%; }
   .sy-hero-copy { width: min(600px, 48%); margin-left: auto; padding-block: 88px; }
   .sy-hero-note { display: block; position: absolute; left: 5%; top: 12%; width: 220px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-6deg); z-index: 1; }
   .sy-hero-note svg { display: block; width: 100px; margin: 6px 0 0 110px; }
 }
+
+/* the moving band under the hero: no rules above or below, its ends fade into the page */
+.sy-band { padding-block: 6px 28px; background: linear-gradient(180deg, transparent 30%, var(--bg)); } /* fades from the page into the lighter quotes below, no line between */
+.sy .sy-band + .sy-quote { border-top: 0; }
+.c .sy-band .sy-hero-mq { margin: 0; padding-block: 10px; -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); }
 
 /* the quotes, taped on and a little crooked */
 .sy-quote .sy-wa { position: relative; overflow: visible; }

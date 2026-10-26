@@ -36,6 +36,16 @@
     </div>
   </section>
 
+  <!-- What's inside, as a moving band right under the hero (owner, 2026-10-26: "bring them, it's dynamic"; the photo and
+       the band fade into the page's own colour). Screen readers get the list once; the band is decoration; still under
+       reduced motion. -->
+  <div class="sy-band">
+    <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}<li>{{ hero.whatsapp }}</li></ul>
+    <div class="mq sy-hero-mq" aria-hidden="true">
+      <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}<span class="sy-mq-wa"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span>{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}<span class="sy-mq-wa mq-dup"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span></div>
+    </div>
+  </div>
+
   <!-- The film (the 90-second VSL) was removed by the owner on 2026-10-26 ("kill VSL"): no visitor watched 15 seconds of it
        after 22 Oct. To bring it back, include _partials/system-film.html here. -->
 
