@@ -137,10 +137,9 @@
       <div class="sy-price reveal">
         <!-- Laid out wide (owner, 2026-10-26: "the offer has some white space, perhaps rearrange the icons"): the price and
              name beside the pitch and the button, then what's included as a grid of icon cards. -->
-        <p class="sy-price-banner">{{ price.payment }}</p>
         <div class="sy-price-head">
           <div class="sy-price-name">
-            <p class="sy-price-tag">{{ price.price }}</p>
+            <div class="sy-price-tags"><p class="sy-price-tag">{{ price.price }}</p><p class="sy-price-banner">{{ price.payment }}</p></div>
             <h2 id="price-title">{{ price.name }}</h2>
           </div>
           <div class="sy-price-pitch">
