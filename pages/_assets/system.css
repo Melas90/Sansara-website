@@ -394,6 +394,13 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-price-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
 .sy-price-note { font-size: 24px; rotate: -2deg; }
 .sy-price-body h3 { margin: 0 0 20px; font-size: 32px; }
+/* the flexible-payment banner across the top of the card, and the "much more" box under what's included (owner, 2026-10-26) */
+.sy-price { position: relative; overflow: hidden; }
+.sy-price-banner { margin: calc(-1 * clamp(28px, 5vw, 56px)) calc(-1 * clamp(28px, 5vw, 56px)) 0; padding: 12px 20px; background: var(--ink); color: var(--peach); font-weight: 700; font-size: 16px; text-align: center; letter-spacing: 0.01em; }
+.sy-price-more { padding: 18px 22px; border: 2px dashed var(--orange); border-radius: 14px; background: var(--peach); }
+.sy-price-more p { margin: 0; font-size: 16.5px; line-height: 1.5; color: var(--brown); }
+.sy-price-more .hand { font-size: 28px; color: var(--orange-dk); margin-bottom: 4px; }
+.sy-price-more a { font-weight: 700; color: var(--ink); text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .sy-price-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 640px) { .sy-price-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 960px) { .sy-price-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

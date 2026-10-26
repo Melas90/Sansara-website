@@ -16,7 +16,7 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 ## Hero
 
-eyebrow: For coaches, therapists and practitioners with paying clients
+eyebrow: For coaches and business owners with paying clients
 title: Turn strangers into clients *who keep coming back*.
 subtitle: We build your lead generation, landing pages, payments and bookings for you. As one connected system, or piece by piece.
 lead: On the tools you already use, at a fixed price per package.
@@ -253,7 +253,7 @@ method_label: Our *method*.
   text: We build your page on your domain and connect how your clients say yes. You get the copy structure section by section; you write, and we review it twice.
 - title: Closing call, handover and five support tickets
   icon: key
-  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets for 30 days, a question or a small fix under 30 minutes each.
+  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets valid for 3 months, a question or a small fix under 30 minutes each.
 
 ### example_ads
 
@@ -303,6 +303,13 @@ name: Sansara Client Foundation
 price: €2,500
 lead: The base your clients find, trust and say yes to. Works with whatever brings people to you: Instagram, your list, referrals or ads.
 included_title: Included
+<!-- 2026-10-26 (owner): "something in the offer, like there are many things we can do, just ask, and a flexible payment
+     banner". No payment terms given, so the banner only invites the question. The services named are those of the
+     band under the hero (Hero blocks). -->
+payment: Flexible payment. Ask us how.
+more_title: There's much more we can do.
+more_text: Lead generation, automations, email and WhatsApp follow-up, your own CRM: we build those too.
+more_link: Just ask
 
 ### included
 
@@ -332,7 +339,7 @@ included_title: Included
   text: We walk you through everything, and you keep a written guide and every login.
 - title: Five support tickets after delivery
   icon: ticket
-  text: A question or a small fix under 30 minutes each, valid for 30 days.
+  text: A question or a small fix under 30 minutes each, valid for 3 months.
 
 ## Why
 

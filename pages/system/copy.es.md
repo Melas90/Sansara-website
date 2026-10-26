@@ -14,7 +14,7 @@ description: Para coaches, terapeutas y profesionales que trabajan con cita. Una
 
 ## Hero
 
-eyebrow: Para coaches, terapeutas y profesionales que ya tienen clientes
+eyebrow: Para coaches y dueños de negocio que ya tienen clientes
 title: Convierte desconocidos en clientes *que vuelven*.
 subtitle: Te montamos la captación, las landing pages, los cobros y las reservas. Como un sistema conectado, o pieza a pieza.
 lead: Con las herramientas que ya usas y un precio fijo por paquete.
@@ -238,7 +238,7 @@ method_label: Nuestro *método*.
   text: Construimos tu página en tu dominio y conectamos cómo te dicen que sí. Te damos la estructura del texto, sección por sección; tú escribes y nosotros lo revisamos dos veces.
 - title: Llamada de cierre, entrega y cinco tickets de soporte
   icon: key
-  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte durante 30 días, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte válidos durante 3 meses, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
 
 ### example_ads
 
@@ -288,6 +288,10 @@ name: Sansara Client Foundation
 price: 2.500 €
 lead: La base que tus clientes encuentran, en la que confían y a la que dicen que sí. Funciona con lo que sea que te trae gente: Instagram, tu lista, recomendaciones o anuncios.
 included_title: Incluye
+payment: Pago flexible. Pregúntanos cómo.
+more_title: Podemos hacer mucho más.
+more_text: Captación, automatizaciones, seguimiento por email y WhatsApp, tu propio CRM: también lo montamos.
+more_link: Solo pregúntanos
 
 ### included
 
@@ -317,7 +321,7 @@ included_title: Incluye
   text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos.
 - title: Cinco tickets de soporte tras la entrega
   icon: ticket
-  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 30 días.
+  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 3 meses.
 
 ## Why
 

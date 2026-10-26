@@ -137,6 +137,7 @@
       <div class="sy-price reveal">
         <!-- Laid out wide (owner, 2026-10-26: "the offer has some white space, perhaps rearrange the icons"): the price and
              name beside the pitch and the button, then what's included as a grid of icon cards. -->
+        <p class="sy-price-banner">{{ price.payment }}</p>
         <div class="sy-price-head">
           <div class="sy-price-name">
             <p class="sy-price-tag">{{ price.price }}</p>
@@ -153,6 +154,10 @@
         <div class="sy-price-body">
           <h3 class="hand">{{ price.included_title }}</h3>
           <ul class="sy-price-list">{{#each price.included}}<li><svg class="li" aria-hidden="true"><use href="#li-{{{ icon }}}"/></svg><h4>{{ title }}</h4>{{#if text}}<p>{{ text }}</p>{{/if}}</li>{{/each}}</ul>
+        </div>
+        <div class="sy-price-more">
+          <p class="hand">{{ price.more_title }}</p>
+          <p>{{ price.more_text }} <a href="#lead" data-lead-open data-topic="The System" data-source="price: more">{{ price.more_link }}</a></p>
         </div>
       </div>
     </div>
