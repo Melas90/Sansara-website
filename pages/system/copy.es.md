@@ -283,8 +283,8 @@ method_label: Nuestro *método*.
 
 ## Price
 
-<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete es Sansara Client Foundation (propietaria, 2026-10-26), igual en los dos idiomas. -->
-name: Sansara Client Foundation
+<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete es Sansara Loop Starter (propietaria, 2026-10-26; antes Sansara Client Foundation), igual en los dos idiomas. -->
+name: Sansara Loop Starter
 price: 2.500 €
 lead: La base que tus clientes encuentran, en la que confían y a la que dicen que sí. Funciona con lo que sea que te trae gente: Instagram, tu lista, recomendaciones o anuncios.
 included_title: Incluye

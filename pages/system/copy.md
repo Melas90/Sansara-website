@@ -299,7 +299,7 @@ method_label: Our *method*.
 ## Price
 
 <!-- 2026-10-26 (owner): the first package, in her words. Price as given; VAT not stated. -->
-name: Sansara Client Foundation
+name: Sansara Loop Starter
 price: €2,500
 lead: The base your clients find, trust and say yes to. Works with whatever brings people to you: Instagram, your list, referrals or ads.
 included_title: Included

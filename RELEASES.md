@@ -27,7 +27,7 @@ one body), merged from `feat/human-look` on 2026-10-26. The why, decision by dec
     it, fading into the page.
   - **How it works** = our method: the free call, two strategy calls, we build and you review, closing call and
     handover. Drawn as a chart with new icons.
-  - **Price section, Sansara Client Foundation, €2,500:**
+  - **Price section, Sansara Loop Starter, €2,500:**
     - everything included, as icon cards;
     - "Flexible payment. Ask us how.";
     - "There's much more we can do… Just ask";
@@ -47,7 +47,7 @@ one body), merged from `feat/human-look` on 2026-10-26. The why, decision by dec
 - **Still to decide before the release:**
   - turn off the scroll pop-up and the floating button;
   - end the page on the call;
-  - hero and objection copy that promise more than the Client Foundation;
+  - hero and objection copy that promise more than the Loop Starter;
   - "Two Loops, for example";
   - payment terms behind "Flexible payment".
 
