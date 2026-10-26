@@ -45,8 +45,7 @@ one body), merged from `feat/human-look` on 2026-10-26. The why, decision by dec
   Enter, missing email blocked, numbers from UK, ES, DE, NL, Pixel steps, Calendly, no JS errors); the Hotjar steps;
   desktop (1440) and phone (390) screenshots of every changed section; no sideways scroll.
 - **Still to decide before the release:**
-  - turn off the scroll pop-up and the floating button;
-  - end the page on the call;
+  - the scroll pop-up: off, or once and later (no real lead has come through it; it came in on 19 Oct and no lead has arrived since). The floating button and the closing band stay: the header does not follow the page, and a real lead (4 Oct) came from the closing band;
   - hero and objection copy that promise more than the Loop Starter;
   - "Two Loops, for example";
   - payment terms behind "Flexible payment".
