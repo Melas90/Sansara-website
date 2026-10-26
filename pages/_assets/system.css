@@ -381,20 +381,33 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
   .sy-method-step:nth-child(even)::after { top: auto; bottom: -30px; }
 }
 
-/* the price: the Foundation */
-.sy-price { display: grid; gap: 36px 56px; padding: clamp(28px, 5vw, 56px); background: var(--white); border: 2px solid var(--ink); border-radius: 6px; box-shadow: 10px 10px 0 var(--ink); }
-@media (min-width: 900px) { .sy-price { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); } }
-.sy-price-head { display: grid; gap: 18px; justify-items: start; align-content: start; }
-.sy-price-head > * { margin: 0; }
+/* the price: Sansara Client Foundation. The head runs across (price and name, then the pitch and the button), what's
+   included below as a grid of icon cards: three across on a wide screen, two on a tablet, one on a phone. */
+.sy-price { display: grid; gap: 36px; padding: clamp(28px, 5vw, 56px); background: var(--white); border: 2px solid var(--ink); border-radius: 6px; box-shadow: 10px 10px 0 var(--ink); }
+.sy-price-head { display: grid; gap: 20px 56px; align-items: end; padding-bottom: 32px; border-bottom: 2px dashed var(--line); }
+@media (min-width: 900px) { .sy-price-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.sy-price-name, .sy-price-pitch { display: grid; gap: 16px; justify-items: start; }
+.sy-price-head p, .sy-price-head h2 { margin: 0; }
 .sy-price-tag { display: inline-block; padding: 8px 18px; border-radius: 6px; background: var(--orange); font-family: var(--font-sans); font-weight: 900; font-size: clamp(34px, 4.4vw, 52px); line-height: 1; letter-spacing: -0.02em; color: var(--ink); rotate: -3deg; }
 .sy .sy-price-head h2 { font-size: clamp(36px, 4.6vw, 56px); color: var(--ink); }
 .sy-price-lead { font-size: 18px; line-height: var(--leading-body); color: var(--brown); }
+.sy-price-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
 .sy-price-note { font-size: 24px; rotate: -2deg; }
-.sy-price-body h3 { margin: 0 0 14px; font-size: 32px; }
-.sy-price-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
-.sy-price-list li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; align-items: start; font-size: 16.5px; line-height: 1.5; color: var(--brown); }
-.sy-price-list .li { width: 34px; height: 34px; }
-.sy-price-list b { color: var(--ink); }
+.sy-price-body h3 { margin: 0 0 20px; font-size: 32px; }
+.sy-price-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .sy-price-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 960px) { .sy-price-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.sy-price-list li { display: grid; gap: 8px; align-content: start; padding: 20px; border: 2px dotted var(--brown-2); border-radius: 14px; background: var(--bg); }
+.sy-price-list .li { width: 40px; height: 40px; margin-bottom: 4px; }
+.sy-price-list h4 { margin: 0; font-family: var(--font-sans); font-weight: 800; font-size: 18px; line-height: 1.25; color: var(--ink); }
+.sy-price-list p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--brown); }
+@media (max-width: 639px) { /* on a phone: compact rows, the icon beside the words */
+  .sy-price-list { gap: 10px; }
+  .sy-price-list li { grid-template-columns: 30px minmax(0, 1fr); gap: 4px 14px; padding: 14px 16px; }
+  .sy-price-list .li { grid-row: span 2; width: 30px; height: 30px; margin: 2px 0 0; }
+  .sy-price-list h4 { font-size: 16.5px; }
+  .sy-price-list p { font-size: 15px; }
+}
 
 /* what we build: dotted tiles */
 .sy-get { margin-top: clamp(56px, 8vw, 96px); }
