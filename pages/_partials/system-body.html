@@ -7,16 +7,18 @@
 <main id="main">
 
   <!-- Hero (owner, 2026-10-26: "make it look less AI and more like them… get a picture and put it on the background", after
-       funnelarchitektinnen.de; lab: /lab/client-loop-human/). A real photo of Chris at work is the background: on a phone
-       it fills the top with the words over its darker lower half; on a wide screen she sits on the right and the same
-       photo, blurred, carries on under the words. A handwritten hello and note, three plain checks (they restate the
+       funnelarchitektinnen.de; lab: /lab/client-loop-human/). A real, bright photo of Chrissy smiling on the phone at her
+       laptop (owner's pick, DSC00741): on a wide screen it fills the hero with her on the left and the words on the white
+       wall on the right; on a phone she is on top and the words follow on cream. A handwritten hello and note, three plain checks (they restate the
        old "on the tools you already use, at a fixed price per package" line), and "an info call, not a sales call"
        beside the button. The four stage illustrations moved to "Imagine instead", now the numbered 1 2 3 4; the moving
        band of what's inside became the tiles there. -->
   <section class="sy-hero" id="hero" aria-labelledby="hero-title">
-    <div class="sy-hero-bg" aria-hidden="true"></div>
-    <img class="sy-hero-img" src="/assets/images/people/chris-laptop.jpg" alt="{{{ hero.photo_alt }}}" width="1170" height="1300" fetchpriority="high">
-    <p class="hand sy-hero-note" aria-hidden="true">{{ hero.photo_note }}<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M114 10C84 12 44 20 16 54"/><path d="M30 52l-15 4 2-15"/></svg></p>
+    <picture>
+      <source media="(min-width: 900px)" srcset="/assets/images/people/chris-call-wide.jpg" width="1920" height="1504">
+      <img class="sy-hero-img" src="/assets/images/people/chris-call-phone.jpg" alt="{{{ hero.photo_alt }}}" width="900" height="900" fetchpriority="high">
+    </picture>
+    <p class="hand sy-hero-note" aria-hidden="true">{{ hero.photo_note }}<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 10c30 2 70 10 98 44"/><path d="M90 52l15 4-2-15"/></svg></p>
     <div class="container">
       <div class="sy-hero-copy stagger">
         <p class="sy-for reveal">{{ hero.eyebrow }}</p>

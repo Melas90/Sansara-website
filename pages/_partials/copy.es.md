@@ -52,7 +52,7 @@ interest_options:
   value: Consulting
 - label: Aún no lo sé
   value: I'm not sure yet
-photo_alt: Christiane, de Sansara Media, apoyada en su escritorio y mirándote
+photo_alt: Christiane, de Sansara Media, riéndose
 country_code: Prefijo del país
 country_codes:
 - label: ES +34

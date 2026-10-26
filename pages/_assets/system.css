@@ -285,43 +285,38 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy main .eyebrow { font-family: var(--font-hand); font-size: 26px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--orange-dk); transform: rotate(-2deg); }
 .sy main .eyebrow::before { display: none; }
 
-/* hero: the photo is the background */
-.sy-hero { position: relative; overflow: hidden; isolation: isolate; display: flex; align-items: flex-end; min-height: min(100svh, 920px); background: var(--ink); }
-.sy-hero-bg { display: none; }
-.sy-hero-img { position: absolute; inset: 0 0 auto; width: 100%; height: 78%; object-fit: cover; object-position: 62% 0; z-index: -2; }
-.sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 0%, transparent 28%, color-mix(in srgb, var(--ink) 85%, transparent) 50%, var(--ink) 74%); }
-.sy-hero-copy { display: grid; gap: 18px; justify-items: start; padding-top: 48vh; padding-bottom: 48px; }
+/* hero: the photo is the background, light (owner's photo DSC00741, 2026-10-26) */
+.sy-hero { position: relative; overflow: hidden; isolation: isolate; background: var(--bg); }
+.sy-hero picture { display: block; }
+.sy-hero-img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 40% 35%; -webkit-mask-image: linear-gradient(180deg, black 78%, transparent); mask-image: linear-gradient(180deg, black 78%, transparent); }
+.sy-hero-copy { display: grid; gap: 18px; justify-items: start; padding-top: 8px; padding-bottom: 56px; }
 .sy-hero-copy > * { margin: 0; }
-.sy-for { font-size: var(--text-small); font-weight: 700; color: var(--peach); }
-.sy-hello { font-size: 34px; color: var(--orange); transform: rotate(-3deg); transform-origin: left; margin-bottom: -10px; }
-.sy .sy-hero h1 { font-size: clamp(40px, 6vw, 80px); line-height: 0.98; max-width: 14ch; color: var(--bg); }
-.sy .sy-hero h1 em { color: var(--peach); }
-.sy-hero .sy-sub { font-size: 19px; line-height: 1.5; max-width: 34ch; color: var(--on-dark); }
+.sy-for { font-size: var(--text-small); font-weight: 700; color: var(--brown-2-text); }
+.sy-hello { font-size: 34px; color: var(--orange-dk); transform: rotate(-3deg); transform-origin: left; margin-bottom: -10px; }
+.sy .sy-hero h1 { font-size: clamp(40px, 5.6vw, 76px); line-height: 0.98; max-width: 14ch; color: var(--ink); }
+.sy-hero .sy-sub { font-size: 19px; line-height: 1.5; max-width: 34ch; color: var(--brown); }
 .sy-checks { list-style: none; padding: 0; display: grid; gap: 10px; }
-.sy-checks li { position: relative; padding-left: 34px; font-weight: 600; font-size: 17px; color: var(--on-dark); }
+.sy-checks li { position: relative; padding-left: 34px; font-weight: 600; font-size: 17px; color: var(--ink); }
 .sy-checks li::before, .sy-tiles li::before, .sy .ticks li::before {
   content: ''; position: absolute; left: 0; top: 2px; width: 22px; height: 22px; border: 0; transform: none; background: var(--orange);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 13c2.5 1.6 4.4 3.6 6 6.5C12 12 16 6.5 21.5 3' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 13c2.5 1.6 4.4 3.6 6 6.5C12 12 16 6.5 21.5 3' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .sy-hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-top: 8px; }
-.sy-hero .btn-primary { background: var(--orange); color: var(--ink); }
-.sy-hero .btn-primary:hover { background: var(--peach); color: var(--ink); }
-.sy-hero .btn-primary .btn-arrow { background: var(--ink); color: var(--bg); }
-.sy-not-sales-note { display: flex; align-items: flex-end; gap: 6px; margin: 0; font-size: 26px; color: var(--peach); transform: rotate(-4deg); }
+.sy-not-sales-note { display: flex; align-items: flex-end; gap: 6px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-4deg); }
 .sy-not-sales-note svg { width: 44px; flex: none; }
-.sy-hero .small { max-width: 46ch; color: var(--on-dark-muted); }
-.sy-hero .sy-hero-next { color: var(--on-dark); }
+.sy-hero .small { max-width: 46ch; color: var(--brown-2-text); }
 .sy-hero-note { display: none; }
 @media (min-width: 900px) {
-  .sy-hero { align-items: center; min-height: min(92vh, 860px); }
-  .sy-hero-bg { display: block; position: absolute; inset: -40px; z-index: -3; background: url('/assets/images/people/chris-laptop-blur.jpg') left 30% / cover no-repeat; }
-  .sy-hero-img { inset: -4% 0 auto auto; width: auto; height: 112%; object-fit: contain; -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 30%); mask-image: linear-gradient(90deg, transparent 0%, black 30%); }
-  .sy-hero::after { background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 92%, transparent) 0%, color-mix(in srgb, var(--ink) 80%, transparent) 38%, color-mix(in srgb, var(--ink) 10%, transparent) 70%, transparent 100%); }
-  .sy-hero-copy { padding-block: 96px; }
-  .sy-hero-copy > * { max-width: 620px; }
-  .sy-hero-note { display: block; position: absolute; right: 3%; top: 14%; width: 230px; margin: 0; font-size: 26px; color: var(--peach); transform: rotate(-6deg); z-index: 1; }
-  .sy-hero-note svg { display: block; width: 100px; margin: 6px 0 0 10px; }
+  .sy-hero { display: flex; align-items: center; min-height: min(92vh, 860px); }
+  .sy-hero picture { position: absolute; inset: 0; z-index: -2; }
+  .sy-hero-img { height: 100%; aspect-ratio: auto; object-position: 30% 45%; -webkit-mask-image: none; mask-image: none; }
+  /* a soft wash of cream over the wall behind the words, nothing over her */
+  .sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 0%, transparent 44%, color-mix(in srgb, var(--bg) 70%, transparent) 58%, color-mix(in srgb, var(--bg) 88%, transparent) 100%); }
+  .sy-hero > .container { width: 100%; }
+  .sy-hero-copy { width: min(600px, 48%); margin-left: auto; padding-block: 88px; }
+  .sy-hero-note { display: block; position: absolute; left: 5%; top: 12%; width: 220px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-6deg); z-index: 1; }
+  .sy-hero-note svg { display: block; width: 100px; margin: 6px 0 0 110px; }
 }
 
 /* the quotes, taped on and a little crooked */
