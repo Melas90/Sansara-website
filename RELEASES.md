@@ -6,9 +6,16 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-On `develop`, not live: **the human look on the System pages** (`/system/`, `/client-loop/`, `/es/sistema/`; they share
-one body), merged from `feat/human-look` on 2026-10-26. The why, decision by decision, is in `decisions.md`
+Nothing on `develop` yet.
+
+## 2026-10-26
+
+Owner: "now deploy", outside the calendar. **The human look on the System pages** (`/system/`, `/client-loop/`,
+`/es/sistema/`; they share one body), from `feat/human-look`. The why, decision by decision, is in `decisions.md`
 (2026-10-26).
+
+- **Live:** https://sansara-media.com, Netlify deploy `6adfaafa5450e232331df6a9`. **Code:** `main` = `develop` = `d3c43a1`,
+  tag `release-2026-10-26`.
 
 - **Why:** leads stopped after 15 Oct and the page read as generated. The owner compared it with
   funnelarchitektinnen.de ("make it look less AI and more like them"), and the film had no viewers.
@@ -41,13 +48,25 @@ one body), merged from `feat/human-look` on 2026-10-26. The why, decision by dec
   free call, closing band, floating button), `LeadFormStarted`, `Lead`, `Contact` and `BookingClick` are unchanged and
   were checked on all three pages. The film's `ViewContent` (`system film 15s`) no longer fires, because the film is
   gone. Hotjar's form steps on `/client-loop/` are unchanged.
-- **Checked so far:** `npm run verify`; production build without the lab; the two-step form test (57 checks: steps,
-  Enter, missing email blocked, numbers from UK, ES, DE, NL, Pixel steps, Calendly, no JS errors); the Hotjar steps;
-  desktop (1440) and phone (390) screenshots of every changed section; no sideways scroll.
-- **Still to decide before the release:**
-  - the scroll pop-up: off, or once and later (no real lead has come through it; it came in on 19 Oct and no lead has arrived since). The floating button and the closing band stay: the header does not follow the page, and a real lead (4 Oct) came from the closing band;
+  - **Extras:** "Ad management, lead generation, automations, email and WhatsApp follow-up, your own CRM: we do those
+    too. Just ask" (no prices on the page).
+- **Checked before:** `npm run verify`; production build from a clean worktree of `develop`, no lab; all 15 pages at 1366
+  and 390 px (no JS errors, broken images, sideways scroll or visible PENDING); the two-step form test against the build
+  (57 checks); the Pixel on every button of the three System pages (22 buttons, `LoopCheckStarted` with its source).
+- **Checked after:** `/client-loop/`, `/system/`, `/es/sistema/` and `/` answer 200 with the new content ("Hi, I'm
+  Chrissy", "Sansara Loop Starter", "Ad management"; "Hola, soy Chrissy", "Gestión de anuncios"), no film; `/lab/` is 404;
+  the hero photo and the Caveat font load; Contentsquare loads; no JS or CSP errors and no sideways scroll on phone and
+  desktop. A test lead ("TEST Claude 2026-10-26 (borrar)", +44 7700 900526, test@example.com) went through the
+  `/client-loop/` form: 200, the Calendly button showed, the number arrived in international form with source "hero on
+  /client-loop/". Netlify filed it as spam; marked "not spam" by hand.
+- **Open:**
+  - the scroll pop-up: off, or once and later (no real lead has come through it; it came in on 19 Oct and no lead has
+    arrived since). The floating button and the closing band stay: the header does not follow the page, and a real
+    lead (4 Oct) came from the closing band;
   - hero and objection copy that promise more than the Loop Starter;
-  - payment terms behind "Flexible payment".
+  - payment terms behind "Flexible payment";
+  - delete the CRM test leads marked "(borrar)";
+  - if a Meta campaign or audience uses the film's `ViewContent`, switch it to `LoopCheckStarted`.
 
 ## 2026-10-25
 
