@@ -9,7 +9,7 @@
  *   <!-- @include _partials/header.html --> inline another file (recursive)
  *   {{ hero.headline }}                   a value from copy.md (inline markdown rendered)
  *   {{{ hero.headline }}}                 the same, as plain text (for attributes, <title>)
- *   {{#each what_we_do.offers}} … {{name}} … {{@index}} … {{/each}}
+ *   {{#each what_we_do.offers}} … {{name}} … {{@index}} … {{/each}}  (also @number "01", @n "1", @first, @last)
  *   {{#if founders.people}} … {{else}} … {{/if}}
  *   {{ shared.nav.system }}               values from pages/_partials/copy.md
  *   {{ site.name }} {{ page.route }}      build-time values
@@ -214,7 +214,7 @@ export function render(tpl, scope, file) {
     const list = lookup(scope, block.expr);
     const out = !Array.isArray(list) ? '' : list.map((item, idx) => {
       const ctx = typeof item === 'object' && item !== null ? { ...item } : { this: item };
-      ctx['@index'] = idx; ctx['@number'] = String(idx + 1).padStart(2, '0'); ctx['@first'] = idx === 0; ctx['@last'] = idx === list.length - 1;
+      ctx['@index'] = idx; ctx['@number'] = String(idx + 1).padStart(2, '0'); ctx['@n'] = String(idx + 1); ctx['@first'] = idx === 0; ctx['@last'] = idx === list.length - 1;
       return render(block.body, [...scope, ctx], file);
     }).join('');
     tpl = block.before + out + block.after;

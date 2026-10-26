@@ -220,6 +220,26 @@ organic_title: Una consulta presencial que crece con contenido y recomendaciones
 examples_note: El tuyo se construye alrededor de tu oferta. En la llamada gratuita vemos qué piezas necesitas y cuáles no.
 next: Míralo en un negocio real
 
+<!-- 2026-10-26 (propietaria): los cuatro pasos, con sus palabras; el paso 1 es la llamada gratuita (el Client Loop Check está apagado desde el 22-10). -->
+process_title: Cómo trabajamos juntos: *los cuatro pasos*.
+process_lead: Los mismos cuatro pasos, construyamos lo que construyamos para ti.
+method_label: Nuestro *método*.
+
+### process
+
+- title: Una llamada gratuita
+  icon: call
+  text: Treinta minutos sobre tu negocio. Vemos dónde pierdes clientes y qué arreglar primero. Si no es para ti, te lo diremos.
+- title: Dos llamadas de estrategia: oferta, posicionamiento, arquitectura
+  icon: map
+  text: La primera ordena la oferta y decide cómo te dicen que sí tus clientes. La segunda revisa el plan de la página antes de construir. Cada paso, del primer clic a la reserva o la compra, trazado y revisado antes de construir nada.
+- title: Construimos, y tú revisas
+  icon: build
+  text: Construimos tu página en tu dominio y conectamos cómo te dicen que sí. Te damos la estructura del texto, sección por sección; tú escribes y nosotros lo revisamos dos veces.
+- title: Llamada de cierre, entrega y cinco tickets de soporte
+  icon: key
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos. Después, cinco tickets de soporte durante 60 días, una duda o un pequeño arreglo de menos de 30 minutos cada uno.
+
 ### example_ads
 
 - Una auditoría de tu negocio, tu oferta y tu marca, antes de construir nada
@@ -260,6 +280,35 @@ next: Míralo en un negocio real
   icon: back
   ends: No vuelven, así que persigo clientes nuevos.
   text: Después de la reserva, el Loop sigue en contacto con seguimientos, nuevas reservas y la siguiente oferta adecuada, para que vuelvan más.
+
+## Price
+
+<!-- 2026-10-26: el primer paquete, traducido de las palabras de la propietaria. El nombre del paquete se queda en inglés hasta que ella diga otro. -->
+name: The Foundation
+price: 2.500 €
+lead: La base que tus clientes encuentran, en la que confían y a la que dicen que sí. Funciona con lo que sea que te trae gente: Instagram, tu lista, recomendaciones o anuncios.
+included_title: Incluye
+
+### included
+
+- title: Investigación de la oferta y posicionamiento
+  text: Miramos tu oferta, tus clientes y tu competencia, y afinamos qué vendes, para quién es y por qué tú.
+- title: Dos llamadas de estrategia
+  text: La primera ordena la oferta y decide cómo te dicen que sí tus clientes. La segunda revisa el plan de la página antes de construir.
+- title: Arquitectura del funnel
+  text: Cada paso, del primer clic a la reserva o la compra, trazado y revisado antes de construir nada.
+- title: Una página de venta
+  text: Hecha por nosotros, en tu dominio.
+- title: Estructura del texto y revisión
+  text: Te damos la estructura, sección por sección. Tú escribes y nosotros lo revisamos dos veces.
+- title: Una integración: cómo te dicen que sí
+  text: Un calendario de reservas o un pago, conectado a tu página, con su confirmación (y el acceso al curso, si vendes online).
+- title: Tres visuales para tu página
+  text:
+- title: Llamada de cierre y documentación
+  text: Te lo explicamos todo y te quedas con una guía escrita y todos los accesos.
+- title: Cinco tickets de soporte tras la entrega
+  text: Una duda o un pequeño arreglo de menos de 30 minutos cada uno, válidos durante 60 días.
 
 ## Why
 

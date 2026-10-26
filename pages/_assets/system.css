@@ -337,10 +337,9 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-actually span.hand { color: var(--orange-dk); }
 .sy-myth-list .sy-told-text { display: inline; margin: 0; font: inherit; color: var(--ink); }
 
-/* the 1 2 3 4 */
+/* Imagine instead: the four stages */
 .sy-four { list-style: none; padding: 0; margin: 0; display: grid; gap: clamp(40px, 6vw, 72px); }
 .sy-four-item { position: relative; display: grid; gap: 20px 48px; align-items: center; padding: clamp(24px, 4vw, 40px); background: var(--bg); border: 2px solid var(--ink); border-radius: 6px; box-shadow: 8px 8px 0 var(--ink); }
-.sy-four-n { position: absolute; top: -34px; left: -12px; font-family: var(--font-sans); font-weight: 900; font-size: clamp(72px, 9vw, 120px); line-height: 1; color: var(--orange); -webkit-text-stroke: 2px var(--ink); }
 .sy-four-img { width: 100%; max-width: 360px; height: auto; justify-self: center; }
 .sy-four-text { display: grid; gap: 12px; }
 .sy-four-text > * { margin: 0; }
@@ -352,8 +351,49 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
   .sy-four-item { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
   .sy-four-item:nth-child(even) { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
   .sy-four-item:nth-child(even) .sy-four-img { order: 2; }
-  .sy-four-item:nth-child(even) .sy-four-n { left: auto; right: -12px; }
+  .sy-four-item:nth-child(even) }
+
+/* How it works: the 1 2 3 4 of working together, as a method chart (owner's reference, 2026-10-26) */
+.sy-method { position: relative; padding: clamp(28px, 4vw, 48px); background: var(--ink); border-radius: var(--radius-card); margin-inline: max(-110px, calc(50% - 50vw + 16px)); } /* a little wider than the narrow column, so four boxes fit side by side */
+.sy-method-badge { display: grid; place-items: center; width: 132px; height: 132px; margin: 0 0 28px; border: 2px dotted var(--peach); border-radius: 50%; font-family: var(--font-serif); font-weight: 600; font-size: 26px; line-height: 1.05; text-align: center; color: var(--bg); }
+.sy-method-badge em { color: var(--orange); }
+.sy-method-steps { position: relative; list-style: none; padding: 0 0 0 44px; margin: 0; display: grid; gap: 28px; }
+.sy-method-steps::before { content: ''; position: absolute; left: 14px; top: 24px; bottom: 24px; border-left: 3px solid var(--bg); }
+.sy-method-step { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 14px; align-items: center; padding: 30px 20px 20px; background: var(--bg); border: 2px dotted var(--brown-2); }
+.sy-method-step::after { content: ''; position: absolute; left: -32px; top: 50%; width: 30px; border-top: 3px solid var(--bg); }
+.sy-method-n { position: absolute; top: -18px; left: -12px; display: grid; place-items: center; width: 44px; height: 44px; background: var(--ink); border: 3px solid var(--orange); font-family: var(--font-sans); font-weight: 900; font-size: 24px; color: var(--orange); }
+.sy-method-step .li { width: 36px; height: 36px; }
+.sy-method-step h3 { margin: 0; font-family: var(--font-sans); font-weight: 800; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+.sy-method-step p { grid-column: 1 / -1; margin: 0; font-size: 16px; line-height: 1.5; color: var(--brown); }
+@media (min-width: 960px) {
+  /* the zigzag: 2 and 4 on top, 1 and 3 below, all hung on one line between the rows; the badge sits top left */
+  .sy-method-badge { position: absolute; top: clamp(28px, 4vw, 48px); left: clamp(28px, 4vw, 48px); margin: 0; }
+  .sy-method-steps { padding: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto 56px auto; gap: 0 18px; }
+  .sy-method-steps::before { position: static; grid-row: 2; grid-column: 1 / -1; align-self: center; justify-self: center; width: 76%; border-left: 0; border-top: 3px solid var(--bg); }
+  .sy-method-step:nth-child(1) { grid-area: 3 / 1; }
+  .sy-method-step:nth-child(2) { grid-area: 1 / 2; }
+  .sy-method-step:nth-child(3) { grid-area: 3 / 3; }
+  .sy-method-step:nth-child(4) { grid-area: 1 / 4; }
+  .sy-method-step:nth-child(even) { align-self: end; }
+  .sy-method-step:nth-child(odd) { align-self: start; }
+  .sy-method-step::after { left: 50%; width: 0; height: 28px; border-top: 0; border-left: 3px solid var(--bg); }
+  .sy-method-step:nth-child(odd)::after { top: -30px; }
+  .sy-method-step:nth-child(even)::after { top: auto; bottom: -30px; }
 }
+
+/* the price: the Foundation */
+.sy-price { display: grid; gap: 36px 56px; padding: clamp(28px, 5vw, 56px); background: var(--white); border: 2px solid var(--ink); border-radius: 6px; box-shadow: 10px 10px 0 var(--ink); }
+@media (min-width: 900px) { .sy-price { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); } }
+.sy-price-head { display: grid; gap: 18px; justify-items: start; align-content: start; }
+.sy-price-head > * { margin: 0; }
+.sy-price-tag { display: inline-block; padding: 8px 18px; border-radius: 6px; background: var(--orange); font-family: var(--font-sans); font-weight: 900; font-size: clamp(34px, 4.4vw, 52px); line-height: 1; letter-spacing: -0.02em; color: var(--ink); rotate: -3deg; }
+.sy .sy-price-head h2 { font-size: clamp(36px, 4.6vw, 56px); color: var(--ink); }
+.sy-price-lead { font-size: 18px; line-height: var(--leading-body); color: var(--brown); }
+.sy-price-note { font-size: 24px; rotate: -2deg; }
+.sy-price-body h3 { margin: 0 0 14px; font-size: 32px; }
+.sy-price-list { gap: 14px; }
+.sy-price-list li { font-size: 16.5px; line-height: 1.5; color: var(--brown); }
+.sy-price-list b { color: var(--ink); }
 
 /* what we build: dotted tiles */
 .sy-get { margin-top: clamp(56px, 8vw, 96px); }

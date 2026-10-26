@@ -231,6 +231,30 @@ organic_title: An in-person coaching business that grows on content and referral
 examples_note: Yours is built around your offer, for you. On the free call we work out which pieces you need, and which you don't.
 next: See it in a real business
 
+<!-- 2026-10-26 (owner): "there is redundancy between Imagine instead and How it works… the 1 2 3 4 could be used like
+     they do", then the four steps in her words: "The Check and a call / Two strategy calls: offer, positioning,
+     architecture / We build, and you review / Closing call, handover and five support tickets". Step 1 is called the
+     free call because the Client Loop Check is off since 2026-10-22. The texts come from the Foundation package (Price).
+     The five Loop steps below (steps) are no longer shown; Imagine instead tells the stages. -->
+process_title: How we work together: *the four steps*.
+process_lead: The same four steps, whatever we build for you.
+method_label: Our *method*.
+
+### process
+
+- title: A free call
+  icon: call
+  text: Thirty minutes on your business. We look at where you're losing clients and what to fix first. If it's not right for you, we'll tell you.
+- title: Two strategy calls: offer, positioning, architecture
+  icon: map
+  text: The first cleans up the offer and decides how your clients say yes. The second checks the page plan before we build. Every step from first click to booking or purchase, mapped and checked before anything is built.
+- title: We build, and you review
+  icon: build
+  text: We build your page on your domain and connect how your clients say yes. You get the copy structure section by section; you write, and we review it twice.
+- title: Closing call, handover and five support tickets
+  icon: key
+  text: We walk you through everything, and you keep a written guide and every login. Then five support tickets for 60 days, a question or a small fix under 30 minutes each.
+
 ### example_ads
 
 - An audit of your business, your offer and your brand, before anything is built
@@ -271,6 +295,35 @@ next: See it in a real business
   icon: back
   ends: They don't come back, so I chase new ones.
   text: After the booking, the Loop keeps in touch with check-ins, rebooking and the right next offer, so more of them come back.
+
+## Price
+
+<!-- 2026-10-26 (owner): the first package, in her words. Price as given; VAT not stated. -->
+name: The Foundation
+price: €2,500
+lead: The base your clients find, trust and say yes to. Works with whatever brings people to you: Instagram, your list, referrals or ads.
+included_title: Included
+
+### included
+
+- title: Offer research and positioning
+  text: We look at your offer, your clients and your competitors, and sharpen what you sell, who it’s for and why you.
+- title: Two strategy calls
+  text: The first cleans up the offer and decides how your clients say yes. The second checks the page plan before we build.
+- title: Funnel architecture
+  text: Every step from first click to booking or purchase, mapped and checked before anything is built.
+- title: One sales page
+  text: Built by us, on your domain.
+- title: Copy structure and review
+  text: We give you the structure, section by section. You write, and we review it twice.
+- title: One integration: how your clients say yes
+  text: A booking calendar or a checkout, connected to your page, with its confirmation (and course access, if you sell online).
+- title: Three visuals for your page
+  text:
+- title: Closing call and documentation
+  text: We walk you through everything, and you keep a written guide and every login.
+- title: Five support tickets after delivery
+  text: A question or a small fix under 30 minutes each, valid for 60 days.
 
 ## Why
 

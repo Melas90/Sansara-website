@@ -76,10 +76,10 @@
     </div>
   </section>
 
-  <!-- Imagine instead, as the numbered 1 2 3 4 (owner, 2026-10-26: "also the 1234", the big numbered phases on
-       funnelarchitektinnen.de). The four stages of the Loop in order, each with its illustration (moved here from the
-       hero), the pain in their words crossed out, the ending underlined by the pen, how the Loop gets there and the line
-       tied to a core value. Then what we build, as tiles (the band that was in the hero). Replaces the flip cards. -->
+  <!-- Imagine instead (owner, 2026-10-26): the four stages of the Loop in order, each with its illustration (moved here from
+       the hero), the pain in their words crossed out, the ending underlined by the pen, how the Loop gets there and the
+       line tied to a core value. Then what we build, as tiles (the band that was in the hero). Replaces the flip cards.
+       Unnumbered: the 1 2 3 4 is the way we work together, in "How it works". -->
   <section class="section" id="instead" aria-labelledby="instead-title">
     <div class="container">
       <div class="centred stack-sm reveal" style="margin-bottom: 40px">
@@ -88,7 +88,6 @@
       </div>
       <ol class="sy-four">
         {{#each instead.rows}}<li class="sy-four-item reveal">
-          <span class="sy-four-n" aria-hidden="true">{{ @number }}</span>
           <img class="sy-four-img" src="{{{ img }}}" alt="" width="448" height="386" loading="lazy">
           <div class="sy-four-text">
             <p class="hand sy-four-stage">{{ stage }}</p>
@@ -114,19 +113,30 @@
     </div>
   </section>
 
-  <!-- How it works: the five steps slide over each other; each names the sentence it ends. -->
+  <!-- How it works, as the 1 2 3 4 of working together (owner, 2026-10-26: "there is redundancy between Imagine instead
+       and How it works… the 1 2 3 4 could be used like they do", after funnelarchitektinnen.de's numbered phases): the
+       free call, two strategy calls, we build and you review, the handover. The five Loop steps that slid over each other
+       are gone (Imagine instead tells the stages); their copy stays in copy.md. -->
   <section class="section c-band" id="how" aria-labelledby="how-title">
     <div class="container c-narrow">
       <div class="centred stack-sm reveal" style="margin-bottom: 48px">
         <p class="eyebrow">{{ how.eyebrow }}</p>
-        <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.title }}</span></span></h2>
-        <p class="measure">{{ how.lead }}</p>
+        <h2 id="how-title"><span class="mask"><span class="mask-in">{{ how.process_title }}</span></span></h2>
+        <p class="measure">{{ how.process_lead }}</p>
       </div>
-      <ol class="stack" data-stack>
-        {{#each how.steps}}
-        <li style="--i: {{ @index }}"><article class="stack-card"><span class="sy-step-icon" aria-hidden="true"><svg class="li"><use href="#li-{{{ icon }}}"/></svg></span><div><h3>{{ title }}</h3><p class="sy-ends"><span>{{ how.ends }}:</span> “{{ ends }}”</p><p>{{ text }}</p></div></article></li>
-        {{/each}}
-      </ol>
+      <!-- Drawn as a method chart, like the owner's reference (funnelarchitektinnen.de, "Unsere Methode"): a dark panel, the
+           badge, four boxes in a zigzag hung on one line, each with its number tag. On a phone the line runs down the left. -->
+      <div class="sy-method reveal">
+        <p class="sy-method-badge"><span>{{ how.method_label }}</span></p>
+        <ol class="sy-method-steps">
+          {{#each how.process}}<li class="sy-method-step">
+            <span class="sy-method-n" aria-hidden="true">{{ @n }}</span>
+            <svg class="li" aria-hidden="true"><use href="#li-{{{ icon }}}"/></svg>
+            <h3>{{ title }}</h3>
+            <p>{{ text }}</p>
+          </li>{{/each}}
+        </ol>
+      </div>
       <!-- Two example Loops (owner, 2026-10-17), so people see what a Loop actually is: one that grows with ads, one on content and referrals. Examples only: every Loop is built around the client's offer. Replaces the "in practice" paragraph. -->
       <div class="sy-examples reveal">
         <div class="centred stack-sm">
@@ -145,6 +155,25 @@
         <figcaption>{{ how.dashboard_caption }}</figcaption>
       </figure>
       <p class="sy-flow reveal"><a class="sy-next" href="#case">{{ how.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- The price (owner, 2026-10-26): the first package, The Foundation, in her words. -->
+  <section class="section" id="price" aria-labelledby="price-title">
+    <div class="container">
+      <div class="sy-price reveal">
+        <div class="sy-price-head">
+          <p class="sy-price-tag">{{ price.price }}</p>
+          <h2 id="price-title">{{ price.name }}</h2>
+          <p class="sy-price-lead">{{ price.lead }}</p>
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <p class="hand sy-price-note">{{ hero.not_sales }}</p>
+        </div>
+        <div class="sy-price-body">
+          <h3 class="hand">{{ price.included_title }}</h3>
+          <ul class="ticks sy-price-list">{{#each price.included}}<li><span><b>{{ title }}.</b>{{#if text}} {{ text }}{{/if}}</span></li>{{/each}}</ul>
+        </div>
+      </div>
     </div>
   </section>
 
