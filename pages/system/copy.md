@@ -308,7 +308,7 @@ included_title: Included
      band under the hero (Hero blocks). -->
 payment: Flexible payment. Ask us how.
 more_title: There's much more we can do.
-more_text: Lead generation, automations, email and WhatsApp follow-up, your own CRM: we build those too.
+more_text: Ad management, lead generation, automations, email and WhatsApp follow-up, your own CRM: we do those too.
 more_link: Just ask
 
 ### included

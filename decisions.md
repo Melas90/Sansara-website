@@ -234,3 +234,4 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **Who it is for:** the hero line says "For coaches and business owners with paying clients" / "Para coaches y dueños de negocio que ya tienen clientes" (owner, same day).
 - **The package is called Sansara Loop Starter** (owner, same day: "the name, slightly more catchy", then "Sansara Loop Starter"), the same in both languages; it was Sansara Client Foundation.
 - **"Two Loops, for example" is off** (owner, same day: "that is what is included and what we could do, that's all"): the offer is the Loop Starter and the "much more" box.
+- **Ad management is one of the extras** (owner, same day: "we just put ad management in the section we could do"): the "much more" box starts with it, no price on the page.

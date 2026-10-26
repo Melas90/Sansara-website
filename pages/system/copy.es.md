@@ -290,7 +290,7 @@ lead: La base que tus clientes encuentran, en la que confían y a la que dicen q
 included_title: Incluye
 payment: Pago flexible. Pregúntanos cómo.
 more_title: Podemos hacer mucho más.
-more_text: Captación, automatizaciones, seguimiento por email y WhatsApp, tu propio CRM: también lo montamos.
+more_text: Gestión de anuncios, captación, automatizaciones, seguimiento por email y WhatsApp, tu propio CRM: también lo hacemos.
 more_link: Solo pregúntanos
 
 ### included
