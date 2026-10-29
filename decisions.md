@@ -235,3 +235,16 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - **The package is called Sansara Loop Starter** (owner, same day: "the name, slightly more catchy", then "Sansara Loop Starter"), the same in both languages; it was Sansara Client Foundation.
 - **"Two Loops, for example" is off** (owner, same day: "that is what is included and what we could do, that's all"): the offer is the Loop Starter and the "much more" box.
 - **Ad management is one of the extras** (owner, same day: "we just put ad management in the section we could do"): the "much more" box starts with it, no price on the page.
+
+## 2026-10-29: book straight on Calendly on /client-loop/ (branch `feature/calendly-direct`, local demo, not live)
+
+- **Every call button on the landing opens our booking pop-up with Calendly inside** (owner, same day: "in the pop-up, I feel it's nicer"): the form's frame and Chrissy's photo, the title "Pick a time for your *free call*", "30 minutes, free. An info call, not a sales call.", Calendly showing only the calendar, and "Questions first?" under it. No form first (owner: "click the button and choose
+  your time"). The buttons say **Book your free call** (`pages/client-loop/copy.md`, section Booking); /system/ and
+  /es/sistema/ keep "Talk to us" and the form. The scroll pop-up is off on the landing. If Calendly can't load, the form opens.
+- **Lead after the booking** (owner: "the lead goes after booking the call", "we keep lead"): Calendly's embed tells the
+  page when a time is booked (`calendly.event_scheduled`); the page sends **Lead** and **Schedule** (content_name
+  "calendly booking"), once per booking. Opening the calendar stays **LoopCheckStarted** with the button's place.
+- **Questions first? Write to us on WhatsApp** under the hero and closing buttons, with the message "Hi Sansara, I'd like
+  to know more about the free call."; a tap is **Contact** ("booking page").
+- The ad origin (utm_source, utm_campaign, utm_content) goes into Calendly as UTM, so each booking shows which ad it came from.
+- Why (same day): since 16 Oct one form submission in total; Dom (13 Oct) came through the form, then WhatsApp.

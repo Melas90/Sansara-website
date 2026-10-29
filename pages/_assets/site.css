@@ -378,6 +378,13 @@ html:not(.js) .close-btn { display: none; }
 @media (min-width: 760px) {
   .lead-avatar { display: none; }
 }
+/* The booking pop-up (2026-10-29): the form's frame with Calendly inside; Calendly needs real height to show a month */
+.book-dialog .lead-inner { gap: 16px; align-content: start; }
+.book-cal { position: relative; height: min(660px, calc(100dvh - 230px)); min-height: 420px; margin-inline: -8px; }
+.book-cal iframe { display: block; }
+.book-loading { position: absolute; inset: 0; display: grid; place-items: center; font-size: var(--text-small); color: var(--brown-2-text); }
+.book-cal.is-in .book-loading { display: none; }
+.book-dialog .lead-wa-direct { margin-top: 0; }
 html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
 html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } }

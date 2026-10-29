@@ -1,0 +1,20 @@
+<!--
+  Booking pop-up (owner, 2026-10-29: Calendly "in the pop-up, I feel it's nicer"). On a page whose <body> has
+  data-lead-calendar, lead.js opens this instead of the form and embeds Calendly in .book-cal on the first open.
+  Same frame as the form: Chris laughing beside it from 760 px, a small portrait by the title on a phone.
+-->
+<dialog class="lead-dialog has-photo book-dialog" id="book" aria-labelledby="book-title">
+  <figure class="lead-photo"><img src="/assets/images/people/chris-laughing.jpg" alt="{{{ shared.lead.photo_alt }}}" width="746" height="932" loading="lazy" decoding="async"></figure>
+  <div class="lead-inner">
+    <div class="lead-head">
+      <img class="lead-avatar" src="/assets/images/people/chris-laughing-face.jpg" alt="" width="240" height="240" loading="lazy" decoding="async">
+      <div class="stack-sm">
+        <h2 id="book-title">{{ booking.title }}</h2>
+        <p>{{ booking.intro }}</p>
+      </div>
+      <button class="close-btn" type="button" data-book-close aria-label="{{{ shared.lead.close }}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="book-cal"><p class="book-loading">{{ booking.loading }}</p></div>
+    <p class="lead-wa-direct"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>
+  </div>
+</dialog>

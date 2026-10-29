@@ -6,6 +6,6 @@
     <a class="logo" href="/" aria-label="{{{ shared.nav.home }}}">
       <img src="/assets/images/logo-sansara-media.png" alt="Sansara Media" width="898" height="118">
     </a>
-    <a class="btn btn-primary header-cta" href="#lead" data-lead-open data-topic="The System" data-source="header">{{ shared.lp.header_button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    <a class="btn btn-primary header-cta" href="#lead" data-lead-open data-topic="The System" data-source="header">{{#if booking.button}}{{ booking.button }}{{else}}{{ shared.lp.header_button }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
   </div>
 </header>
