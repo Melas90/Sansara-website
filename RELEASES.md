@@ -37,9 +37,9 @@ from `feature/calendly-direct`. The why is in `decisions.md` (2026-10-29).
   pop-up and the new buttons, /system/ doesn't; the CSP header carries calendly.com and the gateway host; on the live
   landing the Pixel sends PageView and LoopCheckStarted (hero), with no CSP errors; the pop-up opens with the calendar on
   phone and desktop; the /system/ form as before. No real test lead was sent through the form.
-- **Not proven yet:** a real booking. Calendly refuses bookings from an automated browser ("This booking cannot be
-  completed. For security reasons…"), so `Lead` + `Schedule` after a booking was tested with a simulated message only.
-  The owner books once on the live page with Events Manager → Test events open, then cancels it.
+- **A real booking:** Calendly refuses bookings from an automated browser ("This booking cannot be completed. For
+  security reasons…"), so `Lead` + `Schedule` after a booking was first tested with a simulated message only. On
+  2026-10-29 the owner booked once on the live page and saw both events arrive in Events Manager (her test booking).
 - **Open:** Calendly's colours (likely a paid plan); the website/social question in Calendly could be optional.
 
 ## 2026-10-26
