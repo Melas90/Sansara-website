@@ -238,7 +238,7 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 
 ## 2026-10-29: book straight on Calendly on /client-loop/ (branch `feature/calendly-direct`, local demo, not live)
 
-- **Every call button on the landing opens Calendly** over the page, no form first (owner: "click the button and choose
+- **Every call button on the landing opens our booking pop-up with Calendly inside** (owner, same day: "in the pop-up, I feel it's nicer"): the form's frame and Chrissy's photo, the title "Pick a time for your *free call*", "30 minutes, free. An info call, not a sales call.", Calendly showing only the calendar, and "Questions first?" under it. No form first (owner: "click the button and choose
   your time"). The buttons say **Book your free call** (`pages/client-loop/copy.md`, section Booking); /system/ and
   /es/sistema/ keep "Talk to us" and the form. The scroll pop-up is off on the landing. If Calendly can't load, the form opens.
 - **Lead after the booking** (owner: "the lead goes after booking the call", "we keep lead"): Calendly's embed tells the

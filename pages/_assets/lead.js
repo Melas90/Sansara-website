@@ -120,11 +120,14 @@
   };
 
   /* Book straight on Calendly (owner, 2026-10-29: "click the button and choose your time"): on a page whose <body> has
-     data-lead-calendar, every [data-lead-open] opens Calendly's own pop-up over the page instead of the form, with the ad
-     origin passed on as UTM. Calendly's embed tells the page when a time is booked (the calendly.event_scheduled
-     message, on every plan); only then the Pixel gets Lead and Schedule (owner: "the lead goes after booking the call").
-     Opening the calendar is LoopCheckStarted, as the form was. If Calendly can't load, the form opens instead. */
+     data-lead-calendar, every [data-lead-open] opens our own booking pop-up (#book, _partials/book.html: Chrissy's photo,
+     the same look as the form; owner: "I feel it's nicer") with Calendly embedded in it, the ad origin passed on as UTM.
+     Calendly's embed tells the page when a time is booked (the calendly.event_scheduled message, on every plan); only
+     then the Pixel gets Lead and Schedule (owner: "the lead goes after booking the call"). Opening the pop-up is
+     LoopCheckStarted, as the form was. If Calendly can't load, the form opens instead. */
   const calendarUrl = document.body.dataset.leadCalendar;
+  const book = document.getElementById('book');
+  const bookCal = book?.querySelector('.book-cal');
   let calendly = null;
   const loadCalendly = () => (calendly ||= new Promise((resolve, reject) => {
     const css = document.createElement('link');
@@ -137,18 +140,35 @@
     setTimeout(() => reject(new Error('timeout')), 8000);
     document.head.append(css, js);
   }));
+  let bookOpener = null;
+  let calendarIn = false;
   const openCalendar = (trigger) => {
+    bookOpener = trigger;
+    book.showModal();
+    document.documentElement.classList.add('lead-open');
+    pixel('LoopCheckStarted', { content_name: trigger?.dataset.source || 'link' });
+    hj('Calendly: opened');
+    if (calendarIn) return; // a reopened pop-up keeps where they were in the calendar
     const utm = {};
     if (adOrigin.utm_source) utm.utmSource = adOrigin.utm_source;
     if (adOrigin.utm_campaign) utm.utmCampaign = adOrigin.utm_campaign;
     if (adOrigin.utm_content) utm.utmContent = adOrigin.utm_content;
     loadCalendly().then((C) => {
-      C.initPopupWidget({ url: calendarUrl, utm });
-      pixel('LoopCheckStarted', { content_name: trigger?.dataset.source || 'link' });
-      hj('Calendly: opened');
-    }).catch(() => openForm(trigger));
+      if (calendarIn) return;
+      calendarIn = true;
+      // the pop-up already says who and what, so Calendly shows only the calendar (its cookie notice stays)
+      const url = new URL(calendarUrl);
+      url.searchParams.set('hide_event_type_details', '1');
+      C.initInlineWidget({ url: String(url), parentElement: bookCal, utm });
+      bookCal.classList.add('is-in');
+    }).catch(() => { book.close(); openForm(trigger); });
   };
-  const open = (trigger) => (calendarUrl ? openCalendar(trigger) : openForm(trigger));
+  if (book) {
+    book.addEventListener('close', () => { document.documentElement.classList.remove('lead-open'); bookOpener?.focus?.(); });
+    book.addEventListener('click', (e) => { if (e.target === book) book.close(); });
+    book.querySelector('[data-book-close]')?.addEventListener('click', () => book.close());
+  }
+  const open = (trigger) => (calendarUrl && book ? openCalendar(trigger) : openForm(trigger));
   if (calendarUrl) {
     const booked = new Set();
     addEventListener('message', (e) => {

@@ -8,3 +8,7 @@
      (shared.lead.calendar_url) instead of the form, and says so; "Questions first?" (shared.lead.whatsapp_alt) sits under
      the hero and closing buttons. Without this section the page falls back to the System's buttons and the form. -->
 button: Book your free call
+<!-- the booking pop-up (_partials/book.html); the intro restates the System's "30 minutes, free" and "An info call, not a sales call." -->
+title: Pick a time for your *free call*
+intro: 30 minutes, free. An info call, not a sales call.
+loading: Loading the calendar…
