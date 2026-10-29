@@ -8,6 +8,40 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 Nothing on `develop` yet.
 
+## 2026-10-29
+
+Owner: "deploy, we will try", outside the calendar. **Book straight on Calendly on /client-loop/** (the ad landing),
+from `feature/calendly-direct`. The why is in `decisions.md` (2026-10-29).
+
+- **Live:** https://sansara-media.com, Netlify deploy `6ae37e7ea82fd2603dad43d8`. **Code:** `main` = `develop` = `fb84c6a`,
+  tag `release-2026-10-29`.
+- **Why:** one form submission since 16 Oct; four Contact events (WhatsApp taps) and no messages. Dom (13 Oct) came
+  through the form, then WhatsApp.
+- **Changes on /client-loop/ only** (/system/ and /es/sistema/ keep "Talk to us" and the form):
+  - every call button (header, hero, price, "Just ask", free call, closing band, floating button) says **Book your free
+    call** and opens our own booking pop-up: Chrissy laughing, "Pick a time for your *free call*", "30 minutes, free.
+    An info call, not a sales call.", Calendly inside (`hide_event_type_details=1`), "Questions first? Write to us on
+    WhatsApp" under it; the same line under the hero and closing buttons;
+  - the scroll pop-up is off; if Calendly can't load, the form opens;
+  - utm_source, utm_campaign and utm_content go to Calendly as UTM.
+- **Pixel on /client-loop/:** `LoopCheckStarted` when the pop-up opens (content_name = the button); **`Lead` and
+  `Schedule` only when Calendly reports a booking** (`calendly.event_scheduled`, content_name "calendly booking", once
+  per booking); `Contact` on the WhatsApp line ("booking page"). Other pages unchanged (`Lead` when the form is sent).
+- **CSP:** assets.calendly.com (script, style, images), calendly.com (frames), and the Meta gateway's Google Cloud host
+  `vwdb33u4tj1q.cloud.run` from the Pixel config, which the policy had been blocking on every page.
+- **Checked before:** `npm run verify`; production build without the lab; local tests at 390 and 1366 px (no JS errors,
+  no sideways scroll, the booking message simulated: Lead + Schedule once, a message from another origin ignored); two
+  Netlify drafts with the real Pixel, its requests recorded and stopped before Meta (PageView, LoopCheckStarted, no Lead
+  on opening; no CSP errors); the /system/ form with its POST answered locally (Calendly opens with name and email).
+- **Checked after:** `/`, `/client-loop/`, `/system/`, `/es/sistema/` answer 200, `/lab/` 404; the landing has the
+  pop-up and the new buttons, /system/ doesn't; the CSP header carries calendly.com and the gateway host; on the live
+  landing the Pixel sends PageView and LoopCheckStarted (hero), with no CSP errors; the pop-up opens with the calendar on
+  phone and desktop; the /system/ form as before. No real test lead was sent through the form.
+- **Not proven yet:** a real booking. Calendly refuses bookings from an automated browser ("This booking cannot be
+  completed. For security reasons…"), so `Lead` + `Schedule` after a booking was tested with a simulated message only.
+  The owner books once on the live page with Events Manager → Test events open, then cancels it.
+- **Open:** Calendly's colours (likely a paid plan); the website/social question in Calendly could be optional.
+
 ## 2026-10-26
 
 Owner: "now deploy", outside the calendar. **The human look on the System pages** (`/system/`, `/client-loop/`,
