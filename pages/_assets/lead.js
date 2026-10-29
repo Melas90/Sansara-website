@@ -103,7 +103,7 @@
     pixel('LeadFormStarted', { content_name: source.value.split(' on ')[0] });
     hj('Form: started typing');
   });
-  const open = (trigger) => {
+  const openForm = (trigger) => {
     opener = trigger;
     source.value = `${trigger?.dataset.source || 'link'} on ${location.pathname}`;
     // The offer is known from the button or the page (owner, 2026-10-24: one field less): set it and hide the question.
@@ -118,6 +118,55 @@
     document.documentElement.classList.add('lead-open');
     form.querySelector('input:not([type=hidden])')?.focus();
   };
+
+  /* Book straight on Calendly (owner, 2026-10-29: "click the button and choose your time"): on a page whose <body> has
+     data-lead-calendar, every [data-lead-open] opens Calendly's own pop-up over the page instead of the form, with the ad
+     origin passed on as UTM. Calendly's embed tells the page when a time is booked (the calendly.event_scheduled
+     message, on every plan); only then the Pixel gets Lead and Schedule (owner: "the lead goes after booking the call").
+     Opening the calendar is LoopCheckStarted, as the form was. If Calendly can't load, the form opens instead. */
+  const calendarUrl = document.body.dataset.leadCalendar;
+  let calendly = null;
+  const loadCalendly = () => (calendly ||= new Promise((resolve, reject) => {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    const js = document.createElement('script');
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.onload = () => (window.Calendly ? resolve(window.Calendly) : reject(new Error('no Calendly')));
+    js.onerror = reject;
+    setTimeout(() => reject(new Error('timeout')), 8000);
+    document.head.append(css, js);
+  }));
+  const openCalendar = (trigger) => {
+    const utm = {};
+    if (adOrigin.utm_source) utm.utmSource = adOrigin.utm_source;
+    if (adOrigin.utm_campaign) utm.utmCampaign = adOrigin.utm_campaign;
+    if (adOrigin.utm_content) utm.utmContent = adOrigin.utm_content;
+    loadCalendly().then((C) => {
+      C.initPopupWidget({ url: calendarUrl, utm });
+      pixel('LoopCheckStarted', { content_name: trigger?.dataset.source || 'link' });
+      hj('Calendly: opened');
+    }).catch(() => openForm(trigger));
+  };
+  const open = (trigger) => (calendarUrl ? openCalendar(trigger) : openForm(trigger));
+  if (calendarUrl) {
+    const booked = new Set();
+    addEventListener('message', (e) => {
+      if (e.origin !== 'https://calendly.com' || e.data?.event !== 'calendly.event_scheduled') return;
+      const id = e.data.payload?.invitee?.uri || 'booking';
+      if (booked.has(id)) return;
+      booked.add(id);
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead', { content_name: 'calendly booking' });
+        window.fbq('track', 'Schedule', { content_name: 'calendly booking' });
+      }
+      hj('Calendly: booked');
+    });
+    // "Questions first?" under the buttons: WhatsApp, reported as Contact like the other WhatsApp links
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-contact-wa]') && typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'booking page' });
+    });
+  }
   const close = () => dialog.close();
   dialog.addEventListener('close', () => {
     if (!sentNow) hj(started ? 'Form: closed after typing, not sent' : 'Form: closed without typing');

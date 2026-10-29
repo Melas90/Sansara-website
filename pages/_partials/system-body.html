@@ -27,10 +27,11 @@
         <p class="sy-sub reveal">{{ hero.subtitle }}</p>
         <ul class="sy-checks reveal">{{#each hero.checks}}<li>{{ this }}</li>{{/each}}</ul>
         <div class="sy-hero-cta reveal">
-          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
           <p class="hand sy-not-sales-note"><svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M56 30C40 34 20 30 8 14"/><path d="M6 26 7 12l13 2"/></svg>{{ hero.not_sales }}</p>
         </div>
         <p class="small reveal">{{ hero.note }}</p>
+        {{#if booking.button}}<p class="small sy-wa"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>{{/if}}
         <a class="sy-next sy-hero-next reveal" href="#how">{{ hero.secondary }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
       </div>
     </div>
@@ -136,7 +137,7 @@
           <div class="sy-price-pitch">
             <p class="sy-price-lead">{{ price.lead }}</p>
             <div class="sy-price-cta">
-              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
               <p class="hand sy-price-note">{{ hero.not_sales }}</p>
             </div>
           </div>
@@ -221,7 +222,7 @@
         <p>{{ call.lead }}</p>
         <ul class="ticks sy-call-list">{{#each call.outcomes}}<li><span><b>{{ title }}.</b> {{ text }}</span></li>{{/each}}</ul>
         <div class="sy-not-sales"><p class="hand">{{ hero.not_sales }}</p><p>{{ call.not_sales_text }}</p></div>
-        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{ hero.primary }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="free call">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
         <p class="small muted">{{ call.small }}</p>
       </div>
     </div>
@@ -251,8 +252,9 @@
             <h2 id="close-title"><span class="mask"><span class="mask-in">{{ close.title }}</span></span></h2>
             <p class="lead">{{ close.text }}</p>
             <div class="contact-actions">
-              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="closing band">{{ close.button }}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="closing band">{{#if booking.button}}{{ booking.button }}{{else}}{{ close.button }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
               <p class="small">{{ close.small }}</p>
+              {{#if booking.button}}<p class="small sy-wa"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>{{/if}}
             </div>
           </div>
         </div>
