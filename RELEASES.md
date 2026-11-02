@@ -6,7 +6,14 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-11-16)
 
-Nothing on `develop` yet.
+On `develop` (merged 2026-11-02 from `feature/hero-declutter`), System pages (`/system/`, `/client-loop/`, `/es/sistema/`):
+
+- a calmer hero with both founders ("Hi, we're Miguel and Chrissy."), no tech line, no how-it-works link;
+- "What have you already tried?" in the place of "The real problem": eight cards the reader can tick, "It doesn't
+  matter", three ways to start (decisions.md, 2026-11-02);
+- checked locally on 2026-11-02: `npm run verify`; every page at 1366 and 390 px (no JS errors, no broken images, no
+  sideways scroll, no visible PENDING); ticking by mouse, touch and keyboard; the /system/ form with its POST answered
+  locally (utm and fbclid carried). Not yet: the owner's look on a real phone; the line under each way to start.
 
 ## 2026-10-29
 
