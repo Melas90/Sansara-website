@@ -118,6 +118,36 @@ html.motion .sy-next svg { animation: sy-nudge calc(var(--slow) * 2) var(--ease)
 .sy-outcomes h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h3); line-height: 1.15; color: var(--ink); }
 @media (max-width: 860px) { .sy-outcomes { grid-template-columns: minmax(0, 1fr); } }
 
+/* ---------- what have you already tried? (2026-11-02) ---------- */
+.sy-tried-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.sy-tried-photo { position: relative; margin: 0; }
+.sy-tried-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 35%; border-radius: var(--radius-card); }
+.sy-tried-photo { padding-top: 44px; }
+.sy-tried-photo figcaption { position: absolute; right: 6px; top: 0; font-size: 34px; line-height: 1; color: var(--orange); rotate: -5deg; }
+.sy-tried-body { display: grid; gap: 28px; }
+.sy-tried-body h2 { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: var(--text-h2); line-height: 1.05; color: var(--on-dark); }
+.sy-tried-body h2 em { color: var(--orange); }
+.sy-tried-items { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sy-tried-items li { position: relative; padding: 18px 18px 18px 50px; border-radius: var(--radius-card-sm); background: var(--bg); color: var(--ink); font-weight: 600; font-size: 17px; line-height: 1.3; }
+.sy-tried-items li::before {
+  content: ''; position: absolute; left: 18px; top: 50%; translate: 0 -50%; width: 20px; height: 20px; background: var(--orange);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 13c2.5 1.6 4.4 3.6 6 6.5C12 12 16 6.5 21.5 3' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 13c2.5 1.6 4.4 3.6 6 6.5C12 12 16 6.5 21.5 3' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.sy-tried-turn { margin: 0; font-family: var(--font-serif); font-size: var(--text-h3); line-height: 1.25; color: var(--on-dark); }
+.sy-tried-turn em { color: var(--orange); }
+@media (max-width: 860px) {
+  .sy-tried-grid { grid-template-columns: minmax(0, 1fr); }
+  .sy-tried-photo { max-width: 360px; }
+  .sy-tried-photo img { aspect-ratio: 1 / 1; }
+}
+@media (max-width: 520px) {
+  .sy-tried-items { gap: 10px; }
+  .sy-tried-items li { padding: 14px 12px 14px 38px; font-size: 15px; }
+  .sy-tried-items li::before { left: 12px; width: 18px; height: 18px; }
+}
+@media (max-width: 330px) { .sy-tried-items { grid-template-columns: minmax(0, 1fr); } }
+
 /* ---------- for you, not for you ---------- */
 .sy-fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .sy-fit-col { display: grid; gap: 20px; align-content: start; padding: clamp(28px, 4vw, 44px); border-radius: var(--radius-card); }

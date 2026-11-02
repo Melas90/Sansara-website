@@ -196,25 +196,46 @@ photo_alt: Christiane, co-founder of Sansara Media, laughing
 - title: Your next step
   text: What to fix first, and what it would change, with us or on your own.
 
+## Tried
+
+<!-- 2026-11-02 (owner): "What have you already tried?", after the "Audience and outcome" section of a site the owner
+     liked. Each tile is something real leads told us they had tried (October, Confluence "Loop Starter · Buyer
+     personas"); which lead said what stays in Confluence, never here. Chrissy's former hero photo sits beside it. -->
+title: What have you *already tried?*
+note: sound familiar?
+turn: None of it was wrong. *It was never connected.*
+photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
+
+### items
+
+- Ran ads on and off
+- Paid an agency for leads
+- Posted more content
+- Made another freebie
+- Answered every DM yourself
+- Added one more offer
+- Built the funnel yourself
+- Waited for referrals
+
 ## Fit
 
+<!-- 2026-11-02 (owner): rewritten in the situations of the Loop Starter personas, shorter. -->
 yes_title: This is for you if…
 no_title: Probably not for you if…
 note: be honest with yourself here
 
 ### yes
 
-- You coach, consult, or run a business where clients book you directly
-- People have already paid for what you do, and you just want more of them
-- You're tired of your income depending on posting and luck
+- People have already paid for what you do. You want more of them, without chasing
+- You get attention (followers, likes, messages) but no steady route to bookings
+- Everything runs through you. Your phone, your DMs, your evenings
 - You'd rather have it built for you than learn another tool
-- You've already tried ads, posting or a page, and want it to finally add up to something
 
 ### no
 
 - You don't have an offer people have paid for yet. A system can't fix that, and we'll say so
-- You only want someone to make your content. That's a different service, [Content and Social Media](/content/), and it works best with a system behind it
-- You'd rather not question how you've done things so far. We will, kindly, and it only works if you're open to it
+- You only want content made. That's [Content and Social Media](/content/)
+- You'd rather not question how you've done things so far
 
 ## How
 

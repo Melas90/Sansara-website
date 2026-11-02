@@ -261,3 +261,13 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   "building your Loop" note moved onto the wall above them.
 - Same day: a light layer of the page's sand (30 %) over the photo, on phone and desktop, so it continues the beige and
   the image's softness shows less (it was generated at 1344 px; a 4x upscale waits for Magnific credits).
+
+## 2026-11-02: "What have you already tried?" before the honest fit (System pages and /client-loop/)
+
+- Owner: redo "This is for you / not for you", inspired by the "Audience and outcome" section of a site she liked
+  ("What have you already tried?", eight tiles). Built as a dark band before the fit: Chrissy's former hero photo with a
+  handwritten "sound familiar?", eight tiles of what our leads told us they had tried (Confluence, Loop Starter buyer
+  personas; no names on the site), and the turn "None of it was wrong. It was never connected." Tiles carry the tick,
+  not numbers: what you tried is not a sequence. Two columns, also on phones.
+- The fit lists were rewritten in the personas' situations and shortened (four yes, three no).
+- It replaces the backlog idea of the same section on Home: it belongs where the ads land.

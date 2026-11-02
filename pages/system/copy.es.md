@@ -183,6 +183,24 @@ photo_alt: Christiane, cofundadora de Sansara Media, riéndose
 - title: Tu siguiente paso
   text: Qué arreglar primero y qué cambiaría, con nosotros o por tu cuenta.
 
+## Tried
+
+title: ¿Qué has *probado ya?*
+note: ¿te suena?
+turn: Nada de eso estaba mal. *Nunca estuvo conectado.*
+photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junto a su portátil
+
+### items
+
+- Anuncios a ratos
+- Pagar a una agencia por leads
+- Publicar más contenido
+- Otro freebie más
+- Contestar tú cada mensaje
+- Añadir otra oferta
+- Montar el embudo por tu cuenta
+- Esperar recomendaciones
+
 ## Fit
 
 yes_title: Es para ti si…
@@ -191,17 +209,16 @@ note: sé sincero contigo aquí
 
 ### yes
 
-- Haces coaching, terapia o consultoría, o tienes un negocio en el que los clientes te reservan directamente
-- Ya hay gente que te ha pagado por lo que haces, y solo quieres que haya más
-- Te cansa que tus ingresos dependan de publicar y de la suerte
+- Ya hay gente que te ha pagado por lo que haces. Quieres más, sin perseguir a nadie
+- Tienes atención (seguidores, likes, mensajes), pero ningún camino fijo hacia las reservas
+- Todo pasa por ti. Tu móvil, tus mensajes, tus noches
 - Prefieres que te lo construyan a aprender otra herramienta más
-- Ya has probado anuncios, publicar o una web, y quieres que por fin todo sume
 
 ### no
 
 - Aún no tienes una oferta por la que te hayan pagado. Un sistema no arregla eso, y te lo diremos
-- Solo quieres que alguien te haga el contenido. Eso es otro servicio, Contenido y Redes, y funciona mejor con un sistema detrás
-- Prefieres no cuestionar cómo has hecho las cosas hasta ahora. Nosotros lo haremos, con cariño, y solo funciona si te abres a ello
+- Solo quieres que te hagan contenido. Eso es Contenido y Redes
+- Prefieres no cuestionar cómo has hecho las cosas hasta ahora
 
 ## How
 

@@ -193,6 +193,23 @@
   <!-- "Meet the founders" was removed on 2026-10-26 (owner: "remove that since we have Chris at the end"): Chris's photo
        sits beside the call button. Its copy stays in copy.md (Team). -->
 
+  <!-- What have you already tried? (owner, 2026-11-02, after the "Audience and outcome" section of a site she liked): a
+       dark band, Chrissy's former hero photo with a handwritten "sound familiar?", eight tiles of what our leads tried,
+       and the turn. Not numbered: what you tried is not a sequence. -->
+  <section class="section band-dark sy-tried" id="tried" aria-labelledby="tried-title">
+    <div class="container sy-tried-grid">
+      <figure class="sy-tried-photo reveal">
+        <img src="/assets/images/people/chris-call-phone.jpg" alt="{{{ tried.photo_alt }}}" width="900" height="900" loading="lazy">
+        <figcaption class="hand">{{ tried.note }}</figcaption>
+      </figure>
+      <div class="sy-tried-body">
+        <h2 id="tried-title"><span class="mask"><span class="mask-in">{{ tried.title }}</span></span></h2>
+        <ul class="sy-tried-items stagger">{{#each tried.items}}<li>{{ this }}</li>{{/each}}</ul>
+        <p class="sy-tried-turn reveal">{{ tried.turn }}</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Honest fit: for you, not for you. -->
   <section class="section" id="fit">
     <div class="container"><p class="hand sy-fit-note reveal">{{ fit.note }}</p></div>
