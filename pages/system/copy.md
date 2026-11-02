@@ -199,8 +199,10 @@ photo_alt: Christiane, co-founder of Sansara Media, laughing
 ## Tried
 
 <!-- 2026-11-02 (owner): "What have you already tried?", after the "Audience and outcome" section of a site the owner
-     liked. Each tile is something real leads told us they had tried (October, Confluence "Loop Starter · Buyer
-     personas"); which lead said what stays in Confluence, never here. Chrissy's former hero photo sits beside it. -->
+     liked, in the place of "The real problem"; cards as callouts (owner: "if you build your things with AI and wonder why
+     it does not work, if you have freebies and they don't convert"): what you did, then what happened. Except the AI card
+     (the owner's own angle), each is something real leads told us they had tried (October, Confluence "Loop Starter ·
+     Buyer personas"); which lead said what stays in Confluence, never here. Chrissy's former hero photo sits beside it. -->
 title: What have you *already tried?*
 note: sound familiar?
 turn: None of it was wrong. *It was never connected.*
@@ -208,14 +210,22 @@ photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her 
 
 ### items
 
-- Ran ads on and off
-- Paid an agency for leads
-- Posted more content
-- Made another freebie
-- Answered every DM yourself
-- Added one more offer
-- Built the funnel yourself
-- Waited for referrals
+- did: You built it all with AI
+  got: and wonder why nobody books
+- did: You made a freebie
+  got: people download it, then nothing
+- did: You ran ads on and off
+  got: clicks, but no clients
+- did: You paid an agency for leads
+  got: and got homework instead
+- did: You posted more content
+  got: likes, not bookings
+- did: You answer every DM yourself
+  got: at night, between sessions
+- did: You added one more offer
+  got: and nobody picks one
+- did: You wait for referrals
+  got: and hope they keep coming
 
 ## Fit
 

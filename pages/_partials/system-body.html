@@ -73,21 +73,21 @@
     </div>
   </section>
 
-  <!-- The problem: the advice they get ("they tell you", as a message bubble) against what actually happens (owner, 2026-10-17), then the turn, the cause and the conclusion. -->
-  <section class="section c-band sy-problem" id="problem" aria-labelledby="problem-title">
-    <div class="container">
-      <div class="centred stack-sm reveal" style="margin-bottom: 40px">
-        <p class="eyebrow">{{ problem.eyebrow }}</p>
-        <h2 id="problem-title"><span class="mask"><span class="mask-in">{{ problem.title }}</span></span></h2>
+  <!-- What have you already tried? (owner, 2026-11-02, after the "Audience and outcome" section of a site she liked): a
+       dark band in the place of "The real problem" (its copy stays in copy.md, Problem), Chrissy's former hero photo with
+       a handwritten "sound familiar?", eight callout cards (what you did, what happened) and the turn. Not numbered:
+       what you tried is not a sequence. -->
+  <section class="section band-dark sy-tried" id="tried" aria-labelledby="tried-title">
+    <div class="container sy-tried-grid">
+      <figure class="sy-tried-photo reveal">
+        <img src="/assets/images/people/chris-call-phone.jpg" alt="{{{ tried.photo_alt }}}" width="900" height="900" loading="lazy">
+        <figcaption class="hand">{{ tried.note }}</figcaption>
+      </figure>
+      <div class="sy-tried-body">
+        <h2 id="tried-title"><span class="mask"><span class="mask-in">{{ tried.title }}</span></span></h2>
+        <ul class="sy-tried-items stagger">{{#each tried.items}}<li><b>{{ did }}</b><span>{{ got }}</span></li>{{/each}}</ul>
+        <p class="sy-tried-turn reveal">{{ tried.turn }}</p>
       </div>
-      <div class="sy-myths">
-        <p class="sy-chat-label reveal">{{ problem.familiar }}</p>
-        <ul class="sy-myth-list stagger">{{#each problem.myths}}<li class="reveal"><p class="sy-told"><span class="hand">{{ problem.told }}</span><span class="sy-told-text" data-hand-strike>“{{ told }}”</span></p><p class="sy-actually"><span class="hand">{{ problem.actually }}</span>{{ actually }}</p></li>{{/each}}</ul>
-      </div>
-      <!-- The turn alone, centred: the three paragraphs beside it (intro, cause, drift) were removed by the owner on 2026-10-17; their copy stays in copy.md. -->
-      <p class="sy-turn sy-turn-solo reveal">{{ problem.turn }}</p>
-      <!-- The closing box hands over to the flip cards below (owner, 2026-10-17): "let us show you how easy this can be", with a link down. -->
-      <div class="sy-conclusion reveal"><p>{{ problem.conclusion }}</p><a class="sy-next" href="#how">{{ problem.next }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
     </div>
   </section>
 
@@ -193,22 +193,6 @@
   <!-- "Meet the founders" was removed on 2026-10-26 (owner: "remove that since we have Chris at the end"): Chris's photo
        sits beside the call button. Its copy stays in copy.md (Team). -->
 
-  <!-- What have you already tried? (owner, 2026-11-02, after the "Audience and outcome" section of a site she liked): a
-       dark band, Chrissy's former hero photo with a handwritten "sound familiar?", eight tiles of what our leads tried,
-       and the turn. Not numbered: what you tried is not a sequence. -->
-  <section class="section band-dark sy-tried" id="tried" aria-labelledby="tried-title">
-    <div class="container sy-tried-grid">
-      <figure class="sy-tried-photo reveal">
-        <img src="/assets/images/people/chris-call-phone.jpg" alt="{{{ tried.photo_alt }}}" width="900" height="900" loading="lazy">
-        <figcaption class="hand">{{ tried.note }}</figcaption>
-      </figure>
-      <div class="sy-tried-body">
-        <h2 id="tried-title"><span class="mask"><span class="mask-in">{{ tried.title }}</span></span></h2>
-        <ul class="sy-tried-items stagger">{{#each tried.items}}<li>{{ this }}</li>{{/each}}</ul>
-        <p class="sy-tried-turn reveal">{{ tried.turn }}</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Honest fit: for you, not for you. -->
   <section class="section" id="fit">

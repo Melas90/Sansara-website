@@ -192,14 +192,22 @@ photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junt
 
 ### items
 
-- Anuncios a ratos
-- Pagar a una agencia por leads
-- Publicar más contenido
-- Otro freebie más
-- Contestar tú cada mensaje
-- Añadir otra oferta
-- Montar el embudo por tu cuenta
-- Esperar recomendaciones
+- did: Lo montaste todo con IA
+  got: y no entiendes por qué nadie reserva
+- did: Hiciste un freebie
+  got: lo descargan, y luego nada
+- did: Pusiste anuncios a ratos
+  got: clics, pero ningún cliente
+- did: Pagaste a una agencia por leads
+  got: y acabaste haciendo tú el trabajo
+- did: Publicaste más contenido
+  got: likes, no reservas
+- did: Contestas tú cada mensaje
+  got: por la noche, entre sesiones
+- did: Añadiste otra oferta
+  got: y nadie elige ninguna
+- did: Esperas recomendaciones
+  got: y cruzas los dedos para que sigan llegando
 
 ## Fit
 

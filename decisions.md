@@ -271,3 +271,7 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   not numbers: what you tried is not a sequence. Two columns, also on phones.
 - The fit lists were rewritten in the personas' situations and shortened (four yes, three no).
 - It replaces the backlog idea of the same section on Home: it belongs where the ads land.
+- Same day, later: the band moved into the place of **"The real problem"** (its copy stays in copy.md), and the tiles
+  became callouts in two parts, what you did and what happened (owner: "if you build your things with AI and wonder why
+  it doesn't work, if you have freebies and they don't convert"). The AI card is the owner's own angle; the rest come
+  from the leads.
