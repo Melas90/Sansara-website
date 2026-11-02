@@ -287,7 +287,9 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 
 /* hero: the photo is the background, light (owner's photo DSC00741, 2026-10-26) */
 .sy-hero { position: relative; overflow: hidden; isolation: isolate; background: transparent; } /* the page's own colour, so the photo fades into it */
-.sy-hero picture { display: block; }
+.sy-hero picture { display: block; position: relative; }
+/* a light layer of the page's sand over the photo, so it continues the beige and its softness shows less (owner, 2026-11-02) */
+.sy-hero picture::after { content: ''; position: absolute; inset: 0; background: color-mix(in srgb, var(--sand) 30%, transparent); pointer-events: none; }
 .sy-hero-img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 40% 35%; -webkit-mask-image: linear-gradient(180deg, black 78%, transparent); mask-image: linear-gradient(180deg, black 78%, transparent); }
 .sy-hero-copy { display: grid; gap: 18px; justify-items: start; padding-top: 8px; padding-bottom: 56px; }
 .sy-hero-copy > * { margin: 0; }

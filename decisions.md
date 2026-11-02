@@ -259,3 +259,5 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; no fade on the left (it starts at the screen edge), only
   falls on Miguel's side, at the left (owner: "blur the guy, not the girl", "move the whole picture"). The
   "building your Loop" note moved onto the wall above them.
+- Same day: a light layer of the page's sand (30 %) over the photo, on phone and desktop, so it continues the beige and
+  the image's softness shows less (it was generated at 1344 px; a 4x upscale waits for Magnific credits).
