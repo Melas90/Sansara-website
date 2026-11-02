@@ -47,7 +47,7 @@ primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.
 <!-- 2026-10-26 (owner): el aspecto humano, tras funnelarchitektinnen.de. Líneas nuevas; los checks y la línea de la llamada repiten lo que ya decimos. -->
-hello: Soy Miguel. Y yo, Chrissy.
+hello: Hola, somos Miguel y Chrissy.
 photo_note: montando tu Loop, para que tú no tengas que hacerlo
 photo_alt: Miguel y Christiane, los fundadores de Sansara Media, trabajando juntos con un portátil
 not_sales: Una llamada informativa, no de ventas.

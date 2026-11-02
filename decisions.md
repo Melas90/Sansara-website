@@ -254,7 +254,7 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - Chrissy found the hero still cluttered. Owner: remove **"Built for you. You never touch the tech."** from the checks
   (EN and ES) and the **"See how it works"** link under the buttons. Their copy stays in `copy.md`.
 - The photo is now **both founders at a laptop** (from Magnific, `founders-laptop-*.jpg`), and the handwritten hello
-  is **"I'm Miguel. And I'm Chrissy."** ("Soy Miguel. Y yo, Chrissy."). It is a generated image, not a photo taken in
+  is **"Hi, we're Miguel and Chrissy."** ("Hola, somos Miguel y Chrissy."; first tried as "I'm Miguel. And I'm Chrissy."). It is a generated image, not a photo taken in
   their space, so the pending item "a real photo of both founders" stays open.
 - Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; no fade on the left (it starts at the screen edge), only
   falls on Miguel's side, at the left (owner: "blur the guy, not the girl", "move the whole picture"). The

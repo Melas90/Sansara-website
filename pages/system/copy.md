@@ -49,7 +49,7 @@ primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
-hello: I'm Miguel. And I'm Chrissy.
+hello: Hi, we're Miguel and Chrissy.
 photo_note: building your Loop, so you don't have to
 photo_alt: Miguel and Christiane, the founders of Sansara Media, working together at a laptop
 not_sales: An info call, not a sales call.
