@@ -256,6 +256,6 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - The photo is now **both founders at a laptop** (from Magnific, `founders-laptop-*.jpg`), and the handwritten hello
   is **"I'm Miguel. And I'm Chrissy."** ("Soy Miguel. Y yo, Chrissy."). It is a generated image, not a photo taken in
   their space, so the pending item "a real photo of both founders" stays open.
-- Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; the soft edge
+- Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; a light soft edge
   falls on Miguel's side, at the left (owner: "blur the guy, not the girl", "move the whole picture"). The
   "building your Loop" note moved onto the wall above them.
