@@ -28,6 +28,18 @@ them); this file says why they matter and who has to act. Done items move to `RE
 
 ## 3. Content and proof
 
+- [ ] **"What have you already tried?" section (owner, 2026-11-02: for the 2026-11-16 release).** On Home,
+      right after the hero: eight short cards, then the turn and the call button. The angle is from a slide
+      the owner liked; each card is something real leads told us they had tried (October), so nothing is
+      invented. Which lead said what stays in the private angles file, never in this public repo
+      (`agencia/marketing/ads/callouts-dolor-nov/angulos.md`, angles 1 and 5). Draft: title "What have you
+      already tried?"; cards: Posted more content · Paid an agency for leads · Added one more offer · Took
+      bookings by DM and link in bio · Built a quiz, a challenge, a freebie · Waited for referrals · Ran ads
+      on and off by yourself · Tried to figure it all out alone; turn: "None of it was wrong. It was never
+      connected. You don't need one more piece. You need one route: from 'I follow you' to 'I booked a
+      call.'"; then the call button. Design to be chosen in the lab (no numbered labels or tracked-caps
+      kicker unless the owner picks them). The same list can become a 4:5 ad.
+
 - [ ] **Alice's quote** (Content, live 2026-10-16): send her the link so she sees it; Christiane to
       confirm by ear that she says "gefehlt" at 0:25 of the voice note (translated "what was missing").
 - [ ] **Content page values:** tax line ("Prices excl. IGIC/VAT", owner to confirm with the gestor),
