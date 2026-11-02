@@ -17,6 +17,17 @@ them); this file says why they matter and who has to act. Done items move to `RE
 
 ## 2. Lead form and the way to book
 
+- [ ] **Calendly is slow to appear in the booking pop-up (owner, 2026-11-02: for the 2026-11-16 release).**
+      Measured on `/client-loop/` with simulated phones, empty cache, tracking blocked: the page itself is
+      visible in about 2 s (578 KB), but after tapping a booking button the calendar takes 7 s on a fast phone
+      on 4G, 15–22 s on a mid-range phone on 4G and about 35 s on slow 4G. Until then the pop-up shows only
+      its header and Calendly's two faint grey dots, so people may close it at the moment they want to book.
+      Calendly only starts loading on the tap (`loadCalendly` in `pages/_assets/lead.js`). To do: (1) warm
+      it up once the page has loaded (preconnect to calendly.com and assets.calendly.com, load `widget.js`,
+      and if it holds up, render the hidden embed so the tap only shows it); (2) a clear "Loading the
+      calendar…" state in our own colours, with the WhatsApp link as a way out after about 8 s. Measure again
+      with the same three phone profiles before and after.
+
 - [ ] **The intro promises "the booking link right after"**, but after sending, visitors get a
       WhatsApp button (+34 611 017 148). Either put a real calendar link on that button (Calendly with
       name and email prefilled: the owner sends the link) or change the sentence.
