@@ -49,12 +49,14 @@ primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
-hello: Hi, I'm Chrissy.
+hello: Hi, we're Miguel and Chrissy.
 photo_note: building your Loop, so you don't have to
-photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
+photo_alt: Miguel and Christiane, the founders of Sansara Media, working together at a laptop
 not_sales: An info call, not a sales call.
+<!-- 2026-11-02 (owner, after Chrissy found the hero still cluttered): "Built for you. You never touch the tech." removed
+     from the checks, "See how it works" removed from the hero, and the photo of both founders with "I'm Miguel. And I'm
+     Chrissy." instead of Chrissy alone ("Hi, I'm Chrissy."). -->
 checks:
-- Built for you. You never touch the tech.
 - On the tools you already use.
 - One fixed price per package.
 
@@ -194,25 +196,65 @@ photo_alt: Christiane, co-founder of Sansara Media, laughing
 - title: Your next step
   text: What to fix first, and what it would change, with us or on your own.
 
+## Tried
+
+<!-- 2026-11-02 (owner): "What have you already tried?", after the "Audience and outcome" section of a site the owner
+     liked, in the place of "The real problem"; cards as callouts (owner: "if you build your things with AI and wonder why
+     it does not work, if you have freebies and they don't convert"): what you did, then what happened. Except the AI card
+     (the owner's own angle), each is something real leads told us they had tried (October, Confluence "Loop Starter ·
+     Buyer personas"); which lead said what stays in Confluence, never here. Chrissy's former hero photo sits beside it. -->
+<!-- 2026-11-02, later (owner): an open question to reflect on, not teasing: the cards name only what you did, and the
+     reader can tick them ("tick yours"); one question only. The message (owner): "you may have tried one, several, all or
+     none, it doesn't really matter… we can improve what is already there, build it from zero, or bring new ideas you
+     didn't try yet". The two-part callouts it replaces ("and wonder why nobody books", "people download it, then nothing",
+     "clicks, but no clients", "and got homework instead", "likes, not bookings", "at night, between sessions", "and nobody
+     picks one", "and hope they keep coming") and the old turn ("None of it was wrong. It was never connected.") stay here. -->
+title: What have you *already tried?*
+note: tick yours
+turn: Tried some of it, all of it, or none yet? *It doesn't matter.*
+or: or
+next: Let us show you how easy this can be
+photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
+
+### items
+
+- Built it all with AI
+- Made a freebie
+- Ran ads, on and off
+- Paid an agency for leads
+- Posted more content
+- Answered every DM yourself
+- Added one more offer
+- Waited for referrals
+
+### paths
+
+- title: Improve what's there
+  text: Keep what works, fix where it leaks.
+- title: Build it from zero
+  text: Nothing in place yet is a clean start.
+- title: Try what you haven't yet
+  text: New ideas, picked for your business.
+
 ## Fit
 
+<!-- 2026-11-02 (owner): rewritten in the situations of the Loop Starter personas, shorter. -->
 yes_title: This is for you if…
 no_title: Probably not for you if…
 note: be honest with yourself here
 
 ### yes
 
-- You coach, consult, or run a business where clients book you directly
-- People have already paid for what you do, and you just want more of them
-- You're tired of your income depending on posting and luck
+- People have already paid for what you do. You want more of them, without chasing
+- You get attention (followers, likes, messages) but no steady route to bookings
+- Everything runs through you. Your phone, your DMs, your evenings
 - You'd rather have it built for you than learn another tool
-- You've already tried ads, posting or a page, and want it to finally add up to something
 
 ### no
 
 - You don't have an offer people have paid for yet. A system can't fix that, and we'll say so
-- You only want someone to make your content. That's a different service, [Content and Social Media](/content/), and it works best with a system behind it
-- You'd rather not question how you've done things so far. We will, kindly, and it only works if you're open to it
+- You only want content made. That's [Content and Social Media](/content/)
+- You'd rather not question how you've done things so far
 
 ## How
 

@@ -47,12 +47,11 @@ primary: Háblanos
 secondary: Mira cómo funciona
 note: Llévate una evaluación gratis: en una llamada de 30 minutos vemos dónde pierdes clientes y qué arreglar primero.
 <!-- 2026-10-26 (owner): el aspecto humano, tras funnelarchitektinnen.de. Líneas nuevas; los checks y la línea de la llamada repiten lo que ya decimos. -->
-hello: Hola, soy Chrissy.
+hello: Hola, somos Miguel y Chrissy.
 photo_note: montando tu Loop, para que tú no tengas que hacerlo
-photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junto a su portátil
+photo_alt: Miguel y Christiane, los fundadores de Sansara Media, trabajando juntos con un portátil
 not_sales: Una llamada informativa, no de ventas.
 checks:
-- Te lo montamos. Tú no tocas nada técnico.
 - Con las herramientas que ya usas.
 - Un precio fijo por paquete.
 
@@ -184,6 +183,35 @@ photo_alt: Christiane, cofundadora de Sansara Media, riéndose
 - title: Tu siguiente paso
   text: Qué arreglar primero y qué cambiaría, con nosotros o por tu cuenta.
 
+## Tried
+
+title: ¿Qué has *probado ya?*
+note: marca las tuyas
+turn: ¿Has probado algo, todo o nada todavía? *Da igual.*
+or: o
+next: Te enseñamos lo fácil que puede ser
+photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junto a su portátil
+
+### items
+
+- Lo montaste todo con IA
+- Hiciste un freebie
+- Pusiste anuncios, a ratos
+- Pagaste a una agencia por leads
+- Publicaste más contenido
+- Contestaste tú cada mensaje
+- Añadiste otra oferta
+- Esperaste recomendaciones
+
+### paths
+
+- title: Mejorar lo que ya tienes
+  text: Mantener lo que funciona, arreglar donde se pierde.
+- title: Construirlo desde cero
+  text: Si aún no hay nada, es un comienzo limpio.
+- title: Probar lo que aún no has probado
+  text: Ideas nuevas, elegidas para tu negocio.
+
 ## Fit
 
 yes_title: Es para ti si…
@@ -192,17 +220,16 @@ note: sé sincero contigo aquí
 
 ### yes
 
-- Haces coaching, terapia o consultoría, o tienes un negocio en el que los clientes te reservan directamente
-- Ya hay gente que te ha pagado por lo que haces, y solo quieres que haya más
-- Te cansa que tus ingresos dependan de publicar y de la suerte
+- Ya hay gente que te ha pagado por lo que haces. Quieres más, sin perseguir a nadie
+- Tienes atención (seguidores, likes, mensajes), pero ningún camino fijo hacia las reservas
+- Todo pasa por ti. Tu móvil, tus mensajes, tus noches
 - Prefieres que te lo construyan a aprender otra herramienta más
-- Ya has probado anuncios, publicar o una web, y quieres que por fin todo sume
 
 ### no
 
 - Aún no tienes una oferta por la que te hayan pagado. Un sistema no arregla eso, y te lo diremos
-- Solo quieres que alguien te haga el contenido. Eso es otro servicio, Contenido y Redes, y funciona mejor con un sistema detrás
-- Prefieres no cuestionar cómo has hecho las cosas hasta ahora. Nosotros lo haremos, con cariño, y solo funciona si te abres a ello
+- Solo quieres que te hagan contenido. Eso es Contenido y Redes
+- Prefieres no cuestionar cómo has hecho las cosas hasta ahora
 
 ## How
 

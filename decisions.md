@@ -248,3 +248,41 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   to know more about the free call."; a tap is **Contact** ("booking page").
 - The ad origin (utm_source, utm_campaign, utm_content) goes into Calendly as UTM, so each booking shows which ad it came from.
 - Why (same day): since 16 Oct one form submission in total; Dom (13 Oct) came through the form, then WhatsApp.
+
+## 2026-11-02: a calmer hero with both founders (System pages and /client-loop/)
+
+- Chrissy found the hero still cluttered. Owner: remove **"Built for you. You never touch the tech."** from the checks
+  (EN and ES) and the **"See how it works"** link under the buttons. Their copy stays in `copy.md`.
+- The photo is now **both founders at a laptop** (from Magnific, `founders-laptop-*.jpg`), and the handwritten hello
+  is **"Hi, we're Miguel and Chrissy."** ("Hola, somos Miguel y Chrissy."; first tried as "I'm Miguel. And I'm Chrissy."). It is a generated image, not a photo taken in
+  their space, so the pending item "a real photo of both founders" stays open.
+- Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; no fade on the left (it starts at the screen edge), only
+  falls on Miguel's side, at the left (owner: "blur the guy, not the girl", "move the whole picture"). The
+  "building your Loop" note moved onto the wall above them.
+- Same day: a light layer of the page's sand (30 %) over the photo, on phone and desktop, so it continues the beige and
+  the image's softness shows less (it was generated at 1344 px; a 4x upscale waits for Magnific credits).
+
+## 2026-11-02: "What have you already tried?" before the honest fit (System pages and /client-loop/)
+
+- Owner: redo "This is for you / not for you", inspired by the "Audience and outcome" section of a site she liked
+  ("What have you already tried?", eight tiles). Built as a dark band before the fit: Chrissy's former hero photo with a
+  handwritten "sound familiar?", eight tiles of what our leads told us they had tried (Confluence, Loop Starter buyer
+  personas; no names on the site), and the turn "None of it was wrong. It was never connected." Tiles carry the tick,
+  not numbers: what you tried is not a sequence. Two columns, also on phones.
+- The fit lists were rewritten in the personas' situations and shortened (four yes, three no).
+- It replaces the backlog idea of the same section on Home: it belongs where the ads land.
+- Same day, later: the band moved into the place of **"The real problem"** (its copy stays in copy.md), and the tiles
+  became callouts in two parts, what you did and what happened (owner: "if you build your things with AI and wonder why
+  it doesn't work, if you have freebies and they don't convert"). The AI card is the owner's own angle; the rest come
+  from the leads.
+- Same day, evening (owner, after comparing with the reference's own section): **an open question to reflect on, not
+  teasing.** The cards name only what you did ("Ran ads, on and off"); the reader can tick them (`sy-tried.js`, nothing
+  stored), so the photo note is "tick yours" and the heading is the only question. The message is the owner's: "you may
+  have tried one, several, all or none, it doesn't really matter", then three ways to start, joined by a handwritten
+  "or": improve what's there, build it from zero, try what you haven't yet; then "Let us show you how easy this can be"
+  to How it works. "None of it was wrong. It was never connected." was dropped (owner: "I don't think that's the right
+  message"). The short line under each way to start is ours, for the owner to confirm.
+- The cards and the photo take the comic look of the price and objection boxes (owner: "the other squares have a
+  comic effect"): ink border, square corners, hard shadow; the shadow is orange because ink does not show on the dark
+  band, and a ticked card is pressed into it. Proposal with the live section beside it: Design canvas "What have you
+  already tried? · Proposal".

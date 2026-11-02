@@ -39,8 +39,9 @@ them); this file says why they matter and who has to act. Done items move to `RE
 
 ## 3. Content and proof
 
-- [ ] **"What have you already tried?" section (owner, 2026-11-02: for the 2026-11-16 release).** On Home,
-      right after the hero: eight short cards, then the turn and the call button. The angle is from a slide
+- [x] **"What have you already tried?" section (owner, 2026-11-02: for the 2026-11-16 release).** Built on
+      `feature/hero-declutter` on the System pages and /client-loop/ (where the ads land), not on Home; see decisions.md.
+      First idea, on Home right after the hero: eight short cards, then the turn and the call button. The angle is from a slide
       the owner liked; each card is something real leads told us they had tried (October), so nothing is
       invented. Which lead said what stays in the private angles file, never in this public repo
       (`agencia/marketing/ads/callouts-dolor-nov/angulos.md`, angles 1 and 5). Draft: title "What have you
