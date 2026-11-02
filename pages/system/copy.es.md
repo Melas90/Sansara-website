@@ -186,28 +186,31 @@ photo_alt: Christiane, cofundadora de Sansara Media, riéndose
 ## Tried
 
 title: ¿Qué has *probado ya?*
-note: ¿te suena?
-turn: Nada de eso estaba mal. *Nunca estuvo conectado.*
+note: marca las tuyas
+turn: ¿Has probado algo, todo o nada todavía? *Da igual.*
+or: o
+next: Te enseñamos lo fácil que puede ser
 photo_alt: Christiane, cofundadora de Sansara Media, sonriendo al teléfono junto a su portátil
 
 ### items
 
-- did: Lo montaste todo con IA
-  got: y no entiendes por qué nadie reserva
-- did: Hiciste un freebie
-  got: lo descargan, y luego nada
-- did: Pusiste anuncios a ratos
-  got: clics, pero ningún cliente
-- did: Pagaste a una agencia por leads
-  got: y acabaste haciendo tú el trabajo
-- did: Publicaste más contenido
-  got: likes, no reservas
-- did: Contestas tú cada mensaje
-  got: por la noche, entre sesiones
-- did: Añadiste otra oferta
-  got: y nadie elige ninguna
-- did: Esperas recomendaciones
-  got: y cruzas los dedos para que sigan llegando
+- Lo montaste todo con IA
+- Hiciste un freebie
+- Pusiste anuncios, a ratos
+- Pagaste a una agencia por leads
+- Publicaste más contenido
+- Contestaste tú cada mensaje
+- Añadiste otra oferta
+- Esperaste recomendaciones
+
+### paths
+
+- title: Mejorar lo que ya tienes
+  text: Mantener lo que funciona, arreglar donde se pierde.
+- title: Construirlo desde cero
+  text: Si aún no hay nada, es un comienzo limpio.
+- title: Probar lo que aún no has probado
+  text: Ideas nuevas, elegidas para tu negocio.
 
 ## Fit
 

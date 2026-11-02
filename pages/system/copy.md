@@ -203,29 +203,38 @@ photo_alt: Christiane, co-founder of Sansara Media, laughing
      it does not work, if you have freebies and they don't convert"): what you did, then what happened. Except the AI card
      (the owner's own angle), each is something real leads told us they had tried (October, Confluence "Loop Starter ·
      Buyer personas"); which lead said what stays in Confluence, never here. Chrissy's former hero photo sits beside it. -->
+<!-- 2026-11-02, later (owner): an open question to reflect on, not teasing: the cards name only what you did, and the
+     reader can tick them ("tick yours"); one question only. The message (owner): "you may have tried one, several, all or
+     none, it doesn't really matter… we can improve what is already there, build it from zero, or bring new ideas you
+     didn't try yet". The two-part callouts it replaces ("and wonder why nobody books", "people download it, then nothing",
+     "clicks, but no clients", "and got homework instead", "likes, not bookings", "at night, between sessions", "and nobody
+     picks one", "and hope they keep coming") and the old turn ("None of it was wrong. It was never connected.") stay here. -->
 title: What have you *already tried?*
-note: sound familiar?
-turn: None of it was wrong. *It was never connected.*
+note: tick yours
+turn: Tried some of it, all of it, or none yet? *It doesn't matter.*
+or: or
+next: Let us show you how easy this can be
 photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
 
 ### items
 
-- did: You built it all with AI
-  got: and wonder why nobody books
-- did: You made a freebie
-  got: people download it, then nothing
-- did: You ran ads on and off
-  got: clicks, but no clients
-- did: You paid an agency for leads
-  got: and got homework instead
-- did: You posted more content
-  got: likes, not bookings
-- did: You answer every DM yourself
-  got: at night, between sessions
-- did: You added one more offer
-  got: and nobody picks one
-- did: You wait for referrals
-  got: and hope they keep coming
+- Built it all with AI
+- Made a freebie
+- Ran ads, on and off
+- Paid an agency for leads
+- Posted more content
+- Answered every DM yourself
+- Added one more offer
+- Waited for referrals
+
+### paths
+
+- title: Improve what's there
+  text: Keep what works, fix where it leaks.
+- title: Build it from zero
+  text: Nothing in place yet is a clean start.
+- title: Try what you haven't yet
+  text: New ideas, picked for your business.
 
 ## Fit
 

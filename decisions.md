@@ -275,3 +275,14 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   became callouts in two parts, what you did and what happened (owner: "if you build your things with AI and wonder why
   it doesn't work, if you have freebies and they don't convert"). The AI card is the owner's own angle; the rest come
   from the leads.
+- Same day, evening (owner, after comparing with the reference's own section): **an open question to reflect on, not
+  teasing.** The cards name only what you did ("Ran ads, on and off"); the reader can tick them (`sy-tried.js`, nothing
+  stored), so the photo note is "tick yours" and the heading is the only question. The message is the owner's: "you may
+  have tried one, several, all or none, it doesn't really matter", then three ways to start, joined by a handwritten
+  "or": improve what's there, build it from zero, try what you haven't yet; then "Let us show you how easy this can be"
+  to How it works. "None of it was wrong. It was never connected." was dropped (owner: "I don't think that's the right
+  message"). The short line under each way to start is ours, for the owner to confirm.
+- The cards and the photo take the comic look of the price and objection boxes (owner: "the other squares have a
+  comic effect"): ink border, square corners, hard shadow; the shadow is orange because ink does not show on the dark
+  band, and a ticked card is pressed into it. Proposal with the live section beside it: Design canvas "What have you
+  already tried? · Proposal".

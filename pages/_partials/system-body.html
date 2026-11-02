@@ -75,8 +75,9 @@
 
   <!-- What have you already tried? (owner, 2026-11-02, after the "Audience and outcome" section of a site she liked): a
        dark band in the place of "The real problem" (its copy stays in copy.md, Problem), Chrissy's former hero photo with
-       a handwritten "sound familiar?", eight callout cards (what you did, what happened) and the turn. Not numbered:
-       what you tried is not a sequence. -->
+       a handwritten "tick yours", eight cards the reader can tick (sy-tried.js), the turn and the three ways to start.
+       Not numbered: what you tried is not a sequence. The cards wear the comic look of the price and objection boxes
+       (ink border, square corners, hard shadow), in orange because ink does not show on the dark band. -->
   <section class="section band-dark sy-tried" id="tried" aria-labelledby="tried-title">
     <div class="container sy-tried-grid">
       <figure class="sy-tried-photo reveal">
@@ -85,8 +86,12 @@
       </figure>
       <div class="sy-tried-body">
         <h2 id="tried-title"><span class="mask"><span class="mask-in">{{ tried.title }}</span></span></h2>
-        <ul class="sy-tried-items stagger">{{#each tried.items}}<li><b>{{ did }}</b><span>{{ got }}</span></li>{{/each}}</ul>
-        <p class="sy-tried-turn reveal">{{ tried.turn }}</p>
+        <ul class="sy-tried-items stagger">{{#each tried.items}}<li><button type="button" class="sy-tried-card" aria-pressed="false"><svg class="sy-tried-tick" viewBox="0 0 30 30" aria-hidden="true"><circle cx="13" cy="16" r="10"/><path d="M5 16c2.6 1.7 4.6 3.8 6.3 6.8C14.4 15 18.6 8.6 26 3"/></svg>{{ this }}</button></li>{{/each}}</ul>
+        <div class="sy-tried-close reveal">
+          <p class="sy-tried-turn">{{ tried.turn }}</p>
+          <ul class="sy-tried-paths">{{#each tried.paths}}<li>{{#if @first}}{{else}}<span class="sy-tried-or hand" aria-hidden="true">{{ tried.or }}</span>{{/if}}<b>{{ title }}</b><span>{{ text }}</span></li>{{/each}}</ul>
+          <a class="sy-tried-next" href="#how">{{ tried.next }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
