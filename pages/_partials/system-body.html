@@ -15,8 +15,8 @@
        band of what's inside became the tiles there. -->
   <section class="sy-hero" id="hero" aria-labelledby="hero-title">
     <picture>
-      <source media="(min-width: 900px)" srcset="/assets/images/people/chris-call-wide.jpg" width="1920" height="1504">
-      <img class="sy-hero-img" src="/assets/images/people/chris-call-phone.jpg" alt="{{{ hero.photo_alt }}}" width="900" height="900" fetchpriority="high">
+      <source media="(min-width: 900px)" srcset="/assets/images/people/founders-laptop-wide.jpg" width="1320" height="1013">
+      <img class="sy-hero-img" src="/assets/images/people/founders-laptop-phone.jpg" alt="{{{ hero.photo_alt }}}" width="900" height="900" fetchpriority="high">
     </picture>
     <p class="hand sy-hero-note" aria-hidden="true">{{ hero.photo_note }}<svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 10c30 2 70 10 98 44"/><path d="M90 52l15 4-2-15"/></svg></p>
     <div class="container">
@@ -32,7 +32,8 @@
         </div>
         <p class="small reveal">{{ hero.note }}</p>
         {{#if booking.button}}<p class="small sy-wa"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>{{/if}}
-        <a class="sy-next sy-hero-next reveal" href="#how">{{ hero.secondary }}<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
+        <!-- "See how it works" (hero.secondary) was removed from the hero by the owner on 2026-11-02 ("the hero is still
+             cluttered"); the copy stays in copy.md. -->
       </div>
     </div>
   </section>

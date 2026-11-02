@@ -49,12 +49,14 @@ primary: Talk to us
 secondary: See how it works
 note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
-hello: Hi, I'm Chrissy.
+hello: I'm Miguel. And I'm Chrissy.
 photo_note: building your Loop, so you don't have to
-photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
+photo_alt: Miguel and Christiane, the founders of Sansara Media, working together at a laptop
 not_sales: An info call, not a sales call.
+<!-- 2026-11-02 (owner, after Chrissy found the hero still cluttered): "Built for you. You never touch the tech." removed
+     from the checks, "See how it works" removed from the hero, and the photo of both founders with "I'm Miguel. And I'm
+     Chrissy." instead of Chrissy alone ("Hi, I'm Chrissy."). -->
 checks:
-- Built for you. You never touch the tech.
 - On the tools you already use.
 - One fixed price per package.
 

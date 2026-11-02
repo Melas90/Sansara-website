@@ -309,13 +309,18 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-hero-note { display: none; }
 @media (min-width: 900px) {
   .sy-hero { display: flex; align-items: center; min-height: min(92vh, 860px); }
-  .sy-hero picture { position: absolute; inset: 0; z-index: -2; }
-  .sy-hero-img { height: 100%; aspect-ratio: auto; object-position: 30% 45%; -webkit-mask-image: linear-gradient(180deg, black 82%, transparent); mask-image: linear-gradient(180deg, black 82%, transparent); }
+  /* the founders' photo (2026-11-02) fills the whole frame, so it takes the left side only, moved so Chrissy stays
+     whole and sharp next to the words; the soft edge falls on Miguel's side, at the left (owner: "blur the guy, not
+     the girl", "move the whole picture") */
+  .sy-hero picture { position: absolute; inset: 0 40% 0 0; z-index: -2; }
+  .sy-hero-img { height: 100%; aspect-ratio: auto; object-position: 100% 40%;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, black 16%, black 90%, transparent), linear-gradient(180deg, black 82%, transparent); -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent 0, black 16%, black 90%, transparent), linear-gradient(180deg, black 82%, transparent); mask-composite: intersect; }
   /* a soft wash of cream over the wall behind the words, nothing over her */
   .sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 0%, transparent 44%, color-mix(in srgb, var(--sand) 70%, transparent) 58%, color-mix(in srgb, var(--sand) 88%, transparent) 100%); }
   .sy-hero > .container { width: 100%; }
   .sy-hero-copy { width: min(600px, 48%); margin-left: auto; padding-block: 88px; }
-  .sy-hero-note { display: block; position: absolute; left: 5%; top: 12%; width: 220px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-6deg); z-index: 1; }
+  .sy-hero-note { display: block; position: absolute; left: 24%; top: 3%; width: 220px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-6deg); z-index: 1; }
   .sy-hero-note svg { display: block; width: 100px; margin: 6px 0 0 110px; }
 }
 

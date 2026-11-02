@@ -248,3 +248,14 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   to know more about the free call."; a tap is **Contact** ("booking page").
 - The ad origin (utm_source, utm_campaign, utm_content) goes into Calendly as UTM, so each booking shows which ad it came from.
 - Why (same day): since 16 Oct one form submission in total; Dom (13 Oct) came through the form, then WhatsApp.
+
+## 2026-11-02: a calmer hero with both founders (System pages and /client-loop/)
+
+- Chrissy found the hero still cluttered. Owner: remove **"Built for you. You never touch the tech."** from the checks
+  (EN and ES) and the **"See how it works"** link under the buttons. Their copy stays in `copy.md`.
+- The photo is now **both founders at a laptop** (from Magnific, `founders-laptop-*.jpg`), and the handwritten hello
+  is **"I'm Miguel. And I'm Chrissy."** ("Soy Miguel. Y yo, Chrissy."). It is a generated image, not a photo taken in
+  their space, so the pending item "a real photo of both founders" stays open.
+- Desktop: the photo takes the left side only, moved so Chrissy stays whole and sharp next to the words; the soft edge
+  falls on Miguel's side, at the left (owner: "blur the guy, not the girl", "move the whole picture"). The
+  "building your Loop" note moved onto the wall above them.
