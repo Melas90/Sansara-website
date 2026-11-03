@@ -22,6 +22,11 @@ and `feature/calendly-warmup`. The why is in `decisions.md` (2026-11-02 and 2026
   ticking, the /system/ form up to its POST (answered by the test, utm and fbclid carried), and every booking pop-up
   check above (built hidden after a scroll, opens in 0.4–0.5 s once built, our loading state and WhatsApp when Calendly
   is slow, the form when it is blocked). No real test lead was sent: the form and the CRM intake did not change.
+- **Measured on the live site** (phone, 4x slower CPU, cold cache, single runs): from tap to days, reading 30 s first,
+  10.9 s on 4G and 13.7 s on slow 4G (before: 24–26 s and 31–35 s); reading 8 s first, no gain (26.8 s and 36.3 s).
+  The hidden calendar only started about 20 s after the page began loading, because the warm-up waits for the page's
+  `load` event before it even listens for a scroll or a touch. **Follow-up** (backlog): listen at once, keep only the
+  4 s fallback after `load`.
 
 System pages (`/system/`, `/client-loop/`, `/es/sistema/`):
 
