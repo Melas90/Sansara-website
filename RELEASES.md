@@ -4,9 +4,26 @@ One production release a month at most (owner, 2026-10-15). Each entry says what
 how it was checked, and what is still open. Newest first. The deploy procedure is in the
 `sansara-deploy` skill.
 
-## Next release (planned 2026-11-16)
+## Next release (planned 2026-12-15)
 
-On `develop` (merged 2026-11-02 from `feature/hero-declutter`), System pages (`/system/`, `/client-loop/`, `/es/sistema/`):
+Nothing on `develop` yet. Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
+(now also for Calendly, which loads ahead of the tap on /client-loop/).
+
+## 2026-11-03
+
+Owner: "go ahead and do the release", ahead of the 2026-11-16 slot (it takes that slot). From `feature/hero-declutter`
+and `feature/calendly-warmup`. The why is in `decisions.md` (2026-11-02 and 2026-11-03).
+
+- **Live:** https://sansara-media.com, Netlify deploy `6ae9f7b344511e655456c5fb`. **Code:** `main` = `c93a91b`,
+  tag `release-2026-11-03`.
+- **Checked after:** `/`, `/system/`, `/client-loop/`, `/es/sistema/`, `/about/`, `/services/`, `/privacy/` answer 200,
+  `/lab/` 404; the CSP header carries calendly.com; on the live site, tracking blocked: every page at 1366 and 390 px
+  (no JS errors, no broken images, no sideways scroll, no PENDING), the tried band on the three System pages with its
+  ticking, the /system/ form up to its POST (answered by the test, utm and fbclid carried), and every booking pop-up
+  check above (built hidden after a scroll, opens in 0.4–0.5 s once built, our loading state and WhatsApp when Calendly
+  is slow, the form when it is blocked). No real test lead was sent: the form and the CRM intake did not change.
+
+System pages (`/system/`, `/client-loop/`, `/es/sistema/`):
 
 - a calmer hero with both founders ("Hi, we're Miguel and Chrissy."), no tech line, no how-it-works link;
 - "What have you already tried?" in the place of "The real problem": eight cards the reader can tick, "It doesn't
