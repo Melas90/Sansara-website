@@ -17,7 +17,9 @@ them); this file says why they matter and who has to act. Done items move to `RE
 
 ## 2. Lead form and the way to book
 
-- [ ] **Calendly is slow to appear in the booking pop-up (owner, 2026-11-02: for the 2026-11-16 release).**
+- [x] **Calendly is slow to appear in the booking pop-up (owner, 2026-11-02: for the 2026-11-16 release).** Built
+      2026-11-03 (`feature/calendly-warmup`, decisions.md): the calendar is built ahead, hidden, and our own loading
+      state with WhatsApp after 8 s. The original note:
       Measured on `/client-loop/` with simulated phones, empty cache, tracking blocked: the page itself is
       visible in about 2 s (578 KB), but after tapping a booking button the calendar takes 7 s on a fast phone
       on 4G, 15–22 s on a mid-range phone on 4G and about 35 s on slow 4G. Until then the pop-up shows only
