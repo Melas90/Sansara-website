@@ -11,9 +11,17 @@ On `develop` (merged 2026-11-02 from `feature/hero-declutter`), System pages (`/
 - a calmer hero with both founders ("Hi, we're Miguel and Chrissy."), no tech line, no how-it-works link;
 - "What have you already tried?" in the place of "The real problem": eight cards the reader can tick, "It doesn't
   matter", three ways to start (decisions.md, 2026-11-02);
-- checked locally on 2026-11-02: `npm run verify`; every page at 1366 and 390 px (no JS errors, no broken images, no
-  sideways scroll, no visible PENDING); ticking by mouse, touch and keyboard; the /system/ form with its POST answered
-  locally (utm and fbclid carried). Not yet: the owner's look on a real phone; the line under each way to start.
+- on /client-loop/, **the booking calendar is built ahead of the tap**, hidden, once the visitor stays (scroll, touch,
+  key or 4 s), with our own "Loading the calendar…" until the days are in and WhatsApp offered after 8 s
+  (decisions.md, 2026-11-03). Measured (phone, 4x slower CPU, cold cache): 24–26 s on 4G and 31–35 s on slow 4G from
+  tap to days before; after, reading 30 s first, 4.5 s and 12 s;
+- checked locally on 2026-11-02 and 03: `npm run verify`; `CONTEXT=production npm run build` without the lab; every page
+  at 1366 and 390 px (no JS errors, no broken images, no sideways scroll, no visible PENDING); ticking by mouse, touch
+  and keyboard; the /system/ form with its POST answered locally (utm and fbclid carried); the booking pop-up on a
+  phone and a desktop (built hidden after a scroll, never reached by a tap or Tab, opens at once, closes inert, reopens
+  the same calendar; slow Calendly shows our loading state and WhatsApp at 8 s; Calendly blocked opens the form); the
+  three System pages with netlify.toml's CSP enforced (no violations). No Netlify draft (the owner: don't deploy yet).
+  Not yet: the owner's look on a real phone; the line under each way to start.
 
 ## 2026-10-29
 
