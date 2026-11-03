@@ -139,32 +139,77 @@
     js.onerror = reject;
     setTimeout(() => reject(new Error('timeout')), 8000);
     document.head.append(css, js);
-  }));
-  let bookOpener = null;
+  }).catch((err) => { calendly = null; throw err; })); // a failed warm-up is tried again on the tap
+
+  /* Calendly took 7 s on a fast phone and 25–35 s on a mid-range one after the tap (2026-11-02 measures, backlog), with
+     only its faint grey dots on screen. So the calendar is built ahead, hidden in the closed pop-up, once the visitor
+     shows they are staying (a scroll, a touch, a key, or 4 s on the page; a quick bounce downloads nothing of it), and
+     our own "Loading the calendar…" stays until Calendly says the days are there (calendly.event_type_viewed). After
+     8 s with the pop-up open and still no days, WhatsApp is offered as a way out. */
   let calendarIn = false;
-  const openCalendar = (trigger) => {
-    bookOpener = trigger;
-    book.showModal();
-    document.documentElement.classList.add('lead-open');
-    pixel('LoopCheckStarted', { content_name: trigger?.dataset.source || 'link' });
-    hj('Calendly: opened');
-    if (calendarIn) return; // a reopened pop-up keeps where they were in the calendar
+  const buildCalendar = () => {
+    if (calendarIn || !book) return Promise.resolve();
     const utm = {};
     if (adOrigin.utm_source) utm.utmSource = adOrigin.utm_source;
     if (adOrigin.utm_campaign) utm.utmCampaign = adOrigin.utm_campaign;
     if (adOrigin.utm_content) utm.utmContent = adOrigin.utm_content;
-    loadCalendly().then((C) => {
+    return loadCalendly().then((C) => {
       if (calendarIn) return;
       calendarIn = true;
+      // a closed dialog is display:none, and Calendly draws nothing there until it is shown (measured: no days after
+      // 30 s); so while closed the pop-up stays laid out but transparent, unclickable and inert (site.css .is-warming)
+      if (!book.open) book.inert = true;
+      book.classList.add('is-warming');
       // the pop-up already says who and what, so Calendly shows only the calendar (its cookie notice stays)
       const url = new URL(calendarUrl);
       url.searchParams.set('hide_event_type_details', '1');
       C.initInlineWidget({ url: String(url), parentElement: bookCal, utm });
-      bookCal.classList.add('is-in');
-    }).catch(() => { book.close(); openForm(trigger); });
+      // if Calendly's "viewed" message never comes, the frame's own load (plus a moment to draw) shows it anyway
+      bookCal.querySelector('iframe')?.addEventListener('load', () => setTimeout(calendarReady, 2500), { once: true });
+    });
+  };
+  const calendarReady = () => bookCal?.classList.add('is-ready');
+  if (calendarUrl && book) {
+    addEventListener('message', (e) => {
+      if (e.origin === 'https://calendly.com' && e.data?.event === 'calendly.event_type_viewed') calendarReady();
+    });
+    const warm = () => {
+      ['scroll', 'pointerdown', 'keydown'].forEach((t) => removeEventListener(t, warm));
+      clearTimeout(warmTimer);
+      buildCalendar().catch(() => { /* tried again on the tap */ });
+    };
+    let warmTimer = 0;
+    const arm = () => {
+      warmTimer = setTimeout(warm, 4000);
+      ['scroll', 'pointerdown', 'keydown'].forEach((t) => addEventListener(t, warm, { passive: true, once: true }));
+    };
+    if (document.readyState === 'complete') arm(); else addEventListener('load', arm, { once: true });
+  }
+  let bookOpener = null;
+  let slowTimer = 0;
+  const openCalendar = (trigger) => {
+    bookOpener = trigger;
+    book.inert = false;
+    book.showModal();
+    document.documentElement.classList.add('lead-open');
+    pixel('LoopCheckStarted', { content_name: trigger?.dataset.source || 'link' });
+    hj('Calendly: opened');
+    if (!bookCal.classList.contains('is-ready')) {
+      clearTimeout(slowTimer);
+      slowTimer = setTimeout(() => {
+        if (bookCal.classList.contains('is-ready')) return;
+        bookCal.classList.add('is-slow');
+        hj('Calendly: slow, WhatsApp offered');
+      }, 8000);
+    }
+    buildCalendar().catch(() => { book.close(); openForm(trigger); }); // a reopened pop-up keeps where they were
   };
   if (book) {
-    book.addEventListener('close', () => { document.documentElement.classList.remove('lead-open'); bookOpener?.focus?.(); });
+    book.addEventListener('close', () => {
+      document.documentElement.classList.remove('lead-open');
+      if (book.classList.contains('is-warming')) book.inert = true;
+      bookOpener?.focus?.();
+    });
     book.addEventListener('click', (e) => { if (e.target === book) book.close(); });
     book.querySelector('[data-book-close]')?.addEventListener('click', () => book.close());
   }

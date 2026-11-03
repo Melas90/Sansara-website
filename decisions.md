@@ -286,3 +286,21 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   comic effect"): ink border, square corners, hard shadow; the shadow is orange because ink does not show on the dark
   band, and a ticked card is pressed into it. Proposal with the live section beside it: Design canvas "What have you
   already tried? · Proposal".
+
+## 2026-11-03: the booking calendar is built ahead of the tap (/client-loop/)
+
+- Owner: "include also this calendar thing to take less time to load" (backlog, 2026-11-02). Measured before, cold
+  cache, tracking blocked, a phone with 4x slower CPU: 24–26 s from the tap to the days on 4G, 31–35 s on slow 4G,
+  however long the visitor had read, with only Calendly's faint grey dots on screen meanwhile.
+- **Built ahead:** once the visitor shows they are staying (a scroll, a touch, a key, or 4 s on the page), `lead.js`
+  loads Calendly and builds the calendar inside the closed pop-up, with the ad's utm. A quick bounce downloads none of
+  it. A closed `<dialog>` is display:none and Calendly draws nothing there (no days after 30 s), so while closed the
+  pop-up stays laid out but transparent, unclickable and `inert` (`.is-warming`).
+- **Our loading state:** "Loading the calendar…" with three orange dots stays over the calendar until Calendly says the
+  days are there (`calendly.event_type_viewed`, or the frame's load plus 2.5 s); after 8 s with the pop-up open it adds
+  "Taking a while? Write to us on WhatsApp instead." If Calendly's script can't load, the form opens, as before.
+- Measured after (single runs): read 30 s before the tap, the days are on screen 4.5 s after it on 4G, 12 s on slow
+  4G; read 8 s, about 15 s on 4G (the calendar is still being built). Most of the wait is Calendly's own page on a slow
+  phone; the earlier the visitor shows interest, the more of it is done before the tap.
+- Privacy: Calendly now loads for visitors who stay but don't open the pop-up. It sets its own cookies inside its
+  frame, so it belongs in the cookie consent still open in the backlog (section 1).

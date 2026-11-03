@@ -381,9 +381,24 @@ html:not(.js) .close-btn { display: none; }
 /* The booking pop-up (2026-10-29): the form's frame with Calendly inside; Calendly needs real height to show a month */
 .book-dialog .lead-inner { gap: 16px; align-content: start; }
 .book-cal { position: relative; height: min(660px, calc(100dvh - 230px)); min-height: 420px; margin-inline: -8px; }
-.book-cal iframe { display: block; }
-.book-loading { position: absolute; inset: 0; display: grid; place-items: center; font-size: var(--text-small); color: var(--brown-2-text); }
-.book-cal.is-in .book-loading { display: none; }
+/* built ahead of the tap: the closed pop-up keeps its real size so Calendly draws the month, but nobody sees, clicks or
+   tabs into it (lead.js sets inert) */
+.book-dialog.is-warming:not([open]) { display: grid; position: fixed; inset: 0; margin: auto; opacity: 0; pointer-events: none; z-index: -1; }
+.book-cal iframe { display: block; opacity: 0; transition: opacity var(--base) var(--ease); }
+.book-cal.is-ready iframe { opacity: 1; }
+/* our own waiting state over Calendly's grey dots until the days are in (2026-11-02, backlog "Calendly is slow") */
+.book-wait { position: absolute; inset: 0; z-index: 1; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 24px; text-align: center; background: var(--bg); border-radius: var(--radius-card-sm); }
+.book-cal.is-ready .book-wait { display: none; }
+.book-loading { display: grid; justify-items: center; gap: 14px; margin: 0; font-size: var(--text-body); color: var(--ink); }
+.book-dots { display: flex; gap: 8px; }
+.book-dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+html.motion .book-dots span { animation: book-dot var(--slow) var(--ease) infinite alternate; }
+html.motion .book-dots span:nth-child(2) { animation-delay: calc(var(--slow) / 3); }
+html.motion .book-dots span:nth-child(3) { animation-delay: calc(var(--slow) * 2 / 3); }
+@keyframes book-dot { from { opacity: 0.25; transform: translateY(3px); } to { opacity: 1; transform: translateY(-3px); } }
+.book-slow { display: none; margin: 0; max-width: 32ch; font-size: var(--text-small); }
+.book-slow a { color: var(--orange-dk); font-weight: 600; }
+.book-cal.is-slow .book-slow { display: block; }
 .book-dialog .lead-wa-direct { margin-top: 0; }
 html.motion .lead-dialog[open] { animation: lead-in var(--base) var(--ease); }
 html.motion .lead-dialog[open]::backdrop { animation: lead-fade var(--base) var(--ease); }

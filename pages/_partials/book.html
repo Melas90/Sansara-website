@@ -14,7 +14,14 @@
       </div>
       <button class="close-btn" type="button" data-book-close aria-label="{{{ shared.lead.close }}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
-    <div class="book-cal"><p class="book-loading">{{ booking.loading }}</p></div>
+    <!-- Calendly is built here ahead of the tap (lead.js); .book-wait covers it until the days are in (.is-ready), and
+         after 8 s offers WhatsApp (.is-slow). -->
+    <div class="book-cal">
+      <div class="book-wait" role="status">
+        <p class="book-loading"><span class="book-dots" aria-hidden="true"><span></span><span></span><span></span></span>{{ booking.loading }}</p>
+        <p class="book-slow"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ booking.slow }}</a></p>
+      </div>
+    </div>
     <p class="lead-wa-direct"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>
   </div>
 </dialog>

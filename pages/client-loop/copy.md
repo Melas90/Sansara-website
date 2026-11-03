@@ -12,3 +12,5 @@ button: Book your free call
 title: Pick a time for your *free call*
 intro: 30 minutes, free. An info call, not a sales call.
 loading: Loading the calendar…
+<!-- 2026-11-02: shown when the calendar has not appeared 8 s after the pop-up opened (slow phone or network) -->
+slow: Taking a while? Write to us on WhatsApp instead.
