@@ -402,3 +402,6 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - "What have you already tried?" has one plain line over the cards, "Click the ones you've tried to see what usually
   happens." (owner: "a small call to action… because they are relatable"); the handwritten "click yours to discover"
   by the photo stays.
+- Owner, 2026-11-07, on the handwritten "building your Loop, so you don't have to" over the founders' photo: "barely
+  visible". Same words, place and colour; bigger (34px, was 26px) with a soft cream glow behind the letters and the arrow, so the
+  thin orange hand reads on the busy photo. The floating "Get in touch" button was checked: it slides in after the hero.
