@@ -11,6 +11,7 @@ Ready on `develop` (`57df3b9`), built and checked on 2026-11-07, **not live**:
 - the handwritten "building your sales funnel, so you don't have to" over the founders' photo is gone (owner: "it's
   ugly, it's big, it doesn't fit");
 - the price card says only "You keep the funnel." ("One or two clients pay for it" is out).
+- on /client-loop/ the form's phone is required, labelled "WhatsApp" (on `feature/landing-phone-required`, merged).
 
 Checked: `npm run verify`, `CONTEXT=production npm run build` (no lab), /client-loop/ hero and price card at 1366 and
 390 px. The deploy the owner asked for on 2026-11-07 was refused by Netlify ("Forbidden" on create deploy): the team
