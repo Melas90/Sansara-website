@@ -56,8 +56,9 @@ secondary: See how it works
      note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first. -->
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
 hello: Hi, we're Miguel and Chrissy.
-<!-- 2026-11-07 (owner): "building your sales funnels so you don't have to"; singular to match the headline. Was: building your Loop, so you don't have to -->
-photo_note: building your sales funnel, so you don't have to
+<!-- 2026-11-07 (owner: "it's ugly, it's big, it doesn't fit"): the handwritten note over the photo is gone. It was, last:
+     "building your sales funnel, so you don't have to" (that morning; before: "building your Loop, so you don't have to") -->
+
 photo_alt: Miguel and Christiane, the founders of Sansara Media, working together at a laptop
 not_sales: An info call, not a sales call.
 <!-- 2026-11-02 (owner, after Chrissy found the hero still cluttered): "Built for you. You never touch the tech." removed
@@ -426,7 +427,8 @@ intro: In under four weeks, we find where strangers leave your path, decide with
 card_label: Loop Starter
 from: From
 terms: Fixed before we start.
-card_line: One or two clients pay for it. You keep the funnel.
+<!-- 2026-11-07 (owner): "remove the one or two clients… keep the funnel". Was: One or two clients pay for it. You keep the funnel. -->
+card_line: You keep the funnel.
 card_small: You'll know the price from the call. Bigger projects get a fixed written quote within 24 hours.
 included_heading: What's included
 platform: **Built where you already are:** WordPress, Kajabi, Systeme.io or a custom-coded page, at no extra charge.
