@@ -14,3 +14,6 @@ intro: 30 minutes, free. An info call, not a sales call.
 loading: Loading the calendar…
 <!-- 2026-11-02: shown when the calendar has not appeared 8 s after the pop-up opened (slow phone or network) -->
 slow: Taking a while? Write to us on WhatsApp instead.
+<!-- 2026-11-07 (owner: "phone"): on this page the form's phone is required, and its label drops "(optional)".
+     The email stays required. Elsewhere the label is shared.lead.whatsapp, "WhatsApp (optional)". -->
+phone: WhatsApp

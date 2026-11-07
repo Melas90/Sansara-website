@@ -413,3 +413,7 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - Owner, 2026-11-07: **"One or two clients pay for it" is out** of the price card ("remove the one or two clients… keep
   the funnel"). It read as a promise of clients, which the page elsewhere refuses ("We don't guarantee sales"). The card
   line is now only "You keep the funnel." Emilia must not say it either.
+- Owner, 2026-11-07, asked whether the phone and the email are mandatory on the landing: **"phone"**. On /client-loop/
+  the form's phone (the WhatsApp field) is now required and labelled "WhatsApp"; the email stays required (the call
+  invite goes by email). Other pages keep "WhatsApp (optional)". The form only shows there when Calendly does not load;
+  the phone on the Calendly booking form itself is a setting in Calendly, not in this site.
