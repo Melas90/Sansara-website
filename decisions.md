@@ -405,3 +405,11 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
 - Owner, 2026-11-07, on the handwritten "building your Loop, so you don't have to" over the founders' photo: "barely
   visible". Same words, place and colour; bigger (34px, was 26px) with a soft cream glow behind the letters and the arrow, so the
   thin orange hand reads on the busy photo. The floating "Get in touch" button was checked: it slides in after the hero.
+- Owner, 2026-11-07, later the same morning, after the release: the note was changed to "building your sales funnel, so
+  you don't have to" and released bigger (release 2026-11-07). Seeing it live: **"it's ugly, it's big, it doesn't fit"**.
+  The handwritten note and its arrow over the founders' photo are removed, on every System page (English, the
+  /client-loop/ landing and the Spanish /es/sistema/, which shares the body), with their CSS. "Hi, we're Miguel and
+  Chrissy." stays.
+- Owner, 2026-11-07: **"One or two clients pay for it" is out** of the price card ("remove the one or two clients… keep
+  the funnel"). It read as a promise of clients, which the page elsewhere refuses ("We don't guarantee sales"). The card
+  line is now only "You keep the funnel." Emilia must not say it either.

@@ -358,7 +358,6 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-not-sales-note { display: flex; align-items: flex-end; gap: 6px; margin: 0; font-size: 26px; color: var(--orange-dk); transform: rotate(-4deg); }
 .sy-not-sales-note svg { width: 44px; flex: none; }
 .sy-hero .small { max-width: 46ch; color: var(--brown-2-text); }
-.sy-hero-note { display: none; }
 @media (min-width: 900px) {
   .sy-hero { display: flex; align-items: center; min-height: min(92vh, 860px); }
   /* the founders' photo (2026-11-02) fills the whole frame, so it takes the left side only, moved so Chrissy stays
@@ -372,9 +371,6 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
   .sy-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 0%, transparent 44%, color-mix(in srgb, var(--sand) 70%, transparent) 58%, color-mix(in srgb, var(--sand) 88%, transparent) 100%); }
   .sy-hero > .container { width: 100%; }
   .sy-hero-copy { width: min(600px, 48%); margin-left: auto; padding-block: 88px; }
-  /* 2026-11-07 (owner: "barely visible"): bigger, and a soft cream glow so the thin orange hand reads on the photo */
-  .sy-hero-note { display: block; position: absolute; left: 22%; top: 2%; width: 300px; margin: 0; font-size: 34px; color: var(--orange-dk); text-shadow: 0 0 2px var(--bg), 0 0 8px var(--bg), 0 0 18px var(--bg), 0 0 28px var(--bg); transform: rotate(-6deg); z-index: 1; }
-  .sy-hero-note svg { display: block; width: 110px; margin: 6px 0 0 140px; stroke-width: 3.5; filter: drop-shadow(0 0 4px var(--bg)); }
 }
 
 /* the moving band under the hero: no rules above or below, its ends fade into the page */
