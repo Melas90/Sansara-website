@@ -9,6 +9,41 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 Nothing on `develop` yet. Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
 (now also for Calendly, which loads ahead of the tap on /client-loop/).
 
+## 2026-11-07
+
+Owner: "update now and release the landing page on Netlify", a second release in November, outside the calendar, at
+her explicit request. From `feature/hero-button-band`. The why is in `decisions.md` (2026-11-05 to 2026-11-07).
+
+- **Live:** https://sansara-media.com, Netlify deploy `6aeed35c219f1860b43cb139`. **Code:** `main` = `53a528d`,
+  tag `release-2026-11-07`.
+- **Checked before** (clean worktree of `develop` at `53a528d`): `npm run verify` ok; `CONTEXT=production npm run build`
+  without the lab; every built page at 1366 and 390 px (no JS errors, no broken images, no sideways scroll, no
+  PENDING; the only console line is Calendly's `requestStorageAccess` notice on /client-loop/); the /system/ form up
+  to its POST (intercepted; utm_* and fbclid carried, interest "The System"); a tried card with click and Space; the
+  /client-loop/ booking pop-up opens.
+- **Checked after:** /system/ and /client-loop/ serve the new hero, the new note and the Loop Starter, not the old
+  hero; the new `system.css` is live; `/`, `/about/`, `/contact/thanks/` answer 200, `/lab/` and `/docs/` 404. No real
+  test lead: the form, `lead.js`, the booking pop-up and the CRM intake did not change since 2026-11-03.
+
+System pages (`/system/`, `/client-loop/`):
+
+- the hero from the owner's /system/ spec: "For coaches, therapists and course creators who already have paying
+  clients", "The one sales funnel your coaching business *actually needs.*", "Done with you, live in under 4 weeks";
+  nothing under the button; the call button flat ink without the arrow;
+- the handwritten note over the founders' photo says "building your sales funnel, so you don't have to", bigger and
+  with a soft cream glow so it reads on the photo (owner, 2026-11-07: "barely visible");
+- "This works for" band under the hero (agencies, consultants, coaching programmes, high-ticket offers, B2B lead
+  generation, coaches with many offers, anyone burned by a funnel before);
+- "What have you already tried?" with ten cards, a line under each once ticked, and a plain call to click;
+- the Loop Starter offer: five outcomes, the price card from €2,500, what's included in four lists, "You carry none of
+  the risk", not included, "Do I need ads?".
+
+Known and open:
+- three wordings in the tried band ("Ran ads, on and off", "Hired different people over the years", "Had a funnel that
+  used to work") are ours, for the owner to confirm;
+- "Done with you" in the hero and offer, "Done for you" still in the founders' values and the FAQ;
+- the hero's "for coaches, therapists and course creators" against the broader "This works for" band.
+
 ## 2026-11-03
 
 Owner: "go ahead and do the release", ahead of the 2026-11-16 slot (it takes that slot). From `feature/hero-declutter`
