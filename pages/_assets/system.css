@@ -515,3 +515,94 @@ html.motion .sy-stage { animation: sy-stage-on calc(var(--slow) * 8 / var(--spee
 .sy-not-sales .hand { font-size: 30px; margin-bottom: 4px; }
 /* the rising headline mask opens once the pen has drawn, or it clips the underline (as on the home, home.css) */
 .sy h1.is-marked .mask, .sy main h2.is-marked .mask { overflow: visible; }
+
+/* ---------- 2026-11-05, step by step with the owner, English System pages (body.sy-en) ---------- */
+/* The call button: flat ink again, as before, and without its arrow (the owner's partner, 2026-11-06: "a flat colour like
+   it was before… remove the arrow"). The three-colour gradient of 5 Nov is gone. On the dark price card the button is
+   cream, as on the dark closing band, or it would not show. */
+.sy-en .btn-primary { padding-inline: 24px; }
+.sy-en .btn-primary .btn-arrow { display: none; }
+.sy-en .sy-price-card .btn-primary { background: var(--bg); color: var(--ink); }
+.sy-en .sy-price-card .btn-primary:hover { background: var(--white); color: var(--ink); }
+
+/* the new headline is longer: a little smaller and wider, so the hero is no taller than before and the button stays in view */
+.sy-en .sy-hero h1 { font-size: clamp(38px, 4.4vw, 60px); max-width: 18ch; }
+.sy-en .sy-hero .sy-sub { max-width: 46ch; }
+
+/* On a screen wider than 1440px the words stayed in the middle of the page, half over the photo, with the right third
+   empty (owner, with a screenshot: "properly centred"). From 1440px up they move right with the screen, and from about
+   2170px they sit exactly in the middle of the space beside the photo; at 1440px and below nothing changes. */
+@media (min-width: 1441px) { .sy-en .sy-hero-copy { position: relative; left: min(calc(46.5vw - 670px), calc(30vw - 312px)); } }
+
+/* the moving band under the hero, boxed: two ink lines across the page, its label a sticker on the top one
+   (owner: "give it some branding, like boxing, horizontal lines") */
+.sy-band-box { position: relative; padding: 0; background: var(--bg); border-block: 2px solid var(--ink); }
+.c .sy-band-box .sy-hero-mq { padding-block: 16px; }
+/* half the speed of the band it replaced: the owner found it too fast to read (2026-11-06) */
+html.motion .sy-band-box .sy-hero-mq .mq-track { animation-duration: calc(var(--slow) * 72 / var(--speed)); }
+.sy-band-label { position: absolute; z-index: 1; top: -30px; left: max(var(--pad), calc(50% - var(--max) / 2)); margin: 0; padding: 8px 14px; border-radius: 4px; background: var(--orange); color: var(--ink); font-size: 22px; line-height: 1; transform: rotate(-3deg); }
+
+/* what have you already tried: the one calm line under a ticked card (owner's text update, 2026-11-05) */
+.sy-tried-items li:has(.sy-tried-reply) { align-content: start; }
+.sy-tried-reply { margin: 14px 4px 2px; font-size: 15px; line-height: 1.45; color: var(--on-dark-muted); }
+
+/* ---------- 2026-11-05, step 3: the offer section on the English pages (owner's spec §7) ---------- */
+/* ---------- the Loop Starter: five outcomes beside one dark price card, four plain lists, two promises ---------- */
+.sy-offer-wrap { display: grid; gap: clamp(40px, 5vw, 64px); }
+.sy-head { display: grid; gap: 18px; justify-items: center; max-width: 760px; margin-inline: auto; text-align: center; }
+.sy-head > * { margin: 0; }
+.sy-offer-intro { font-size: 19px; line-height: 1.6; color: var(--brown); }
+.sy-offer { display: grid; gap: 48px; align-items: start; }
+@media (min-width: 960px) { .sy-offer { grid-template-columns: minmax(0, 1fr) minmax(340px, 420px); } }
+.sy-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.sy-steps li { display: flex; align-items: flex-start; gap: 20px; }
+.sy-num { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--orange); font-weight: 900; font-size: 17px; color: var(--ink); }
+.sy-steps h3 { margin: 0 0 6px; font-family: var(--font-sans); font-weight: 800; font-size: 21px; line-height: 1.3; letter-spacing: 0; color: var(--ink); }
+.sy-steps p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--brown); }
+.sy-price-card { display: grid; gap: 20px; min-width: 0; padding: 36px 32px; border-radius: 28px; background: var(--ink); color: var(--on-dark); box-shadow: 6px 6px 0 var(--orange); }
+.sy-price-card > * { margin: 0; }
+.sy-price-label { font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); }
+.sy-price-figure { display: grid; gap: 4px; }
+.sy-price-figure p { margin: 0; }
+.sy-price-from, .sy-price-terms { font-size: 15px; font-weight: 600; color: var(--on-dark-muted); }
+.sy-price-terms { margin-top: 6px; }
+.sy-price-amount { font-family: var(--font-serif); font-size: clamp(56px, 6vw, 72px); line-height: 1; color: var(--on-dark); }
+.sy-price-card .sy-checks { padding-top: 20px; border-top: 1px solid var(--line-on-dark); gap: 12px; }
+.sy-price-card .sy-checks li { font-weight: 400; font-size: 16px; line-height: 1.45; color: var(--on-dark); }
+.sy-price-line { font-family: var(--font-serif); font-size: 23px; line-height: 1.3; color: var(--orange); }
+.sy-en .sy-price-card .btn-primary { justify-content: center; padding-inline: 20px; white-space: normal; text-align: center; text-wrap: balance; }
+.sy-subtext { margin: 0; max-width: 52ch; font-size: 15px; line-height: 1.5; color: var(--brown-2-text); }
+.sy-price-card .sy-subtext { color: var(--on-dark-muted); }
+.sy-included-wrap { display: grid; gap: 28px; }
+.sy-h3 { margin: 0; text-align: center; font-family: var(--font-serif); font-weight: 400; font-size: clamp(30px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+.sy-included { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 1080px) { .sy-included { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .sy-included { grid-template-columns: minmax(0, 1fr); } }
+.sy-card { display: grid; gap: 16px; align-content: start; min-width: 0; padding: 28px 26px; border-radius: 22px; background: var(--white); }
+.sy-card h4 { margin: 0; font-family: var(--font-sans); font-size: 13px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-dk); }
+.sy-card ul { margin: 0; padding-left: 18px; list-style: disc; display: grid; gap: 9px; font-size: 15px; line-height: 1.5; color: var(--brown); }
+.sy-lines { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; text-align: center; font-size: 15px; line-height: 1.5; color: var(--brown); }
+.sy-risks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 700px) { .sy-risks { grid-template-columns: minmax(0, 1fr); } }
+.sy-risk { display: grid; gap: 10px; align-content: start; min-width: 0; padding: 28px 26px; border-radius: 22px; background: var(--sand-2); }
+.sy-risk h4, .sy-notes h4 { margin: 0; font-family: var(--font-sans); font-weight: 800; font-size: 19px; line-height: 1.3; letter-spacing: 0; color: var(--ink); }
+.sy-risk p, .sy-notes p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--brown); }
+.sy-notes { display: grid; gap: 32px 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+.sy-notes h4 { margin-bottom: 8px; font-size: 17px; }
+.sy-notes-cta { display: grid; gap: 12px; justify-items: center; text-align: center; }
+@media (min-width: 760px) { .sy-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sy-notes-cta { grid-column: 1 / -1; } }
+.sy-later { margin: 0; text-align: center; font-size: 16px; line-height: 1.5; color: var(--brown-2-text); }
+/* on a phone: a slimmer card and tiles, so nothing is squeezed on a narrow screen */
+@media (max-width: 600px) {
+  .sy-steps li { gap: 14px; }
+  .sy-num { width: 38px; height: 38px; font-size: 16px; }
+  .sy-price-card { padding: 28px 22px; box-shadow: 4px 4px 0 var(--orange); }
+  .sy-price-card .btn-arrow { display: none; }
+  .sy-card, .sy-risk { padding: 22px 20px; }
+}
+
+/* with the block after the objections gone (English, 2026-11-05), they close the section: no extra space under them */
+.sy-objections:last-child { margin-bottom: 0; }
+
+/* what have you already tried: one plain line over the cards saying that a click shows something (owner, 2026-11-06) */
+.sy-tried-cta { margin: -14px 0 -8px; font-size: 17px; font-weight: 600; line-height: 1.4; color: var(--orange); }

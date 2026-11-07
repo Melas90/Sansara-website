@@ -304,3 +304,101 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   phone; the earlier the visitor shows interest, the more of it is done before the tap.
 - Privacy: Calendly now loads for visitors who stay but don't open the pop-up. It sets its own cookies inside its
   frame, so it belongs in the cookie consent still open in the backlog (section 1).
+
+## 2026-11-05: step by step on the English System pages, step 1: hero, button, band (branch `feature/hero-button-band`, not live)
+
+- Earlier the same day the whole of the owner's spec ("/system/ page · Copy and design spec", v1) was built on the English
+  pages and she took it back on sight: "the design that I had was way better… we need to just do small gradual
+  increases". That attempt is parked in one commit on `feature/client-loop-calm` (not for merging) and holds the pieces
+  still to come (tick replies, How it works words, the new offer section she liked, objections, FAQ). From now on: the
+  page as it is, one change she names at a time.
+- **Step 1, in her words:** "Change the hero. Multicolor button… remove this 'An info call, not a sales call', it's a bit
+  too much. And then the banner below, keeps rotating, and give it some branding like boxing, horizontal lines."
+  - **Hero words** (English): eyebrow "For coaches, therapists and course creators who already have paying clients",
+    headline "The one sales funnel your coaching business *actually needs.*", subtitle "**Done with you, live in under 4
+    weeks.**…" (done WITH you: "it's actually DWY"), three checks. The headline is longer than the old one, so on these
+    pages it is set a little smaller and wider (60px at most, was 76px): the hero is no taller and the button stays in view.
+  - **The handwritten note beside the hero button is gone**; under the button one small line, "Not a sales call. We show
+    you where clients leave, and whether this is the right next step.", in the place of "Get a free assessment…". The
+    note stays beside the price and call buttons.
+  - **The call button** (every `.btn-primary` on `/system/` and `/client-loop/`, `body.sy-en`): three warm colours,
+    apricot to coral to terracotta, with a glow, ink words, an ink arrow (`--grad-flash`). Same size and words as before.
+    The floating button is unchanged.
+  - **The band** still moves; it now says who this works for (six lines, copy.md Works) and sits between two ink lines,
+    with "This works for" as an orange sticker on the top line.
+- Spanish untouched: the shared body shows the new pieces only where the copy has them (`hero.subtext`, `works.items`);
+  `/es/sistema/` builds to the same page as before.
+- Checked: `npm run verify`; hero and band rendered at 1440 and 390.
+- **Same step, after the owner looked at it on a wide screen** (screenshot, about 2170px wide: "properly, centred… I would
+  remove the ticks actually"): the three checks are out of the hero (kept as a comment in copy.md), and on screens wider
+  than 1440px the hero's words move right with the screen until they sit in the middle of the space beside the photo
+  (they used to stay in the middle of the page, half over the photo, with the right third empty). At 1440px and below
+  the hero is where it was. English pages only.
+
+## 2026-11-05: step 2, the words of "What have you already tried?" (same branch, not live)
+
+- Owner (a text she sent, "that section already looks good, so this is text only"): each card keeps its short label and
+  gets one calm line under it once ticked; a ninth card, "Hired different people over the years" (marked optional: taken,
+  she had asked for it earlier, it sits alone in the last row); the turn gains "They all share the same gap: nobody
+  decided which offer leads and built one path around it."; "Build it from zero" is "Build what's missing". The band,
+  the photo, "tick yours" and the cards are as they were. The short line under "Build what's missing" is still "Nothing
+  in place yet is a clean start.", for the owner to check.
+- English only: the shared body shows a reply only where the copy gives one; `/es/sistema/` builds to the same page.
+
+## 2026-11-05: step 3, the offer section (same branch, not live)
+
+- Owner: "also the offer part". The offer section she liked in the first build ("the offer is nice… the offer part is
+  very clear") takes the place of the white price box on the English pages: heading and intro in the middle of the page,
+  five outcomes beside one dark price card ("From €2,500", "Fixed before we start."), what's included as four plain
+  lists (four across, two and two, or stacked; never three and one), "You carry none of the risk" (we keep working
+  until a stranger can book or pay; the price doesn't move), "Not included", "Do I need ads?", a call button, and one
+  line on what comes after the Starter.
+- New promises now on the page, all from her spec: the guarantee, "From", the launch kit, testimonial coaching,
+  reminders, two rounds of changes, the 24-hour written quote for bigger projects. No longer shown on the English pages:
+  "Flexible payment. Ask us how.", the nine tiles, "There's much more we can do."
+- Left out, still in brackets in the spec: "[Split into 2 payments.]", four bracketed inclusions, and the refund card
+  ("We refund everything except €[X] for that session"), which needs the amount.
+- English only: the shared body shows this section where the copy has `price.outcomes`; `/es/sistema/` keeps the white box.
+- Same evening, on seeing steps 2 and 3: the handwritten note on the tried section is "click yours to discover" (owner:
+  "click on the tabs to discover"; it was "tick yours"), so readers know a click shows a line. From the offer's
+  "Strategy and offer" list, "The decision on which offer leads, and how the rest is bundled" is out (owner: "maybe some
+  coaches already know which offer they want to push and it feels a bit strange"). The same idea still stands in the
+  offer intro, outcome 2 ("One offer will lead.") and the tried section's closing line; she has not asked to change those.
+- Same evening: the block under the objections ("So we don't sell you pipes…" beside "And the part that surprises people:
+  *we build it to not need us.*") is off the English pages (owner, with a screenshot: "remove"). Its words stay in
+  copy.md as a comment; the Spanish page keeps it.
+
+## 2026-11-06: three small fixes on the English System pages (same branch, not live)
+
+- Owner: "the text seems to swipe too fast": the band under the hero takes 65 seconds for one pass (it was 27), about
+  48px a second, less than half of before.
+- Owner: "remove the text below book your free call": nothing under the hero button now (no handwritten note, no small
+  line); "Questions first? Write to us on WhatsApp" stays on the landing. The same small line still sits under the call
+  button at the end of the offer section.
+- Owner: "a small defect… some red thing, tip on the left of the button": the gradient started inside the button's 1px
+  transparent border and repeated under it, so a sliver of its last colour showed on the left edge. Fixed with
+  `background-origin: border-box` on every call button.
+- Owner, showing the reference page's list ("more related to business outcomes… put a couple of them or refine the ones
+  we already have"): in "What have you already tried?" the replies to "Ran ads, on and off" and "Hired different people
+  over the years" name the business outcome (no-shows, few sales, uneven months; inconsistent brand and results), and a
+  tenth card is new, "Had a funnel that used to work". Our wording, calm as she asked on 5 Nov, for her to confirm.
+- Owner: the band under the hero is shorter and aimed differently: Agencies, Consultants, Coaching programmes,
+  High-ticket offers, B2B lead generation, Coaches with many offers, Anyone burned by a funnel before. The hero's line
+  above the headline still says "For coaches, therapists and course creators who already have paying clients"; she has
+  not asked to change it.
+- Owner: "remove the WhatsApp button" (after one was tried beside the call button): the landing's hero has no WhatsApp
+  at all now, neither the button nor the text link "Questions first? Write to us on WhatsApp" that sat under the call
+  button since 29 Oct. The closing band and the booking pop-up keep theirs. Worth watching: that link was added because
+  leads wrote on WhatsApp before booking.
+- Owner, reading the offer's four lists aloud: two **one-on-one** strategy sessions (no names); the offer review "after
+  interviewing you and studying your offer"; testimonials collected and written up, "if you don't have any yet, that's
+  okay too" (no "coaching", no "2–3"); **5** offer graphics (were 3); "Reminders, DM replies or similar automations";
+  the launch kit is bio link, 3 story frames and a DM reply (the message to past clients is out); a **one-on-one**
+  closing call. She asked what a launch kit is: the name stays in that line, in the price card ("Launch kit and a
+  stranger test before you go live") and in "Do I need ads?", for her to keep or rename.
+- **The call button is flat ink again, without the arrow** (the owner's partner, 2026-11-06: "a flat colour like it was
+  before… remove the arrow"). The three-colour gradient of 5 Nov and its tokens are gone. On the dark price card the
+  button is cream, like the one on the closing band. The floating button keeps its arrow (on a phone it is only the arrow).
+- "What have you already tried?" has one plain line over the cards, "Click the ones you've tried to see what usually
+  happens." (owner: "a small call to action… because they are relatable"); the handwritten "click yours to discover"
+  by the photo stays.

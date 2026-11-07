@@ -16,9 +16,13 @@ description: For coaches, entrepreneurs and business owners. A free 30-minute ca
 
 ## Hero
 
-eyebrow: For coaches and business owners with paying clients
-title: Turn strangers into clients *who keep coming back*.
-subtitle: We build your lead generation, landing pages, payments and bookings for you. As one connected system, or piece by piece.
+<!-- 2026-11-05 (owner, step by step, from her spec "/system/ page · Copy and design spec" v1): the hero's words. Before:
+     "For coaches and business owners with paying clients" / "Turn strangers into clients *who keep coming back*." / "We
+     build your lead generation, landing pages, payments and bookings for you. As one connected system, or piece by
+     piece." "Done with you", not the spec's "Done for you" (owner: "it's actually DWY"). -->
+eyebrow: For coaches, therapists and course creators who already have paying clients
+title: The one sales funnel your coaching business *actually needs.*
+subtitle: **Done with you, live in under 4 weeks.** Your offer, made so clear that even someone who's never heard of you can't find a reason not to buy or book.
 lead: On the tools you already use, at a fixed price per package.
 whatsapp: WhatsApp compatible
 blocks:
@@ -47,7 +51,9 @@ stages:
 lead_submit: Get my free assessment
 primary: Talk to us
 secondary: See how it works
-note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first.
+<!-- 2026-11-06 (owner: "remove the text below book your free call"): nothing under the hero button on the English pages,
+     and no handwritten note beside it (2026-11-05). The hero shows both only where `note` is set; it was:
+     note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first. -->
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
 hello: Hi, we're Miguel and Chrissy.
 photo_note: building your Loop, so you don't have to
@@ -56,9 +62,10 @@ not_sales: An info call, not a sales call.
 <!-- 2026-11-02 (owner, after Chrissy found the hero still cluttered): "Built for you. You never touch the tech." removed
      from the checks, "See how it works" removed from the hero, and the photo of both founders with "I'm Miguel. And I'm
      Chrissy." instead of Chrissy alone ("Hi, I'm Chrissy."). -->
-checks:
-- On the tools you already use.
-- One fixed price per package.
+<!-- the line under the call button at the end of the offer section (it sat under the hero button too, for one evening) -->
+subtext: Not a sales call. We show you where clients leave, and whether this is the right next step.
+<!-- 2026-11-05, later (owner, on seeing the hero: "I would remove the ticks actually"): no checks in the hero. They were:
+     Your offer, positioned to lead. / Built or fixed, on the tools you already use. / A page where they book or pay. -->
 
 ### stops
 
@@ -72,6 +79,28 @@ checks:
   at: 0.625
 - name: They come back
   at: 0.875
+
+## Works
+
+<!-- 2026-11-05 (owner: "this works for… I can make it this rotative panel below the hero"): who it works for, in the moving
+     band under the hero, in the place of the nine services (Hero blocks, which named things the Starter does not
+     include). The band sits between two ink lines with this label on it (owner: "give it some branding, like boxing,
+     horizontal lines"). A page without this section keeps the band as it was. -->
+label: This works for
+
+<!-- 2026-11-06 (owner: "we just keep it agencies, consultants, coaching programs, high ticket, B2B lead generation… coaches
+     with many offers, anybody burned with a funnel before"). Before: Referral-based 1:1 practices / Offers that sell in
+     DMs / Courses and programmes / Practices with too many offers / Anyone burned by a funnel before / Studios and
+     small teams. -->
+### items
+
+- Agencies
+- Consultants
+- Coaching programmes
+- High-ticket offers
+- B2B lead generation
+- Coaches with many offers
+- Anyone burned by a funnel before
 
 ## Film
 
@@ -210,28 +239,54 @@ photo_alt: Christiane, co-founder of Sansara Media, laughing
      "clicks, but no clients", "and got homework instead", "likes, not bookings", "at night, between sessions", "and nobody
      picks one", "and hope they keep coming") and the old turn ("None of it was wrong. It was never connected.") stay here. -->
 title: What have you *already tried?*
-note: tick yours
-turn: Tried some of it, all of it, or none yet? *It doesn't matter.*
+<!-- 2026-11-05 (owner: "click on the tabs to discover"): the note now says that a click shows something; before: "tick yours" -->
+note: click yours to discover
+<!-- 2026-11-06 (owner: "a small call to action like click to see… click in the text to discover, because they are relatable"):
+     one plain line right over the cards; the handwritten note by the photo stays. -->
+cta: Click the ones you've tried to see what usually happens.
+<!-- 2026-11-05 (owner, text only: "that section already looks good"): each card keeps its short label and gets one calm
+     line that shows under it once ticked ("no blame, no punch, just here's what usually happens next"); a ninth card,
+     "Hired different people over the years"; the turn grows a second sentence (before: "Tried some of it, all of it, or
+     none yet? *It doesn't matter.*"); "Build it from zero" is "Build what's missing". Left out on purpose: "you're
+     tired of…", "wasted", "chaos", anything that sounds like the reader did something wrong.
+     2026-11-06 (owner, showing the reference's list: "more related to business outcomes… put a couple of them or refine
+     the ones we already have"): the replies to "Ran ads, on and off" (was: "…there was nowhere clear for them to land, so
+     the budget went quiet.") and "Hired different people over the years" (was: "…together they don't look like one
+     business.") now name the outcome, and a tenth card, "Had a funnel that used to work", is new. These three wordings
+     are ours, in her calm tone, for her to confirm. -->
+turn: Tried some of it, all of it, or none yet? *It doesn't matter.* They all share the same gap: nobody decided which offer leads and built one path around it.
 or: or
 next: Let us show you how easy this can be
 photo_alt: Christiane, co-founder of Sansara Media, smiling on the phone at her laptop
 
 ### items
 
-- Built it all with AI
-- Made a freebie
-- Ran ads, on and off
-- Paid an agency for leads
-- Posted more content
-- Answered every DM yourself
-- Added one more offer
-- Waited for referrals
+- title: Built it all with AI
+  reply: The pieces exist. They just don't connect into one path a stranger can follow.
+- title: Made a freebie
+  reply: People download it. Then nothing leads them from the freebie to the thing you sell.
+- title: Ran ads, on and off
+  reply: The clicks arrived, but the leads weren't qualified. No-shows, few sales, and a different result every month.
+- title: Paid an agency for leads
+  reply: The leads came. Not many became clients, and the system stayed in the agency's name.
+- title: Posted more content
+  reply: More people see you. Seeing isn't the same as booking.
+- title: Answered every DM yourself
+  reply: Every sale runs through you, and the evenings go with it.
+- title: Added one more offer
+  reply: Now a stranger has to choose before they can buy, and most don't.
+- title: Waited for referrals
+  reply: It proves your work is good. It just grows at the speed of word of mouth.
+- title: Hired different people over the years
+  reply: A designer, a VA, a freelancer for the funnel. Each part works; together the brand looks inconsistent, and so do the results.
+- title: Had a funnel that used to work
+  reply: It brought clients for a while. Then the numbers dropped, and finding out why takes time you don't have.
 
 ### paths
 
 - title: Improve what's there
   text: Keep what works, fix where it leaks.
-- title: Build it from zero
+- title: Build what's missing
   text: Nothing in place yet is a clean start.
 - title: Try what you haven't yet
   text: New ideas, picked for your business.
@@ -353,6 +408,102 @@ more_title: There's much more we can do.
 more_text: Ad management, lead generation, automations, email and WhatsApp follow-up, your own CRM: we do those too.
 more_link: Just ask
 
+<!-- 2026-11-05, step 3 (owner: "also the offer part"; earlier that day, on the first build: "the offer is nice… the
+     offer part is very clear"): the offer from her spec (§7). Heading and intro, five outcomes beside one dark price
+     card, what's included as four plain lists, "You carry none of the risk", then what is not included and the ads
+     question. A page whose copy has `### outcomes` shows this section; one without (Spanish) keeps the white box. In:
+     "From" before the price, the longer lists (Stranger Map, testimonial coaching, launch kit, reminders, two rounds of
+     changes…), the guarantee, "One or two clients pay for it", the 24-hour quote. "Flexible payment. Ask us how." and the
+     old nine (### included) are no longer shown on the English pages; the "much more" box became the one line `after`.
+     Left out, still in brackets in the spec: "[Split into 2 payments.]", "[Your page copy, drafted from your words]",
+     "[by email and WhatsApp]", "[Analytics and your Meta pixel installed]", "[A WhatsApp group with us during the
+     build]", and the third risk card ("Change your mind early? Walk away… We refund everything except €[X] for that
+     session."), which needs the amount. "[3] offer graphics" is 3: the Starter already had three visuals. -->
+eyebrow: The Loop Starter
+title: Everything your funnel needs, *decided and built.*
+intro: In under four weeks, we find where strangers leave your path, decide with you which offer leads, and build the funnel that lets them book or pay without you having to chase them. Decided with you, done with you, in your name.
+card_label: Loop Starter
+from: From
+terms: Fixed before we start.
+card_line: One or two clients pay for it. You keep the funnel.
+card_small: You'll know the price from the call. Bigger projects get a fixed written quote within 24 hours.
+included_heading: What's included
+platform: **Built where you already are:** WordPress, Kajabi, Systeme.io or a custom-coded page, at no extra charge.
+ownership: **100% yours:** everything in your own accounts.
+risk_heading: You carry none of the risk
+not_included_title: Not included
+not_included: Ad spend, software subscriptions and follow-up email sequences. Those come after your funnel converts, as a separate step.
+ads_q: Do I need ads for this to work?
+ads_a: No. People already find you: followers, referrals, DMs. Right now most of them wait in your messages for an answer. The launch kit sends them to your new page from week one. Ads come later, to bring more people to a page that already works.
+after: **After the Starter:** ads, follow-up and automations, once your funnel converts. We don't send ads to a page that doesn't.
+
+### outcomes
+
+- title: You'll know where you lose clients.
+  text: We map your path the way a stranger walks it and find the step that costs you most: the free call that doesn't convert, the DM that waits two days, the page that doesn't say what you sell.
+- title: One offer will lead.
+  text: We look at everything you sell and decide with you what a new client should buy first, and how the rest fits behind it.
+- title: Strangers will understand you in seconds.
+  text: We research how your clients describe their problem, and turn it into one sentence that makes a stranger pick you.
+- title: They'll book or pay, even when you're busy.
+  text: We build the page and the booking or checkout, from scratch or on what you have, and test it as a stranger before it goes live.
+- title: It's yours.
+  text: Everything in your name, a written guide, and three months of support.
+
+### card_points
+
+- Strategy and offer, decided with you
+- Your funnel, built or fixed on your tools
+- Launch kit and a stranger test before you go live
+- 3 months of support, all in your name
+
+<!-- 2026-11-06 (owner, going through the four lists line by line): "two one-on-one strategy sessions"; the offer review
+     "after interviewing and studying your offer"; testimonials "collected and written up, if you don't have it, it's
+     also okay" (was "Testimonial coaching: 2–3 client testimonials…"); 5 offer graphics (was 3); "reminders, DM, or
+     similar automations" (was "Reminders before every booked call"); the launch kit without "a message to past clients";
+     the closing call "one-on-one". The rest she read and kept. -->
+### groups
+
+- label: Strategy and offer
+  icon: search
+  items:
+  - A Stranger Map of your current path, scored step by step
+  - Two one-on-one strategy sessions
+  - "An offer review: after interviewing you and studying your offer, what sells, to whom and at what price"
+  - Audience research in your clients' own words
+  - Your positioning in one sentence
+  - Your funnel mapped before anything is built
+- label: Copy and content
+  icon: pen
+  items:
+  - The copy structure for your page
+  - Testimonials collected and written up. If you don't have any yet, that's okay too
+  - 5 offer graphics in your brand style
+  - Photo selection and retouch
+- label: Page and funnel
+  icon: page
+  items:
+  - One sales page on your domain, from scratch or adapted
+  - Mobile versions, domain set-up, page speed
+  - Booking or Stripe checkout with automatic confirmation
+  - Reminders, DM replies or similar automations
+  - A stranger test before launch
+- label: Launch and handover
+  icon: key
+  items:
+  - "A launch kit: bio link, 3 story frames and a DM reply with your link"
+  - A one-on-one closing call and a written guide
+  - All logins handed over
+  - Five support tickets over three months
+  - Two rounds of changes included
+
+### risks
+
+- title: If it doesn't work, we keep working.
+  text: After launch, a stranger can book or pay you end to end. If they can't, we keep working at no cost until they can. We don't guarantee sales; nobody honest can. We guarantee a stranger can buy from you.
+- title: The price doesn't move.
+  text: You hear it from the free call, before anything starts. It doesn't change after.
+
 ### included
 
 - title: Offer research and positioning
@@ -395,10 +546,13 @@ followers_title: “But I already have plenty of followers.”
 followers_text: We work with businesses that have thousands, even tens of thousands of followers, and still don’t make a single sale from them. Followers are interest. Interest doesn’t pay the bills until something turns it into a booking.
 followers_close: Interest doesn’t mean sales. The Loop is what turns one into the other.
 honest: Honest answer
-whole: So we don't sell you pipes. We build the whole line and seal every join. One journey, mapped from the first time someone sees you to the client who keeps coming back. Built where your customers actually are. Paid for once. Tested until it runs on its own. That's the Loop, and it's the part nobody sells you in pieces.
-handover_title: And the part that surprises people: *we build it to not need us.*
-handover: We take responsibility for the whole Loop until it runs. Then we hand it over properly, not a login and a goodbye, but a walkthrough until you understand what every piece does and why. If you have a team, we train them to run it without us.
-handover_close: You own it. You understand it. You can run it. That's the product.
+<!-- 2026-11-05 (owner, with a screenshot of the block under the objections: "remove"): no longer shown on the English pages.
+     The page shows this block only where `whole` is set. Its words were:
+     whole: So we don't sell you pipes. We build the whole line and seal every join. One journey, mapped from the first time someone sees you to the client who keeps coming back. Built where your customers actually are. Paid for once. Tested until it runs on its own. That's the Loop, and it's the part nobody sells you in pieces.
+     handover_title: And the part that surprises people: *we build it to not need us.*
+     handover: We take responsibility for the whole Loop until it runs. Then we hand it over properly, not a login and a goodbye, but a walkthrough until you understand what every piece does and why. If you have a team, we train them to run it without us.
+     handover_close: You own it. You understand it. You can run it. That's the product.
+-->
 
 ### diy
 

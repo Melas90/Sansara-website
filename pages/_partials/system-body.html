@@ -25,13 +25,18 @@
         <p class="hand sy-hello reveal">{{ hero.hello }}</p>
         <h1 id="hero-title"><span class="mask"><span class="mask-in">{{ hero.title }}</span></span></h1>
         <p class="sy-sub reveal">{{ hero.subtitle }}</p>
-        <ul class="sy-checks reveal">{{#each hero.checks}}<li>{{ this }}</li>{{/each}}</ul>
+        {{#if hero.checks}}<ul class="sy-checks reveal">{{#each hero.checks}}<li>{{ this }}</li>{{/each}}</ul>{{/if}}
         <div class="sy-hero-cta reveal">
           <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="hero">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
-          <p class="hand sy-not-sales-note"><svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M56 30C40 34 20 30 8 14"/><path d="M6 26 7 12l13 2"/></svg>{{ hero.not_sales }}</p>
+          <!-- The handwritten note beside the button and the small line under it show only where the copy has hero.note.
+               The owner took both off the English pages (2026-11-05: "remove this… it's a bit too much"; 2026-11-06:
+               "remove the text below book your free call"). -->
+          {{#if hero.note}}<p class="hand sy-not-sales-note"><svg viewBox="0 0 60 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M56 30C40 34 20 30 8 14"/><path d="M6 26 7 12l13 2"/></svg>{{ hero.not_sales }}</p>{{/if}}
         </div>
-        <p class="small reveal">{{ hero.note }}</p>
-        {{#if booking.button}}<p class="small sy-wa"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener" data-contact-wa>{{ shared.lead.whatsapp_alt }}</a></p>{{/if}}
+        {{#if hero.note}}<p class="small reveal">{{ hero.note }}</p>{{/if}}
+        <!-- No WhatsApp in the hero (owner, 2026-11-06: "remove the WhatsApp button"; it was the text link "Questions first?
+             Write to us on WhatsApp" on the landing since 2026-10-29, and a button for a few minutes). The closing band
+             and the booking pop-up keep theirs. -->
         <!-- "See how it works" (hero.secondary) was removed from the hero by the owner on 2026-11-02 ("the hero is still
              cluttered"); the copy stays in copy.md. -->
       </div>
@@ -41,12 +46,21 @@
   <!-- What's inside, as a moving band right under the hero (owner, 2026-10-26: "bring them, it's dynamic"; the photo and
        the band fade into the page's own colour). Screen readers get the list once; the band is decoration; still under
        reduced motion. -->
-  <div class="sy-band">
+  <!-- 2026-11-05 (owner): where the copy has a Works section (English), the band says who this works for and sits between
+       two ink lines with its label on the top one; two sets and their copies, so six short lines still loop on a wide
+       screen. Without it (Spanish), the band below is the one from 26 Oct, unchanged. -->
+  {{#if works.items}}<div class="sy-band sy-band-box">
+    <p class="hand sy-band-label" id="works-label">{{ works.label }}</p>
+    <ul class="sr-only" aria-labelledby="works-label">{{#each works.items}}<li>{{ this }}</li>{{/each}}</ul>
+    <div class="mq sy-hero-mq" aria-hidden="true">
+      <div class="mq-track">{{#each works.items}}<span>{{ this }}</span>{{/each}}{{#each works.items}}<span class="mq-dup">{{ this }}</span>{{/each}}{{#each works.items}}<span class="mq-dup">{{ this }}</span>{{/each}}{{#each works.items}}<span class="mq-dup">{{ this }}</span>{{/each}}</div>
+    </div>
+  </div>{{else}}<div class="sy-band">
     <ul class="sr-only">{{#each hero.blocks}}<li>{{ this }}</li>{{/each}}<li>{{ hero.whatsapp }}</li></ul>
     <div class="mq sy-hero-mq" aria-hidden="true">
       <div class="mq-track">{{#each hero.blocks}}<span>{{ this }}</span>{{/each}}<span class="sy-mq-wa"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span>{{#each hero.blocks}}<span class="mq-dup">{{ this }}</span>{{/each}}<span class="sy-mq-wa mq-dup"><svg class="li" aria-hidden="true"><use href="#li-chat"/></svg>{{ hero.whatsapp }}</span></div>
     </div>
-  </div>
+  </div>{{/if}}
 
   <!-- The film (the 90-second VSL) was removed by the owner on 2026-10-26 ("kill VSL"): no visitor watched 15 seconds of it
        after 22 Oct. To bring it back, include _partials/system-film.html here. -->
@@ -76,7 +90,8 @@
   <!-- What have you already tried? (owner, 2026-11-02, after the "Audience and outcome" section of a site she liked): a
        dark band in the place of "The real problem" (its copy stays in copy.md, Problem), Chrissy's former hero photo with
        a handwritten "tick yours", eight cards the reader can tick (sy-tried.js), the turn and the three ways to start.
-       Not numbered: what you tried is not a sequence. The cards wear the comic look of the price and objection boxes
+       Not numbered: what you tried is not a sequence. Where the copy gives a card a reply (English, 2026-11-05), one
+       calm line shows under it once it is ticked. The cards wear the comic look of the price and objection boxes
        (ink border, square corners, hard shadow), in orange because ink does not show on the dark band. -->
   <section class="section band-dark sy-tried" id="tried" aria-labelledby="tried-title">
     <div class="container sy-tried-grid">
@@ -86,7 +101,8 @@
       </figure>
       <div class="sy-tried-body">
         <h2 id="tried-title"><span class="mask"><span class="mask-in">{{ tried.title }}</span></span></h2>
-        <ul class="sy-tried-items stagger">{{#each tried.items}}<li><button type="button" class="sy-tried-card" aria-pressed="false"><svg class="sy-tried-tick" viewBox="0 0 30 30" aria-hidden="true"><circle cx="13" cy="16" r="10"/><path d="M5 16c2.6 1.7 4.6 3.8 6.3 6.8C14.4 15 18.6 8.6 26 3"/></svg>{{ this }}</button></li>{{/each}}</ul>
+        {{#if tried.cta}}<p class="sy-tried-cta reveal">{{ tried.cta }}</p>{{/if}}
+        <ul class="sy-tried-items stagger">{{#each tried.items}}<li><button type="button" class="sy-tried-card" aria-pressed="false"><svg class="sy-tried-tick" viewBox="0 0 30 30" aria-hidden="true"><circle cx="13" cy="16" r="10"/><path d="M5 16c2.6 1.7 4.6 3.8 6.3 6.8C14.4 15 18.6 8.6 26 3"/></svg>{{#if title}}{{ title }}{{else}}{{ this }}{{/if}}</button>{{#if reply}}<p class="sy-tried-reply">{{ reply }}</p>{{/if}}</li>{{/each}}</ul>
         <div class="sy-tried-close reveal">
           <p class="sy-tried-turn">{{ tried.turn }}</p>
           <ul class="sy-tried-paths">{{#each tried.paths}}<li>{{#if @first}}{{else}}<span class="sy-tried-or hand" aria-hidden="true">{{ tried.or }}</span>{{/if}}<b>{{ title }}</b><span>{{ text }}</span></li>{{/each}}</ul>
@@ -128,6 +144,66 @@
     </div>
   </section>
 
+{{#if price.outcomes}}
+  <!-- The Loop Starter (owner's spec §7, 2026-11-05: "the offer is nice… very clear"), where the copy has price.outcomes
+       (English); without them (Spanish) the white box below, unchanged. What you get as five outcomes beside one dark price card, what's included as four plain lists, the two promises
+       under "You carry none of the risk", what is not included and the ads question, then one line on what comes after.
+       It replaces the white box with the stamp price, the nine dotted tiles and the "much more" box. -->
+  <section class="section" id="price" aria-labelledby="price-title">
+    <div class="container sy-offer-wrap">
+      <div class="sy-head reveal">
+        <p class="eyebrow">{{ price.eyebrow }}</p>
+        <h2 id="price-title"><span class="mask"><span class="mask-in">{{ price.title }}</span></span></h2>
+        <p class="sy-offer-intro">{{ price.intro }}</p>
+      </div>
+      <div class="sy-offer reveal">
+        <ol class="sy-steps">
+          {{#each price.outcomes}}<li>
+            <span class="sy-num" aria-hidden="true">{{ @n }}</span>
+            <div><h3>{{ title }}</h3><p>{{ text }}</p></div>
+          </li>{{/each}}
+        </ol>
+        <aside class="sy-price-card" aria-label="{{{ price.name }}}">
+          <p class="sy-price-label">{{ price.card_label }}</p>
+          <div class="sy-price-figure">
+            <p class="sy-price-from">{{ price.from }}</p>
+            <p class="sy-price-amount">{{ price.price }}</p>
+            <p class="sy-price-terms">{{ price.terms }}</p>
+          </div>
+          <ul class="sy-checks">{{#each price.card_points}}<li>{{ this }}</li>{{/each}}</ul>
+          <p class="sy-price-line">{{ price.card_line }}</p>
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <p class="sy-subtext">{{ price.card_small }}</p>
+        </aside>
+      </div>
+      <div class="sy-included-wrap reveal">
+        <h3 class="sy-h3">{{ price.included_heading }}</h3>
+        <div class="sy-included">
+          {{#each price.groups}}<div class="sy-card">
+            <h4>{{ label }}</h4>
+            <ul>{{#each items}}<li>{{ this }}</li>{{/each}}</ul>
+          </div>{{/each}}
+        </div>
+        <p class="sy-lines"><span>{{ price.platform }}</span><span>{{ price.ownership }}</span></p>
+      </div>
+      <div class="sy-included-wrap reveal">
+        <h3 class="sy-h3">{{ price.risk_heading }}</h3>
+        <div class="sy-risks">
+          {{#each price.risks}}<div class="sy-risk"><h4>{{ title }}</h4><p>{{ text }}</p></div>{{/each}}
+        </div>
+      </div>
+      <div class="sy-notes reveal">
+        <div><h4>{{ price.not_included_title }}</h4><p>{{ price.not_included }}</p></div>
+        <div><h4>{{ price.ads_q }}</h4><p>{{ price.ads_a }}</p></div>
+        <div class="sy-notes-cta">
+          <a class="btn btn-primary" href="#lead" data-lead-open data-topic="The System" data-source="price: end">{{#if booking.button}}{{ booking.button }}{{else}}{{ hero.primary }}{{/if}}<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <p class="sy-subtext">{{ hero.subtext }}</p>
+        </div>
+      </div>
+      <p class="sy-later reveal">{{ price.after }}</p>
+    </div>
+  </section>
+{{else}}
   <!-- The price (owner, 2026-10-26): the first package, The Foundation, in her words. -->
   <section class="section" id="price" aria-labelledby="price-title">
     <div class="container">
@@ -159,6 +235,7 @@
       </div>
     </div>
   </section>
+{{/if}}
 
   <!-- Why a loop: the joins, the do-it-yourself question, the handover. -->
   <!-- The intro ("Why a loop, not just services" / "Value doesn't leak in the pipes…" and its paragraph) was removed by the
@@ -182,14 +259,15 @@
           <p class="sy-obj-close">{{ why.followers_close }}</p>
         </article>
       </div>
-      <div class="editorial sy-whole reveal">
+      <!-- shown only where the copy has why.whole: the owner took it off the English pages on 2026-11-05 -->
+      {{#if why.whole}}<div class="editorial sy-whole reveal">
         <p class="sy-whole-text">{{ why.whole }}</p>
         <div class="stack-sm">
           <h3>{{ why.handover_title }}</h3>
           <p>{{ why.handover }}</p>
           <p><strong>{{ why.handover_close }}</strong></p>
         </div>
-      </div>
+      </div>{{/if}}
     </div>
   </section>
 
