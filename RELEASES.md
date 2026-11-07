@@ -6,7 +6,19 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-12-15)
 
-Nothing on `develop` yet. Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
+Ready on `develop` (`57df3b9`), built and checked on 2026-11-07, **not live**:
+
+- the handwritten "building your sales funnel, so you don't have to" over the founders' photo is gone (owner: "it's
+  ugly, it's big, it doesn't fit");
+- the price card says only "You keep the funnel." ("One or two clients pay for it" is out).
+
+Checked: `npm run verify`, `CONTEXT=production npm run build` (no lab), /client-loop/ hero and price card at 1366 and
+390 px. The deploy the owner asked for on 2026-11-07 was refused by Netlify ("Forbidden" on create deploy): the team
+had used its credits for the month, and the owner chose to keep the live landing until then. `main` was already pushed
+to `57df3b9`, so for now `main` is ahead of what is live (deploy `6aeed35c219f1860b43cb139`, `53a528d`). The Spanish
+/es/sistema/ is parked (owner, 2026-11-07): it ships with the shared body but gets no work or checks.
+
+Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
 (now also for Calendly, which loads ahead of the tap on /client-loop/).
 
 ## 2026-11-07
