@@ -56,7 +56,8 @@ secondary: See how it works
      note: Get a free assessment: on a 30-minute call we look at where you're losing clients and what to fix first. -->
 <!-- 2026-10-26 (owner): the human look, after funnelarchitektinnen.de (lab: /lab/client-loop-human/). New lines; the checks and the call line restate existing claims (hero lead, team values, call outcomes). -->
 hello: Hi, we're Miguel and Chrissy.
-photo_note: building your Loop, so you don't have to
+<!-- 2026-11-07 (owner): "building your sales funnels so you don't have to"; singular to match the headline. Was: building your Loop, so you don't have to -->
+photo_note: building your sales funnel, so you don't have to
 photo_alt: Miguel and Christiane, the founders of Sansara Media, working together at a laptop
 not_sales: An info call, not a sales call.
 <!-- 2026-11-02 (owner, after Chrissy found the hero still cluttered): "Built for you. You never touch the tech." removed
