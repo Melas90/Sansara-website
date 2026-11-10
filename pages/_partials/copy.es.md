@@ -108,7 +108,7 @@ proof_by: Coach de negocio, basado en el mensaje de un cliente
 message: Cuéntanos tu caso y lo analizaremos
 message_hint: Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
-submit: Enviar y que me contactéis
+submit: Enviar, te respondemos hoy
 sending: Enviando
 close: Cerrar
 success_title: Gracias. Te contactamos dentro del día laborable.

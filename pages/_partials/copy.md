@@ -164,7 +164,7 @@ proof_by: Business coach, based on a client's message
 message: Tell us about your case and we'll look into it
 message_hint: A couple of lines is enough: what you do and where you feel stuck.
 privacy: I've read the [privacy policy](/privacy/) and agree that my details are stored so you can contact me.
-submit: Send and we'll come back to you
+submit: Send, we'll reply today
 sending: Sending
 close: Close
 success_title: Thank you. We'll come back to you within the working day.
