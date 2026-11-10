@@ -91,7 +91,7 @@ title: Talk to *us*
 <!-- Owner, 2026-11-10: "déjanos tus datos y te contactamos", then "come back to you within the working day". The promise is that we write back, not that they pick a time; the calendar stays as the second option after sending. -->
 intro: Leave your details and we'll come back to you within the working day.
 <!-- Owner, 2026-11-10: "average response time" as a trust line next to the form. Must stay true: reply within a few hours in working hours. -->
-reply_time: Most people hear back within a few hours.
+reply_time: Most people hear from us in less than an hour.
 name: Your name
 email: Email
 whatsapp: WhatsApp

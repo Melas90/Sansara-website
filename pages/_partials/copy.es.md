@@ -30,7 +30,7 @@ float: Escríbenos
 kicker: Respuesta en el día
 title: Habla con *nosotros*
 intro: Déjanos tus datos y te contactamos dentro del día laborable.
-reply_time: La mayoría recibe respuesta en unas horas.
+reply_time: La mayoría recibe respuesta en menos de una hora.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp
