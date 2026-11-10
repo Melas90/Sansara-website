@@ -64,7 +64,7 @@
     stepTwo.forEach((el) => {
       if (n === 1) { el.hidden = true; return; }
       if (el === interestField) el.hidden = knownTopic;
-      else if (el.id === 'l-message-field') el.hidden = !noteToggle?.closest('.lead-note').hidden;
+      else if (el.id === 'l-message-field') el.hidden = noteToggle ? !noteToggle.closest('.lead-note').hidden : false;
       else el.hidden = false;
     });
   };
@@ -72,12 +72,13 @@
     if (!check(nameField)) { nameField.querySelector('input')?.focus(); return; }
     showStep(2);
     hj('Form: step 2 (name in)');
-    form.querySelector('#l-email')?.focus();
+    (form.querySelector('[data-contact][required]') || form.querySelector('#l-email'))?.focus();
   };
   form.querySelector('.lead-next')?.addEventListener('click', goNext);
   showStep(1);
   // "Prefer WhatsApp?": straight to WhatsApp, reported to the Pixel like the other WhatsApp links
-  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+  form.querySelector('.lead-wa-direct a:not([data-cal-direct])')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+  form.querySelector('[data-cal-direct]')?.addEventListener('click', () => { hj('Form: calendar instead'); if (typeof window.fbq === 'function') window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up direct' }); });
 
   const ccSelect = form.querySelector('.wa-cc');
   if (ccSelect) {
@@ -305,14 +306,31 @@
   };
   const emailInput = form.querySelector('[data-contact="email"]');
   const whatsappInput = form.querySelector('[data-contact="whatsapp"]');
+  /* Preferred channel (owner, 2026-11-10): the chosen channel's field is required and the other optional; the "(optional)"
+     marks in the labels follow. Without JavaScript the email stays required, as the markup says. */
+  const channelInputs = [...form.querySelectorAll('input[name="channel"]')];
+  const syncChannel = () => {
+    const chosen = channelInputs.find((i) => i.checked)?.value || 'email';
+    [[emailInput, 'email'], [whatsappInput, 'whatsapp']].forEach(([input, name]) => {
+      if (!input) return;
+      const field = input.closest('.field');
+      input.required = chosen === name;
+      const opt = field?.querySelector('[data-opt]');
+      if (opt) opt.hidden = chosen === name;
+      // a field that just became optional and is empty drops its "please give us..." error
+      if (chosen !== name && !input.value.trim()) { const out = field?.querySelector('.field-error'); if (out) out.textContent = ''; field?.classList.remove('is-invalid'); input.setAttribute('aria-invalid', 'false'); }
+    });
+  };
+  channelInputs.forEach((i) => i.addEventListener('change', () => { syncChannel(); hj('Form: channel ' + i.value); }));
+  syncChannel();
   const contactError = (input) => {
     const v = input.value.trim();
     if (input === emailInput) {
-      // the email is required (owner, 2026-10-25: "I would put mail mandatory"); WhatsApp is optional
+      // the chosen channel's field is required (2026-11-10); before, the email always was (owner, 2026-10-25)
       if (v) return isEmail(v) ? '' : msg.msgEmail;
-      return msg.msgContact;
+      return input.required ? msg.msgContact : '';
     }
-    if (!v) return '';
+    if (!v) return input.required ? msg.msgContactWa : '';
     const d = phoneDigits(v);
     if (d === null) return msg.msgWhatsapp;
     if (!d) return msg.msgCountry;
@@ -322,10 +340,11 @@
   const check = (field) => {
     const input = field.querySelector('[data-contact]') || field.querySelector('input:not([type=hidden]), select, textarea');
     const out = field.querySelector('.field-error');
+    if (!input || !out) return true; // the channel choice (radios, always one checked) has nothing to check
     let text = '';
     if (input.type === 'checkbox') { if (input.required && !input.checked) text = msg.msgConsent; }
+    else if (input.dataset.contact) text = contactError(input); // its own words when required and empty
     else if (input.required && !input.value.trim()) text = msg.msgRequired;
-    else if (input.dataset.contact) text = contactError(input);
     out.textContent = text;
     field.classList.toggle('is-invalid', Boolean(text));
     input.setAttribute('aria-invalid', String(Boolean(text)));

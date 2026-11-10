@@ -349,6 +349,21 @@ html:not(.js) .close-btn { display: none; }
 .lead-head h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); }
 .lead-head h2 em { font-style: italic; color: var(--gold-dk); }
 .lead-head .close-btn { flex: none; margin: -8px -8px 0 0; }
+/* "(optional)" beside a label */
+.field label .opt { font-weight: var(--weight-body); color: var(--brown-2-text); }
+/* kicker above the title (owner, 2026-11-10): the small label of the reference form */
+.lead-kicker { font-size: var(--text-label); letter-spacing: .14em; text-transform: uppercase; font-weight: var(--weight-label); color: var(--orange-dk); }
+/* preferred channel: two pill options */
+.lead-channel { border: 0; padding: 0; margin: 0; min-width: 0; }
+.lead-channel legend { padding: 0; margin-bottom: 8px; }
+.lead-channel-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-channel-option { position: relative; display: inline-flex; align-items: center; min-height: var(--target, 44px); padding: 0 16px; border: 1px solid var(--ink); border-radius: 999px; cursor: pointer; font-weight: 500; }
+.lead-channel-option input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.lead-channel-option:has(input:checked) { background: var(--ink); color: var(--on-dark); }
+.lead-channel-option:has(input:focus-visible) { outline: 2px solid var(--orange-dk); outline-offset: 2px; }
+/* reply-time line under the intro (owner, 2026-11-10): a trust line, small, with a green dot like a chat's "online" mark */
+.lead-reply { display: flex; align-items: center; gap: 8px; font-size: var(--text-small); color: var(--brown); }
+.lead-reply-dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--wa-green); box-shadow: 0 0 0 3px color-mix(in srgb, var(--wa-green) 20%, transparent); }
 .lead-dialog .form-actions { margin-top: 20px; }
 .lead-dialog .form-grid { align-items: start; }
 .lead-dialog .field-hint { font-size: var(--text-small); color: var(--brown-2-text); }

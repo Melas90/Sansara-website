@@ -27,14 +27,26 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 ## Lead
 
 float: Escríbenos
-title: *Hablemos*
-intro: Necesitamos tus datos de contacto para enviarte la invitación a la llamada. Justo después eliges la hora.
+kicker: Respuesta en el día
+title: Habla con *nosotros*
+intro: Déjanos tus datos y te contactamos en el mismo día laborable. Si lo prefieres, reserva una cita directamente con el enlace de abajo.
+reply_time: La mayoría recibe respuesta en menos de una hora.
 name: Tu nombre
 email: Email
-whatsapp: WhatsApp (opcional)
-contact_hint: Aquí te enviamos los detalles de la llamada.
+whatsapp: WhatsApp
+optional: (opcional)
+website: Web o Instagram
+channel: ¿Por dónde te contactamos?
+channel_options:
+- label: Email
+  value: email
+  checked: true
+- label: WhatsApp
+  value: whatsapp
+contact_hint: Te respondemos aquí, o por WhatsApp si nos dejas un número.
 whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
-need_contact: Déjanos tu email para enviarte los detalles de la llamada.
+need_contact: Déjanos tu email para poder contactarte.
+need_whatsapp: Déjanos tu WhatsApp para poder contactarte.
 invalid_whatsapp: Revisa el número, con el prefijo del país, por ejemplo +34 612 345 678.
 need_country_code: Añade el prefijo del país al principio, por ejemplo +34 612 345 678.
 interest: ¿Qué te interesa?
@@ -86,20 +98,21 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Añadir una nota sobre tu caso (opcional)
-privacy_notice: Solo usamos tus datos para tu llamada: enviarte la invitación y responderte. [Política de privacidad](/privacy/) (en inglés).
+privacy_notice: Solo usamos tus datos para contactarte. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
+calendar_direct: Reservar una cita directamente
 whatsapp_direct_text: Hola%20Sansara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20llamada%20gratuita.
 proof_quote: «Es la primera vez, después de pasar por muchas agencias (…), que alguien llega a mi llamada listo para comprar.»
 proof_by: Coach de negocio, basado en el mensaje de un cliente
 message: Cuéntanos tu caso y lo analizaremos
-message_hint: Opcional. Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
+message_hint: Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
-submit: Que me contactéis
+submit: Enviar, te respondemos hoy
 sending: Enviando
 close: Cerrar
-success_title: Gracias. Te escribimos pronto.
-success_text: Ya tenemos tus datos. ¿Quieres elegir ya la hora de tu llamada gratuita?
+success_title: Gracias. Te contactamos dentro del día laborable.
+success_text: Ya tenemos tus datos y te escribimos personalmente, por email o WhatsApp. ¿Tienes prisa? Elige ya la hora.
 book_button: Reservar mi llamada
 whatsapp_number: 34611017148
 calendar_url: https://calendly.com/sansara-media/business-strategy-call
