@@ -6,21 +6,53 @@ how it was checked, and what is still open. Newest first. The deploy procedure i
 
 ## Next release (planned 2026-12-15)
 
-Ready on `develop` (`57df3b9`), built and checked on 2026-11-07, **not live**:
+Nothing on `develop` yet. Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
+(and for Calendly, which loads ahead of the tap on /client-loop/).
 
-- the handwritten "building your sales funnel, so you don't have to" over the founders' photo is gone (owner: "it's
-  ugly, it's big, it doesn't fit");
-- the price card says only "You keep the funnel." ("One or two clients pay for it" is out).
-- on /client-loop/ the form's phone is required, labelled "WhatsApp" (on `feature/landing-phone-required`, merged).
+## 2026-11-10
 
-Checked: `npm run verify`, `CONTEXT=production npm run build` (no lab), /client-loop/ hero and price card at 1366 and
-390 px. The deploy the owner asked for on 2026-11-07 was refused by Netlify ("Forbidden" on create deploy): the team
-had used its credits for the month, and the owner chose to keep the live landing until then. `main` was already pushed
-to `57df3b9`, so for now `main` is ahead of what is live (deploy `6aeed35c219f1860b43cb139`, `53a528d`). The Spanish
-/es/sistema/ is parked (owner, 2026-11-07): it ships with the shared body but gets no work or checks.
+Owner: "Deploy.", a third release in November, outside the calendar, at her explicit request. From `feature/lead-24h`
+(14 commits, 2026-11-10). The why is on Confluence, "Web · Decision · Lead form: leave your details, same-day reply
+(2026-11-10)", and in `decisions.md` (2026-11-10). It also carries the work that waited since 2026-11-07 (`57df3b9`:
+the handwritten note over the founders' photo gone, the price card says only "You keep the funnel.").
 
-Still open from the backlog: privacy policy and legal notice, cookie consent for the Pixel
-(now also for Calendly, which loads ahead of the tap on /client-loop/).
+- **Live:** https://sansara-media.com, Netlify deploy `6af39615d856c47a97a41632`. **Code:** `main` = `develop` = `f924a1e`,
+  tag `release-2026-11-10`.
+- **The lead pop-up** (every page, English and Spanish):
+  - every call button opens the form; on /client-loop/ too (`data-lead-calendar` off `<body>`, with a note to put it back);
+    Calendly is the line under the form, "Book an appointment directly" (Pixel `BookingClick`);
+  - kicker "Same-day reply", title "Talk to *us*", intro "Leave your details and we'll come back to you on the same working
+    day. If you prefer, book an appointment directly with the link at the bottom.", a trust line with a green dot "Most
+    people hear from us in less than an hour." (`reply_time`, `.lead-reply`);
+  - step 2 starts with "How should we get back to you?" (Email | WhatsApp, `channel`); the chosen channel's field is
+    required and the other optional, the "(optional)" marks follow (`syncChannel` in `lead.js`); without JavaScript the
+    email stays required;
+  - new optional "Website or Instagram" (`website`); the note shows directly, optional (no "+ Add a note" link); the
+    testimonial and the "Prefer WhatsApp? Message us" line are off (the markup is commented, the copy keys stay);
+  - button "Send, we'll reply today" (`submit`, and `hero.lead_submit` on the System pages); finish screen "Thank you.
+    We'll come back to you within the working day." with the calendar as the second option; privacy line "We only use
+    your details to get back to you."
+- **Fixed on the way:** the channel fieldset (radios, no `.field-error`) broke the form's field check at submit time, and
+  the form then posted natively without validation; `check()` now skips a field with nothing to check. The contact
+  fields' own messages ("Please give us your email/WhatsApp number…") are used when required and empty.
+- **Checked before** (worktree of `develop` at `f924a1e`): `npm run verify` ok; `CONTEXT=production npm run build` without
+  the lab (15 pages); every page at 1366 and 390 px (no JS errors, broken images, sideways scroll or PENDING); the form
+  end to end with the POST intercepted on /client-loop/ (email), /system/ (WhatsApp, +44 7700 900110 joined from the
+  country code) and /es/sistema/ (email): `channel`, `website`, `message`, `interest`, `source`, `utm_source` and
+  `fbclid` carried, the finish screen with the Calendly link filled in; the WhatsApp-chosen path with an empty number
+  shows its own message and does not post.
+- **Checked after:** /client-loop/, /system/, / and /es/sistema/ serve the new pop-up (kicker, button), `lead.js` has
+  `syncChannel`, `site.css` has `.lead-channel`, the 2026-11-07 note is gone, `/lab/` is 404. A test lead ("TEST Claude
+  2026-11-10 (borrar)", +44 7700 900110, channel WhatsApp, website instagram.com/test-claude) went through the live form
+  (POST 200, finish screen); Netlify's `lead` form shows the new fields `channel` and `website` and its last submission
+  at 22:11 UTC.
+- **Known:** the CRM does not show `channel` and `website` yet (they are in the Netlify submission and its notification);
+  the owner's 2026-11-07 decision "phone required on /client-loop/" is superseded: the number is required only when
+  WhatsApp is the chosen channel.
+- **Open:** delete the test lead in the CRM; Meta: a new ad set with "Contact us" and the same promise, €50/day for 7 days,
+  and an instant-form ad set in parallel (the Pixel's `Lead` now fires on send, not on booking); CRM: show the two new
+  fields; Make: an optional first-person acknowledgement email on website leads; Netlify form notification to the
+  owner's email (today the website leads send no email: Make's email is only for the Meta forms).
 
 ## 2026-11-07
 

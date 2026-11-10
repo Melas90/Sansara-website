@@ -417,3 +417,26 @@ One dated line per decision, newest last. Design answers also go into `docs/DESI
   the form's phone (the WhatsApp field) is now required and labelled "WhatsApp"; the email stays required (the call
   invite goes by email). Other pages keep "WhatsApp (optional)". The form only shows there when Calendly does not load;
   the phone on the Calendly booking form itself is a setting in Calendly, not in this site.
+
+## 2026-11-10: the lead pop-up asks for details and promises a same-day reply (every page; live 2026-11-10)
+
+Owner, 2026-11-10, from a reference form she brought (a Spanish coach's opt-in page: small label, title, one line with
+an immediate promise, name, email, phone, one qualifying question): "deberíamos pasar a déjanos tus datos y te
+contactamos", then "come back to you within the working day", "Talk to us está lo mejor… nombre y email. Y WhatsApp.
+Y que pongan el canal preferido", "the how should we get back to you goes first… depending on what they select, it is
+the field it's enabled", "another field like website, Instagram", "the note should appear directly", "I will remove
+the testimonial", "most people hear from us in less than 1 hour", "if you prefer, you can reserve the appointment, on
+the link at the bottom", button "Send, we'll reply today".
+
+Why: the Pixel (browser events, 13 Oct to 10 Nov) showed the step after the click as the bottleneck: the form first
+(22 to 28 Oct) had 15 opens, 4 started typing, 0 sent; Calendly direct (29 Oct to 10 Nov) had 30 opens and 5 bookings,
+but Meta attributed one booking for €146. The form had never run with a real budget (€6 to €30 a day; the only €50+
+days were Calendly direct). The instant forms in the same account give leads for €1 to €8. So: the form as the main
+path, the promise moved from "pick a time" to "we reply the same working day", and the test at €50 a day for 7 days.
+A chatbot saying "we contact you instantly" was considered and rejected (a bot's reply is not contact; "Honesty over
+hype"). The promise obliges: a first human answer within the hour in working hours.
+
+What: see `RELEASES.md` 2026-11-10. Supersedes 2026-10-29 (Calendly direct on the landing; `data-lead-calendar` on
+`<body>` brings it back), 2026-11-07 (phone required on the landing: now only when WhatsApp is the chosen channel),
+2026-10-25 (the testimonial beside the button, the "Prefer WhatsApp?" line). Confluence: "Web · Decision · Lead form:
+leave your details, same-day reply (2026-11-10)".
