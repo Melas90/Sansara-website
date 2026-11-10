@@ -106,7 +106,7 @@ whatsapp_direct_text: Hola%20Sansara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%
 proof_quote: «Es la primera vez, después de pasar por muchas agencias (…), que alguien llega a mi llamada listo para comprar.»
 proof_by: Coach de negocio, basado en el mensaje de un cliente
 message: Cuéntanos tu caso y lo analizaremos
-message_hint: Opcional. Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
+message_hint: Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
 submit: Enviar y que me contactéis
 sending: Enviando
