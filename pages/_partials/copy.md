@@ -86,7 +86,7 @@ consent_needed: Please tick the box so we're allowed to contact you.
 <!-- Owner request 2026-09-27: a pop-up where visitors leave their details and we get back to them. It opens from buttons along the page and a floating button, never on its own. Saved as the Netlify form "lead", to be connected to the CRM later. -->
 float: Get in touch
 <!-- Owner, 2026-11-10: three levels like the reference form (label, title, line); "Talk to us" as the title -->
-kicker: Free call · same-day reply
+kicker: Same-day reply
 title: Talk to *us*
 <!-- Owner, 2026-11-10: "déjanos tus datos y te contactamos", then "come back to you within the working day". The promise is that we write back, not that they pick a time; the calendar stays as the second option after sending. -->
 intro: Leave your details and we'll come back to you within the working day.
@@ -151,7 +151,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Add a note about your case (optional)
-privacy_notice: We only use your details to get back to you about your call. [Privacy policy](/privacy/).
+privacy_notice: We only use your details to get back to you. [Privacy policy](/privacy/).
 next: Next
 whatsapp_direct: Prefer WhatsApp? Message us
 calendar_direct: Prefer to pick a time yourself? Book your call directly
@@ -165,7 +165,7 @@ submit: Send and we'll come back to you
 sending: Sending
 close: Close
 success_title: Thank you. We'll come back to you within the working day.
-success_text: We have your details and will write to you personally, by email or WhatsApp. In a hurry? Pick a time for your free call right now.
+success_text: We have your details and will write to you personally, by email or WhatsApp. In a hurry? Pick a time right now.
 <!-- Owner 2026-10-02: "Book your call" opens WhatsApp for now (no booking calendar yet). Number in international format, digits only, no + (e.g. 34600123456). {name} is replaced with the name from the form. -->
 book_button: Book your call
 whatsapp_number: 34611017148

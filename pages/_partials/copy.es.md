@@ -27,7 +27,7 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 ## Lead
 
 float: Escríbenos
-kicker: Llamada gratuita · respuesta en el día
+kicker: Respuesta en el día
 title: Habla con *nosotros*
 intro: Déjanos tus datos y te contactamos dentro del día laborable.
 reply_time: La mayoría recibe respuesta en unas horas.
@@ -95,7 +95,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Añadir una nota sobre tu caso (opcional)
-privacy_notice: Solo usamos tus datos para contactarte sobre tu llamada. [Política de privacidad](/privacy/) (en inglés).
+privacy_notice: Solo usamos tus datos para contactarte. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
 calendar_direct: ¿Prefieres elegir tú la hora? Reserva tu llamada directamente
@@ -109,7 +109,7 @@ submit: Enviar y que me contactéis
 sending: Enviando
 close: Cerrar
 success_title: Gracias. Te contactamos dentro del día laborable.
-success_text: Ya tenemos tus datos y te escribimos personalmente, por email o WhatsApp. ¿Tienes prisa? Elige ya la hora de tu llamada gratuita.
+success_text: Ya tenemos tus datos y te escribimos personalmente, por email o WhatsApp. ¿Tienes prisa? Elige ya la hora.
 book_button: Reservar mi llamada
 whatsapp_number: 34611017148
 calendar_url: https://calendly.com/sansara-media/business-strategy-call
