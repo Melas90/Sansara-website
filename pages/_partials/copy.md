@@ -94,7 +94,9 @@ intro: Leave your details and we'll come back to you within the working day.
 reply_time: Most people hear back within a few hours.
 name: Your name
 email: Email
-whatsapp: WhatsApp (optional)
+whatsapp: WhatsApp
+optional: (optional)
+website: Website or Instagram
 channel: How should we get back to you?
 channel_options:
 - label: Email
@@ -105,6 +107,7 @@ channel_options:
 contact_hint: We'll reply here, or on WhatsApp if you leave a number.
 whatsapp_hint: Pick your country on the left and type your number as you normally would.
 need_contact: Please give us your email so we can get back to you.
+need_whatsapp: Please give us your WhatsApp number so we can get back to you.
 invalid_whatsapp: Please check the number, with its country code, like +44 7123 456789.
 need_country_code: Please add your country code at the start, like +44 7123 456789.
 interest: What are you interested in?

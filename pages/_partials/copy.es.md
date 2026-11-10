@@ -33,7 +33,9 @@ intro: Déjanos tus datos y te contactamos dentro del día laborable.
 reply_time: La mayoría recibe respuesta en unas horas.
 name: Tu nombre
 email: Email
-whatsapp: WhatsApp (opcional)
+whatsapp: WhatsApp
+optional: (opcional)
+website: Web o Instagram
 channel: ¿Por dónde te contactamos?
 channel_options:
 - label: Email
@@ -44,6 +46,7 @@ channel_options:
 contact_hint: Te respondemos aquí, o por WhatsApp si nos dejas un número.
 whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
 need_contact: Déjanos tu email para poder contactarte.
+need_whatsapp: Déjanos tu WhatsApp para poder contactarte.
 invalid_whatsapp: Revisa el número, con el prefijo del país, por ejemplo +34 612 345 678.
 need_country_code: Añade el prefijo del país al principio, por ejemplo +34 612 345 678.
 interest: ¿Qué te interesa?
