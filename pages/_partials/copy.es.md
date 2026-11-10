@@ -27,12 +27,20 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 ## Lead
 
 float: Escríbenos
-title: *Hablemos*
+kicker: Llamada gratuita · respuesta en el día
+title: Habla con *nosotros*
 intro: Déjanos tus datos y te contactamos dentro del día laborable.
 reply_time: La mayoría recibe respuesta en unas horas.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp (opcional)
+channel: ¿Por dónde te contactamos?
+channel_options:
+- label: Email
+  value: email
+  checked: true
+- label: WhatsApp
+  value: whatsapp
 contact_hint: Te respondemos aquí, o por WhatsApp si nos dejas un número.
 whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
 need_contact: Déjanos tu email para poder contactarte.
@@ -87,7 +95,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Añadir una nota sobre tu caso (opcional)
-privacy_notice: Solo usamos tus datos para tu llamada: enviarte la invitación y responderte. [Política de privacidad](/privacy/) (en inglés).
+privacy_notice: Solo usamos tus datos para contactarte sobre tu llamada. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
 calendar_direct: ¿Prefieres elegir tú la hora? Reserva tu llamada directamente

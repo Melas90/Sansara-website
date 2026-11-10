@@ -85,7 +85,9 @@ consent_needed: Please tick the box so we're allowed to contact you.
 
 <!-- Owner request 2026-09-27: a pop-up where visitors leave their details and we get back to them. It opens from buttons along the page and a floating button, never on its own. Saved as the Netlify form "lead", to be connected to the CRM later. -->
 float: Get in touch
-title: Let's *talk*
+<!-- Owner, 2026-11-10: three levels like the reference form (label, title, line); "Talk to us" as the title -->
+kicker: Free call · same-day reply
+title: Talk to *us*
 <!-- Owner, 2026-11-10: "déjanos tus datos y te contactamos", then "come back to you within the working day". The promise is that we write back, not that they pick a time; the calendar stays as the second option after sending. -->
 intro: Leave your details and we'll come back to you within the working day.
 <!-- Owner, 2026-11-10: "average response time" as a trust line next to the form. Must stay true: reply within a few hours in working hours. -->
@@ -93,6 +95,13 @@ reply_time: Most people hear back within a few hours.
 name: Your name
 email: Email
 whatsapp: WhatsApp (optional)
+channel: How should we get back to you?
+channel_options:
+- label: Email
+  value: email
+  checked: true
+- label: WhatsApp
+  value: whatsapp
 contact_hint: We'll reply here, or on WhatsApp if you leave a number.
 whatsapp_hint: Pick your country on the left and type your number as you normally would.
 need_contact: Please give us your email so we can get back to you.
@@ -142,7 +151,7 @@ country_codes:
 - label: US +1
   value: +1
 message_toggle: Add a note about your case (optional)
-privacy_notice: We only use your details for your call: to send you the invite and get back to you. [Privacy policy](/privacy/).
+privacy_notice: We only use your details to get back to you about your call. [Privacy policy](/privacy/).
 next: Next
 whatsapp_direct: Prefer WhatsApp? Message us
 calendar_direct: Prefer to pick a time yourself? Book your call directly
