@@ -28,13 +28,13 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 
 float: Escríbenos
 title: *Hablemos*
-intro: Necesitamos tus datos de contacto para enviarte la invitación a la llamada. Justo después eliges la hora.
+intro: Déjanos tus datos y te contactamos en menos de 24 h.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp (opcional)
-contact_hint: Aquí te enviamos los detalles de la llamada.
+contact_hint: Te respondemos aquí, o por WhatsApp si nos dejas un número.
 whatsapp_hint: Elige tu país a la izquierda y escribe tu número como siempre.
-need_contact: Déjanos tu email para enviarte los detalles de la llamada.
+need_contact: Déjanos tu email para poder contactarte.
 invalid_whatsapp: Revisa el número, con el prefijo del país, por ejemplo +34 612 345 678.
 need_country_code: Añade el prefijo del país al principio, por ejemplo +34 612 345 678.
 interest: ¿Qué te interesa?
@@ -95,11 +95,11 @@ proof_by: Coach de negocio, basado en el mensaje de un cliente
 message: Cuéntanos tu caso y lo analizaremos
 message_hint: Opcional. Con un par de frases basta: a qué te dedicas y dónde sientes que te atascas.
 privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto que guardéis mis datos para contactarme.
-submit: Que me contactéis
+submit: Enviar y que me contactéis
 sending: Enviando
 close: Cerrar
-success_title: Gracias. Te escribimos pronto.
-success_text: Ya tenemos tus datos. ¿Quieres elegir ya la hora de tu llamada gratuita?
+success_title: Gracias. Te contactamos en menos de 24 h.
+success_text: Ya tenemos tus datos y te escribimos personalmente, por email o WhatsApp. ¿Tienes prisa? Elige ya la hora de tu llamada gratuita.
 book_button: Reservar mi llamada
 whatsapp_number: 34611017148
 calendar_url: https://calendly.com/sansara-media/business-strategy-call
