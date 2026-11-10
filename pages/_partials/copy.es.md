@@ -29,6 +29,7 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 float: Escríbenos
 title: *Hablemos*
 intro: Déjanos tus datos y te contactamos dentro del día laborable.
+reply_time: La mayoría recibe respuesta en unas horas.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp (opcional)
