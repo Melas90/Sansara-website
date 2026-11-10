@@ -77,7 +77,8 @@
   form.querySelector('.lead-next')?.addEventListener('click', goNext);
   showStep(1);
   // "Prefer WhatsApp?": straight to WhatsApp, reported to the Pixel like the other WhatsApp links
-  form.querySelector('.lead-wa-direct a')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+  form.querySelector('.lead-wa-direct a:not([data-cal-direct])')?.addEventListener('click', () => { hj('Form: WhatsApp instead'); if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: 'lead pop-up direct' }); });
+  form.querySelector('[data-cal-direct]')?.addEventListener('click', () => { hj('Form: calendar instead'); if (typeof window.fbq === 'function') window.fbq('trackCustom', 'BookingClick', { content_name: 'lead pop-up direct' }); });
 
   const ccSelect = form.querySelector('.wa-cc');
   if (ccSelect) {

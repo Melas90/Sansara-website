@@ -112,6 +112,8 @@
       </div>
       <!-- For whoever would rather not fill anything in (owner, 2026-10-25): WhatsApp straight away; Pixel `Contact` -->
       <p class="lead-wa-direct"><a href="https://wa.me/{{{ shared.lead.whatsapp_number }}}?text={{{ shared.lead.whatsapp_direct_text }}}" target="_blank" rel="noopener">{{ shared.lead.whatsapp_direct }}</a></p>
+      <!-- Owner, 2026-11-10: the form first ("leave your details"), and underneath, for whoever prefers it, the calendar straight away. Pixel `BookingClick`. -->
+      {{#if shared.lead.calendar_url}}<p class="lead-wa-direct lead-cal-direct"><a href="{{{ shared.lead.calendar_url }}}" target="_blank" rel="noopener" data-cal-direct>{{ shared.lead.calendar_direct }}</a></p>{{/if}}
     </form>
     <div class="form-state form-success" hidden role="status">
       <svg class="check-draw" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M18 29l7 7 14-15"/></svg>

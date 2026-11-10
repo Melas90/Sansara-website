@@ -90,6 +90,7 @@ message_toggle: Añadir una nota sobre tu caso (opcional)
 privacy_notice: Solo usamos tus datos para tu llamada: enviarte la invitación y responderte. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
+calendar_direct: ¿Prefieres elegir tú la hora? Reserva tu llamada directamente
 whatsapp_direct_text: Hola%20Sansara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20llamada%20gratuita.
 proof_quote: «Es la primera vez, después de pasar por muchas agencias (…), que alguien llega a mi llamada listo para comprar.»
 proof_by: Coach de negocio, basado en el mensaje de un cliente

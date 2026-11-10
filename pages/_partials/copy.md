@@ -145,6 +145,7 @@ message_toggle: Add a note about your case (optional)
 privacy_notice: We only use your details for your call: to send you the invite and get back to you. [Privacy policy](/privacy/).
 next: Next
 whatsapp_direct: Prefer WhatsApp? Message us
+calendar_direct: Prefer to pick a time yourself? Book your call directly
 whatsapp_direct_text: Hi%20Sansara%2C%20I%27d%20like%20to%20know%20more%20about%20the%20free%20call.
 proof_quote: “This is the first time, after working with many agencies (…), that someone actually shows up to my call ready to buy.”
 proof_by: Business coach, based on a client's message
