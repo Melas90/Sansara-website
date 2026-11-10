@@ -29,7 +29,7 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 float: Escríbenos
 kicker: Respuesta en el día
 title: Habla con *nosotros*
-intro: Déjanos tus datos y te contactamos dentro del día laborable.
+intro: Déjanos tus datos y te contactamos en el mismo día laborable. Si lo prefieres, reserva una cita directamente con el enlace de abajo.
 reply_time: La mayoría recibe respuesta en menos de una hora.
 name: Tu nombre
 email: Email
@@ -101,7 +101,7 @@ message_toggle: Añadir una nota sobre tu caso (opcional)
 privacy_notice: Solo usamos tus datos para contactarte. [Política de privacidad](/privacy/) (en inglés).
 next: Siguiente
 whatsapp_direct: ¿Prefieres WhatsApp? Escríbenos
-calendar_direct: ¿Prefieres elegir tú la hora? Reserva tu llamada directamente
+calendar_direct: Reservar una cita directamente
 whatsapp_direct_text: Hola%20Sansara%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20llamada%20gratuita.
 proof_quote: «Es la primera vez, después de pasar por muchas agencias (…), que alguien llega a mi llamada listo para comprar.»
 proof_by: Coach de negocio, basado en el mensaje de un cliente
