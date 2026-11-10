@@ -48,7 +48,7 @@ stages:
 - step: Step 04
   name: Be remembered
   img: /assets/images/loop-stages/stage-en-3.webp
-lead_submit: Send and we'll get back to you
+lead_submit: Send and we'll come back to you
 primary: Talk to us
 secondary: See how it works
 <!-- 2026-11-06 (owner: "remove the text below book your free call"): nothing under the hero button on the English pages,

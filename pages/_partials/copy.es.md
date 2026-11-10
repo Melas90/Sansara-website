@@ -28,7 +28,7 @@ founders_alt: Christiane y Miguel, los dos fundadores de Sansara Media, en su es
 
 float: Escríbenos
 title: *Hablemos*
-intro: Déjanos tus datos y te contactamos en menos de 24 h.
+intro: Déjanos tus datos y te contactamos dentro del día laborable.
 name: Tu nombre
 email: Email
 whatsapp: WhatsApp (opcional)
@@ -98,7 +98,7 @@ privacy: He leído la [política de privacidad](/privacy/) (en inglés) y acepto
 submit: Enviar y que me contactéis
 sending: Enviando
 close: Cerrar
-success_title: Gracias. Te contactamos en menos de 24 h.
+success_title: Gracias. Te contactamos dentro del día laborable.
 success_text: Ya tenemos tus datos y te escribimos personalmente, por email o WhatsApp. ¿Tienes prisa? Elige ya la hora de tu llamada gratuita.
 book_button: Reservar mi llamada
 whatsapp_number: 34611017148
